@@ -1,0 +1,15 @@
+{
+	"Directory": true,
+	"Id": "{{name}}",
+	"Name": "{{name}}",
+	"Location": "/workspace/{{name}}",
+	"ChildrenLocation": "/workspace/{{name}}",
+	"Projects": [
+	    {% for repo in repos %}
+		{ 
+			"Id":"{{loop.key}}",
+			"Location":"/file/{{name}}/{{loop.key}}"
+		}{% if !loop.last %},{% endif %}
+	  	{% endfor %}
+	]
+}

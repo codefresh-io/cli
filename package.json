@@ -1,0 +1,24 @@
+{
+  "name": "cf-cli",
+  "version": "0.0.1",
+  "description": "codefresh command line utility",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "biased-opener": "^0.2.4",
+    "char-spinner": "^1.0.1",
+    "colors": "^1.0.3",
+    "filewalker": "^0.1.2",
+    "gift": "^0.5.0",
+    "ncp": "^2.0.0",
+    "q": "^1.2.0",
+    "request": "^2.55.0",
+    "rimraf": "^2.3.2",
+    "swig": "^1.4.2"
+  }
+}
