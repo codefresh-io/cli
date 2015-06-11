@@ -1,10 +1,16 @@
-var api         = require('../../lib/api');
+var program     = require('commander'),
+    api         = require('../../lib/api');
 
-var envId = process.argv.shift();
-api.environments.terminate(envId)
-    .then(function(status) {
-        console.log(status);
-    })
-    .catch(function(err) {
-        console.error(err);
+program
+    .command('environment-terminate <envId>')
+    .description('terminate running environment')
+    .action(function(envId){
+        api.environments.terminate(envId)
+            .then(function(status) {
+                console.log(status);
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
+
     });

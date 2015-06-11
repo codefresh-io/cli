@@ -1,11 +1,18 @@
-#!/usr/bin/env node
+var path = require('path');
 
 var commands = [
-    'create',
+    //'create',
     'list',
     'status',
     'terminate'
 ];
+
+commands.forEach(function(commandId) {
+    require(path.join(__dirname , commandId));
+});
+
+return ;
+
 
 var usage = function() {
     console.log(

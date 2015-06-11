@@ -1,3 +1,17 @@
+var program = require('commander');
+
+program
+    .command('start [env]')
+    .description('run setup commands for all envs')
+    .option("-s, --setup_mode [mode]", "Which setup mode to use")
+    .action(function(env, options){
+        var mode = options.setup_mode || "normal";
+        env = env || 'all';
+        console.log('setup for %s env(s) with %s mode', env, mode);
+    });
+
+return ;
+
 var utils   = require('../lib/utils'),
     fs      = require('fs'),
     path      = require('path'),
@@ -6,10 +20,14 @@ var utils   = require('../lib/utils'),
     Generator = require('../lib/templateGenerator');
 
 var tempPath = path.resolve(process.cwd(), 'temp');
+var rootPath = path.resolve(__dirname, '../..');
+
 var name = path.basename(process.cwd());
 
 var createFromTemplate= function(package) {
-    var generator = new Generator(package, {path:tempPath});
+    package.rootPath = rootPath;
+    var generator = new Generator(package, { path:tempPath });
+
     return generator.process()
         .then(function() {
             return package;

@@ -16,46 +16,47 @@ var printInfo = function(info) {
     console.log(line);
 }
 
-var repo_id = process.argv.shift();
+module.exports = function(repo_id) {
 
-api.repos.branches(repo_id)
-    .then(function(branches) {
+    api.repos.branches(repo_id)
+        .then(function (branches) {
 
-        // console.log(JSON.stringify(branches, null, 2));
+            // console.log(JSON.stringify(branches, null, 2));
 
-
-        printInfo({
-            name: 'Name',
-            branch: 'Branch',
-            message: 'Message',
-            created: 'Commit Date',
-            createdBy: 'Commited By'
-        });
-
-        printInfo({
-            name: '-----------------------------',
-            branch: '------------------',
-            message: '-------------------------------------------------',
-            created: '---------------------',
-            createdBy: '-----------------'
-        });
-
-        branches.map(function(branch) {
-
-            var lastCommit = branch.commits[0];
 
             printInfo({
-                name: repo_id,
-                branch: branch.name,
-                message: lastCommit.message,
-                created: utils.timeAgo(lastCommit.date),
-                createdBy: lastCommit.committer ? lastCommit.committer.name : lastCommit.name
+                name: 'Name',
+                branch: 'Branch',
+                message: 'Message',
+                created: 'Commit Date',
+                createdBy: 'Commited By'
             });
 
+            printInfo({
+                name: '-----------------------------',
+                branch: '------------------',
+                message: '-------------------------------------------------',
+                created: '---------------------',
+                createdBy: '-----------------'
+            });
+
+            branches.map(function (branch) {
+
+                var lastCommit = branch.commits[0];
+
+                printInfo({
+                    name: repo_id,
+                    branch: branch.name,
+                    message: lastCommit.message,
+                    created: utils.timeAgo(lastCommit.date),
+                    createdBy: lastCommit.committer ? lastCommit.committer.name : lastCommit.name
+                });
+
+            });
+
+
+        })
+        .catch(function (err) {
+            console.error(err);
         });
-
-
-    })
-    .catch(function(err) {
-        console.error(err);
-    });
+}

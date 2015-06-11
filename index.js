@@ -1,5 +1,25 @@
 #!/usr/bin/env node
 
+var program = require('commander'),
+    path    = require('path'),
+    fs      = require('fs');
+
+
+program
+    .version('0.0.1');
+
+
+var commandsPath = path.join(__dirname, 'commands');
+fs.readdir(commandsPath, function(err, files){
+    files.map(function(file) {
+        require(path.join(commandsPath , file));
+    });
+
+    program.parse(process.argv);
+});
+
+return;
+
 process.argv.shift();
 process.argv.shift();
 
