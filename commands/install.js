@@ -1,10 +1,8 @@
-var utils   = require('../lib/utils'),
-    fs     = require('fs')
+var program = require('commander'),
+    utils   = require('../lib/utils'),
+    fs      = require('fs')
     git     = require('gift'),
     Q       = require('q');
-
-var gitRepoUrl = process.argv[3];
-var gitSHA = process.argv[4] || 'master';
 
 var clone = function(urlInfo) {
     var deferred = Q.defer();
@@ -47,7 +45,7 @@ var checkout = function(urlInfo) {
 var save = function(urlInfo) {
     var deferred = Q.defer();
 
-    var doSave = process.argv[5];
+    var doSave = process.argv.shift();
     doSave = (doSave && doSave === "--save");
 
     if (doSave) {
@@ -104,21 +102,30 @@ var installAll = function() {
         });
 }
 
-if (gitRepoUrl) {
-    install(gitRepoUrl + ":" + gitSHA)
-        .catch(function(err) {
-            console.error(err);
-        })
-        .done(function() {
-            console.log(gitRepoUrl + ' - installed');
-        });
-} else {
-    installAll()
-        .catch(function(err) {
-            console.error(err);
-        })
-        .done(function() {
-            console.log('All installed');
-        });
-}
+program
+    .command('install')
+    .description('install repos from package')
+    .action(function(options){
+        installAll()
+            .catch(function(err) {
+                console.error(err);
+            })
+            .done(function() {
+                console.log('All installed');
+            });
+    });
 
+program
+    .command('install <gitRepoUrl> [sha]')
+    .description('install get repos ')
+    .action(function(gitRepoUrl, sha, options){
+        var gitSHA = sha || 'master';
+
+        install(gitRepoUrl + ":" + gitSHA)
+            .catch(function(err) {
+                console.error(err);
+            })
+            .done(function() {
+                console.log(gitRepoUrl + ' - installed');
+            });
+    });
