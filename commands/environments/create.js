@@ -75,7 +75,7 @@ api.repos.show(repo_id)
         // console.log(JSON.stringify(repo, null, 2));
 
         var data = {
-            repoLogin: repo.owner.login,
+            repoOwner: repo.owner.login,
             repoName: repo.name,
             sha: sha,
 //            settings:,

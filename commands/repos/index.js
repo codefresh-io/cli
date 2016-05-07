@@ -1,25 +1,17 @@
-#!/usr/bin/env node
+var program = require('commander');
 
 var commands = [
     'list'
 ];
 
-var usage = function() {
-    console.log(
-        "cf-cli repos <command>\n" +
-        "  " + commands.join(", ")
-
-    );
+var process_command = function(command, repoId) {
+    require('./' + command)(repoId);
 }
 
-var process_command = function() {
-    var command = process.argv[0];
 
-    if (commands.indexOf(command) === -1) {
-        command = 'show';
-    }
-
-    require('./' + command);
-}
-
-process_command();
+program
+    .command('repos [command] [repoId]')
+    .description('run setup commands for all envs')
+    .action(function(command, repoId){
+        process_command(command || 'show', repoId);
+    });

@@ -1,10 +1,15 @@
-var api         = require('../../lib/api');
+var program     = require('commander'),
+    api         = require('../../lib/api');
 
-var envId = process.argv.shift();
-api.environments.status(envId)
-    .then(function(status) {
-        console.log(status);
-    })
-    .catch(function(err) {
-        console.error(err);
+program
+    .command('environment-status <envId>')
+    .description('show status of specific environment')
+    .action(function(envId){
+        api.environments.status(envId)
+            .then(function(status) {
+                console.log(status);
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
     });

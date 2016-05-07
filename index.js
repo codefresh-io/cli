@@ -1,37 +1,13 @@
-#!/usr/bin/env node
-
-process.argv.shift();
-process.argv.shift();
-
-var commands = [
-    'environments',
-    'init',
-    'install',
-    'repos',
-    'start'
-];
-
-var setup_logging = function() {
-
-}
-
-var usage = function() {
-    console.log(
-        "cf-cli <command>\n" +
-        "  " + commands.join(", ")
-
-    );
-}
-
-var process_command = function() {
-    var command = process.argv.shift();
-
-    if (commands.indexOf(command) === -1) {
-        return usage();
-    }
-
-    require('./commands/' + command);
-}
-
-setup_logging();
-process_command();
+ #! /usr/bin/env node
+ 
+  var yargs = require("yargs");
+  console.log('yargs');
+  var argv = yargs.usage("$0 command")
+    .command('login' , 'login' , require('./commands/login'))
+    .command('me', 'check if i am logged in')
+    .command('builds' , 'bring list of current builds')
+    .command('images', 'bring all images of my account')
+    .demand(1, "must provide a valid command")
+    .help("h")
+    .alias("h", "help")
+    .argv

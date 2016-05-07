@@ -1,22 +1,23 @@
-var path = require('path');
+#!/usr/bin/env node
+
+process.argv.shift();
+process.argv.shift();
 
 var commands = [
-    //'create',
-    'list',
-    'status',
-    'terminate'
+    'environments',
+    'init',
+    'install',
+    'repos',
+    'start'
 ];
 
-commands.forEach(function(commandId) {
-    require(path.join(__dirname , commandId));
-});
+var setup_logging = function() {
 
-return ;
-
+}
 
 var usage = function() {
     console.log(
-        "cf-cli environments <command>\n" +
+        "cf-cli <command>\n" +
         "  " + commands.join(", ")
 
     );
@@ -29,7 +30,8 @@ var process_command = function() {
         return usage();
     }
 
-    require('./' + command);
+    require('./commands/' + command);
 }
 
+setup_logging();
 process_command();
