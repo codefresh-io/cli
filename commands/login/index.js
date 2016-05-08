@@ -13,18 +13,20 @@ exports.builder = function (yargs) {
       alias: 'url',
       default: 'https://g-staging.codefresh.io'
     }).option('user', {
-      alias: 'u',
+      alias: 'u'
     }).option('password', {
-      alias: 'pwd',
-
+      alias: 'p'
     })
   }
 
 
 exports.handler = function (argv) {
   console.log('running');
-  console.log(`${argv.url}`);
-  login = new Login(argv.user, argv.pwd, argv.url);
+  debug(`${argv.url}`);
+  debug(`${JSON.stringify(argv)}`);
+  debug(`${argv.user}`);
+
+  login = new Login(argv.user, argv.password, argv.url, argv.token);
 
   login.connect().then(login.getUserInfo.bind(login)).then((user)=>{
 

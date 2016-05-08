@@ -1,13 +1,18 @@
-var assert = require('assert');
-var util   = require('util');
-var debug  = require('debug')('cli-login');
-var _      = require('lodash');
+var assert    = require('assert');
+var util      = require('util');
+var debug     = require('debug')('cli-login');
+var _         = require('lodash');
+var request   = require('superagent-use');
+var jsonfile  = require('jsonfile');
 
-function Login(user, pwd, url){
+function Login(user, pwd, url, accessTokenFile){
 
   this.url  = url;
   this.user = user;
   this.pwd = pwd;
+  this.accessTokenFile = accessTokenFile;
+  var self = this;
+
   debug(`${url},${user},${pwd}`);
 }
 
@@ -27,32 +32,56 @@ var persistToken = function(token){
 return p;
 }
 
-
+Login.prototype.resetToken = function(){
+  //reset file
+  throw new Error('not implemented');
+}
 Login.prototype.connect= function(){
-  var request = require('superagent');
+
+
   var self = this;
-  var p = new Promise((resolve, reject)=>{
   var url = util.format('%s/api/auth/local', this.url);
+  var accessTokenPromise  = new Promise((resolve ,reject)=>{
+    if (!self.user){
+      //check if token exist
+
+      jsonfile.readFile(self.accessTokenFile, (err, obj) =>{
+        if (err)
+          return reject('user not provided and not token found')
+         self.token = obj.accessToken;
+         debug(`AccessToken=${obj.accessToken}`);
+         assert(self.token);
+         return resolve({token:self.token})
+      })
+      return;
+    }
+    return resolve({});
+  })
+ .then((data) =>{
+
+  if (data.token)
+    return data.token;
 
   request
   .post(url)
-  .send({ userName: this.user, password: this.pwd})
+  .send({ userName: self.user, password: self.pwd})
+  .on('request', function(req) {
+   console.log(req.url); // => https://api.example.com/auth
+ })
   //.set('X-API-Key', 'foobar')
   .set('Accept', 'application/json')
   .end(function(err, res){
 
-
-
-   if (err){
+      if (err){
+        debug(res.body);
         return reject(err);
       }
       self.token = res.body.accessToken;
-
-      return persistToken(self.token).then(resolve , reject);
+      return persistToken(self.token);
   });
 });
 
-return p;
+return accessTokenPromise;
 }
 
 Login.prototype.whoami= function(){
@@ -61,11 +90,13 @@ Login.prototype.whoami= function(){
 
 Login.prototype.getUserInfo = function(){
 
-  var request = require('superagent');
+
   var self = this;
   var p = new Promise((resolve, reject)=>{
   var url = util.format('%s/api/user', this.url);
   debug(`token: ${self.token}`);
+  if (!self.token)
+  return reject ('not token provided');
 
   request
   .get(url)
@@ -74,7 +105,7 @@ Login.prototype.getUserInfo = function(){
   .end(function(err, res){
     debug(`requst ended erro: ${JSON.stringify(res.body)}`);
     if (err){
-    debug(res);
+     debug(res);
     return reject(err);
 
    }
