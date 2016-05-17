@@ -25,6 +25,7 @@ exports.handler = function (argv) {
   debug(`${argv.url}`);
   debug(`${JSON.stringify(argv)}`);
   debug(`${argv.user}`);
+  debug(`${argv.token}`);
 
   login = new Login(argv.user, argv.password, argv.url, argv.token);
 

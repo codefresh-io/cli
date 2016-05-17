@@ -10,14 +10,14 @@ function Login(user, pwd, url, accessTokenFile){
   this.url  = url;
   this.user = user;
   this.pwd = pwd;
-  this.accessTokenFile = accessTokenFile;
+  this.accessTokenFile = accessTokenFile || 'accessToken.json';
   var self = this;
 
-  debug(`${url},${user},${pwd}`);
+  debug(`${url},${user},${pwd},${accessTokenFile}`);
 }
 
 var persistToken = function(token){
-
+  debug('persistToken ' + token);
   var fs = require('fs');
   var p = new Promise((resolve, reject)=>{
   fs.writeFile('accessToken.json',JSON.stringify({accessToken:token}),(err) => {
@@ -41,45 +41,58 @@ Login.prototype.connect= function(){
 
   var self = this;
   var url = util.format('%s/api/auth/local', this.url);
-  var accessTokenPromise  = new Promise((resolve ,reject)=>{
-    if (!self.user){
-      //check if token exist
+  var accessTokenPromise  = new Promise((resolve ,reject, progress)=>{
+    debug('in execute function');
+
 
       jsonfile.readFile(self.accessTokenFile, (err, obj) =>{
-        if (err)
-          return reject('user not provided and not token found')
-         self.token = obj.accessToken;
+        if (err){
+           debug(err + 'rejected accessToken');
+           return reject('user not provided and not token found')
+        }
+         debug('accessToken row ' + JSON.stringify(obj));
+         self.token =  obj.accessToken ;
          debug(`AccessToken=${obj.accessToken}`);
          assert(self.token);
          return resolve({token:self.token})
       })
       return;
-    }
-    return resolve({});
   })
- .then((data) =>{
+ .then((data)=>{
+      debug('resolved with token' + data.token);
+      return data.token;
+ }, (data) =>{
+   debug('no token detected, trying to login with user / password');
+  return new Promise ((resolve, reject) => {
 
-  if (data.token)
-    return data.token;
-
-  request
+   request
   .post(url)
   .send({ userName: self.user, password: self.pwd})
   .on('request', function(req) {
-   console.log(req.url); // => https://api.example.com/auth
- })
+   console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
+   return req;
+   })
   //.set('X-API-Key', 'foobar')
   .set('Accept', 'application/json')
   .end(function(err, res){
-
+      debug('request completed! ')
       if (err){
-        debug(res.body);
+
+        debug(`error - ${error} , res= ${res.body}`);
         return reject(err);
       }
+      debug('new token created ' + res);
       self.token = res.body.accessToken;
+
       return persistToken(self.token);
   });
+}).catch((err)=>{
+  debug('UNHANDLED error ' + err);
+  throw err;
+  //   throw err;
+})
 });
+assert(accessTokenPromise );
 
 return accessTokenPromise;
 }
@@ -96,16 +109,17 @@ Login.prototype.getUserInfo = function(){
   var url = util.format('%s/api/user', this.url);
   debug(`token: ${self.token}`);
   if (!self.token)
-  return reject ('not token provided');
+  return reject ('no token provided');
 
   request
   .get(url)
   .set('X-Access-Token', this.token)
   .set('Accept', 'application/json')
   .end(function(err, res){
-    debug(`requst ended erro: ${JSON.stringify(res.body)}`);
+
     if (err){
-     debug(res);
+        debug(`requst ended with error: ${err} , ${JSON.stringify(res.body)}`);
+
     return reject(err);
 
    }
