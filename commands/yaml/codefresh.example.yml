@@ -1,0 +1,59 @@
+version: '1.0'
+#build flow for fx-api
+steps:
+  dependencies:
+    image: node:latest
+    fail-fast: true
+    commands:
+      #- npm prune
+      - npm install --unsafe-perm
+
+      #- npm install bower
+      #- npm gulp install
+
+  unit tests:
+    image: node:latest
+    fail-fast: false
+    commands:
+      - npm install -g better-npm-run
+      - npm install -g mocha
+      - npm install -g babel-register
+      - echo unit test started
+      - npm run test
+
+  build-step:
+     type: build
+     fail-fast: false
+     dockerfile: Dockerfile.prod
+     image-name: fxepmire/fx-api
+     tag : codefresh
+
+#build volume wtih source code
+  build-dependecies-and-source-code-only:
+       type: build
+       fail-fast: false
+       dockerfile: Dockerfile.npm
+       image-name: fxempire/fx-api
+       tag : npm
+
+  after-build:
+      image: verchol/slack:latest
+      environment:
+         - MSG_TEXT="fx:api build passed"
+      commands:
+         - cd /usr/src/app
+         - npm start
+
+  deploy:
+      image: vamp/vamp:latest
+      environment:
+         - MSG_TEXT="fx:api build passed"
+      commands:
+         - cd /usr/src/app
+         - npm start
+
+
+  #push to registry:
+  #  type: push
+  #  candidate: ${{build-step}}
+  #  tag: ${{CF_BRANCH}}
