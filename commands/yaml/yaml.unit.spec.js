@@ -2,7 +2,7 @@ var Promise = require("bluebird");
 var assert  = require('assert');
 
 describe('codefresh yaml spec', ()=>{
-  debugger;
+
   const YAML = require('./yamlFile');
   assert(YAML);
 
@@ -56,13 +56,46 @@ it('add buld step ', (done)=>{
 it('save yaml ', (done)=>{
     var save = Promise.promisify(Yaml.save.bind(Yaml));
 
-    save("").then((result)=>{
+    save().then((result)=>{
       console.log(result);
 
    }, (err)=>{
      console.log('error:'  + err);
 
    }).catch((e)=> {
+     throw e}).done(()=>{done();} , done);
+});
+
+
+it.only('add stack', (done)=>{
+    var addStack =  Yaml.addStack.bind(Yaml);
+    var save = Promise.promisify(Yaml.save.bind(Yaml));
+
+    var stacks = require('./stacks');
+    assert(stacks[0]);
+    assert(stacks[0].steps);
+    console.log(`stack is ${JSON.stringify(stacks[0])}`);
+    console.log(`stack steps are ${JSON.stringify(stacks[0].steps)}`);
+
+    var Q = require('q');
+    var defer = Q.defer();
+
+    addStack(stacks[0],(err, data)=>{
+      if (err)
+       return defer.reject(err);
+
+      return defer.resolve(data);
+    })
+    defer.promise
+    .then(save)
+    .then((result)=>{
+      console.log(result);
+    }, (err)=>{
+     console.log('error:'  + err);
+     throw err;
+
+   }).catch((e)=> {
+     console.log('exception was thrown during the test');
      throw e}).done(()=>{done();} , done);
 });
 
