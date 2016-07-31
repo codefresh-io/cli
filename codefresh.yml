@@ -2,7 +2,7 @@
   version: "1.0"
   steps:
     test-step:
-      fail-fast: "false"
+      fail-fast: false
       image: "node:latest"
       working-directory: ${{initial-clone}}
       commands:
