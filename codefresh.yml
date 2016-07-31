@@ -9,7 +9,7 @@
         - "npm install -g better-npm-run"
         - "npm install -g mocha"
         - "npm install"
-        - "npm test"
+        - "mocha ./commands/yaml"
 
     security-by-snyk:
       fail-fast: false
