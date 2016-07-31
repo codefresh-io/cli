@@ -12,7 +12,7 @@
         - "npm test"
 
     publish-npm:
-          fail-fast: "false"
+          fail-fast: false
           image: "node:latest"
           working-directory: ${{initial-clone}}
           commands:
