@@ -4,6 +4,7 @@
     test-step:
       fail-fast: "false"
       image: "node:latest"
+      working-directory: ${{initial-clone}}
       commands:
         - "npm install -g better-npm-run"
         - "npm install -g mocha"
