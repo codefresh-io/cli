@@ -10,7 +10,7 @@ var stacks = [
       {
           "name" :  "build-step",
           "type": "build",
-          "fail-fast": "false",
+          "fail-fast": false,
           "dockerfile": "Dockerfile",
           "image-name": "owner/imageName",
           "tag" : "latest"
@@ -19,7 +19,7 @@ var stacks = [
 
       {
           "name" :  "test-step",
-          "fail-fast": "false",
+          "fail-fast": false,
           "image": "node:latest",
           "commands":
           [  "npm install -g better-npm-run" ,
