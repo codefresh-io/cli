@@ -1,3 +1,6 @@
+'use strict';
+
+
 var Promise = require("bluebird");
 var assert  = require('assert');
 
@@ -68,14 +71,20 @@ it('save yaml ', (done)=>{
 
 
 it.only('add stack', (done)=>{
+
+
+  //  origin(()=>{console.log('callback!');done();});
+  //  return
+    var save = Yaml.save;
     var addStack =  Yaml.addStack.bind(Yaml);
-    var save = Promise.promisify(Yaml.save.bind(Yaml));
+
 
     var stacks = require('./stacks');
     assert(stacks[0]);
     assert(stacks[0].steps);
     console.log(`stack is ${JSON.stringify(stacks[0])}`);
     console.log(`stack steps are ${JSON.stringify(stacks[0].steps)}`);
+    console.log(`save/n ${save} ----/n`);
 
     var Q = require('q');
     var defer = Q.defer();
@@ -83,20 +92,24 @@ it.only('add stack', (done)=>{
     addStack(stacks[0],(err, data)=>{
       if (err)
        return defer.reject(err);
-
-      return defer.resolve(data);
+       console.log('stack added')
+       console.log(`model : ${JSON.stringify(Yaml.model)}`);
+       Yaml.upTodate = true;
+      return defer.resolve({a:1});
     })
-    defer.promise
-    .then(save)
-    .then((result)=>{
-      console.log(result);
-    }, (err)=>{
-     console.log('error:'  + err);
-     throw err;
 
-   }).catch((e)=> {
-     console.log('exception was thrown during the test');
-     throw e}).done(()=>{done();} , done);
+    defer.promise.then(save.bind(Yaml, __dirname)).then(function test(){
+      console.log('after then');
+      var util = require('util');
+      console.log('ARGS' + util.format('%j %j', arguments[0], arguments[1]));
+
+    }).catch((e)=>{
+      console.log('exception : ' + e);
+      throw e;
+    }).done(()=>{done();} , done);
+
+    return ;
+
 });
 
 
