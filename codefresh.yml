@@ -7,6 +7,7 @@
       dockerfile: "Dockerfile"
       image-name: "verchol/cf-cli"
       tag: "latest"
+
     test-step:
       fail-fast: "false"
       image: "node:latest"
@@ -15,3 +16,10 @@
         - "npm install -g mocha"
         - "npm install"
         - "npm test"
+
+      publish-npm:
+          fail-fast: "false"
+          image: "node:latest"
+          commands:
+            - "npm install -g gulp"
+            - "gulp npm"
