@@ -14,6 +14,7 @@
     publish-npm:
           fail-fast: "false"
           image: "node:latest"
+          working-directory: ${{initial-clone}}
           commands:
             - "npm install -g gulp"
             - "gulp npm"
