@@ -1,13 +1,6 @@
 ---
   version: "1.0"
   steps:
-    build-step:
-      type: "build"
-      fail-fast: false
-      dockerfile: "Dockerfile"
-      image-name: "verchol/cf-cli"
-      tag: "latest"
-
     test-step:
       fail-fast: "false"
       image: "node:latest"
@@ -17,9 +10,16 @@
         - "npm install"
         - "npm test"
 
-      publish-npm:
+     publish-npm:
           fail-fast: "false"
           image: "node:latest"
           commands:
             - "npm install -g gulp"
             - "gulp npm"
+
+      build-docker-image:
+             type: "build"
+             fail-fast: false
+             dockerfile: "Dockerfile"
+             image-name: "verchol/cf-cli"
+             tag: "latest"
