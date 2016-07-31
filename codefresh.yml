@@ -23,8 +23,13 @@
           fail-fast: false
           image: "node:latest"
           working-directory: ${{initial-clone}}
+          environment :
+             - NPM_USERNAME =${{NPM_USER}}
+             - NPM_PASSWORD= ${{NPM_PASSWORD}}
+             - NPM_EMAIL= verchol@gmail.com
           commands:
             - "npm install -g gulp"
+            - "npm adduser"
             - "gulp npm"
 
 
