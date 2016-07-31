@@ -3,10 +3,11 @@ var assert = require('assert');
 
 describe('cf avaiable stacks', ()=>{
   beforeEach(()=>{
-    stacks = require('./stacks');
+    Stacks = require('./stacks');
   })
   it('nodejs stack', ()=>{
-     assert.equal(stacks[0].name, "nodejs");
-     console.log(`stack ${JSON.stringify(stacks[0])}`);
+    var nodeStack = Stacks.getStack("nodejs");
+     assert.equal(nodeStack.name, "nodejs");
+     console.log(`stack ${JSON.stringify(nodeStack)}`);
   })
 })

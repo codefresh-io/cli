@@ -1,4 +1,7 @@
 'use strict';
+var _ = require('lodash');
+var assert = require('assert');
+var debug  = require('debug')('stacks');
 
 var stacks = [
   {
@@ -30,4 +33,20 @@ var stacks = [
   }
 ];
 
-module.exports = stacks;
+function Stacks(){
+  this.stacks = stacks;
+}
+
+Stacks.prototype.getStack = function(name){
+  var stack;
+  _.forEach(stacks, (s)=>{
+    debug(`checking for ${name} in stack ${JSON.stringify(s)}`);
+    if (s.name === name)
+      stack = s;
+  })
+
+  debug(`stack detected ${JSON.stringify(stack)}`);
+  assert(stack);
+  return stack;
+}
+module.exports = new Stacks();

@@ -1,16 +1,16 @@
 ---
   version: "1.0"
-  steps: 
-    build-step: 
+  steps:
+    build-step:
       type: "build"
       fail-fast: false
       dockerfile: "Dockerfile"
-      image-name: "owner/imageName"
+      image-name: "verchol/cf-cli"
       tag: "latest"
-    test-step: 
+    test-step:
       fail-fast: "false"
       image: "node:latest"
-      commands: 
+      commands:
         - "npm install -g better-npm-run"
         - "npm install -g mocha"
         - "npm install"

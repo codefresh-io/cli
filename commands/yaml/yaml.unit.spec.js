@@ -79,7 +79,8 @@ it.only('add stack', (done)=>{
     var addStack =  Yaml.addStack.bind(Yaml);
 
 
-    var stacks = require('./stacks');
+    var Stacks = require('./stacks');
+    var stacks = Stacks.stacks;
     assert(stacks[0]);
     assert(stacks[0].steps);
     console.log(`stack is ${JSON.stringify(stacks[0])}`);

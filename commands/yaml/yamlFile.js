@@ -37,7 +37,9 @@ Yamlfile.prototype.addStack = function(stack, callback){
    var resolve = callback.bind(null);
    var reject  = callback.bind(error);
 
+
     debug(`adding stack ${stack.name}`);
+    debug(`addStack ->arguments : ${JSON.stringify(arguments)}`);
     var self = this;
     var promise = stack.steps.reduce((sofar ,step)=>{
       debug(`running reduce on step ${JSON.stringify(step)}`);
