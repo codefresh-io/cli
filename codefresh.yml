@@ -1,12 +1,13 @@
 version: "1.0"
-  steps:
-    
+
+steps:
     build-step:
         type: "build"
         fail-fast: false
         dockerfile: "Dockerfile"
         image-name: "owner/imageName"
         tag: "latest"
+
     test-step:
         fail-fast: "false"
         image: "node:latest"
