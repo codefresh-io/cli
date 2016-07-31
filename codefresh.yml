@@ -10,14 +10,14 @@
         - "npm install"
         - "npm test"
 
-     publish-npm:
+    publish-npm:
           fail-fast: "false"
           image: "node:latest"
           commands:
             - "npm install -g gulp"
             - "gulp npm"
 
-      build-docker-image:
+    build-docker-image:
              type: "build"
              fail-fast: false
              dockerfile: "Dockerfile"
