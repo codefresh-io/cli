@@ -26,10 +26,13 @@
           environment :
              - NPM_USERNAME =${{NPM_USER}}
              - NPM_PASSWORD= ${{NPM_PASSWORD}}
-             - NPM_EMAIL= verchol@gmail.com
+             - NPM_EMAIL=verchol@gmail.com
           commands:
             - "npm install -g gulp"
-          #  - "npm adduser"
+            - "gulp bump"
+            - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc
+            - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc
+            - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc
             - "gulp npm"
 
 
