@@ -29,7 +29,7 @@
              - NPM_EMAIL= verchol@gmail.com
           commands:
             - "npm install -g gulp"
-            - "npm adduser"
+          #  - "npm adduser"
             - "gulp npm"
 
 
