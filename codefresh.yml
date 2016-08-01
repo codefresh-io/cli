@@ -30,9 +30,9 @@
           commands:
             - "npm install -g gulp"
             - "gulp bump"
-            - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc
-            - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc
-            - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc
+            - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc"
+            - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc"
+            - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc"
             - "gulp npm"
 
 
