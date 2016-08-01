@@ -48,16 +48,11 @@ Yamlfile.prototype.addStack = function(stack, callback){
 
         debug(`before addign step ${step.name}`)
         var defer  = Q.defer();
-        self.addStep(step.name , step, (err, data)=>{
-         if (err){
-           error.err = err;
-           return defer.reject(err);
-         }
-
+        self.addStep(step.name , step);
         return defer.resolve();
       })
       return defer.promise;
-    });
+
   }, Q.resolve());
 
     debug('after reduce');
@@ -67,9 +62,9 @@ Yamlfile.prototype.addStack = function(stack, callback){
       callback();
     }, reject);
 
-    return;
+    return this;
  }
-Yamlfile.prototype.addStep = function(name, data, callback){
+Yamlfile.prototype.addStep = function(name, data){
     debug(`adding step ${name} , ${data}`);
 
     var step = {}
@@ -85,7 +80,9 @@ Yamlfile.prototype.addStep = function(name, data, callback){
   debug(`added step ${name} , ${JSON.stringify(data)}`);
   this.model.steps[name] = data;
   debug(`model : ${JSON.stringify(this.model)}`);
-  callback(null, data);
+
+
+  return this;
 }
 
 Yamlfile.prototype.done = function(callback){
@@ -96,9 +93,10 @@ Yamlfile.prototype.done = function(callback){
 
 }
 
-Yamlfile.prototype.save = function(dir, callback){
+Yamlfile.prototype.save = function(dir, file , callback){
 
   debug(`dir name :${dir}`);
+  debug(`dir name :${file}`)
   debug(`callback : ${callback}`);
   debug(`argument : ${JSON.stringify(arguments)}`);
   debug(`save->model : ${JSON.stringify(this.model)}`);
@@ -106,11 +104,14 @@ Yamlfile.prototype.save = function(dir, callback){
   if (!dir)
     dir = "";
 
+  if (!file)
+    file = "codefresh.yml"
+
   _.defaults(dir, ".");
 
   var path = require('path');
   var fs   = require('fs');
-  var yaml = path.resolve(dir, './codefresh.yml');
+  var yaml = path.resolve(dir, './' + file);
   debug(`saving file ${yaml}`);
   let yamlText = YAML.stringify(this.model);
 

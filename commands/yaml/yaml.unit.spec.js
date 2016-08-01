@@ -1,8 +1,11 @@
 'use strict';
 
 
-var Promise = require("bluebird");
-var assert  = require('assert');
+var Promise     = require("bluebird");
+var assert      = require('assert');
+var _           = require('lodash');
+var promisify   = require("promisify-es6");
+var Q           = require('q')
 
 describe('codefresh yaml spec', ()=>{
 
@@ -17,7 +20,7 @@ describe('codefresh yaml spec', ()=>{
 
 
  it('create codefresh.yaml', (done)=>{
-      var createYaml = Promise.promisify(Yaml.create.bind(Yaml));
+      var createYaml =  promisify(Yaml.create.bind(Yaml));
       createYaml({}).then((result)=>{
         console.log(result);
         done();
@@ -29,37 +32,79 @@ describe('codefresh yaml spec', ()=>{
 
 
  it('add run step ', (done)=>{
-     var createYaml = Promise.promisify(Yaml.create.bind(Yaml));
-     var addStep = Promise.promisify(Yaml.addStep.bind(Yaml));
-
-     addStep("mystep", {image: "node", "fail-step":true}).then((result)=>{
+     var createYaml = promisify(Yaml.create.bind(Yaml));
+     var addStep = Yaml.addStep.bind(Yaml);
+     console.log('Run Step has started');
+     Q(addStep.bind("run-step", {image: "node", "fail-step":true})).then((result)=>{
        console.log(result);
-
+       console.log('runStep ->step added');
     }, (err)=>{
       console.log('error:'  + err);
 
     }).then(createYaml).catch((e)=> {
-      throw e}).done(()=>{done();} , done);
+      console.log('exception occured');
+        throw e;
+      }).done(()=>{
+
+        return done();
+      } , done);
 });
 
-it('add buld step ', (done)=>{
-    var createYaml = Promise.promisify(Yaml.create.bind(Yaml));
-    var addStep = Promise.promisify(Yaml.addStep.bind(Yaml));
-
-    addStep("build-step", {type:"build", image: "node", "fail-step":true, dockerfile : "./Dockerfile"}).then((result)=>{
+it('add build step ', (done)=>{
+    var createYaml = promisify(Yaml.create.bind(Yaml));
+    var addStep = Yaml.addStep.bind(Yaml);
+    console.log('Build Step has started');
+    Q(addStep.bind("build-step", {type:"build", image: "node", "fail-step":true, dockerfile : "./Dockerfile"})).then((result)=>{
+      console.log('added step , about to create  yaml');
       console.log(result);
 
    }, (err)=>{
      console.log('error:'  + err);
-
+     done();
    }).then(createYaml).catch((e)=> {
-     throw e}).done(()=>{done();} , done);
+
+     throw e;
+
+   }).done(()=>{done();} , done);
 });
 
 it('save yaml ', (done)=>{
-    var save = Promise.promisify(Yaml.save.bind(Yaml));
+  function save(){
+    var p = new Promise((resolve , reject)=>{
+       var callback = (err, data)=>{
+           p
+           if (err)
+            return reject(err);
 
-    save().then((result)=>{
+          resolve(data);
+        };
+
+
+
+    var saveArgs = []
+    if (arguments.length>2)
+       throw 'incorrect number of arguments ' + arguments.length;
+    switch(arguments.length){
+      case 0 :
+         saveArgs.push(null);
+         saveArgs.push(null);
+         break;
+      case 1:
+          saveArgs.push(null);
+          break;
+
+    }
+    _.forEach(arguments, (arg)=>{
+      saveArgs.push(arg);
+    })
+
+    saveArgs.push(callback);
+    Yaml.save.apply(Yaml, saveArgs)
+  })
+    return p;
+  }
+
+    save(__dirname, "codefresh_test.yml").then((result)=>{
       console.log(result);
 
    }, (err)=>{
@@ -70,17 +115,17 @@ it('save yaml ', (done)=>{
 });
 
 
-it.only('add stack', (done)=>{
+it('add stack', (done)=>{
 
 
-  //  origin(()=>{console.log('callback!');done();});
-  //  return
-    var save = Yaml.save;
+
+    var save = promisify(Yaml.save.bind(Yaml));
     var addStack =  Yaml.addStack.bind(Yaml);
 
 
     var Stacks = require('./stacks');
     var stacks = Stacks.stacks;
+
     assert(stacks[0]);
     assert(stacks[0].steps);
     console.log(`stack is ${JSON.stringify(stacks[0])}`);
@@ -99,7 +144,11 @@ it.only('add stack', (done)=>{
       return defer.resolve({a:1});
     })
 
-    defer.promise.then(save.bind(Yaml, __dirname)).then(function test(){
+    defer.promise.then(
+      (data)=>{
+        console.log(`after add->stack ${data}`);
+        return save(__dirname, "codefresh_test.yaml");
+       }).then(function test(){
       console.log('after then');
       var util = require('util');
       console.log('ARGS' + util.format('%j %j', arguments[0], arguments[1]));

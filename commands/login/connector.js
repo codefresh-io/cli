@@ -78,7 +78,7 @@ Login.prototype.connect= function(){
       debug('request completed! ')
       if (err){
 
-        debug(`error - ${error} , res= ${res.body}`);
+        debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
         return reject(err);
       }
       debug('new token created ' + res);

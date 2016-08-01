@@ -7,14 +7,27 @@ debug('in yaml command defintion');
 
 exports.command = 'yaml  <stack> ';
 exports.desc = 'create codefresh yaml';
-exports.builder = {};
+exports.builder = {
+  stack :
+  {
+    default : "nodejs"
+  },
+  file : {
+    default : "codefresh.yml"
+  }
+};
 exports.handler = function (argv) {
 
-  debug(`arguments ${argv}`);
+  debug(`arguments ${JSON.stringify(argv)}`);
   let Yaml = new YAML();
   var Q = require('q');
   var Stacks = require('./stacks');
-  var nodejs = Stacks.getStack("nodejs");
+  var nodejs = Stacks.getStack(argv.stack);
+  if (!nodejs){
+    console.log(`${argv.stack} stack not found`);
+    return process.exit("stack not found");
+  }
+
   debug(`nodejs : ${JSON.stringify(nodejs)}`);
 
   Q.nfcall(Yaml.addStack.bind(Yaml), nodejs).then(Yaml.save.bind(Yaml, null,  (err, data)=>{
