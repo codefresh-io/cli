@@ -8,7 +8,7 @@ var prettyjson = require('prettyjson');
 var getBuilds;
 module.exports = function(info){
 
-  let buildUrl =  `${info.url}/api/builds?limit=10&page=1&account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}&type=webhook`;
+  let buildUrl =  `${info.url}/api/workflow?limit=10&page=1&account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}&type=webhook`;
   debug('buildUrl:' + buildUrl);
 
 

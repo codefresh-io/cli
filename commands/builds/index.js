@@ -35,8 +35,8 @@ exports.handler = function (argv) {
   var info = {};
   info.url = argv.url;
   info.account = argv.account;
-  info.repoOwner = repo[0];
-  info.repoName = repo[1];
+  info.repoOwner = argv.repoOwner;
+  info.repoName = argv.repo;
 
 
   //https://g.codefresh.io/api/builds/?limit=10&page=1&type=webhook
