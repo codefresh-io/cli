@@ -1,6 +1,7 @@
 // #! /usr/bin/env node
 
   var yargs = require("yargs");
+  var path  = require('path');
 
   process.on('uncaughtException', function (err) {
     console.log(err);
@@ -14,14 +15,20 @@
     .command('images', 'bring all images of my account')
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .demand(1, "must provide a valid command")
-    .option('token', {
-        alias: 'token',
+    .option('tokenFile', {
         demand: true,
-        default: 'accessToken.json',
+        default: path.resolve(process.env.HOME,'.codefresh/accessToken.json'),
         describe: 'access token file',
         type: 'string',
         global : true
     })
+    .option('accessToken', {
+          alias: 'token',
+          demand: false,
+          describe: 'access token',
+          type: 'string',
+          global : true
+      })
     .option('loglevel', {
         alias: 'log',
         demand : true,

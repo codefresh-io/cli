@@ -1,6 +1,6 @@
 // my-module.js
 'use strict';
-console.log('login');
+
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var assert  = require('assert');
@@ -17,7 +17,9 @@ exports.builder = function (yargs) {
     }).option('account', {
       alias: 'a'
     }).option('repo', {
-      alias: 'p'
+      alias: 'r'
+    }).option('repoOwner', {
+      alias: 'o'
     })
   }
 
@@ -39,7 +41,7 @@ exports.handler = function (argv) {
 
   //https://g.codefresh.io/api/builds/?limit=10&page=1&type=webhook
 
-  var login = new Login(argv.user, argv.password, argv.url, argv.token);
+  var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
   var builds  = require('./command')(info);
 
   login.connect().then(builds.bind(login.token), (err)=>{
