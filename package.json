@@ -27,7 +27,9 @@
     "rimraf": "^2.3.2",
     "superagent": "^1.8.3",
     "swig": "^1.4.2",
-    "yargs": "^4.7.0"
+    "yargs": "^4.7.0",
+    "superagent-use": "^0.0.1",
+    "jsonfile":"^2.3.1"
   },
   "devDependencies": {
     "promisify-es6": "^1.0.1"
