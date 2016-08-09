@@ -13,6 +13,7 @@
     .command('me', 'check if i am logged in')
     .command('builds' , 'bring list of current builds', require('./commands/builds'))
     .command('images', 'bring all images of my account')
+    .command('compositions', 'add/remove/update/run composition in my account', require('./commands/compositions'))
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .demand(1, "must provide a valid command")
     .option('tokenFile', {
