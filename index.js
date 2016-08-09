@@ -14,6 +14,7 @@
     .command('builds' , 'bring list of current builds', require('./commands/builds'))
     .command('images', 'bring all images of my account')
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
+    .command('composition', 'docker composition commands', require('./commands/compositions'))
     .demand(1, "must provide a valid command")
     .option('tokenFile', {
         demand: true,

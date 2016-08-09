@@ -12,7 +12,7 @@ describe('login', function(){
    var login;
    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NzI4YjZhYmM3ZjBkMDA2MDA3NzY1MzIiLCJhY2NvdW50SWQiOiI1NzBhMjE0ZWEwOGUyODA2MDA1ODUxZDIiLCJpYXQiOjE0NzAyMjk1MTUsImV4cCI6MTQ3MjgyMTUxNX0.jnJMWiSe-XdBowgHK3T_JNlm7RIPlEIoP5XR_scpjgE";
    beforeEach ((done)=>{
-      login = new Login('verchol', 'oleg1314', url, {token:token});
+      login = new Login(url, {token:token});
       done();
 
    });
