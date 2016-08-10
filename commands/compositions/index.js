@@ -10,25 +10,37 @@ var assert  = require('assert');
 exports.command = 'compositions [account] <operation> <compositionFile>';
 exports.describe = 'compositions in Codefresh';
 
+const formatPayload = {
+    isAdvanced: false,
+    vars: [{"key":"test_key", "value":"test_value"}],
+    yamlJson: "path to your composition.yml",
+    name: "string"
+};
+
+const formatVars = [{"key":"", "value":""}];
+
 exports.builder = function (yargs) {
     return yargs.option('url', {
         alias: 'url',
         default: 'https://g.codefresh.io'
     }).option('account', {
         alias: 'a'
-    }).option('yamlJson', {
-        alias: 'yaml'
-    }).option('name', {
-        alias: 'name'
     }).option('vars', {
-        default: []
-    }).option('advanced',{
-        default: true
-    }).option('compositionFile',{
-
+        default: [],
+        describe: 'composition variables. Format ' + JSON.stringify(formatVars)
+    }).option('payload',{
+        type: 'string',
+        describe: 'path to file.json. Content of the file in format:\n' + JSON.stringify(formatPayload)
     }).option('operation',{
-        default: 'none'
+        demand: true,
+        type: 'string',
+        describe: 'available the following operations with composition add/run/getAll/remove'
+    }).option('id', {
+        type: 'string',
+        describe: 'index of composition that you want to remove'
     })
+        .help("h")
+        .alias("h","help");
 };
 
 exports.handler = function (argv) {
@@ -40,7 +52,7 @@ exports.handler = function (argv) {
     debug(`${argv.name}`);
     debug(`${argv.vars}`);
     debug(`${argv.advanced}`);
-    //debug(`${argv.payload}`);
+    debug(`${argv.payload}`);
 
     var info = {
         url: argv.url,

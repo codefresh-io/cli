@@ -40,4 +40,4 @@
     })
     .help("h")
     .alias("h", "help")
-    .argv
+    .argv;

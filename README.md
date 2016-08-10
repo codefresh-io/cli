@@ -1,3 +1,3 @@
 # cf-cli
 
-## Codefres command line manager
+## Codefresh command line manager
