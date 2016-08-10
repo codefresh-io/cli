@@ -16,7 +16,7 @@ exports.builder = function (yargs) {
        alias: 'rm'
     })
     .option('name', {
-   
+
     }).option('file', {
       alias: 'f',
       default : 'docker-compose.yaml'
@@ -25,6 +25,10 @@ exports.builder = function (yargs) {
 exports.handler = function (argv) {
   debug(`arguments are ${JSON.stringify(argv)}`);
   var command = new Command({accessToken : argv.accessToken,  url:argv.url});
-
+  command.run(argv).then(()=>{
+    console.log('action completed');
+  }, (err)=>{
+     console.log(`action failed with error ${err}`);
+})
 
 }

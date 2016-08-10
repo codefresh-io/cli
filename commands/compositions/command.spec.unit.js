@@ -10,6 +10,7 @@ var _           = require('lodash');
 
 
 describe('compositions test', ()=>{
+
   var login ;
   var url;
   var args = {"accessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NTJlOTQyMjM4MjQ4MzFkMDBiMWNhM2UiLCJhY2NvdW50SWQiOiI1NjcyZDhkZWI2NzI0YjZlMzU5YWRmNjIiLCJpYXQiOjE0NzAyNTkyNDUsImV4cCI6MTQ3Mjg1MTI0NX0.Sm1nKCDzkFkuLHRaAg4o8bLsYATOOrRzDHZRtKylJoI"}
@@ -41,7 +42,7 @@ describe('compositions test', ()=>{
         }).then(done , done);
       })
 
-  it('create new composition', (done)=>{
+   it('create new composition', (done)=>{
         //https://g-staging.codefresh.io/api/builds/?limit=10&page=1&repoOwner=testingGal&repoName=lets-chat&type=webhook
            var data = {
             "isAdvanced": false,
@@ -72,7 +73,37 @@ describe('compositions test', ()=>{
 
       }).then(done , done);
   })
+   it.only('read FromYaml tests', (done)=>{
 
+        var compose = path.resolve(__dirname , './test/docker-compose.yaml');
+        command.readYaml(compose).then((content)=>{
+           var yaml = require('js-yaml');
+           assert(content);
+           console.log(`${JSON.stringify(content)}`)
+           var doc = yaml.safeLoad(content);
+           console.log(doc);
+           assert.equal(doc.version, 2);
+           assert.equal(_.get(doc, 'services.cfrouter.build'), '../cf-router');
+        }).done(done , done);
 
+   });
+   it('run', (done)=>{
 
-   })
+      var argv =  {"_":["composition"],"h":false,
+      "help":false,"add": true, "file":"/Users/verchol/dev/mainProduct/cf-cli/codefresh.yml",
+      "f":"/Users/verchol/dev/mainProduct/cf-cli/codefresh.yml",
+      "tokenFile":"/Users/verchol/.codefresh/accessToken.json",
+      "loglevel":"error","log":"error","$0":"index.js"}
+
+      debug(`arguments are ${JSON.stringify(argv)}`);
+
+      var command = new Command({accessToken : argv.accessToken,  url:argv.url});
+
+      command.run(argv).then(()=>{
+        console.log('action completed');
+      }, (err)=>{
+         console.log(`action failed with error ${err}`)
+      }).done(done, done);
+   });
+
+})

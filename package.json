@@ -18,6 +18,7 @@
     "filewalker": "^0.1.2",
     "gift": "^0.5.0",
     "gulp-bump": "^2.2.0",
+    "js-yaml": "^3.6.1",
     "json2yaml": "^1.1.0",
     "lodash": "^4.14.0",
     "ncp": "^2.0.0",

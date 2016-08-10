@@ -16,11 +16,14 @@ function Composition(info){
 
 Composition.prototype.run = function(argv){
    if (argv.add)
-    return this.readYaml(argv.file).then(create.bind(this));
+    return this.readYaml(argv.file).then(this.create.bind(this));
+
+   return Q.reject(`not supported flag ${JSON.stringify(argv)}`);
 }
 Composition.prototype.get = function(){
 
    debug(`get composition on url : ${this.url}`);
+
    var p = new Promise((resolve, reject)=>{
     request
     .get(this.url)
