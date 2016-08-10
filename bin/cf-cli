@@ -1,0 +1,4 @@
+#!/bin/bash
+echo -n "Enter a node.js script to run > "
+read text
+node "$text"
