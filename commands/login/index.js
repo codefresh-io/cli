@@ -32,7 +32,7 @@ exports.handler = function (argv) {
         .then((user) => {
             assert(login.token);
             debug(`after successfull login ${JSON.stringify(user)}`);
-            console.log(`User '${user}' is succesfully logged in`);
+            console.log(`User '${user}' is succesfully logged in ${argv.url}`);
             process.exit(0);
         }, (error) => {
             console.log(`${error}`);

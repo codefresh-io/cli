@@ -5,6 +5,7 @@
 
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
+var _       = require('lodash');
 var assert  = require('assert');
 
 exports.command = 'compositions [account] <operation>';
@@ -18,6 +19,10 @@ const formatPayload = {
 };
 
 const formatVars = [{"key":"", "value":""}];
+var allOperations = [
+    'add', 'run',
+    'getAll', 'remove'
+];
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
@@ -62,6 +67,10 @@ exports.handler = function (argv) {
         operation: argv.operation,
         id: argv.id // remove composition
     };
+
+    if(!_.includes(allOperations, argv.operation)) {
+        throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
+    }
 
     var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
     var compositions;

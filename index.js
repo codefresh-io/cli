@@ -13,7 +13,7 @@ var argv = yargs.usage("$0 command")
     .command('builds' , 'bring list of current builds', require('./commands/builds'))
     .command('images', 'bring all images of my account')
     .command('compositions', 'add/remove/update/run composition in my account', require('./commands/compositions'))
-    //.command('environments', 'getAll/ environment', require('./commands/environments/new'))
+    .command('environments', 'getAll/ environment', require('./commands/environments/new'))
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .demand(1, "must provide a valid command")
     .option('tokenFile', {
