@@ -6,6 +6,15 @@ var request   = require('superagent-use')
 var prettyjson = require('prettyjson');
 var Q          = require('q')
 var fs         = require('fs');
+var assert     = require('assert');
+
+
+const CompositionModel =  {
+          "isAdvanced": undefined, //booleadn
+          "vars": undefined, //array
+          "name": undefined, //string
+          "yamlJson" : undefined
+}
 
 function Composition(info){
   this.url = `${info.url}/api/compositions`;
@@ -15,8 +24,16 @@ function Composition(info){
 }
 
 Composition.prototype.run = function(argv){
-   if (argv.add)
-    return this.readYaml(argv.file).then(this.create.bind(this));
+   if (argv.add){
+    debug(`adding new composition with name ${argv.name}`);
+    return this.readYaml(argv.file).then((yaml)=>{
+      debug('creating create composition model');
+        return {
+          name : argv.name,
+          yamlJson : yaml
+        }
+    }).then(this.create.bind(this));
+  }
 
    return Q.reject(`not supported flag ${JSON.stringify(argv)}`);
 }
@@ -70,6 +87,19 @@ Composition.prototype.create = function(data){
    //_.defaults(data, 'data.yaml', "./docker-compose.yaml");
 
    debug(`creaate composition on url : ${this.url} with data ${JSON.stringify(data)}`);
+
+
+   var model = _.clone(CompositionModel);
+
+   _.set(data, 'name', data.name);
+   _.set(data, 'isAdvanced', data.isAdvanced);
+   _.set(data, 'vars', data.vars);
+   _.set(data, "yamlJson", data.yaml);
+
+    assert(data.name);
+
+
+
    var p = new Promise((resolve, reject)=>{
     request
     .post(this.url)
@@ -88,8 +118,6 @@ Composition.prototype.create = function(data){
           console.log('error:'  + err);
           return reject(err);
         }
-
-
 
         resolve(res.body);
     });

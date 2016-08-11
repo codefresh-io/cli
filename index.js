@@ -16,6 +16,13 @@
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .command('composition', 'docker composition commands', require('./commands/compositions'))
     .demand(1, "must provide a valid command")
+    .option('url', {
+          alias: 'u',
+          demand: true,
+          describe: 'url must be provides',
+          type: 'string'
+    })
+    .default('url', 'https://g.codefresh.io')
     .option('tokenFile', {
         demand: true,
         default: path.resolve(process.env.HOME,'.codefresh/accessToken.json'),

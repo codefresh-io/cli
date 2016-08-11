@@ -41,4 +41,9 @@
              fail-fast: false
              dockerfile: "Dockerfile"
              image-name: "verchol/cf-cli"
-             tag: "latest"
+             tag: ${{CF_BRANCH}}
+
+     deploy_kubernetis:
+            image : "kub_deployer"
+            commands:
+              -  cbtl verchol/${{CF_IMAGE:CF_TAG}}
