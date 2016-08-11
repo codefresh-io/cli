@@ -1,9 +1,12 @@
 {
   "name": "cf-cli",
   "version": "0.1.0",
-  "description": "codefresh command line utility",
+  "description": "Codefresh command line utility",
   "main": "index.js",
-  "bin": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "cf-cli":"index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },

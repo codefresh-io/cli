@@ -10,8 +10,6 @@ program
         console.log('setup for %s env(s) with %s mode', env, mode);
     });
 
-return ;
-
 var utils   = require('../lib/utils'),
     fs      = require('fs'),
     path      = require('path'),

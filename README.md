@@ -8,17 +8,18 @@ Go to the root of `cf-cli` and run the command
 
 ```
 npm install
+npm link
 ```
 
 Now you can start to use `cf-cli`. The template for running commands looks like this
 
 ```
-node index.js <command> <options>
+cf-cli <command> <options>
 ```
 
 To see help text, you can run:
 
 ```
-node index.js --help
-node index.js <command> --help
+cf-cli --help
+cf-cli <command> --help
 ```

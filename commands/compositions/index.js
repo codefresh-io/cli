@@ -7,7 +7,7 @@ var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var assert  = require('assert');
 
-exports.command = 'compositions [account] <operation> <compositionFile>';
+exports.command = 'compositions [account] <operation>';
 exports.describe = 'compositions in Codefresh';
 
 const formatPayload = {
