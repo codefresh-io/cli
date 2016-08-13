@@ -10,10 +10,10 @@ var assert     = require('assert');
 
 
 const CompositionModel =  {
-          "isAdvanced": undefined, //booleadn
-          "vars": undefined, //array
-          "name": undefined, //string
-          "yamlJson" : undefined
+          "isAdvanced": false, //booleadn
+          "vars": [], //array
+          "name": "", //string
+          "yamlJson" : ""
 }
 
 function Composition(info){
@@ -26,12 +26,15 @@ function Composition(info){
 Composition.prototype.run = function(argv){
    if (argv.add){
     debug(`adding new composition with name ${argv.name}`);
+
     return this.readYaml(argv.file).then((yaml)=>{
-      debug('creating create composition model');
+      debug(`creating create composition model with yaml ${yaml}`);
         return {
-          name : argv.name,
-          yamlJson : yaml
-        }
+            isAdvanced : argv.isAdvance || false,
+            name : argv.name,
+            vars :  argv.vars || [],
+            yamlJson  : yaml
+          }
     }).then(this.create.bind(this));
   }
 
@@ -60,7 +63,6 @@ Composition.prototype.get = function(){
         }
 
 
-
         resolve(res.body);
     });
   }).catch((err)=>{
@@ -77,7 +79,9 @@ Composition.prototype.readYaml = function(composeFile){
   return Q.nfcall(fs.readFile.bind(fs), composeFile).then((data)=>{
     self.yamlFile = data;
     var b = new Buffer(data);
-    return b.toString();
+    var yaml  = b.toString();
+ 
+    return yaml;
   }, (err)=>{
     throw new Error(err);
   })
@@ -86,24 +90,34 @@ Composition.prototype.readYaml = function(composeFile){
 Composition.prototype.create = function(data){
    //_.defaults(data, 'data.yaml', "./docker-compose.yaml");
 
-   debug(`creaate composition on url : ${this.url} with data ${JSON.stringify(data)}`);
 
-
+   var model = data;
+  /*
    var model = _.clone(CompositionModel);
 
-   _.set(data, 'name', data.name);
-   _.set(data, 'isAdvanced', data.isAdvanced);
-   _.set(data, 'vars', data.vars);
-   _.set(data, "yamlJson", data.yaml);
+   _.set(model, 'name', data.name);
+   _.set(model, 'isAdvanced', data.isAdvanced);
+   _.set(model, 'vars', data.vars);
+   _.set(model, "yamlJson", data.yaml);
 
-    assert(data.name);
+*/
+
+    assert(model.name);
+
+   debug('=====================================================');
+   debug(`create composition on url : ${this.url} with name ${JSON.stringify(model.namel)}`);
+   debug('=====================================================');
+   debug(`composition model :  ${JSON.stringify(model)}`);
+   debug('=====================================================');
+   debug(`input data :  ${JSON.stringify(data)}`);
+   debug('=====================================================');
 
 
 
    var p = new Promise((resolve, reject)=>{
     request
     .post(this.url)
-    .send(data)
+    .send(model)
     .on('request', function(req) {
      console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
    })

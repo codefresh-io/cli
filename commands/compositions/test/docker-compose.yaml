@@ -5,7 +5,7 @@ services:
       labels:
         - "io.codefresh.owner=codefresh"
       ports:
-        - 80:80
+        - 80
       environment:
         NODE_ENV: development-docker
       links:

@@ -97,13 +97,13 @@ var args = {"accessToken": vercholGithub}
    it.only('create composition from file', (done)=>{
 
       var argv =  {"_":["composition"],"h":false,
-      "help":false,"add": true, "file":"/Users/verchol/dev/mainProduct/cf-cli/codefresh.yml",
-      "f":"/Users/verchol/dev/mainProduct/cf-cli/codefresh.yml",
+      "help":false,"add": true, "file":"/Users/verchol/dev/mainProduct/cf-cli/commands/compositions/test/docker-compose.yaml",
+      "f":"/Users/verchol/dev/mainProduct/cf-cli/commands/compositions/test/docker-compose.yaml",
       "tokenFile":"/Users/verchol/.codefresh/accessToken.json",
-      "loglevel":"error","log":"error","$0":"index.js", "url":"http://g.codefresh.io"};
+      "loglevel":"error","log":"error","$0":"index.js", "url":"https://g.codefresh.io"};
 
       debug(`arguments are ${JSON.stringify(argv)}`);
-
+      argv.name =  "oleg1.1.8";
       var command = new Command({accessToken : args.accessToken,  url:argv.url});
 
       command.run(argv).then(()=>{
@@ -113,5 +113,14 @@ var args = {"accessToken": vercholGithub}
          throw err;
       }).done(done, done);
    });
+
+   it('test ', ()=>{
+     var a =  {}
+     _.set(a, "status", "works");
+     console.log(JSON.stringify(a));
+
+     assert.equal(a.status, "works");
+
+   })
 
 })
