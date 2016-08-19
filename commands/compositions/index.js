@@ -33,7 +33,7 @@ exports.builder = function (yargs) {
     }).option('vars', {
         default: [],
         describe: 'composition variables. Format ' + JSON.stringify(formatVars)
-    }).option('payload',{
+    }).option('file',{
         type: 'string',
         describe: 'path to file.json. Content of the file in format:\n' + JSON.stringify(formatPayload)
     }).option('operation',{
@@ -43,29 +43,23 @@ exports.builder = function (yargs) {
     }).option('id', {
         type: 'string',
         describe: 'index of composition that you want to remove'
+    }).option('tofile',{
+        type: 'string',
+        describe: 'filename, output to file'
     })
         .help("h")
         .alias("h","help");
 };
 
 exports.handler = function (argv) {
-    console.log('running');
-    debug(`${argv.url}`);
-    debug(`${JSON.stringify(argv)}`);
-    debug(`${argv.account}`);
-    debug(`${argv.yamlJson}`);
-    debug(`${argv.name}`);
-    debug(`${argv.vars}`);
-    debug(`${argv.advanced}`);
-    debug(`${argv.payload}`);
-
     var info = {
         url: argv.url,
         account: argv.account,
         vars: argv.vars,
-        payload: argv.payload,
+        file: argv.file,
         operation: argv.operation,
-        id: argv.id // remove composition
+        id: argv.id,
+        tofile: argv.tofile
     };
 
     if(!_.includes(allOperations, argv.operation)) {

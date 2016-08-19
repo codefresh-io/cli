@@ -2,5 +2,5 @@
   "isAdvanced": false,
   "vars": [{"key":"A","value":"B"}],
   "yamlJson": "./res/composition.yml",
-  "name": "test4-composition"
+  "name": "test-test-composition"
 }

@@ -29,7 +29,7 @@ exports.builder = function (yargs) {
     }).option('imageName',{
         type: 'string',
         describe: `name of the image`
-    }).option('toFile',{
+    }).option('tofile',{
         type: 'string',
         describe: 'save results to file'
     })
@@ -45,7 +45,7 @@ exports.handler = function (argv) {
         operation: argv.operation,
         id: argv.id,
         imageName: argv.imageName,
-        toFile: argv.toFile
+        tofile: argv.tofile
     };
 
     if(!_.includes(allOperations, argv.operation)) {

@@ -5,10 +5,12 @@
 
 var debug       = require('debug')('cli-builds');
 var _           = require('lodash');
-var request     = require('superagent-use');
+var request     = require('request');
 var prettyjson  = require('prettyjson');
 var fs          = require('fs');
+var Q           = require('q');
 var path        = require('path');
+var helper      = require('../../helper/helper');
 
 var idOperations = ['get'];
 
@@ -18,39 +20,60 @@ module.exports.get = function (info) {
 
     return (token) => {
         console.log('url:' + url);
-        var p = new Promise((resolve, reject) => {
-            request
-                .get(url)
-                .on('request', function(req) {
-                    console.log('trying to connect to '  + req.url);
-                })
-                .set('Accept', 'application/json')
-                .set('X-Access-Token', token)
-                .end(function(err, res) {
-                    debug('request completed');
-                    console.log('completed');
-                    if (err) {
-                        debug(res);
-                        console.log('error:'  + err);
-                        return reject(err);
-                    }
+        var deferred = Q.defer();
+        var headers = {
+            'Accept': 'application/json',
+            'Content-Type':'application/json',
+            'X-Access-Token': token
+        };
 
-                    if(info.toFile !== undefined) {
-                        console.log('tofile:' + info.toFile);
-                        writeResults(info.toFile, res.body).then((res) => {
-                            resolve(res);
-                        }).catch((err) => {
-                            throw err;
-                        });
-                    } else {
-                        console.log(prettyjson.render(res.body));
-                        resolve(res.body);
-                    }
-                });
-        }).catch((err) => {
-                throw err;
-            });
-        return p;
+        request.get({url: url, headers: headers}, function (err, httpRes, body) {
+            if (err) {
+                deferred.reject(err);
+            }
+
+            if(info.tofile) {
+                helper.toFile(info.tofile, body);
+            } else {
+                console.log('Response body:' + prettyjson.render(body));
+                deferred.resolve(body);
+            }
+        });
+        return deferred.promise;
+
+        //var p = new Promise((resolve, reject) => {
+        //    request
+        //        .get(url)
+        //        .on('request', function(req) {
+        //            console.log('trying to connect to '  + req.url);
+        //        })
+        //        .set('Accept', 'application/json')
+        //        .set('X-Access-Token', token)
+        //        .end(function(err, res) {
+        //            debug('request completed');
+        //            console.log('completed');
+        //            if (err) {
+        //                debug(res);
+        //                console.log('error:'  + err);
+        //                return reject(err);
+        //            }
+        //
+        //            if(info.toFile !== undefined) {
+        //                console.log('tofile:' + info.toFile);
+        //                writeResults(info.toFile, res.body).then((res) => {
+        //                    resolve(res);
+        //                }).catch((err) => {
+        //                    throw err;
+        //                });
+        //            } else {
+        //                console.log(prettyjson.render(res.body));
+        //                resolve(res.body);
+        //            }
+        //        });
+        //}).catch((err) => {
+        //        throw err;
+        //    });
+        //return p;
     }
 };
 
@@ -74,21 +97,4 @@ var getUrl = function (info) {
         url = `${info.url}/api/images`;
     }
     return url;
-};
-
-var writeResults = function(pathToFile, content) {
-    var fs = require('fs');
-    var p = new Promise((resolve, reject) => {
-        fs.writeFile(pathToFile , JSON.stringify(content), (err) => {
-            if (err) {
-                console.log('error:' + err);
-                return reject(err);
-            }
-            console.log('It\'s saved!');
-            resolve(content);
-        });
-
-    });
-
-    return p;
 };

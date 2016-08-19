@@ -11,18 +11,19 @@ var command = require('./command');
 exports.command = 'environments [account] <operation>';
 exports.describe = 'environments in Codefresh';
 
+var not_implemented = ['rename'];
+
 var allOperations = [
     'stop', 'start',
     'pause', 'unpause',
     'terminate', 'status',
     'terminateAll',
-    'getAll', 'rename'];
+    'getAll'];
 
 var idOperations = [
     'stop', 'start',
     'pause', 'unpause',
-    'terminate', 'status',
-    'rename'];
+    'terminate', 'status'];
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
@@ -65,6 +66,7 @@ exports.handler = function (argv) {
     switch(argv.operation) {
         case 'terminateAll':
             info.id = 'all';
+            info.operation = 'terminate';
         case 'status':
         case 'stop':
         case 'start':
@@ -72,7 +74,6 @@ exports.handler = function (argv) {
         case 'unpause':
         case 'terminate':
         case 'getAll':
-        case 'rename':
             environments = command.get(info);
             break;
     }
