@@ -5,24 +5,28 @@ var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var assert  = require('assert');
 
+exports.command = 'builds [account] <repo>';
 
-exports.command = 'builds [account] <repo>'
-
-exports.describe = 'build in codefresh '
+exports.describe = 'build in codefresh ';
 
 exports.builder = function (yargs) {
-    return yargs.option('url', {
-      alias: 'url',
-      default: 'https://g.codefresh.io'
-    }).option('account', {
-      alias: 'a'
-    }).option('repo', {
-      alias: 'r'
-    }).option('repoOwner', {
-      alias: 'o'
-    })
-  }
-
+  return yargs.option('url', {
+    alias: 'url',
+    default: 'https://g.codefresh.io'
+  }).option('account', {
+    demand: true,
+    alias: 'a',
+    describe: 'account name'
+  }).option('repo', {
+    demand: true,
+    alias: 'r',
+    describe: 'repo name'
+  }).option('repoOwner', {
+    demand: true,
+    alias: 'o',
+    describe: 'repo owner'
+  })
+};
 
 exports.handler = function (argv) {
   console.log('running');
@@ -31,13 +35,12 @@ exports.handler = function (argv) {
   debug(`${argv.account}`);
   debug(`${argv.repo}`);
 
-  let repo = argv.repo.split('/');
+  //let repo = argv.repo.split('/');
   var info = {};
   info.url = argv.url;
   info.account = argv.account;
   info.repoOwner = argv.repoOwner;
   info.repoName = argv.repo;
-
 
   //https://g.codefresh.io/api/builds/?limit=10&page=1&type=webhook
 
@@ -48,5 +51,5 @@ exports.handler = function (argv) {
     debug('error:' + err);
     process.exit(err);
   });
-  }
-  // do something with argv.
+};
+// do something with argv.
