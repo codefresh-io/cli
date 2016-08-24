@@ -8,148 +8,147 @@ var path      = require('path');
 
 var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json')
 function Login(access, url , user, pwd) {
- //{url: url, token :token,  tokenFile : accessTokenFile)
-  this.url  = url;
-  this.user = user;
-  this.pwd = pwd;
-  if (!access)
-    access = {}
-  _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
-  assert(access.token);
+    //{url: url, token :token,  tokenFile : accessTokenFile)
+    this.url  = url;
+    this.user = user;
+    this.pwd = pwd;
+    if (!access)
+        access = {}
+    _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
+    //assert(access.token); // todo get output 'undefined == true'
+    this.accessTokenFile =  access.file;
+    this.token = access.token;
+    var self = this;
 
-  this.accessTokenFile =  access.file;
-  this.token = access.token;
-  var self = this;
+    debug(`${url}, ${user}, ${pwd}, ${access.file}, ${access.token}`);
 
-  debug(`${url}, ${user}, ${pwd}, ${access.file}, ${access.token}`);
-
-  if (this.token)
-      persistToken(this.token, this.accessTokenFile);
+    if (this.token)
+        persistToken(this.token, this.accessTokenFile);
 }
 
 var persistToken = function(token, tokenFile){
-  debug(`persistToken ${token} into ${tokenFile}`);
-  var fs = require('fs');
-  var p = new Promise((resolve, reject)=>{
-  fs.writeFile(tokenFile ,JSON.stringify({accessToken:token}),(err) => {
+    debug(`persistToken ${token} into ${tokenFile}`);
+    var fs = require('fs');
+    var p = new Promise((resolve, reject)=>{
+        fs.writeFile(tokenFile ,JSON.stringify({accessToken:token}),(err) => {
 
-  if (err)
-  {
-    debug(`error: ${err}`);
+            if (err)
+            {
+                debug(`error: ${err}`);
 
-    return reject(err);
-  }
-    console.log('It\'s saved!');
-  resolve(token);
-});
+                return reject(err);
+            }
+            console.log('It\'s saved!');
+            resolve(token);
+        });
 
-});
+    });
 
-return p;
+    return p;
 }
 
 Login.prototype.resetToken = function(){
-  //reset file
-  throw new Error('not implemented');
+    //reset file
+    throw new Error('not implemented');
 }
 Login.prototype.connect= function(){
 
 
-  var self = this;
-  var url = util.format('%s/api/auth/local', this.url);
-  var accessTokenPromise  = new Promise((resolve ,reject, progress)=>{
-    debug('in execute function');
+    var self = this;
+    var url = util.format('%s/api/auth/local', this.url);
+    var accessTokenPromise  = new Promise((resolve ,reject, progress)=>{
+        debug('in execute function');
 
-      var accessTokenFile = path.resolve(self.accessTokenFile);
-      debug(`read from ${self.accessTokenFile}`);
+        var accessTokenFile = path.resolve(self.accessTokenFile);
+        debug(`read from ${self.accessTokenFile}`);
 
-      jsonfile.readFile(accessTokenFile,  (err, obj) =>{
-        if (err){
-           debug(err + 'rejected accessToken');
-           return reject('user not provided and not token found')
-        }
-         debug('accessToken row ' + JSON.stringify(obj));
-         self.token =  obj.accessToken ;
-         debug(`AccessToken=${obj.accessToken}`);
-         assert(self.token);
-         return resolve({token:self.token})
-      })
-      return;
-  })
- .then((data)=>{
-      debug('resolved with token' + data.token);
-      return data.token;
- }, (data) =>{
-   debug('no token detected, trying to login with user / password');
-  return new Promise ((resolve, reject) => {
+        jsonfile.readFile(accessTokenFile,  (err, obj) =>{
+            if (err){
+                debug(err + 'rejected accessToken');
+                return reject('user not provided and not token found')
+            }
+            debug('accessToken row ' + JSON.stringify(obj));
+            self.token =  obj.accessToken ;
+            debug(`AccessToken=${obj.accessToken}`);
+            assert(self.token);
+            return resolve({token:self.token})
+        })
+        return;
+    })
+        .then((data)=>{
+            debug('resolved with token' + data.token);
+            return data.token;
+        }, (data) =>{
+            debug('no token detected, trying to login with user / password');
+            return new Promise ((resolve, reject) => {
 
-   request
-  .post(url)
-  .send({ userName: self.user, password: self.pwd})
-  .on('request', function(req) {
-   console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
-   return req;
-   })
-  //.set('X-API-Key', 'foobar')
-  .set('Accept', 'application/json')
-  .end(function(err, res){
-      debug('request completed! ')
-      if (err){
+                request
+                    .post(url)
+                    .send({ userName: self.user, password: self.pwd})
+                    .on('request', function(req) {
+                        console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
+                        return req;
+                    })
+                    //.set('X-API-Key', 'foobar')
+                    .set('Accept', 'application/json')
+                    .end(function(err, res){
+                        debug('request completed! ')
+                        if (err){
 
-        debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
-        return reject(err);
-      }
-      debug('new token created ' + res);
-      self.token = res.body.accessToken;
+                            debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
+                            return reject(err);
+                        }
+                        debug('new token created ' + res);
+                        self.token = res.body.accessToken;
 
-      return persistToken(self.token);
-  });
-}).catch((err)=>{
-  debug('UNHANDLED error ' + err);
-  throw err;
-  //   throw err;
-})
-});
-assert(accessTokenPromise);
+                        return persistToken(self.token);
+                    });
+            }).catch((err)=>{
+                    debug('UNHANDLED error ' + err);
+                    throw err;
+                    //   throw err;
+                })
+        });
+    assert(accessTokenPromise);
 
-return accessTokenPromise;
+    return accessTokenPromise;
 }
 
 Login.prototype.whoami= function(){
-  throw new Error('not implemented');
+    throw new Error('not implemented');
 }
 
 Login.prototype.getUserInfo = function(){
 
 
-  var self = this;
-  var p = new Promise((resolve, reject)=>{
-  var url = util.format('%s/api/user', self.url);
-  debug(`token: ${self.token}`);
-  if (!self.token)
-  return reject ('no token provided');
+    var self = this;
+    var p = new Promise((resolve, reject)=>{
+        var url = util.format('%s/api/user', self.url);
+        debug(`token: ${self.token}`);
+        if (!self.token)
+            return reject ('no token provided');
 
-  request
-  .get(url)
-  .set('X-Access-Token', self.token)
-  .set('Accept', 'application/json')
-  .end(function(err, res){
+        request
+            .get(url)
+            .set('X-Access-Token', self.token)
+            .set('Accept', 'application/json')
+            .end(function(err, res){
 
-    if (err){
-        debug(`requst ended with error: ${err} , ${JSON.stringify(res.body)}`);
+                if (err){
+                    debug(`requst ended with error: ${err} , ${JSON.stringify(res.body)}`);
 
-    return reject(err);
+                    return reject(err);
 
-   }
-    debug(`response is ${JSON.stringify(res.body)}`);
+                }
+                debug(`response is ${JSON.stringify(res.body)}`);
 
-    var profile =  _.get(res.body, 'shortProfile.userName')
-    debug(`you logged in is as ${profile}`);
-    return resolve(profile);
-  });
- })
+                var profile =  _.get(res.body, 'shortProfile.userName')
+                debug(`you logged in is as ${profile}`);
+                return resolve(profile);
+            });
+    })
 
-  return p;
+    return p;
 }
 
 module.exports  = Login;

@@ -12,8 +12,8 @@ var fs              = require('fs');
 var path            = require('path');
 var Q               = require('q');
 var Composition     = require('./composition');
-var Environments    = require('../environments/new/command');
-var helper          = require('../../helper/helper');
+var Environments    = require('../../environments/new/command');
+var helper          = require('../../../helper/helper');
 
 const formatPayload = {
     isAdvanced: false,
@@ -23,7 +23,6 @@ const formatPayload = {
 };
 
 module.exports.add = function(info) {
-    console.log('file:' + info.file);
     if(info.file == undefined) {
         throw new Error('Please, specify --file [path to file.json]. Format file.json is\n' +
             prettyjson.render(formatPayload));
@@ -38,10 +37,7 @@ module.exports.add = function(info) {
         throw new Error(`File ${info.file} doesn't exist`);
     }
 
-    console.log('payload:' + JSON.stringify(payload));
-
     return (token) => {
-        console.log('adding the composition by url:' + compositionUrl);
         var deferred = Q.defer();
 
         var headers = {
@@ -55,10 +51,11 @@ module.exports.add = function(info) {
                 if (err) {
                     deferred.reject(err);
                 }
+
                 if(info.tofile) {
                     helper.toFile(info.tofile, JSON.parse(body));
                 } else {
-                    console.log('Response body:' + prettyjson.render(JSON.parse(body)));
+                    console.log('Response body:\n' + prettyjson.render(body));
                 }
                 deferred.resolve(body);
             });
@@ -109,7 +106,7 @@ module.exports.getAll = function (info) {
             if(info.tofile) {
                 helper.toFile(info.tofile, JSON.parse(body));
             } else {
-                console.log('Response body:'+prettyjson.render(body));
+                console.log('Response body:'+prettyjson.render(JSON.parse(body)));
             }
             deferred.resolve(body);
         });

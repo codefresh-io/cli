@@ -4,7 +4,7 @@
 'use strict';
 
 var debug   = require('debug')('login->index');
-var Login   = require('../login/connector');
+var Login   = require('../../login/connector');
 var _       = require('lodash');
 var assert  = require('assert');
 
