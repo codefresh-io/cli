@@ -1,143 +1,188 @@
+/**
+ * Created by nikolai on 9.8.16.
+ * compositions
+ */
 'use strict';
 
-var debug     = require('debug')('compose-command');
-var _         = require('lodash');
-var request   = require('superagent-use')
-var prettyjson = require('prettyjson');
-var Q          = require('q')
-var fs         = require('fs');
-var assert     = require('assert');
+var debug           = require('debug')('cli-builds');
+var _               = require('lodash');
+var request         = require('request');
+var prettyjson      = require('prettyjson');
+var fs              = require('fs');
+var path            = require('path');
+var Q               = require('q');
+var Composition     = require('./composition');
+var Environments    = require('../environments/new/command');
+var helper          = require('../../helper/helper');
 
+const formatPayload = {
+    isAdvanced: false,
+    vars: [{"key":"test_key", "value":"test_value"}],
+    yamlJson: "path to your composition.yml",
+    name: "string"
+};
 
-const CompositionModel =  {
-    "isAdvanced": false, //booleadn
-    "vars": [], //array
-    "name": "", //string
-    "yamlJson" : ""
-}
-
-function Composition(info){
-    this.url = `${info.url}/api/compositions`;
-    this.token = info.accessToken;
-
-    debug(`url = ${this.url} token = ${this.token}`);
-}
-
-Composition.prototype.run = function(argv){
-    if (argv.add){
-        debug(`adding new composition with name ${argv.name}`);
-
-        return this.readYaml(argv.file).then((yaml)=>{
-            debug(`creating create composition model with yaml ${yaml}`);
-            return {
-                isAdvanced : argv.isAdvance || false,
-                name : argv.name,
-                vars :  argv.vars || [],
-                yamlJson  : yaml
-            }
-        }).then(this.create.bind(this));
+module.exports.add = function(info) {
+    console.log('file:' + info.file);
+    if(info.file == undefined) {
+        throw new Error('Please, specify --file [path to file.json]. Format file.json is\n' +
+            prettyjson.render(formatPayload));
     }
 
-    return Q.reject(`not supported flag ${JSON.stringify(argv)}`);
-}
-Composition.prototype.get = function(){
+    let compositionUrl = `${info.url}/api/compositions`;
+    let payload = {};
+    if (fs.existsSync(info.file)) {
+        payload = JSON.parse(fs.readFileSync(info.file, 'utf8'));
+        payload.yamlJson = fs.readFileSync(payload.yamlJson, 'utf8');
+    } else {
+        throw new Error(`File ${info.file} doesn't exist`);
+    }
 
-    debug(`get composition on url : ${this.url}`);
+    console.log('payload:' + JSON.stringify(payload));
 
-    var p = new Promise((resolve, reject)=>{
-        request
-            .get(this.url)
-            .on('request', function(req) {
-                console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
-            })
-            //.set('X-API-Key', 'foobar')
-            .set('Accept', 'application/json')
-            .set('X-Access-Token', this.token)
-            .end(function(err, res){
-                debug('request completed')
+    return (token) => {
+        console.log('adding the composition by url:' + compositionUrl);
+        var deferred = Q.defer();
 
-                if (err){
-                    debug(res);
-                    console.log('error:'  + err);
-                    return reject(err);
+        var headers = {
+            'Accept': 'application/json',
+            'Content-Type':'application/json',
+            'X-Access-Token': token
+        };
+
+        request.post({url: compositionUrl, headers: headers, json: payload},
+            function (err, httpRes, body) {
+                if (err) {
+                    deferred.reject(err);
                 }
-
-
-                resolve(res.body);
-            });
-    }).catch((err)=>{
-            console.error(`error occured ${err}`);
-            throw err;
-        })
-    return p;
-}
-
-Composition.prototype.readYaml = function(composeFile){
-
-    var self = this;
-
-    return Q.nfcall(fs.readFile.bind(fs), composeFile).then((data)=>{
-        self.yamlFile = data;
-        var b = new Buffer(data);
-        var yaml  = b.toString();
-
-        return yaml;
-    }, (err)=>{
-        throw new Error(err);
-    })
-}
-
-Composition.prototype.create = function(data){
-    //_.defaults(data, 'data.yaml', "./docker-compose.yaml");
-
-
-    var model = data;
-    /*
-     var model = _.clone(CompositionModel);
-     _.set(model, 'name', data.name);
-     _.set(model, 'isAdvanced', data.isAdvanced);
-     _.set(model, 'vars', data.vars);
-     _.set(model, "yamlJson", data.yaml);
-     */
-
-    assert(model.name);
-
-    debug('=====================================================');
-    debug(`create composition on url : ${this.url} with name ${JSON.stringify(model.namel)}`);
-    debug('=====================================================');
-    debug(`composition model :  ${JSON.stringify(model)}`);
-    debug('=====================================================');
-    debug(`input data :  ${JSON.stringify(data)}`);
-    debug('=====================================================');
-
-
-
-    var p = new Promise((resolve, reject)=>{
-        request
-            .post(this.url)
-            .send(model)
-            .on('request', function(req) {
-                console.log('trying to connect to '  + req.url); // => https://api.example.com/auth
-            })
-            //.set('X-API-Key', 'foobar')
-            .set('Accept', 'application/json')
-            .set('X-Access-Token', this.token)
-            .end(function(err, res){
-                debug('request completed')
-
-                if (err){
-                    debug(res);
-                    console.log('error:'  + err);
-                    return reject(err);
+                if(info.tofile) {
+                    helper.toFile(info.tofile, JSON.parse(body));
+                } else {
+                    console.log('Response body:' + prettyjson.render(JSON.parse(body)));
                 }
-
-                resolve(res.body);
+                deferred.resolve(body);
             });
-    }).catch((err)=>{
-            console.error(`error occured ${err}`);
-            throw err;
-        })
-    return p;
-}
+        return deferred.promise;
+    }
+};
 
-module.exports = Composition;
+module.exports.remove = function (info) {
+    if(info.id == undefined) {
+        throw new Error('Please, specify --id [id of a composition]');
+    }
+    let compositionUrl = `${info.url}/api/compositions/${info.id}`;
+
+    return (token) => {
+        console.log('removing the composition by url:' + compositionUrl);
+        var deferred = Q.defer();
+        var headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': token
+        };
+        request.del({url: compositionUrl, headers: headers}, function (err, httpRes, body) {
+            console.log('Response code:' + httpRes.statusCode);
+            if (err) {
+                deferred.reject(err);
+            }
+
+            console.log('Response body:'+prettyjson.render(body));
+            deferred.resolve(body);
+        });
+        return deferred.promise;
+    }
+};
+
+module.exports.getAll = function (info) {
+    let compositionUrl = `${info.url}/api/compositions`;
+
+    return (token) => {
+        console.log('get the compositions by url:' + compositionUrl);
+        var deferred = Q.defer();
+        var headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': token
+        };
+        request.get({url: compositionUrl, headers: headers}, function(err, httpRes, body) {
+            if (err) {
+                deferred.reject(err);
+            }
+            if(info.tofile) {
+                helper.toFile(info.tofile, JSON.parse(body));
+            } else {
+                console.log('Response body:'+prettyjson.render(body));
+            }
+            deferred.resolve(body);
+        });
+        return deferred.promise;
+    }
+};
+
+module.exports.run = function (info) {
+    if(info.id == undefined) {
+        throw new Error('Please, specify --id [id or name of a composition]');
+    }
+
+    return (token) => {
+        getByIdentifier(info, token).then(function (model) {
+            runCompose(info, token)
+                .then(function (res) {
+                    Environments.followEnvProgress({
+                        url: info.url,
+                        token: token,
+                        nameCompose: model.getName()
+                    }).then(function (res) {
+                        console.log(prettyjson.render(res.getPublicUrls()));
+                    });
+                }, (err) => {
+                    console.log(err);
+                    throw new Error(err);
+                });
+        });
+    };
+};
+
+var runCompose = function (info, token) {
+    var p = new Promise((resolve, reject) => {
+        var url = `${info.url}/api/compositions/${info.id}/run`,
+            headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-Access-Token': token
+            },
+            body = {
+                vars: info.vars
+            };
+
+        request.post({url: url, headers: headers, json: body}, function (err, httpRes, res) {
+            if (err) {
+                console.log('error:'  + err + '; res:' + String(res.error));
+                return reject(err);
+            }
+
+            if(!res.id) {
+                return reject(res);
+            }
+            resolve(res);
+        });
+    });
+    return p;
+};
+
+var getByIdentifier = function (info, token) {
+    var p = new Promise((resolve, reject) => {
+        var url = `${info.url}/api/compositions/${info.id}`,
+            headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-Access-Token': token
+            };
+        request.get({url: url, headers: headers}, function (err, httpResponse, body) {
+            if(err) {
+                console.log('err:' + err);
+                return reject(err);
+            }
+            resolve(new Composition.Composition(body));
+        });
+    });
+    return p;
+};

@@ -6,13 +6,18 @@ var request   = require('superagent-use');
 var jsonfile  = require('jsonfile');
 var path      = require('path');
 
-
-function Login(user, pwd, url, access) {
+var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json')
+function Login(access, url , user, pwd) {
  //{url: url, token :token,  tokenFile : accessTokenFile)
   this.url  = url;
   this.user = user;
   this.pwd = pwd;
-  this.accessTokenFile = access.file || path.resolve(process.env.HOME,'.codefresh/accessToken.json');
+  if (!access)
+    access = {}
+  _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
+  assert(access.token);
+
+  this.accessTokenFile =  access.file;
   this.token = access.token;
   var self = this;
 

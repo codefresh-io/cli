@@ -1,34 +1,96 @@
+/**
+ * Created by nikolai on 9.8.16.
+ */
 'use strict';
 
-var debug   = require('debug')('compose command');
-var Command = require('./command');
+var debug   = require('debug')('login->index');
+var Login   = require('../login/connector');
+var _       = require('lodash');
+var assert  = require('assert');
 
-debug('in composition command defintion');
+exports.command = 'compositions [account] <operation>';
+exports.describe = 'compositions in Codefresh';
 
-exports.command = 'composition <create> <name> <docker-compose-file> ';
-exports.desc = 'create codefresh docker compose';
+const formatPayload = {
+    isAdvanced: false,
+    vars: [{"key":"test_key", "value":"test_value"}],
+    yamlJson: "path to your composition.yml",
+    name: "string"
+};
+
+const formatVars = [{"key":"", "value":""}];
+var allOperations = [
+    'add', 'run',
+    'getAll', 'remove'
+];
+
 exports.builder = function (yargs) {
-    return yargs
-        .option('add', {
-
-        })
-        .option('delete', {
-            alias: 'rm'
-        })
-        .option('name', {
-
-        }).option('file', {
-            alias: 'f',
-            default : 'docker-compose.yaml'
-        })
-}
-exports.handler = function (argv) {
-    debug(`arguments are ${JSON.stringify(argv)}`);
-    var command = new Command({accessToken : argv.accessToken,  url:argv.url});
-    command.run(argv).then(()=>{
-        console.log('action completed');
-    }, (err)=>{
-        console.log(`action failed with error ${err}`);
+    return yargs.option('url', {
+        alias: 'url',
+        default: 'https://g.codefresh.io'
+    }).option('account', {
+        alias: 'a'
+    }).option('vars', {
+        default: [],
+        describe: 'composition variables. Format ' + JSON.stringify(formatVars)
+    }).option('file',{
+        type: 'string',
+        describe: 'path to file.json. Content of the file in format:\n' + JSON.stringify(formatPayload)
+    }).option('operation',{
+        demand: true,
+        type: 'string',
+        describe: 'available the following operations with composition add/run/getAll/remove'
+    }).option('id', {
+        type: 'string',
+        describe: 'index of composition that you want to remove'
+    }).option('tofile',{
+        type: 'string',
+        describe: 'filename, output to file'
     })
+        .help("h")
+        .alias("h","help");
+};
 
-}
+exports.handler = function (argv) {
+    var info = {
+        url: argv.url,
+        account: argv.account,
+        vars: argv.vars,
+        file: argv.file,
+        operation: argv.operation,
+        id: argv.id,
+        tofile: argv.tofile
+    };
+
+    if(!_.includes(allOperations, argv.operation)) {
+        throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
+    }
+
+    var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
+    var compositions;
+    switch (info.operation) {
+        case 'add':
+            compositions = require('./command').add(info);
+            break;
+        case 'remove':
+            compositions = require('./command').remove(info);
+            break;
+        case 'run':
+            compositions = require('./command').run(info);
+            break;
+        case 'getAll':
+            compositions = require('./command').getAll(info);
+            break;
+        case 'none':
+            console.log('operation is none');
+        default :
+            let err = new Error('Please, specify --operation that you want to do [add/remove/run/getAll]');
+            debug('error:' + err);
+            throw err;
+    }
+
+    login.connect().then(compositions.bind(login.token), (err) => {
+        debug('error:' + err);
+        process.exit(err);
+    });
+};

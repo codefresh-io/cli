@@ -1,13 +1,13 @@
 version: '2'
 services:
-  cfrouter:
-    build: ../cf-router
-    labels:
-      - "io.codefresh.owner=codefresh"
-    ports:
-      - 80
-    environment:
-      NODE_ENV: development-docker
-    links:
-      - cfui:cf-ui
-      - cfapi:cf-api
+    cfrouter:
+      build: ../cf-router
+      labels:
+        - "io.codefresh.owner=codefresh"
+      ports:
+        - 80
+      environment:
+        NODE_ENV: development-docker
+      links:
+        - cfui:cf-ui
+        - cfapi:cf-api
