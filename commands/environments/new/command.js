@@ -6,7 +6,6 @@
 
 var debug       = require('debug')('cli-builds');
 var _           = require('lodash');
-//var request     = require('superagent-use');
 var request     = require('request');
 
 var prettyjson  = require('prettyjson');

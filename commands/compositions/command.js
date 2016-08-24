@@ -89,32 +89,6 @@ module.exports.remove = function (info) {
             deferred.resolve(body);
         });
         return deferred.promise;
-
-        //var p = new Promise((resolve, reject) => {
-        //    request
-        //        .del(compositionUrl)
-        //        .on('request', function(req) {
-        //            console.log('trying to connect to '  + req.url);
-        //        })
-        //        .set('Accept', 'application/json')
-        //        .set('X-Access-Token', token)
-        //        .end(function(err, res) {
-        //            debug('request completed');
-        //            console.log('completed');
-        //            if (err) {
-        //                debug(res);
-        //                console.log('error:'  + err);
-        //                return reject(err);
-        //            }
-        //
-        //            console.log(prettyjson.render(res.body));
-        //            resolve(res.body);
-        //        });
-        //}).catch((err) => {
-        //        console.log('error');
-        //        throw err;
-        //    });
-        //return p;
     }
 };
 

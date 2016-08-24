@@ -19,7 +19,7 @@ var toFile = function(pathToFile, content) {
                 console.log('error:' + err);
                 return reject(err);
             }
-            console.log(`It\'s saved to file ${pathToFile}`);
+            console.log(`Output was saved to file ${pathToFile}`);
             resolve(content);
         });
 
