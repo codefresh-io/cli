@@ -1,47 +1,42 @@
-// my-module.js
-
-
 var debug   = require('debug')('login->index');
 var Login   = require('./connector');
 var assert  = require('assert');
 
 debug(' start init login commmand');
 
-exports.command = 'login [url]  <user> <pwd>'
+exports.command = 'login [url]  <user> <pwd>';
 
-exports.describe = 'login to codefresh'
+exports.describe = 'login to codefresh';
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
-      alias: 'url',
-      default: 'https://g-staging.codefresh.io'
+        alias: 'url',
+        default: 'https://g.codefresh.io'
     }).option('user', {
-      alias: 'u'
+        alias: 'u'
     }).option('password', {
-      alias: 'p'
+        alias: 'p'
     })
-  }
-
+};
 
 exports.handler = function (argv) {
-  console.log('running');
-  debug(`${argv.url}`);
-  debug(`${JSON.stringify(argv)}`);
-  debug(`${argv.user}`);
-  debug(`${argv.token}`);
+    console.log('running');
+    debug(`${argv.url}`);
+    debug(`${JSON.stringify(argv)}`);
+    debug(`${argv.user}`);
+    debug(`${argv.token}`);
 
-  login = new Login(argv.user, argv.password, argv.url, argv.token);
+    login = new Login(argv.user, argv.password, argv.url, argv);
 
-  login.connect().then(login.getUserInfo.bind(login)).then((user)=>{
-
-     assert(login.token);
-     debug(`after successfull login ${JSON.stringify(user)}`);
-     console.log(`${user.id} is succesfully logged in`);
-
-     process.exit(0);
-  }, (error)=>{
-    console.log(`${error}`);
-     process.exit(error);
-  });
-  // do something with argv.
-}
+    login.connect().then(login.getUserInfo.bind(login))
+        .then((user) => {
+            assert(login.token);
+            debug(`after successfull login ${JSON.stringify(user)}`);
+            console.log(`User '${user}' is succesfully logged in ${argv.url}`);
+            process.exit(0);
+        }, (error) => {
+            console.log(`${error}`);
+            process.exit(error);
+        });
+    // do something with argv.
+};

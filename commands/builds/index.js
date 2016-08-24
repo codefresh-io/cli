@@ -4,49 +4,83 @@
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var assert  = require('assert');
+var _       = require('lodash');
 
+exports.command = 'builds [account] <repo>';
 
-exports.command = 'builds [account] <repo>'
+exports.describe = 'build in codefresh ';
 
-exports.describe = 'build in codefresh '
+var allOperations = [
+  'getAll', 'build'
+];
 
 exports.builder = function (yargs) {
-    return yargs.option('url', {
-      alias: 'url',
-      default: 'https://g.codefresh.io'
-    }).option('account', {
-      alias: 'a'
-    }).option('repo', {
-      alias: 'r'
-    }).option('repoOwner', {
-      alias: 'o'
-    })
-  }
-
+  return yargs.option('url', {
+    alias: 'url',
+    default: 'https://g.codefresh.io'
+  }).option('account', {
+    demand: false,
+    alias: 'a',
+    describe: 'account name'
+  }).option('repo', {
+    demand: true,
+    alias: 'r',
+    describe: 'repo name'
+  }).option('repoOwner', {
+    demand: true,
+    alias: 'o',
+    describe: 'repo owner'
+  }).option('pipelineName', {
+    demand: false,
+    describe: 'name of pipeline from repo'
+  }).option('branch', {
+    demand: false,
+    describe: 'name of branch'
+  }).option('sha', {
+    demand: false,
+    describe: 'sha of commit'
+  }).option('tofile', {
+    type: 'string',
+    describe: 'save output to file'
+  })
+      .option('operation', {
+        demand: true,
+        type: 'string',
+        describe: 'available the following operations with builds getAll/build'
+      })
+      .help("h")
+      .alias("h","help");
+};
 
 exports.handler = function (argv) {
-  console.log('running');
-  debug(`${argv.url}`);
-  debug(`${JSON.stringify(argv)}`);
-  debug(`${argv.account}`);
-  debug(`${argv.repo}`);
-
-  let repo = argv.repo.split('/');
   var info = {};
   info.url = argv.url;
   info.account = argv.account;
   info.repoOwner = argv.repoOwner;
   info.repoName = argv.repo;
+  info.operation = argv.operation;
+  info.pipelineName = argv.pipelineName;
+  info.sha = argv.sha;
+  info.branch = argv.branch;
+  info.tofile = argv.tofile;
 
-
-  //https://g.codefresh.io/api/builds/?limit=10&page=1&type=webhook
+  if(!_.includes(allOperations, argv.operation)) {
+    throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
+  }
 
   var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
-  var builds  = require('./command')(info);
+  var builds;
+  switch(argv.operation) {
+    case 'build':
+      builds = require('./command').build(info);
+      break;
+    case 'getAll':
+      builds = require('./command').getAll(info);
+      break;
+  }
 
-  login.connect().then(builds.bind(login.token), (err)=>{
+  login.connect().then(builds.bind(login.token), (err) => {
     debug('error:' + err);
     process.exit(err);
   });
-  }
-  // do something with argv.
+};
