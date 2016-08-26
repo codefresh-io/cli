@@ -10,9 +10,9 @@ debugger;
 describe('login', function(){
    var url = 'https://g.codefresh.io'
    var login;
-   var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NzI4YjZhYmM3ZjBkMDA2MDA3NzY1MzIiLCJhY2NvdW50SWQiOiI1NzBhMjE0ZWEwOGUyODA2MDA1ODUxZDIiLCJpYXQiOjE0NzAyMjk1MTUsImV4cCI6MTQ3MjgyMTUxNX0.jnJMWiSe-XdBowgHK3T_JNlm7RIPlEIoP5XR_scpjgE";
+   var token = process.env.CF_TOKEN || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NzI4YjZhYmM3ZjBkMDA2MDA3NzY1MzIiLCJhY2NvdW50SWQiOiI1NzBhMjE0ZWEwOGUyODA2MDA1ODUxZDIiLCJpYXQiOjE0NzAyMjk1MTUsImV4cCI6MTQ3MjgyMTUxNX0.jnJMWiSe-XdBowgHK3T_JNlm7RIPlEIoP5XR_scpjgE";
    beforeEach ((done)=>{
-      login = new Login('verchol', 'oleg1314', url, {token:token});
+      login = new Login(url, {access:{token:token}, user : "verchol"});
       done();
 
    });
@@ -33,8 +33,9 @@ describe('login', function(){
    })
 
    it.only('get user info', function(done){
-       login.connect().then(login.getUserInfo.bind(login)).then((info)=>{
-         assert(info);
+       login.connect().then(login.getUserInfo.bind(login)).then((profile)=>{
+         assert(profile);
+         console.log(`you logged in is as ${profile}`);
          done();
        }, done);
    });

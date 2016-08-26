@@ -14,6 +14,8 @@ function Login(url, params) {
     this.pwd = params.pwd;
     if (!params.access)
         access = {}
+     else
+        access = params.access;
     _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
     //assert(access.token); // todo get output 'undefined == true'
     this.accessTokenFile =  access.file;
