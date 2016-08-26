@@ -1,4 +1,3 @@
-// my-module.js
 'use strict';
 var CFError = require('cf-errors');
 var debug   = require('debug')('login->index');

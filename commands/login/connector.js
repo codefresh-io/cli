@@ -55,7 +55,7 @@ Login.prototype.resetToken = function(){
 Login.prototype.connect= function() {
     var self = this;
     var url = util.format('%s/api/auth/local', this.url);
-    console.log('url: ' + url);
+    //console.log('url: ' + url);
     var accessTokenPromise  = new Promise((resolve ,reject) => {
         debug('in execute function');
 
