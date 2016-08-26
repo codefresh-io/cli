@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+'use strict';
 process.argv.shift();
 process.argv.shift();
 

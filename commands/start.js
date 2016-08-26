@@ -1,3 +1,4 @@
+'use strict';
 var program = require('commander');
 
 program
@@ -21,17 +22,17 @@ var rootPath = path.resolve(__dirname, '../..');
 
 var name = path.basename(process.cwd());
 
-var createFromTemplate= function(package) {
-    package.rootPath = rootPath;
-    var generator = new Generator(package, { path:tempPath });
+var createFromTemplate= function(pkg) {
+    pkg.rootPath = rootPath;
+    var generator = new Generator(pkg, { path:tempPath });
 
     return generator.process()
         .then(function() {
-            return package;
+            return pkg;
         });
 };
 
-var rmDockerCompose = function(package) {
+var rmDockerCompose = function(pkg) {
     var deferred = Q.defer();
 
     var options = {
@@ -48,7 +49,7 @@ var rmDockerCompose = function(package) {
 
     child.on('close', function (code) {
         if (code === 0) {
-            return deferred.resolve(package);
+            return deferred.resolve(pkg);
         }
         console.log('child process exited with code ' + code);
         deferred.reject(code);

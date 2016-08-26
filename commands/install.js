@@ -1,3 +1,4 @@
+'use strict';
 var program = require('commander');
 var utils   = require('../lib/utils');
 var fs      = require('fs');
@@ -50,13 +51,13 @@ var save = function(urlInfo) {
 
     if (doSave) {
         return utils.loadPackage()
-            .then(function(package) {
-                var repos = package.repos || {};
-                package.repos = repos;
+            .then(function(pkg) {
+                var repos = pkg.repos || {};
+                pkg.repos = repos;
 
                 repos[urlInfo.name] = urlInfo.toString() + ":" + urlInfo.sha;
 
-                return utils.savePackage(package);
+                return utils.savePackage(pkg);
             });
 
     } else {
@@ -79,10 +80,10 @@ var install = function(repoUrl) {
 
 var installAll = function() {
     return utils.loadPackage()
-        .then(function (package) {
+        .then(function (pkg) {
             var deferred = Q.defer();
 
-            var repos = package.repos || {};
+            var repos = pkg.repos || {};
 
             var keys = Object.keys(repos);
             var index = 0;
