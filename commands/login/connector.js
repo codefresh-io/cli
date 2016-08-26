@@ -7,12 +7,12 @@ var jsonfile  = require('jsonfile');
 var path      = require('path');
 
 var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json')
-function Login(access, url , user, pwd) {
+function Login(url, params) {
     //{url: url, token :token,  tokenFile : accessTokenFile)
     this.url  = url;
-    this.user = user;
-    this.pwd = pwd;
-    if (!access)
+    this.user = params.user;
+    this.pwd = params.pwd;
+    if (!params.access)
         access = {}
     _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
     //assert(access.token); // todo get output 'undefined == true'
@@ -20,7 +20,7 @@ function Login(access, url , user, pwd) {
     this.token = access.token;
     var self = this;
 
-    debug(`${url}, ${user}, ${pwd}, ${access.file}, ${access.token}`);
+    debug(`url - ${url}, user - ${params.user}, ${params.pwd}, ${access.file}, ${access.token}`);
 
     if (this.token)
         persistToken(this.token, this.accessTokenFile);
@@ -70,7 +70,7 @@ Login.prototype.connect= function(){
             debug('accessToken row ' + JSON.stringify(obj));
             self.token =  obj.accessToken ;
             debug(`AccessToken=${obj.accessToken}`);
-            assert(self.token);
+
             return resolve({token:self.token})
         })
         return;
@@ -109,7 +109,7 @@ Login.prototype.connect= function(){
                     //   throw err;
                 })
         });
-    assert(accessTokenPromise);
+
 
     return accessTokenPromise;
 }
