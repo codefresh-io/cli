@@ -1,6 +1,5 @@
 // my-module.js
 'use strict';
-
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var assert  = require('assert');
