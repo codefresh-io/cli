@@ -9,7 +9,7 @@ var istanbul    = require('gulp-istanbul');
 var isparta     = require('isparta');
 var mocha       = require('gulp-mocha-co');
 
-gulp.task('publish', function (done) {
+gulp.task('npm', function (done) {
   spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', done);
 });
 
