@@ -55,7 +55,7 @@
   },
   "homepage": "https://github.com/codefresh-io/cf-cli#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "gulp unit_test"
   },
   "author": "Codefresh",
   "license": "ISC"
