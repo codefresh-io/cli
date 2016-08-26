@@ -4,14 +4,10 @@
  */
 'use strict';
 
-var debug       = require('debug')('cli-builds');
 var _           = require('lodash');
 var request     = require('request');
-
 var prettyjson  = require('prettyjson');
-var fs          = require('fs');
-var Q          = require('q');
-var path        = require('path');
+var Q           = require('q');
 var Environment = require('./environment');
 var helper      = require('../../../helper/helper');
 
@@ -19,6 +15,26 @@ var idOperations = [
     'status', 'stop',
     'start', 'pause',
     'unpause', 'terminate'];
+
+var validate = function (info) {
+    if(_.includes(idOperations, info.operation) && info.id === undefined) {
+        throw new Error('Please, specify --id [id of a environment]');
+    }
+
+    if(info.operation === 'rename' && info.newName === undefined) {
+        throw new Error('Please, specify --newName [the new name to assign to the environment]');
+    }
+};
+
+var getUrl = function (info) {
+    let url;
+    if(info.id !== undefined) {
+        url = `${info.url}/api/environments/${info.id}/${info.operation}`;
+    } else {
+        url = `${info.url}/api/environments`;
+    }
+    return url;
+};
 
 module.exports.get = function (info) {
     validate(info);
@@ -43,48 +59,7 @@ module.exports.get = function (info) {
             deferred.resolve(res.body);
         });
         return deferred.promise;
-    }
-};
-
-var validate = function (info) {
-    if(_.includes(idOperations, info.operation) && info.id == undefined) {
-        throw new Error('Please, specify --id [id of a environment]');
-    }
-
-    if(info.operation == 'rename' && info.newName == undefined) {
-        throw new Error('Please, specify --newName [the new name to assign to the environment]');
-    }
-};
-
-var getUrl = function (info) {
-    let url;
-    if(info.id !== undefined) {
-        url = `${info.url}/api/environments/${info.id}/${info.operation}`;
-    } else {
-        url = `${info.url}/api/environments`;
-    }
-    return url;
-};
-
-var getStatusEnv = function (info) {
-    var deferred = Q.defer();
-    console.log('info getStatusEnv:' + JSON.stringify(info));
-    var url = `${info.url}/api/environments/${info.id}/status`,
-        headers = {
-            'Accept': 'application/json',
-            'X-Access-Token': info.token
-        };
-    console.log('url:' + url + '; headers: ' + JSON.stringify(headers));
-    request.get({url: url, headers: headers}, function (err, httpRes, body) {
-        console.log('status server httpRes:' + httpRes);
-        if(err) {
-            console.log('error getStatusEnv:' + err);
-            deferred.reject(err);
-        }
-        console.log('env status:' + body);
-        deferred.resolve(body);
-    });
-    return deferred.promise;
+    };
 };
 
 var findEnvByComposeName = function (pUrl, name, token) {
@@ -101,7 +76,7 @@ var findEnvByComposeName = function (pUrl, name, token) {
         if(err) {
             deferred.reject(err);
         }
-        if(body.length == 0) {
+        if(body.length === 0) {
             deferred.resolve(false);
         }
 

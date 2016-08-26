@@ -36,9 +36,9 @@ exports.handler = function (argv) {
          return reject(err);
 
          resolve(data);
-      })
+      });
   }));
   debug('in handler');
   console.log(`creating yaml`);
 
-}
+};

@@ -16,7 +16,7 @@ exports.builder = function (yargs) {
         alias: 'u'
     }).option('password', {
         alias: 'p'
-    })
+    });
 };
 
 exports.handler = function (argv) {
@@ -26,7 +26,7 @@ exports.handler = function (argv) {
     debug(`${argv.user}`);
     debug(`${argv.token}`);
 
-    login = new Login(argv.user, argv.password, argv.url, argv);
+    var login = new Login(argv, argv.url, argv.user, argv.password);
 
     login.connect().then(login.getUserInfo.bind(login))
         .then((user) => {

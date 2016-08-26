@@ -4,12 +4,9 @@
  */
 'use strict';
 
-var debug           = require('debug')('cli-builds');
-var _               = require('lodash');
 var request         = require('request');
 var prettyjson      = require('prettyjson');
 var fs              = require('fs');
-var path            = require('path');
 var Q               = require('q');
 var Composition     = require('./composition');
 var Environments    = require('../../environments/new/command');
@@ -23,7 +20,7 @@ const formatPayload = {
 };
 
 module.exports.add = function(info) {
-    if(info.file == undefined) {
+    if(info.file === undefined) {
         throw new Error('Please, specify --file [path to file.json]. Format file.json is\n' +
             prettyjson.render(formatPayload));
     }
@@ -60,11 +57,11 @@ module.exports.add = function(info) {
                 deferred.resolve(body);
             });
         return deferred.promise;
-    }
+    };
 };
 
 module.exports.remove = function (info) {
-    if(info.id == undefined) {
+    if(info.id === undefined) {
         throw new Error('Please, specify --id [id of a composition]');
     }
     let compositionUrl = `${info.url}/api/compositions/${info.id}`;
@@ -86,7 +83,7 @@ module.exports.remove = function (info) {
             deferred.resolve(body);
         });
         return deferred.promise;
-    }
+    };
 };
 
 module.exports.getAll = function (info) {
@@ -111,30 +108,6 @@ module.exports.getAll = function (info) {
             deferred.resolve(body);
         });
         return deferred.promise;
-    }
-};
-
-module.exports.run = function (info) {
-    if(info.id == undefined) {
-        throw new Error('Please, specify --id [id or name of a composition]');
-    }
-
-    return (token) => {
-        getByIdentifier(info, token).then(function (model) {
-            runCompose(info, token)
-                .then(function (res) {
-                    Environments.followEnvProgress({
-                        url: info.url,
-                        token: token,
-                        nameCompose: model.getName()
-                    }).then(function (res) {
-                        console.log(prettyjson.render(res.getPublicUrls()));
-                    });
-                }, (err) => {
-                    console.log(err);
-                    throw new Error(err);
-                });
-        });
     };
 };
 
@@ -182,4 +155,28 @@ var getByIdentifier = function (info, token) {
         });
     });
     return p;
+};
+
+module.exports.run = function (info) {
+    if(info.id === undefined) {
+        throw new Error('Please, specify --id [id or name of a composition]');
+    }
+
+    return (token) => {
+        getByIdentifier(info, token).then(function (model) {
+            runCompose(info, token)
+                .then(function () {
+                    Environments.followEnvProgress({
+                        url: info.url,
+                        token: token,
+                        nameCompose: model.getName()
+                    }).then(function (res) {
+                        console.log(prettyjson.render(res.getPublicUrls()));
+                    });
+                }, (err) => {
+                    console.log(err);
+                    throw new Error(err);
+                });
+        });
+    };
 };

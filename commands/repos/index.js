@@ -1,12 +1,12 @@
 var program = require('commander');
 
-var commands = [
-    'list'
-];
+//var commands = [
+//    'list'
+//];
 
 var process_command = function(command, repoId) {
     require('./' + command)(repoId);
-}
+};
 
 
 program

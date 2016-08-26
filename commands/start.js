@@ -11,7 +11,6 @@ program
     });
 
 var utils   = require('../lib/utils'),
-    fs      = require('fs'),
     path      = require('path'),
     Q       = require('q'),
     spawn   = require('child_process').spawn,
@@ -58,7 +57,7 @@ var rmDockerCompose = function(package) {
     return deferred.promise;
 };
 
-var upDockerCompose = function(package) {
+var upDockerCompose = function() {
     var deferred = Q.defer();
 
     var options = {
@@ -87,7 +86,7 @@ var upDockerCompose = function(package) {
         if (code !== 0) {
             console.log('child process exited with code ' + code);
         }
-        process.exit(code)
+        process.exit(code);
     });
 
     return deferred.promise;

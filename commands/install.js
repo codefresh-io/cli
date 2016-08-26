@@ -1,8 +1,8 @@
-var program = require('commander'),
-    utils   = require('../lib/utils'),
-    fs      = require('fs')
-    git     = require('gift'),
-    Q       = require('q');
+var program = require('commander');
+var utils   = require('../lib/utils');
+var fs      = require('fs');
+var git     = require('git');
+var Q       = require('q');
 
 var clone = function(urlInfo) {
     var deferred = Q.defer();
@@ -65,7 +65,7 @@ var save = function(urlInfo) {
 
 
     return deferred.promise;
-}
+};
 
 
 var install = function(repoUrl) {
@@ -75,7 +75,7 @@ var install = function(repoUrl) {
         // TODO - do we need to pull ???
         .then(save);
 
-}
+};
 
 var installAll = function() {
     return utils.loadPackage()
@@ -100,12 +100,12 @@ var installAll = function() {
 
             return deferred.promise;
         });
-}
+};
 
 program
     .command('install')
     .description('install repos from package')
-    .action(function(options){
+    .action(function(){
         installAll()
             .catch(function(err) {
                 console.error(err);
@@ -118,7 +118,7 @@ program
 program
     .command('install <gitRepoUrl> [sha]')
     .description('install get repos ')
-    .action(function(gitRepoUrl, sha, options){
+    .action(function(gitRepoUrl, sha){
         var gitSHA = sha || 'master';
 
         install(gitRepoUrl + ":" + gitSHA)

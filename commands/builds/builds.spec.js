@@ -1,6 +1,5 @@
 "use strict";
 
-var assert = require('assert');
 var debug  = require('debug')('connector.spec');
 var request   = require('superagent-use');
 var prettyjson = require('prettyjson');
@@ -15,7 +14,7 @@ describe('builds test', ()=>{
      url =  'https://g-staging.codefresh.io';
      login = new Login('verchol', 'oleg1314', url);
      done();
-   })
+   });
    it('get build', (done)=>{
      //https://g-staging.codefresh.io/api/builds/?limit=10&page=1&repoOwner=testingGal&repoName=lets-chat&type=webhook
       let buildUrl =  `${url}/api/builds?limit=10&page=1&account=verchol_github&repoOwner=testingGal&repoName=lets-chat&type=webhook`;
@@ -30,7 +29,7 @@ describe('builds test', ()=>{
         //.set('X-API-Key', 'foobar')
         .set('Accept', 'application/json')
         .end(function(err, res){
-            debug('request completed')
+            debug('request completed');
             debug(res);
             if (err){
               console.log(res);
@@ -41,8 +40,8 @@ describe('builds test', ()=>{
             debug('new token created');
             done();
         });
-      })
+      });
 
-   })
+   });
 
-})//end all tests
+});//end all tests

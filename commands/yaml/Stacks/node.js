@@ -30,4 +30,4 @@ var stack = [
 
 module.exports = function(stacks){
   stacks.push(stack);
-}
+};

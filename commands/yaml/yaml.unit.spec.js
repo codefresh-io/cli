@@ -5,7 +5,7 @@ var Promise     = require("bluebird");
 var assert      = require('assert');
 var _           = require('lodash');
 var promisify   = require("promisify-es6");
-var Q           = require('q')
+var Q           = require('q');
 
 describe('codefresh yaml spec', ()=>{
 
@@ -16,7 +16,7 @@ describe('codefresh yaml spec', ()=>{
   beforeEach(()=>{
       console.log('before each');
       Yaml = new YAML();
-  })
+  });
 
 
  it('create codefresh.yaml', (done)=>{
@@ -25,9 +25,10 @@ describe('codefresh yaml spec', ()=>{
         console.log(result);
         done();
      }, (err)=>{
-       done(err)
+       done(err);
      }).catch((e)=> {
-       done(e);})
+       done(e);
+      });
  });
 
 
@@ -72,7 +73,7 @@ it('save yaml ', (done)=>{
   function save(){
     var p = new Promise((resolve , reject)=>{
        var callback = (err, data)=>{
-           p
+
            if (err)
             return reject(err);
 
@@ -81,7 +82,7 @@ it('save yaml ', (done)=>{
 
 
 
-    var saveArgs = []
+    var saveArgs = [];
     if (arguments.length>2)
        throw 'incorrect number of arguments ' + arguments.length;
     switch(arguments.length){
@@ -96,11 +97,11 @@ it('save yaml ', (done)=>{
     }
     _.forEach(arguments, (arg)=>{
       saveArgs.push(arg);
-    })
+    });
 
     saveArgs.push(callback);
-    Yaml.save.apply(Yaml, saveArgs)
-  })
+    Yaml.save.apply(Yaml, saveArgs);
+  });
     return p;
   }
 
@@ -111,7 +112,8 @@ it('save yaml ', (done)=>{
      console.log('error:'  + err);
 
    }).catch((e)=> {
-     throw e}).done(()=>{done();} , done);
+     throw e;
+    }).done(()=>{done();} , done);
 });
 
 
@@ -135,14 +137,14 @@ it('add stack', (done)=>{
     var Q = require('q');
     var defer = Q.defer();
 
-    addStack(stacks[0],(err, data)=>{
+    addStack(stacks[0],(err)=>{
       if (err)
        return defer.reject(err);
-       console.log('stack added')
+       console.log('stack added');
        console.log(`model : ${JSON.stringify(Yaml.model)}`);
        Yaml.upTodate = true;
       return defer.resolve({a:1});
-    })
+    });
 
     defer.promise.then(
       (data)=>{
@@ -163,4 +165,4 @@ it('add stack', (done)=>{
 });
 
 
-})
+});

@@ -5,12 +5,6 @@ var _ = require('lodash');
 
 var urls = [];
 
-function Environment (json) {
-    this.creationStatus = json.creationStatus;
-    this._id = json._id;
-    parseUrls(json);
-}
-
 var parseUrls = function (json) {
     if(json.instances) {
         _.each(json.instances, function (item) {
@@ -22,6 +16,12 @@ var parseUrls = function (json) {
         });
     }
 };
+
+function Environment (json) {
+    this.creationStatus = json.creationStatus;
+    this._id = json._id;
+    parseUrls(json);
+}
 
 Environment.prototype.getStatus = function () {
     return this.creationStatus;

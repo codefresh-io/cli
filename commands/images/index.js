@@ -4,7 +4,6 @@
 'use strict';
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
-var assert  = require('assert');
 var _       = require('lodash');
 var command = require('./command');
 
@@ -52,7 +51,7 @@ exports.handler = function (argv) {
         throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
     }
 
-    var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
+    var login = new Login({file: argv.tokenFile, token : argv.token},  argv.url, argv.user, argv.password);
 
     var images;
     switch(argv.operation) {

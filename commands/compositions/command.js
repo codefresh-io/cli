@@ -1,20 +1,20 @@
 'use strict';
 
 var debug     = require('debug')('compose-command');
-var _         = require('lodash');
-var request   = require('superagent-use')
-var prettyjson = require('prettyjson');
-var Q          = require('q')
+//var _         = require('lodash');
+var request   = require('superagent-use');
+//var prettyjson = require('prettyjson');
+var Q          = require('q');
 var fs         = require('fs');
 var assert     = require('assert');
 
 
-const CompositionModel =  {
-    "isAdvanced": false, //booleadn
-    "vars": [], //array
-    "name": "", //string
-    "yamlJson" : ""
-}
+//const CompositionModel =  {
+//    "isAdvanced": false, //booleadn
+//    "vars": [], //array
+//    "name": "", //string
+//    "yamlJson" : ""
+//};
 
 function Composition(info){
     this.url = `${info.url}/api/compositions`;
@@ -34,12 +34,12 @@ Composition.prototype.run = function(argv){
                 name : argv.name,
                 vars :  argv.vars || [],
                 yamlJson  : yaml
-            }
+            };
         }).then(this.create.bind(this));
     }
 
     return Q.reject(`not supported flag ${JSON.stringify(argv)}`);
-}
+};
 Composition.prototype.get = function(){
 
     debug(`get composition on url : ${this.url}`);
@@ -54,7 +54,7 @@ Composition.prototype.get = function(){
             .set('Accept', 'application/json')
             .set('X-Access-Token', this.token)
             .end(function(err, res){
-                debug('request completed')
+                debug('request completed');
 
                 if (err){
                     debug(res);
@@ -68,9 +68,9 @@ Composition.prototype.get = function(){
     }).catch((err)=>{
             console.error(`error occured ${err}`);
             throw err;
-        })
+        });
     return p;
-}
+};
 
 Composition.prototype.readYaml = function(composeFile){
 
@@ -84,8 +84,8 @@ Composition.prototype.readYaml = function(composeFile){
         return yaml;
     }, (err)=>{
         throw new Error(err);
-    })
-}
+    });
+};
 
 Composition.prototype.create = function(data){
     //_.defaults(data, 'data.yaml', "./docker-compose.yaml");
@@ -123,7 +123,7 @@ Composition.prototype.create = function(data){
             .set('Accept', 'application/json')
             .set('X-Access-Token', this.token)
             .end(function(err, res){
-                debug('request completed')
+                debug('request completed');
 
                 if (err){
                     debug(res);
@@ -136,8 +136,8 @@ Composition.prototype.create = function(data){
     }).catch((err)=>{
             console.error(`error occured ${err}`);
             throw err;
-        })
+        });
     return p;
-}
+};
 
 module.exports = Composition;

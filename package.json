@@ -38,9 +38,22 @@
     "jsonfile":"^2.3.1"
   },
   "devDependencies": {
-    "promisify-es6": "^1.0.1"
+    "gulp": "^3.9.1",
+    "promisify-es6": "^1.0.1",
+    "cf-errors":"^0.1.11",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-env": "^0.2.0",
+    "gulp-istanbul": "^0.10.4",
+    "gulp-jshint": "^1.11.0",
+    "gulp-mocha-co": "^0.4.1-co.3",
+    "gulp-rimraf": "^0.1.1",
+    "isparta": "^4.0.0",
+    "run-sequence": "^1.1.0"
   },
-
+  "bugs": {
+    "url": "https://github.com/codefresh-io/cf-cli/issues"
+  },
+  "homepage": "https://github.com/codefresh-io/cf-cli#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },

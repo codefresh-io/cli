@@ -14,7 +14,7 @@ var printInfo = function(info) {
         info.createdBy + spaces.substring(0,  20 - (info.createdBy));
 
     console.log(line);
-}
+};
 
 module.exports = function(repo_id) {
 
@@ -59,4 +59,4 @@ module.exports = function(repo_id) {
         .catch(function (err) {
             console.error(err);
         });
-}
+};

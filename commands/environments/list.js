@@ -22,7 +22,7 @@ program
                         info.instances + spaces.substring(0,  10 - (info.instances.length));
 
                     console.log(line);
-                }
+                };
 
                 var maxId = 0;
                 environments.map(function(env) {
@@ -36,8 +36,7 @@ program
                     instances: 'Instances'
                 });
                 printInfo(maxId, {
-                    id:         '--------------------------------------------------------------------------------------------\
-                                 ----------------------------------------------'.substring(0, maxId),
+                    id:         '------------------------------------------------------------------------------------------------------------------------------------------'.substring(0, maxId),
                     user:       '-------------------',
                     created:    '------------------------',
                     instances:  '---------'

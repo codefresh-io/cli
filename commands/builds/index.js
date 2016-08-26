@@ -1,8 +1,8 @@
 // my-module.js
 'use strict';
+var CFError = require('cf-errors');
 var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
-var assert  = require('assert');
 var _       = require('lodash');
 
 exports.command = 'builds [account] <repo>';
@@ -64,10 +64,13 @@ exports.handler = function (argv) {
   info.tofile = argv.tofile;
 
   if(!_.includes(allOperations, argv.operation)) {
-    throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
+    throw new CFError({
+      name: 'InvalidParameter',
+      message: `Use one of the following operations: ${JSON.stringify(allOperations)}`
+    });
   }
 
-  var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
+  var login = new Login({file: argv.tokenFile, token : argv.token}, argv.url, argv.user, argv.password);
   var builds;
   switch(argv.operation) {
     case 'build':
