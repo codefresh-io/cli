@@ -38,7 +38,7 @@ gulp.task('set_unit_env_vars', function () {
 });
 
 gulp.task('unit_pre', function () {
-    return gulp.src(['**/*.js', '!**/*.spec.js', '!**/node_modules/**/*.js', '!.debug/**/*.js', '!gulpfile.js', '!coverage/**/*.js'])
+    return gulp.src(['**/*.js', '!index.js', '!**/*.spec.js', '!**/node_modules/**/*.js', '!.debug/**/*.js', '!gulpfile.js', '!coverage/**/*.js'])
         .pipe(istanbul({ // Covering files
             instrumenter: isparta.Instrumenter,
             includeUntested: true

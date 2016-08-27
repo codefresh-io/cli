@@ -51,7 +51,12 @@ exports.handler = function (argv) {
         throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
     }
 
-    var login = new Login({file: argv.tokenFile, token : argv.token},  argv.url, argv.user, argv.password);
+    var login = new Login(argv.url,
+        {
+            access: {file: argv.tokenFile, token : argv.token},
+            user: argv.user,
+            password: argv.password
+        });
 
     var images;
     switch(argv.operation) {

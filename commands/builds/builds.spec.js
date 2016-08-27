@@ -12,7 +12,7 @@ describe('builds test', ()=>{
 
      var Login = require('../login/connector');
      url =  'https://g-staging.codefresh.io';
-     login = new Login('verchol', 'oleg1314', url);
+     login = new Login(url, {user: 'verchol', password: 'oleg1314'});
      done();
    });
    it('get build', (done)=>{

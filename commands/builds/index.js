@@ -69,7 +69,12 @@ exports.handler = function (argv) {
     });
   }
 
-  var login = new Login({file: argv.tokenFile, token : argv.token}, argv.url, argv.user, argv.password);
+  var login = new Login(argv.url,
+      {
+        access:{file: argv.tokenFile, token : argv.token},
+        user: argv.user,
+        password: argv.password
+      });
   var builds;
   switch(argv.operation) {
     case 'build':

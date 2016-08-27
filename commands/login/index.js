@@ -18,7 +18,7 @@ exports.builder = function (yargs) {
     }).option('pwd', {
         alias: 'p',
         demand : false
-    })
+    });
 };
 
 exports.handler = function (argv) {
@@ -30,7 +30,7 @@ exports.handler = function (argv) {
 
 
 
-    login = new Login(argv.url, argv);
+    var login = new Login(argv.url, argv);
 
     login.connect().then(login.getUserInfo.bind(login))
         .then((user) => {
