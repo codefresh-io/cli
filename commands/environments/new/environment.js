@@ -4,6 +4,7 @@
 var _ = require('lodash');
 
 var urls = [];
+var data;
 
 var parseUrls = function (json) {
     if(json.instances) {
@@ -18,6 +19,7 @@ var parseUrls = function (json) {
 };
 
 function Environment (json) {
+    data = json;
     this.creationStatus = json.creationStatus;
     this._id = json._id;
     parseUrls(json);
@@ -33,6 +35,17 @@ Environment.prototype.getId = function () {
 
 Environment.prototype.getPublicUrls = function () {
     return urls;
+};
+
+Environment.prototype.toString = function () {
+    var body = {};
+    body._id = this._id;
+    body.status = this.creationStatus;
+    body.urls = urls;
+    body.name = data.name;
+    body.created = data.created;
+    body.duration = data.duration;
+    return body;
 };
 
 module.exports.Environment = Environment;

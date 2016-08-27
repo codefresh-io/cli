@@ -96,8 +96,7 @@ Login.prototype.connect= function() {
                     .set('Accept', 'application/json')
                     .end(function(err, res){
                         debug('request completed! ');
-                        if (err){
-
+                        if (err) {
                             debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
                             return reject(err);
                         }

@@ -171,7 +171,7 @@ module.exports.run = function (info) {
                         token: token,
                         nameCompose: model.getName()
                     }).then(function (res) {
-                        console.log(prettyjson.render(res.getPublicUrls()));
+                        console.log(prettyjson.render(res.toString()));
                     });
                 }, (err) => {
                     console.log(err);

@@ -72,8 +72,10 @@ exports.handler = function (argv) {
         case 'pause':
         case 'unpause':
         case 'terminate':
-        case 'getAll':
             environments = command.get(info);
+            break;
+        case 'getAll':
+            environments = command.getAll(info);
             break;
     }
     login.connect().then(environments.bind(login.token), (err) => {

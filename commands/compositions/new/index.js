@@ -6,7 +6,8 @@
 var debug   = require('debug')('login->index');
 var Login   = require('../../login/connector');
 var _       = require('lodash');
-
+var CFError = require('cf-errors');
+var prettyjson  = require('prettyjson');
 
 exports.command = 'compositions [account] <operation>';
 exports.describe = 'compositions in Codefresh';
@@ -92,8 +93,16 @@ exports.handler = function (argv) {
             throw err;
     }
 
-    login.connect().then(compositions.bind(login.token), (err) => {
-        debug('error:' + err);
-        process.exit(err);
-    });
+    login.connect().then(compositions.bind(login.token),
+        (err) => {
+            var cferror = new CFError({
+                name: 'AuthorizationError',
+                message: err.message
+            });
+            console.log(prettyjson.render({
+                name: cferror.name,
+                stack: cferror.stack
+            }));
+            process.exit(err);
+        });
 };

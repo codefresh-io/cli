@@ -62,6 +62,39 @@ module.exports.get = function (info) {
     };
 };
 
+module.exports.getAll = function (info) {
+    validate(info);
+    let url = getUrl(info);
+
+    return (token) => {
+        console.log('url:' + url);
+        var deferred = Q.defer();
+        var headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': token
+        };
+        request.get({url: url, headers: headers}, function (err, httpRes, res) {
+            if (err) {
+                deferred.reject(err);
+            }
+
+            if(helper.IsJson(res)) {
+                var array = JSON.parse(res);
+                var envs = [];
+                _.each(array, function (item) {
+                    envs.push((new Environment.Environment(item)).toString());
+                });
+                console.log(prettyjson.render(envs));
+            } else {
+                console.log(`Response body:${res}`);
+            }
+
+            deferred.resolve(res.body);
+        });
+        return deferred.promise;
+    };
+};
+
 var findEnvByComposeName = function (pUrl, name, token) {
     var deferred = Q.defer();
     var envName = `ENV-composition-${name}`;

@@ -1,8 +1,8 @@
 'use strict';
 var CFError = require('cf-errors');
-var debug   = require('debug')('login->index');
 var Login   = require('../login/connector');
 var _       = require('lodash');
+var prettyjson  = require('prettyjson');
 
 exports.command = 'builds [account] <repo>';
 
@@ -85,8 +85,16 @@ exports.handler = function (argv) {
       break;
   }
 
-  login.connect().then(builds.bind(login.token), (err) => {
-    debug('error:' + err);
-    process.exit(err);
-  });
+  login.connect().then(builds.bind(login.token),
+      (err) => {
+        var cferror = new CFError({
+          name: 'AuthorizationError',
+          message: err.message
+        });
+        console.log(prettyjson.render({
+          name: cferror.name,
+          stack: cferror.stack
+        }));
+        process.exit(err);
+      });
 };

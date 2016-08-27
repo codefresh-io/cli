@@ -18,7 +18,9 @@ exports.builder = function (yargs) {
     }).option('pwd', {
         alias: 'p',
         demand : false
-    });
+    })
+        .help("h")
+        .alias("h","help");
 };
 
 exports.handler = function (argv) {
@@ -27,8 +29,6 @@ exports.handler = function (argv) {
     debug(`${JSON.stringify(argv)}`);
     debug(`${argv.user}`);
     debug(`${argv.token}`);
-
-
 
     var login = new Login(argv.url, argv);
 
@@ -42,5 +42,4 @@ exports.handler = function (argv) {
             console.log(`${error}`);
             process.exit(error);
         });
-    // do something with argv.
 };
