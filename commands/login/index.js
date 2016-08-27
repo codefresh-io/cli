@@ -13,10 +13,12 @@ exports.builder = function (yargs) {
         alias: 'url',
         default: 'https://g.codefresh.io'
     }).option('user', {
-        alias: 'u'
-    }).option('password', {
-        alias: 'p'
-    });
+        alias: 'u',
+        demand : true
+    }).option('pwd', {
+        alias: 'p',
+        demand : false
+    })
 };
 
 exports.handler = function (argv) {
@@ -26,7 +28,9 @@ exports.handler = function (argv) {
     debug(`${argv.user}`);
     debug(`${argv.token}`);
 
-    var login = new Login(argv, argv.url, argv.user, argv.password);
+
+
+    login = new Login(argv.url, argv);
 
     login.connect().then(login.getUserInfo.bind(login))
         .then((user) => {

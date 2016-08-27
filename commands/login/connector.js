@@ -6,7 +6,28 @@ var request   = require('superagent-use');
 var jsonfile  = require('jsonfile');
 var path      = require('path');
 
-var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json');
+var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json')
+function Login(url, params) {
+    //{url: url, token :token,  tokenFile : accessTokenFile)
+    this.url  = url;
+    this.user = params.user;
+    this.pwd = params.pwd;
+    if (!params.access)
+        access = {}
+     else
+        access = params.access;
+    _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
+    //assert(access.token); // todo get output 'undefined == true'
+    this.accessTokenFile =  access.file;
+    this.token = access.token;
+    var self = this;
+
+    debug(`url - ${url}, user - ${params.user}, ${params.pwd}, ${access.file}, ${access.token}`);
+
+    if (this.token)
+        persistToken(this.token, this.accessTokenFile);
+}
+
 var persistToken = function(token, tokenFile){
     debug(`persistToken ${token} into ${tokenFile}`);
     var fs = require('fs');
@@ -26,37 +47,18 @@ var persistToken = function(token, tokenFile){
     });
 
     return p;
-};
-
-function Login(access, url , user, pwd) {
-    //{url: url, token :token,  tokenFile : accessTokenFile)
-    this.url  = url;
-    this.user = user;
-    this.pwd = pwd;
-    if (!access)
-        access = {};
-    _.defaults(access, {file: ACCESS_TOKEN_DEFAULT});
-    //assert(access.token); // todo get output 'undefined == true'
-    this.accessTokenFile =  access.file;
-    this.token = access.token;
-    //var self = this;
-
-    debug(`${url}, ${user}, ${pwd}, ${access.file}, ${access.token}`);
-
-    if (this.token)
-        persistToken(this.token, this.accessTokenFile);
 }
 
 Login.prototype.resetToken = function(){
     //reset file
     throw new Error('not implemented');
-};
+}
+Login.prototype.connect= function(){
 
-Login.prototype.connect= function() {
+
     var self = this;
     var url = util.format('%s/api/auth/local', this.url);
-    //console.log('url: ' + url);
-    var accessTokenPromise  = new Promise((resolve ,reject) => {
+    var accessTokenPromise  = new Promise((resolve ,reject, progress)=>{
         debug('in execute function');
 
         var accessTokenFile = path.resolve(self.accessTokenFile);
@@ -65,20 +67,20 @@ Login.prototype.connect= function() {
         jsonfile.readFile(accessTokenFile,  (err, obj) =>{
             if (err){
                 debug(err + 'rejected accessToken');
-                return reject('user not provided and not token found');
+                return reject('user not provided and not token found')
             }
             debug('accessToken row ' + JSON.stringify(obj));
             self.token =  obj.accessToken ;
             debug(`AccessToken=${obj.accessToken}`);
-            assert(self.token);
-            return resolve({token:self.token});
-        });
+
+            return resolve({token:self.token})
+        })
         return;
     })
         .then((data)=>{
             debug('resolved with token' + data.token);
             return data.token;
-        }, () =>{
+        }, (data) =>{
             debug('no token detected, trying to login with user / password');
             return new Promise ((resolve, reject) => {
 
@@ -92,7 +94,7 @@ Login.prototype.connect= function() {
                     //.set('X-API-Key', 'foobar')
                     .set('Accept', 'application/json')
                     .end(function(err, res){
-                        debug('request completed! ');
+                        debug('request completed! ')
                         if (err){
 
                             debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
@@ -109,7 +111,7 @@ Login.prototype.connect= function() {
                     //   throw err;
                 });
         });
-    assert(accessTokenPromise);
+
 
     return accessTokenPromise;
 };
@@ -118,9 +120,11 @@ Login.prototype.whoami= function(){
     throw new Error('not implemented');
 };
 
-Login.prototype.getUserInfo = function() {
+Login.prototype.getUserInfo = function(){
+
+
     var self = this;
-    var p = new Promise((resolve, reject) => {
+    var p = new Promise((resolve, reject)=>{
         var url = util.format('%s/api/user', self.url);
         debug(`token: ${self.token}`);
         if (!self.token)
@@ -130,15 +134,17 @@ Login.prototype.getUserInfo = function() {
             .get(url)
             .set('X-Access-Token', self.token)
             .set('Accept', 'application/json')
-            .end(function(err, res) {
-                if (err) {
-                    //debug(`requst ended with error: ${err} , ${JSON.stringify(res.body)}`);
-                    console.log(`requst ended with error: ${err}`);
+            .end(function(err, res){
+
+                if (err){
+                    debug(`requst ended with error: ${err} , ${JSON.stringify(res.body)}`);
+
                     return reject(err);
+
                 }
                 debug(`response is ${JSON.stringify(res.body)}`);
 
-                var profile =  _.get(res.body, 'shortProfile.userName');
+                var profile =  _.get(res.body, 'shortProfile.userName')
                 debug(`you logged in is as ${profile}`);
                 return resolve(profile);
             });
