@@ -35,12 +35,12 @@
     "swig": "^1.4.2",
     "yargs": "^4.7.0",
     "superagent-use": "^0.0.1",
-    "jsonfile":"^2.3.1"
+    "jsonfile":"^2.3.1",
+    "cf-errors":"^0.1.11"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "promisify-es6": "^1.0.1",
-    "cf-errors":"^0.1.11",
     "gulp-coveralls": "^0.1.4",
     "gulp-env": "^0.2.0",
     "gulp-istanbul": "^0.10.4",
