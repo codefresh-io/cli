@@ -5,10 +5,10 @@ var debug  = require('debug')('connector.spec');
 assert(Login);
 console.log('login of');
 console.log(process.args);
-debugger;
+//debugger;
 
 describe('login', function(){
-   var url = 'https://g.codefresh.io'
+   var url = 'https://g.codefresh.io';
    var login;
    var token = process.env.CF_TOKEN || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NzI4YjZhYmM3ZjBkMDA2MDA3NzY1MzIiLCJhY2NvdW50SWQiOiI1NzBhMjE0ZWEwOGUyODA2MDA1ODUxZDIiLCJpYXQiOjE0NzAyMjk1MTUsImV4cCI6MTQ3MjgyMTUxNX0.jnJMWiSe-XdBowgHK3T_JNlm7RIPlEIoP5XR_scpjgE";
    beforeEach ((done)=>{
@@ -28,9 +28,9 @@ describe('login', function(){
      }).catch((err)=>{
        console.log(err);
        done(err);
-     })
+     });
 
-   })
+   });
 
    it.only('get user info', function(done){
        login.connect().then(login.getUserInfo.bind(login)).then((profile)=>{
@@ -40,4 +40,4 @@ describe('login', function(){
        }, done);
    });
 
-})
+});

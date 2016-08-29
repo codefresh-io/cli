@@ -20,8 +20,8 @@ exports.builder = function (yargs) {
         }).option('file', {
             alias: 'f',
             default : 'docker-compose.yaml'
-        })
-}
+        });
+};
 exports.handler = function (argv) {
     debug(`arguments are ${JSON.stringify(argv)}`);
     var command = new Command({accessToken : argv.accessToken,  url:argv.url});
@@ -29,6 +29,6 @@ exports.handler = function (argv) {
         console.log('action completed');
     }, (err)=>{
         console.log(`action failed with error ${err}`);
-    })
+    });
 
-}
+};

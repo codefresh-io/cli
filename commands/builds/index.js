@@ -1,10 +1,8 @@
-// my-module.js
 'use strict';
-
-var debug   = require('debug')('login->index');
+var CFError = require('cf-errors');
 var Login   = require('../login/connector');
-var assert  = require('assert');
 var _       = require('lodash');
+var prettyjson  = require('prettyjson');
 
 exports.command = 'builds [account] <repo>';
 
@@ -65,10 +63,18 @@ exports.handler = function (argv) {
   info.tofile = argv.tofile;
 
   if(!_.includes(allOperations, argv.operation)) {
-    throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
+    throw new CFError({
+      name: 'InvalidParameter',
+      message: `Use one of the following operations: ${JSON.stringify(allOperations)}`
+    });
   }
 
-  var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
+  var login = new Login(argv.url,
+      {
+        access:{file: argv.tokenFile, token : argv.token},
+        user: argv.user,
+        password: argv.password
+      });
   var builds;
   switch(argv.operation) {
     case 'build':
@@ -79,8 +85,16 @@ exports.handler = function (argv) {
       break;
   }
 
-  login.connect().then(builds.bind(login.token), (err) => {
-    debug('error:' + err);
-    process.exit(err);
-  });
+  login.connect().then(builds.bind(login.token),
+      (err) => {
+        var cferror = new CFError({
+          name: 'AuthorizationError',
+          message: err.message
+        });
+        console.log(prettyjson.render({
+          name: cferror.name,
+          stack: cferror.stack
+        }));
+        process.exit(err);
+      });
 };

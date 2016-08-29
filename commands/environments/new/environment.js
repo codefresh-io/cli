@@ -4,12 +4,7 @@
 var _ = require('lodash');
 
 var urls = [];
-
-function Environment (json) {
-    this.creationStatus = json.creationStatus;
-    this._id = json._id;
-    parseUrls(json);
-}
+var data;
 
 var parseUrls = function (json) {
     if(json.instances) {
@@ -23,6 +18,13 @@ var parseUrls = function (json) {
     }
 };
 
+function Environment (json) {
+    data = json;
+    this.creationStatus = json.creationStatus;
+    this._id = json._id;
+    parseUrls(json);
+}
+
 Environment.prototype.getStatus = function () {
     return this.creationStatus;
 };
@@ -33,6 +35,27 @@ Environment.prototype.getId = function () {
 
 Environment.prototype.getPublicUrls = function () {
     return urls;
+};
+
+var cleanInstances = function () {
+    var instances = data.instances;
+    _.each(instances, function (item) {
+        delete item['dockerNode'];
+        delete item['type'];
+        delete item['container'];
+    });
+    return instances;
+};
+
+Environment.prototype.toString = function () {
+    var body = {};
+    body.instances = cleanInstances();
+    body.created = data.created;
+    body.duration = data.duration;
+    body.status = this.creationStatus;
+    body.name = data.name;
+    body._id = this._id;
+    return body;
 };
 
 module.exports.Environment = Environment;

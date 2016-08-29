@@ -1,42 +1,43 @@
 'use strict';
 
-const YAML  = require('json2yaml')
-const debug = require('debug')('yaml file creator')
+const YAML  = require('json2yaml');
+const debug = require('debug')('yaml file creator');
 const _     = require('lodash');
 const Q     = require('q');
+
+const modelTemplate = {
+    version: '1.0',
+    steps : {}
+};
 
 function Yamlfile(){
   this.model = _.clone(modelTemplate);
 }
-const modelTemplate = {
-  version: '1.0',
-  steps : {}
-}
+
 const buildStep = {
   type: "build",
   "fail-fast": false,
   dockerfile: "Dockerfile",
   "image-name": "owner/imageName",
   tag : "latest"
-}
+};
 
 Yamlfile.prototype.create = function(type , callback){
 
    return this.done(callback);
-}
+};
 
 Yamlfile.prototype.reset = function(){
   this.model = _.clone(modelTemplate);
-}
+};
 Yamlfile.prototype.addComment = function(){
   throw new Error('not implemented');
-}
+};
 Yamlfile.prototype.addStack = function(stack, callback){
 
    var error = new Error();
-   var resolve = callback.bind(null);
+   //var resolve = callback.bind(null);
    var reject  = callback.bind(error);
-
 
     debug(`adding stack ${stack.name}`);
     debug(`addStack ->arguments : ${JSON.stringify(arguments)}`);
@@ -46,12 +47,12 @@ Yamlfile.prototype.addStack = function(stack, callback){
 
       return Q.when(sofar , ()=>{
 
-        debug(`before addign step ${step.name}`)
+        debug(`before addign step ${step.name}`);
         var defer  = Q.defer();
         self.addStep(step.name , step);
         return defer.resolve();
-      })
-      return defer.promise;
+      });
+      //return defer.promise;
 
   }, Q.resolve());
 
@@ -63,15 +64,15 @@ Yamlfile.prototype.addStack = function(stack, callback){
     }, reject);
 
     return this;
- }
+ };
 Yamlfile.prototype.addStep = function(name, data){
     debug(`adding step ${name} , ${data}`);
 
-    var step = {}
+    var step = {};
 
     if ( data.type === "build"){
       let step  = _.clone(buildStep);
-       data = _.merge(data , step)
+       data = _.merge(data , step);
     }
 
   _.unset(data, 'name');
@@ -83,7 +84,7 @@ Yamlfile.prototype.addStep = function(name, data){
 
 
   return this;
-}
+};
 
 Yamlfile.prototype.done = function(callback){
 
@@ -91,12 +92,12 @@ Yamlfile.prototype.done = function(callback){
   debug(`yaml is : ${yamlText}`);
   callback(null, yamlText);
 
-}
+};
 
 Yamlfile.prototype.save = function(dir, file , callback){
 
   debug(`dir name :${dir}`);
-  debug(`dir name :${file}`)
+  debug(`dir name :${file}`);
   debug(`callback : ${callback}`);
   debug(`argument : ${JSON.stringify(arguments)}`);
   debug(`save->model : ${JSON.stringify(this.model)}`);
@@ -105,7 +106,7 @@ Yamlfile.prototype.save = function(dir, file , callback){
     dir = "";
 
   if (!file)
-    file = "codefresh.yml"
+    file = "codefresh.yml";
 
   _.defaults(dir, ".");
 
@@ -117,7 +118,7 @@ Yamlfile.prototype.save = function(dir, file , callback){
 
   fs.writeFile(yaml, yamlText, callback);
 
-}
+};
 
 
 module.exports = Yamlfile;

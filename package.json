@@ -1,17 +1,19 @@
 {
   "name": "cf-cli",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
     "cf-cli":"index.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefresh-io/cf-cli.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords":[
+    "command line"
+  ],
   "dependencies": {
     "biased-opener": "^0.2.4",
     "bluebird": "^3.4.1",
@@ -33,9 +35,28 @@
     "swig": "^1.4.2",
     "yargs": "^4.7.0",
     "superagent-use": "^0.0.1",
-    "jsonfile":"^2.3.1"
+    "jsonfile":"^2.3.1",
+    "cf-errors":"^0.1.11"
   },
   "devDependencies": {
-    "promisify-es6": "^1.0.1"
-  }
+    "gulp": "^3.9.1",
+    "promisify-es6": "^1.0.1",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-env": "^0.2.0",
+    "gulp-istanbul": "^0.10.4",
+    "gulp-jshint": "^1.11.0",
+    "gulp-mocha-co": "^0.4.1-co.3",
+    "gulp-rimraf": "^0.1.1",
+    "isparta": "^4.0.0",
+    "run-sequence": "^1.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/codefresh-io/cf-cli/issues"
+  },
+  "homepage": "https://github.com/codefresh-io/cf-cli#readme",
+  "scripts": {
+    "test": "gulp unit_test"
+  },
+  "author": "Codefresh",
+  "license": "ISC"
 }

@@ -1,6 +1,5 @@
 var api         = require('../../lib/api'),
     spinner     = require("char-spinner"),
-    colors      = require('colors'),
     biasedOpener = require('biased-opener');
 
 var repo_id = process.argv.shift();
@@ -43,6 +42,7 @@ var show_progress = function(progress_info) {
                             'ie'
                         ]
                     }, function(err) {
+                        throw err;
                     });
                     return;
                 }
@@ -60,11 +60,11 @@ var show_progress = function(progress_info) {
 
         }
         return "";
-    }
+    };
 
     return get_next_progress(progress_info);
 
-}
+};
 // TODO - get settings
 
 show_step('Getting repo information');
@@ -89,7 +89,7 @@ api.repos.show(repo_id)
             gitUrl: repo.ssh_url
         };
 
-        return api.runtime.start(data)
+        return api.runtime.start(data);
     })
     .then(show_progress)
     .catch(function(err) {

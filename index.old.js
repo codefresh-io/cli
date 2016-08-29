@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-
+'use strict';
 process.argv.shift();
 process.argv.shift();
 
@@ -13,7 +12,7 @@ var commands = [
 
 var setup_logging = function() {
 
-}
+};
 
 var usage = function() {
     console.log(
@@ -21,7 +20,7 @@ var usage = function() {
         "  " + commands.join(", ")
 
     );
-}
+};
 
 var process_command = function() {
     var command = process.argv.shift();
@@ -31,7 +30,7 @@ var process_command = function() {
     }
 
     require('./commands/' + command);
-}
+};
 
 setup_logging();
 process_command();

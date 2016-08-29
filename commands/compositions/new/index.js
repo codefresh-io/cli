@@ -6,7 +6,8 @@
 var debug   = require('debug')('login->index');
 var Login   = require('../../login/connector');
 var _       = require('lodash');
-var assert  = require('assert');
+var CFError = require('cf-errors');
+var prettyjson  = require('prettyjson');
 
 exports.command = 'compositions [account] <operation>';
 exports.describe = 'compositions in Codefresh';
@@ -66,7 +67,12 @@ exports.handler = function (argv) {
         throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
     }
 
-    var login = new Login(argv.user, argv.password, argv.url, {file: argv.tokenFile, token : argv.token});
+    var login = new Login(argv.url,
+        {
+            access: {file: argv.tokenFile, token : argv.token},
+            user: argv.user,
+            password: argv.password
+        });
     var compositions;
     switch (info.operation) {
         case 'add':
@@ -81,16 +87,22 @@ exports.handler = function (argv) {
         case 'getAll':
             compositions = require('./command').getAll(info);
             break;
-        case 'none':
-            console.log('operation is none');
         default :
             let err = new Error('Please, specify --operation that you want to do [add/remove/run/getAll]');
             debug('error:' + err);
             throw err;
     }
 
-    login.connect().then(compositions.bind(login.token), (err) => {
-        debug('error:' + err);
-        process.exit(err);
-    });
+    login.connect().then(compositions.bind(login.token),
+        (err) => {
+            var cferror = new CFError({
+                name: 'AuthorizationError',
+                message: err.message
+            });
+            console.log(prettyjson.render({
+                name: cferror.name,
+                stack: cferror.stack
+            }));
+            process.exit(err);
+        });
 };

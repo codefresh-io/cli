@@ -1,0 +1,24 @@
+{
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": "nofunc",
+  "newcap": false,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "unused": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "indent": 10,
+  "esnext": true,
+  "globals"   : {
+    /* MOCHA */
+    "describe"   : false,
+    "it"         : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "after"      : false,
+    "afterEach"  : false
+  }
+}

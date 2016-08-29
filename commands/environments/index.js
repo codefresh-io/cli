@@ -11,16 +11,13 @@ commands.forEach(function(commandId) {
     require(path.join(__dirname , commandId));
 });
 
-return ;
-
-
 var usage = function() {
     console.log(
         "cf-cli environments <command>\n" +
         "  " + commands.join(", ")
 
     );
-}
+};
 
 var process_command = function() {
     var command = process.argv.shift();
@@ -30,6 +27,6 @@ var process_command = function() {
     }
 
     require('./' + command);
-}
+};
 
 process_command();

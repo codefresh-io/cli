@@ -11,7 +11,7 @@ module.exports = function() {
             info.open_issues + spaces.substring(0,  10 - (info.open_issues.length));
 
         console.log(line);
-    }
+    };
     api.repos.list()
         .then(function(repos) {
 
@@ -43,10 +43,10 @@ module.exports = function() {
 
                     //console.log(JSON.stringify(repo, null, 2));
                 });
-            })
+            });
 
         })
         .catch(function(err) {
             console.error(err);
         });
-}
+};

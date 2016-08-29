@@ -4,10 +4,7 @@
 
 var _           = require('lodash');
 var request     = require('request');
-var prettyjson  = require('prettyjson');
-var fs          = require('fs');
 var Q           = require('q');
-var path        = require('path');
 var Pipeline    = require('./pipeline');
 
 /**
@@ -18,7 +15,7 @@ var Pipeline    = require('./pipeline');
 var getAllByUser = function (info) {
     var deferred = Q.defer();
     var url = `${info.url}/api/services/${info.repoOwner}/${encodeURIComponent(info.repoName)}`;
-    headers = {
+    var headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
     };
