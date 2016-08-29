@@ -37,14 +37,24 @@ Environment.prototype.getPublicUrls = function () {
     return urls;
 };
 
+var cleanInstances = function () {
+    var instances = data.instances;
+    _.each(instances, function (item) {
+        delete item['dockerNode'];
+        delete item['type'];
+        delete item['container'];
+    });
+    return instances;
+};
+
 Environment.prototype.toString = function () {
     var body = {};
-    body._id = this._id;
-    body.status = this.creationStatus;
-    body.urls = urls;
-    body.name = data.name;
+    body.instances = cleanInstances();
     body.created = data.created;
     body.duration = data.duration;
+    body.status = this.creationStatus;
+    body.name = data.name;
+    body._id = this._id;
     return body;
 };
 
