@@ -9,7 +9,7 @@ var prettyjson      = require('prettyjson');
 var fs              = require('fs');
 var Q               = require('q');
 var Composition     = require('./composition');
-var Environments    = require('../../environments/new/command');
+var Environments    = require('../../environments/command');
 var helper          = require('../../../helper/helper');
 
 const formatPayload = {
