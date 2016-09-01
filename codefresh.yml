@@ -11,12 +11,9 @@ steps:
     image: node:latest
     working-directory: ${{build-docker-image}}
     commands:
+      - npm install -g gulp
       - gulp lint
       - gulp unit_test
-#      - "npm install -g better-npm-run"
-#      - "npm install -g mocha"
-#      - "npm install"
-#      - "mocha ./commands/yaml"
 
 #  security-by-snyk:
 #    fail-fast: false
