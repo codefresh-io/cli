@@ -1,4 +1,4 @@
-var api         = require('../../lib/api'),
+var api         = require('../../../lib/api'),
     spinner     = require("char-spinner"),
     biasedOpener = require('biased-opener');
 

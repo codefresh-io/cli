@@ -1,5 +1,5 @@
 var program     = require('commander'),
-    api         = require('../../lib/api');
+    api         = require('../../../lib/api');
 
 program
     .command('environment-terminate <envId>')
