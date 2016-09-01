@@ -1,12 +1,16 @@
 version: "1.0"
 
 steps:
-  test-step:
-#    fail-fast: false
-    image: "node:latest"
-    working-directory: ${{initial-clone}}
+  build-docker-image:
+    type: build
+    dockerfile: Dockerfile
+    image-name: codefreshio/cf-cli
+    tag: ${{CF_BRANCH}}
+
+  unit-test-step:
+    image: node:latest
+    working-directory: ${{build-docker-image}}
     commands:
-      - npm install
       - gulp lint
       - gulp unit_test
 #      - "npm install -g better-npm-run"
@@ -37,13 +41,6 @@ steps:
 #      - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc"
 #      - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc"
 #      - "gulp npm"
-
-  build-docker-image:
-    type: build
-    fail-fast: false
-    dockerfile: Dockerfile
-    image-name: "verchol/cf-cli"
-    tag: ${{CF_BRANCH}}
 
 #  deploy_kubernetis:
 #    image : "kub_deployer"
