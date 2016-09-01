@@ -5,13 +5,13 @@ var debug  = require('debug')('connector.spec');
 assert(Login);
 console.log('login of');
 console.log(process.args);
-//debugger;
 
 describe('login', function(){
    var url = 'https://g.codefresh.io';
    var login;
-   var token = process.env.CF_TOKEN || "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NzI4YjZhYmM3ZjBkMDA2MDA3NzY1MzIiLCJhY2NvdW50SWQiOiI1NzBhMjE0ZWEwOGUyODA2MDA1ODUxZDIiLCJpYXQiOjE0NzAyMjk1MTUsImV4cCI6MTQ3MjgyMTUxNX0.jnJMWiSe-XdBowgHK3T_JNlm7RIPlEIoP5XR_scpjgE";
-   beforeEach ((done)=>{
+   var token = process.env.CF_TOKEN;
+
+   beforeEach ((done) => {
       login = new Login(url, {access:{token:token}, user : "verchol"});
       done();
 
