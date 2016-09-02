@@ -11,7 +11,7 @@ steps:
     image: node:latest
     working-directory: ${{build-docker-image}}
     commands:
-      - npm install gulp
+      - npm install -g gulp
       - gulp lint
       - gulp unit_test
 
