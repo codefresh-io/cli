@@ -9,7 +9,7 @@ var request     = require('request');
 var prettyjson  = require('prettyjson');
 var Q           = require('q');
 var Environment = require('./environment');
-var helper      = require('../../../helper/helper');
+var helper      = require('../../helper/helper');
 
 var idOperations = [
     'status', 'stop',

@@ -1,6 +1,7 @@
 var debug   = require('debug')('login->index');
 var Login   = require('./connector');
 var assert  = require('assert');
+var prettyjson = require('prettyjson');
 
 debug(' start init login commmand');
 
@@ -24,19 +25,18 @@ exports.builder = function (yargs) {
 };
 
 exports.handler = function (argv) {
-    console.log('running');
     debug(`${argv.url}`);
     debug(`${JSON.stringify(argv)}`);
     debug(`${argv.user}`);
     debug(`${argv.token}`);
 
     var login = new Login(argv.url, argv);
-
     login.connect().then(login.getUserInfo.bind(login))
         .then((user) => {
             assert(login.token);
-            debug(`after successfull login ${JSON.stringify(user)}`);
-            console.log(`User '${user}' is succesfully logged in ${argv.url}`);
+            debug(`after successfull login ${JSON.stringify(user.toString())}`);
+            console.log('Now you logged in as');
+            console.log(prettyjson.render(user.toString()));
             process.exit(0);
         }, (error) => {
             console.log(`${error}`);

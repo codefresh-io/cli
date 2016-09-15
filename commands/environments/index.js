@@ -1,32 +1,85 @@
-var path = require('path');
+/**
+ * Created by nikolai on 10.8.16.
+ */
+'use strict';
+var debug   = require('debug')('login->index');
+var Login   = require('../login/connector');
+var _       = require('lodash');
+var command = require('./command');
 
-var commands = [
-    //'create',
-    'list',
-    'status',
-    'terminate'
-];
+exports.command = 'environments [account] <operation>';
+exports.describe = 'environments in Codefresh';
 
-commands.forEach(function(commandId) {
-    require(path.join(__dirname , commandId));
-});
+var allOperations = [
+    'stop', 'start',
+    'pause', 'unpause',
+    'terminate', 'status',
+    'terminateAll',
+    'getAll'];
 
-var usage = function() {
-    console.log(
-        "cf-cli environments <command>\n" +
-        "  " + commands.join(", ")
+var idOperations = [
+    'stop', 'start',
+    'pause', 'unpause',
+    'terminate', 'status'];
 
-    );
+exports.builder = function (yargs) {
+    return yargs.option('url', {
+        alias: 'url',
+        default: 'https://g.codefresh.io'
+    }).option('account', {
+        alias: 'a'
+    }).option('operation',{
+        demand: true,
+        type: 'string',
+        describe: `available the following operations with environments ${JSON.stringify(allOperations)}`
+    }).option('id', {
+        type: 'string',
+        describe: `index of environment that you want to ${JSON.stringify(idOperations)}`
+    }).option('newName',{
+        type: 'string',
+        describe: `The new name to assign to the environment`
+    })
+        .help("h")
+        .alias("h","help");
 };
 
-var process_command = function() {
-    var command = process.argv.shift();
+exports.handler = function (argv) {
+    console.log('running');
+    var info = {
+        url: argv.url,
+        account: argv.account,
+        operation: argv.operation,
+        id: argv.id,
+        newName: argv.newName
+    };
 
-    if (commands.indexOf(command) === -1) {
-        return usage();
+    if(!_.includes(allOperations, argv.operation)) {
+        throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
     }
 
-    require('./' + command);
-};
+    var login = new Login(argv.url, {user: argv.user, password : argv.password, access:{file: argv.tokenFile, token : argv.token}});
 
-process_command();
+    var environments;
+    switch(argv.operation) {
+        case 'terminateAll':
+            info.id = 'all';
+            info.operation = 'terminate';
+            environments = command.get(info);
+            break;
+        case 'status':
+        case 'stop':
+        case 'start':
+        case 'pause':
+        case 'unpause':
+        case 'terminate':
+            environments = command.get(info);
+            break;
+        case 'getAll':
+            environments = command.getAll(info);
+            break;
+    }
+    login.connect().then(environments.bind(login.token), (err) => {
+        debug('error:' + err);
+        process.exit(err);
+    });
+};

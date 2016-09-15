@@ -32,8 +32,15 @@ gulp.task('lint', ['clean'], function () {
 });
 
 gulp.task('set_unit_env_vars', function () {
+    var CF_TOKEN = process.env.CF_TOKEN;
+    var USERNAME = process.env.USERNAME;
+    var PASSWORD = process.env.PASSWORD;
     env({
-        vars: { }
+        vars: {
+            CF_TOKEN: CF_TOKEN,
+            USERNAME: USERNAME,
+            PASSWORD: PASSWORD
+        }
     });
 });
 

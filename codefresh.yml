@@ -1,49 +1,46 @@
----
-  version: "1.0"
-  steps:
-    test-step:
-      fail-fast: false
-      image: "node:latest"
-      working-directory: ${{initial-clone}}
-      commands:
-        - "npm install -g better-npm-run"
-        - "npm install -g mocha"
-        - "npm install"
-        - "mocha ./commands/yaml"
+version: "1.0"
 
-    security-by-snyk:
-      fail-fast: false
-      image: "node:latest"
-      working-directory: ${{initial-clone}}
-      commands:
-        - "npm install -g snyk"
-        - "snyk test"
+steps:
+  build-docker-image:
+    type: build
+    dockerfile: Dockerfile
+    image-name: codefreshio/cf-cli
+    tag: ${{CF_BRANCH}}
 
-    publish-npm:
-          fail-fast: false
-          image: "node:latest"
-          working-directory: ${{initial-clone}}
-          environment :
-             - NPM_USERNAME =${{NPM_USER}}
-             - NPM_PASSWORD= ${{NPM_PASSWORD}}
-             - NPM_EMAIL=verchol@gmail.com
-          commands:
-            - "npm install -g gulp"
-            - "gulp bump"
-            - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc"
-            - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc"
-            - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc"
-            - "gulp npm"
+  unit-test-step:
+    image: node:latest
+    working-directory: ${{build-docker-image}}
+    commands:
+      - npm install gulp
+      - npm install -g gulp
+      - gulp lint
+      - gulp unit_test
 
+#  security-by-snyk:
+#    fail-fast: false
+#    image: "node:latest"
+#    working-directory: ${{initial-clone}}
+#    commands:
+#      - "npm install -g snyk"
+#      - "snyk test"
 
-    build-docker-image:
-             type: "build"
-             fail-fast: false
-             dockerfile: "Dockerfile"
-             image-name: "verchol/cf-cli"
-             tag: ${{CF_BRANCH}}
+#  publish-npm:
+#    fail-fast: false
+#    image: "node:latest"
+#    working-directory: ${{initial-clone}}
+#    environment :
+#       - NPM_USERNAME =${{NPM_USER}}
+#       - NPM_PASSWORD= ${{NPM_PASSWORD}}
+#       - NPM_EMAIL=verchol@gmail.com
+#    commands:
+#      - "npm install -g gulp"
+#      - "gulp bump"
+#      - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc"
+#      - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc"
+#      - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc"
+#      - "gulp npm"
 
-     deploy_kubernetis:
-            image : "kub_deployer"
-            commands:
-              -  cbtl verchol/${{CF_IMAGE:CF_TAG}}
+#  deploy_kubernetis:
+#    image : "kub_deployer"
+#    commands:
+#      -  cbtl verchol/${{CF_IMAGE:CF_TAG}}

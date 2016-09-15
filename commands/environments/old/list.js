@@ -1,5 +1,5 @@
 var program = require('commander');
-var api         = require('../../lib/api');
+var api         = require('../../../lib/api');
 
 
 
