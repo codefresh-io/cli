@@ -35,8 +35,9 @@
     "swig": "^1.4.2",
     "yargs": "^4.7.0",
     "superagent-use": "^0.0.1",
-    "jsonfile":"^2.3.1",
-    "cf-errors":"^0.1.11"
+    "jsonfile": "^2.3.1",
+    "cf-errors": "^0.1.11",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

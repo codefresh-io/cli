@@ -31,15 +31,20 @@ exports.handler = function (argv) {
     debug(`${argv.token}`);
 
     var login = new Login(argv.url, argv);
-    login.connect().then(login.getUserInfo.bind(login))
-        .then((user) => {
-            assert(login.token);
-            debug(`after successfull login ${JSON.stringify(user.toString())}`);
-            console.log('Now you logged in as');
-            console.log(prettyjson.render(user.toString()));
-            process.exit(0);
-        }, (error) => {
-            console.log(`${error}`);
-            process.exit(error);
-        });
+    login.preConditions().then(() => {
+        login.connect().then(login.getUserInfo.bind(login))
+            .then((user) => {
+                assert(login.token);
+                debug(`after successfull login ${JSON.stringify(user.toString())}`);
+                console.log('Now you logged in as');
+                console.log(prettyjson.render(user.toString()));
+                process.exit(0);
+            }, (error) => {
+                console.log(`${error}`);
+                process.exit(error);
+            });
+    }, (error) => {
+        console.log(`${error}`);
+        process.exit(error);
+    });
 };
