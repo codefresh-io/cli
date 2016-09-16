@@ -123,6 +123,14 @@ module.exports.getAll = function(info) {
             }
             if(info.tofile) {
                 helper.toFile(info.tofile, (helper.IsJson(body) ? JSON.parse(body) : body));
+            } else if(info.table) {
+                if(helper.IsJson(body)) {
+                    var builds = JSON.parse(body);
+                    helper.toTable("build", builds, Build.getHeader());
+                }else {
+                    console.log('body:' + prettyjson.render(JSON.parse(body)));
+                    deferred.resolve(prettyjson.render(body));
+                }
             } else {
                 console.log('body:' + prettyjson.render(JSON.parse(body)));
                 deferred.resolve(prettyjson.render(body));

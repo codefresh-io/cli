@@ -40,6 +40,9 @@ exports.builder = function (yargs) {
   }).option('tofile', {
     type: 'string',
     describe: 'save output to file'
+  }).option('table', {
+    type: "boolean",
+    describe: "output as table"
   })
       .option('operation', {
         demand: true,
@@ -61,6 +64,7 @@ exports.handler = function (argv) {
   info.sha = argv.sha;
   info.branch = argv.branch;
   info.tofile = argv.tofile;
+  info.table = argv.table;
 
   if(!_.includes(allOperations, argv.operation)) {
     throw new CFError({
