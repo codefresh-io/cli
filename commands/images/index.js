@@ -19,7 +19,7 @@ exports.builder = function (yargs) {
     }).option('account', {
         alias: 'a'
     }).option('operation',{
-        demand: true,
+        demand: false,
         type: 'string',
         describe: `available the following operations with ${JSON.stringify(allOperations)}`
     }).option('id', {
@@ -31,6 +31,15 @@ exports.builder = function (yargs) {
     }).option('tofile',{
         type: 'string',
         describe: 'save results to file'
+    }).option('table', {
+        type: "boolean",
+        describe: "output as table"
+    }).option('limit', {
+        type: "number",
+        describe: "limit of images"
+    }).option('ls', {
+        type: "boolean",
+        describe: "list of images"
     })
         .help("h")
         .alias("h","help");
@@ -44,10 +53,12 @@ exports.handler = function (argv) {
         operation: argv.operation,
         id: argv.id,
         imageName: argv.imageName,
-        tofile: argv.tofile
+        tofile: argv.tofile,
+        table: argv.table,
+        limit: argv.limit
     };
 
-    if(!_.includes(allOperations, argv.operation)) {
+    if(!argv.ls && !_.includes(allOperations, argv.operation)) {
         throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
     }
 
@@ -60,12 +71,20 @@ exports.handler = function (argv) {
 
     var images;
     switch(argv.operation) {
-        case 'get':
         case 'getTags':
+            images = command.getTags(info);
+            break;
+        case 'get':
         case 'getAll':
             images = command.get(info);
             break;
     }
+
+    if(argv.ls) {
+        info.operation = "getAll";
+        images = command.get(info);
+    }
+
     login.connect().then(images.bind(login.token), (err) => {
         debug('error:' + err);
         process.exit(err);

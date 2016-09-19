@@ -6,6 +6,7 @@ var _       = require('lodash');
 var Table   = require('tty-table');
 var Build   = require('../commands/builds/build');
 var Workflow = require('../commands/builds/workflow');
+var Image    = require('../commands/images/image');
 
 var IsJson = function (str) {
     try {
@@ -47,6 +48,15 @@ var generateRows = function(type, array) {
                 _.each(builds.docs, function (item) {
                     rows.push(new Build.Build(item).toJson());
                 });
+            }
+            break;
+        case "image":
+            if(Array.isArray(array)) {
+                _.each(array, function (item) {
+                    rows.push(new Image.Image(item).toJson());
+                });
+            } else {
+                rows.push(new Image.Image(array).toJson());
             }
             break;
     }

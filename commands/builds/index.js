@@ -17,7 +17,7 @@ exports.builder = function (yargs) {
     alias: 'url',
     default: 'https://g.codefresh.io'
   }).option('account', {
-    demand: false,
+    demand: true,
     alias: 'a',
     describe: 'account name'
   }).option('repo', {

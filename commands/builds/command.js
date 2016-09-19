@@ -108,7 +108,7 @@ module.exports.build = function (info) {
 
 module.exports.getAll = function(info) {
     let buildUrl =  `${info.url}/api/workflow?limit=10&page=1&account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}&type=webhook`;
-
+    // let buildUrl =  `${info.url}/api/builds?account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}`;
     return (token) => {
         var deferred = Q.defer();
 
@@ -121,18 +121,21 @@ module.exports.getAll = function(info) {
             if (err) {
                 deferred.reject(err);
             }
+
             if(info.tofile) {
                 helper.toFile(info.tofile, (helper.IsJson(body) ? JSON.parse(body) : body));
+                deferred.resolve(prettyjson.render(body));
             } else if(info.table) {
                 if(helper.IsJson(body)) {
                     var builds = JSON.parse(body);
                     helper.toTable("build", builds, Build.getHeader());
-                }else {
-                    console.log('body:' + prettyjson.render(JSON.parse(body)));
+                    deferred.resolve(prettyjson.render(body));
+                } else {
+                    console.log('Body:' + JSON.stringify(body));
                     deferred.resolve(prettyjson.render(body));
                 }
             } else {
-                console.log('body:' + prettyjson.render(JSON.parse(body)));
+                console.log('Body:' + JSON.stringify(body));
                 deferred.resolve(prettyjson.render(body));
             }
         });
