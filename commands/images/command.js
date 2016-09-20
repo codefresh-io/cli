@@ -2,36 +2,11 @@
  * Created by nikolai on 12.8.16.
  */
 'use strict';
-var _           = require('lodash');
 var request     = require('request');
 var prettyjson  = require('prettyjson');
 var Q           = require('q');
 var helper      = require('../../helper/helper');
 var Image       = require('./image');
-
-var idOperations = ['get'];
-
-var validate = function (info) {
-    if(_.includes(idOperations, info.operation) && info.id === undefined) {
-        throw new Error('Please, specify --id [id of the image]');
-    }
-
-    if(info.operation === 'getTags' && info.imageName === undefined) {
-        throw new Error('Please, specify --imageName [name of image]');
-    }
-};
-
-var getUrl = function (info) {
-    let url;
-    if(info.id !== undefined) {
-        url = `${info.url}/api/images/${info.id}`;
-    } else if(info.imageName !== undefined) {
-        url = `${info.url}/api/images/${encodeURIComponent(info.imageName)}/tags`;
-    } else {
-        url = `${info.url}/api/images`;
-    }
-    return url;
-};
 
 var outputTo = function (body, info) {
     var isJson = false;
@@ -59,8 +34,7 @@ var outputTo = function (body, info) {
 };
 
 module.exports.get = function (info) {
-    validate(info);
-    let url = getUrl(info);
+    let url = info.targetUrl;
 
     return (token) => {
         console.log('url:' + url);
@@ -83,8 +57,7 @@ module.exports.get = function (info) {
 };
 
 module.exports.getTags = function (info) {
-    validate(info);
-    let url = getUrl(info);
+    let url = info.targetUrl;
 
     return (token) => {
         console.log('url:' + url);
