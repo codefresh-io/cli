@@ -18,6 +18,7 @@ exports.builder = function (yargs) {
         demand : true
     }).option('pwd', {
         alias: 'p',
+        describe: 'password',
         demand : false
     })
         .help("h")

@@ -7,6 +7,7 @@ var path      = require('path');
 var User      = require('./user');
 var mkdirp    = require('mkdirp');
 var Q         = require('q');
+var CFError   = require('cf-errors');
 
 var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json');
 
@@ -40,7 +41,6 @@ var persistToken = function(token, tokenFile) {
 };
 
 function Login(url, params) {
-    //{url: url, token :token,  tokenFile : accessTokenFile)
     this.url  = url;
     this.user = params.user;
     this.pwd = params.pwd;
@@ -55,14 +55,7 @@ function Login(url, params) {
     }
     this.accessTokenFile = access.file;
     this.token = access.token;
-    //var self = this;
     debug(`url - ${url}, user - ${params.user}, ${params.pwd}, ${access.file}, ${access.token}`);
-
-    // if (this.token) {
-    //     createCodefreshDir().then(() => {
-    //         persistToken(this.token, this.accessTokenFile);
-    //     });
-    // }
 }
 
 Login.prototype.resetToken = function() {
@@ -121,7 +114,10 @@ Login.prototype.connect = function() {
                     debug('request completed! ');
                     if (err) {
                         debug(`error - ${err} , res= ${JSON.stringify(res.body)}`);
-                        return reject(err);
+                        return reject(new CFError({
+                            message: `${JSON.stringify(res.body)}`,
+                            cause: err
+                        }));
                     }
                     debug('new token created ' + res);
                     self.token = res.body.accessToken;
@@ -129,7 +125,6 @@ Login.prototype.connect = function() {
                 });
         }).catch((err) => {
             debug('UNHANDLED error ' + err);
-            console.log('unhandled error');
             throw err;
         });
     });
