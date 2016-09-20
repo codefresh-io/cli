@@ -3,7 +3,6 @@
  * environments
  */
 'use strict';
-
 var _           = require('lodash');
 var request     = require('request');
 var prettyjson  = require('prettyjson');
@@ -11,34 +10,8 @@ var Q           = require('q');
 var Environment = require('./environment');
 var helper      = require('../../helper/helper');
 
-var idOperations = [
-    'status', 'stop',
-    'start', 'pause',
-    'unpause', 'terminate'];
-
-var validate = function (info) {
-    if(_.includes(idOperations, info.operation) && info.id === undefined) {
-        throw new Error('Please, specify --id [id of a environment]');
-    }
-
-    if(info.operation === 'rename' && info.newName === undefined) {
-        throw new Error('Please, specify --newName [the new name to assign to the environment]');
-    }
-};
-
-var getUrl = function (info) {
-    let url;
-    if(info.id !== undefined) {
-        url = `${info.url}/api/environments/${info.id}/${info.operation}`;
-    } else {
-        url = `${info.url}/api/environments`;
-    }
-    return url;
-};
-
 module.exports.get = function (info) {
-    validate(info);
-    let url = getUrl(info);
+    let url = info.targetUrl;
 
     return (token) => {
         console.log('url:' + url);
@@ -63,8 +36,7 @@ module.exports.get = function (info) {
 };
 
 module.exports.getAll = function (info) {
-    validate(info);
-    let url = getUrl(info);
+    let url = info.targetUrl;
 
     return (token) => {
         console.log('url:' + url);
