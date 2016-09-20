@@ -1,13 +1,12 @@
 /**
  * Created by nikolai on 9/20/16.
  */
-
 'use strict';
 var debug   = require('debug')('login->index');
-var Login   = require('../login/connector');
-var command = require('./command');
+var Login   = require('../../login/connector');
+var command = require('./../command');
 
-exports.command = 'images [account] <operation>';
+exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
 
 exports.builder = function (yargs) {
@@ -16,15 +15,16 @@ exports.builder = function (yargs) {
         default: 'https://g.codefresh.io'
     }).option('account', {
         alias: 'a'
+    }).option('id', {
+        demand: true,
+        type: 'string',
+        describe: `id of the Image`
     }).option('tofile',{
         type: 'string',
         describe: 'save results to file'
     }).option('table', {
         type: "boolean",
         describe: "output as table"
-    }).option('limit', {
-        type: "number",
-        describe: "limit of images"
     })
         .help("h")
         .alias("h","help");
@@ -35,10 +35,10 @@ exports.handler = function (argv) {
     var info = {
         url: argv.url,
         account: argv.account,
+        id: argv.id,
         tofile: argv.tofile,
         table: argv.table,
-        limit: argv.limit,
-        targetUrl: `${argv.url}/api/images`
+        targetUrl: `${argv.url}/api/images/${argv.id}`
     };
 
     var login = new Login(argv.url,

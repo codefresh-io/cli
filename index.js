@@ -21,9 +21,9 @@ var argv = yargs.usage('usage: $0 <command>')
     .command('images', 'api of images', function (yargs) {
         argv = yargs
             .usage('usage: $0 images <item> [options]')
-            .command('ls', '-list of images', require('./commands/images/ls'))
-            .command('get', '-get image by id', require('./commands/images/get'))
-            .command('getTags', '-get list of tags', require('./commands/images/getTags'))
+            .command('ls', '-list of images', require('./commands/images/cmd/ls'))
+            .command('get', '-get image by id', require('./commands/images/cmd/get'))
+            .command('getTags', '-get list of tags', require('./commands/images/cmd/getTags'))
             .help('help')
             .wrap(null)
             .argv;

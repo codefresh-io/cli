@@ -3,8 +3,8 @@
  */
 'use strict';
 var debug   = require('debug')('login->index');
-var Login   = require('../login/connector');
-var command = require('./command');
+var Login   = require('../../login/connector');
+var command = require('./../command');
 
 exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
