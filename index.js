@@ -17,7 +17,16 @@ function checkCommands (yargs, argv, numRequired) {
 
 var argv = yargs.usage('usage: $0 <command>')
     .command('login' , 'login' , require('./commands/login'))
-    .command('builds' , 'getAll/build a certain build', require('./commands/builds'))
+    .command('builds' , 'api of builds', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 builds <command> [options]')
+            .command('ls', '-list of builds', require('./commands/builds/cmd/ls'))
+            .command('build', '-certain build', require('./commands/builds/cmd/build'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .command('images', 'api of images', function (yargs) {
         argv = yargs
             .usage('usage: $0 images <item> [options]')

@@ -73,14 +73,6 @@ var followBuildProgress = function (data) {
 };
 
 module.exports.build = function (info) {
-    if(info.pipelineName === undefined) {
-        throw new Error('Please, specify --pipelineName [name of a pipeline]');
-    }
-
-    if(info.branch === undefined) {
-        throw new Error(`Please, specify --branch [name of a branch] in repo ${info.repoName}`);
-    }
-
     return (token) => {
         info.token = token;
         pipelines.getPipelineByName(info)
@@ -96,7 +88,6 @@ module.exports.build = function (info) {
                     }, (err) => {
                         throw new Error(err);
                     });
-
                 }, (err) => {
                     throw new Error(err);
                 });
@@ -107,8 +98,7 @@ module.exports.build = function (info) {
 };
 
 module.exports.getAll = function(info) {
-    let buildUrl =  `${info.url}/api/workflow?limit=10&page=1&account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}&type=webhook`;
-    // let buildUrl =  `${info.url}/api/builds?account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}`;
+    let buildUrl = info.targetUrl;
     return (token) => {
         var deferred = Q.defer();
 
