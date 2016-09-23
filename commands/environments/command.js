@@ -81,15 +81,16 @@ var findEnvByComposeName = function (pUrl, name, token) {
         if(err) {
             deferred.reject(err);
         }
+
         if(body.length === 0) {
             deferred.resolve(false);
         }
 
-        var res = _.find(JSON.parse(body), {"name":envName});
-        if(!res.name) {
+        var res = _.find(JSON.parse(body), 'name', envName);
+        if(!res || !res.name) {
             deferred.resolve(false);
-        }
-        deferred.resolve(new Environment.Environment(res));
+        } else
+            deferred.resolve(new Environment.Environment(res));
     });
     return deferred.promise;
 };

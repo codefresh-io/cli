@@ -38,7 +38,18 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
-    .command('compositions', 'add/remove/getAll/run composition in my account', require('./commands/compositions/new'))
+    .command('compositions', 'actions with composition', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 compositions <item> [options]')
+            .command('ls', '-list of compositions', require('./commands/compositions/new/cmd/ls'))
+            .command('create', '-create a composition', require('./commands/compositions/new/cmd/create'))
+            .command('remove', '-remove a composition', require('./commands/compositions/new/cmd/remove'))
+            .command('run', '-launch a composition', require('./commands/compositions/new/cmd/run'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .command('environments', 'api of environments', function (yargs) {
         argv = yargs
             .usage('usage: $0 environments <item> [options]')

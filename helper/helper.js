@@ -7,6 +7,7 @@ var Table   = require('tty-table');
 var Build   = require('../commands/builds/build');
 var Workflow = require('../commands/builds/workflow');
 var Image    = require('../commands/images/image');
+var Composition = require('../commands/compositions/new/composition');
 
 var IsJson = function (str) {
     try {
@@ -57,6 +58,15 @@ var generateRows = function(type, array) {
                 });
             } else {
                 rows.push(new Image.Image(array).toJson());
+            }
+            break;
+        case "composition":
+            if(Array.isArray(array)) {
+                _.each(array, function (item) {
+                    rows.push(new Composition.Composition(item).toJson());
+                });
+            } else {
+                rows.push(new Composition.Composition(array).toJson());
             }
             break;
     }
