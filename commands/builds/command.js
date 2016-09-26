@@ -35,8 +35,8 @@ var buildByService = function (info) {
 var getBuildById = function (info) {
     var deferred = Q.defer();
 
-    var url = `${info.url}/api/builds/${info.buildId}`,
-        headers = {
+    var url = `${info.url}/api/builds/${info.buildId}`;
+        var headers = {
             'Accept': 'application/json',
             'X-Access-Token': info.token
         };
@@ -45,6 +45,7 @@ var getBuildById = function (info) {
         if (err) {
             deferred.reject(err);
         }
+        // console.log('body:' + JSON.stringify(body));
         deferred.resolve(new Build.Build(JSON.parse(body)));
     });
     return deferred.promise;
@@ -57,7 +58,7 @@ var followBuildProgress = function (data) {
     var repeat = () => {
         getBuildById(data)
             .then((build) => {
-                if(build.getStatus() === 'start') {
+                if(build.getStatus() === 'start' || build.getStatus() === 'running') {
                     setTimeout(() => repeat(), 1000);
                 } else {
                     process.stdout.write(' done!\n');
