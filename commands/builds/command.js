@@ -35,8 +35,8 @@ var buildByService = function (info) {
 var getBuildById = function (info) {
     var deferred = Q.defer();
 
-    var url = `${info.url}/api/builds/${info.buildId}`,
-        headers = {
+    var url = `${info.url}/api/builds/${info.buildId}`;
+        var headers = {
             'Accept': 'application/json',
             'X-Access-Token': info.token
         };
@@ -45,6 +45,7 @@ var getBuildById = function (info) {
         if (err) {
             deferred.reject(err);
         }
+        // console.log('body:' + JSON.stringify(body));
         deferred.resolve(new Build.Build(JSON.parse(body)));
     });
     return deferred.promise;
@@ -57,7 +58,7 @@ var followBuildProgress = function (data) {
     var repeat = () => {
         getBuildById(data)
             .then((build) => {
-                if(build.getStatus() === 'start') {
+                if(build.getStatus() === 'start' || build.getStatus() === 'running') {
                     setTimeout(() => repeat(), 1000);
                 } else {
                     process.stdout.write(' done!\n');
@@ -73,14 +74,6 @@ var followBuildProgress = function (data) {
 };
 
 module.exports.build = function (info) {
-    if(info.pipelineName === undefined) {
-        throw new Error('Please, specify --pipelineName [name of a pipeline]');
-    }
-
-    if(info.branch === undefined) {
-        throw new Error(`Please, specify --branch [name of a branch] in repo ${info.repoName}`);
-    }
-
     return (token) => {
         info.token = token;
         pipelines.getPipelineByName(info)
@@ -96,7 +89,6 @@ module.exports.build = function (info) {
                     }, (err) => {
                         throw new Error(err);
                     });
-
                 }, (err) => {
                     throw new Error(err);
                 });
@@ -107,8 +99,7 @@ module.exports.build = function (info) {
 };
 
 module.exports.getAll = function(info) {
-    let buildUrl =  `${info.url}/api/workflow?limit=10&page=1&account=${info.account}&repoOwner=${info.repoOwner}&repoName=${info.repoName}&type=webhook`;
-
+    let buildUrl = info.targetUrl;
     return (token) => {
         var deferred = Q.defer();
 
@@ -121,10 +112,21 @@ module.exports.getAll = function(info) {
             if (err) {
                 deferred.reject(err);
             }
+
             if(info.tofile) {
                 helper.toFile(info.tofile, (helper.IsJson(body) ? JSON.parse(body) : body));
+                deferred.resolve(prettyjson.render(body));
+            } else if(info.table) {
+                if(helper.IsJson(body)) {
+                    var builds = JSON.parse(body);
+                    helper.toTable("build", builds, Build.getHeader());
+                    deferred.resolve(prettyjson.render(body));
+                } else {
+                    console.log('Body:' + JSON.stringify(body));
+                    deferred.resolve(prettyjson.render(body));
+                }
             } else {
-                console.log('body:' + prettyjson.render(JSON.parse(body)));
+                console.log('Body:' + JSON.stringify(body));
                 deferred.resolve(prettyjson.render(body));
             }
         });

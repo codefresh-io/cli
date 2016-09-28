@@ -3,7 +3,6 @@
  * compositions
  */
 'use strict';
-
 var request         = require('request');
 var prettyjson      = require('prettyjson');
 var fs              = require('fs');
@@ -12,19 +11,7 @@ var Composition     = require('./composition');
 var Environments    = require('../../environments/command');
 var helper          = require('../../../helper/helper');
 
-const formatPayload = {
-    isAdvanced: false,
-    vars: [{"key":"test_key", "value":"test_value"}],
-    yamlJson: "path to your composition.yml",
-    name: "string"
-};
-
 module.exports.add = function(info) {
-    if(info.file === undefined) {
-        throw new Error('Please, specify --file [path to file.json]. Format file.json is\n' +
-            prettyjson.render(formatPayload));
-    }
-
     let compositionUrl = `${info.url}/api/compositions`;
     let payload = {};
     if (fs.existsSync(info.file)) {
@@ -61,9 +48,6 @@ module.exports.add = function(info) {
 };
 
 module.exports.remove = function (info) {
-    if(info.id === undefined) {
-        throw new Error('Please, specify --id [id of a composition]');
-    }
     let compositionUrl = `${info.url}/api/compositions/${info.id}`;
 
     return (token) => {
@@ -86,6 +70,31 @@ module.exports.remove = function (info) {
     };
 };
 
+var outputTo = function (body, info) {
+    var isJson = false;
+    if(helper.IsJson(body)) {
+        body = JSON.parse(body);
+        isJson = true;
+    }
+
+    if(Array.isArray(body) && info.limit) {
+        body.splice(info.limit, Number.MAX_VALUE);
+    }
+
+    if(info.tofile) {
+        helper.toFile(info.tofile, JSON.stringify(body));
+        return prettyjson.render(body);
+    }
+
+    if(info.table && isJson) {
+        helper.toTable("composition", body, Composition.getHeader());
+        return prettyjson.render(body);
+    }
+
+    console.log('Response body:' + prettyjson.render(body));
+    return body;
+};
+
 module.exports.getAll = function (info) {
     let compositionUrl = `${info.url}/api/compositions`;
 
@@ -100,12 +109,7 @@ module.exports.getAll = function (info) {
             if (err) {
                 deferred.reject(err);
             }
-            if(info.tofile) {
-                helper.toFile(info.tofile, JSON.parse(body));
-            } else {
-                console.log('Response body:'+prettyjson.render(JSON.parse(body)));
-            }
-            deferred.resolve(body);
+            deferred.resolve(outputTo(body, info));
         });
         return deferred.promise;
     };
@@ -158,10 +162,6 @@ var getByIdentifier = function (info, token) {
 };
 
 module.exports.run = function (info) {
-    if(info.id === undefined) {
-        throw new Error('Please, specify --id [id or name of a composition]');
-    }
-
     return (token) => {
         getByIdentifier(info, token).then(function (model) {
             runCompose(info, token)

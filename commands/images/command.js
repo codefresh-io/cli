@@ -2,41 +2,62 @@
  * Created by nikolai on 12.8.16.
  */
 'use strict';
-
-
-var _           = require('lodash');
 var request     = require('request');
 var prettyjson  = require('prettyjson');
 var Q           = require('q');
 var helper      = require('../../helper/helper');
+var Image       = require('./image');
 
-var idOperations = ['get'];
-
-var validate = function (info) {
-    if(_.includes(idOperations, info.operation) && info.id === undefined) {
-        throw new Error('Please, specify --id [id of the image]');
+var outputTo = function (body, info) {
+    var isJson = false;
+    if(helper.IsJson(body)) {
+        body = JSON.parse(body);
+        isJson = true;
     }
 
-    if(info.operation === 'getTags' && info.imageName === undefined) {
-        throw new Error('Please, specify --imageName [name of image]');
+    if(Array.isArray(body) && info.limit) {
+        body.splice(info.limit, Number.MAX_VALUE);
     }
-};
 
-var getUrl = function (info) {
-    let url;
-    if(info.id !== undefined) {
-        url = `${info.url}/api/images/${info.id}`;
-    } else if(info.imageName !== undefined) {
-        url = `${info.url}/api/images/${encodeURIComponent(info.imageName)}/tags`;
-    } else {
-        url = `${info.url}/api/images`;
+    if(info.tofile) {
+        helper.toFile(info.tofile, JSON.stringify(body));
+        return prettyjson.render(body);
     }
-    return url;
+
+    if(info.table && isJson) {
+        helper.toTable("image", body, Image.getHeader());
+        return prettyjson.render(body);
+    }
+
+    console.log('Response body:' + prettyjson.render(body));
+    return body;
 };
 
 module.exports.get = function (info) {
-    validate(info);
-    let url = getUrl(info);
+    let url = info.targetUrl;
+
+    return (token) => {
+        console.log('url:' + url);
+        var deferred = Q.defer();
+        var headers = {
+            'Accept': 'application/json',
+            'Content-Type':'application/json',
+            'X-Access-Token': token
+        };
+
+        request.get({url: url, headers: headers}, function (err, httpRes, body) {
+            if (err) {
+                deferred.reject(err);
+            }
+
+            deferred.resolve(outputTo(body, info));
+        });
+        return deferred.promise;
+    };
+};
+
+module.exports.getTags = function (info) {
+    let url = info.targetUrl;
 
     return (token) => {
         console.log('url:' + url);
@@ -55,9 +76,9 @@ module.exports.get = function (info) {
             if(info.tofile) {
                 helper.toFile(info.tofile, body);
             } else {
-                console.log('Response body:' + prettyjson.render(body));
-                deferred.resolve(body);
+                console.log('Response body:\n' + prettyjson.render(helper.IsJson(body) ? JSON.parse(body) : body));
             }
+            deferred.resolve(body);
         });
         return deferred.promise;
     };

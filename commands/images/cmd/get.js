@@ -1,16 +1,13 @@
 /**
- * Created by nikolai on 12.8.16.
+ * Created by nikolai on 9/20/16.
  */
 'use strict';
 var debug   = require('debug')('login->index');
-var Login   = require('../login/connector');
-var _       = require('lodash');
-var command = require('./command');
+var Login   = require('../../login/connector');
+var command = require('./../command');
 
-exports.command = 'images [account] <operation>';
+exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
-
-var allOperations = ['get', 'getAll', 'getTags'];
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
@@ -18,19 +15,16 @@ exports.builder = function (yargs) {
         default: 'https://g.codefresh.io'
     }).option('account', {
         alias: 'a'
-    }).option('operation',{
+    }).option('id', {
         demand: true,
         type: 'string',
-        describe: `available the following operations with ${JSON.stringify(allOperations)}`
-    }).option('id', {
-        type: 'string',
         describe: `id of the Image`
-    }).option('imageName',{
-        type: 'string',
-        describe: `name of the image`
     }).option('tofile',{
         type: 'string',
         describe: 'save results to file'
+    }).option('table', {
+        type: "boolean",
+        describe: "output as table"
     })
         .help("h")
         .alias("h","help");
@@ -41,15 +35,11 @@ exports.handler = function (argv) {
     var info = {
         url: argv.url,
         account: argv.account,
-        operation: argv.operation,
         id: argv.id,
-        imageName: argv.imageName,
-        tofile: argv.tofile
+        tofile: argv.tofile,
+        table: argv.table,
+        targetUrl: `${argv.url}/api/images/${argv.id}`
     };
-
-    if(!_.includes(allOperations, argv.operation)) {
-        throw new Error(`Use one of the following operations: ${JSON.stringify(allOperations)}`);
-    }
 
     var login = new Login(argv.url,
         {
@@ -58,14 +48,8 @@ exports.handler = function (argv) {
             password: argv.password
         });
 
-    var images;
-    switch(argv.operation) {
-        case 'get':
-        case 'getTags':
-        case 'getAll':
-            images = command.get(info);
-            break;
-    }
+    var images = command.get(info);
+
     login.connect().then(images.bind(login.token), (err) => {
         debug('error:' + err);
         process.exit(err);

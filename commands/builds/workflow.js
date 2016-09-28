@@ -1,26 +1,26 @@
 /**
- * Created by nikolai on 24.8.16.
+ * Created by nikolai on 9/16/16.
  */
 var chalk   = require('chalk');
 
-function Build(data) {
+function Workflow(data) {
     this.status = data.status;
-    this.repoOwner = data.repoOwner;
-    this.repoName = data.repoName;
-    this._id = data._id;
+    this.repoOwner = data.userName;
+    this.repoName = data.serviceName;
+    this._id = data.id;
 }
 
-Build.prototype.getStatus = function () {
+Workflow.prototype.getStatus = function () {
     return this.status;
 };
 
-Build.prototype.toJson = function () {
+Workflow.prototype.toJson = function () {
     var obj = {};
     obj.id = this._id;
     obj.repository = this.repoName;
     obj.owner = this.repoOwner;
     obj.status = this.status;
-    obj.type = "build";
+    obj.type = "workflow";
     return obj;
 };
 
@@ -30,7 +30,8 @@ var header = [
         headerColor : "cyan",
         color: "white",
         align : "left",
-        width : 30
+        paddingLeft : 5,
+        width : 10
     },
     {
         value : "repository",
@@ -59,13 +60,13 @@ var header = [
         value : "type",
         color : "white",
         width : 20,
-    },
+    }
 ];
 
 var getHeader = function () {
     return header;
 };
 
-module.exports.Build = Build;
+module.exports.Workflow = Workflow;
 module.exports.getHeader = getHeader;
 
