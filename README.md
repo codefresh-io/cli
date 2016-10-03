@@ -4,7 +4,7 @@ This package provides a unified command line interface to Codefresh.
 ## Installation
 
 ```
-$ npm install -g cf-cli
+$ npm install -g @codefresh-io/cf-cli
 ```
 
 * [Template of Commands](#command)
