@@ -1,4 +1,4 @@
-var stack = [
+var stack =
   {
     name : 'nodejs',
     steps : [
@@ -9,8 +9,7 @@ var stack = [
           "dockerfile": "Dockerfile",
           "image-name": "owner/imageName",
           "tag" : "latest"
-
-      } ,
+      },
 
       {
           "name" :  "test-step",
@@ -25,9 +24,10 @@ var stack = [
 
        } ,
      ]
-  }
-];
+  };
 
-module.exports = function(stacks){
-  stacks.push(stack);
+var get = function() {
+    return stack;
 };
+
+module.exports.get = get;

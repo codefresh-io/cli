@@ -1,6 +1,9 @@
+/**
+ * Created by nikolai on 10/13/16.
+ */
 var stack =
     {
-        name : 'ruby',
+        name : 'scala',
         steps : [
             {
                 "name" :  "build-step",
@@ -9,18 +12,16 @@ var stack =
                 "dockerfile": "Dockerfile",
                 "image-name": "owner/imageName",
                 "tag" : "latest"
-
             },
 
             {
                 "name" :  "test-step",
                 "fail-fast": false,
-                "image": "ruby:onbuild",
+                "image": "1science/sbt:0.13.8-oracle-jre-8",
                 "commands":
                     [
-                        "rake test"
+                        "sbt test"
                     ]
-
             } ,
         ]
     };
