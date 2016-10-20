@@ -1,14 +1,18 @@
----
-  version: "1.0"
-  steps: 
-    build-step: 
-      type: "build"
-      fail-fast: false
-      dockerfile: "Dockerfile"
-      image-name: "owner/imageName"
-      tag: "latest"
-    test-step: 
-      fail-fast: false
-      image: "1science/sbt:0.13.8-oracle-jre-8"
-      commands: 
-        - "sbt test"
+version: "1.0"
+steps:
+    build-step:
+      type: build
+      dockerfile: Dockerfile
+      image-name: codefreshio/cf-cli
+      tag: latest
+
+    unit-test-step:
+        image: ${{build-step}}
+        commands:
+          - gulp lint
+          - gulp unit_test
+
+    push-to-dockerhub:
+        type: push
+        candidate: ${{build-step}}
+        tag: latest
