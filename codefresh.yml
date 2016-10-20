@@ -9,6 +9,7 @@ steps:
     unit-test-step:
         image: ${{build-step}}
         commands:
+          - ls -l
           - gulp lint
           - gulp unit_test
 
