@@ -7,7 +7,7 @@ steps:
       tag: latest
 
     unit-test-step:
-        image: ${{build-step}}
+        image: node:latest
         commands:
           - ls -l
           - npm install gulp
