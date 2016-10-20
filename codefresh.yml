@@ -7,11 +7,11 @@ steps:
       tag: latest
 
     unit-test-step:
-        image: node:latest
+        image: ${{build-step}}
         commands:
           - ls -l
           - npm install gulp
-#          - npm install -g gulp
+          - npm install -g gulp
           - gulp lint
           - gulp unit_test
 
