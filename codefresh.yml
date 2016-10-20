@@ -10,7 +10,7 @@ steps:
         image: ${{build-step}}
         commands:
           - ls -l
-          - npm install gulp
+#          - npm install gulp
           - npm install -g gulp
           - gulp lint
           - gulp unit_test
