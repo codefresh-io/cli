@@ -128,7 +128,7 @@ describe('codefresh yaml spec', ()=>{
         assert(stacks[0].steps);
         console.log(`stack is ${JSON.stringify(stacks[0])}`);
         console.log(`stack steps are ${JSON.stringify(stacks[0].steps)}`);
-        console.log(`save/n ${save} ----/n`);
+        // console.log(`save/n ${save} ----/n`);
 
         var Q = require('q');
         var defer = Q.defer();

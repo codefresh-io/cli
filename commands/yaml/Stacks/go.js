@@ -3,9 +3,9 @@ var stack =
         name : 'go',
         steps : [
             {
-                "name" :  "build-step",
+                "name" :  "build_step",
                 "type": "build",
-                "fail-fast": false,
+                "fail_fast": false,
                 "dockerfile": "Dockerfile",
                 "image-name": "owner/imageName",
                 "tag" : "latest"
@@ -13,9 +13,9 @@ var stack =
             },
 
             {
-                "name" :  "test-step",
-                "fail-fast": false,
-                "image": "go:onbuild",
+                "name" :  "test_step",
+                "fail_fast": false,
+                "image": "golang",
                 "commands":
                     [
                         "go test"

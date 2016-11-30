@@ -16,7 +16,7 @@ function Yamlfile() {
 
 const buildStep = {
     type: "build",
-    "fail-fast": false,
+    "fail_fast": false,
     dockerfile: "Dockerfile",
     "image-name": "owner/imageName",
     tag : "latest"
@@ -108,8 +108,9 @@ Yamlfile.prototype.save = function(dir, file, callback) {
     var path = require('path');
     var fs   = require('fs');
     var yaml = path.resolve(dir, './' + file);
-    debug(`saving file ${yaml}`);
     let yamlText = YAML.stringify(this.model);
+    yamlText = yamlText.substring(yamlText.indexOf("\n") + 1);
+    debug(`saving file ${yamlText}`);
 
     fs.writeFile(yaml, yamlText, callback);
 };

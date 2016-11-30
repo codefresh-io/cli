@@ -1,21 +1,16 @@
-version: "1.0"
-steps:
-    build-step:
-      type: build
-      dockerfile: Dockerfile
-      image-name: codefreshio/cf-cli
-      tag: latest
-
-    unit-test-step:
-        image: ${{build-step}}
-        commands:
-          - ls -l
-#          - npm install gulp
-          - npm install -g gulp
-          - gulp lint
-          - gulp unit_test
-
-    push-to-dockerhub:
-        type: push
-        candidate: ${{build-step}}
-        tag: latest
+  version: "1.0"
+  steps: 
+    build_step: 
+      type: "build"
+      fail_fast: false
+      dockerfile: "Dockerfile"
+      image-name: "owner/imageName"
+      tag: "latest"
+    test-step: 
+      fail_fast: false
+      image: "node:latest"
+      commands: 
+        - "npm install -g better-npm-run"
+        - "npm install -g mocha"
+        - "npm install"
+        - "npm test"

@@ -1,8 +1,8 @@
 'use strict';
 
 var debug = require('debug')('yaml command');
-var YAML  = require('./yamlFile');
-var Stacks = require('./stacks');
+var YAML  = require('./../yamlFile');
+var Stacks = require('./../stacks');
 
 debug('in yaml command defintion');
 

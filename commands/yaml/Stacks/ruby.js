@@ -3,18 +3,18 @@ var stack =
         name : 'ruby',
         steps : [
             {
-                "name" :  "build-step",
+                "name" :  "build_step",
                 "type": "build",
-                "fail-fast": false,
+                "fail_fast": false,
                 "dockerfile": "Dockerfile",
-                "image-name": "owner/imageName",
+                "image_name": "owner/imageName",
                 "tag" : "latest"
 
             },
 
             {
-                "name" :  "test-step",
-                "fail-fast": false,
+                "name" :  "test_step",
+                "fail_fast": false,
                 "image": "ruby:onbuild",
                 "commands":
                     [

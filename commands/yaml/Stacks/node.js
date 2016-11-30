@@ -3,9 +3,9 @@ var stack =
     name : 'nodejs',
     steps : [
       {
-          "name" :  "build-step",
+          "name" :  "build_step",
           "type": "build",
-          "fail-fast": false,
+          "fail_fast": false,
           "dockerfile": "Dockerfile",
           "image-name": "owner/imageName",
           "tag" : "latest"
@@ -13,7 +13,7 @@ var stack =
 
       {
           "name" :  "test-step",
-          "fail-fast": false,
+          "fail_fast": false,
           "image": "node:latest",
           "commands":
           [  "npm install -g better-npm-run" ,

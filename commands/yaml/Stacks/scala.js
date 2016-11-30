@@ -6,17 +6,17 @@ var stack =
         name : 'scala',
         steps : [
             {
-                "name" :  "build-step",
+                "name" :  "build_step",
                 "type": "build",
-                "fail-fast": false,
+                "fail_fast": false,
                 "dockerfile": "Dockerfile",
                 "image-name": "owner/imageName",
                 "tag" : "latest"
             },
 
             {
-                "name" :  "test-step",
-                "fail-fast": false,
+                "name" :  "test_step",
+                "fail_fast": false,
                 "image": "1science/sbt:0.13.8-oracle-jre-8",
                 "commands":
                     [
