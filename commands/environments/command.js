@@ -69,7 +69,7 @@ module.exports.getAll = function (info) {
 
 var findEnvByComposeName = function (pUrl, name, token) {
     var deferred = Q.defer();
-    var envName = `ENV-composition-${name}`;
+    var envName = `Composition - ${name}`;
     var url = `${pUrl}/api/environments`,
         headers = {
             'Accept': 'application/json',
@@ -89,8 +89,9 @@ var findEnvByComposeName = function (pUrl, name, token) {
         var res = _.find(JSON.parse(body), 'name', envName);
         if(!res || !res.name) {
             deferred.resolve(false);
-        } else
+        } else {
             deferred.resolve(new Environment.Environment(res));
+        }
     });
     return deferred.promise;
 };
@@ -99,11 +100,20 @@ var followEnvProgress = function (data) {
     var deferred = Q.defer();
     process.stdout.write('Waiting ...');
     var intervalId = setInterval(function() { process.stdout.write('.'); }, 1000);
+    var int_terminating = 0;
+    var LIMIT_TERMINATING = 7;
     var repeat = () => {
         findEnvByComposeName(data.url, data.nameCompose, data.token)
             .then((env) => {
-                if(env.getStatus() !== 'done') {
-                    setTimeout(() => repeat(), 1000);
+                // console.log('followEnvProgress:' + (env !== false ? env.getStatus() : env ));
+                if(env === false || env.getStatus() !== 'done') {
+                    if(env === false) int_terminating++;
+                    if(int_terminating > LIMIT_TERMINATING) {
+                        clearInterval(intervalId);
+                        deferred.reject('The process was terminated! Try again.');
+                    } else {
+                        setTimeout(() => repeat(), 1000);
+                    }
                 } else {
                     process.stdout.write(' done!\n');
                     clearInterval(intervalId);

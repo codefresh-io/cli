@@ -1,5 +1,4 @@
 'use strict';
-var CFError     = require('cf-errors');
 var cyv         = require('@codefresh-io/yaml-validator');
 var yaml        = require('js-yaml');
 var fs          = require('fs');

@@ -19,10 +19,13 @@ var parseUrls = function (json) {
 };
 
 function Environment (json) {
+    // console.log(JSON.stringify(json));
     data = json;
     this.creationStatus = json.creationStatus;
     this._id = json._id;
-    parseUrls(json);
+    if(this.creationStatus === 'done') {
+        parseUrls(json);
+    }
 }
 
 Environment.prototype.getStatus = function () {

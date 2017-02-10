@@ -172,6 +172,9 @@ module.exports.run = function (info) {
                         nameCompose: model.getName()
                     }).then(function (res) {
                         console.log(prettyjson.render(res.toString()));
+                    }, (err) => {
+                        console.log(err);
+                        throw new Error(err);
                     });
                 }, (err) => {
                     console.log(err);
