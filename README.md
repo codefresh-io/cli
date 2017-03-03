@@ -101,6 +101,7 @@ $ cf-cli images <sub-command> [options]
 | ls      | list of images |
 | get     | get image by id |
 | getTags | get list of tags |
+| run     | launch single image |
 
 ```
 $ cf-cli images ls [options]
@@ -140,6 +141,19 @@ $ cf-cli images getTags [options]
 | --imageName      |       | required | string | name of the image |
 | --tofile         |       |          | string | save result to file |
 | --table          |       |          | boolean | output as table to console |
+| --tokenFile      |       |          | string | access token file, default: "$HOME.codefresh/accessToken.json" |
+| --logLevel       | --log |          | string | choices: "error", "info", "debug"; default: "error" |
+| --help           | -h    |          | boolean | show list of options for command |
+
+```
+$ cf-cli images run [options]
+```
+
+| Option         | Alias | Demand | Type | Description |
+| ---------------  |:-----:|:------:|:----:|:-----------|
+| --token          |       |          | string | access token |
+| --name           |       | required | string | name of the image |
+| --sha            |       | required | string | sha of the image |
 | --tokenFile      |       |          | string | access token file, default: "$HOME.codefresh/accessToken.json" |
 | --logLevel       | --log |          | string | choices: "error", "info", "debug"; default: "error" |
 | --help           | -h    |          | boolean | show list of options for command |
