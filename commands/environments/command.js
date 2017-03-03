@@ -5,6 +5,7 @@
 'use strict';
 var _           = require('lodash');
 var request     = require('request');
+var debug       = require('debug')('environments');
 var prettyjson  = require('prettyjson');
 var Q           = require('q');
 var Environment = require('./environment');
@@ -69,7 +70,8 @@ module.exports.getAll = function (info) {
 
 var findEnvByComposeName = function (pUrl, name, token) {
     var deferred = Q.defer();
-    var envName = `Composition - ${name}`;
+    var envName = name;
+    debug('envname:' + envName);
     var url = `${pUrl}/api/environments`,
         headers = {
             'Accept': 'application/json',
@@ -79,18 +81,26 @@ var findEnvByComposeName = function (pUrl, name, token) {
 
     request.get({url: url, headers: headers}, function (err, httpRes, body) {
         if(err) {
+            debug('error environment:' + err);
             deferred.reject(err);
         }
 
-        if(body.length === 0) {
-            deferred.resolve(false);
+        debug('starting');
+        debug('body env:' + body);
+
+        if (!body || body.length === 0 || !helper.IsJson(body)) {
+            deferred.resolve(new Environment.Environment(null, 'terminating'));
         }
 
-        var res = _.find(JSON.parse(body), 'name', envName);
-        if(!res || !res.name) {
-            deferred.resolve(false);
+        var array = JSON.parse(body);
+
+        var res = _.find(array, 'name', envName);
+        debug('res:' + res);
+
+        if (!res || !res.name) {
+            deferred.resolve(new Environment.Environment(null, 'pending'));
         } else {
-            deferred.resolve(new Environment.Environment(res));
+            deferred.resolve(new Environment.Environment(res, 'ready'));
         }
     });
     return deferred.promise;
@@ -98,21 +108,23 @@ var findEnvByComposeName = function (pUrl, name, token) {
 
 var followEnvProgress = function (data) {
     var deferred = Q.defer();
-    process.stdout.write('Waiting ...');
+    process.stdout.write('\nWaiting ...');
     var intervalId = setInterval(function() { process.stdout.write('.'); }, 1000);
     var int_terminating = 0;
     var LIMIT_TERMINATING = 7;
     var repeat = () => {
         findEnvByComposeName(data.url, data.nameCompose, data.token)
             .then((env) => {
-                // console.log('followEnvProgress:' + (env !== false ? env.getStatus() : env ));
-                if(env === false || env.getStatus() !== 'done') {
-                    if(env === false) int_terminating++;
+                debug('followEnvProgress:' + env.getStatus());
+                if(env.getStatus() !== 'done') {
+                    if(env.getStatus() === 'terminating') int_terminating++;
                     if(int_terminating > LIMIT_TERMINATING) {
+                        debug('terminated');
                         clearInterval(intervalId);
                         deferred.reject('The process was terminated! Try again.');
                     } else {
-                        setTimeout(() => repeat(), 1000);
+                        debug('trying again');
+                        setTimeout(() => repeat(), 2000);
                     }
                 } else {
                     process.stdout.write(' done!\n');
@@ -120,6 +132,8 @@ var followEnvProgress = function (data) {
                     deferred.resolve(env);
                 }
             }, (err) => {
+                clearInterval(intervalId);
+                debug('error:' + err);
                 deferred.reject(err);
             });
     };

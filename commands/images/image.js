@@ -18,6 +18,7 @@ function Image(data) {
     this.status = data.status;
     this.imageName = data.imageName;
     this.created = data.created;
+    this.sha = data.sha;
     this.tags = getTags(data);
 }
 
@@ -29,6 +30,10 @@ Image.prototype.toJson = function () {
     obj.tags = this.tags || "untagged";
     obj.status = this.status;
     return obj;
+};
+
+Image.prototype.getId = function () {
+    return this._id;
 };
 
 var header = [

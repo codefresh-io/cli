@@ -55,5 +55,7 @@ exports.handler = function (argv) {
                 stack: cferror.stack
             }));
             process.exit(err);
-        });
+        }).catch((err) => {
+        console.log('error:' + err);
+    });
 };
