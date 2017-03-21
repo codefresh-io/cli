@@ -48,4 +48,26 @@ var getPipelineByName = function (info) {
     return deferred.promise;
 };
 
+/**
+ *
+ * @param info - {url: '', repoName: '', repoOwner: '', token: ''}
+ */
+var getDefaultPipeline = function (info) {
+    var deferred = Q.defer();
+
+    var url = `${info.url}/api/services/${info.repoOwner}/${encodeURIComponent(info.repoName)}/default`;
+    var headers = {
+        'Accept': 'application/json',
+        'X-Access-Token': info.token
+    };
+    request.get({url: url, headers: headers}, function (err, httpRes, body) {
+        if(err) {
+            deferred.reject(err);
+        }
+        deferred.resolve(new Pipeline.Pipeline(JSON.parse(body)));
+    });
+    return deferred.promise;
+};
+
 module.exports.getPipelineByName = getPipelineByName;
+module.exports.getDefaultPipeline = getDefaultPipeline;

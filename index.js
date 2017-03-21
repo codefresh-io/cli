@@ -32,6 +32,7 @@ var argv = yargs.usage('usage: $0 <command>')
             .usage('usage: $0 images <item> [options]')
             .command('ls', '-list of images', require('./commands/images/cmd/ls'))
             .command('get', '-get image by id', require('./commands/images/cmd/get'))
+            .command('run', '-launch image by id', require('./commands/images/cmd/run'))
             .command('getTags', '-get list of tags', require('./commands/images/cmd/getTags'))
             .help('help')
             .wrap(null)
@@ -66,7 +67,16 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
-    .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
+    .command('yaml', 'create/validate codefresh.yml', function(yargs) {
+        argv = yargs
+            .usage('usage: $0 yaml <item> [options]')
+            .command('create', 'Create a codefresh.yml', require('./commands/yaml/cmd/create'))
+            .command('validate', 'Validate a Codefresh YAML file. Defaults to $PWD/codefresh.yml', require('./commands/yaml/cmd/validate'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .demand(1, "must provide a valid command")
     .option('url', {
           alias: 'u',
@@ -97,6 +107,7 @@ var argv = yargs.usage('usage: $0 <command>')
         choices: ['error', 'info', 'debug'],
         global : true
     })
+    .version()
     .help("h")
     .alias("h", "help")
     .argv;

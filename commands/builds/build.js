@@ -3,11 +3,15 @@
  */
 var chalk   = require('chalk');
 
-function Build(data) {
-    this.status = data.status;
-    this.repoOwner = data.repoOwner;
-    this.repoName = data.repoName;
-    this._id = data._id;
+function Build(data, tempStatus) {
+    if(tempStatus === 'no-started') {
+        this.status = tempStatus;
+    } else {
+        this.status = data.status;
+        this.repoOwner = data.repoOwner;
+        this.repoName = data.repoName;
+        this._id = data._id;
+    }
 }
 
 Build.prototype.getStatus = function () {

@@ -1,6 +1,9 @@
+/**
+ * Created by nikolai on 10/13/16.
+ */
 var stack =
     {
-        name : 'go',
+        name : 'scala',
         steps : [
             {
                 "name" :  "build_step",
@@ -9,23 +12,21 @@ var stack =
                 "dockerfile": "Dockerfile",
                 "image-name": "owner/imageName",
                 "tag" : "latest"
-
             },
 
             {
                 "name" :  "test_step",
                 "fail_fast": false,
-                "image": "golang",
+                "image": "1science/sbt:0.13.8-oracle-jre-8",
                 "commands":
                     [
-                        "go test"
+                        "sbt test"
                     ]
-
             } ,
         ]
     };
 
-var get = function () {
+var get = function() {
     return stack;
 };
 

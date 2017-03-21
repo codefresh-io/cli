@@ -1,7 +1,8 @@
 /**
  * Created by nikolai on 18.8.16.
  */
-var _ = require('lodash');
+var _       = require('lodash');
+var debug   = require('debug')('environment');
 
 var urls = [];
 var data;
@@ -18,11 +19,18 @@ var parseUrls = function (json) {
     }
 };
 
-function Environment (json) {
-    data = json;
-    this.creationStatus = json.creationStatus;
-    this._id = json._id;
-    parseUrls(json);
+function Environment (json, tempStatus) {
+    debug('data:' + (json != null ? JSON.stringify(json) : json));
+    if(tempStatus === 'pending' || tempStatus === 'terminating'){
+        this.creationStatus = tempStatus;
+    } else {
+        data = json;
+        this.creationStatus = json.creationStatus;
+        this._id = json._id;
+        if (this.creationStatus === 'done') {
+            parseUrls(json);
+        }
+    }
 }
 
 Environment.prototype.getStatus = function () {

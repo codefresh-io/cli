@@ -4,6 +4,7 @@
  */
 'use strict';
 var request         = require('request');
+var debug           = require('debug')('compositions');
 var prettyjson      = require('prettyjson');
 var fs              = require('fs');
 var Q               = require('q');
@@ -155,7 +156,8 @@ var getByIdentifier = function (info, token) {
                 console.log('err:' + err);
                 return reject(err);
             }
-            resolve(new Composition.Composition(body));
+            debug('body:' + JSON.stringify(body));
+            resolve(new Composition.Composition(JSON.parse(body)));
         });
     });
     return p;
@@ -169,14 +171,20 @@ module.exports.run = function (info) {
                     Environments.followEnvProgress({
                         url: info.url,
                         token: token,
-                        nameCompose: model.getName()
+                        nameCompose: `Composition - ${model.getName()}`
                     }).then(function (res) {
                         console.log(prettyjson.render(res.toString()));
+                    }, (err) => {
+                        console.log(err);
+                        throw new Error(err);
                     });
                 }, (err) => {
                     console.log(err);
                     throw new Error(err);
                 });
+        }, (err) => {
+            console.log(err);
+            throw new Error(err);
         });
     };
 };

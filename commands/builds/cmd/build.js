@@ -28,10 +28,10 @@ exports.builder = function (yargs) {
         alias: 'o',
         describe: 'repo owner'
     }).option('pipelineName', {
-        demand: true,
+        demand: false,
         describe: 'name of pipeline from repo'
     }).option('branch', {
-        demand: true,
+        demand: false,
         describe: 'name of branch'
     }).option('sha', {
         demand: false,
@@ -60,7 +60,12 @@ exports.handler = function (argv) {
             password: argv.password
         });
 
-    var builds = commands.build(info);
+    var builds;
+    if(!info.pipelineName) {
+        builds = commands.buildDefaultPipeline(info);
+    } else {
+        builds = commands.build(info);
+    }
 
     login.connect().then(builds.bind(login.token),
         (err) => {
