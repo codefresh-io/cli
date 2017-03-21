@@ -46,6 +46,11 @@ var getBuildById = function (info) {
         if (err) {
             deferred.reject(err);
         }
+
+        if (!body || body.length === 0 || !helper.IsJson(body)) {
+            deferred.resolve(new Build.Build(null, 'no-started'));
+        }
+
         deferred.resolve(new Build.Build(JSON.parse(body)));
     });
     return deferred.promise;
@@ -59,7 +64,7 @@ var followBuildProgress = function (data) {
         getBuildById(data)
             .then((build) => {
                 var status = build.getStatus();
-                if(status === 'start' || status === 'pending' || status === 'elected') {
+                if(status === 'start' || status === 'no-started' || status === 'elected') {
                     setTimeout(() => repeat(), 1000);
                 } else {
                     process.stdout.write(' done!\n');
