@@ -5,13 +5,13 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "cf-cli":"index.js"
+    "cf-cli": "index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codefresh-io/cf-cli.git"
   },
-  "keywords":[
+  "keywords": [
     "command line"
   ],
   "dependencies": {

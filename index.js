@@ -66,6 +66,16 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
+    .command('pipelines', 'api of pipelines', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 environments <item> [options]')
+            .command('get', '-list of pipelines', require('./commands/pipelines/cmd/get'))
+            .command('run', '-run a pipeline', require('./commands/pipelines/cmd/run'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .demand(1, "must provide a valid command")
     .option('url', {
