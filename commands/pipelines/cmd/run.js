@@ -81,18 +81,26 @@ exports.handler = function (argv) {
         });
 
 
-
-    login.connect().then((res) => {
-        info.token = res;
-        command.executePipeline(info).then((res)=> {
-            console.log(res+"success");
-        },(err) =>{
+    if (typeof info.token==="undefined") {
+        login.connect().then((res) => {
+            info.token = res;
+            command.executePipeline(info).then((res) => {
+                console.log(res + "success");
+            }, (err) => {
+                console.log(err);
+            });
+        }, (err) => {
+            debug('error:' + err);
+            process.exit(err);
+        });
+    }
+    else {
+        command.executePipeline(info).then((res) => {
+            console.log(res + "success");
+        }, (err) => {
             console.log(err);
         });
-    }, (err) =>{
-        debug('error:' + err);
-        process.exit(err);
-    });
+    }
 
    // login.connect().then(command.executePipeline(info), (err) => {
    //     debug('error:' + err);
