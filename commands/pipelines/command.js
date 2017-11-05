@@ -39,7 +39,6 @@ var getPipelineByName = function (info) {
         .then(function (res) {
             var pipeline = _.find(JSON.parse(res), {name: info.pipelineName});
             if(!pipeline) {
-                console.log("promise");
                 deferred.reject(
                     new Error(`Pipeline with name ${info.pipelineName} wasn't found for owner ${info.repoOwner} and repo ${info.repoName}.`));
             }
@@ -65,8 +64,11 @@ var executePipeline = function (info) {
             process.exit(err);
         });
     }
-    else{
+    else if (typeof info.pipelineId !== "undefined"){
         deferred.resolve(executePipelineById(info,info.pipelineId));
+    }
+    else {
+        deferred.reject(new Error("you must provide [pipelineid] or [pipelineName] [repoName] [repoOwner]"));
     }
     return deferred.promise;
 };

@@ -54,8 +54,22 @@ exports.handler = function (argv) {
         });
 
 
-    login.connect().then(command.getAllByUser(info), (err) => {
+    login.connect().then((res) => {
+        info.token = res;
+        console.log(res);
+        command.getAllByUser(info).then((res)=>{
+
+        },(err)=>{
+            console.log(err);
+        });
+    }, (err) =>{
         debug('error:' + err);
         process.exit(err);
     });
+
+
+  //  login.connect().then(command.getAllByUser(info), (err) => {
+  //      debug('error:' + err);
+  //      process.exit(err);
+  //  });
 };

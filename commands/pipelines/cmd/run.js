@@ -84,8 +84,11 @@ exports.handler = function (argv) {
 
     login.connect().then((res) => {
         info.token = res;
-        console.log(res);
-        command.executePipeline(info);
+        command.executePipeline(info).then((res)=> {
+            console.log(res+"success");
+        },(err) =>{
+            console.log(err);
+        });
     }, (err) =>{
         debug('error:' + err);
         process.exit(err);
