@@ -63,7 +63,7 @@ exports.handler = function (argv) {
         account: argv.account,
         pipelineId: argv.pipelineId,
         table: argv.table,
-        token: argv.token,
+        token: process.env.CF_TOKEN,
         branch : argv.branch,
         noCache : argv.noCache,
         resetVolume : argv.resetVolume,
@@ -85,9 +85,10 @@ exports.handler = function (argv) {
         login.connect().then((res) => {
             info.token = res;
             command.executePipeline(info).then((res) => {
-                console.log(res + "success");
+                console.log("\nsuccess");
             }, (err) => {
-                console.log(err);
+                debug('error:' + err);
+                process.exit(err);
             });
         }, (err) => {
             debug('error:' + err);
@@ -96,9 +97,10 @@ exports.handler = function (argv) {
     }
     else {
         command.executePipeline(info).then((res) => {
-            console.log(res + "success");
+            console.log("\nsuccess");
         }, (err) => {
-            console.log(err);
+            debug('error:' + err);
+            process.exit(err);
         });
     }
 

@@ -86,7 +86,6 @@ var executePipelineById = function (info,pipelineId) {
         options: {noCache:info.noCache,resetVolume:info.resetVolume},
         variables: extractVariables(info)
     };
-    console.log("finish");
     request.post({url: url, headers: headers , json:payload}, function (err, httpRes, body) {
         if(err) {
             deferred.reject(err);

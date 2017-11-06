@@ -43,7 +43,7 @@ exports.handler = function (argv) {
         repoName: argv.repoName,
         pipelineName: argv.pipelineName,
         table: argv.table,
-        token: argv.token
+        token: process.env.CF_TOKEN
     };
 
     var login = new Login(argv.url,
@@ -60,9 +60,10 @@ exports.handler = function (argv) {
         login.connect().then((res) => {
             info.token = res;
             command.getAllByUser(info).then((res) => {
-                console.log(res + "success");
+                console.log("\n success");
             }, (err) => {
-                console.log(err);
+                debug('error:' + err);
+                process.exit(err);
             });
         }, (err) => {
             debug('error:' + err);
@@ -71,9 +72,10 @@ exports.handler = function (argv) {
     }
     else {
         command.getAllByUser(info).then((res) => {
-            console.log(res + "success");
+            console.log("\n success");
         }, (err) => {
-            console.log(err);
+            debug('error:' + err);
+            process.exit(err);
         });
     }
 
