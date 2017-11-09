@@ -1,0 +1,22 @@
+Instructions:
+
+in this version we are supporting in 'pipelines run' command.
+
+this instruction can execute an exists pipeline.
+
+these are the options for running a pipline :
+
+  -h, --help              Show help  [boolean]
+  --pipelineId, --id      id of the pipeline  [string]
+  --branch, -b            branch of the repository  [string]
+  --noCache, --nc         choose if to use cache  [boolean] [default: false]
+  --resetVolume, --rv     choose if to reset volume  [boolean] [default: false]
+  --variables, -v         add the environment variables  [array] [default: {}]
+  --repoName, --rn        name of the repository  [string]
+  --repoOwner, --ro       name of the repository owner  [string]
+  --pipelineName, --pn    name of the pipeline  [string]  
+
+  NOTICE
+
+  - when we run a pipeline you must provide [piplineId] [repoName] [repoOwner] [piplineName]
+  - when we want to add an environment variables we add -v [KEY] [VALUE] [KEY] [VALUE]
