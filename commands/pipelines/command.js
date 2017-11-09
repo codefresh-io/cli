@@ -60,8 +60,7 @@ var executePipeline = function (info) {
         getPipelineByName(info).then((res) => {
            deferred.resolve(executePipelineById(info,res._id));
        }).catch((err) =>{
-            console.log('error:' + err);
-            process.exit(err);
+            deferred.reject(err);
         });
     }
     else if (typeof info.pipelineId !== "undefined"){
@@ -90,7 +89,6 @@ var executePipelineById = function (info,pipelineId) {
         if(err) {
             deferred.reject(err);
         }
-        console.log(body);
         deferred.resolve(body);
     });
     return deferred.promise;

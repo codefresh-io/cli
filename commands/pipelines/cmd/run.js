@@ -87,11 +87,11 @@ exports.handler = function (argv) {
             command.executePipeline(info).then((res) => {
                 console.log("\nsuccess");
             }, (err) => {
-                debug('error:' + err);
+                console.log('error:' + err);
                 process.exit(err);
             });
         }, (err) => {
-            debug('error:' + err);
+            console.log('error:' + err);
             process.exit(err);
         });
     }
@@ -99,7 +99,7 @@ exports.handler = function (argv) {
         command.executePipeline(info).then((res) => {
             console.log("\nsuccess");
         }, (err) => {
-            debug('error:' + err);
+            console.log('error:' + err);
             process.exit(err);
         });
     }
