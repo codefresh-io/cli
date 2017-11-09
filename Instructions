@@ -19,4 +19,4 @@ these are the options for running a pipline :
   NOTICE
 
   - when we run a pipeline you must provide [piplineId] OR [repoName] [repoOwner] [piplineName]
-  - when we want to add an environment variables we add -v [KEY] [VALUE] [KEY] [VALUE]
+  - when we want to add an environment variables we add -v [KEY] [VALUE] [KEY] [VALUE] ...
