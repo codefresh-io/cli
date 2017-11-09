@@ -20,7 +20,7 @@ describe('run pipline test', () => {
             repoOwner:'codefresh-io',
             repoName: 'demochat',
             pipelineName: 'demochat',
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1OWQzNzgzNzkyMGY4OTAwMDE4YTYxODIiLCJhY2NvdW50SWQiOiI1OWQzNzgzNzkyMGY4OTAwMDE4YTYxODMiLCJpYXQiOjE1MDkzNTAwMDcsImV4cCI6MTUxMTk0MjAwN30.4DwyRb-71XZDXvnFJAe3cQnQp34FK0Q2jnne9eVpYJk'
+            token: process.env.CF_TOKEN
         };
         return commands.executePipeline(info).then(function(res){
             expect(res).to.not.equal({});
@@ -37,7 +37,7 @@ describe('run pipline test', () => {
             variables : [],
             repoOwner:'codefresh-io',
             pipelineName: 'demochat',
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1OWQzNzgzNzkyMGY4OTAwMDE4YTYxODIiLCJhY2NvdW50SWQiOiI1OWQzNzgzNzkyMGY4OTAwMDE4YTYxODMiLCJpYXQiOjE1MDkzNTAwMDcsImV4cCI6MTUxMTk0MjAwN30.4DwyRb-71XZDXvnFJAe3cQnQp34FK0Q2jnne9eVpYJk'
+            token: process.env.CF_TOKEN
         };
         return commands.executePipeline(info).then(function(res){
         },(err)=>{
