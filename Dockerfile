@@ -1,7 +1,8 @@
 FROM node
-WORKDIR /app
-COPY package.json /app
+WORKDIR /cf-cli
+COPY package.json /cf-cli
 RUN npm install
-COPY . /app
-CMD ["npm" , "link"]
+ENV PATH="/cf-cli:${PATH}"
+COPY . /cf-cli
+RUN npm link
 ENTRYPOINT ["node" ,"index.js"]
