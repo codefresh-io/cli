@@ -97,7 +97,7 @@ exports.handler = function (argv) {
     }
     else {
         command.executePipeline(info).then((res) => {
-            console.log("\nsuccess");
+            console.log(res);
         }, (err) => {
             console.log('error:' + err);
             process.exit(err);
