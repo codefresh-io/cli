@@ -2,10 +2,10 @@
  * Created by nikolai on 24.8.16.
  */
 
-var _           = require('lodash');
-var request     = require('request');
-var Q           = require('q');
-var Pipeline    = require('./pipeline');
+const _           = require('lodash');
+const request     = require('request');
+const Q           = require('q');
+const Pipeline    = require('./pipeline');
 
 
 /**
@@ -56,14 +56,14 @@ var getPipelineByName = function (info) {
 
 var executePipeline = function (info) {
     var deferred = Q.defer();
-    if (typeof info.pipelineName !== "undefined" && typeof info.repoName !== "undefined" && typeof info.repoOwner !== "undefined"){
+    if (!_.isUndefined(info.pipelineName) && !_.isUndefined(info.repoName) && !_.isUndefined(info.repoOwner)){
         getPipelineByName(info).then((res) => {
            deferred.resolve(executePipelineById(info,res._id));
        }).catch((err) =>{
             deferred.reject(err);
         });
     }
-    else if (typeof info.pipelineId !== "undefined"){
+    else if (!_.isUndefined(info.pipelineId)){
         deferred.resolve(executePipelineById(info,info.pipelineId));
     }
     else {

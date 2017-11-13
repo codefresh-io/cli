@@ -4,6 +4,7 @@
 'use strict';
 const Login   = require('../../login/connector');
 const command = require('./../command');
+const _       = require('lodash');
 
 exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
@@ -80,7 +81,7 @@ exports.handler = function (argv) {
         });
 
 
-    if (typeof info.token==="undefined") {
+    if (_.isUndefined(info.token)) {
         login.connect().then((res) => {
             info.token = res;
             command.executePipeline(info).then((res) => {
