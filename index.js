@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-var yargs = require('yargs');
-var path  = require('path');
+const yargs = require('yargs');
+const path  = require('path');
 
 
 process.on('uncaughtException', function (err) {
