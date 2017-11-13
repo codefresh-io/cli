@@ -5,6 +5,7 @@
 const Login   = require('../../login/connector');
 const command = require('./../command');
 const _       = require('lodash');
+const CFError     =require('cf-errors');
 
 exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
@@ -87,7 +88,7 @@ exports.handler = function (argv) {
             command.executePipeline(info).then((res) => {
                 console.log("\nsuccess");
             }, (err) => {
-                console.log('error:' + err);
+                console.log(err);
                 process.exit(err);
             });
         }, (err) => {
@@ -99,7 +100,7 @@ exports.handler = function (argv) {
         command.executePipeline(info).then((res) => {
             console.log(res);
         }, (err) => {
-            console.log('error:' + err);
+            console.log(err);
             process.exit(err);
         });
     }

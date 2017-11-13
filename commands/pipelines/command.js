@@ -6,6 +6,7 @@ const _           = require('lodash');
 const request     = require('request');
 const Q           = require('q');
 const Pipeline    = require('./pipeline');
+const CFError     =require('cf-errors');
 
 
 /**
@@ -22,7 +23,7 @@ const getAllByUser = function (info) {
     };
     request.get({url: url, headers: headers}, function (err, httpRes, body) {
         if(err) {
-            deferred.reject(err);
+            deferred.reject(new CFError(err));
         }
         deferred.resolve(body);
     });
@@ -40,13 +41,13 @@ const getPipelineByName = function (info) {
             var pipeline = _.find(JSON.parse(res), {name: info.pipelineName});
             if(!pipeline) {
                 deferred.reject(
-                    new Error(`Pipeline with name ${info.pipelineName} wasn't found for owner ${info.repoOwner} and repo ${info.repoName}.`));
+                    new CFError(`Pipeline with name ${info.pipelineName} wasn't found for owner ${info.repoOwner} and repo ${info.repoName}.`));
             }
             else {
                 deferred.resolve(new Pipeline.Pipeline(pipeline));
             }
         }, function (err) {
-            deferred.reject(err);
+            deferred.reject(new CFError(err));
         });
     return deferred.promise;
 };
@@ -60,14 +61,14 @@ const executePipeline = function (info) {
         getPipelineByName(info).then((res) => {
            deferred.resolve(executePipelineById(info,res._id));
        }).catch((err) =>{
-            deferred.reject(err);
+            deferred.reject(new CFError(err));
         });
     }
     else if (!_.isUndefined(info.pipelineId)){
         deferred.resolve(executePipelineById(info,info.pipelineId));
     }
     else {
-        deferred.reject(new Error("you must provide [pipelineid] or [pipelineName] [repoName] [repoOwner]"));
+        deferred.reject(new CFError("you must provide [pipelineid] or [pipelineName] [repoName] [repoOwner]"));
     }
     return deferred.promise;
 };
@@ -87,7 +88,7 @@ const executePipelineById = function (info,pipelineId) {
     };
     request.post({url: url, headers: headers , json:payload}, function (err, httpRes, body) {
         if(err) {
-            deferred.reject(err);
+            deferred.reject(new CFError(err));
         }
         deferred.resolve(body);
     });

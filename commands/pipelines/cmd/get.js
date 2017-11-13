@@ -62,11 +62,11 @@ exports.handler = function (argv) {
             command.getAllByUser(info).then((res) => {
                 console.log("\n success");
             }, (err) => {
-                console.log('error:' + err);
+                console.log(err);
                 process.exit(err);
             });
         }, (err) => {
-            console.log('error:' + err);
+            console.log(err);
             process.exit(err);
         });
     }
@@ -74,7 +74,7 @@ exports.handler = function (argv) {
         command.getAllByUser(info).then((res) => {
             console.log("\n success");
         }, (err) => {
-            console.log('error:' + err);
+            console.log(err);
             process.exit(err);
         });
     }
