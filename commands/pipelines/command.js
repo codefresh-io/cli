@@ -13,10 +13,10 @@ const Pipeline    = require('./pipeline');
  * @param info = {url: '', repoName: '', repoOwner: '', token: ''}
  * @returns {*|promise}
  */
-var getAllByUser = function (info) {
-    var deferred = Q.defer();
-    var url = `${info.url}/api/services/${info.repoOwner}/${encodeURIComponent(info.repoName)}`;
-    var headers = {
+const getAllByUser = function (info) {
+    let deferred = Q.defer();
+    let url = `${info.url}/api/services/${info.repoOwner}/${encodeURIComponent(info.repoName)}`;
+    let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
     };
@@ -33,8 +33,8 @@ var getAllByUser = function (info) {
  *
  * @param info - {url: '', repoName: '', repoOwner: '', pipelineName: '', token: ''}
  */
-var getPipelineByName = function (info) {
-    var deferred = Q.defer();
+const getPipelineByName = function (info) {
+    let deferred = Q.defer();
     getAllByUser(info)
         .then(function (res) {
             var pipeline = _.find(JSON.parse(res), {name: info.pipelineName});
@@ -54,8 +54,8 @@ var getPipelineByName = function (info) {
 
 
 
-var executePipeline = function (info) {
-    var deferred = Q.defer();
+const executePipeline = function (info) {
+    let deferred = Q.defer();
     if (!_.isUndefined(info.pipelineName) && !_.isUndefined(info.repoName) && !_.isUndefined(info.repoOwner)){
         getPipelineByName(info).then((res) => {
            deferred.resolve(executePipelineById(info,res._id));
@@ -73,14 +73,14 @@ var executePipeline = function (info) {
 };
 
 
-var executePipelineById = function (info,pipelineId) {
-    var deferred = Q.defer();
-    var url = `${info.url}/api/builds/${pipelineId}`;
-    var headers = {
+const executePipelineById = function (info,pipelineId) {
+    let deferred = Q.defer();
+    let url = `${info.url}/api/builds/${pipelineId}`;
+    let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
     };
-    var payload = {
+    let payload = {
         branch: info.branch,
         options: {noCache:info.noCache,resetVolume:info.resetVolume},
         variables: extractVariables(info)
@@ -96,10 +96,10 @@ var executePipelineById = function (info,pipelineId) {
 
 
 function extractVariables(info) {
-    var variables = {};
-    for (var i = 0; i < info.variables.length-1; i++) {
-        var key = info.variables[i];
-        var val = info.variables[i+1];
+    let variables = {};
+    for (let i = 0; i < info.variables.length-1; i++) {
+        let key = info.variables[i];
+        let val = info.variables[i+1];
         variables[key] = val.toString();
         i++;
     }
