@@ -2,9 +2,8 @@
  * Created by nikolai on 9/20/16.
  */
 'use strict';
-var debug   = require('debug')('login->index');
-var Login   = require('../../login/connector');
-var command = require('./../command');
+const Login   = require('../../login/connector');
+const command = require('./../command');
 
 exports.command = 'images <command> [options]';
 exports.describe = 'images in Codefresh';
@@ -58,7 +57,7 @@ exports.builder = function (yargs) {
 
 exports.handler = function (argv) {
     console.log('running');
-    var info = {
+    let info = {
         url: argv.url,
         account: argv.account,
         pipelineId: argv.pipelineId,
@@ -73,7 +72,7 @@ exports.handler = function (argv) {
         pipelineName: argv.pipelineName
     };
 
-    var login = new Login(argv.url,
+    let login = new Login(argv.url,
         {
             access: {file: argv.tokenFile, token : argv.token},
             user: argv.user,
