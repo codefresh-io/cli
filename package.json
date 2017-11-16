@@ -10,7 +10,7 @@
     "ci-publish": "ci-publish"
   },
   "bin": {
-    "cf-cli": "index.js",
+    "cf-cli": "index.js"
   },
   "repository": {
     "type": "git",
