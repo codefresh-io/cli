@@ -1,11 +1,16 @@
 {
-  "name": "cf-cli",
-  "version": "0.0.1",
+  "name": "@codefresh-io/codefresh-cli",
+  "version": "0.0.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
+  "scripts": {
+    "lint": "gulp lint",
+    "test": "gulp unit_test",
+    "ci-publish": "ci-publish"
+  },
   "bin": {
-    "cf-cli": "index.js"
+    "cf-cli": "index.js",
   },
   "repository": {
     "type": "git",
@@ -22,6 +27,7 @@
     "chai-as-promised": "^7.1.1",
     "chalk": "^1.1.3",
     "char-spinner": "^1.0.1",
+    "ci-publish": "^1.3.0",
     "colors": "^1.0.3",
     "commander": "^2.8.0",
     "filewalker": "^0.1.2",
@@ -46,7 +52,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "promisify-es6": "^1.0.1",
     "gulp-coveralls": "^0.1.4",
     "gulp-env": "^0.2.0",
     "gulp-istanbul": "^0.10.4",
@@ -54,15 +59,13 @@
     "gulp-mocha-co": "^0.4.1-co.3",
     "gulp-rimraf": "^0.1.1",
     "isparta": "^4.0.0",
+    "promisify-es6": "^1.0.1",
     "run-sequence": "^1.1.0"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cf-cli/issues"
   },
   "homepage": "https://github.com/codefresh-io/cf-cli#readme",
-  "scripts": {
-    "test": "gulp unit_test"
-  },
   "author": "Codefresh",
   "license": "ISC"
 }

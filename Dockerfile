@@ -1,4 +1,4 @@
-FROM node
+FROM node:alpine
 WORKDIR /cf-cli
 COPY package.json /cf-cli
 RUN npm install
