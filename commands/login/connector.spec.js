@@ -1,29 +1,43 @@
-var Login = require('./login');
+var Login = require('./connector');
 var assert = require('assert');
+var debug  = require('debug')('connector.spec');
+
 assert(Login);
 console.log('login of');
 console.log(process.args);
 
 describe('login', function(){
-   var url = 'https://g-staging.codefresh.io'
+   var url = 'https://g.codefresh.io';
    var login;
-   beforeEach ((done)=>{
-      login = new Login('verchol', 'oleg1314', url);
-      login.connect().then(function(){
-         assert(login.token);
-         done();
-      }, done);
+   var token = process.env.CF_TOKEN;
+
+   beforeEach ((done) => {
+      login = new Login(url, {access:{token:token}, user : "verchol"});
+      done();
+
    });
 
    it('login to code', function(done){
-     done();
-   })
+     login.connect().then(function(data){
+        debug(JSON.stringify(data));
+        console.log('token is '  + login.token);
+        done();
+     }, (err)=>{
+       console.log('test failed :' + err);
+       return done(err);
+     }).catch((err)=>{
+       console.log(err);
+       done(err);
+     });
+
+   });
 
    it.only('get user info', function(done){
-       login.getUserInfo().then((info)=>{
-         assert(info);
+       login.connect().then(login.getUserInfo.bind(login)).then((profile)=>{
+         assert(profile);
+         console.log(`you logged in is as ${profile}`);
          done();
        }, done);
    });
 
-})
+});

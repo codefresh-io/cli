@@ -1,8 +1,9 @@
-var program = require('commander'),
-    utils   = require('../lib/utils'),
-    fs      = require('fs')
-    git     = require('gift'),
-    Q       = require('q');
+'use strict';
+var program = require('commander');
+var utils   = require('../lib/utils');
+var fs      = require('fs');
+var git     = require('git');
+var Q       = require('q');
 
 var clone = function(urlInfo) {
     var deferred = Q.defer();
@@ -50,13 +51,13 @@ var save = function(urlInfo) {
 
     if (doSave) {
         return utils.loadPackage()
-            .then(function(package) {
-                var repos = package.repos || {};
-                package.repos = repos;
+            .then(function(pkg) {
+                var repos = pkg.repos || {};
+                pkg.repos = repos;
 
                 repos[urlInfo.name] = urlInfo.toString() + ":" + urlInfo.sha;
 
-                return utils.savePackage(package);
+                return utils.savePackage(pkg);
             });
 
     } else {
@@ -65,7 +66,7 @@ var save = function(urlInfo) {
 
 
     return deferred.promise;
-}
+};
 
 
 var install = function(repoUrl) {
@@ -75,14 +76,14 @@ var install = function(repoUrl) {
         // TODO - do we need to pull ???
         .then(save);
 
-}
+};
 
 var installAll = function() {
     return utils.loadPackage()
-        .then(function (package) {
+        .then(function (pkg) {
             var deferred = Q.defer();
 
-            var repos = package.repos || {};
+            var repos = pkg.repos || {};
 
             var keys = Object.keys(repos);
             var index = 0;
@@ -100,12 +101,12 @@ var installAll = function() {
 
             return deferred.promise;
         });
-}
+};
 
 program
     .command('install')
     .description('install repos from package')
-    .action(function(options){
+    .action(function(){
         installAll()
             .catch(function(err) {
                 console.error(err);
@@ -118,7 +119,7 @@ program
 program
     .command('install <gitRepoUrl> [sha]')
     .description('install get repos ')
-    .action(function(gitRepoUrl, sha, options){
+    .action(function(gitRepoUrl, sha){
         var gitSHA = sha || 'master';
 
         install(gitRepoUrl + ":" + gitSHA)

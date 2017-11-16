@@ -1,41 +1,51 @@
-// my-module.js
-
-console.log('login');
 var debug   = require('debug')('login->index');
 var Login   = require('./connector');
 var assert  = require('assert');
-exports.command = 'login [url]  <user> <pwd>'
+var prettyjson = require('prettyjson');
 
-exports.describe = 'login to codefresh'
+debug(' start init login commmand');
+
+exports.command = 'login [url]  <user> <pwd>';
+
+exports.describe = 'login to codefresh';
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
-      alias: 'url',
-      default: 'https://g-staging.codefresh.io'
+        alias: 'url',
+        default: 'https://g.codefresh.io'
     }).option('user', {
-      alias: 'u',
-    }).option('password', {
-      alias: 'pwd',
-
+        alias: 'u',
+        demand : true
+    }).option('pwd', {
+        alias: 'p',
+        describe: 'password',
+        demand : false
     })
-  }
-
+        .help("h")
+        .alias("h","help");
+};
 
 exports.handler = function (argv) {
-  console.log('running');
-  console.log(`${argv.url}`);
-  login = new Login(argv.user, argv.pwd, argv.url);
+    debug(`${argv.url}`);
+    debug(`${JSON.stringify(argv)}`);
+    debug(`${argv.user}`);
+    debug(`${argv.token}`);
 
-  login.connect().then(login.getUserInfo.bind(login)).then((user)=>{
-
-     assert(login.token);
-     debug(`after successfull login ${JSON.stringify(user)}`);
-     console.log(`${user.id} is succesfully logged in`);
-
-     process.exit(0);
-  }, (error)=>{
-    console.log(`${error}`);
-     process.exit(error);
-  });
-  // do something with argv.
-}
+    var login = new Login(argv.url, argv);
+    login.preConditions().then(() => {
+        login.connect().then(login.getUserInfo.bind(login))
+            .then((user) => {
+                assert(login.token);
+                debug(`after successfull login ${JSON.stringify(user.toString())}`);
+                console.log('Now you logged in as');
+                console.log(prettyjson.render(user.toString()));
+                process.exit(0);
+            }, (error) => {
+                console.log(`${error}`);
+                process.exit(error);
+            });
+    }, (error) => {
+        console.log(`${error}`);
+        process.exit(error);
+    });
+};

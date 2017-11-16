@@ -1,3 +1,4 @@
+'use strict';
 var program = require('commander'),
     path    = require('path'),
     fs      = require('fs'),
@@ -11,7 +12,7 @@ program
 
         var name = path.basename(process.cwd());
 
-        var package = {
+        var pkg = {
             "name": name,
             "version": "0.0.1",
             "description": name,
@@ -25,7 +26,7 @@ program
                 // TODO - what we want to do here ????
             }
 
-            utils.savePackage(package)
+            utils.savePackage(pkg)
                 .catch(function(err) {
                     console.error(err);
                 });

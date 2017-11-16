@@ -1,0 +1,46 @@
+version: "1.0"
+
+steps:
+
+  install_dependencies:
+    title: 'Installing testing dependencies'
+    image: codefresh/node-tester-image:8.8.0
+    commands:
+        - yarn install --frozen-lockfile
+
+  eslint:
+    title: 'Running linting logic'
+    image: codefresh/node-tester-image:8.8.0
+    commands:
+        #- yarn lint
+        - yarn test
+
+  build_step:
+    type: build
+    dockerfile: Dockerfile
+    image-name: codefresh/cf-cli
+    tag: ${{CF_BRANCH}}
+
+  push_to_registry:
+    title: "Pushing image to registry"
+    type: push
+    candidate: ${{build_step}}
+    tag: ${{CF_BRANCH}}
+
+  push_to_registry_latest:
+    title: "Update dockerhub image latest tag"
+    type: push
+    candidate: ${{build_step}}
+    tag: latest
+    when:
+      branch:
+        only: [ master ]
+
+  deploy_to_npm:
+    title: Publishing To Npm
+    image: codefresh/npm-publish:master
+    commands:
+      - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
+    when:
+      branch:
+        only: [ master ]

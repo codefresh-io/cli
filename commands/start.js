@@ -1,3 +1,4 @@
+'use strict';
 var program = require('commander');
 
 program
@@ -10,10 +11,7 @@ program
         console.log('setup for %s env(s) with %s mode', env, mode);
     });
 
-return ;
-
 var utils   = require('../lib/utils'),
-    fs      = require('fs'),
     path      = require('path'),
     Q       = require('q'),
     spawn   = require('child_process').spawn,
@@ -24,17 +22,17 @@ var rootPath = path.resolve(__dirname, '../..');
 
 var name = path.basename(process.cwd());
 
-var createFromTemplate= function(package) {
-    package.rootPath = rootPath;
-    var generator = new Generator(package, { path:tempPath });
+var createFromTemplate= function(pkg) {
+    pkg.rootPath = rootPath;
+    var generator = new Generator(pkg, { path:tempPath });
 
     return generator.process()
         .then(function() {
-            return package;
+            return pkg;
         });
 };
 
-var rmDockerCompose = function(package) {
+var rmDockerCompose = function(pkg) {
     var deferred = Q.defer();
 
     var options = {
@@ -51,7 +49,7 @@ var rmDockerCompose = function(package) {
 
     child.on('close', function (code) {
         if (code === 0) {
-            return deferred.resolve(package);
+            return deferred.resolve(pkg);
         }
         console.log('child process exited with code ' + code);
         deferred.reject(code);
@@ -60,7 +58,7 @@ var rmDockerCompose = function(package) {
     return deferred.promise;
 };
 
-var upDockerCompose = function(package) {
+var upDockerCompose = function() {
     var deferred = Q.defer();
 
     var options = {
@@ -89,7 +87,7 @@ var upDockerCompose = function(package) {
         if (code !== 0) {
             console.log('child process exited with code ' + code);
         }
-        process.exit(code)
+        process.exit(code);
     });
 
     return deferred.promise;
