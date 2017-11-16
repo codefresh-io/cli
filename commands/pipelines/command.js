@@ -99,7 +99,7 @@ const executePipelineById = function (info,pipelineId) {
 function extractVariables(info) {
     let variables = {};
     let length = info.variables.length;
-    if (length % 2 ===1){
+    if (length!==1 && length % 2 ===1){
         console.log('invalid environment variables please enter [key] [value]');
         length -=1;
     }
