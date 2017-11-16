@@ -18,7 +18,7 @@ steps:
   build_step:
     type: build
     dockerfile: Dockerfile
-    image-name: codefreshio/cf-cli
+    image-name: codefresh/cf-cli
     tag: ${{CF_BRANCH}}
 
   push_to_registry:
