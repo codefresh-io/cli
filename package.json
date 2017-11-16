@@ -1,5 +1,5 @@
 {
-  "name": "@codefresh-io/codefresh-cli",
+  "name": "@codefresh-io/cf-cli",
   "version": "0.0.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
