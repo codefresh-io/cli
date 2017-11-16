@@ -1,46 +1,46 @@
 version: "1.0"
 
 steps:
-  build-docker-image:
+
+  install_dependencies:
+    title: 'Installing testing dependencies'
+    image: codefresh/node-tester-image:8.8.0
+    commands:
+        - yarn install --frozen-lockfile
+
+  eslint:
+    title: 'Running linting logic'
+    image: codefresh/node-tester-image:8.8.0
+    commands:
+        #- yarn lint
+        - yarn test
+
+  build_step:
     type: build
     dockerfile: Dockerfile
-    image-name: codefreshio/cf-cli
+    image-name: codefresh/cf-cli
     tag: ${{CF_BRANCH}}
 
-  unit-test-step:
-    image: node:latest
-    working-directory: ${{build-docker-image}}
+  push_to_registry:
+    title: "Pushing image to registry"
+    type: push
+    candidate: ${{build_step}}
+    tag: ${{CF_BRANCH}}
+
+  push_to_registry_latest:
+    title: "Update dockerhub image latest tag"
+    type: push
+    candidate: ${{build_step}}
+    tag: latest
+    when:
+      branch:
+        only: [ master ]
+
+  deploy_to_npm:
+    title: Publishing To Npm
+    image: codefresh/npm-publish:master
     commands:
-      - npm install gulp
-      - npm install -g gulp
-      - gulp lint
-      - gulp unit_test
-
-#  security-by-snyk:
-#    fail-fast: false
-#    image: "node:latest"
-#    working-directory: ${{initial-clone}}
-#    commands:
-#      - "npm install -g snyk"
-#      - "snyk test"
-
-#  publish-npm:
-#    fail-fast: false
-#    image: "node:latest"
-#    working-directory: ${{initial-clone}}
-#    environment :
-#       - NPM_USERNAME =${{NPM_USER}}
-#       - NPM_PASSWORD= ${{NPM_PASSWORD}}
-#       - NPM_EMAIL=verchol@gmail.com
-#    commands:
-#      - "npm install -g gulp"
-#      - "gulp bump"
-#      - "echo //registry.npmjs.org/:_password=${NPM_PASSWORD}>> ~/.npmrc"
-#      - "echo //registry.npmjs.org/:username=${NPM_USERNAME}>> ~/.npmrc"
-#      - "echo //registry.npmjs.org/:email=${NPM_EMAIL}>> ~/.npmrc"
-#      - "gulp npm"
-
-#  deploy_kubernetis:
-#    image : "kub_deployer"
-#    commands:
-#      -  cbtl verchol/${{CF_IMAGE:CF_TAG}}
+      - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
+    when:
+      branch:
+        only: [ master ]

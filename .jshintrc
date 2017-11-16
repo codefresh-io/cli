@@ -1,4 +1,5 @@
 {
+  "node": true,
   "eqeqeq": true,
   "immed": true,
   "latedef": "nofunc",

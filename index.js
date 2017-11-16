@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 'use strict';
-var yargs = require('yargs');
-var path  = require('path');
+const yargs = require('yargs');
+const path  = require('path');
+
 
 process.on('uncaughtException', function (err) {
     console.log(err);
@@ -61,6 +62,16 @@ var argv = yargs.usage('usage: $0 <command>')
             .command('unpause', '-unpause env', require('./commands/environments/cmd/unpause'))
             .command('terminate', '-terminate env by id', require('./commands/environments/cmd/terminate'))
             .command('terminateAll', '-terminate all envs', require('./commands/environments/cmd/terminateAll'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
+    .command('pipelines', 'api of pipelines', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 environments <item> [options]')
+            .command('get', '-list of pipelines', require('./commands/pipelines/cmd/get'))
+            .command('run', '-run a pipeline', require('./commands/pipelines/cmd/run'))
             .help('help')
             .wrap(null)
             .argv;
