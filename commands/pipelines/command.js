@@ -103,7 +103,7 @@ function extractVariables(info) {
         console.log('invalid environment variables please enter [key] [value]');
         length -=1;
     }
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < length-1; i++) {
         let key = info.variables[i];
         let val = info.variables[i+1];
         variables[key] = val.toString();
