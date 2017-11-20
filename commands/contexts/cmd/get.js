@@ -14,7 +14,7 @@ exports.builder = function (yargs) {
         alias: 'a',
         demand: true,
         choices: ['account', 'user'],
-        describe: 'path to the yaml file'
+        describe: 'set your authorization'
     }).help("h");
 };
 
