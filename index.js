@@ -89,6 +89,15 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
+    .command('nextpipelines', 'api of next generation pipelines', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 environments <item> [options]')
+            .command('get', '-get next generation pipelines', require('./commands/nextpipelines/cmd/get'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .command('context', 'api of context', function (yargs) {
         argv = yargs
             .usage('usage: $0 context <item> [options]')
@@ -101,10 +110,10 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
-    .command('nextpipelines', 'api of next generation pipelines', function (yargs) {
+    .command('contexts', 'api of contexts', function (yargs) {
         argv = yargs
-            .usage('usage: $0 environments <item> [options]')
-            .command('get', '-get next generation pipelines', require('./commands/nextpipelines/cmd/get'))
+            .usage('usage: $0 contexts <item> [options]')
+            .command('get', '-get contexts', require('./commands/contexts/cmd/get'))
             .help('help')
             .wrap(null)
             .argv;
