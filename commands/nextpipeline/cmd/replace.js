@@ -25,7 +25,7 @@ exports.handler = function (argv) {
         token: process.env.CF_TOKEN
     };
 
-    command.replacePipelineByFile(info).then((res) => {
+    command.createOrReplacePipelineByFile(info).then((res) => {
         console.log(res);
     }, (err) => {
         throw err;

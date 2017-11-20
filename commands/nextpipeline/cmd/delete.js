@@ -30,22 +30,15 @@ exports.handler = function (argv) {
         token: process.env.CF_TOKEN
     };
 
-    if (!_.isUndefined(info.name)) {
-        command.deletePipelineByName(info).then((res) => {
+    if (_.isUndefined(info.name) && _.isUndefined(info.file)) {
+        throw new CFError("must provide [FILE] or [NAME] of the pipeline");
+    }
+    else {
+        command.deletePipeline(info).then((res) => {
             console.log(res);
         }, (err) => {
             throw err;
         });
-    }
-    else if (!_.isUndefined(info.file)) {
-        command.deletePipelineByFile(info).then((res) => {
-            console.log(res);
-        }, (err) => {
-            throw err;
-        });
-    }
-    else{
-        throw new CFError("must provide [FILE] or [NAME] of the pipeline")
     }
 
 

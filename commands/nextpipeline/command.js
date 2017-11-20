@@ -2,6 +2,7 @@ const request     = require('request');
 const Promise     = require('bluebird');
 const CFError     = require('cf-errors');
 const YAML        = require('yamljs');
+const _           = require('lodash');
 
 
 const getPipelineByName = function (info) {
@@ -20,24 +21,8 @@ const getPipelineByName = function (info) {
     })
 };
 
-const deletePipelineByName = function (info) {
-    const url =`${info.url}/api/pipelines/next-gen/${info.name}`;
-    let headers = {
-        'Accept': 'application/json',
-        'X-Access-Token': info.token
-    };
-    return new Promise(function (resolve,reject) {
-        request.del({url: url, headers: headers}, function (err, httpRes, body) {
-            if(err) {
-                return reject(new CFError(err));
-            }
-            return resolve(body);
-        });
-    })
-};
-
-const createPipelineByFile = function (info) {
-    const requestData = YAML.load(info.file);
+const createOrReplacePipelineByFile = function (info) {
+    let requestData= YAML.load(info.file);
     let url = `${info.url}/api/pipelines/next-gen`;
     let headers = {
         'Accept': 'application/json',
@@ -58,9 +43,17 @@ const createPipelineByFile = function (info) {
     })
 };
 
-const deletePipelineByFile = function (info) {
-    const requestData = YAML.load(info.file);
-    let url = `${info.url}/api/pipelines/next-gen`;
+const deletePipeline = function (info) {
+    let url;
+    let requestData;
+    if (_.isUndefined(info.name)) {
+        url = `${info.url}/api/pipelines/next-gen`;
+        requestData = YAML.load(info.file);
+    }
+    else{
+        url =`${info.url}/api/pipelines/next-gen/${info.name}`;
+        requestData='';
+    }
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -80,32 +73,10 @@ const deletePipelineByFile = function (info) {
     })
 };
 
-const replacePipelineByFile = function (info) {
-    const requestData = YAML.load(info.file);
-    let url = `${info.url}/api/pipelines/next-gen`;
-    let headers = {
-        'Accept': 'application/json',
-        'X-Access-Token': info.token
-    };
-    return new Promise(function (resolve,reject) {
-        request({
-            url: url,
-            method: "POST",
-            headers: headers,
-            json: requestData
-        }, function (err, httpRes, body) {
-            if(err) {
-                return reject(new CFError(err));
-            }
-            return resolve(body);
-        });
-    })
-};
 
 
 
 module.exports.getPipelineByName = getPipelineByName;
-module.exports.deletePipelineByName = deletePipelineByName;
-module.exports.createPipelineByFile = createPipelineByFile;
-module.exports.deletePipelineByFile = deletePipelineByFile;
-module.exports.replacePipelineByFile = replacePipelineByFile;
+module.exports.deletePipeline = deletePipeline;
+module.exports.createOrReplacePipelineByFile = createOrReplacePipelineByFile;
+

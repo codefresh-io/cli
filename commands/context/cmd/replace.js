@@ -32,7 +32,7 @@ exports.handler = function (argv) {
         token: process.env.CF_TOKEN
     };
 
-    command.replaceContextByFile(info).then((res) => {
+    command.createOrReplaceContextByFile(info).then((res) => {
         console.log(res);
     }, (err) => {
         throw err;
