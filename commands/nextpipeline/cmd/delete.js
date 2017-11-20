@@ -8,7 +8,7 @@ exports.describe = 'delete codefresh new generation pipeline';
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
-        alias: 'url',
+        alias: 'u',
         default: 'https://g.codefresh.io'
     }).option('name', {
         type: 'string',

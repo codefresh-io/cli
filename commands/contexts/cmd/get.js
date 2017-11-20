@@ -7,7 +7,7 @@ exports.describe = 'images in Codefresh';
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
-        alias: 'url',
+        alias: 'u',
         default: 'https://g.codefresh.io'
     }).option('authorization', {
         type: 'string',
