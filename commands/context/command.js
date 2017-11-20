@@ -23,24 +23,29 @@ const getContextByName = function (info) {
 
 
 const createOrReplaceContextByFile = function (info) {
-    const requestData = YAML.load(info.file);
+    let requestData;
+    return new Promise(function (resolve,reject) {
+    try{
+        requestData = YAML.load(info.file);
+    }catch(err) {
+        return reject(new CFError("yaml path are illegal"));
+    }
     const url =`${info.url}/contexts/${info.authorization}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
     };
-    return new Promise(function (resolve,reject) {
-        request({
-            url: url,
-            method: "POST",
-            headers: headers,
-            json: requestData
-        }, function (err, httpRes, body) {
-            if(err) {
-                return reject(new CFError(err));
-            }
-            return resolve(body);
-        });
+    request({
+        url: url,
+        method: "POST",
+        headers: headers,
+        json: requestData
+    }, function (err, httpRes, body) {
+        if(err) {
+            return reject(new CFError(err));
+        }
+        return resolve(body);
+    });
     })
 };
 
@@ -49,19 +54,23 @@ const createOrReplaceContextByFile = function (info) {
 const deleteContext = function (info) {
     let url;
     let requestData;
-    if (_.isUndefined(info.name)) {
-        url =`${info.url}/contexts/${info.authorization}`;
-        requestData = YAML.load(info.file);
-    }
-    else{
-        url = `${info.url}/contexts/${info.authorization}/${info.name}`;
-        requestData='';
-    }
-    let headers = {
-        'Accept': 'application/json',
-        'X-Access-Token': info.token
-    };
     return new Promise(function (resolve,reject) {
+        if (_.isUndefined(info.name)) {
+            url =`${info.url}/contexts/${info.authorization}`;
+            try{
+                requestData = YAML.load(info.file);
+            }catch(err) {
+                return reject(new CFError("yaml path are illegal"));
+            }
+        }
+        else{
+            url = `${info.url}/contexts/${info.authorization}/${info.name}`;
+            requestData='';
+        }
+        let headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': info.token
+        };
         request({
             url: url,
             method: "DELETE",
@@ -73,7 +82,7 @@ const deleteContext = function (info) {
             }
             return resolve(body);
         });
-    })
+        })
 };
 
 

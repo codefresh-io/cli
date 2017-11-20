@@ -22,54 +22,63 @@ const getPipelineByName = function (info) {
 };
 
 const createOrReplacePipelineByFile = function (info) {
-    let requestData= YAML.load(info.file);
-    let url = `${info.url}/api/pipelines/next-gen`;
-    let headers = {
-        'Accept': 'application/json',
-        'X-Access-Token': info.token
-    };
+    let requestData;
     return new Promise(function (resolve,reject) {
-        request({
-            url: url,
-            method: "POST",
-            headers: headers,
-            json: requestData
-        }, function (err, httpRes, body) {
-            if(err) {
-                return reject(new CFError(err));
-            }
-            return resolve(body);
-        });
+        try{
+            requestData = YAML.load(info.file);
+        }catch(err) {
+            return reject(new CFError("yaml path are illegal"));
+        }
+        let url = `${info.url}/api/pipelines/next-gen`;
+        let headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': info.token
+        };
+            request({
+                url: url,
+                method: "POST",
+                headers: headers,
+                json: requestData
+            }, function (err, httpRes, body) {
+                if(err) {
+                    return reject(new CFError(err));
+                }
+                return resolve(body);
+            });
     })
 };
 
 const deletePipeline = function (info) {
     let url;
     let requestData;
-    if (_.isUndefined(info.name)) {
-        url = `${info.url}/api/pipelines/next-gen`;
-        requestData = YAML.load(info.file);
-    }
-    else{
-        url =`${info.url}/api/pipelines/next-gen/${info.name}`;
-        requestData='';
-    }
-    let headers = {
-        'Accept': 'application/json',
-        'X-Access-Token': info.token
-    };
     return new Promise(function (resolve,reject) {
-        request({
-            url: url,
-            method: "DELETE",
-            headers: headers,
-            json: requestData
-        }, function (err, httpRes, body) {
-            if(err) {
-                return reject(new CFError(err));
+        if (_.isUndefined(info.name)) {
+            url = `${info.url}/api/pipelines/next-gen`;
+            try{
+                requestData = YAML.load(info.file);
+            }catch(err) {
+                return reject(new CFError("yaml path are illegal"));
             }
-            return resolve(body);
-        });
+        }
+        else{
+            url =`${info.url}/api/pipelines/next-gen/${info.name}`;
+            requestData='';
+        }
+        let headers = {
+            'Accept': 'application/json',
+            'X-Access-Token': info.token
+        };
+            request({
+                url: url,
+                method: "DELETE",
+                headers: headers,
+                json: requestData
+            }, function (err, httpRes, body) {
+                if(err) {
+                    return reject(new CFError(err));
+                }
+                return resolve(body);
+            });
     })
 };
 

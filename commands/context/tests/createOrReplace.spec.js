@@ -28,7 +28,7 @@ describe('context create/replace test', () => {
                         }
                     });
 
-                    return commandsProxy.getco(info).then((res)=> {
+                    return commandsProxy.createOrReplaceContextByFile(info).then((res)=> {
                         expect(res).to.deep.equal("context1")
                     });
                 });
