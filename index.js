@@ -89,6 +89,18 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
+    .command('context', 'api of context', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 context <item> [options]')
+            .command('create', '-create context', require('./commands/context/cmd/create'))
+            .command('delete', '-delete context', require('./commands/context/cmd/delete'))
+            .command('replace', '-replace context', require('./commands/context/cmd/replace'))
+            .command('get', '-get context', require('./commands/context/cmd/get'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
     .command('nextpipelines', 'api of next generation pipelines', function (yargs) {
         argv = yargs
             .usage('usage: $0 environments <item> [options]')

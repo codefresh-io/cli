@@ -7,8 +7,8 @@ const Promise     = require('bluebird');
 const CFError     = require('cf-errors');
 
 
-const getPipelines = function (info) {
-    const url =`${info.url}/api/pipelines/next-gen`;
+const getContexts = function (info) {
+    const url =""; // ask arik for the end point
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -25,5 +25,5 @@ const getPipelines = function (info) {
 
 
 
-module.exports.getPipelines = getPipelines;
+module.exports.getContexts = getContexts;
 
