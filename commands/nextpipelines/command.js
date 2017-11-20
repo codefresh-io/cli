@@ -1,7 +1,3 @@
-/**
- * Created by nikolai on 24.8.16.
- */
-
 const request     = require('request');
 const Promise     = require('bluebird');
 const CFError     = require('cf-errors');

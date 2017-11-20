@@ -1,7 +1,3 @@
-/**
- * Created by nikolai on 24.8.16.
- */
-
 const request     = require('request');
 const Promise     = require('bluebird');
 const CFError     = require('cf-errors');
@@ -9,7 +5,7 @@ const YAML        = require('yamljs');
 
 
 const getContextByName = function (info) {
-    let url = "";//need to ask arik
+    const url =`${info.url}/contexts/${info.authorization}/${info.name}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -25,7 +21,7 @@ const getContextByName = function (info) {
 };
 
 const deleteContextByName = function (info) {
-    let url = "";//need to ask arik
+    const url =`${info.url}/contexts/${info.authorization}/${info.name}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -42,7 +38,7 @@ const deleteContextByName = function (info) {
 
 const createContextByFile = function (info) {
     const requestData = YAML.load(info.file);
-    let url = "";//need to ask arik
+    const url =`${info.url}/contexts/${info.authorization}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -64,7 +60,7 @@ const createContextByFile = function (info) {
 
 const deleteContextByFile = function (info) {
     const requestData = YAML.load(info.file);
-    let url = "";//need to ask arik
+    const url =`${info.url}/contexts/${info.authorization}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
@@ -86,7 +82,7 @@ const deleteContextByFile = function (info) {
 
 const replaceContextByFile = function (info) {
     const requestData = YAML.load(info.file);
-    let url = "";//need to ask arik
+    const url =`${info.url}/contexts/${info.authorization}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token

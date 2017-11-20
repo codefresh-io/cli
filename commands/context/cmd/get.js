@@ -14,6 +14,12 @@ exports.builder = function (yargs) {
         type: 'string',
         alias: 'n',
         describe: 'name of the pipeline'
+    }).option('authorization', {
+        type: 'string',
+        alias: 'a',
+        demand: true,
+        choices: ['account', 'user'],
+        describe: 'path to the yaml file'
     }).help("h");
 };
 
@@ -22,6 +28,7 @@ exports.handler = function (argv) {
     let info = {
         url: argv.url,
         name:argv.name,
+        authorization:argv.authorization,
         token: process.env.CF_TOKEN
     };
 

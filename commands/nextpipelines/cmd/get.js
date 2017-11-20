@@ -1,6 +1,3 @@
-/**
- * Created by nikolai on 9/20/16.
- */
 'use strict';
 const command = require('./../command');
 const _       = require('lodash');

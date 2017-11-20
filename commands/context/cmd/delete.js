@@ -18,6 +18,12 @@ exports.builder = function (yargs) {
         type: 'string',
         alias: 'f',
         describe: 'path to file'
+    }).option('authorization', {
+        type: 'string',
+        alias: 'a',
+        demand: true,
+        choices: ['account', 'user'],
+        describe: 'path to the yaml file'
     }).help("h");
 };
 
@@ -27,6 +33,7 @@ exports.handler = function (argv) {
         url: argv.url,
         name: argv.name,
         file: argv.file,
+        authorization:argv.authorization,
         token: process.env.CF_TOKEN
     };
 

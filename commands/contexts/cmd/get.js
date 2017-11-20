@@ -1,6 +1,3 @@
-/**
- * Created by nikolai on 9/20/16.
- */
 'use strict';
 const command = require('./../command');
 const _       = require('lodash');
@@ -12,6 +9,12 @@ exports.builder = function (yargs) {
     return yargs.option('url', {
         alias: 'url',
         default: 'https://g.codefresh.io'
+    }).option('authorization', {
+        type: 'string',
+        alias: 'a',
+        demand: true,
+        choices: ['account', 'user'],
+        describe: 'path to the yaml file'
     }).help("h");
 };
 
@@ -19,6 +22,7 @@ exports.handler = function (argv) {
     console.log('running');
     let info = {
         url: argv.url,
+        authorization:argv.authorization,
         token: process.env.CF_TOKEN
     };
 

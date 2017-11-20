@@ -1,14 +1,10 @@
-/**
- * Created by nikolai on 24.8.16.
- */
-
 const request     = require('request');
 const Promise     = require('bluebird');
 const CFError     = require('cf-errors');
 
 
 const getContexts = function (info) {
-    const url =""; // ask arik for the end point
+    const url =`${info.url}/contexts/${info.authorization}`;
     let headers = {
         'Accept': 'application/json',
         'X-Access-Token': info.token
