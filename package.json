@@ -48,6 +48,7 @@
     "superagent-use": "^0.0.1",
     "swig": "^1.4.2",
     "tty-table": "^2.1.0",
+    "yamljs": "^0.3.0",
     "yargs": "^4.7.0"
   },
   "devDependencies": {

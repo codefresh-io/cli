@@ -38,10 +38,10 @@ exports.builder = function (yargs) {
         default: false,
         describe: 'choose if to reset volume'
     }).option('variables', {
-            type: 'array',
-            alias: 'v',
-            default: {},
-            describe: 'add the environment variables'
+        type: 'array',
+        alias: 'v',
+        default: {},
+        describe: 'add the environment variables'
     }).option('repoName', {
         type: 'string',
         alias: 'rn',
