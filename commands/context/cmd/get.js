@@ -13,7 +13,8 @@ exports.builder = function (yargs) {
     }).option('name', {
         type: 'string',
         alias: 'n',
-        describe: 'name of the pipeline'
+        describe: 'name of the pipeline',
+        default: ''
     }).option('authorization', {
         type: 'string',
         alias: 'a',
