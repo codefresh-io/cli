@@ -29,6 +29,11 @@ var outputTo = function (body, info) {
         return prettyjson.render(body);
     }
 
+    if(info.list && isJson) {
+        helper.toList("image", body, Image.getHeader());
+        return;
+    }
+
     console.log('Response body:' + prettyjson.render(body));
     return body;
 };
@@ -37,15 +42,18 @@ module.exports.get = function (info) {
     let url = info.targetUrl;
 
     return (token) => {
-        console.log('url:' + url);
         var deferred = Q.defer();
         var headers = {
             'Accept': 'application/json',
             'Content-Type':'application/json',
             'X-Access-Token': token
         };
+        var query = {
+            metadata: info.annotation,
+            sha: info.sha
+        };
 
-        request.get({url: url, headers: headers}, function (err, httpRes, body) {
+        request.get({url: url, headers: headers, qs: query}, function (err, httpRes, body) {
             if (err) {
                 deferred.reject(err);
             }

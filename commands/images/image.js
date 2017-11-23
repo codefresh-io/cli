@@ -31,6 +31,10 @@ Image.prototype.toJson = function () {
     return obj;
 };
 
+Image.prototype.toString = function () {
+    return `${this._id} ${this.imageName} ${this.created} ${this.status}`;
+};
+
 var header = [
     {
         value : "id",

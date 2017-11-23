@@ -90,6 +90,14 @@ var toTable = function (type, array, header) {
     console.log(output);
 };
 
+var toList = function (type, array) {
+    _.forEach(array, (row) => {
+        const image = new Image.Image(row);
+        console.log(image.toString());
+    });
+};
+
 module.exports.toFile = toFile;
 module.exports.IsJson = IsJson;
 module.exports.toTable = toTable;
+module.exports.toList = toList;

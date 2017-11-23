@@ -1,6 +1,6 @@
 {
   "name": "@codefresh-io/cf-cli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
