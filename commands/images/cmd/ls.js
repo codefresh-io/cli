@@ -57,17 +57,21 @@ exports.handler = function (argv) {
         targetUrl: `${argv.url}/api/images`
     };
 
-    var login = new Login(argv.url,
-        {
-            access: {file: argv.tokenFile, token : argv.token},
-            user: argv.user,
-            password: argv.password
-        });
-
     var images = command.get(info);
+    if (process.env.CF_TOKEN) {
+        images(process.env.CF_TOKEN);
+    } else {
+        const login = new Login(argv.url,
+            {
+                access: { file: argv.tokenFile, token: argv.token },
+                user: argv.user,
+                password: argv.password
+            });
 
-    login.connect().then(images.bind(login.token), (err) => {
-        debug('error:' + err);
-        process.exit(err);
-    });
+        login.connect().then(images.bind(login.token), (err) => {
+            debug('error:' + err);
+            process.exit(err);
+        });
+    }
+
 };

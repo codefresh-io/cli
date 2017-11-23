@@ -56,9 +56,10 @@ module.exports.get = function (info) {
         request.get({url: url, headers: headers, qs: query}, function (err, httpRes, body) {
             if (err) {
                 deferred.reject(err);
+            } else {
+                deferred.resolve(outputTo(body, info));
             }
 
-            deferred.resolve(outputTo(body, info));
         });
         return deferred.promise;
     };
