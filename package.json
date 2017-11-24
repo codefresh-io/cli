@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -34,5 +34,8 @@
   },
   "homepage": "https://github.com/codefresh-io/cli#readme",
   "author": "Codefresh",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "8.8.0"
+  }
 }
