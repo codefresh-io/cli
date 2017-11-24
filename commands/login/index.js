@@ -1,3 +1,5 @@
+'use strict';
+
 var debug   = require('debug')('login->index');
 var Login   = require('./connector');
 var assert  = require('assert');

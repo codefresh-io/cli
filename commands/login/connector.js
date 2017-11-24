@@ -1,13 +1,12 @@
 var util      = require('util');
 var debug     = require('debug')('cli-login');
 var _         = require('lodash');
-var request   = require('superagent-use');
+var request   = require('request');
 var jsonfile  = require('jsonfile');
 var path      = require('path');
 var User      = require('./user');
 var mkdirp    = require('mkdirp');
 var Q         = require('q');
-var CFError   = require('cf-errors');
 
 var ACCESS_TOKEN_DEFAULT = path.resolve(process.env.HOME,'.codefresh/accessToken.json');
 

@@ -77,7 +77,6 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
-    .command('yaml', 'create codefresh.yml', require('./commands/yaml'))
     .demand(1, "must provide a valid command")
     .option('url', {
           alias: 'u',

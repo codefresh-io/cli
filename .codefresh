@@ -1,6 +1,0 @@
-{
-  "api": {
-    "url": "http://localhost:8000/api/"
-  },
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6Imd1eS1jb2RlZnJlc2giLCJwcm92aWRlciI6eyJuYW1lIjoiZ2l0aHViIn0sImlhdCI6MTQzNDAzNTg2MCwiZXhwIjoxNDM0MTIyMjYwfQ.AZffnoLKPgp0uB_3ys7IaoFPOrrWVRKCQzJUfQTVnsU"
-}
