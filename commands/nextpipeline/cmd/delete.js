@@ -18,6 +18,11 @@ exports.builder = function (yargs) {
         type: 'string',
         alias: 'f',
         describe: 'path to file'
+    }).option('variables', {
+        type: 'array',
+        alias: 'v',
+        default: {},
+        describe: 'add the environment variables'
     }).help("h");
 };
 
@@ -27,7 +32,8 @@ exports.handler = function (argv) {
         url: argv.url,
         name: argv.name,
         file: argv.file,
-        token: process.env.CF_TOKEN
+        token: process.env.CF_TOKEN,
+        variables:argv.variables
     };
 
     if (_.isUndefined(info.name) && _.isUndefined(info.file)) {

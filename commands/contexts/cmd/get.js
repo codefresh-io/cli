@@ -15,6 +15,11 @@ exports.builder = function (yargs) {
         demand: true,
         choices: ['account', 'user'],
         describe: 'set your authorization'
+    }).option('variables', {
+        type: 'array',
+        alias: 'v',
+        default: {},
+        describe: 'add the environment variables'
     }).help("h");
 };
 
@@ -23,7 +28,8 @@ exports.handler = function (argv) {
     let info = {
         url: argv.url,
         authorization:argv.authorization,
-        token: process.env.CF_TOKEN
+        token: process.env.CF_TOKEN,
+        variables:argv.variables
     };
 
     command.getContexts(info).then((res) => {

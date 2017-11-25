@@ -14,6 +14,11 @@ exports.builder = function (yargs) {
         type: 'string',
         alias: 'n',
         describe: 'name of the pipeline'
+    }).option('variables', {
+        type: 'array',
+        alias: 'v',
+        default: {},
+        describe: 'add the environment variables'
     }).help("h");
 };
 
@@ -22,7 +27,8 @@ exports.handler = function (argv) {
     let info = {
         url: argv.url,
         name:argv.name,
-        token: process.env.CF_TOKEN
+        token: process.env.CF_TOKEN,
+        variables:argv.variables
     };
 
     command.getPipelineByName(info).then((res) => {
