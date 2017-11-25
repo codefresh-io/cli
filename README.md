@@ -1,25 +1,7 @@
-# Codefresh command line manager
-This package provides a unified command line interface to Codefresh.
+# Codefresh CLI
+This packages provides a CLI for interacting with Codefresh
+You can also requires this module to be used in node.js and the browser
 
-## Getting Started
-You should have a installed `node` and `npm`.
-
-Go to the root of `cf-cli` and run the command 
-
-```
-npm install
-npm link
-```
-
-Now you can start to use `cf-cli`. The template for running commands looks like this
-
-```
-cf-cli <command> <options>
-```
-
-To see help text, you can run:
-
-```
-cf-cli --help
-cf-cli <command> --help
-```
+# Install
+`npm install -g codefresh`
+`yarn global add codefresh`
