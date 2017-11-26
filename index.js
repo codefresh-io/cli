@@ -67,11 +67,53 @@ var argv = yargs.usage('usage: $0 <command>')
             .argv;
         checkCommands(yargs, argv, 2);
     })
-    .command('pipelines', 'api of pipelines', function (yargs) {
+    .command('pipeline', 'api of pipelines', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 pipeline <item> [options]')
+            .command('get', '-list of pipelines', require('./commands/pipeline/cmd/get'))
+            .command('run', '-run a pipeline', require('./commands/pipeline/cmd/run'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
+    .command('nextpipeline', 'api of next generation pipeline', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 nextpipeline <item> [options]')
+            .command('create', '-create next generation pipeline', require('./commands/nextpipeline/cmd/create'))
+            .command('delete', '-delete next generation pipeline', require('./commands/nextpipeline/cmd/delete'))
+            .command('replace', '-replace next generation pipeline', require('./commands/nextpipeline/cmd/replace'))
+            .command('get', '-get next generation pipeline', require('./commands/nextpipeline/cmd/get'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
+    .command('nextpipelines', 'api of next generation pipelines', function (yargs) {
         argv = yargs
             .usage('usage: $0 environments <item> [options]')
-            .command('get', '-list of pipelines', require('./commands/pipelines/cmd/get'))
-            .command('run', '-run a pipeline', require('./commands/pipelines/cmd/run'))
+            .command('get', '-get next generation pipelines', require('./commands/nextpipelines/cmd/get'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
+    .command('context', 'api of context', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 context <item> [options]')
+            .command('create', '-create context', require('./commands/context/cmd/create'))
+            .command('delete', '-delete context', require('./commands/context/cmd/delete'))
+            .command('replace', '-replace context', require('./commands/context/cmd/replace'))
+            .command('get', '-get context', require('./commands/context/cmd/get'))
+            .help('help')
+            .wrap(null)
+            .argv;
+        checkCommands(yargs, argv, 2);
+    })
+    .command('contexts', 'api of contexts', function (yargs) {
+        argv = yargs
+            .usage('usage: $0 contexts <item> [options]')
+            .command('get', '-get contexts', require('./commands/contexts/cmd/get'))
             .help('help')
             .wrap(null)
             .argv;

@@ -12,7 +12,7 @@ exports.describe = 'images in Codefresh';
 
 exports.builder = function (yargs) {
     return yargs.option('url', {
-        alias: 'url',
+        alias: 'u',
         default: 'https://g.codefresh.io'
     }).option('account', {
         alias: 'a'
@@ -38,10 +38,10 @@ exports.builder = function (yargs) {
         default: false,
         describe: 'choose if to reset volume'
     }).option('variables', {
-            type: 'array',
-            alias: 'v',
-            default: {},
-            describe: 'add the environment variables'
+        type: 'array',
+        alias: 'v',
+        default: {},
+        describe: 'add the environment variables'
     }).option('repoName', {
         type: 'string',
         alias: 'rn',
