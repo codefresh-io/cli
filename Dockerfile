@@ -4,12 +4,10 @@ WORKDIR /cf-cli
 
 COPY package.json /cf-cli
 
-RUN npm install
-
-ENV PATH="/cf-cli:${PATH}"
+RUN yarn --prod install
 
 COPY . /cf-cli
 
-RUN npm link
+RUN ln -s $(pwd)/lib/interface/cli/index.js /usr/local/bin/codefresh
 
-ENTRYPOINT ["node" ,"index.js"]
+ENTRYPOINT ["codefresh"]
