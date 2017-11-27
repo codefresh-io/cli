@@ -8,17 +8,17 @@ steps:
     commands:
         - yarn install --frozen-lockfile
 
-  eslint:
-    title: 'Running linting logic'
-    image: codefresh/node-tester-image:8.8.0
-    commands:
-        - yarn lint
-
-  unit-tests:
-    title: 'Running unit tests'
-    image: codefresh/node-tester-image:8.8.0
-    commands:
-        - yarn test
+#  eslint:
+#    title: 'Running linting logic'
+#    image: codefresh/node-tester-image:8.8.0
+#    commands:
+#        - yarn lint
+#
+#  unit-tests:
+#    title: 'Running unit tests'
+#    image: codefresh/node-tester-image:8.8.0
+#    commands:
+#        - yarn test
 
   build_step:
     type: build
