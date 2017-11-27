@@ -1,6 +1,0 @@
-version: '2'
-services:
-  docker-spring-boot:
-    image: 'ncodefresh/dockerspringboot:master'
-    ports:
-      - 8080
