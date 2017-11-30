@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -10,7 +10,7 @@
     "ci-publish": "ci-publish"
   },
   "bin": {
-    "codefresh": "./lib/cli/index.js"
+    "codefresh": "./lib/interface/cli/index.js"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
