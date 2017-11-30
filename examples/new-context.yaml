@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: context
+owner: user/account
 metadata:
   name: my-context
 spec:
   type: config/secret/github
-  owner: user/account
   data:
     key1: value1
     key2: value2
