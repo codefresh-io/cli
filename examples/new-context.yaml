@@ -1,10 +1,9 @@
 apiVersion: v1
 kind: context
-owner: user
+owner: account
 metadata:
-  name: my-context
+  name: my-context-secret
 spec:
   type: secret
   data:
-    key1: value1
-    key2: value2
+    key1: value-secret
