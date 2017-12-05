@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -49,6 +49,6 @@
   "author": "Codefresh",
   "license": "ISC",
   "engines": {
-    "node": ">4.0.0"
+    "node": ">8.0.0"
   }
 }
