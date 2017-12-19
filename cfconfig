@@ -1,0 +1,14 @@
+contexts:
+  testcontext1:
+    type: JWT
+    name: testcontext1
+    url: 'https://g.codefresh.io'
+    token: >-
+      eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NTJlOTQyMjM4MjQ4MzFkMDBiMWNhM2UiLCJhY2NvdW50SWQiOiI1NjgwZjEzMDM0Y2RiMzE3N2M4MmFjYjIiLCJpYXQiOjE1MTIyMzA5MDcsImV4cCI6MTUxNDgyMjkwN30.-OUq7kVLVghCjV4tp7swSzCyzPn-GR3ZF0A-aZo1ic0
+    acl-type: account
+    user-id: 552e94223824831d00b1ca3e
+    account-id: 5680f13034cdb3177c82acb2
+    expires: 1514822907
+    user-name: verchol
+    account-name: verchol_github
+current-context: testcontext1
