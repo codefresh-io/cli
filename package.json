@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -10,7 +10,7 @@
     "ci-publish": "ci-publish"
   },
   "bin": {
-    "codefresh": "./lib/cli/index.js"
+    "codefresh": "./lib/interface/cli/index.js"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
@@ -23,13 +23,19 @@
     "chalk": "^1.1.3",
     "cli-progress": "^1.6.0",
     "cli-table": "^0.3.1",
+    "columnify": "^1.5.4",
     "debug": "^3.1.0",
+    "filesize": "^3.5.11",
     "js-yaml": "^3.10.0",
     "jsonwebtoken": "^8.1.0",
     "kefir": "^3.8.0",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
+<<<<<<< HEAD
     "mocha": "^4.0.1",
+=======
+    "moment": "^2.19.4",
+>>>>>>> be86110c2c592e346c2d9ff62455dfb9cd76bbd3
     "prettyjson": "^1.2.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
@@ -51,6 +57,6 @@
   "author": "Codefresh",
   "license": "ISC",
   "engines": {
-    "node": ">4.0.0"
+    "node": ">8.0.0"
   }
 }
