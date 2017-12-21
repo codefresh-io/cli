@@ -12,7 +12,7 @@ steps:
     title: 'Running linting logic'
     image: codefresh/node-tester-image:8.8.0
     commands:
-        - yarn lint
+        - yarn eslint
 
 #  unit-tests:
 #    title: 'Running unit tests'
