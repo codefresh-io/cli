@@ -1,12 +1,12 @@
 {
   "name": "codefresh",
-  "version": "0.2.4",
+  "version": "0.2.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
     "test": "jest unit.spec.js --coverage",
-    "eslint": "eslint lib/**",
+    "eslint": "eslint lib/logic/**",
     "ci-publish": "ci-publish"
   },
   "bin": {
@@ -44,6 +44,7 @@
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "jest": "^21.2.1"
   },
   "bugs": {
