@@ -1,0 +1,8 @@
+{
+  "dataset" : [
+         {"NODE_VERSION": "latest"},
+         {"NODE_VERSION": "9"},
+         {"NODE_VERSION": "9-slim"},
+         {"NODE_VERSION": "8"}
+       ]
+}
