@@ -32,6 +32,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.19.4",
     "prettyjson": "^1.2.1",
+    "recursive-readdir": "^2.2.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "tty-table": "^2.5.5",
