@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -29,6 +29,7 @@
     "jsonwebtoken": "^8.1.0",
     "kefir": "^3.8.0",
     "lodash": "^4.17.4",
+    "log-update": "^2.3.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.19.4",
     "prettyjson": "^1.2.1",
