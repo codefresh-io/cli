@@ -1,0 +1,10 @@
+version: '1.0'
+
+steps:
+
+  build_executables:
+    title: "Building executables"
+    image: node:9.2.0
+    commands:
+      - "yarn global add pkg"
+      - "pkg ."

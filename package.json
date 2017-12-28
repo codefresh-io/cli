@@ -16,6 +16,9 @@
   "keywords": [
     "command line"
   ],
+  "pkg": {
+    "scripts": "lib/**/*.js"
+  },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
     "bluebird": "^3.5.1",
