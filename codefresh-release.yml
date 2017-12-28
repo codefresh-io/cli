@@ -6,6 +6,7 @@ steps:
     title: "Building executables"
     image: node:9.2.0
     commands:
+      - "apt-get install zip"
       - "yarn install"
       - "yarn global add pkg"
       - "pkg ."
