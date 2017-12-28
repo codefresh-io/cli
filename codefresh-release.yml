@@ -10,7 +10,7 @@ steps:
       - "yarn global add pkg"
       - "pkg ."
       #- 'curl -i -X GET https://api.github.com/repo/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}}'
-      - 'curl -i -X POST https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-macos -H "Content-Type: text/xml" -H "Authorization: token ${{TOKEN}}" --data-binary "codefresh-macos"'
+      - 'curl -i -X POST https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-macos -H "Content-Type: application/zip" -H "Authorization: token ${{TOKEN}}" --data-binary "codefresh-macos"'
       - 'curl -i -X POST https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-linux -H "Content-Type: text/xml" -H "Authorization: token ${{TOKEN}}" --data-binary "codefresh-linux"'
       - 'curl -i -X POST https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-win.exe -H "Content-Type: text/xml" -H "Authorization: token ${{TOKEN}}" --data-binary "codefresh-win.exe"'
 
