@@ -6,10 +6,10 @@ steps:
     title: "Building executables"
     image: node:9.2.0
     commands:
-      - "apt-get install zip"
       - "yarn install"
-      - "yarn global add pkg"
-      - "pkg ."
+      - "yarn compile"
+      - "apt-get update"
+      - "apt-get install zip"
       - "zip codefresh-linux codefresh-linux"
       - "zip codefresh-macos codefresh-macos"
       - "zip codefresh-windows codefresh-windows.exe"

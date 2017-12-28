@@ -7,7 +7,8 @@
   "scripts": {
     "test": "jest unit.spec.js --coverage",
     "eslint": "eslint lib/logic/**",
-    "ci-publish": "ci-publish"
+    "ci-publish": "ci-publish",
+    "compile": "pkg ."
   },
   "bin": {
     "codefresh": "./lib/interface/cli/index.js"
@@ -49,7 +50,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-mocha": "^4.11.0",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "pkg": "^4.3.0-beta.5"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cli/issues"
