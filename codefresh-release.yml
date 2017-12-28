@@ -10,9 +10,9 @@ steps:
       - "yarn compile"
       - "apt-get update"
       - "apt-get install -y zip"
-      - "zip codefresh-linux codefresh-linux"
-      - "zip codefresh-macos codefresh-macos"
-      - "zip codefresh-windows codefresh-windows.exe"
+      - "zip codefresh-linux ./dist/codefresh-linux"
+      - "zip codefresh-macos ./dist/codefresh-macos"
+      - "zip codefresh-windows ./dist/codefresh-windows.exe"
       #- 'curl -i -X GET https://api.github.com/repo/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}}'
       - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-macos.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-macos.zip'
       - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-linux.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/9048401/assets?name=codefresh-linux.zip'

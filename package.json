@@ -8,7 +8,7 @@
     "test": "jest unit.spec.js --coverage",
     "eslint": "eslint lib/logic/**",
     "ci-publish": "ci-publish",
-    "compile": "pkg ."
+    "compile": "pkg . --out-path ./dist"
   },
   "bin": {
     "codefresh": "./lib/interface/cli/index.js"
