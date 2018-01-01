@@ -9,7 +9,7 @@ steps:
       - "yarn install"
       - "yarn compile"
       - "apt-get update"
-      - "apt-get install -y zip"
+      - "apt-get install -y zip jq"
       - "zip codefresh-linux ./dist/codefresh-linux"
       - "zip codefresh-macos ./dist/codefresh-macos"
       - "zip codefresh-win ./dist/codefresh-win.exe"
