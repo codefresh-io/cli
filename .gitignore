@@ -4,3 +4,5 @@ yarn-error.log
 *.log
 coverage
 .DS_Store
+/dist
+*.zip

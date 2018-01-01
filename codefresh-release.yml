@@ -1,0 +1,22 @@
+version: '1.0'
+
+steps:
+
+  build_executables:
+    title: "Compiling executables"
+    image: node:9.2.0
+    commands:
+      - "yarn install"
+      - "yarn compile"
+      - "apt-get update"
+      - "apt-get install -y zip jq"
+      - "zip codefresh-linux ./dist/codefresh-linux"
+      - "zip codefresh-macos ./dist/codefresh-macos"
+      - "zip codefresh-win ./dist/codefresh-win.exe"
+      - "curl https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}} | jq -r '.id' > release-id.txt"
+      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-macos.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-macos.zip'
+      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-linux.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-linux.zip'
+      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-win.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-win.zip'
+
+
+## add to npm
