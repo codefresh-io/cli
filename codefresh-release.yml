@@ -25,8 +25,8 @@ steps:
     title: "Create github release"
     image: node:9.2.0
     commands:
-      - 'curl --fail -X POST -d ''{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
-      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/$PACKAGE_VERSION | jq -r '.id')"
+      - 'curl --fail -X POST -d ''{"tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
 
@@ -36,9 +36,9 @@ steps:
     commands:
       - "cd dist"
 # upload linux-x64 asset
-      - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
-      - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
+      - "tar -cf codefresh-${{PACKAGE_VERSION}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
+      - "gzip codefresh-${{PACKAGE_VERSION}}-linux-x64.tar"
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 
   push_to_registry_version:
     title: "Update dockerhub image latest tag"
