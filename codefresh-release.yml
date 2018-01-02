@@ -11,7 +11,7 @@ steps:
       - "apt-get update"
       - "apt-get install -y zip jq"
       - "cd dist"
-      - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README ../"
+      - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README ../LICENSE"
       - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
       - "curl https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}} | jq -r '.id' > release-id.txt"
       - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
