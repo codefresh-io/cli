@@ -1,3 +1,5 @@
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=codefresh-io&repoName=codefresh&branch=master&pipelineName=cli&accountName=codefresh-inc&type=cf-1)]( https://g.codefresh.io/repositories/codefresh-io/codefresh/builds?filter=trigger:build;branch:master;service:5a1925d424a2970001839933~cli)
+
 # Codefresh CLI
 This packages provides a CLI for interacting with Codefresh <br />
 You can also requires this module to be used in node.js and the browser
