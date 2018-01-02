@@ -3,25 +3,41 @@ version: '1.0'
 #TODO in case of a prelease make sure to create a prelease in github and in npm
 steps:
 
-#create a prelease in case of not executing from master
-  build_executables:
-    title: "Compiling executables"
-    image: node:9.2.0
+  extract_version:
+    title: "Exporting package.json version"
+    image: ubuntu:16.04
     commands:
-      - "yarn install"
       - "apt-get update"
-      - "apt-get install -y zip jq"
+      - "apt-get install -y jq"
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
-      - 'curl --fail -X POST -d ''{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
-      - "curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/$PACKAGE_VERSION | jq -r '.id' > release-id.txt"
-      - "yarn pkg"
+
+#  build_executables:
+#    title: "Compiling executables"
+#    image: node:9.2.0
+#    commands:
+#      - "yarn install"
+#      - "yarn pkg"
+
+  create_release:
+    title: "Create github release"
+    image: node:9.2.0
+    commands:
+      - 'curl --fail -X POST -d '{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
+      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/$PACKAGE_VERSION | jq -r '.id')"
+      - "echo Github release id: $GITHUB_RELEASE_ID"
+      - "cf_export GITHUB_RELEASE_ID"
+
+  upload_executables:
+    title: "Upload executables to github release"
+    image: node:9.2.0
+    commands:
       - "cd dist"
-      # upload linux-x64 asset
+# upload linux-x64 asset
       - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
       - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
 
   push_to_registry_version:
     title: "Update dockerhub image latest tag"
