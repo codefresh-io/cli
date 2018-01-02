@@ -31,6 +31,7 @@ steps:
     type: push
     candidate: ${{build_step}}
     tag: ${{CF_SHORT_REVISION}}
+    registry: "CFCR"
 
   push_to_registry_branch:
     title: "Pushing image tagged with branch to registry"
