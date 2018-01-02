@@ -13,12 +13,13 @@ steps:
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
 
-#  build_executables:
-#    title: "Compiling executables"
-#    image: node:9.2.0
-#    commands:
-#      - "yarn install"
-#      - "yarn pkg"
+  build_executables:
+    title: "Compiling executables"
+    image: node:9.2.0
+    commands:
+      - "rm -rf dist"
+      - "yarn install"
+      - "yarn pkg"
 
   create_release:
     title: "Create github release"
