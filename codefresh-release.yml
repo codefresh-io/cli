@@ -24,8 +24,14 @@ steps:
   create_release:
     title: "Create github release"
     image: node:9.2.0
+    fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+
+  get_release:
+    title: "Get github release"
+    image: node:9.2.0
+    commands:
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
@@ -35,8 +41,10 @@ steps:
     image: node:9.2.0
     commands:
       - "cd dist"
+      - "ls"
 # upload linux-x64 asset
       - "tar -cf codefresh-${{PACKAGE_VERSION}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
+      - "echo hello"
       - "gzip codefresh-${{PACKAGE_VERSION}}-linux-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 
