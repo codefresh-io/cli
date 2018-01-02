@@ -13,7 +13,7 @@ steps:
       - 'PACKAGE_VERSION=$(jq -r ".name" package.json)'
       - "Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
-      - 'curl -X POST -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
+      - 'curl -X POST -d '{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
       - "yarn pkg"
       - "cd dist"
       - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
@@ -26,7 +26,7 @@ steps:
     type: push
     candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
     image_name: codefresh/cli
-    tag: #take value from package.json
+    tag: ${{PACKAGE_VERSION}}
     registry: dockerhub
 
   deploy_to_npm:
