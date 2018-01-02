@@ -1,0 +1,7 @@
+name: new-pipeline
+spec:
+  steps:
+    test_step:
+      image: alpine
+      commands:
+      - echo "hello world"
