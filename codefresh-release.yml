@@ -1,5 +1,6 @@
 version: '1.0'
 
+#TODO in case of a prelease make sure to create a prelease in github and in npm
 steps:
 
   build_executables:
@@ -10,10 +11,38 @@ steps:
       - "yarn pkg"
       - "apt-get update"
       - "apt-get install -y zip jq"
+      - 'PACKAGE_VERSION=$(jq -r ".name" package.json)'
+      - "Current version: $PACKAGE_VERSION"
+      - "cf_export PACKAGE_VERSION"
       - "cd dist"
       - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
       - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
       - "curl https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}} | jq -r '.id' > release-id.txt"
       - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
 
-## add to npm
+  push_to_registry_latest:
+    title: "Update dockerhub image latest tag"
+    type: push
+    candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+    image_name: codefresh/cli
+    tag: #take value from package.json
+    registry: dockerhub
+
+  deploy_to_npm:
+    title: Publishing To Npm
+    image: codefresh/npm-publish:master
+    commands:
+      - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
+    when:
+      branch:
+        only: [ master ]
+
+  push_to_registry_version:
+    title: "Update dockerhub image latest tag"
+    type: push
+    candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+    tag: latest
+    registry: dockerhub
+    when:
+      branch:
+        only: [ master ]
