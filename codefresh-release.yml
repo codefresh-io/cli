@@ -24,7 +24,7 @@ steps:
     title: "Create github release"
     image: node:9.2.0
     commands:
-      - 'curl --fail -X POST -d '{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
+      - 'curl --fail -X POST -d ''{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/$PACKAGE_VERSION | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
