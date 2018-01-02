@@ -8,12 +8,13 @@ steps:
     image: node:9.2.0
     commands:
       - "yarn install"
-      - "yarn pkg"
       - "apt-get update"
       - "apt-get install -y zip jq"
       - 'PACKAGE_VERSION=$(jq -r ".name" package.json)'
       - "Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
+      - 'curl -X POST -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
+      - "yarn pkg"
       - "cd dist"
       - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
       - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
