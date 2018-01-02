@@ -1,6 +1,5 @@
 version: '1.0'
 
-#TODO in case of a prelease make sure to create a prelease in github and in npm
 steps:
 
   extract_version:
@@ -27,11 +26,26 @@ steps:
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+    when:
+      branch:
+        only: [ master ]
+
+#  create_prerelease:
+#    title: "Create github release"
+#    image: node:9.2.0
+#    fail_fast: false
+#    commands:
+#      - 'curl --fail -X POST -d ''{"tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+#    when:
+#      branch:
+#        only: [ master ]
 
   get_release:
     title: "Get github release"
     image: node:9.2.0
     commands:
+      - "apt-get update"
+      - "apt-get install -y jq"
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
@@ -40,6 +54,7 @@ steps:
     title: "Upload executables to github release"
     image: node:9.2.0
     commands:
+      - "ls"
       - "cd dist"
       - "ls"
 # upload linux-x64 asset
