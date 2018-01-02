@@ -26,9 +26,9 @@ steps:
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
-    when:
-      branch:
-        only: [ master ]
+#    when:
+#      branch:
+#        only: [ master ]
 
 #  create_prerelease:
 #    title: "Create github release"
@@ -54,8 +54,10 @@ steps:
     title: "Upload executables to github release"
     image: node:9.2.0
     commands:
+      - "echo hello"
       - "ls"
       - "cd dist"
+      - "echo hello"
       - "ls"
 # upload linux-x64 asset
       - "tar -cf codefresh-${{PACKAGE_VERSION}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
