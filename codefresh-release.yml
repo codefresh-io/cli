@@ -54,15 +54,10 @@ steps:
     title: "Upload executables to github release"
     image: node:9.2.0
     commands:
-      - "echo hello"
-      - "ls"
-      - "cd dist"
-      - "echo hello"
-      - "ls"
 # upload linux-x64 asset
-      - "tar -cf codefresh-${{PACKAGE_VERSION}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar ./dist/codefresh-linux-x64 README.md LICENSE"
       - "echo hello"
-      - "gzip codefresh-${{PACKAGE_VERSION}}-linux-x64.tar"
+      - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 
   push_to_registry_version:
