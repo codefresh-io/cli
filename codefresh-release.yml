@@ -7,16 +7,13 @@ steps:
     image: node:9.2.0
     commands:
       - "yarn install"
-      - "yarn compile"
+      - "yarn pkg"
       - "apt-get update"
       - "apt-get install -y zip jq"
-      - "zip codefresh-linux ./dist/codefresh-linux"
-      - "zip codefresh-macos ./dist/codefresh-macos"
-      - "zip codefresh-win ./dist/codefresh-win.exe"
+      - "cd dist"
+      - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64"
+      - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
       - "curl https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}} | jq -r '.id' > release-id.txt"
-      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-macos.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-macos.zip'
-      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-linux.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-linux.zip'
-      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-win.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-win.zip'
-
+      - 'curl -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
 
 ## add to npm
