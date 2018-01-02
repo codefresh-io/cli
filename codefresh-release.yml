@@ -4,17 +4,15 @@ steps:
 
   extract_version:
     title: "Exporting package.json version"
-    image: ubuntu:16.04
+    image: codefresh/cli-build
     commands:
-      - "apt-get update"
-      - "apt-get install -y jq"
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
 
   build_executables:
     title: "Compiling executables"
-    image: node:9.2.0
+    image: codefresh/cli-build
     commands:
       - "rm -rf dist"
       - "yarn install"
@@ -22,7 +20,7 @@ steps:
 
   create_release:
     title: "Create github release"
-    image: node:9.2.0
+    image: codefresh/cli-build
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
@@ -32,7 +30,7 @@ steps:
 
 #  create_prerelease:
 #    title: "Create github release"
-#    image: node:9.2.0
+#    image: codefresh/cli-build
 #    fail_fast: false
 #    commands:
 #      - 'curl --fail -X POST -d ''{"draft":"true","tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
@@ -42,17 +40,15 @@ steps:
 
   get_release:
     title: "Get github release"
-    image: node:9.2.0
+    image: codefresh/cli-build
     commands:
-      - "apt-get update"
-      - "apt-get install -y jq"
-      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{PACKAGE_VERSION}} | jq -r '.id')"
+      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
 
   upload_executables:
     title: "Upload executables to github release"
-    image: node:9.2.0
+    image: codefresh/cli-build
     commands:
 # upload linux-x64 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
