@@ -11,15 +11,16 @@ steps:
       - "yarn install"
       - "apt-get update"
       - "apt-get install -y zip jq"
-      - 'export PACKAGE_VERSION=$(jq -r ".name" package.json)'
+      - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
       - 'curl --fail -X POST -d ''{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
+      - "curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/$PACKAGE_VERSION | jq -r '.id' > release-id.txt"
       - "yarn pkg"
       - "cd dist"
+      # upload linux-x64 asset
       - "tar -cf codefresh-${{CF_BRANCH}}-linux-x64.tar codefresh-linux-x64 ../README.md ../LICENSE"
       - "gzip codefresh-${{CF_BRANCH}}-linux-x64.tar"
-      - "curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/${{CF_BRANCH}} | jq -r '.id' > release-id.txt"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{TOKEN}}"  --data-binary @codefresh-${{CF_BRANCH}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/$(cat release-id.txt)/assets?name=codefresh-${{CF_BRANCH}}-linux-x64.tar.gz'
 
   push_to_registry_version:
@@ -29,7 +30,9 @@ steps:
     image_name: codefresh/cli
     tag: ${{PACKAGE_VERSION}}
     registry: dockerhub
-
+    when:
+      branch:
+        only: [ master ]
 
   push_to_registry_latest:
     title: "Update dockerhub image latest tag"
