@@ -11,7 +11,7 @@ steps:
       - "yarn install"
       - "apt-get update"
       - "apt-get install -y zip jq"
-      - 'PACKAGE_VERSION=$(jq -r ".name" package.json)'
+      - 'export PACKAGE_VERSION=$(jq -r ".name" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
       - 'curl --fail -X POST -d ''{"tag_name":"$PACKAGE_VERSION","target_commitish":"${{CF_REVISION}}","name":"Codefresh V$PACKAGE_VERSION"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://uploads.github.com/repos/codefresh-io/codefresh/releases/'
