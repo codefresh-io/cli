@@ -73,30 +73,42 @@ steps:
     image: codefresh/cli-build
     commands:
 # upload linux-x64 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh-linux-x64 "
+      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz"
+      - "rm -rf ./dist/codefresh"
+      - "mv ./dist/codefresh-linux-x64 ./dist/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 # upload linux-x86 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar README.md LICENSE -C ./dist ./codefresh-linux-x86 "
+      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz"
+      - "rm -rf ./dist/codefresh"
+      - "mv ./dist/codefresh-linux-x86 ./dist/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz'
 # upload macos-x64 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist ./codefresh-macos-x64 "
+      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz"
+      - "rm -rf ./dist/codefresh"
+      - "mv ./dist/codefresh-macos-x64 ./dist/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz'
 # upload macos-x86 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar README.md LICENSE -C ./dist ./codefresh-macos-x86 "
+      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz"
+      - "rm -rf ./dist/codefresh"
+      - "mv ./dist/codefresh-macos-x86 ./dist/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz'
 # upload win-x64 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-win-x64.zip"
-      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh-win-x64.exe "
+      - "rm -rf ./dist/codefresh.exe"
+      - "mv ./dist/codefresh-win-x64.exe ./dist/codefresh.exe"
+      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh.exe "
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
 # upload win-x86 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-win-x86.zip"
-      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x86.zip README.md LICENSE -j ./dist/codefresh-win-x86.exe "
+      - "rm -rf ./dist/codefresh.exe"
+      - "mv ./dist/codefresh-win-x86.exe ./dist/codefresh.exe"
+      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x86.zip README.md LICENSE -j ./dist/codefresh.exe "
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x86.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x86.zip'
