@@ -34,14 +34,14 @@ steps:
     image: codefresh/cli-build
     fail_fast: false
     commands:
-      - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{GITHUB_TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+      - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{GITHUB_TOKEN}}" https://api.github.com/repos/codefresh-io/cli/releases'
 
   get_release:
     title: "Get github release"
     image: codefresh/cli-build
     commands:
-      - "curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/v${{PACKAGE_VERSION}}"
-      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
+      - "curl --fail https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}}"
+      - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
 
@@ -53,30 +53,30 @@ steps:
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh-linux-x64 "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 # upload linux-x86 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar README.md LICENSE -C ./dist ./codefresh-linux-x86 "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz'
 # upload macos-x64 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist ./codefresh-macos-x64 "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz'
 # upload macos-x86 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar README.md LICENSE -C ./dist ./codefresh-macos-x86 "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x86.tar.gz'
 # upload win-x64 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-win-x64.zip"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh-win-x64.exe "
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
 # upload win-x86 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-win-x86.zip"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x86.zip README.md LICENSE -j ./dist/codefresh-win-x86.exe "
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x86.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x86.zip'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x86.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x86.zip'
 
   push_to_registry_version:
     title: "Update dockerhub image version tag"

@@ -1,9 +1,0 @@
-this module should provide easy ability to create descriptive scripts that will use the 'logic'
-implementation.
-
-the goal is to easily code flows with node.js descriptive scripts
-
-for example - not finalized and just a basic idea:
-const pipeline = cf.createPipeline(payload);
-pipeline.run().wait();
-
