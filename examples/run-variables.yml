@@ -1,0 +1,5 @@
+---
+- key: value
+  key2: key1
+- key: value
+  key2: key2
