@@ -26,26 +26,15 @@ steps:
     image-name: codefresh/cli
     tag: ${{CF_BRANCH}}
 
-  push_to_registry:
-    title: "Pushing image to registry"
+  push_to_registry_revision:
+    title: "Pushing image tagged with revision to registry"
+    type: push
+    candidate: ${{build_step}}
+    tag: ${{CF_SHORT_REVISION}}
+    registry: "CFCR"
+
+  push_to_registry_branch:
+    title: "Pushing image tagged with branch to registry"
     type: push
     candidate: ${{build_step}}
     tag: ${{CF_BRANCH}}
-
-  push_to_registry_latest:
-    title: "Update dockerhub image latest tag"
-    type: push
-    candidate: ${{build_step}}
-    tag: latest
-    when:
-      branch:
-        only: [ master ]
-
-  deploy_to_npm:
-    title: Publishing To Npm
-    image: codefresh/npm-publish:master
-    commands:
-      - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
-    when:
-      branch:
-        only: [ master ]

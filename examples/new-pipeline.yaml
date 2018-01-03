@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: pipeline
+name: cool-pipeline
+spec:
+  steps:
+    eslint:
+      title: 'Running linting logic'
+      image: codefresh/node-tester-image:8.8.0
+      commands:
+          - yarn eslint
