@@ -56,7 +56,7 @@ steps:
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 # upload linux-x86 asset
       - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh-linux-x86 "
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar README.md LICENSE -C ./dist ./codefresh-linux-x86 "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x86.tar.gz'
 # upload macos-x64 asset
