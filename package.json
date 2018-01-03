@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -11,7 +11,7 @@
     "pkg": "pkg . -t node9-macos-x64,node9-macos-x86,node9-linux-x64,node9-linux-x86,node9-win-x64,node9-win-x86 --out-path ./dist"
   },
   "bin": {
-    "codefresh": "./lib/interface/cli/index.js"
+    "codefresh": "./lib/interface/cli/codefresh"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
