@@ -1,17 +1,18 @@
+# this pipeline should only be executed on master branch
 version: '1.0'
 
 steps:
 
-#  fail_if_not_master:
-#    title: "Create github release"
-#    image: codefresh/cli-build
-#    fail_fast: false
-#    commands:
-#      - 'echo This pipeline should be run only on master'
-#      - 'exit 1'
-#    when:
-#      ignore:
-#        only: [ master ]
+  fail_if_not_master:
+    title: "Create github release"
+    image: codefresh/cli-build
+    fail_fast: false
+    commands:
+      - 'echo This pipeline should be run only on master'
+      - 'exit 1'
+    when:
+      ignore:
+        only: [ master ]
 
   extract_version:
     title: "Exporting package.json version"
@@ -79,7 +80,7 @@ steps:
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x86.zip https://uploads.github.com/repos/codefresh-io/codefresh/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x86.zip'
 
   push_to_registry_version:
-    title: "Update dockerhub image latest tag"
+    title: "Update dockerhub image version tag"
     type: push
     candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
     image_name: codefresh/cli
