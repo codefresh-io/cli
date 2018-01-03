@@ -28,16 +28,6 @@ steps:
       branch:
         only: [ master ]
 
-  create_prerelease:
-    title: "Create github pre-release"
-    image: codefresh/cli-build
-    fail_fast: false
-    commands:
-      - 'curl --fail -X POST -d ''{"draft":true,"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
-    when:
-      branch:
-        ignore: [ master ]
-
   get_release:
     title: "Get github release"
     image: codefresh/cli-build
