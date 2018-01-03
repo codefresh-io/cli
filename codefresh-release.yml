@@ -11,8 +11,8 @@ steps:
       - 'echo This pipeline should be run only on master'
       - 'exit 1'
     when:
-      ignore:
-        only: [ master ]
+      branch:
+        ignore: [ master ]
 
   extract_version:
     title: "Exporting package.json version"
