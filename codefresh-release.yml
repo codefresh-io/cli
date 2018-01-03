@@ -2,6 +2,17 @@ version: '1.0'
 
 steps:
 
+#  fail_if_not_master:
+#    title: "Create github release"
+#    image: codefresh/cli-build
+#    fail_fast: false
+#    commands:
+#      - 'echo This pipeline should be run only on master'
+#      - 'exit 1'
+#    when:
+#      ignore:
+#        only: [ master ]
+
   extract_version:
     title: "Exporting package.json version"
     image: codefresh/cli-build
@@ -24,9 +35,6 @@ steps:
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
-    when:
-      branch:
-        only: [ master ]
 
   get_release:
     title: "Get github release"
@@ -54,9 +62,6 @@ steps:
     image_name: codefresh/cli
     tag: ${{PACKAGE_VERSION}}
     registry: dockerhub
-    when:
-      branch:
-        only: [ master ]
 
   push_to_registry_latest:
     title: "Update dockerhub image latest tag"
@@ -64,15 +69,9 @@ steps:
     candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
     tag: latest
     registry: dockerhub
-    when:
-      branch:
-        only: [ master ]
 
   deploy_to_npm:
     title: "Publishing To Npm"
     image: codefresh/npm-publish:master
     commands:
       - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
-    when:
-      branch:
-        only: [ master ]
