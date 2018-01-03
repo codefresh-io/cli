@@ -1,3 +1,4 @@
+# this pipeline should not be run on version tag releases (it may cause a non correct sha to override version tagged image in dockerhub)
 version: "1.0"
 
 steps:
