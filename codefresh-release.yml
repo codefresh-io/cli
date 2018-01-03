@@ -4,9 +4,8 @@ version: '1.0'
 steps:
 
   fail_if_not_master:
-    title: "Create github release"
+    title: "Validate running on master branch"
     image: codefresh/cli-build
-    fail_fast: false
     commands:
       - 'echo This pipeline should be run only on master'
       - 'exit 1'
