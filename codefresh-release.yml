@@ -10,7 +10,7 @@ steps:
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
 
-  build_executables:
+  compile_executables:
     title: "Compiling executables"
     image: codefresh/cli-build
     commands:
@@ -29,7 +29,7 @@ steps:
         only: [ master ]
 
   create_prerelease:
-    title: "Create github release"
+    title: "Create github pre-release"
     image: codefresh/cli-build
     fail_fast: false
     commands:
@@ -42,6 +42,7 @@ steps:
     title: "Get github release"
     image: codefresh/cli-build
     commands:
+      - "curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/v${{PACKAGE_VERSION}}"
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/codefresh/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
