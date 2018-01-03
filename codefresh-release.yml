@@ -33,7 +33,7 @@ steps:
     image: codefresh/cli-build
     fail_fast: false
     commands:
-      - 'curl --fail -X POST -d ''{"draft":"true","tag_name":"${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
+      - 'curl --fail -X POST -d ''{"draft":true,"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{TOKEN}}" https://api.github.com/repos/codefresh-io/codefresh/releases'
     when:
       branch:
         ignore: [ master ]
