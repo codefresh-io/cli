@@ -1,7 +1,0 @@
-name: my-contextt
-owner: account
-type: secret
-data:
-  key1: value1
-  key2: value2
-
