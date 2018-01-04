@@ -17,7 +17,7 @@ You can also requires this module to be used in node.js and the browser
 Run `/usr/local/bin/codefresh completion >> ~/.bashrc`. <br />
 If you are on OSX run `/usr/local/bin/codefresh completion >> ~/.bash_profile`
 
-# Creating authentication context
+# Getting Started
 In order to start working with the cli you will need to update the authentication configuration. <br />
-You can find your access token through our swagger documentation `https://g.codefresh.io/api/` <br />
-Once you have the token create a new context: `codefresh auth create-context first-context --token {TOKEN}`
+Generate a new API key through the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page. <br />
+Once you have the API key, create a new authentication context: `codefresh auth create-context --api-key {API_KEY}`
