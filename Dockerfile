@@ -1,4 +1,6 @@
-FROM node:8.8.0-alpine
+FROM node:9.2.0-alpine
+
+RUN apk update && apk add git
 
 WORKDIR /cf-cli
 
