@@ -37,13 +37,9 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
             default: DEFAULTS.CFCONFIG,
             global: false,
         })
-        .option('version', {
-            alias: 'v',
-            global: false,
-        })
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
-                authManager.loadContexts(configFilePath, process.env.CF_TOKEN, process.env.CF_URL || DEFAULTS.URL);
+                authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
             } catch (err) {
                 printError(err);
                 process.exit(1);
@@ -59,6 +55,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .completion()
         .demandCommand(1, 'You need at least one command before moving on')
         .wrap(null)
+        .version(false)
         .help('help')
         .option('help', {
             global: false,
