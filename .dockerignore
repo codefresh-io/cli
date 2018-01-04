@@ -10,3 +10,5 @@ node_modules
 docker-compose.yml
 codefresh.yml
 .coveralls.yml
+examples
+dist
