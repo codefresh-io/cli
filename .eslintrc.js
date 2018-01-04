@@ -10,6 +10,7 @@ module.exports = {
             'code': 140,
             'ignoreComments': true
         }],
+        'no-console': 0
     },
     'env': {
         'mocha': true,

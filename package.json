@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.4.4",
+  "version": "0.4.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -11,7 +11,7 @@
     "pkg": "pkg . -t node9-macos-x64,node9-macos-x86,node9-linux-x64,node9-linux-x86,node9-win-x64,node9-win-x86 --out-path ./dist"
   },
   "bin": {
-    "codefresh": "./lib/interface/cli/index.js"
+    "codefresh": "./lib/interface/cli/codefresh"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
@@ -21,6 +21,7 @@
     "scripts": "lib/**/*.js"
   },
   "dependencies": {
+    "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
     "@codefresh-io/docker-reference": "^0.0.5",
     "bluebird": "^3.5.1",
     "cf-errors": "^0.1.11",
@@ -36,6 +37,7 @@
     "log-update": "^2.3.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.19.4",
+    "mongodb": "^3.0.1",
     "prettyjson": "^1.2.1",
     "recursive-readdir": "^2.2.1",
     "request": "^2.83.0",
