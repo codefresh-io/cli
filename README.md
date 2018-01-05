@@ -12,6 +12,8 @@ You can also requires this module to be used in node.js and the browser
 
 ## Install via yarn
 `yarn global add codefresh`
+### Updaing to latest version
+`yarn global upgrade codefresh`
 
 # Installing bash completions
 Run `/usr/local/bin/codefresh completion >> ~/.bashrc`. <br />
