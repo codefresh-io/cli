@@ -72,23 +72,20 @@ steps:
     title: "Upload executables to github release"
     image: codefresh/cli-build
     commands:
+# delete all previous .zip/.gz created files
+      - "rm -rf *.gz"
+      - "rm -rf *.zip"
 # upload linux-x64 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-linux.tar.gz"
-      - "rm -rf ./dist/codefresh"
       - "mv ./dist/codefresh-linux ./dist/codefresh"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
 # upload macos-x64 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-macos.tar.gz"
-      - "rm -rf ./dist/codefresh"
       - "mv ./dist/codefresh-macos ./dist/codefresh"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz'
 # upload win-x64 asset
-      - "rm -rf codefresh-v${{PACKAGE_VERSION}}-win.zip"
-      - "rm -rf ./dist/codefresh.exe"
       - "mv ./dist/codefresh-win.exe ./dist/codefresh.exe"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh.exe "
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
