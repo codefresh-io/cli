@@ -30,8 +30,8 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
                 authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
-                if (_.isEmpty(authManager.getAllContexts())){
-                    printError('Unauthorized error: Please create authentication context (see codefresh auth create-context --help)');
+                if (_.isEmpty(authManager.getAllContexts())) {
+                    printError('Unauthorized error: Please create an authentication context (see codefresh auth create-context --help)');
                     process.exit(1);
                 }
                 _.forEach(files, (file) => {
