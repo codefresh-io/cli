@@ -1,7 +1,7 @@
 name: new-pipeline
 metadata:
-  lables:
-    repo: ArikMaor/ping-server
+  labels:
+    repo: github:ArikMaor/ping-server
 spec:
   steps:
     test_step:
