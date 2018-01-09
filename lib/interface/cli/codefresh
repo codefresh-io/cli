@@ -21,16 +21,6 @@ process.on('unhandledRejection', error => {
 
 recursive(path.resolve(__dirname, 'commands'), (err, files) => {
     const rootCommands = [];
-
-    _.forEach(files, (file) => {
-        if (file.endsWith('.cmd.js')) {
-            const command = require(file);
-            if (command.isRoot()) {
-                rootCommands.push(command);
-            }
-        }
-    });
-
     yargs
         .env('')
         .options('cfconfig', {
@@ -40,15 +30,28 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
                 authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
+                if (_.isEmpty(authManager.getAllContexts())) {
+                    printError('Unauthorized error: Please create an authentication context (see codefresh auth create-context --help)');
+                    process.exit(1);
+                }
+                _.forEach(files, (file) => {
+                    if (file.endsWith('.cmd.js')) {
+                        const command = require(file);
+                        if (command.isRoot() && (!command.isBetaCommand() || authManager.getCurrentContext().beta)) {
+                            rootCommands.push(command);
+                        }
+                    }
+                });
+                _.forEach(rootCommands, (command) => {
+                    yargs.command(command.toCommand());
+                });
             } catch (err) {
                 printError(err);
                 process.exit(1);
             }
         });
 
-    _.forEach(rootCommands, (command) => {
-        yargs.command(command.toCommand());
-    });
+
 
 
     yargs // eslint-disable-line
