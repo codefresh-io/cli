@@ -32,7 +32,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
                 authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
                 if (_.isEmpty(authManager.getAllContexts())) {
                     printError('Unauthorized error: Please create an authentication context (see codefresh auth create-context --help)');
-                    process.exit(1);
+                    //process.exit(1);
                 }
                 _.forEach(files, (file) => {
                     if (file.endsWith('.cmd.js')) {
