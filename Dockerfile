@@ -10,6 +10,6 @@ RUN yarn --prod install
 
 COPY . /cf-cli
 
-RUN ln -s $(pwd)/lib/interface/cli/index.js /usr/local/bin/codefresh
+RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
 ENTRYPOINT ["codefresh"]
