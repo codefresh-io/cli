@@ -30,14 +30,18 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
                 authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
-                if (_.isEmpty(authManager.getAllContexts())) {
-                    printError('Authentication error: Please create an authentication context (see codefresh auth create-context --help) \n');
-                }
                 _.forEach(files, (file) => {
                     if (file.endsWith('.cmd.js')) {
                         const command = require(file);
-                        if (command.isRoot() && (!command.isBetaCommand() || (!_.isEmpty(authManager.getAllContexts()) && authManager.getCurrentContext().isBetaFeatEnabled()))) {
-                            rootCommands.push(command);
+                        if (command.isRoot()) {
+                            if (command.isBetaCommand()) {
+                                const currentContext = authManager.getCurrentContext();
+                                if (currentContext && currentContext.isBetaFeatEnabled()) {
+                                    rootCommands.push(command);
+                                }
+                            } else {
+                                rootCommands.push(command);
+                            }
                         }
                     }
                 });
@@ -64,7 +68,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
 \\____|\\___/ \\__,_|\\___|_|  _|  \\___|____/_| |_| \\____|_____|___|
  
  
-For more information, find our official documentation at http://cli.codefresh.io                                                                
+For more information, find our official documentation at https://github.com/codefresh-io/cli                                                                
 `)
         // .option('help', {
         //     global: false,
