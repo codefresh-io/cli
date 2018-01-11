@@ -1,6 +1,7 @@
 theme = "docuapi"
 baseurl = "http://docuapi.com/"
 title = "Codefresh CLI Documentation"
+publishDir = "../docs"
 
 # Code higlighting settings
 pygmentsCodefences = true
