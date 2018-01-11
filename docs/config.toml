@@ -1,0 +1,26 @@
+theme = "docuapi"
+baseurl = "http://docuapi.com/"
+title = "Codefresh CLI Documentation"
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+# The monokai stylesheet is included in the base template.
+pygmentsUseClasses = true
+
+[params]
+search = true
+
+# Configure the language example tabs.
+[[params.language_tabs]]
+key = "cli"
+name = "Cli"
+
+#Languages
+[languages]
+
+[languages.en]
+languageName = "English"
+weight = 2
