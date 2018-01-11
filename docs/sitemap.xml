@@ -3,21 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://codefresh-io.github.io/cli/</loc>
+    <loc>http://cli.codefresh.io/</loc>
   </url>
   
   <url>
-    <loc>http://codefresh-io.github.io/cli/categories/</loc>
+    <loc>http://cli.codefresh.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://codefresh-io.github.io/cli/</loc>
+    <loc>http://cli.codefresh.io/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://codefresh-io.github.io/cli/tags/</loc>
+    <loc>http://cli.codefresh.io/tags/</loc>
     <priority>0</priority>
   </url>
   

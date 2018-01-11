@@ -1,5 +1,5 @@
 theme = "docuapi"
-baseurl = "http://codefresh-io.github.io/cli/"
+baseurl = "http://cli.codefresh.io"
 title = "Codefresh CLI Documentation"
 publishDir = "../docs"
 languageCode = "en-us"
