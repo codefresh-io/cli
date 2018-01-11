@@ -52,16 +52,23 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         });
 
 
-
-
     yargs // eslint-disable-line
         .completion()
         .demandCommand(1, 'You need at least one command before moving on')
         .wrap(null)
         .version(false)
         .help('help')
-        .option('help', {
-            global: false,
-        })
+        .epilogue(`
+  ___|           |       _|               |       ___| |    _ _|
+ |      _ \\   _\` |  _ \\ |    __| _ \\  __| __ \\   |     |      | 
+ |     (   | (   |  __/ __| |    __/\\__ \\ | | |  |     |      | 
+\\____|\\___/ \\__,_|\\___|_|  _|  \\___|____/_| |_| \\____|_____|___|
+ 
+ 
+For more information, find our official documentation at http://cli.codefresh.io                                                                
+`)
+        // .option('help', {
+        //     global: false,
+        // })
         .argv;
 });
