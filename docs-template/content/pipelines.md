@@ -1,6 +1,6 @@
 ---
 weight: 40
-title: API asdsad
+title: Pipelines
 ---
 
 # Kittens

@@ -1,6 +1,6 @@
 ---
-weight: 10
-title: API Reference
+weight: 20
+title: Installation
 ---
 
 # Installation
