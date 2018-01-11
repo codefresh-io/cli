@@ -1,3 +1,0 @@
-[submodule "docs-template/themes/docuapi"]
-	path = docs-template/themes/docuapi
-	url = https://github.com/budparr/gohugo-theme-ananke.git
