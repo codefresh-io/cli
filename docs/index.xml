@@ -12,13 +12,38 @@
     
     <item>
       <title>API Reference</title>
-      <link>http://cli.codefresh.io/</link>
+      <link>http://cli.codefresh.io/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cli.codefresh.io/</guid>
-      <description>Introduction Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-This example API documentation page was created with DocuAPI, a multilingual documentation theme for the static site generator Hugo.</description>
+      <guid>http://cli.codefresh.io/installation/</guid>
+      <description>Installation Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use npm or yarn to install it.
+If you don&amp;rsquo;t have node.js installed you can install the CLI by downloading a binary.
+NPM Codefresh&amp;rsquo;s cli is available for installation through NPM registry.
+Install: npm install -g codefresh
+Install a specific version: npm install -g codefresh@{VERSION}
+Update to latest version: npm install -g codefresh</description>
+    </item>
+    
+    <item>
+      <title>API Reference</title>
+      <link>http://cli.codefresh.io/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/introduction/</guid>
+      <description> Introduction Welcome to Codefresh&amp;rsquo;s official CLI documentation!
+Installation From Binaries </description>
+    </item>
+    
+    <item>
+      <title>API asdsad</title>
+      <link>http://cli.codefresh.io/pipelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/pipelines/</guid>
+      <description>Kittens Get All Kittens package main import &amp;#34;github.com/bep/kittn/auth&amp;#34; func main() { api := auth.Authorize(&amp;#34;meowmeowmeow&amp;#34;) _ = api.GetKittens() }  The above command returns JSON structured like this:
+ [ { &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: &amp;#34;Fluffums&amp;#34;, &amp;#34;breed&amp;#34;: &amp;#34;calico&amp;#34;, &amp;#34;fluffiness&amp;#34;: 6, &amp;#34;cuteness&amp;#34;: 7 }, { &amp;#34;id&amp;#34;: 2, &amp;#34;name&amp;#34;: &amp;#34;Max&amp;#34;, &amp;#34;breed&amp;#34;: &amp;#34;unknown&amp;#34;, &amp;#34;fluffiness&amp;#34;: 5, &amp;#34;cuteness&amp;#34;: 10 } ] This endpoint retrieves all kittens.
+HTTP Request GET http://example.com/api/kittens
+Query Parameters    Parameter Default Description     include_cats false If set to true, the result will also include cats.</description>
     </item>
     
   </channel>

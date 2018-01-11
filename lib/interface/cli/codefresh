@@ -68,7 +68,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
 \\____|\\___/ \\__,_|\\___|_|  _|  \\___|____/_| |_| \\____|_____|___|
  
  
-For more information, find our official documentation at https://github.com/codefresh-io/cli                                                                
+For more information, find our official documentation at http://cli.codefresh.io                                                                
 `)
         // .option('help', {
         //     global: false,
