@@ -4,6 +4,7 @@ metadata:
   labels:
     repo: github:ArikMaor/ping-server
 spec:
+  contexts: ['lala']
   variables:
     - key: PORT
       value: 3000
@@ -18,3 +19,4 @@ spec:
       - echo "hello world"
       - echo "plain value $PORT"
       - echo "encrypted value $PAPA"
+      - echo "value from context $COOKIE"
