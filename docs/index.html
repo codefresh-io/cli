@@ -51,6 +51,21 @@
     
         
 
+<h1 id="introduction">Introduction</h1>
+
+<p>Welcome to Codefresh&rsquo;s official CLI documentation!</p>
+
+<p>Codefresh CLI provides a full and flexible interface to interact with Codefresh.<br>
+The CLI can be used to achieve the following:
+<ul>
+    <li>Perform any opeartion you would be able to do through the UI</li>
+    <li>Create complex automations from your local machine</li>
+    <li>Run complex pipeline use cases by using the CLI inside your pipeline steps</li>
+</ul></p>
+
+    
+        
+
 <h1 id="installation">Installation</h1>
 
 <p>Codefresh CLI is developed and built with node.js.
@@ -116,60 +131,52 @@ You can also add the binary to your system PATH environment variable so you can 
     
         
 
-<h1 id="introduction">Introduction</h1>
+<h1 id="authentication">Authentication</h1>
 
-<p>Welcome to Codefresh&rsquo;s official CLI documentation!</p>
+<h2 id="basic-usage">Basic Usage</h2>
 
-<h2 id="installation">Installation</h2>
+<p>In order to start working with the cli you will need to update the authentication configuration. <br />
+Generate a new API key through the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page.</p>
 
-<h3 id="from-binaries">From Binaries</h3>
+<p>Once you have the API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
+
+<h2 id="advanced-usage">Advanced Usage</h2>
 
     
         
 
-<h1 id="kittens">Kittens</h1>
+<h1 id="pipelines">Pipelines</h1>
 
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli"><span class="kn">package</span> <span class="nx">main</span>
+<h2 id="get-all-pipelines">Get All Pipelines</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli">$ codefresh get pipelines</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-string" data-lang="string">ID                       NAME               REPOOWNER          REPONAME
+55fa65a21058fb6778dc5eef codefresh-io       codefresh-io       codefresh-io
+55fa65a21058fb6778dc5f19 repo-analyser      verchol            repo-analyser
+55fa65a21058fb6778dc5f4f engine             codefresh-io       engine
+55fa65a21058fb6778dc5f55 git-clone          codefresh-io       cf-base-images</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli">$ codefresh get pipelines --name engine</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-string" data-lang="string">ID                       NAME               REPOOWNER          REPONAME
+55fa65a21058fb6778dc5f4f engine             codefresh-io       engine</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli">$ codefresh get pipelines --repo-name repo-analyser</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-string" data-lang="string">ID                       NAME               REPOOWNER          REPONAME
+55fa65a21058fb6778dc5f19 repo-analyser      verchol            repo-analyser</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli">$ codefresh get pipelines --repo-owner codefresh-io</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-string" data-lang="string">ID                       NAME               REPOOWNER          REPONAME
+55fa65a21058fb6778dc5eef codefresh-io       codefresh-io       codefresh-io
+55fa65a21058fb6778dc5f4f engine             codefresh-io       engine
+55fa65a21058fb6778dc5f55 git-clone          codefresh-io       cf-base-images</code></pre></div>
+<p>This command will retrieve an array of pipelines according to the passed filters.</p>
 
-<span class="kn">import</span> <span class="s">&#34;github.com/bep/kittn/auth&#34;</span>
+<h3 id="command">Command</h3>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">api</span> <span class="o">:=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">(</span><span class="s">&#34;meowmeowmeow&#34;</span><span class="p">)</span>
+<p><code>codefresh get pipelines</code><br></p>
 
-	<span class="nx">_</span> <span class="p">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">GetKittens</span><span class="p">()</span>
-<span class="p">}</span></code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Fluffums&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;breed&#34;</span><span class="p">:</span> <span class="s2">&#34;calico&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;fluffiness&#34;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-    <span class="nt">&#34;cuteness&#34;</span><span class="p">:</span> <span class="mi">7</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Max&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;breed&#34;</span><span class="p">:</span> <span class="s2">&#34;unknown&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;fluffiness&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="nt">&#34;cuteness&#34;</span><span class="p">:</span> <span class="mi">10</span>
-  <span class="p">}</span>
-<span class="p">]</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<h3 id="aliases">Aliases</h3>
 
-<h3 id="http-request">HTTP Request</h3>
+<ul>
+    <li>pipeline</li>
+    <li>pip</li>
+</ul>
 
-<p><code>GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
+<h3 id="filter-options">Filter Options</h3>
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Option</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -177,22 +184,131 @@ You can also add the binary to your system PATH environment variable so you can 
 
 <tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>&ndash;repo-owner</td>
+<td></td>
+<td>Filter pipelines by repository owner.</td>
 </tr>
 
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>&ndash;repo-name</td>
+<td></td>
+<td>Filter pipelines by repository name.</td>
+</tr>
+
+<tr>
+<td>&ndash;name</td>
+<td></td>
+<td>Filter pipelines by pipeline name.</td>
 </tr>
 </tbody>
 </table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+<h3 id="output-options">Output Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>&ndash;output</td>
+<td></td>
+<td>Output format [choices: &ldquo;json&rdquo;, &ldquo;yaml&rdquo;, &ldquo;wide&rdquo;, &ldquo;name&rdquo;].</td>
+</tr>
+
+<tr>
+<td>&ndash;watch</td>
+<td>false</td>
+<td>If set to true, the output will continue to get updated.</td>
+</tr>
+
+<tr>
+<td>&ndash;watch-interval</td>
+<td>3</td>
+<td>Interval time to get updates from the server.</td>
+</tr>
+
+<tr>
+<td>&ndash;limit</td>
+<td>25</td>
+<td>Limit amount of returned results.</td>
+</tr>
+
+<tr>
+<td>&ndash;page</td>
+<td>1</td>
+<td>Get a specific set of results according to the defined limit option.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="get-a-single-pipeline">Get a Single Pipeline</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cli" data-lang="cli">$ codefresh get pipeline 55fa65a21058fb6778dc5eef</code></pre></div>
+<blockquote>
+<p>The above command returns a structured table like this:</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-string" data-lang="string">ID                       NAME               REPOOWNER          REPONAME
+55fa65a21058fb6778dc5eef codefresh-io       codefresh-io       codefresh-io</code></pre></div>
+<p>This command will retrieve a single pipeline.</p>
+
+<h3 id="command-1">Command</h3>
+
+<p><code>codefresh get pipeline {ID}</code></p>
+
+<h3 id="positionals-arguments">Positionals arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>Pipeline id.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="output-options-1">Output Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>&ndash;output</td>
+<td></td>
+<td>Output format [choices: &ldquo;json&rdquo;, &ldquo;yaml&rdquo;, &ldquo;wide&rdquo;, &ldquo;name&rdquo;].</td>
+</tr>
+
+<tr>
+<td>&ndash;watch</td>
+<td>false</td>
+<td>If set to true, the output will continue to get updated.</td>
+</tr>
+
+<tr>
+<td>&ndash;watch-interval</td>
+<td>3</td>
+<td>Interval time to get updates from the server.</td>
+</tr>
+</tbody>
+</table>
 
     
 

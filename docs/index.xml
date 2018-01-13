@@ -11,7 +11,18 @@
     
     
     <item>
-      <title>API Reference</title>
+      <title>Introduction</title>
+      <link>http://cli.codefresh.io/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/introduction/</guid>
+      <description>Introduction Welcome to Codefresh&amp;rsquo;s official CLI documentation!
+Codefresh CLI provides a full and flexible interface to interact with Codefresh.
+The CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
       <link>http://cli.codefresh.io/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -25,25 +36,24 @@ Update to latest version: npm install -g codefresh</description>
     </item>
     
     <item>
-      <title>API Reference</title>
-      <link>http://cli.codefresh.io/introduction/</link>
+      <title>Authentication</title>
+      <link>http://cli.codefresh.io/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cli.codefresh.io/introduction/</guid>
-      <description> Introduction Welcome to Codefresh&amp;rsquo;s official CLI documentation!
-Installation From Binaries </description>
+      <guid>http://cli.codefresh.io/authentication/</guid>
+      <description> Authentication Basic Usage In order to start working with the cli you will need to update the authentication configuration. Generate a new API key through the account settings page.
+Once you have the API key, create a new authentication context:
+codefresh auth create-context --api-key {API_KEY}
+Advanced Usage </description>
     </item>
     
     <item>
-      <title>API asdsad</title>
+      <title>Pipelines</title>
       <link>http://cli.codefresh.io/pipelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/pipelines/</guid>
-      <description>Kittens Get All Kittens package main import &amp;#34;github.com/bep/kittn/auth&amp;#34; func main() { api := auth.Authorize(&amp;#34;meowmeowmeow&amp;#34;) _ = api.GetKittens() }  The above command returns JSON structured like this:
- [ { &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: &amp;#34;Fluffums&amp;#34;, &amp;#34;breed&amp;#34;: &amp;#34;calico&amp;#34;, &amp;#34;fluffiness&amp;#34;: 6, &amp;#34;cuteness&amp;#34;: 7 }, { &amp;#34;id&amp;#34;: 2, &amp;#34;name&amp;#34;: &amp;#34;Max&amp;#34;, &amp;#34;breed&amp;#34;: &amp;#34;unknown&amp;#34;, &amp;#34;fluffiness&amp;#34;: 5, &amp;#34;cuteness&amp;#34;: 10 } ] This endpoint retrieves all kittens.
-HTTP Request GET http://example.com/api/kittens
-Query Parameters    Parameter Default Description     include_cats false If set to true, the result will also include cats.</description>
+      <description>Pipelines Get All Pipelines $ codefresh get pipelinesID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5eef codefresh-io codefresh-io codefresh-io 55fa65a21058fb6778dc5f19 repo-analyser verchol repo-analyser 55fa65a21058fb6778dc5f4f engine codefresh-io engine 55fa65a21058fb6778dc5f55 git-clone codefresh-io cf-base-images$ codefresh get pipelines --name engineID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5f4f engine codefresh-io engine$ codefresh get pipelines --repo-name repo-analyserID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5f19 repo-analyser verchol repo-analyser$ codefresh get pipelines --repo-owner codefresh-ioID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5eef codefresh-io codefresh-io codefresh-io 55fa65a21058fb6778dc5f4f engine codefresh-io engine 55fa65a21058fb6778dc5f55 git-clone codefresh-io cf-base-images This command will retrieve an array of pipelines according to the passed filters.</description>
     </item>
     
   </channel>

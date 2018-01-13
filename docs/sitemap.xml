@@ -3,11 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://cli.codefresh.io/introduction/</loc>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/installation/</loc>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/introduction/</loc>
+    <loc>http://cli.codefresh.io/authentication/</loc>
   </url>
   
   <url>
