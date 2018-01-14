@@ -52,7 +52,7 @@ This command will retrieve an array of pipelines according to the passed filters
 
 ### Command
 
-`codefresh get pipelines`<br>
+codefresh get pipelines<br>
 
 ### Aliases
 
