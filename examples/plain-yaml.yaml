@@ -6,7 +6,7 @@ owner: account
 metadata:
   name: helm-mongo-values
 spec:
-  type: plain-yaml
+  type: yaml
   data:
     serviceType: LoadBalancer
     image: mongo
