@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codefresh CLI Documentation</title>
+    <link>http://cli.codefresh.io/</link>
+    <description>Recent content on Codefresh CLI Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://cli.codefresh.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>http://cli.codefresh.io/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/introduction/</guid>
+      <description>Introduction Welcome to Codefresh&amp;rsquo;s official CLI documentation!
+Codefresh CLI provides a full and flexible interface to interact with Codefresh.
+The CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>http://cli.codefresh.io/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/installation/</guid>
+      <description>Installation Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use npm or yarn to install it.
+If you don&amp;rsquo;t have node.js installed you can install the CLI by downloading a binary.
+NPM Codefresh&amp;rsquo;s cli is available for installation through NPM registry.
+Install: npm install -g codefresh
+Install a specific version: npm install -g codefresh@{VERSION}
+Update to latest version: npm install -g codefresh</description>
+    </item>
+    
+    <item>
+      <title>Authentication</title>
+      <link>http://cli.codefresh.io/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/authentication/</guid>
+      <description> Authentication Basic Usage In order to start working with the cli you will need to update the authentication configuration. Generate a new API key through the account settings page.
+Once you have the API key, create a new authentication context:
+codefresh auth create-context --api-key {API_KEY}
+Advanced Usage </description>
+    </item>
+    
+    <item>
+      <title>Pipelines</title>
+      <link>http://cli.codefresh.io/pipelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/pipelines/</guid>
+      <description>Pipelines Get All Pipelines $ codefresh get pipelinesID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5eef codefresh-io codefresh-io codefresh-io 55fa65a21058fb6778dc5f19 repo-analyser verchol repo-analyser 55fa65a21058fb6778dc5f4f engine codefresh-io engine 55fa65a21058fb6778dc5f55 git-clone codefresh-io cf-base-images$ codefresh get pipelines --name engineID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5f4f engine codefresh-io engine$ codefresh get pipelines --repo-name repo-analyserID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5f19 repo-analyser verchol repo-analyser$ codefresh get pipelines --repo-owner codefresh-ioID NAME REPOOWNER REPONAME 55fa65a21058fb6778dc5eef codefresh-io codefresh-io codefresh-io 55fa65a21058fb6778dc5f4f engine codefresh-io engine 55fa65a21058fb6778dc5f55 git-clone codefresh-io cf-base-images This command will retrieve an array of pipelines according to the passed filters.</description>
+    </item>
+    
+  </channel>
+</rss>

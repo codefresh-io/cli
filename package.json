@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -8,7 +8,9 @@
     "test": "jest unit.spec.js --coverage",
     "eslint": "eslint lib/logic/**",
     "ci-publish": "ci-publish",
-    "pkg": "pkg . -t node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist"
+    "pkg": "pkg . -t node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist",
+    "serve-docs": "cd docs-template && hugo server -D",
+    "build-docs": "cd docs-template && hugo"
   },
   "bin": {
     "codefresh": "./lib/interface/cli/codefresh"

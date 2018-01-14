@@ -1,0 +1,27 @@
+name: new-pipeline
+account: 59d33c4e9f75220a3710b2ee
+metadata:
+  labels:
+    repo: github:ArikMaor/ping-server
+spec:
+  triggers:
+    - type: scm
+      repo: ArikMaor/ping-server
+      events: [push, pullrequest]
+      branchRegex: '.'
+  contexts: ['lala']
+  variables:
+    - key: PORT
+      value: 3000
+      encrypted: false
+    - key: PAPA
+      value: BLA BLA
+      encrypted: true
+  steps:
+    test_step:
+      image: alpine
+      commands:
+      - echo "hello world"
+      - echo "plain value $PORT"
+      - echo "encrypted value $PAPA"
+      - echo "value from context $COOKIE"

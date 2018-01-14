@@ -30,15 +30,18 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
                 authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
-                if (_.isEmpty(authManager.getAllContexts())) {
-                    printError('Unauthorized error: Please create an authentication context (see codefresh auth create-context --help)');
-                    process.exit(1);
-                }
                 _.forEach(files, (file) => {
                     if (file.endsWith('.cmd.js')) {
                         const command = require(file);
-                        if (command.isRoot() && (!command.isBetaCommand() || authManager.getCurrentContext().beta)) {
-                            rootCommands.push(command);
+                        if (command.isRoot()) {
+                            if (command.isBetaCommand()) {
+                                const currentContext = authManager.getCurrentContext();
+                                if (currentContext && currentContext.isBetaFeatEnabled()) {
+                                    rootCommands.push(command);
+                                }
+                            } else {
+                                rootCommands.push(command);
+                            }
                         }
                     }
                 });
@@ -52,16 +55,23 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         });
 
 
-
-
     yargs // eslint-disable-line
         .completion()
         .demandCommand(1, 'You need at least one command before moving on')
         .wrap(null)
         .version(false)
         .help('help')
-        .option('help', {
-            global: false,
-        })
+        .epilogue(`
+  ___|           |       _|               |       ___| |    _ _|
+ |      _ \\   _\` |  _ \\ |    __| _ \\  __| __ \\   |     |      | 
+ |     (   | (   |  __/ __| |    __/\\__ \\ | | |  |     |      | 
+\\____|\\___/ \\__,_|\\___|_|  _|  \\___|____/_| |_| \\____|_____|___|
+ 
+ 
+For more information, find our official documentation at http://cli.codefresh.io                                                                
+`)
+        // .option('help', {
+        //     global: false,
+        // })
         .argv;
 });
