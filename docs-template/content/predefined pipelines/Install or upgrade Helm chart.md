@@ -16,5 +16,5 @@ Option | Default | Description
 --repository |  | Helm repository
 --name |  | Name of the chart in the repository
 --version |  | Version of the chart in the repository
---context |  | Contexts (plain-yaml) to be passed to the install
+--context |  | Contexts (yaml || secret-yaml) to be passed to the install
 --release-name |  | The name to set to the release
