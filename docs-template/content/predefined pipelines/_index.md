@@ -1,4 +1,9 @@
 +++
 title = "Predefined Pipelines"
-weight = 60
 +++
+
+### [Test a helm release](test-a-helm-release)
+`codefresh test-release [name]`
+
+Test a helm release
+

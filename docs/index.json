@@ -35,13 +35,6 @@
 	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use NPM or YARN to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by Donwloading it directly.\nIt is also possible to run the CLI using a Docker image.\n"
 },
 {
-	"uri": "http://cli.codefresh.io/authentication/",
-	"title": "Authentication",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "http://cli.codefresh.io/installation/docker/",
 	"title": "Docker Image",
 	"tags": [],
@@ -54,55 +47,6 @@
 	"tags": [],
 	"description": "asd",
 	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
-},
-{
-	"uri": "http://cli.codefresh.io/contexts/",
-	"title": "Contexts",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/pipelines/",
-	"title": "Pipelines",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/predefined-pipelines/",
-	"title": "Predefined Pipelines",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/builds/",
-	"title": "Builds",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/images/",
-	"title": "Images",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/compositions/",
-	"title": "Compositions",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/environments/",
-	"title": "Environments",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "http://cli.codefresh.io/_header/",
@@ -119,11 +63,39 @@
 	"content": " Command codefresh image \u0026lt;id\u0026gt;\nAnnotate an image\nPositionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     \u0026ndash;label  annotations to add to the image    "
 },
 {
+	"uri": "http://cli.codefresh.io/authentication/",
+	"title": "Authentication",
+	"tags": [],
+	"description": "",
+	"content": " Create authentication context codefresh create-context [name]\nCreate or update an authentication context\nGet activated context codefresh current-context\nGet the current activated authentication context\nGet all contexts codefresh get-contexts\nGet all possible authentication contexts\nSet active context codefresh use-context \u0026lt;name\u0026gt;\nSet the current active authentication context\n"
+},
+{
+	"uri": "http://cli.codefresh.io/builds/",
+	"title": "Builds",
+	"tags": [],
+	"description": "",
+	"content": " Get a single build codefresh builds [id]\nGet a specific builds or an array of builds\nShow logs codefresh logs \u0026lt;id\u0026gt;\nShow logs of a build\nRestart a build codefresh restart \u0026lt;id\u0026gt;\nRestart a build by its id\nTerminate a build codefresh terminate \u0026lt;id\u0026gt;\nTerminate a build by its id\nWait for a build condition codefresh wait \u0026lt;id..\u0026gt;\nWait until a condition will be met on a build\n"
+},
+{
 	"uri": "http://cli.codefresh.io/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "http://cli.codefresh.io/compositions/",
+	"title": "Compositions",
+	"tags": [],
+	"description": "",
+	"content": " Create a composition codefresh composition [name]\nCreate a composition\nDelete a composition codefresh composition [name]\nDelete a composition\nGet a single composition codefresh compositions [id|name]\nGet a specific composition or an array of compositions\nReplace a composition codefresh composition\nReplace a composition resource\n"
+},
+{
+	"uri": "http://cli.codefresh.io/contexts/",
+	"title": "Contexts",
+	"tags": [],
+	"description": "",
+	"content": " Updated a context codefresh context\nApply changes to a context\nCreate a context codefresh context [type] [name]\nCreate a context\nDelete a context codefresh context [name]\nDelete a context\nGet a single context codefresh contexts [name]\nGet a specific or an array of contexts\nReplace a context codefresh context\nReplace a context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/create-a-composition/",
@@ -168,11 +140,18 @@
 	"content": " Command codefresh environment \u0026lt;id\u0026gt;\nDelete an environment\nPositionals    Option Default Description     id  Environment id    "
 },
 {
+	"uri": "http://cli.codefresh.io/environments/",
+	"title": "Environments",
+	"tags": [],
+	"description": "",
+	"content": " Delete an environment codefresh environment \u0026lt;id\u0026gt;\nDelete an environment\nGet a single composition codefresh environments [id]\nGet a specific or an array of environments\n"
+},
+{
 	"uri": "http://cli.codefresh.io/pipelines/execute-a-pipeline/",
 	"title": "Execute a pipeline",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;branch  Branch   \u0026ndash;sha  Set commit sha   \u0026ndash;no-cache  Ignore cached images   \u0026ndash;reset-volume  Reset pipeline cached volume   \u0026ndash;variable  Set build variables   \u0026ndash;scale 1 todo   \u0026ndash;detach  Run pipeline and print build ID   \u0026ndash;variable-file  Set build variables from a file    "
+	"content": " Command codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;branch  Branch   \u0026ndash;sha  Set commit sha   \u0026ndash;no-cache  Ignore cached images   \u0026ndash;reset-volume  Reset pipeline cached volume   \u0026ndash;variable  Set build variables   \u0026ndash;detach  Run pipeline and print build ID   \u0026ndash;variable-file  Set build variables from a file    "
 },
 {
 	"uri": "http://cli.codefresh.io/external-resources/",
@@ -238,11 +217,32 @@
 	"content": " Command codefresh get-contexts\nGet all possible authentication contexts\n"
 },
 {
+	"uri": "http://cli.codefresh.io/images/",
+	"title": "Images",
+	"tags": [],
+	"description": "",
+	"content": " Annotate an image codefresh image \u0026lt;id\u0026gt;\nAnnotate an image\nGet a single image codefresh images [id]\nGet a specific or an array of images\nTag an image codefresh tag \u0026lt;id\u0026gt; [tags..]\nAdd an image tag\n"
+},
+{
 	"uri": "http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/",
 	"title": "Install or upgrade Helm chart",
 	"tags": [],
 	"description": "",
 	"content": " Command codefresh install-chart\nInstall or upgrade Helm chart\nOptions    Option Default Description     \u0026ndash;cluster  Install on cluster   \u0026ndash;namespace default Install on namespace   \u0026ndash;tiller-namespace kube-system Where tiller has been installed   \u0026ndash;repository  Helm repository   \u0026ndash;name  Name of the chart in the repository   \u0026ndash;version  Version of the chart in the repository   \u0026ndash;context  Contexts (yaml   \u0026ndash;release-name  The name to set to the release    "
+},
+{
+	"uri": "http://cli.codefresh.io/pipelines/",
+	"title": "Pipelines",
+	"tags": [],
+	"description": "",
+	"content": " Update a single pipeline codefresh pipeline \u0026lt;id\u0026gt;\nApply changes to a pipeline\nGet a single pipeline codefresh pipelines [id]\nGet a specific or an array of pipelines\nExecute a pipeline codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\n"
+},
+{
+	"uri": "http://cli.codefresh.io/predefined-pipelines/",
+	"title": "Predefined Pipelines",
+	"tags": [],
+	"description": "",
+	"content": " Test a helm release codefresh test-release [name]\nTest a helm release\n"
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/replace-a-composition/",

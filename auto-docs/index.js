@@ -3,8 +3,10 @@ const recursive = require('recursive-readdir');
 const path = require('path');
 const _ = require('lodash');
 
-
 recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files) => {
+
+    const baseDir = path.resolve(__dirname, '../docs-template/content');
+    const categories = {};
 
     _.forEach(files, (file) => {
         if (!file.endsWith('.cmd.js')) {
@@ -27,16 +29,24 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
         const { category } = docs;
 
         // create a directory according to the category
-        const dir = path.resolve(__dirname, `../docs-template/content/${(category || 'undefined').toLowerCase()}`);
-        if (!fs.existsSync(dir)){
+        const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
+        if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
         }
 
-        // create _index.md file if does not exist for the category
-        const indexFile = path.resolve(dir, '_index.md');
-        if (!fs.existsSync(indexFile)){
-            fs.writeFileSync(indexFile, `+++\ntitle = "${category}"\n+++`);
-        }
+        let finalCategoryFileString = categories[category] || `+++\ntitle = "${category}"\n+++\n\n`;
+        const formattedTitle = docs.title.replace(/\s+/g, '-').toLowerCase();
+        finalCategoryFileString += `### [${docs.title}](${formattedTitle})\n`;
+        finalCategoryFileString += `\`${docs.command}\`\n\n`;
+        finalCategoryFileString += `${docs.description}\n\n`;
+        categories[category] = finalCategoryFileString;
+
+
+        // // create _index.md file if does not exist for the category
+        // const indexFile = path.resolve(dir, '_index.md');
+        // if (!fs.existsSync(indexFile)){
+        //     fs.writeFileSync(indexFile, `+++\ntitle = "${category}"\n+++`);
+        // }
 
         let finalFileString = '';
 
@@ -54,5 +64,10 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
 
 
         fs.writeFileSync(path.resolve(dir, `./${docs.title}.md`), finalFileString);
+    });
+
+    _.forEach(categories, (content, category) => {
+        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}/_index.md`);
+        fs.writeFileSync(indexFile, content);
     });
 });

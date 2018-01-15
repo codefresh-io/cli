@@ -154,8 +154,9 @@ Positionals    Option Default Description     id  Environment id    </descriptio
       
       <guid>http://cli.codefresh.io/pipelines/execute-a-pipeline/</guid>
       <description> Command codefresh run &amp;lt;id&amp;gt;
-Run a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;branch  Branch   &amp;ndash;sha  Set commit sha   &amp;ndash;no-cache  Ignore cached images   &amp;ndash;reset-volume  Reset pipeline cached volume   &amp;ndash;variable  Set build variables   &amp;ndash;scale 1 todo   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;variable-file  Set build variables from a file    </description>
+Run a pipeline and attach the created workflow logs.
+Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
+Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;branch  Branch   &amp;ndash;sha  Set commit sha   &amp;ndash;no-cache  Ignore cached images   &amp;ndash;reset-volume  Reset pipeline cached volume   &amp;ndash;variable  Set build variables   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;variable-file  Set build variables from a file    </description>
     </item>
     
     <item>

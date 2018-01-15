@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/authentication/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cli.codefresh.io/installation/docker/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -40,34 +35,6 @@
   <url>
     <loc>http://cli.codefresh.io/installation/download/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/contexts/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/pipelines/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/predefined-pipelines/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/builds/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/images/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/compositions/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/environments/</loc>
   </url>
   
   <url>
@@ -80,8 +47,24 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/builds/</loc>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/categories/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/compositions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/contexts/</loc>
   </url>
   
   <url>
@@ -106,6 +89,10 @@
   
   <url>
     <loc>http://cli.codefresh.io/environments/delete-an-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/environments/</loc>
   </url>
   
   <url>
@@ -149,7 +136,19 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/images/</loc>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/predefined-pipelines/</loc>
   </url>
   
   <url>
