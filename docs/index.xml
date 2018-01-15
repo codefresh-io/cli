@@ -25,6 +25,15 @@ Update to a specific version: npm install -g codefresh@${VERSION}</description>
     </item>
     
     <item>
+      <title>Version</title>
+      <link>http://cli.codefresh.io/help/version/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://cli.codefresh.io/help/version/</guid>
+      <description>Run codefresh version to see the current CLI version.</description>
+    </item>
+    
+    <item>
       <title>YARN</title>
       <link>http://cli.codefresh.io/installation/yarn/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>

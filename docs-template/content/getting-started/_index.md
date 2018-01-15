@@ -2,7 +2,7 @@
 title = "Getting Started"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
-weight = 1
+weight = 10
 +++
 
 ## install
@@ -18,5 +18,6 @@ You can generate a new one from the <a href="https://g.codefresh.io/account/toke
  
 Once you have an API key, create a new authentication context:<br> `codefresh auth create-context --api-key {API_KEY}`
 
+
 <br />
-#### That's it, you are go to go!
+#### That's it, you are good to go!

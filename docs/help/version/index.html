@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32.3" />
 
-<title>Pipelines :: Codefresh CLI Documentation</title>
+<title>Version :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/pipelines/">
+  <body data-url="/help/version/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -140,10 +140,9 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/pipelines/" class="dd-item parent active">
+    <li data-nav-id="/pipelines/" class="dd-item">
       <a href="/pipelines/">
-        <span>Pipelines</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Pipelines</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/pipelines/execute-a-pipeline/" class="dd-item">
@@ -278,12 +277,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/help/" class="dd-item">
+    <li data-nav-id="/help/" class="dd-item parent">
       <a href="/help/">
-        <span>Help</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>Help</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/help/version/" class="dd-item">
+      <li data-nav-id="/help/version/" class="dd-item active">
         <a href="/help/version/">
           <span>Version</span>
         </a>
@@ -342,7 +342,12 @@
 
 
 
- <a href='/'></a> > Pipelines
+
+
+
+ <a href='/'></a> > <a href='/help/'>Help</a> > Version
+
+ 
 
  
 
@@ -363,7 +368,7 @@
 
 <div id="body-inner">
   
-    <h1>Pipelines</h1>
+    <h1>Version</h1>
   
 
 
@@ -371,86 +376,7 @@
     
     
     
-
-
-
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-</div>
-
-
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/execute-a-pipeline/">Execute a pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh run &lt;id&gt;
-Run a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &ndash;branch  Branch   &ndash;sha  Set commit sha   &ndash;no-cache  Ignore cached images   &ndash;reset-volume  Reset pipeline cached volume   &ndash;variable  Set build variables   &ndash;scale 1 todo   &ndash;detach  Run pipeline and print build ID   &ndash;variable-file  Set build variables from a file     <a class="read-more" href="/pipelines/execute-a-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/get-a-single-pipeline/">Get a single pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh pipelines [id]
-Get a specific or an array of pipelines
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &ndash;repo-owner  Repository owner   &ndash;repo-name  Repository name   &ndash;limit 25 Limit amount of returned results   &ndash;page 1 Paginated page   &ndash;name  Filter results by pipeline name     <a class="read-more" href="/pipelines/get-a-single-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/update-a-single-pipeline/">Update a single pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh pipeline &lt;id&gt;
-Apply changes to a pipeline
-Positionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     &ndash;context  context in form of: type=name   &ndash;engine-cluster  K8 cluster name to use for execution   &ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   &ndash;default-engine  Use the default engine configured by the system     <a class="read-more" href="/pipelines/update-a-single-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-
+    <p>Run <code>codefresh version</code> to see the current CLI version.</p>
 
 
     
