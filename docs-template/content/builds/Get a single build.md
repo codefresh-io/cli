@@ -5,7 +5,7 @@ title = "Get a single build"
 ### Command
 `codefresh builds [id]`
 
-Get a specific builds or an array of builds
+Get a specific build or an array of builds
 ### Positionals
 
 Option | Default | Description

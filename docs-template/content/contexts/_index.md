@@ -2,7 +2,7 @@
 title = "Contexts"
 +++
 
-### [Updated a context](updated-a-context)
+### [Update a context](update-a-context)
 `codefresh context`
 
 Apply changes to a context

@@ -5,17 +5,17 @@ title = "Builds"
 ### [Get a single build](get-a-single-build)
 `codefresh builds [id]`
 
-Get a specific builds or an array of builds
-
-### [Show logs](show-logs)
-`codefresh logs <id>`
-
-Show logs of a build
+Get a specific build or an array of builds
 
 ### [Restart a build](restart-a-build)
 `codefresh restart <id>`
 
 Restart a build by its id
+
+### [Show logs](show-logs)
+`codefresh logs <id>`
+
+Show logs of a build
 
 ### [Terminate a build](terminate-a-build)
 `codefresh terminate <id>`
