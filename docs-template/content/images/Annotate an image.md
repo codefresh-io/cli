@@ -3,7 +3,7 @@ title = "Annotate an image"
 +++
 
 ### Command
-`codefresh image <id>`
+`codefresh annotate image <id>`
 
 Annotate an image
 ### Positionals

@@ -3,7 +3,7 @@ title = "Delete an environment"
 +++
 
 ### Command
-`codefresh environment <id>`
+`codefresh delete environment <id>`
 
 Delete an environment
 ### Positionals

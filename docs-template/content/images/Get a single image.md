@@ -3,7 +3,7 @@ title = "Get a single image"
 +++
 
 ### Command
-`codefresh images [id]`
+`codefresh get images [id]`
 
 Get a specific or an array of images
 ### Positionals

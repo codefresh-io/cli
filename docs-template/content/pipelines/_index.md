@@ -3,12 +3,12 @@ title = "Pipelines"
 +++
 
 ### [Update a single pipeline](update-a-single-pipeline)
-`codefresh pipeline <id>`
+`codefresh patch pipeline <id>`
 
 Apply changes to a pipeline
 
 ### [Get a single pipeline](get-a-single-pipeline)
-`codefresh pipelines [id]`
+`codefresh get pipelines [id]`
 
 Get a specific or an array of pipelines
 

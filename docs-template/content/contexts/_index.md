@@ -2,28 +2,28 @@
 title = "Contexts"
 +++
 
-### [Updated a context](updated-a-context)
-`codefresh context`
+### [Update a context](update-a-context)
+`codefresh patch context`
 
 Apply changes to a context
 
 ### [Create a context](create-a-context)
-`codefresh context [type] [name]`
+`codefresh create context [type] [name]`
 
 Create a context
 
 ### [Delete a context](delete-a-context)
-`codefresh context [name]`
+`codefresh delete context [name]`
 
 Delete a context
 
 ### [Get a single context](get-a-single-context)
-`codefresh contexts [name]`
+`codefresh get contexts [name]`
 
 Get a specific or an array of contexts
 
 ### [Replace a context](replace-a-context)
-`codefresh context`
+`codefresh replace context`
 
 Replace a context
 

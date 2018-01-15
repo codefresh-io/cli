@@ -3,6 +3,6 @@ title = "Replace a composition"
 +++
 
 ### Command
-`codefresh composition`
+`codefresh replace composition`
 
 Replace a composition resource

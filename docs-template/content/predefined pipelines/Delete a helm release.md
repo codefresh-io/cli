@@ -1,16 +1,17 @@
 +++
-title = "Test a helm release"
+title = "Delete a helm release"
 +++
 
 ### Command
-`codefresh test-release [name]`
+`codefresh delete-release [name]`
 
-Test a helm release
+Delete a helm release
 ### Options
 
 Option | Default | Description
 --------- | ----------- | -----------
 --cluster |  | Run on cluster
 --timeout | 300 | time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)
+--purge |  | remove the release from the store and make its name free for later use (default true)
 --detach |  | Run pipeline and print build ID
---cleanup | false | delete test pods upon completion (default false)
+--no-hooks |  | prevent hooks from running during deletion

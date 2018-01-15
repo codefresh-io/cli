@@ -3,6 +3,6 @@ title = "Get activated context"
 +++
 
 ### Command
-`codefresh current-context`
+`codefresh auth current-context`
 
 Get the current activated authentication context

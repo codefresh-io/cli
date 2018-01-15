@@ -22,7 +22,7 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
         }
 
         const docs = command.prepareDocs();
-        if (!docs) {
+        if (!docs.category) {
             return;
         }
 

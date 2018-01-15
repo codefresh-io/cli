@@ -3,7 +3,7 @@ title = "Get a single context"
 +++
 
 ### Command
-`codefresh contexts [name]`
+`codefresh get contexts [name]`
 
 Get a specific or an array of contexts
 ### Positionals

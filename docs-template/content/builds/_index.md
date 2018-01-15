@@ -3,9 +3,9 @@ title = "Builds"
 +++
 
 ### [Get a single build](get-a-single-build)
-`codefresh builds [id]`
+`codefresh get builds [id]`
 
-Get a specific builds or an array of builds
+Get a specific build or an array of builds
 
 ### [Show logs](show-logs)
 `codefresh logs <id>`

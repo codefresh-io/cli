@@ -3,7 +3,7 @@ title = "Get a single composition"
 +++
 
 ### Command
-`codefresh environments [id]`
+`codefresh get environments [id]`
 
 Get a specific or an array of environments
 ### Positionals
