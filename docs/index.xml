@@ -76,7 +76,7 @@ If your operating system is missing please feel free to open us an issue in our 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/images/annotate-an-image/</guid>
-      <description> Command codefresh image &amp;lt;id&amp;gt;
+      <description> Command codefresh annotate image &amp;lt;id&amp;gt;
 Annotate an image
 Positionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     &amp;ndash;label  annotations to add to the image    </description>
     </item>
@@ -87,7 +87,7 @@ Positionals    Option Default Description     id  Docker image full name or id  
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/create-a-composition/</guid>
-      <description> Command codefresh composition [name]
+      <description> Command codefresh create composition [name]
 Create a composition
 Positionals    Option Default Description     name  Name of composition    Options    Option Default Description     &amp;ndash;variable  Variables list   &amp;ndash;advanced  Advanced composition   &amp;ndash;yaml  Path to yaml file to use to create the resource    </description>
     </item>
@@ -98,7 +98,7 @@ Positionals    Option Default Description     name  Name of composition    Optio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/create-a-context/</guid>
-      <description> Command codefresh context [type] [name]
+      <description> Command codefresh create context [type] [name]
 Create a context
 Positionals    Option Default Description     name  Name of context   type  Type of the context    Options    Option Default Description     &amp;ndash;owner account Owner of the context   &amp;ndash;variable  Variables list    </description>
     </item>
@@ -109,7 +109,7 @@ Positionals    Option Default Description     name  Name of context   type  Type
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/create-authentication-context/</guid>
-      <description> Command codefresh create-context [name]
+      <description> Command codefresh auth create-context [name]
 Create or update an authentication context
 Positionals    Option Default Description     name default Context name    Options    Option Default Description     &amp;ndash;url https://g.codefresh.io Codefresh system custom url   &amp;ndash;api-key  API key    </description>
     </item>
@@ -120,7 +120,7 @@ Positionals    Option Default Description     name default Context name    Optio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/delete-a-composition/</guid>
-      <description> Command codefresh composition [name]
+      <description> Command codefresh delete composition [name]
 Delete a composition
 Positionals    Option Default Description     name  Composition name    </description>
     </item>
@@ -131,9 +131,20 @@ Positionals    Option Default Description     name  Composition name    </descri
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/delete-a-context/</guid>
-      <description> Command codefresh context [name]
+      <description> Command codefresh delete context [name]
 Delete a context
 Positionals    Option Default Description     name  Name of context    </description>
+    </item>
+    
+    <item>
+      <title>Delete a helm release</title>
+      <link>http://cli.codefresh.io/predefined-pipelines/delete-a-helm-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/predefined-pipelines/delete-a-helm-release/</guid>
+      <description> Command codefresh delete-release [name]
+Delete a helm release
+Options    Option Default Description     &amp;ndash;cluster  Run on cluster   &amp;ndash;timeout 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   &amp;ndash;purge  remove the release from the store and make its name free for later use (default true)   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;no-hooks  prevent hooks from running during deletion    </description>
     </item>
     
     <item>
@@ -142,7 +153,7 @@ Positionals    Option Default Description     name  Name of context    </descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/environments/delete-an-environment/</guid>
-      <description> Command codefresh environment &amp;lt;id&amp;gt;
+      <description> Command codefresh delete environment &amp;lt;id&amp;gt;
 Delete an environment
 Positionals    Option Default Description     id  Environment id    </description>
     </item>
@@ -174,8 +185,8 @@ Positionals    Option Default Description     id  Pipeline id    Options    Opti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/builds/get-a-single-build/</guid>
-      <description> Command codefresh builds [id]
-Get a specific builds or an array of builds
+      <description> Command codefresh get builds [id]
+Get a specific build or an array of builds
 Positionals    Option Default Description     id  Build id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;page 1 Paginated page   &amp;ndash;status  Filter results by statuses   &amp;ndash;trigger  Filter results by triggers   &amp;ndash;pipeline-id  Filter results by pipeline id   &amp;ndash;pipeline-name  Filter results by pipeline name    </description>
     </item>
     
@@ -185,7 +196,7 @@ Positionals    Option Default Description     id  Build id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/get-a-single-composition/</guid>
-      <description> Command codefresh compositions [id|name]
+      <description> Command codefresh get compositions [id|name]
 Get a specific composition or an array of compositions
 Positionals    Option Default Description     id  composition id or name    </description>
     </item>
@@ -196,7 +207,7 @@ Positionals    Option Default Description     id  composition id or name    </de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/environments/get-a-single-composition/</guid>
-      <description> Command codefresh environments [id]
+      <description> Command codefresh get environments [id]
 Get a specific or an array of environments
 Positionals    Option Default Description     id  environment id or name    </description>
     </item>
@@ -207,7 +218,7 @@ Positionals    Option Default Description     id  environment id or name    </de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/get-a-single-context/</guid>
-      <description> Command codefresh contexts [name]
+      <description> Command codefresh get contexts [name]
 Get a specific or an array of contexts
 Positionals    Option Default Description     name  context name    Options    Option Default Description     &amp;ndash;type  Specific type of context   &amp;ndash;owner  Owner of the context    </description>
     </item>
@@ -218,7 +229,7 @@ Positionals    Option Default Description     name  context name    Options    O
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/images/get-a-single-image/</guid>
-      <description> Command codefresh images [id]
+      <description> Command codefresh get images [id]
 Get a specific or an array of images
 Positionals    Option Default Description     id  image id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   &amp;ndash;label  Filter by a list of annotated labels   &amp;ndash;sha  Filter by specific commit sha   &amp;ndash;image-name  Filter by specific image name   &amp;ndash;branch  Filter by specific branch   &amp;ndash;page 1 Paginated page    </description>
     </item>
@@ -229,7 +240,7 @@ Positionals    Option Default Description     id  image id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/pipelines/get-a-single-pipeline/</guid>
-      <description> Command codefresh pipelines [id]
+      <description> Command codefresh get pipelines [id]
 Get a specific or an array of pipelines
 Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;repo-owner  Repository owner   &amp;ndash;repo-name  Repository name   &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;page 1 Paginated page   &amp;ndash;name  Filter results by pipeline name    </description>
     </item>
@@ -240,7 +251,7 @@ Positionals    Option Default Description     id  Pipeline id    Options    Opti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/get-activated-context/</guid>
-      <description>Command codefresh current-context
+      <description>Command codefresh auth current-context
 Get the current activated authentication context</description>
     </item>
     
@@ -250,19 +261,19 @@ Get the current activated authentication context</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/get-all-contexts/</guid>
-      <description>Command codefresh get-contexts
+      <description>Command codefresh auth get-contexts
 Get all possible authentication contexts</description>
     </item>
     
     <item>
-      <title>Install or upgrade Helm chart</title>
-      <link>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</link>
+      <title>Install or upgrade a Helm chart</title>
+      <link>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-a-helm-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</guid>
+      <guid>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-a-helm-chart/</guid>
       <description> Command codefresh install-chart
-Install or upgrade Helm chart
-Options    Option Default Description     &amp;ndash;cluster  Install on cluster   &amp;ndash;namespace default Install on namespace   &amp;ndash;tiller-namespace kube-system Where tiller has been installed   &amp;ndash;repository  Helm repository   &amp;ndash;name  Name of the chart in the repository   &amp;ndash;version  Version of the chart in the repository   &amp;ndash;context  Contexts (yaml   &amp;ndash;release-name  The name to set to the release    </description>
+Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh
+Options    Option Default Description     &amp;ndash;cluster  Install on cluster   &amp;ndash;namespace default Install on namespace   &amp;ndash;tiller-namespace kube-system Where tiller has been installed   &amp;ndash;repository  Helm repository (absolute url or name of context with type help-repository)   &amp;ndash;name  Name of the chart in the repository   &amp;ndash;version  Version of the chart in the repository   &amp;ndash;context  Contexts (yaml   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;release-name  The name to set to the release    </description>
     </item>
     
     <item>
@@ -271,7 +282,7 @@ Options    Option Default Description     &amp;ndash;cluster  Install on cluster
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/replace-a-composition/</guid>
-      <description>Command codefresh composition
+      <description>Command codefresh replace composition
 Replace a composition resource</description>
     </item>
     
@@ -281,7 +292,7 @@ Replace a composition resource</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/replace-a-context/</guid>
-      <description>Command codefresh context
+      <description>Command codefresh replace context
 Replace a context</description>
     </item>
     
@@ -302,7 +313,7 @@ Positionals    Option Default Description     id  Build id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/set-active-context/</guid>
-      <description> Command codefresh use-context &amp;lt;name&amp;gt;
+      <description> Command codefresh auth use-context &amp;lt;name&amp;gt;
 Set the current active authentication context
 Positionals    Option Default Description     context-name  a context-name that exists in cfconfig file    </description>
     </item>
@@ -348,7 +359,17 @@ Positionals    Option Default Description     id  Build id    </description>
       <guid>http://cli.codefresh.io/predefined-pipelines/test-a-helm-release/</guid>
       <description> Command codefresh test-release [name]
 Test a helm release
-Options    Option Default Description     &amp;ndash;cluster  Install on cluster   &amp;ndash;timeout 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   &amp;ndash;cleanup false delete test pods upon completion (default false)    </description>
+Options    Option Default Description     &amp;ndash;cluster  Run on cluster   &amp;ndash;timeout 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;cleanup false delete test pods upon completion (default false)    </description>
+    </item>
+    
+    <item>
+      <title>Update a context</title>
+      <link>http://cli.codefresh.io/contexts/update-a-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/contexts/update-a-context/</guid>
+      <description>Command codefresh patch context
+Apply changes to a context</description>
     </item>
     
     <item>
@@ -357,19 +378,9 @@ Options    Option Default Description     &amp;ndash;cluster  Install on cluster
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/pipelines/update-a-single-pipeline/</guid>
-      <description> Command codefresh pipeline &amp;lt;id&amp;gt;
+      <description> Command codefresh patch pipeline &amp;lt;id&amp;gt;
 Apply changes to a pipeline
 Positionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     &amp;ndash;context  context in form of: type=name   &amp;ndash;engine-cluster  K8 cluster name to use for execution   &amp;ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   &amp;ndash;default-engine  Use the default engine configured by the system    </description>
-    </item>
-    
-    <item>
-      <title>Updated a context</title>
-      <link>http://cli.codefresh.io/contexts/updated-a-context/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cli.codefresh.io/contexts/updated-a-context/</guid>
-      <description>Command codefresh context
-Apply changes to a context</description>
     </item>
     
     <item>

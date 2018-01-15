@@ -193,9 +193,9 @@
           <span>Replace a context</span>
         </a>
     </li>
-      <li data-nav-id="/contexts/updated-a-context/" class="dd-item">
-        <a href="/contexts/updated-a-context/">
-          <span>Updated a context</span>
+      <li data-nav-id="/contexts/update-a-context/" class="dd-item">
+        <a href="/contexts/update-a-context/">
+          <span>Update a context</span>
         </a>
     </li>
         </ul>
@@ -266,9 +266,14 @@
         <span>Predefined Pipelines</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/predefined-pipelines/install-or-upgrade-helm-chart/" class="dd-item">
-        <a href="/predefined-pipelines/install-or-upgrade-helm-chart/">
-          <span>Install or upgrade Helm chart</span>
+      <li data-nav-id="/predefined-pipelines/delete-a-helm-release/" class="dd-item">
+        <a href="/predefined-pipelines/delete-a-helm-release/">
+          <span>Delete a helm release</span>
+        </a>
+    </li>
+      <li data-nav-id="/predefined-pipelines/install-or-upgrade-a-helm-chart/" class="dd-item">
+        <a href="/predefined-pipelines/install-or-upgrade-a-helm-chart/">
+          <span>Install or upgrade a Helm chart</span>
         </a>
     </li>
       <li data-nav-id="/predefined-pipelines/test-a-helm-release/" class="dd-item">
@@ -377,25 +382,25 @@
 
 <h3 id="create-authentication-context-create-authentication-context"><a href="create-authentication-context">Create authentication context</a></h3>
 
-<p><code>codefresh create-context [name]</code></p>
+<p><code>codefresh auth create-context [name]</code></p>
 
 <p>Create or update an authentication context</p>
 
 <h3 id="get-activated-context-get-activated-context"><a href="get-activated-context">Get activated context</a></h3>
 
-<p><code>codefresh current-context</code></p>
+<p><code>codefresh auth current-context</code></p>
 
 <p>Get the current activated authentication context</p>
 
 <h3 id="get-all-contexts-get-all-contexts"><a href="get-all-contexts">Get all contexts</a></h3>
 
-<p><code>codefresh get-contexts</code></p>
+<p><code>codefresh auth get-contexts</code></p>
 
 <p>Get all possible authentication contexts</p>
 
 <h3 id="set-active-context-set-active-context"><a href="set-active-context">Set active context</a></h3>
 
-<p><code>codefresh use-context &lt;name&gt;</code></p>
+<p><code>codefresh auth use-context &lt;name&gt;</code></p>
 
 <p>Set the current active authentication context</p>
 

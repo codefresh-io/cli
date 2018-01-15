@@ -88,6 +88,10 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/predefined-pipelines/delete-a-helm-release/</loc>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/environments/delete-an-environment/</loc>
   </url>
   
@@ -140,7 +144,7 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
+    <loc>http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-a-helm-chart/</loc>
   </url>
   
   <url>
@@ -189,11 +193,11 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/pipelines/update-a-single-pipeline/</loc>
+    <loc>http://cli.codefresh.io/contexts/update-a-context/</loc>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/contexts/updated-a-context/</loc>
+    <loc>http://cli.codefresh.io/pipelines/update-a-single-pipeline/</loc>
   </url>
   
   <url>
