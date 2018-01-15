@@ -6,7 +6,7 @@ weight = 1
 
 # Codefresh CLI
 
-Welcome to Codefresh's official CLI documentation!
+Welcome to Codefresh official CLI documentation!
 
 Codefresh CLI provides a full and flexible interface to interact with Codefresh.<br>
 The CLI can be used to achieve the following:
