@@ -2,13 +2,13 @@
 title = "Getting Started"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
-weight = 1
+weight = 10
 +++
 
-## install
+## Install
 Install the CLI through one of the possible ways described in the [Installation](/installation) page
 
-## authenticate
+## Authenticate
 In order to start working with the cli you will need to update the authentication configuration. <br />
 Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br />
 
@@ -18,5 +18,12 @@ You can generate a new one from the <a href="https://g.codefresh.io/account/toke
  
 Once you have an API key, create a new authentication context:<br> `codefresh auth create-context --api-key {API_KEY}`
 
+## Getting Help
+To get help and usage instructions run `codefresh [COMMAND]--help`.<br />
+A help message will appear in the terminal.<br />
+
+## Showing Current Version
+Run `codefresh version` to see the current CLI version.
+
 <br />
-#### That's it, you are go to go!
+#### That's it, you are good to go!

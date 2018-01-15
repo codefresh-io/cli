@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -341,7 +341,21 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#get-a-single-build-get-a-single-build"><a href="get-a-single-build">Get a single build</a></a></li>
+<li><a href="#show-logs-show-logs"><a href="show-logs">Show logs</a></a></li>
+<li><a href="#restart-a-build-restart-a-build"><a href="restart-a-build">Restart a build</a></a></li>
+<li><a href="#terminate-a-build-terminate-a-build"><a href="terminate-a-build">Terminate a build</a></a></li>
+<li><a href="#wait-for-a-build-condition-wait-for-a-build-condition"><a href="wait-for-a-build-condition">Wait for a build condition</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,120 +376,35 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="get-a-single-build-get-a-single-build"><a href="get-a-single-build">Get a single build</a></h3>
 
-</div>
+<p><code>codefresh builds [id]</code></p>
 
+<p>Get a specific builds or an array of builds</p>
 
-   <article class="post builds">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/builds/get-a-single-build/">Get a single build</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh builds [id]
-Get a specific builds or an array of builds
-Positionals    Option Default Description     id  Build id    Options    Option Default Description     &ndash;limit 25 Limit amount of returned results   &ndash;page 1 Paginated page   &ndash;status  Filter results by statuses   &ndash;trigger  Filter results by triggers   &ndash;pipeline-id  Filter results by pipeline id   &ndash;pipeline-name  Filter results by pipeline name     <a class="read-more" href="/builds/get-a-single-build/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="show-logs-show-logs"><a href="show-logs">Show logs</a></h3>
 
-        
-        
+<p><code>codefresh logs &lt;id&gt;</code></p>
 
-    </footer>
-</article>
+<p>Show logs of a build</p>
 
-   <article class="post builds">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/builds/restart-a-build/">Restart a build</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh restart &lt;id&gt;
-Restart a build by its id
-Positionals    Option Default Description     id  Build id    Options    Option Default Description     &ndash;detach  Run build and print workflow ID     <a class="read-more" href="/builds/restart-a-build/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="restart-a-build-restart-a-build"><a href="restart-a-build">Restart a build</a></h3>
 
-        
-        
+<p><code>codefresh restart &lt;id&gt;</code></p>
 
-    </footer>
-</article>
+<p>Restart a build by its id</p>
 
-   <article class="post builds">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/builds/show-logs/">Show logs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh logs &lt;id&gt;
-Show logs of a build
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &ndash;f  Continue showing build logs until it will finish     <a class="read-more" href="/builds/show-logs/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="terminate-a-build-terminate-a-build"><a href="terminate-a-build">Terminate a build</a></h3>
 
-        
-        
+<p><code>codefresh terminate &lt;id&gt;</code></p>
 
-    </footer>
-</article>
+<p>Terminate a build by its id</p>
 
-   <article class="post builds">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/builds/terminate-a-build/">Terminate a build</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh terminate &lt;id&gt;
-Terminate a build by its id
-Positionals    Option Default Description     id  Build id     <a class="read-more" href="/builds/terminate-a-build/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="wait-for-a-build-condition-wait-for-a-build-condition"><a href="wait-for-a-build-condition">Wait for a build condition</a></h3>
 
-        
-        
+<p><code>codefresh wait &lt;id..&gt;</code></p>
 
-    </footer>
-</article>
-
-   <article class="post builds">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/builds/wait-for-a-build-condition/">Wait for a build condition</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh wait &lt;id..&gt;
-Wait until a condition will be met on a build
-Positionals    Option Default Description     id  Build id    Options    Option Default Description     &ndash;status  Build status   &ndash;debug  Show debug output until the condition will be met   &ndash;timeout 30 Define a timeout for the wait operation in minutes     <a class="read-more" href="/builds/wait-for-a-build-condition/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Wait until a condition will be met on a build</p>
 
 
 

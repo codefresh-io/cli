@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -341,7 +341,20 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#create-authentication-context-create-authentication-context"><a href="create-authentication-context">Create authentication context</a></a></li>
+<li><a href="#get-activated-context-get-activated-context"><a href="get-activated-context">Get activated context</a></a></li>
+<li><a href="#get-all-contexts-get-all-contexts"><a href="get-all-contexts">Get all contexts</a></a></li>
+<li><a href="#set-active-context-set-active-context"><a href="set-active-context">Set active context</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,99 +375,29 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="create-authentication-context-create-authentication-context"><a href="create-authentication-context">Create authentication context</a></h3>
 
-</div>
+<p><code>codefresh create-context [name]</code></p>
 
+<p>Create or update an authentication context</p>
 
-   <article class="post authentication">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/authentication/create-authentication-context/">Create authentication context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh create-context [name]
-Create or update an authentication context
-Positionals    Option Default Description     name default Context name    Options    Option Default Description     &ndash;url https://g.codefresh.io Codefresh system custom url   &ndash;api-key  API key     <a class="read-more" href="/authentication/create-authentication-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-activated-context-get-activated-context"><a href="get-activated-context">Get activated context</a></h3>
 
-        
-        
+<p><code>codefresh current-context</code></p>
 
-    </footer>
-</article>
+<p>Get the current activated authentication context</p>
 
-   <article class="post authentication">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/authentication/get-activated-context/">Get activated context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Command codefresh current-context
-Get the current activated authentication context <a class="read-more" href="/authentication/get-activated-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-all-contexts-get-all-contexts"><a href="get-all-contexts">Get all contexts</a></h3>
 
-        
-        
+<p><code>codefresh get-contexts</code></p>
 
-    </footer>
-</article>
+<p>Get all possible authentication contexts</p>
 
-   <article class="post authentication">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/authentication/get-all-contexts/">Get all contexts</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Command codefresh get-contexts
-Get all possible authentication contexts <a class="read-more" href="/authentication/get-all-contexts/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="set-active-context-set-active-context"><a href="set-active-context">Set active context</a></h3>
 
-        
-        
+<p><code>codefresh use-context &lt;name&gt;</code></p>
 
-    </footer>
-</article>
-
-   <article class="post authentication">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/authentication/set-active-context/">Set active context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh use-context &lt;name&gt;
-Set the current active authentication context
-Positionals    Option Default Description     context-name  a context-name that exists in cfconfig file     <a class="read-more" href="/authentication/set-active-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Set the current active authentication context</p>
 
 
 
