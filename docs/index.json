@@ -1,66 +1,59 @@
 [
 {
+	"uri": "http://cli.codefresh.io/",
+	"title": "",
+	"tags": [],
+	"description": "Codefresh CLI",
+	"content": " Codefresh CLI Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \nTo get started please navigate to Getting started page\n"
+},
+{
 	"uri": "http://cli.codefresh.io/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": "Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \n"
+	"content": " Install Install the CLI through one of the possible ways described in the Installation page\nAuthenticate In order to start working with the cli you will need to update the authentication configuration. Updating the authentication configuration is done via an API-KEY you generate from Codefresh. If you already have an API-KEY you can just use it.\nYou can generate a new one from the account settings page. You must be an account admin to generate api keys Once you have an API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\nGetting Help To get help and usage instructions run codefresh [COMMAND]--help.\nA help message will appear in the terminal.\nShowing Current Version Run codefresh version to see the current CLI version.\n\nThat\u0026rsquo;s it, you are good to go! "
+},
+{
+	"uri": "http://cli.codefresh.io/installation/npm/",
+	"title": "NPM",
+	"tags": [],
+	"description": "asd",
+	"content": "the CLI requires node version 8.0.0 or higer Codefresh\u0026rsquo;s CLI is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
+},
+{
+	"uri": "http://cli.codefresh.io/installation/yarn/",
+	"title": "YARN",
+	"tags": [],
+	"description": "asd",
+	"content": "the CLI requires node version 8.0.0 or higer Codefresh\u0026rsquo;s CLI is available for installation using YARN.\nInstall: yarn global add codefresh\nInstall a specific version: yarn global add codefresh@{VERSION}\nUpdate to latest version: yarn global upgrade codefresh\nUpdate to a specific version: yarn global upgrade codefresh@{VERSION}\n"
 },
 {
 	"uri": "http://cli.codefresh.io/installation/",
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use npm or yarn to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by downloading a binary.\n"
-},
-{
-	"uri": "http://cli.codefresh.io/",
-	"title": "Introduction",
-	"tags": [],
-	"description": "",
-	"content": " Introduction Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \n"
-},
-{
-	"uri": "http://cli.codefresh.io/authentication/",
-	"title": "Authentication",
-	"tags": [],
-	"description": "asd",
-	"content": " Basic Usage In order to start working with the cli you will need to update the authentication configuration. Generate a new API key through the account settings page.\nOnce you have the API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\nAdvanced Usage "
+	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use NPM or YARN to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by Donwloading it directly.\nIt is also possible to run the CLI using a Docker image.\n"
 },
 {
 	"uri": "http://cli.codefresh.io/installation/docker/",
 	"title": "Docker Image",
 	"tags": [],
-	"description": "",
+	"description": "asdsd",
 	"content": "You can run the CLI using our official docker image which is published to Dockerhub\nPull the latest version: docker pull codefresh/cli\nPull a specific version: docker pull codefresh/cli:${VERSION}\n"
 },
 {
 	"uri": "http://cli.codefresh.io/installation/download/",
 	"title": "Download",
 	"tags": [],
-	"description": "",
+	"description": "asd",
 	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
-},
-{
-	"uri": "http://cli.codefresh.io/installation/npm/",
-	"title": "NPM",
-	"tags": [],
-	"description": "",
-	"content": "Codefresh\u0026rsquo;s cli is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
-},
-{
-	"uri": "http://cli.codefresh.io/installation/yarn/",
-	"title": "YARN",
-	"tags": [],
-	"description": "",
-	"content": "Install: yarn global add codefresh\nInstall a specific version: yarn global add codefresh@{VERSION}\nUpdate to latest version: yarn global upgrade codefresh\nUpdate to a specific version: yarn global upgrade codefresh@{VERSION}\n"
 },
 {
 	"uri": "http://cli.codefresh.io/_header/",
 	"title": "header",
 	"tags": [],
 	"description": "",
-	"content": "Codefresh CLI Documentation\n"
+	"content": "Codefresh CLI\n"
 },
 {
 	"uri": "http://cli.codefresh.io/images/annotate-an-image/",
@@ -70,11 +63,18 @@
 	"content": " Command codefresh image \u0026lt;id\u0026gt;\nAnnotate an image\nPositionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     \u0026ndash;label  annotations to add to the image    "
 },
 {
+	"uri": "http://cli.codefresh.io/authentication/",
+	"title": "Authentication",
+	"tags": [],
+	"description": "",
+	"content": " Create authentication context codefresh create-context [name]\nCreate or update an authentication context\nGet activated context codefresh current-context\nGet the current activated authentication context\nGet all contexts codefresh get-contexts\nGet all possible authentication contexts\nSet active context codefresh use-context \u0026lt;name\u0026gt;\nSet the current active authentication context\n"
+},
+{
 	"uri": "http://cli.codefresh.io/builds/",
 	"title": "Builds",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Get a single build codefresh builds [id]\nGet a specific builds or an array of builds\nShow logs codefresh logs \u0026lt;id\u0026gt;\nShow logs of a build\nRestart a build codefresh restart \u0026lt;id\u0026gt;\nRestart a build by its id\nTerminate a build codefresh terminate \u0026lt;id\u0026gt;\nTerminate a build by its id\nWait for a build condition codefresh wait \u0026lt;id..\u0026gt;\nWait until a condition will be met on a build\n"
 },
 {
 	"uri": "http://cli.codefresh.io/categories/",
@@ -88,14 +88,14 @@
 	"title": "Compositions",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Create a composition codefresh composition [name]\nCreate a composition\nDelete a composition codefresh composition [name]\nDelete a composition\nGet a single composition codefresh compositions [id|name]\nGet a specific composition or an array of compositions\nReplace a composition codefresh composition\nReplace a composition resource\n"
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/",
 	"title": "Contexts",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Updated a context codefresh context\nApply changes to a context\nCreate a context codefresh context [type] [name]\nCreate a context\nDelete a context codefresh context [name]\nDelete a context\nGet a single context codefresh contexts [name]\nGet a specific or an array of contexts\nReplace a context codefresh context\nReplace a context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/create-a-composition/",
@@ -144,14 +144,21 @@
 	"title": "Environments",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Delete an environment codefresh environment \u0026lt;id\u0026gt;\nDelete an environment\nGet a single composition codefresh environments [id]\nGet a specific or an array of environments\n"
 },
 {
 	"uri": "http://cli.codefresh.io/pipelines/execute-a-pipeline/",
 	"title": "Execute a pipeline",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;branch  Branch   \u0026ndash;sha  Set commit sha   \u0026ndash;no-cache  Ignore cached images   \u0026ndash;reset-volume  Reset pipeline cached volume   \u0026ndash;variable  Set build variables   \u0026ndash;scale 1 todo   \u0026ndash;detach  Run pipeline and print build ID   \u0026ndash;variable-file  Set build variables from a file    "
+	"content": " Command codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;branch  Branch   \u0026ndash;sha  Set commit sha   \u0026ndash;no-cache  Ignore cached images   \u0026ndash;reset-volume  Reset pipeline cached volume   \u0026ndash;variable  Set build variables   \u0026ndash;detach  Run pipeline and print build ID   \u0026ndash;variable-file  Set build variables from a file    "
+},
+{
+	"uri": "http://cli.codefresh.io/external-resources/",
+	"title": "External Resources",
+	"tags": [],
+	"description": "Hugo-built Sites with docdock theme",
+	"content": " https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield "
 },
 {
 	"uri": "http://cli.codefresh.io/builds/get-a-single-build/",
@@ -214,7 +221,7 @@
 	"title": "Images",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Annotate an image codefresh image \u0026lt;id\u0026gt;\nAnnotate an image\nGet a single image codefresh images [id]\nGet a specific or an array of images\nTag an image codefresh tag \u0026lt;id\u0026gt; [tags..]\nAdd an image tag\n"
 },
 {
 	"uri": "http://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/",
@@ -228,14 +235,14 @@
 	"title": "Pipelines",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Update a single pipeline codefresh pipeline \u0026lt;id\u0026gt;\nApply changes to a pipeline\nGet a single pipeline codefresh pipelines [id]\nGet a specific or an array of pipelines\nExecute a pipeline codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\n"
 },
 {
 	"uri": "http://cli.codefresh.io/predefined-pipelines/",
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Test a helm release codefresh test-release [name]\nTest a helm release\n"
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/replace-a-composition/",

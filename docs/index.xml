@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction on Codefresh CLI Documentation</title>
+    <title>Codefresh CLI Documentation</title>
     <link>http://cli.codefresh.io/</link>
-    <description>Recent content in Introduction on Codefresh CLI Documentation</description>
+    <description>Recent content on Codefresh CLI Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
     
 	<atom:link href="http://cli.codefresh.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NPM</title>
+      <link>http://cli.codefresh.io/installation/npm/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://cli.codefresh.io/installation/npm/</guid>
+      <description>the CLI requires node version 8.0.0 or higer Codefresh&amp;rsquo;s CLI is available for installation through NPM registry.
+Install: npm install -g codefresh
+Install a specific version: npm install -g codefresh@{VERSION}
+Update to latest version: npm install -g codefresh
+Update to a specific version: npm install -g codefresh@${VERSION}</description>
+    </item>
+    
+    <item>
+      <title>YARN</title>
+      <link>http://cli.codefresh.io/installation/yarn/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://cli.codefresh.io/installation/yarn/</guid>
+      <description>the CLI requires node version 8.0.0 or higer Codefresh&amp;rsquo;s CLI is available for installation using YARN.
+Install: yarn global add codefresh
+Install a specific version: yarn global add codefresh@{VERSION}
+Update to latest version: yarn global upgrade codefresh
+Update to a specific version: yarn global upgrade codefresh@{VERSION}</description>
+    </item>
     
     <item>
       <title>Docker Image</title>
@@ -36,37 +62,12 @@ If your operating system is missing please feel free to open us an issue in our 
     </item>
     
     <item>
-      <title>NPM</title>
-      <link>http://cli.codefresh.io/installation/npm/</link>
-      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-      
-      <guid>http://cli.codefresh.io/installation/npm/</guid>
-      <description>Codefresh&amp;rsquo;s cli is available for installation through NPM registry.
-Install: npm install -g codefresh
-Install a specific version: npm install -g codefresh@{VERSION}
-Update to latest version: npm install -g codefresh
-Update to a specific version: npm install -g codefresh@${VERSION}</description>
-    </item>
-    
-    <item>
-      <title>YARN</title>
-      <link>http://cli.codefresh.io/installation/yarn/</link>
-      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-      
-      <guid>http://cli.codefresh.io/installation/yarn/</guid>
-      <description>Install: yarn global add codefresh
-Install a specific version: yarn global add codefresh@{VERSION}
-Update to latest version: yarn global upgrade codefresh
-Update to a specific version: yarn global upgrade codefresh@{VERSION}</description>
-    </item>
-    
-    <item>
       <title>header</title>
       <link>http://cli.codefresh.io/_header/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
       <guid>http://cli.codefresh.io/_header/</guid>
-      <description>Codefresh CLI Documentation</description>
+      <description>Codefresh CLI</description>
     </item>
     
     <item>
@@ -153,8 +154,18 @@ Positionals    Option Default Description     id  Environment id    </descriptio
       
       <guid>http://cli.codefresh.io/pipelines/execute-a-pipeline/</guid>
       <description> Command codefresh run &amp;lt;id&amp;gt;
-Run a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;branch  Branch   &amp;ndash;sha  Set commit sha   &amp;ndash;no-cache  Ignore cached images   &amp;ndash;reset-volume  Reset pipeline cached volume   &amp;ndash;variable  Set build variables   &amp;ndash;scale 1 todo   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;variable-file  Set build variables from a file    </description>
+Run a pipeline and attach the created workflow logs.
+Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
+Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;branch  Branch   &amp;ndash;sha  Set commit sha   &amp;ndash;no-cache  Ignore cached images   &amp;ndash;reset-volume  Reset pipeline cached volume   &amp;ndash;variable  Set build variables   &amp;ndash;detach  Run pipeline and print build ID   &amp;ndash;variable-file  Set build variables from a file    </description>
+    </item>
+    
+    <item>
+      <title>External Resources</title>
+      <link>http://cli.codefresh.io/external-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/external-resources/</guid>
+      <description> https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield </description>
     </item>
     
     <item>

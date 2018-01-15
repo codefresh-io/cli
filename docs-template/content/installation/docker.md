@@ -1,7 +1,8 @@
 +++
 title = "Docker Image"
-description = ""
+description = "asdsd"
 date = "2017-04-24T18:36:24+02:00"
+weight = 30
 +++
 
 You can run the CLI using our official docker image which is published to <a href="https://hub.docker.com/r/codefresh/cli/" target="_blank">Dockerhub</a><br>

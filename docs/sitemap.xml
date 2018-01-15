@@ -3,32 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://cli.codefresh.io/getting-started/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/installation/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cli.codefresh.io/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/authentication/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/installation/docker/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/installation/download/</loc>
+    <loc>http://cli.codefresh.io/getting-started/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
@@ -43,12 +23,31 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/installation/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/installation/docker/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/installation/download/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/_header/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://cli.codefresh.io/images/annotate-an-image/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/authentication/</loc>
   </url>
   
   <url>
@@ -98,6 +97,10 @@
   
   <url>
     <loc>http://cli.codefresh.io/pipelines/execute-a-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cli.codefresh.io/external-resources/</loc>
   </url>
   
   <url>

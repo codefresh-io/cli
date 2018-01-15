@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Compositions
+ <a href='/'></a> > Compositions
 
  
 
@@ -341,7 +341,20 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#create-a-composition-create-a-composition"><a href="create-a-composition">Create a composition</a></a></li>
+<li><a href="#delete-a-composition-delete-a-composition"><a href="delete-a-composition">Delete a composition</a></a></li>
+<li><a href="#get-a-single-composition-get-a-single-composition"><a href="get-a-single-composition">Get a single composition</a></a></li>
+<li><a href="#replace-a-composition-replace-a-composition"><a href="replace-a-composition">Replace a composition</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,100 +375,29 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="create-a-composition-create-a-composition"><a href="create-a-composition">Create a composition</a></h3>
 
-</div>
+<p><code>codefresh composition [name]</code></p>
 
+<p>Create a composition</p>
 
-   <article class="post compositions">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/compositions/create-a-composition/">Create a composition</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh composition [name]
-Create a composition
-Positionals    Option Default Description     name  Name of composition    Options    Option Default Description     &ndash;variable  Variables list   &ndash;advanced  Advanced composition   &ndash;yaml  Path to yaml file to use to create the resource     <a class="read-more" href="/compositions/create-a-composition/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="delete-a-composition-delete-a-composition"><a href="delete-a-composition">Delete a composition</a></h3>
 
-        
-        
+<p><code>codefresh composition [name]</code></p>
 
-    </footer>
-</article>
+<p>Delete a composition</p>
 
-   <article class="post compositions">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/compositions/delete-a-composition/">Delete a composition</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh composition [name]
-Delete a composition
-Positionals    Option Default Description     name  Composition name     <a class="read-more" href="/compositions/delete-a-composition/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-a-single-composition-get-a-single-composition"><a href="get-a-single-composition">Get a single composition</a></h3>
 
-        
-        
+<p><code>codefresh compositions [id|name]</code></p>
 
-    </footer>
-</article>
+<p>Get a specific composition or an array of compositions</p>
 
-   <article class="post compositions">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/compositions/get-a-single-composition/">Get a single composition</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh compositions [id|name]
-Get a specific composition or an array of compositions
-Positionals    Option Default Description     id  composition id or name     <a class="read-more" href="/compositions/get-a-single-composition/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="replace-a-composition-replace-a-composition"><a href="replace-a-composition">Replace a composition</a></h3>
 
-        
-        
+<p><code>codefresh composition</code></p>
 
-    </footer>
-</article>
-
-   <article class="post compositions">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/compositions/replace-a-composition/">Replace a composition</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Command codefresh composition
-Replace a composition resource <a class="read-more" href="/compositions/replace-a-composition/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Replace a composition resource</p>
 
 
 

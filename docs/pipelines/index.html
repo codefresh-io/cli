@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Pipelines
+ <a href='/'></a> > Pipelines
 
  
 
@@ -341,7 +341,19 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#update-a-single-pipeline-update-a-single-pipeline"><a href="update-a-single-pipeline">Update a single pipeline</a></a></li>
+<li><a href="#get-a-single-pipeline-get-a-single-pipeline"><a href="get-a-single-pipeline">Get a single pipeline</a></a></li>
+<li><a href="#execute-a-pipeline-execute-a-pipeline"><a href="execute-a-pipeline">Execute a pipeline</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,82 +374,23 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="update-a-single-pipeline-update-a-single-pipeline"><a href="update-a-single-pipeline">Update a single pipeline</a></h3>
 
-</div>
+<p><code>codefresh pipeline &lt;id&gt;</code></p>
 
+<p>Apply changes to a pipeline</p>
 
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/execute-a-pipeline/">Execute a pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh run &lt;id&gt;
-Run a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &ndash;branch  Branch   &ndash;sha  Set commit sha   &ndash;no-cache  Ignore cached images   &ndash;reset-volume  Reset pipeline cached volume   &ndash;variable  Set build variables   &ndash;scale 1 todo   &ndash;detach  Run pipeline and print build ID   &ndash;variable-file  Set build variables from a file     <a class="read-more" href="/pipelines/execute-a-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-a-single-pipeline-get-a-single-pipeline"><a href="get-a-single-pipeline">Get a single pipeline</a></h3>
 
-        
-        
+<p><code>codefresh pipelines [id]</code></p>
 
-    </footer>
-</article>
+<p>Get a specific or an array of pipelines</p>
 
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/get-a-single-pipeline/">Get a single pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh pipelines [id]
-Get a specific or an array of pipelines
-Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &ndash;repo-owner  Repository owner   &ndash;repo-name  Repository name   &ndash;limit 25 Limit amount of returned results   &ndash;page 1 Paginated page   &ndash;name  Filter results by pipeline name     <a class="read-more" href="/pipelines/get-a-single-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="execute-a-pipeline-execute-a-pipeline"><a href="execute-a-pipeline">Execute a pipeline</a></h3>
 
-        
-        
+<p><code>codefresh run &lt;id&gt;</code></p>
 
-    </footer>
-</article>
-
-   <article class="post pipelines">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/pipelines/update-a-single-pipeline/">Update a single pipeline</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh pipeline &lt;id&gt;
-Apply changes to a pipeline
-Positionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     &ndash;context  context in form of: type=name   &ndash;engine-cluster  K8 cluster name to use for execution   &ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   &ndash;default-engine  Use the default engine configured by the system     <a class="read-more" href="/pipelines/update-a-single-pipeline/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Run a pipeline and attach the created workflow logs.<br />Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).</p>
 
 
 

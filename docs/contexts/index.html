@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Contexts
+ <a href='/'></a> > Contexts
 
  
 
@@ -341,7 +341,21 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#updated-a-context-updated-a-context"><a href="updated-a-context">Updated a context</a></a></li>
+<li><a href="#create-a-context-create-a-context"><a href="create-a-context">Create a context</a></a></li>
+<li><a href="#delete-a-context-delete-a-context"><a href="delete-a-context">Delete a context</a></a></li>
+<li><a href="#get-a-single-context-get-a-single-context"><a href="get-a-single-context">Get a single context</a></a></li>
+<li><a href="#replace-a-context-replace-a-context"><a href="replace-a-context">Replace a context</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,118 +376,35 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="updated-a-context-updated-a-context"><a href="updated-a-context">Updated a context</a></h3>
 
-</div>
+<p><code>codefresh context</code></p>
 
+<p>Apply changes to a context</p>
 
-   <article class="post contexts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/contexts/create-a-context/">Create a context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh context [type] [name]
-Create a context
-Positionals    Option Default Description     name  Name of context   type  Type of the context    Options    Option Default Description     &ndash;owner account Owner of the context   &ndash;variable  Variables list     <a class="read-more" href="/contexts/create-a-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="create-a-context-create-a-context"><a href="create-a-context">Create a context</a></h3>
 
-        
-        
+<p><code>codefresh context [type] [name]</code></p>
 
-    </footer>
-</article>
+<p>Create a context</p>
 
-   <article class="post contexts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/contexts/delete-a-context/">Delete a context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh context [name]
-Delete a context
-Positionals    Option Default Description     name  Name of context     <a class="read-more" href="/contexts/delete-a-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="delete-a-context-delete-a-context"><a href="delete-a-context">Delete a context</a></h3>
 
-        
-        
+<p><code>codefresh context [name]</code></p>
 
-    </footer>
-</article>
+<p>Delete a context</p>
 
-   <article class="post contexts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/contexts/get-a-single-context/">Get a single context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh contexts [name]
-Get a specific or an array of contexts
-Positionals    Option Default Description     name  context name    Options    Option Default Description     &ndash;type  Specific type of context   &ndash;owner  Owner of the context     <a class="read-more" href="/contexts/get-a-single-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-a-single-context-get-a-single-context"><a href="get-a-single-context">Get a single context</a></h3>
 
-        
-        
+<p><code>codefresh contexts [name]</code></p>
 
-    </footer>
-</article>
+<p>Get a specific or an array of contexts</p>
 
-   <article class="post contexts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/contexts/replace-a-context/">Replace a context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Command codefresh context
-Replace a context <a class="read-more" href="/contexts/replace-a-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="replace-a-context-replace-a-context"><a href="replace-a-context">Replace a context</a></h3>
 
-        
-        
+<p><code>codefresh context</code></p>
 
-    </footer>
-</article>
-
-   <article class="post contexts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/contexts/updated-a-context/">Updated a context</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Command codefresh context
-Apply changes to a context <a class="read-more" href="/contexts/updated-a-context/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Replace a context</p>
 
 
 

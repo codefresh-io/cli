@@ -23,7 +23,7 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="asd">
+<meta name="description" content="">
 
 
     
@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Authentication
+ <a href='/'></a> > Authentication
 
  
 
@@ -345,8 +345,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#basic-usage">Basic Usage</a></li>
-<li><a href="#advanced-usage">Advanced Usage</a></li>
+<li>
+<ul>
+<li><a href="#create-authentication-context-create-authentication-context"><a href="create-authentication-context">Create authentication context</a></a></li>
+<li><a href="#get-activated-context-get-activated-context"><a href="get-activated-context">Get activated context</a></a></li>
+<li><a href="#get-all-contexts-get-all-contexts"><a href="get-all-contexts">Get all contexts</a></a></li>
+<li><a href="#set-active-context-set-active-context"><a href="set-active-context">Set active context</a></a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -370,14 +375,29 @@
 
 
 
-<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="create-authentication-context-create-authentication-context"><a href="create-authentication-context">Create authentication context</a></h3>
 
-<p>In order to start working with the cli you will need to update the authentication configuration. <br />
-Generate a new API key through the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page.</p>
+<p><code>codefresh create-context [name]</code></p>
 
-<p>Once you have the API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
+<p>Create or update an authentication context</p>
 
-<h2 id="advanced-usage">Advanced Usage</h2>
+<h3 id="get-activated-context-get-activated-context"><a href="get-activated-context">Get activated context</a></h3>
+
+<p><code>codefresh current-context</code></p>
+
+<p>Get the current activated authentication context</p>
+
+<h3 id="get-all-contexts-get-all-contexts"><a href="get-all-contexts">Get all contexts</a></h3>
+
+<p><code>codefresh get-contexts</code></p>
+
+<p>Get all possible authentication contexts</p>
+
+<h3 id="set-active-context-set-active-context"><a href="set-active-context">Set active context</a></h3>
+
+<p><code>codefresh use-context &lt;name&gt;</code></p>
+
+<p>Set the current active authentication context</p>
 
 
 

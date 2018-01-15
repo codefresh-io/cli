@@ -31,8 +31,8 @@ url = "https://github.com/codefresh-io/cli"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-camera'></i> Examples"
-url = "/Examples"
+name = "<i class='fa fa-camera'></i> External Resources"
+url = "/external-resources"
 weight = 11
 
 [[menu.shortcuts]]

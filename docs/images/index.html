@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -283,7 +283,7 @@
 
         <section id="shortcuts">
                 <li class="" role=""><h3>More</h3><a href="https://github.com/codefresh-io/cli" target="_blank" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
-                <li class="" role=""><a href="/examples" target="_blank" rel="noopener"><i class='fa fa-camera'></i> Examples</a></li>
+                <li class="" role=""><a href="/external-resources" target="_blank" rel="noopener"><i class='fa fa-camera'></i> External Resources</a></li>
                 <li class="" role=""><a href="https://docs.codefresh.io" target="_blank" rel="noopener"><i class='fa fa-bookmark'></i> Codefresh Documentation</a></li>
         </section>
 
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Images
+ <a href='/'></a> > Images
 
  
 
@@ -341,7 +341,19 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#annotate-an-image-annotate-an-image"><a href="annotate-an-image">Annotate an image</a></a></li>
+<li><a href="#get-a-single-image-get-a-single-image"><a href="get-a-single-image">Get a single image</a></a></li>
+<li><a href="#tag-an-image-tag-an-image"><a href="tag-an-image">Tag an image</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -362,82 +374,23 @@
 
 
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<h3 id="annotate-an-image-annotate-an-image"><a href="annotate-an-image">Annotate an image</a></h3>
 
-</div>
+<p><code>codefresh image &lt;id&gt;</code></p>
 
+<p>Annotate an image</p>
 
-   <article class="post images">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/images/annotate-an-image/">Annotate an image</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh image &lt;id&gt;
-Annotate an image
-Positionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     &ndash;label  annotations to add to the image     <a class="read-more" href="/images/annotate-an-image/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="get-a-single-image-get-a-single-image"><a href="get-a-single-image">Get a single image</a></h3>
 
-        
-        
+<p><code>codefresh images [id]</code></p>
 
-    </footer>
-</article>
+<p>Get a specific or an array of images</p>
 
-   <article class="post images">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/images/get-a-single-image/">Get a single image</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh images [id]
-Get a specific or an array of images
-Positionals    Option Default Description     id  image id    Options    Option Default Description     &ndash;limit 25 Limit amount of returned results   &ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   &ndash;label  Filter by a list of annotated labels   &ndash;sha  Filter by specific commit sha   &ndash;image-name  Filter by specific image name   &ndash;branch  Filter by specific branch   &ndash;page 1 Paginated page     <a class="read-more" href="/images/get-a-single-image/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+<h3 id="tag-an-image-tag-an-image"><a href="tag-an-image">Tag an image</a></h3>
 
-        
-        
+<p><code>codefresh tag &lt;id&gt; [tags..]</code></p>
 
-    </footer>
-</article>
-
-   <article class="post images">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/images/tag-an-image/">Tag an image</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> Command codefresh tag &lt;id&gt; [tags..]
-Add an image tag
-Positionals    Option Default Description     id  Docker image id   names  Tag names     <a class="read-more" href="/images/tag-an-image/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<p>Add an image tag</p>
 
 
 
