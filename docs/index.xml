@@ -159,6 +159,15 @@ Positionals    Option Default Description     id  Pipeline id    Options    Opti
     </item>
     
     <item>
+      <title>External Resources</title>
+      <link>http://cli.codefresh.io/external-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cli.codefresh.io/external-resources/</guid>
+      <description> https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield </description>
+    </item>
+    
+    <item>
       <title>Get a single build</title>
       <link>http://cli.codefresh.io/builds/get-a-single-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

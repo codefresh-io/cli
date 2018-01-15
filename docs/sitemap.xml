@@ -113,6 +113,10 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/external-resources/</loc>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/builds/get-a-single-build/</loc>
   </url>
   

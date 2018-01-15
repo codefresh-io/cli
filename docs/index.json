@@ -175,6 +175,13 @@
 	"content": " Command codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs. Returns an exist code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;branch  Branch   \u0026ndash;sha  Set commit sha   \u0026ndash;no-cache  Ignore cached images   \u0026ndash;reset-volume  Reset pipeline cached volume   \u0026ndash;variable  Set build variables   \u0026ndash;scale 1 todo   \u0026ndash;detach  Run pipeline and print build ID   \u0026ndash;variable-file  Set build variables from a file    "
 },
 {
+	"uri": "http://cli.codefresh.io/external-resources/",
+	"title": "External Resources",
+	"tags": [],
+	"description": "Hugo-built Sites with docdock theme",
+	"content": " https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield "
+},
+{
 	"uri": "http://cli.codefresh.io/builds/get-a-single-build/",
 	"title": "Get a single build",
 	"tags": [],
