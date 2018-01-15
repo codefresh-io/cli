@@ -277,18 +277,6 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/help/" class="dd-item">
-      <a href="/help/">
-        <span>Help</span><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </a>
-        <ul>
-      <li data-nav-id="/help/version/" class="dd-item">
-        <a href="/help/version/">
-          <span>Version</span>
-        </a>
-    </li>
-        </ul>
-    </li>
 
 
 
@@ -356,8 +344,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#install">install</a></li>
-<li><a href="#authenticate">authenticate</a>
+<li><a href="#install">Install</a></li>
+<li><a href="#authenticate">Authenticate</a></li>
+<li><a href="#getting-help">Getting Help</a></li>
+<li><a href="#showing-current-version">Showing Current Version</a>
 <ul>
 <li>
 <ul>
@@ -387,11 +377,11 @@
 
 
 
-<h2 id="install">install</h2>
+<h2 id="install">Install</h2>
 
 <p>Install the CLI through one of the possible ways described in the <a href="/installation">Installation</a> page</p>
 
-<h2 id="authenticate">authenticate</h2>
+<h2 id="authenticate">Authenticate</h2>
 
 <p>In order to start working with the cli you will need to update the authentication configuration. <br />
 Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br /></p>
@@ -405,6 +395,15 @@ role="alert">You must be an account admin to generate api keys</div>
 </p>
 
 <p>Once you have an API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
+
+<h2 id="getting-help">Getting Help</h2>
+
+<p>To get help and usage instructions run <code>codefresh [COMMAND]--help</code>.<br />
+A help message will appear in the terminal.<br /></p>
+
+<h2 id="showing-current-version">Showing Current Version</h2>
+
+<p>Run <code>codefresh version</code> to see the current CLI version.</p>
 
 <p><br /></p>
 

@@ -11,7 +11,7 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": " install Install the CLI through one of the possible ways described in the Installation page\nauthenticate In order to start working with the cli you will need to update the authentication configuration. Updating the authentication configuration is done via an API-KEY you generate from Codefresh. If you already have an API-KEY you can just use it.\nYou can generate a new one from the account settings page. You must be an account admin to generate api keys Once you have an API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\n\nThat\u0026rsquo;s it, you are good to go! "
+	"content": " Install Install the CLI through one of the possible ways described in the Installation page\nAuthenticate In order to start working with the cli you will need to update the authentication configuration. Updating the authentication configuration is done via an API-KEY you generate from Codefresh. If you already have an API-KEY you can just use it.\nYou can generate a new one from the account settings page. You must be an account admin to generate api keys Once you have an API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\nGetting Help To get help and usage instructions run codefresh [COMMAND]--help.\nA help message will appear in the terminal.\nShowing Current Version Run codefresh version to see the current CLI version.\n\nThat\u0026rsquo;s it, you are good to go! "
 },
 {
 	"uri": "http://cli.codefresh.io/installation/npm/",
@@ -19,13 +19,6 @@
 	"tags": [],
 	"description": "asd",
 	"content": "the CLI requires node version 8.0.0 or higer Codefresh\u0026rsquo;s CLI is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
-},
-{
-	"uri": "http://cli.codefresh.io/help/version/",
-	"title": "Version",
-	"tags": [],
-	"description": "",
-	"content": "Run codefresh version to see the current CLI version.\n"
 },
 {
 	"uri": "http://cli.codefresh.io/installation/yarn/",
@@ -110,13 +103,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/help/",
-	"title": "Help",
-	"tags": [],
-	"description": "",
-	"content": "To get help and usage instructions you can run codefresh --help.\nA help message will appear in the terminal.\nYou can also run --help on any possible command to get specific help for a command.\nFor example: codefresh get pipelines --help will show help information for getting pipelines.\n"
 },
 {
 	"uri": "http://cli.codefresh.io/_header/",

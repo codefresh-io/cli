@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/help/version/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cli.codefresh.io/installation/yarn/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -73,11 +68,6 @@
   
   <url>
     <loc>http://cli.codefresh.io/environments/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/help/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
