@@ -20,6 +20,9 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
         }
 
         const docs = command.prepareDocs();
+        if (!docs) {
+            return;
+        }
 
         const { category } = docs;
 

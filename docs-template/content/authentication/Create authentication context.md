@@ -3,7 +3,7 @@ title = "Create authentication context"
 +++
 
 ### Command
-`codefresh auth create-context [name]`
+`codefresh create-context [name]`
 
 Create or update an authentication context
 ### Positionals

@@ -3,7 +3,7 @@ title = "Set active context"
 +++
 
 ### Command
-`codefresh auth use-context <name>`
+`codefresh use-context <name>`
 
 Set the current active authentication context
 ### Positionals

@@ -3,7 +3,7 @@ title = "Delete a composition"
 +++
 
 ### Command
-`codefresh delete composition [name]`
+`codefresh composition [name]`
 
 Delete a composition
 ### Positionals

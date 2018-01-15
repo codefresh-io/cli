@@ -3,7 +3,7 @@ title = "Create a context"
 +++
 
 ### Command
-`codefresh create context [type] [name]`
+`codefresh context [type] [name]`
 
 Create a context
 ### Positionals

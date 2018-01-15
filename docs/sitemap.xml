@@ -197,12 +197,4 @@
     <loc>http://cli.codefresh.io/builds/wait-for-a-build-condition/</loc>
   </url>
   
-  <url>
-    <loc>http://cli.codefresh.io/undefined/</loc>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/undefined/undefined/</loc>
-  </url>
-  
 </urlset>

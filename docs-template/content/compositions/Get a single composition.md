@@ -3,7 +3,7 @@ title = "Get a single composition"
 +++
 
 ### Command
-`codefresh get compositions [id|name]`
+`codefresh compositions [id|name]`
 
 Get a specific composition or an array of compositions
 ### Positionals

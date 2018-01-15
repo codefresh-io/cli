@@ -3,6 +3,6 @@ title = "Replace a context"
 +++
 
 ### Command
-`codefresh replace context`
+`codefresh context`
 
 Replace a context

@@ -67,7 +67,7 @@
 	"title": "Annotate an image",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh annotate image \u0026lt;id\u0026gt;\nAnnotate an image\nPositionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     \u0026ndash;label  annotations to add to the image    "
+	"content": " Command codefresh image \u0026lt;id\u0026gt;\nAnnotate an image\nPositionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     \u0026ndash;label  annotations to add to the image    "
 },
 {
 	"uri": "http://cli.codefresh.io/builds/",
@@ -102,42 +102,42 @@
 	"title": "Create a composition",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh create composition [name]\nCreate a composition\nPositionals    Option Default Description     name  Name of composition    Options    Option Default Description     \u0026ndash;variable  Variables list   \u0026ndash;advanced  Advanced composition   \u0026ndash;yaml  Path to yaml file to use to create the resource    "
+	"content": " Command codefresh composition [name]\nCreate a composition\nPositionals    Option Default Description     name  Name of composition    Options    Option Default Description     \u0026ndash;variable  Variables list   \u0026ndash;advanced  Advanced composition   \u0026ndash;yaml  Path to yaml file to use to create the resource    "
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/create-a-context/",
 	"title": "Create a context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh create context [type] [name]\nCreate a context\nPositionals    Option Default Description     name  Name of context   type  Type of the context    Options    Option Default Description     \u0026ndash;owner account Owner of the context   \u0026ndash;variable  Variables list    "
+	"content": " Command codefresh context [type] [name]\nCreate a context\nPositionals    Option Default Description     name  Name of context   type  Type of the context    Options    Option Default Description     \u0026ndash;owner account Owner of the context   \u0026ndash;variable  Variables list    "
 },
 {
 	"uri": "http://cli.codefresh.io/authentication/create-authentication-context/",
 	"title": "Create authentication context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh auth create-context [name]\nCreate or update an authentication context\nPositionals    Option Default Description     name default Context name    Options    Option Default Description     \u0026ndash;url https://g.codefresh.io Codefresh system custom url   \u0026ndash;api-key  API key    "
+	"content": " Command codefresh create-context [name]\nCreate or update an authentication context\nPositionals    Option Default Description     name default Context name    Options    Option Default Description     \u0026ndash;url https://g.codefresh.io Codefresh system custom url   \u0026ndash;api-key  API key    "
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/delete-a-composition/",
 	"title": "Delete a composition",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh delete composition [name]\nDelete a composition\nPositionals    Option Default Description     name  Composition name    "
+	"content": " Command codefresh composition [name]\nDelete a composition\nPositionals    Option Default Description     name  Composition name    "
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/delete-a-context/",
 	"title": "Delete a context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh delete context [name]\nDelete a context\nPositionals    Option Default Description     name  Name of context    "
+	"content": " Command codefresh context [name]\nDelete a context\nPositionals    Option Default Description     name  Name of context    "
 },
 {
 	"uri": "http://cli.codefresh.io/environments/delete-an-environment/",
 	"title": "Delete an environment",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh delete environment \u0026lt;id\u0026gt;\nDelete an environment\nPositionals    Option Default Description     id  Environment id    "
+	"content": " Command codefresh environment \u0026lt;id\u0026gt;\nDelete an environment\nPositionals    Option Default Description     id  Environment id    "
 },
 {
 	"uri": "http://cli.codefresh.io/environments/",
@@ -158,56 +158,56 @@
 	"title": "Get a single build",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get builds [id]\nGet a specific builds or an array of builds\nPositionals    Option Default Description     id  Build id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;page 1 Paginated page   \u0026ndash;status  Filter results by statuses   \u0026ndash;trigger  Filter results by triggers   \u0026ndash;pipeline-id  Filter results by pipeline id   \u0026ndash;pipeline-name  Filter results by pipeline name    "
+	"content": " Command codefresh builds [id]\nGet a specific builds or an array of builds\nPositionals    Option Default Description     id  Build id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;page 1 Paginated page   \u0026ndash;status  Filter results by statuses   \u0026ndash;trigger  Filter results by triggers   \u0026ndash;pipeline-id  Filter results by pipeline id   \u0026ndash;pipeline-name  Filter results by pipeline name    "
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/get-a-single-composition/",
 	"title": "Get a single composition",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get compositions [id|name]\nGet a specific composition or an array of compositions\nPositionals    Option Default Description     id  composition id or name    "
+	"content": " Command codefresh compositions [id|name]\nGet a specific composition or an array of compositions\nPositionals    Option Default Description     id  composition id or name    "
 },
 {
 	"uri": "http://cli.codefresh.io/environments/get-a-single-composition/",
 	"title": "Get a single composition",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get environments [id]\nGet a specific or an array of environments\nPositionals    Option Default Description     id  environment id or name    "
+	"content": " Command codefresh environments [id]\nGet a specific or an array of environments\nPositionals    Option Default Description     id  environment id or name    "
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/get-a-single-context/",
 	"title": "Get a single context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get contexts [name]\nGet a specific or an array of contexts\nPositionals    Option Default Description     name  context name    Options    Option Default Description     \u0026ndash;type  Specific type of context   \u0026ndash;owner  Owner of the context    "
+	"content": " Command codefresh contexts [name]\nGet a specific or an array of contexts\nPositionals    Option Default Description     name  context name    Options    Option Default Description     \u0026ndash;type  Specific type of context   \u0026ndash;owner  Owner of the context    "
 },
 {
 	"uri": "http://cli.codefresh.io/images/get-a-single-image/",
 	"title": "Get a single image",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get images [id]\nGet a specific or an array of images\nPositionals    Option Default Description     id  image id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   \u0026ndash;label  Filter by a list of annotated labels   \u0026ndash;sha  Filter by specific commit sha   \u0026ndash;image-name  Filter by specific image name   \u0026ndash;branch  Filter by specific branch   \u0026ndash;page 1 Paginated page    "
+	"content": " Command codefresh images [id]\nGet a specific or an array of images\nPositionals    Option Default Description     id  image id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   \u0026ndash;label  Filter by a list of annotated labels   \u0026ndash;sha  Filter by specific commit sha   \u0026ndash;image-name  Filter by specific image name   \u0026ndash;branch  Filter by specific branch   \u0026ndash;page 1 Paginated page    "
 },
 {
 	"uri": "http://cli.codefresh.io/pipelines/get-a-single-pipeline/",
 	"title": "Get a single pipeline",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get pipelines [id]\nGet a specific or an array of pipelines\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;repo-owner  Repository owner   \u0026ndash;repo-name  Repository name   \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;page 1 Paginated page   \u0026ndash;name  Filter results by pipeline name    "
+	"content": " Command codefresh pipelines [id]\nGet a specific or an array of pipelines\nPositionals    Option Default Description     id  Pipeline id    Options    Option Default Description     \u0026ndash;repo-owner  Repository owner   \u0026ndash;repo-name  Repository name   \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;page 1 Paginated page   \u0026ndash;name  Filter results by pipeline name    "
 },
 {
 	"uri": "http://cli.codefresh.io/authentication/get-activated-context/",
 	"title": "Get activated context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh auth current-context\nGet the current activated authentication context\n"
+	"content": " Command codefresh current-context\nGet the current activated authentication context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/authentication/get-all-contexts/",
 	"title": "Get all contexts",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh auth get-contexts\nGet all possible authentication contexts\n"
+	"content": " Command codefresh get-contexts\nGet all possible authentication contexts\n"
 },
 {
 	"uri": "http://cli.codefresh.io/images/",
@@ -242,14 +242,14 @@
 	"title": "Replace a composition",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh replace composition\nReplace a composition resource\n"
+	"content": " Command codefresh composition\nReplace a composition resource\n"
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/replace-a-context/",
 	"title": "Replace a context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh replace context\nReplace a context\n"
+	"content": " Command codefresh context\nReplace a context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/builds/restart-a-build/",
@@ -263,7 +263,7 @@
 	"title": "Set active context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh auth use-context \u0026lt;name\u0026gt;\nSet the current active authentication context\nPositionals    Option Default Description     context-name  a context-name that exists in cfconfig file    "
+	"content": " Command codefresh use-context \u0026lt;name\u0026gt;\nSet the current active authentication context\nPositionals    Option Default Description     context-name  a context-name that exists in cfconfig file    "
 },
 {
 	"uri": "http://cli.codefresh.io/builds/show-logs/",
@@ -305,14 +305,14 @@
 	"title": "Update a single pipeline",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh patch pipeline \u0026lt;id\u0026gt;\nApply changes to a pipeline\nPositionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     \u0026ndash;context  context in form of: type=name   \u0026ndash;engine-cluster  K8 cluster name to use for execution   \u0026ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   \u0026ndash;default-engine  Use the default engine configured by the system    "
+	"content": " Command codefresh pipeline \u0026lt;id\u0026gt;\nApply changes to a pipeline\nPositionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     \u0026ndash;context  context in form of: type=name   \u0026ndash;engine-cluster  K8 cluster name to use for execution   \u0026ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   \u0026ndash;default-engine  Use the default engine configured by the system    "
 },
 {
 	"uri": "http://cli.codefresh.io/contexts/updated-a-context/",
 	"title": "Updated a context",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh patch context\nApply changes to a context\n"
+	"content": " Command codefresh context\nApply changes to a context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/builds/wait-for-a-build-condition/",
@@ -320,18 +320,4 @@
 	"tags": [],
 	"description": "",
 	"content": " Command codefresh wait \u0026lt;id..\u0026gt;\nWait until a condition will be met on a build\nPositionals    Option Default Description     id  Build id    Options    Option Default Description     \u0026ndash;status  Build status   \u0026ndash;debug  Show debug output until the condition will be met   \u0026ndash;timeout 30 Define a timeout for the wait operation in minutes    "
-},
-{
-	"uri": "http://cli.codefresh.io/undefined/",
-	"title": "undefined",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://cli.codefresh.io/undefined/undefined/",
-	"title": "undefined",
-	"tags": [],
-	"description": "",
-	"content": " Command codefresh version\nPrint version\n"
 }]

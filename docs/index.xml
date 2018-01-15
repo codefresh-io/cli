@@ -75,7 +75,7 @@ Update to a specific version: yarn global upgrade codefresh@{VERSION}</descripti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/images/annotate-an-image/</guid>
-      <description> Command codefresh annotate image &amp;lt;id&amp;gt;
+      <description> Command codefresh image &amp;lt;id&amp;gt;
 Annotate an image
 Positionals    Option Default Description     id  Docker image full name or id    Options    Option Default Description     &amp;ndash;label  annotations to add to the image    </description>
     </item>
@@ -86,7 +86,7 @@ Positionals    Option Default Description     id  Docker image full name or id  
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/create-a-composition/</guid>
-      <description> Command codefresh create composition [name]
+      <description> Command codefresh composition [name]
 Create a composition
 Positionals    Option Default Description     name  Name of composition    Options    Option Default Description     &amp;ndash;variable  Variables list   &amp;ndash;advanced  Advanced composition   &amp;ndash;yaml  Path to yaml file to use to create the resource    </description>
     </item>
@@ -97,7 +97,7 @@ Positionals    Option Default Description     name  Name of composition    Optio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/create-a-context/</guid>
-      <description> Command codefresh create context [type] [name]
+      <description> Command codefresh context [type] [name]
 Create a context
 Positionals    Option Default Description     name  Name of context   type  Type of the context    Options    Option Default Description     &amp;ndash;owner account Owner of the context   &amp;ndash;variable  Variables list    </description>
     </item>
@@ -108,7 +108,7 @@ Positionals    Option Default Description     name  Name of context   type  Type
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/create-authentication-context/</guid>
-      <description> Command codefresh auth create-context [name]
+      <description> Command codefresh create-context [name]
 Create or update an authentication context
 Positionals    Option Default Description     name default Context name    Options    Option Default Description     &amp;ndash;url https://g.codefresh.io Codefresh system custom url   &amp;ndash;api-key  API key    </description>
     </item>
@@ -119,7 +119,7 @@ Positionals    Option Default Description     name default Context name    Optio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/delete-a-composition/</guid>
-      <description> Command codefresh delete composition [name]
+      <description> Command codefresh composition [name]
 Delete a composition
 Positionals    Option Default Description     name  Composition name    </description>
     </item>
@@ -130,7 +130,7 @@ Positionals    Option Default Description     name  Composition name    </descri
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/delete-a-context/</guid>
-      <description> Command codefresh delete context [name]
+      <description> Command codefresh context [name]
 Delete a context
 Positionals    Option Default Description     name  Name of context    </description>
     </item>
@@ -141,7 +141,7 @@ Positionals    Option Default Description     name  Name of context    </descrip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/environments/delete-an-environment/</guid>
-      <description> Command codefresh delete environment &amp;lt;id&amp;gt;
+      <description> Command codefresh environment &amp;lt;id&amp;gt;
 Delete an environment
 Positionals    Option Default Description     id  Environment id    </description>
     </item>
@@ -163,7 +163,7 @@ Positionals    Option Default Description     id  Pipeline id    Options    Opti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/builds/get-a-single-build/</guid>
-      <description> Command codefresh get builds [id]
+      <description> Command codefresh builds [id]
 Get a specific builds or an array of builds
 Positionals    Option Default Description     id  Build id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;page 1 Paginated page   &amp;ndash;status  Filter results by statuses   &amp;ndash;trigger  Filter results by triggers   &amp;ndash;pipeline-id  Filter results by pipeline id   &amp;ndash;pipeline-name  Filter results by pipeline name    </description>
     </item>
@@ -174,7 +174,7 @@ Positionals    Option Default Description     id  Build id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/get-a-single-composition/</guid>
-      <description> Command codefresh get compositions [id|name]
+      <description> Command codefresh compositions [id|name]
 Get a specific composition or an array of compositions
 Positionals    Option Default Description     id  composition id or name    </description>
     </item>
@@ -185,7 +185,7 @@ Positionals    Option Default Description     id  composition id or name    </de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/environments/get-a-single-composition/</guid>
-      <description> Command codefresh get environments [id]
+      <description> Command codefresh environments [id]
 Get a specific or an array of environments
 Positionals    Option Default Description     id  environment id or name    </description>
     </item>
@@ -196,7 +196,7 @@ Positionals    Option Default Description     id  environment id or name    </de
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/get-a-single-context/</guid>
-      <description> Command codefresh get contexts [name]
+      <description> Command codefresh contexts [name]
 Get a specific or an array of contexts
 Positionals    Option Default Description     name  context name    Options    Option Default Description     &amp;ndash;type  Specific type of context   &amp;ndash;owner  Owner of the context    </description>
     </item>
@@ -207,7 +207,7 @@ Positionals    Option Default Description     name  context name    Options    O
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/images/get-a-single-image/</guid>
-      <description> Command codefresh get images [id]
+      <description> Command codefresh images [id]
 Get a specific or an array of images
 Positionals    Option Default Description     id  image id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   &amp;ndash;label  Filter by a list of annotated labels   &amp;ndash;sha  Filter by specific commit sha   &amp;ndash;image-name  Filter by specific image name   &amp;ndash;branch  Filter by specific branch   &amp;ndash;page 1 Paginated page    </description>
     </item>
@@ -218,7 +218,7 @@ Positionals    Option Default Description     id  image id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/pipelines/get-a-single-pipeline/</guid>
-      <description> Command codefresh get pipelines [id]
+      <description> Command codefresh pipelines [id]
 Get a specific or an array of pipelines
 Positionals    Option Default Description     id  Pipeline id    Options    Option Default Description     &amp;ndash;repo-owner  Repository owner   &amp;ndash;repo-name  Repository name   &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;page 1 Paginated page   &amp;ndash;name  Filter results by pipeline name    </description>
     </item>
@@ -229,7 +229,7 @@ Positionals    Option Default Description     id  Pipeline id    Options    Opti
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/get-activated-context/</guid>
-      <description>Command codefresh auth current-context
+      <description>Command codefresh current-context
 Get the current activated authentication context</description>
     </item>
     
@@ -239,7 +239,7 @@ Get the current activated authentication context</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/get-all-contexts/</guid>
-      <description>Command codefresh auth get-contexts
+      <description>Command codefresh get-contexts
 Get all possible authentication contexts</description>
     </item>
     
@@ -260,7 +260,7 @@ Options    Option Default Description     &amp;ndash;cluster  Install on cluster
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/compositions/replace-a-composition/</guid>
-      <description>Command codefresh replace composition
+      <description>Command codefresh composition
 Replace a composition resource</description>
     </item>
     
@@ -270,7 +270,7 @@ Replace a composition resource</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/replace-a-context/</guid>
-      <description>Command codefresh replace context
+      <description>Command codefresh context
 Replace a context</description>
     </item>
     
@@ -291,7 +291,7 @@ Positionals    Option Default Description     id  Build id    Options    Option 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/authentication/set-active-context/</guid>
-      <description> Command codefresh auth use-context &amp;lt;name&amp;gt;
+      <description> Command codefresh use-context &amp;lt;name&amp;gt;
 Set the current active authentication context
 Positionals    Option Default Description     context-name  a context-name that exists in cfconfig file    </description>
     </item>
@@ -346,7 +346,7 @@ Options    Option Default Description     &amp;ndash;cluster  Install on cluster
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/pipelines/update-a-single-pipeline/</guid>
-      <description> Command codefresh patch pipeline &amp;lt;id&amp;gt;
+      <description> Command codefresh pipeline &amp;lt;id&amp;gt;
 Apply changes to a pipeline
 Positionals    Option Default Description     id  pipeline id   repo-owner  repository owner   repo-name  repository name    Options    Option Default Description     &amp;ndash;context  context in form of: type=name   &amp;ndash;engine-cluster  K8 cluster name to use for execution   &amp;ndash;engine-namespace  K8 namespace in the chosen cluster to use for execution   &amp;ndash;default-engine  Use the default engine configured by the system    </description>
     </item>
@@ -357,7 +357,7 @@ Positionals    Option Default Description     id  pipeline id   repo-owner  repo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://cli.codefresh.io/contexts/updated-a-context/</guid>
-      <description>Command codefresh patch context
+      <description>Command codefresh context
 Apply changes to a context</description>
     </item>
     
@@ -370,16 +370,6 @@ Apply changes to a context</description>
       <description> Command codefresh wait &amp;lt;id..&amp;gt;
 Wait until a condition will be met on a build
 Positionals    Option Default Description     id  Build id    Options    Option Default Description     &amp;ndash;status  Build status   &amp;ndash;debug  Show debug output until the condition will be met   &amp;ndash;timeout 30 Define a timeout for the wait operation in minutes    </description>
-    </item>
-    
-    <item>
-      <title>undefined</title>
-      <link>http://cli.codefresh.io/undefined/undefined/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cli.codefresh.io/undefined/undefined/</guid>
-      <description>Command codefresh version
-Print version</description>
     </item>
     
   </channel>

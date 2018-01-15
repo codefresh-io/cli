@@ -3,7 +3,7 @@ title = "Delete a context"
 +++
 
 ### Command
-`codefresh delete context [name]`
+`codefresh context [name]`
 
 Delete a context
 ### Positionals
