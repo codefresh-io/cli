@@ -2,6 +2,7 @@
 title = "Getting Started"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
+weight = 1
 +++
 
 Welcome to Codefresh's official CLI documentation!

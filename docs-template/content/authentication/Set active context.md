@@ -1,15 +1,11 @@
 +++
-title = "use context"
-description = "asd"
-date = "2017-04-24T18:36:24+02:00"
+title = "Set active context"
 +++
-
-## use-context
 
 ### Command
 `codefresh auth use-context <name>`
 
-undefined
+Set the current active authentication context
 ### Positionals
 
 Option | Default | Description

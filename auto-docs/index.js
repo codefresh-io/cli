@@ -6,8 +6,6 @@ const _ = require('lodash');
 
 recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files) => {
 
-    const categories = {};
-
     _.forEach(files, (file) => {
         if (!file.endsWith('.cmd.js')) {
             return;
@@ -25,17 +23,23 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
 
         const { category } = docs;
 
-
-        let finalFileString = categories[category] || '';
-
-        if (!finalFileString) {
-            finalFileString += `${docs.header}\n\n`;
-            finalFileString += `# ${docs.category}\n\n`;
+        // create a directory according to the category
+        const dir = path.resolve(__dirname, `../docs-template/content/${(category || 'undefined').toLowerCase()}`);
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
         }
 
-        finalFileString += `## ${docs.description}\n\n`;
+        // create _index.md file if does not exist for the category
+        const indexFile = path.resolve(dir, '_index.md');
+        if (!fs.existsSync(indexFile)){
+            fs.writeFileSync(indexFile, `+++\ntitle = "${category}"\n+++`);
+        }
+
+        let finalFileString = '';
+
+        finalFileString += `${docs.header}\n\n`;
         finalFileString += `### Command\n\`${docs.command}\`\n\n`;
-        finalFileString += `${docs.cliDescription}\n`;
+        finalFileString += `${docs.description}\n`;
 
         if (docs.positionals.length) {
             finalFileString += `### Positionals\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
@@ -45,12 +49,7 @@ recursive(path.resolve(__dirname, '../lib/interface/cli/commands'), (err, files)
             finalFileString += `### Options\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.options}`;
         }
 
-        categories[category] = finalFileString;
+
+        fs.writeFileSync(path.resolve(dir, `./${docs.title}.md`), finalFileString);
     });
-
-
-    _.forEach(categories, (value, key) => {
-        fs.writeFileSync(path.resolve(__dirname, `../docs-template/content/${key}.md`), value);
-    });
-
 });
