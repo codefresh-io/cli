@@ -1,29 +1,44 @@
-theme = "docuapi"
+theme = "docdock"
 baseurl = "http://cli.codefresh.io"
 title = "Codefresh CLI Documentation"
 publishDir = "../docs"
 languageCode = "en-us"
+DefaultContentLanguage = "en"
 
 
-# Code higlighting settings
-pygmentsCodefences = true
-pygmentsCodeFencesGuesSsyntax = false
-pygmentsOptions = ""
-pygmentsStyle = "monokai"
-# The monokai stylesheet is included in the base template.
-pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsStyle = "monokailight"
 
 [params]
-search = true
+editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/"
+showVisitedLinks = true # default is false
+themeStyle = "original" # "original" or "flex" # default "original"
+themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
+disableHomeIcon = false # default is false
+disableSearch = false # default is false
+disableNavChevron = false # set true to hide next/prev chevron, default is false
+highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 
-# Configure the language example tabs.
-[[params.language_tabs]]
-key = "cli"
-name = "Cli"
 
-#Languages
-[languages]
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
 
-[languages.en]
-languageName = "English"
-weight = 2
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/codefresh-io/cli"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-camera'></i> Examples"
+url = "/Examples"
+weight = 11
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bookmark'></i> Codefresh Documentation"
+identifier = "hugodoc"
+url = "https://docs.codefresh.io"
+weight = 20
