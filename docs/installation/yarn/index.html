@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32.3" />
 
-<title>Create authentication context :: Codefresh CLI Documentation</title>
+<title>YARN :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/authentication/create-authentication-context/">
+  <body data-url="/installation/yarn/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -70,9 +70,10 @@
         <span>Getting Started</span><i class="fa fa-circle-thin read-icon"></i>
       </a>
     </li>
-    <li data-nav-id="/installation/" class="dd-item">
+    <li data-nav-id="/installation/" class="dd-item parent">
       <a href="/installation/">
-        <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+        <span>Installation</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/installation/docker/" class="dd-item">
@@ -90,20 +91,19 @@
           <span>NPM</span><i class="fa fa-circle-thin read-icon"></i>
         </a>
     </li>
-      <li data-nav-id="/installation/yarn/" class="dd-item">
+      <li data-nav-id="/installation/yarn/" class="dd-item active">
         <a href="/installation/yarn/">
           <span>YARN</span><i class="fa fa-circle-thin read-icon"></i>
         </a>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/authentication/" class="dd-item parent">
+    <li data-nav-id="/authentication/" class="dd-item">
       <a href="/authentication/">
-        <span>Authentication</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+        <span>Authentication</span><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/authentication/create-authentication-context/" class="dd-item active">
+      <li data-nav-id="/authentication/create-authentication-context/" class="dd-item">
         <a href="/authentication/create-authentication-context/">
           <span>Create authentication context</span><i class="fa fa-circle-thin read-icon"></i>
         </a>
@@ -351,7 +351,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/authentication/Create%20authentication%20context.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/installation/yarn.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Edit page
       </a>
@@ -371,7 +371,7 @@
 
 
 
- <a href='/'>Introduction</a> > <a href='/authentication/'>Authentication</a> > Create authentication context
+ <a href='/'>Introduction</a> > <a href='/installation/'>Installation</a> > YARN
 
  
 
@@ -384,19 +384,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#command">Command</a></li>
-<li><a href="#positionals">Positionals</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -406,7 +394,7 @@
 
 <div id="body-inner">
   
-    <h1>Create authentication context</h1>
+    <h1>YARN</h1>
   
 
 
@@ -414,59 +402,17 @@
     
     
     
-    
+    <p>Install:
+<code>yarn global add codefresh</code></p>
 
-<h3 id="command">Command</h3>
+<p>Install a specific version:
+<code>yarn global add codefresh@{VERSION}</code></p>
 
-<p><code>codefresh auth create-context [name]</code></p>
+<p>Update to latest version:
+<code>yarn global upgrade codefresh</code></p>
 
-<p>Create or update an authentication context</p>
-
-<h3 id="positionals">Positionals</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>name</td>
-<td>default</td>
-<td>Context name</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="options">Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>&ndash;url</td>
-<td><a href="https://g.codefresh.io">https://g.codefresh.io</a></td>
-<td>Codefresh system custom url</td>
-</tr>
-
-<tr>
-<td>&ndash;api-key</td>
-<td></td>
-<td>API key</td>
-</tr>
-</tbody>
-</table>
+<p>Update to a specific version:
+<code>yarn global upgrade codefresh@{VERSION}</code></p>
 
 
     
@@ -478,8 +424,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/authentication/" title="Authentication"> <i class="fa fa-chevron-left"></i></a>
-    <a class="nav nav-next" href="/authentication/get-activated-context/" title="Get activated context" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/installation/npm/" title="NPM"> <i class="fa fa-chevron-left"></i></a>
+    <a class="nav nav-next" href="/authentication/" title="Authentication" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://cli.codefresh.io/installation/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -18,27 +23,22 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/getting-started/installation/docker/</loc>
+    <loc>http://cli.codefresh.io/installation/docker/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/getting-started/installation/download/</loc>
+    <loc>http://cli.codefresh.io/installation/download/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/getting-started/installation/</loc>
+    <loc>http://cli.codefresh.io/installation/npm/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/getting-started/installation/npm/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/getting-started/installation/yarn/</loc>
+    <loc>http://cli.codefresh.io/installation/yarn/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   

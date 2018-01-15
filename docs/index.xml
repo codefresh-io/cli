@@ -13,10 +13,10 @@
     
     <item>
       <title>Docker Image</title>
-      <link>http://cli.codefresh.io/getting-started/installation/docker/</link>
+      <link>http://cli.codefresh.io/installation/docker/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
-      <guid>http://cli.codefresh.io/getting-started/installation/docker/</guid>
+      <guid>http://cli.codefresh.io/installation/docker/</guid>
       <description>You can run the CLI using our official docker image which is published to Dockerhub
 Pull the latest version: docker pull codefresh/cli
 Pull a specific version: docker pull codefresh/cli:${VERSION}</description>
@@ -24,10 +24,10 @@ Pull a specific version: docker pull codefresh/cli:${VERSION}</description>
     
     <item>
       <title>Download</title>
-      <link>http://cli.codefresh.io/getting-started/installation/download/</link>
+      <link>http://cli.codefresh.io/installation/download/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
-      <guid>http://cli.codefresh.io/getting-started/installation/download/</guid>
+      <guid>http://cli.codefresh.io/installation/download/</guid>
       <description>Navigate to Official Releases and download the binary that matches your operating system.
 We currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 
 After downloading the binary, untar or unzip it and your are good to go.
@@ -37,10 +37,10 @@ If your operating system is missing please feel free to open us an issue in our 
     
     <item>
       <title>NPM</title>
-      <link>http://cli.codefresh.io/getting-started/installation/npm/</link>
+      <link>http://cli.codefresh.io/installation/npm/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
-      <guid>http://cli.codefresh.io/getting-started/installation/npm/</guid>
+      <guid>http://cli.codefresh.io/installation/npm/</guid>
       <description>Codefresh&amp;rsquo;s cli is available for installation through NPM registry.
 Install: npm install -g codefresh
 Install a specific version: npm install -g codefresh@{VERSION}
@@ -50,10 +50,10 @@ Update to a specific version: npm install -g codefresh@${VERSION}</description>
     
     <item>
       <title>YARN</title>
-      <link>http://cli.codefresh.io/getting-started/installation/yarn/</link>
+      <link>http://cli.codefresh.io/installation/yarn/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
-      <guid>http://cli.codefresh.io/getting-started/installation/yarn/</guid>
+      <guid>http://cli.codefresh.io/installation/yarn/</guid>
       <description>Install: yarn global add codefresh
 Install a specific version: yarn global add codefresh@{VERSION}
 Update to latest version: yarn global upgrade codefresh
