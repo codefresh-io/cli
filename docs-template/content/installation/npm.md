@@ -2,9 +2,12 @@
 title = "NPM"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
+weight = 10
 +++
 
-Codefresh's cli is available for installation through NPM registry.
+{{% alert theme="warning" %}}the CLI requires node version 8.0.0 or higer{{% /alert %}}
+
+Codefresh's CLI is available for installation through NPM registry.
 
 Install:
 `npm install -g codefresh`

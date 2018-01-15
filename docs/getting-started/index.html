@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -329,7 +329,7 @@
 
 
 
- <a href='/'>Introduction</a> > Getting Started
+ <a href='/'></a> > Getting Started
 
  
 
@@ -340,7 +340,21 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install">install</a></li>
+<li><a href="#authenticate">authenticate</a>
+<ul>
+<li>
+<ul>
+<li><a href="#that-s-it-you-are-go-to-go">That&rsquo;s it, you are go to go!</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -359,15 +373,30 @@
     
     
 
-<p>Welcome to Codefresh&rsquo;s official CLI documentation!</p>
 
-<p>Codefresh CLI provides a full and flexible interface to interact with Codefresh.<br>
-The CLI can be used to achieve the following:
-<ul>
-    <li>Perform any opeartion you would be able to do through the UI</li>
-    <li>Create complex automations from your local machine</li>
-    <li>Run complex pipeline use cases by using the CLI inside your pipeline steps</li>
-</ul></p>
+
+<h2 id="install">install</h2>
+
+<p>Install the CLI through one of the possible ways described in the <a href="/installation">Installation</a> page</p>
+
+<h2 id="authenticate">authenticate</h2>
+
+<p>In order to start working with the cli you will need to update the authentication configuration. <br />
+Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br /></p>
+
+<p>If you already have an API-KEY you can just use it.<br />
+You can generate a new one from the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page. <br />
+<div class="alert 
+alert-warning"
+ 
+role="alert">You must be an account admin to generate api keys</div>
+</p>
+
+<p>Once you have an API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
+
+<p><br /></p>
+
+<h4 id="that-s-it-you-are-go-to-go">That&rsquo;s it, you are go to go!</h4>
 
 
 

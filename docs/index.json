@@ -1,10 +1,17 @@
 [
 {
+	"uri": "http://cli.codefresh.io/",
+	"title": "",
+	"tags": [],
+	"description": "Codefresh CLI",
+	"content": " Codefresh CLI Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \nTo get started please navigate to Getting started page\n"
+},
+{
 	"uri": "http://cli.codefresh.io/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": "Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \n"
+	"content": " install Install the CLI through one of the possible ways described in the Installation page\nauthenticate In order to start working with the cli you will need to update the authentication configuration. Updating the authentication configuration is done via an API-KEY you generate from Codefresh. If you already have an API-KEY you can just use it.\nYou can generate a new one from the account settings page. You must be an account admin to generate api keys Once you have an API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\n\nThat\u0026rsquo;s it, you are go to go! "
 },
 {
 	"uri": "http://cli.codefresh.io/installation/",
@@ -14,18 +21,18 @@
 	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use npm or yarn to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by downloading a binary.\n"
 },
 {
-	"uri": "http://cli.codefresh.io/",
-	"title": "Introduction",
+	"uri": "http://cli.codefresh.io/installation/npm/",
+	"title": "NPM",
 	"tags": [],
 	"description": "",
-	"content": " Introduction Welcome to Codefresh\u0026rsquo;s official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI Create complex automations from your local machine Run complex pipeline use cases by using the CLI inside your pipeline steps \n"
+	"content": "the CLI requires node version 8.0.0 or higer Codefresh\u0026rsquo;s CLI is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
 },
 {
-	"uri": "http://cli.codefresh.io/authentication/",
-	"title": "Authentication",
+	"uri": "http://cli.codefresh.io/installation/yarn/",
+	"title": "YARN",
 	"tags": [],
-	"description": "asd",
-	"content": " Basic Usage In order to start working with the cli you will need to update the authentication configuration. Generate a new API key through the account settings page.\nOnce you have the API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\nAdvanced Usage "
+	"description": "",
+	"content": "the CLI requires node version 8.0.0 or higer Codefresh\u0026rsquo;s CLI is available for installation using YARN.\nInstall: yarn global add codefresh\nInstall a specific version: yarn global add codefresh@{VERSION}\nUpdate to latest version: yarn global upgrade codefresh\nUpdate to a specific version: yarn global upgrade codefresh@{VERSION}\n"
 },
 {
 	"uri": "http://cli.codefresh.io/installation/docker/",
@@ -42,25 +49,18 @@
 	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
 },
 {
-	"uri": "http://cli.codefresh.io/installation/npm/",
-	"title": "NPM",
+	"uri": "http://cli.codefresh.io/authentication/",
+	"title": "Authentication",
 	"tags": [],
 	"description": "",
-	"content": "Codefresh\u0026rsquo;s cli is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
-},
-{
-	"uri": "http://cli.codefresh.io/installation/yarn/",
-	"title": "YARN",
-	"tags": [],
-	"description": "",
-	"content": "Install: yarn global add codefresh\nInstall a specific version: yarn global add codefresh@{VERSION}\nUpdate to latest version: yarn global upgrade codefresh\nUpdate to a specific version: yarn global upgrade codefresh@{VERSION}\n"
+	"content": ""
 },
 {
 	"uri": "http://cli.codefresh.io/_header/",
 	"title": "header",
 	"tags": [],
 	"description": "",
-	"content": "Codefresh CLI Documentation\n"
+	"content": "Codefresh CLI\n"
 },
 {
 	"uri": "http://cli.codefresh.io/images/annotate-an-image/",

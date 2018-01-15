@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://cli.codefresh.io/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cli.codefresh.io/getting-started/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -13,12 +18,12 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/</loc>
+    <loc>http://cli.codefresh.io/installation/npm/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/authentication/</loc>
+    <loc>http://cli.codefresh.io/installation/yarn/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
@@ -33,12 +38,7 @@
   </url>
   
   <url>
-    <loc>http://cli.codefresh.io/installation/npm/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cli.codefresh.io/installation/yarn/</loc>
+    <loc>http://cli.codefresh.io/authentication/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   

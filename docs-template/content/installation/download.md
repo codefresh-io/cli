@@ -2,6 +2,7 @@
 title = "Download"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
+weight = 40
 +++
 
 Navigate to <a href="https://github.com/codefresh-io/cli/releases" target="_blank">Official Releases</a>

@@ -23,7 +23,7 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="asd">
+<meta name="description" content="">
 
 
     
@@ -41,7 +41,7 @@
       
 	
   
-    <p>Codefresh CLI Documentation</p>
+    <p><a href="/">Codefresh CLI</a></p>
 
   
 
@@ -59,16 +59,6 @@
         <span>Installation</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/installation/docker/" class="dd-item">
-        <a href="/installation/docker/">
-          <span>Docker Image</span>
-        </a>
-    </li>
-      <li data-nav-id="/installation/download/" class="dd-item">
-        <a href="/installation/download/">
-          <span>Download</span>
-        </a>
-    </li>
       <li data-nav-id="/installation/npm/" class="dd-item">
         <a href="/installation/npm/">
           <span>NPM</span>
@@ -77,6 +67,16 @@
       <li data-nav-id="/installation/yarn/" class="dd-item">
         <a href="/installation/yarn/">
           <span>YARN</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/docker/" class="dd-item">
+        <a href="/installation/docker/">
+          <span>Docker Image</span>
+        </a>
+    </li>
+      <li data-nav-id="/installation/download/" class="dd-item">
+        <a href="/installation/download/">
+          <span>Download</span>
         </a>
     </li>
         </ul>
@@ -330,7 +330,7 @@
 
 
 
- <a href='/'>Introduction</a> > Authentication
+ <a href='/'></a> > Authentication
 
  
 
@@ -341,15 +341,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#basic-usage">Basic Usage</a></li>
-<li><a href="#advanced-usage">Advanced Usage</a></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -370,14 +362,99 @@
 
 
 
-<h2 id="basic-usage">Basic Usage</h2>
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
 
-<p>In order to start working with the cli you will need to update the authentication configuration. <br />
-Generate a new API key through the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page.</p>
+</div>
 
-<p>Once you have the API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
 
-<h2 id="advanced-usage">Advanced Usage</h2>
+   <article class="post authentication">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/authentication/create-authentication-context/">Create authentication context</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> Command codefresh create-context [name]
+Create or update an authentication context
+Positionals    Option Default Description     name default Context name    Options    Option Default Description     &ndash;url https://g.codefresh.io Codefresh system custom url   &ndash;api-key  API key     <a class="read-more" href="/authentication/create-authentication-context/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post authentication">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/authentication/get-activated-context/">Get activated context</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Command codefresh current-context
+Get the current activated authentication context <a class="read-more" href="/authentication/get-activated-context/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post authentication">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/authentication/get-all-contexts/">Get all contexts</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Command codefresh get-contexts
+Get all possible authentication contexts <a class="read-more" href="/authentication/get-all-contexts/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post authentication">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/authentication/set-active-context/">Set active context</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> Command codefresh use-context &lt;name&gt;
+Set the current active authentication context
+Positionals    Option Default Description     context-name  a context-name that exists in cfconfig file     <a class="read-more" href="/authentication/set-active-context/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
 
 
 
