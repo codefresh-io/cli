@@ -1,5 +1,5 @@
 name: new-pipeline
-account: 59d33c4e9f75220a3710b2ee
+#account: 59d33c4e9f75220a3710b2ee
 metadata:
   labels:
     repo: github:ArikMaor/ping-server
@@ -9,7 +9,7 @@ spec:
       repo: ArikMaor/ping-server
       events: [push, pullrequest]
       branchRegex: '.'
-  contexts: ['lala']
+  contexts: []
   variables:
     - key: PORT
       value: 3000
