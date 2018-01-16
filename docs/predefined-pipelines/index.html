@@ -192,9 +192,9 @@
           <span>Replace a context</span>
         </a>
     </li>
-      <li data-nav-id="/contexts/updated-a-context/" class="dd-item">
-        <a href="/contexts/updated-a-context/">
-          <span>Updated a context</span>
+      <li data-nav-id="/contexts/update-a-context/" class="dd-item">
+        <a href="/contexts/update-a-context/">
+          <span>Update a context</span>
         </a>
     </li>
         </ul>
@@ -243,21 +243,6 @@
         <span>Pipelines</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/pipelines/execute-a-pipeline/" class="dd-item">
-        <a href="/pipelines/execute-a-pipeline/">
-          <span>Execute a pipeline</span>
-        </a>
-    </li>
-      <li data-nav-id="/pipelines/get-a-single-pipeline/" class="dd-item">
-        <a href="/pipelines/get-a-single-pipeline/">
-          <span>Get a single pipeline</span>
-        </a>
-    </li>
-      <li data-nav-id="/pipelines/update-a-single-pipeline/" class="dd-item">
-        <a href="/pipelines/update-a-single-pipeline/">
-          <span>Update a single pipeline</span>
-        </a>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/predefined-pipelines/" class="dd-item parent active">
@@ -266,9 +251,14 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-      <li data-nav-id="/predefined-pipelines/install-or-upgrade-helm-chart/" class="dd-item">
-        <a href="/predefined-pipelines/install-or-upgrade-helm-chart/">
-          <span>Install or upgrade Helm chart</span>
+      <li data-nav-id="/predefined-pipelines/delete-a-helm-release/" class="dd-item">
+        <a href="/predefined-pipelines/delete-a-helm-release/">
+          <span>Delete a helm release</span>
+        </a>
+    </li>
+      <li data-nav-id="/predefined-pipelines/install-or-upgrade-a-helm-chart/" class="dd-item">
+        <a href="/predefined-pipelines/install-or-upgrade-a-helm-chart/">
+          <span>Install or upgrade a Helm chart</span>
         </a>
     </li>
       <li data-nav-id="/predefined-pipelines/test-a-helm-release/" class="dd-item">
@@ -347,6 +337,8 @@
 <ul>
 <li>
 <ul>
+<li><a href="#delete-a-helm-release-delete-a-helm-release"><a href="delete-a-helm-release">Delete a helm release</a></a></li>
+<li><a href="#install-or-upgrade-a-helm-chart-install-or-upgrade-a-helm-chart"><a href="install-or-upgrade-a-helm-chart">Install or upgrade a Helm chart</a></a></li>
 <li><a href="#test-a-helm-release-test-a-helm-release"><a href="test-a-helm-release">Test a helm release</a></a></li>
 </ul></li>
 </ul></li>
@@ -371,6 +363,19 @@
     
 
 
+
+<h3 id="delete-a-helm-release-delete-a-helm-release"><a href="delete-a-helm-release">Delete a helm release</a></h3>
+
+<p><code>codefresh delete-release [name]</code></p>
+
+<p>Delete a helm release</p>
+
+<h3 id="install-or-upgrade-a-helm-chart-install-or-upgrade-a-helm-chart"><a href="install-or-upgrade-a-helm-chart">Install or upgrade a Helm chart</a></h3>
+
+<p><code>codefresh install-chart</code></p>
+
+<p>Install or upgrade a Helm chart
+            Repository flag can be either absolute url or saved repository in Codefresh</p>
 
 <h3 id="test-a-helm-release-test-a-helm-release"><a href="test-a-helm-release">Test a helm release</a></h3>
 

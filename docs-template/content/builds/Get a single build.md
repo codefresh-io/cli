@@ -3,7 +3,7 @@ title = "Get a single build"
 +++
 
 ### Command
-`codefresh builds [id]`
+`codefresh get builds [id]`
 
 Get a specific build or an array of builds
 ### Positionals

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32.3" />
 
-<title>Get a single image :: Codefresh CLI Documentation</title>
+<title>Install or upgrade a Helm chart :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/images/get-a-single-image/">
+  <body data-url="/predefined-pipelines/install-or-upgrade-a-helm-chart/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -216,10 +216,9 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/images/" class="dd-item parent">
+    <li data-nav-id="/images/" class="dd-item">
       <a href="/images/">
-        <span>Images</span>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+        <span>Images</span><i class="fa fa-angle-right fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/images/annotate-an-image/" class="dd-item">
@@ -227,7 +226,7 @@
           <span>Annotate an image</span>
         </a>
     </li>
-      <li data-nav-id="/images/get-a-single-image/" class="dd-item active">
+      <li data-nav-id="/images/get-a-single-image/" class="dd-item">
         <a href="/images/get-a-single-image/">
           <span>Get a single image</span>
         </a>
@@ -261,9 +260,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/predefined-pipelines/" class="dd-item">
+    <li data-nav-id="/predefined-pipelines/" class="dd-item parent">
       <a href="/predefined-pipelines/">
-        <span>Predefined Pipelines</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>Predefined Pipelines</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/predefined-pipelines/delete-a-helm-release/" class="dd-item">
@@ -271,7 +271,7 @@
           <span>Delete a helm release</span>
         </a>
     </li>
-      <li data-nav-id="/predefined-pipelines/install-or-upgrade-a-helm-chart/" class="dd-item">
+      <li data-nav-id="/predefined-pipelines/install-or-upgrade-a-helm-chart/" class="dd-item active">
         <a href="/predefined-pipelines/install-or-upgrade-a-helm-chart/">
           <span>Install or upgrade a Helm chart</span>
         </a>
@@ -338,7 +338,7 @@
 
 
 
- <a href='/'></a> > <a href='/images/'>Images</a> > Get a single image
+ <a href='/'></a> > <a href='/predefined-pipelines/'>Predefined Pipelines</a> > Install or upgrade a Helm chart
 
  
 
@@ -358,7 +358,6 @@
 <li>
 <ul>
 <li><a href="#command">Command</a></li>
-<li><a href="#positionals">Positionals</a></li>
 <li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
@@ -373,7 +372,7 @@
 
 <div id="body-inner">
   
-    <h1>Get a single image</h1>
+    <h1>Install or upgrade a Helm chart</h1>
   
 
 
@@ -385,29 +384,10 @@
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get images [id]</code></p>
+<p><code>codefresh install-chart</code></p>
 
-<p>Get a specific or an array of images</p>
-
-<h3 id="positionals">Positionals</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td>image id</td>
-</tr>
-</tbody>
-</table>
+<p>Install or upgrade a Helm chart
+            Repository flag can be either absolute url or saved repository in Codefresh</p>
 
 <h3 id="options">Options</h3>
 
@@ -422,45 +402,57 @@
 
 <tbody>
 <tr>
-<td>&ndash;limit</td>
-<td>25</td>
-<td>Limit amount of returned results</td>
-</tr>
-
-<tr>
-<td>&ndash;all</td>
+<td>&ndash;cluster</td>
 <td></td>
-<td>Return images from all possible registries (by default only r.cfcr.io images will be returned)</td>
+<td>Install on cluster</td>
 </tr>
 
 <tr>
-<td>&ndash;label</td>
+<td>&ndash;namespace</td>
+<td>default</td>
+<td>Install on namespace</td>
+</tr>
+
+<tr>
+<td>&ndash;tiller-namespace</td>
+<td>kube-system</td>
+<td>Where tiller has been installed</td>
+</tr>
+
+<tr>
+<td>&ndash;repository</td>
 <td></td>
-<td>Filter by a list of annotated labels</td>
+<td>Helm repository (absolute url or name of context with type help-repository)</td>
 </tr>
 
 <tr>
-<td>&ndash;sha</td>
+<td>&ndash;name</td>
 <td></td>
-<td>Filter by specific commit sha</td>
+<td>Name of the chart in the repository</td>
 </tr>
 
 <tr>
-<td>&ndash;image-name</td>
+<td>&ndash;version</td>
 <td></td>
-<td>Filter by specific image name</td>
+<td>Version of the chart in the repository</td>
 </tr>
 
 <tr>
-<td>&ndash;branch</td>
+<td>&ndash;context</td>
 <td></td>
-<td>Filter by specific branch</td>
+<td>Contexts (yaml</td>
 </tr>
 
 <tr>
-<td>&ndash;page</td>
-<td>1</td>
-<td>Paginated page</td>
+<td>&ndash;detach</td>
+<td></td>
+<td>Run pipeline and print build ID</td>
+</tr>
+
+<tr>
+<td>&ndash;release-name</td>
+<td></td>
+<td>The name to set to the release</td>
 </tr>
 </tbody>
 </table>

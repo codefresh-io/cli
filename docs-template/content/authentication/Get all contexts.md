@@ -3,6 +3,6 @@ title = "Get all contexts"
 +++
 
 ### Command
-`codefresh get-contexts`
+`codefresh auth get-contexts`
 
 Get all possible authentication contexts

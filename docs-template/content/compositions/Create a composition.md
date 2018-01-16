@@ -3,7 +3,7 @@ title = "Create a composition"
 +++
 
 ### Command
-`codefresh composition [name]`
+`codefresh create composition [name]`
 
 Create a composition
 ### Positionals

@@ -3,7 +3,7 @@ title = "Update a single pipeline"
 +++
 
 ### Command
-`codefresh pipeline <id>`
+`codefresh patch pipeline <id>`
 
 Apply changes to a pipeline
 ### Positionals

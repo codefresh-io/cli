@@ -3,6 +3,6 @@ title = "Update a context"
 +++
 
 ### Command
-`codefresh context`
+`codefresh patch context`
 
 Apply changes to a context

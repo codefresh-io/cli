@@ -3,7 +3,7 @@ title = "Get a single pipeline"
 +++
 
 ### Command
-`codefresh pipelines [id]`
+`codefresh get pipelines [id]`
 
 Get a specific or an array of pipelines
 ### Positionals
