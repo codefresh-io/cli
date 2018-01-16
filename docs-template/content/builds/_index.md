@@ -7,15 +7,15 @@ title = "Builds"
 
 Get a specific build or an array of builds
 
-### [Restart a build](restart-a-build)
-`codefresh restart <id>`
-
-Restart a build by its id
-
 ### [Show logs](show-logs)
 `codefresh logs <id>`
 
 Show logs of a build
+
+### [Restart a build](restart-a-build)
+`codefresh restart <id>`
+
+Restart a build by its id
 
 ### [Terminate a build](terminate-a-build)
 `codefresh terminate <id>`
