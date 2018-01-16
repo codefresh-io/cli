@@ -1,5 +1,4 @@
-name: new-pipeline
-account: 59d33c4e9f75220a3710b2ee
+name: new-pipeline-git
 metadata:
   labels:
     repo: github:ArikMaor/ping-server
@@ -9,7 +8,7 @@ spec:
       repo: ArikMaor/ping-server
       events: [push, pullrequest]
       branchRegex: '.'
-  contexts: ['lala']
+  contexts: []
   variables:
     - key: PORT
       value: 3000
@@ -19,6 +18,5 @@ spec:
       encrypted: true
   source:
     location: git
-    repo: ArikMaor/ping-server
+    repo: codefresh-io/cli
     path: codefresh.yml
-  

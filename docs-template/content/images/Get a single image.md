@@ -18,6 +18,7 @@ Option | Default | Description
 --limit | 25 | Limit amount of returned results
 --all |  | Return images from all possible registries (by default only r.cfcr.io images will be returned)
 --label |  | Filter by a list of annotated labels
+--tag |  | Filter by a list of tags
 --sha |  | Filter by specific commit sha
 --image-name |  | Filter by specific image name
 --branch |  | Filter by specific branch

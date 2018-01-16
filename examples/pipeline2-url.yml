@@ -2,7 +2,7 @@ name: new-pipeline-url
 #account: 59d33c4e9f75220a3710b2ee
 metadata:
   labels:
-    repo: github:ArikMaor/ping-server
+    repo: github:codefresh-io/cli
 spec:
   triggers:
     - type: scm

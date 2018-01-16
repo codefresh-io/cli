@@ -95,7 +95,7 @@
 	"title": "Contexts",
 	"tags": [],
 	"description": "",
-	"content": " Update a context codefresh patch context\nApply changes to a context\nCreate a context codefresh create context [type] [name]\nCreate a context\nDelete a context codefresh delete context [name]\nDelete a context\nGet a single context codefresh get contexts [name]\nGet a specific or an array of contexts\nReplace a context codefresh replace context\nReplace a context\n"
+	"content": " Create a context codefresh create context [type] [name]\nCreate a context\nUpdate a context codefresh patch context\nApply changes to a context\nDelete a context codefresh delete context [name]\nDelete a context\nGet a single context codefresh get contexts [name]\nGet a specific or an array of contexts\nReplace a context codefresh replace context\nReplace a context\n"
 },
 {
 	"uri": "http://cli.codefresh.io/compositions/create-a-composition/",
@@ -200,7 +200,7 @@
 	"title": "Get a single image",
 	"tags": [],
 	"description": "",
-	"content": " Command codefresh get images [id]\nGet a specific or an array of images\nPositionals    Option Default Description     id  image id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   \u0026ndash;label  Filter by a list of annotated labels   \u0026ndash;sha  Filter by specific commit sha   \u0026ndash;image-name  Filter by specific image name   \u0026ndash;branch  Filter by specific branch   \u0026ndash;page 1 Paginated page    "
+	"content": " Command codefresh get images [id]\nGet a specific or an array of images\nPositionals    Option Default Description     id  image id    Options    Option Default Description     \u0026ndash;limit 25 Limit amount of returned results   \u0026ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   \u0026ndash;label  Filter by a list of annotated labels   \u0026ndash;tag  Filter by a list of tags   \u0026ndash;sha  Filter by specific commit sha   \u0026ndash;image-name  Filter by specific image name   \u0026ndash;branch  Filter by specific branch   \u0026ndash;page 1 Paginated page    "
 },
 {
 	"uri": "http://cli.codefresh.io/pipelines/get-a-single-pipeline/",

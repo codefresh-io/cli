@@ -231,7 +231,7 @@ Positionals    Option Default Description     name  context name    Options    O
       <guid>http://cli.codefresh.io/images/get-a-single-image/</guid>
       <description> Command codefresh get images [id]
 Get a specific or an array of images
-Positionals    Option Default Description     id  image id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   &amp;ndash;label  Filter by a list of annotated labels   &amp;ndash;sha  Filter by specific commit sha   &amp;ndash;image-name  Filter by specific image name   &amp;ndash;branch  Filter by specific branch   &amp;ndash;page 1 Paginated page    </description>
+Positionals    Option Default Description     id  image id    Options    Option Default Description     &amp;ndash;limit 25 Limit amount of returned results   &amp;ndash;all  Return images from all possible registries (by default only r.cfcr.io images will be returned)   &amp;ndash;label  Filter by a list of annotated labels   &amp;ndash;tag  Filter by a list of tags   &amp;ndash;sha  Filter by specific commit sha   &amp;ndash;image-name  Filter by specific image name   &amp;ndash;branch  Filter by specific branch   &amp;ndash;page 1 Paginated page    </description>
     </item>
     
     <item>

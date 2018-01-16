@@ -2,15 +2,15 @@
 title = "Contexts"
 +++
 
-### [Update a context](update-a-context)
-`codefresh patch context`
-
-Apply changes to a context
-
 ### [Create a context](create-a-context)
 `codefresh create context [type] [name]`
 
 Create a context
+
+### [Update a context](update-a-context)
+`codefresh patch context`
+
+Apply changes to a context
 
 ### [Delete a context](delete-a-context)
 `codefresh delete context [name]`
