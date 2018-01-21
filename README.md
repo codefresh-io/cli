@@ -1,20 +1,23 @@
-#Codefresh-cli
+# Codefresh-cli
 [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=codefresh-io&repoName=cli&branch=master&pipelineName=build&accountName=codefresh-inc&type=cf-1)]( https://g.codefresh.io/repositories/codefresh-io/cli/builds?filter=trigger:build;branch:master;service:5a4c94b54e6e5f0001c4f913~build)
-Codefresh CLi provides a full and flexible interface to interact with Codefresh.
+
+Codefresh CLI provides a full and flexible interface to interact with Codefresh.
 
 ![demo](https://media.giphy.com/media/l3diTH6dKxGnXZcNa/giphy.gif)
 
-##Install
+## Install
 In case you have node.js installed you can easily install with NPM.
 
 `npm install -g codefresh`
 
 For other installation possibilities check out the <a href="http://cli.codefresh.io/installation" target="_blank">installation documentation</a>.
 
-##Authenticate
+## Authenticate
+Generate a new api key from the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page.
 
+`codefresh auth create-context --api-key {{API_KEY}}`
 
-##Usage
+## Usage
 ```$xslt
 codefresh <command>
 
@@ -45,5 +48,5 @@ Options:
   --help      Show help  [boolean]
 ```
 
-##Documentation
+## Documentation
 For more information please visit the official <a href="http://cli.codefresh.io" target="_blank">CLI documentation</a> site.
