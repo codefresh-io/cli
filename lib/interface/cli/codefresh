@@ -62,13 +62,21 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .version(false)
         .help('help')
         .epilogue(`
-  ___|           |       _|               |       ___| |    _ _|
- |      _ \\   _\` |  _ \\ |    __| _ \\  __| __ \\   |     |      | 
- |     (   | (   |  __/ __| |    __/\\__ \\ | | |  |     |      | 
-\\____|\\___/ \\__,_|\\___|_|  _|  \\___|____/_| |_| \\____|_____|___|
- 
- 
-For more information, find our official documentation at http://cli.codefresh.io                                                                
+       ##                               ##            
+    ####                                 ####         
+   ###   //                                ###       
+  ###    ////////              /////////    ###      
+ ###      /// //////       ////////////      ###      
+####      /////  //////   ////////////       ####     
+####       /////  ///////  //////////        ####     
+####        ///////   /////  //////          ####     
+####          //////   ////  ////            ####     
+ ###           ////////////  //              ###      
+  ###              ////////                 ###      
+   ###                   ////              ###        
+     ###                    ///          ###         
+       ##                               ##
+\n\n\rFor more information, find our official documentation at http://cli.codefresh.io                                                                                                                                      
 `)
         // .option('help', {
         //     global: false,
