@@ -12,7 +12,8 @@ steps:
       - "yarn build-public-docs"
       - "echo Push new docs to gh-pages detached branch"
       - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}"'
-
+    environment:
+        - HUGO_VERSION=0.32
 
   fail_if_not_master:
     title: "Validate running on master branch"
