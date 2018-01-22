@@ -93,12 +93,16 @@ steps:
 
   update_documentation:
     title: "Update documentation http://cli.codefresh.io"
-    image: codefresh/cli-build
+    image: docker:18.01
     commands:
-      - "yarn install"
+      - "apk update && apk add git nodejs"
+      - "npm install"
+      - "echo cleaning previous public dir and recreating worktree"
+      - "rm -rf public && git worktree add -B gh-pages public origin/gh-pages"
       - "echo Building public docs"
-      - "yarn build-public-docs"
+      - "npm run build-public-docs"
       - "echo Push new docs to gh-pages detached branch"
-      - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}"'
+      - 'git config --global user.email "auto-ci@codefresh.io" && git config --global user.name "Automated CI"'
+      - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}" && git push https://${{GITHUB_TOKEN}}@github.com/codefresh-io/cli.git'
     environment:
         - HUGO_VERSION=0.32.0
