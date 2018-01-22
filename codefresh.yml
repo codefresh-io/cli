@@ -40,4 +40,4 @@ steps:
     commands:
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
-      - "git tag | grep $PACKAGE_VERSION; if [ $? -eq 0 ]; then codefresh run 5a4c94d282ed4d00012b54e8 -b=master; else echo Not running release flow because version has not changed; fi"
+      - "git tag | grep $PACKAGE_VERSION; if [ $? -eq 0 ]; then codefresh run 5a4c94d282ed4d00012b54e8 -b=master --detach; else echo Not running release flow because version has not changed; fi"
