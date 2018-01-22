@@ -10,7 +10,7 @@ steps:
       - "yarn install"
       - "echo Building public docs"
       - "yarn build-public-docs"
-      - "Push new docs to gh-pages detached branch"
+      - "echo Push new docs to gh-pages detached branch"
       - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}"'
 
 
