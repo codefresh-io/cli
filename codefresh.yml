@@ -33,3 +33,4 @@ steps:
     candidate: ${{build_step}}
     tag: ${{CF_SHORT_REVISION}}
     registry: "CFCR"
+

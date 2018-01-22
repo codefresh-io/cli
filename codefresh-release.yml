@@ -3,6 +3,16 @@ version: '1.0'
 
 steps:
 
+  update_documentation:
+    title: "Update documentation http://cli.codefresh.io"
+    image: codefresh/cli-build
+    commands:
+      - "echo Building public docs"
+      - "yarn build-public-docs"
+      - "Push new docs to gh-pages detached branch"
+      - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}"'
+
+
   fail_if_not_master:
     title: "Validate running on master branch"
     image: codefresh/cli-build
@@ -89,13 +99,3 @@ steps:
       - "mv ./dist/codefresh-win.exe ./dist/codefresh.exe"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh.exe "
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
-
-
-  update_documentation:
-    title: "Update documentation http://cli.codefresh.io"
-    image: codefresh/cli-build
-    commands:
-      - "echo Building public docs"
-      - "yarn build-public-docs"
-      - "Push new docs to gh-pages detached branch"
-      - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}"'
