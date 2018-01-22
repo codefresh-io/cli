@@ -41,7 +41,7 @@ steps:
       - 'apk update && apk add jq'
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
-      - "git tag | grep $PACKAGE_VERSION; if [ $? -eq 0 ]; then echo Not running release flow because version has not changed; else echo running; fi"
+      - 'git tag | grep $PACKAGE_VERSION; if [ $? -eq 0 ]; then echo "Not running release flow because version has not changed"; else echo "running"; fi'
     when:
       branch:
         only: [ master ]
