@@ -37,11 +37,12 @@ steps:
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
     image: codefresh/cli
+    fail_fast: false
     commands:
       - 'apk update && apk add jq'
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
-      - 'git tag | grep $PACKAGE_VERSION; if [ $? -eq 0 ]; then echo "Not running release flow because version has not changed"; else echo "running"; fi'
+      - "git tag $PACKAGE_VERSION && echo Running release pipeline && codefresh run 5a4c94d282ed4d00012b54e8 -b=master --detach"
     when:
       branch:
         only: [ master ]
