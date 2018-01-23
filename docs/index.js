@@ -66,7 +66,7 @@ const createAutomatedDocs = async () => {
         const formattedTitle = docs.title.replace(/\s+/g, '-')
             .toLowerCase();
         finalCategoryFileString += `### [${docs.title}](${formattedTitle})\n`;
-        finalCategoryFileString += `\`${docs.command}\`\n\n`;
+        finalCategoryFileString += `\`${docs.command[0]}\`\n\n`;
         finalCategoryFileString += `${docs.description}\n\n`;
         finalCategoryFileString += `${docs.usage}\n\n`;
         categories[category] = finalCategoryFileString;
@@ -81,6 +81,11 @@ const createAutomatedDocs = async () => {
         let finalFileString = '';
 
         finalFileString += `${docs.header}\n\n`;
+
+        finalFileString += '### Description\n\n';
+        finalFileString += `${docs.description}\n\n`;
+        finalFileString += `${docs.usage}\n`;
+
         const mainCommand = docs.command.shift();
         finalFileString += `### Command\n\`${mainCommand}\``;
 
@@ -91,9 +96,6 @@ const createAutomatedDocs = async () => {
             });
         }
         finalFileString += '\n\n';
-        finalFileString += '### Description\n\n';
-        finalFileString += `${docs.description}\n\n`;
-        finalFileString += `${docs.usage}\n`;
 
         if (docs.positionals.length) {
             finalFileString +=
