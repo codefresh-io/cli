@@ -68,6 +68,7 @@ const createAutomatedDocs = async () => {
         finalCategoryFileString += `### [${docs.title}](${formattedTitle})\n`;
         finalCategoryFileString += `\`${docs.command}\`\n\n`;
         finalCategoryFileString += `${docs.description}\n\n`;
+        finalCategoryFileString += `${docs.usage}\n\n`;
         categories[category] = finalCategoryFileString;
 
 
@@ -81,16 +82,27 @@ const createAutomatedDocs = async () => {
 
         finalFileString += `${docs.header}\n\n`;
         finalFileString += `### Command\n\`${docs.command}\`\n\n`;
-        finalFileString += `${docs.description}\n`;
+        finalFileString += '### Description\n\n';
+        finalFileString += `${docs.description}\n\n`;
+        finalFileString += `${docs.usage}\n`;
 
         if (docs.positionals.length) {
-            finalFileString += `### Positionals\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
+            finalFileString +=
+                `### Positionals\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
         }
 
-        if (docs.options.length) {
-            finalFileString += `### Options\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.options}`;
+        if (docs.options) {
+            let optionsString = '';
+            _.forEach(docs.options, (options, group) => {
+                optionsString = `### ${group}\n\nOption | Default | Description\n--------- | ----------- | -----------\n${options}` + optionsString;
+            });
+            finalFileString += optionsString;
         }
 
+        if (docs.examples.length) {
+            finalFileString +=
+                `### Examples\n\n${docs.examples}`;
+        }
 
         fs.writeFileSync(path.resolve(dir, `./${docs.title}.md`), finalFileString);
     });
@@ -102,9 +114,13 @@ const createAutomatedDocs = async () => {
 };
 
 const main = async () => {
-    await deleteTempFolder();
-    await copyTemplateToTmp();
-    await createAutomatedDocs();
+    try {
+        await deleteTempFolder();
+        await copyTemplateToTmp();
+        await createAutomatedDocs();
+    } catch (err) {
+        console.error(err.stack);
+    }
 };
 
 main();

@@ -61,23 +61,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         .wrap(null)
         .version(false)
         .help('help')
-        .epilogue(`
-       ##                               ##            
-    ####                                 ####         
-   ###   //                                ###       
-  ###    ////////              /////////    ###      
- ###      /// //////       ////////////      ###      
-####      /////  //////   ////////////       ####     
-####       /////  ///////  //////////        ####     
-####        ///////   /////  //////          ####     
-####          //////   ////  ////            ####     
- ###           ////////////  //              ###      
-  ###              ////////                 ###      
-   ###                   ////              ###        
-     ###                    ///          ###         
-       ##                               ##
-\n\n\rFor more information, find our official documentation at http://cli.codefresh.io                                                                                                                                      
-`)
+        .epilogue('For more information, find our official documentation at http://cli.codefresh.io')
         // .option('help', {
         //     global: false,
         // })
