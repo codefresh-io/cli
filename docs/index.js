@@ -81,7 +81,16 @@ const createAutomatedDocs = async () => {
         let finalFileString = '';
 
         finalFileString += `${docs.header}\n\n`;
-        finalFileString += `### Command\n\`${docs.command}\`\n\n`;
+        const mainCommand = docs.command.shift();
+        finalFileString += `### Command\n\`${mainCommand}\``;
+
+        if (docs.command.length) {
+            finalFileString += `\n\n#### Aliases\n`;
+            _.forEach(docs.command, (command) => {
+                finalFileString += `\n\n\`${command}\``;
+            });
+        }
+        finalFileString += '\n\n';
         finalFileString += '### Description\n\n';
         finalFileString += `${docs.description}\n\n`;
         finalFileString += `${docs.usage}\n`;
