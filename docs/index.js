@@ -88,7 +88,7 @@ const createAutomatedDocs = async () => {
 
         if (docs.positionals.length) {
             finalFileString +=
-                `### Positionals\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
+                `### Arguments\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
         }
 
         if (docs.options) {
