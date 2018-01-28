@@ -1,9 +1,9 @@
 apiVersion: v1
-kind: context
+kind: pipeline
 name: new-pipeline
 metadata:
   labels:
-    repo: github:ArikMaor/ping-server
+    repo: ArikMaor/ping-server
 spec:
   triggers:
     - type: scm
