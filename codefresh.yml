@@ -46,3 +46,16 @@ steps:
     when:
       branch:
         only: [ master ]
+
+  update_homebrew_formula:
+    title: "Update Homebrew formula in case version was changed"
+    image: codefresh/cli
+    fail_fast: false
+    commands:
+      - 'apk update && apk add jq'
+      - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
+      - "echo Current version: $PACKAGE_VERSION"
+      - "git tag $PACKAGE_VERSION && echo Updating Homebrew formula && codefresh run 5a6f1c9804e70e0001b3acad -b=master --detach"
+    when:
+      branch:
+        only: [ master ]

@@ -2,15 +2,15 @@ version: '1.0'
 
 steps:
 
-  # fail_if_not_master:
-  #   title: "Validate running on master branch"
-  #   image: codefresh/cli-build
-  #   commands:
-  #     - 'echo This pipeline should be run only on master'
-  #     - 'exit 1'
-  #   when:
-  #     branch:
-  #       ignore: [ master ]
+  fail_if_not_master:
+    title: "Validate running on master branch"
+    image: codefresh/cli-build
+    commands:
+      - 'echo This pipeline should be run only on master'
+      - 'exit 1'
+    when:
+      branch:
+        ignore: [ master ]
 
   extract_version:
     title: "Exporting package.json version"
