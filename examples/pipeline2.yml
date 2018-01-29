@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: pipeline
-name: new-pipeline
 metadata:
+  name: new-pipeline
   labels:
     repo: ArikMaor/ping-server
+    appPort: 3000
 spec:
   triggers:
     - type: scm
