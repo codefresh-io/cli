@@ -3,7 +3,7 @@
 
 Codefresh CLI provides a full and flexible interface to interact with Codefresh.
 
-![demo](https://media.giphy.com/media/l3diTH6dKxGnXZcNa/giphy.gif)
+![demo](cli.gif)
 
 ## Install
 In case you have node.js installed you can easily install with NPM.
