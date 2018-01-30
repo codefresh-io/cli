@@ -106,3 +106,21 @@ steps:
       - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}" && git push https://${{GITHUB_TOKEN}}@github.com/codefresh-io/cli.git'
     environment:
         - HUGO_VERSION=0.32.0
+
+  update_brew_formula:
+    title: "Updating homebrew formula"
+    image: codefresh/cli-build
+    commands:
+      - VERSION=v${{PACKAGE_VERSION}}
+      - curl -L https://github.com/codefresh-io/cli/releases/download/$VERSION/codefresh-$VERSION-macos-x64.tar.gz > $VERSION.tar.gz
+      - echo "compute SHA256 ..."
+      - SHA256="$(shasum -a 256 ./$VERSION.tar.gz | awk '{print $1}')"
+      - echo "generate file from template ..."
+      - sed -e "s/{{ VERSION }}/$VERSION/g" -e "s/{{ SHA256 }}/$SHA256/g" ./brew/template.rb > codefresh.rb
+      - echo "Updating file in GitHub"
+      - |
+        curl -v -i -X PUT -H 'Authorization: token '${{COMMIT_TOKEN}}'' -d "{ \
+          \"message\": \"update formula version $VERSION\", \
+          \"content\": \"$(openssl base64 -A -in codefresh.rb)\", \
+          \"sha\": $(curl -X GET https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb | jq .sha) \
+          }" https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb
