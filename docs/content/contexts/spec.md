@@ -22,7 +22,7 @@ The default is `account`. <br>
 
 ### Examples
 
-#### Create a Context of type config with two keys
+#### Context of type config with two keys
 ```yaml
 apiVersion: "v1"
 kind: "context"
