@@ -1,7 +1,0 @@
-contexts:
-  default:
-    type: APIKey
-    name: blabla
-    url: 'https://g.codefresh.io'
-    token: 5a4e0b118f2eba0100b538c8.d732aaae8b55fc99a359735644399cdc
-current-context: default

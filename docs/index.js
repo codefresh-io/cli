@@ -8,7 +8,8 @@ const _ = require('lodash');
 
 const TEMP_DIR = path.resolve(__dirname, '../temp');
 const TEMPLATE_DIR = path.resolve(__dirname);
-const FILES_TO_IGNORE = ['index.js'];
+const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/pipelines v2/spec.md'];
+const baseDir = path.resolve(TEMP_DIR, './content');
 
 
 const deleteTempFolder = async () => {
@@ -29,16 +30,160 @@ const copyTemplateToTmp = async () => {
     });
 };
 
+/**
+ * creates a specific command content and file
+ * in case the file already exists in the base docs folder it will extend it
+ * possible extensions are: HEADER, DESCRIPTION, COMMANDS, ARGUMENTS, OPTIONS
+ */
+const createCommandFile = async (docs) => {
+    const { category } = docs;
+    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
+
+    const commandFilePath = path.resolve(dir, `./${docs.title}.md`);
+    let finalFileString = '';
+    let skeletonFileExists = false;
+    if (fs.existsSync(commandFilePath)) {
+        finalFileString = fs.readFileSync(commandFilePath, 'utf8');
+        skeletonFileExists = true;
+    }
+
+    // HEADER STRING
+    const headerString = `${docs.header}\n\n`;
+    if (skeletonFileExists) {
+        finalFileString = finalFileString.replace('{{HEADER}}', headerString);
+    } else {
+        finalFileString += headerString;
+    }
+
+    // DESCRIPTION STRING
+    let descriptionString = '### Description\n\n';
+    descriptionString += `${docs.description}\n\n`;
+    descriptionString += `${docs.usage}\n`;
+    if (skeletonFileExists) {
+        finalFileString = finalFileString.replace('{{DESCRIPTION}}', descriptionString);
+    } else {
+        finalFileString += descriptionString;
+    }
+
+    // COMMAND string
+    const mainCommand = docs.command.shift();
+    let commandsString = `### Command\n\`${mainCommand}\``;
+    if (docs.command.length) {
+        commandsString += `\n\n#### Aliases\n`;
+        _.forEach(docs.command, (command) => {
+            commandsString += `\n\n\`${command}\``;
+        });
+    }
+    commandsString += '\n\n';
+
+    if (skeletonFileExists) {
+        finalFileString = finalFileString.replace('{{COMMANDS}}', commandsString);
+    } else {
+        finalFileString += commandsString;
+    }
+
+    // ARGUMENTS string
+    docs.command.shift();
+    if (docs.positionals.length) {
+        const argumentsString = `### Arguments\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
+        if (skeletonFileExists) {
+            finalFileString = finalFileString.replace('{{ARGUMENTS}}', argumentsString);
+        } else {
+            finalFileString += argumentsString;
+        }
+    }
+
+    // OPTIONS string
+    if (docs.options) {
+        let optionsString = '';
+        _.forEach(docs.options, (options, group) => {
+            optionsString = `### ${group}\n\nOption | Default | Description\n--------- | ----------- | -----------\n${options}` + optionsString;
+        });
+        if (skeletonFileExists) {
+            finalFileString = finalFileString.replace('{{OPTIONS}}', optionsString);
+        } else {
+            finalFileString += optionsString;
+        }
+    }
+
+    // EXAMPLES string
+    if (docs.examples.length) {
+        const examplesString = `### Examples\n\n${docs.examples}`;
+        if (skeletonFileExists) {
+            finalFileString = finalFileString.replace('{{EXAMPLES}}', examplesString);
+        } else {
+            finalFileString += examplesString;
+        }
+    }
+
+    fs.writeFileSync(commandFilePath, finalFileString);
+};
+
+const createCategoryFile = async (content, category) => {
+    const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}/_index.md`);
+    const finalContent = content.replace('{{COMMANDS}}', '');
+    fs.writeFileSync(indexFile, finalContent);
+};
+
+/**
+ * updates the category main file with a specific command
+ * possible extensions are: HEADER, COMMANDS
+ */
+const updateCategoryFileContent = async (docs, existingContent) => {
+    const { category } = docs;
+
+    let finalCategoryFileString = existingContent || "";
+
+    if (!finalCategoryFileString) {
+        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}/_index.md`);
+        if (fs.existsSync(indexFile)) {
+            finalCategoryFileString = fs.readFileSync(indexFile, 'utf8');
+        }
+    }
+
+    // HEADER string
+    const headerString = `+++\ntitle = "${category}"\n+++\n\n`;
+    finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
+    if (!finalCategoryFileString) {
+        finalCategoryFileString = headerString;
+    }
+
+    // COMMANDS string
+    let commandString = '';
+    const formattedTitle = docs.title.replace(/\s+/g, '-')
+        .toLowerCase();
+    commandString += `### [${docs.title}](${formattedTitle})\n`;
+    commandString += `\`${docs.command[0]}\`\n\n`;
+    commandString += `${docs.description}\n\n`;
+    commandString += `${docs.usage}\n\n`;
+
+    if (finalCategoryFileString.indexOf('{{COMMANDS}}') !== -1) {
+        finalCategoryFileString = finalCategoryFileString.replace('{{COMMANDS}}', `${commandString}\n\n{{COMMANDS}}`);
+    } else {
+        finalCategoryFileString += commandString;
+    }
+
+    return finalCategoryFileString;
+};
+
+const upsertCategoryFolder = async (category) => {
+    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+};
+
 const createAutomatedDocs = async () => {
 
     const files = await recursive(path.resolve(__dirname, '../lib/interface/cli/commands'));
 
-    const baseDir = path.resolve(TEMP_DIR, './content');
     const categories = {};
 
-    _.forEach(files, (file) => {
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+
         if (!file.endsWith('.cmd.js')) {
-            return;
+            continue;
         }
 
         console.log(file);
@@ -46,65 +191,34 @@ const createAutomatedDocs = async () => {
 
         // dont document beta commands currently
         if (command.isBetaCommand()) {
-            return;
+            continue;
         }
 
+        // document only in case category field exists
         const docs = command.prepareDocs();
-        if (!docs.category) {
-            return;
-        }
-
         const { category } = docs;
-
-        // create a directory according to the category
-        const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
+        if (!category) {
+            continue;
         }
 
-        let finalCategoryFileString = categories[category] || `+++\ntitle = "${category}"\n+++\n\n`;
-        const formattedTitle = docs.title.replace(/\s+/g, '-')
-            .toLowerCase();
-        finalCategoryFileString += `### [${docs.title}](${formattedTitle})\n`;
-        finalCategoryFileString += `\`${docs.command}\`\n\n`;
-        finalCategoryFileString += `${docs.description}\n\n`;
-        categories[category] = finalCategoryFileString;
+        categories[category] = await updateCategoryFileContent(docs, categories[category]);
+        await upsertCategoryFolder(category);
+        await createCommandFile(docs);
+    }
 
-
-        // // create _index.md file if does not exist for the category
-        // const indexFile = path.resolve(dir, '_index.md');
-        // if (!fs.existsSync(indexFile)){
-        //     fs.writeFileSync(indexFile, `+++\ntitle = "${category}"\n+++`);
-        // }
-
-        let finalFileString = '';
-
-        finalFileString += `${docs.header}\n\n`;
-        finalFileString += `### Command\n\`${docs.command}\`\n\n`;
-        finalFileString += `${docs.description}\n`;
-
-        if (docs.positionals.length) {
-            finalFileString += `### Positionals\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
-        }
-
-        if (docs.options.length) {
-            finalFileString += `### Options\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.options}`;
-        }
-
-
-        fs.writeFileSync(path.resolve(dir, `./${docs.title}.md`), finalFileString);
-    });
-
-    _.forEach(categories, (content, category) => {
-        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}/_index.md`);
-        fs.writeFileSync(indexFile, content);
+    _.forEach(categories, async (content, category) => {
+        await createCategoryFile(content, category);
     });
 };
 
 const main = async () => {
-    await deleteTempFolder();
-    await copyTemplateToTmp();
-    await createAutomatedDocs();
+    try {
+        await deleteTempFolder();
+        await copyTemplateToTmp();
+        await createAutomatedDocs();
+    } catch (err) {
+        console.error(err.stack);
+    }
 };
 
 main();
