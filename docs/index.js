@@ -10,6 +10,7 @@ const TEMP_DIR = path.resolve(__dirname, '../temp');
 const TEMPLATE_DIR = path.resolve(__dirname);
 const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/pipelines v2/spec.md'];
 const baseDir = path.resolve(TEMP_DIR, './content');
+const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 
 
 const deleteTempFolder = async () => {
@@ -190,7 +191,7 @@ const createAutomatedDocs = async () => {
         const command = require(file);
 
         // dont document beta commands currently
-        if (command.isBetaCommand()) {
+        if (command.isBetaCommand() && !ALLOW_BETA_COMMANDS) {
             continue;
         }
 

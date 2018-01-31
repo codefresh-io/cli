@@ -12,9 +12,9 @@ A Pipeline also needs a `.spec` section.
 #### Pipeline which is stored entirely in Codefresh
 ```yaml
 apiVersion: "v1"
-kind: "context"
-name: "new-pipeline"
+kind: "pipeline"
 metadata:
+  name: "new-pipeline"
   labels:
     repo: "github:ArikMaor/ping-server"
 spec:
@@ -44,6 +44,7 @@ spec:
 #### Pipeline which is stored on a remote git
 ```yaml
 apiVersion: "v1"
+kind: "pipeline"
 metadata:
   name: "ew-pipeline-git"
   labels:
@@ -71,6 +72,7 @@ spec:
 #### Pipeline which is stored on a specific url
 ```yaml
 apiVersion: "v1"
+kind: "pipeline"
 metadata:
   name: "new-pipeline-url"
   labels:

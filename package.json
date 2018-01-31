@@ -10,6 +10,7 @@
     "ci-publish": "ci-publish",
     "pkg": "pkg . -t node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist",
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
+    "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
     "build-public-docs": "node ./docs/index.js && cd temp && hugo"
   },
