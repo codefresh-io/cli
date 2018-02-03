@@ -36,6 +36,7 @@ steps:
 
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
+    fail_fase: false
     image: codefresh/cli
     commands:
       - 'apk update && apk add jq'
