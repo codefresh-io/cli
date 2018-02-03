@@ -119,7 +119,7 @@ steps:
       - sed -e "s/{{ VERSION }}/$VERSION/g" -e "s/{{ SHA256 }}/$SHA256/g" ./brew/template.rb > codefresh.rb
       - echo "Updating file in GitHub"
       - |
-        curl -v -i -X PUT -H 'Authorization: token '${{COMMIT_TOKEN}}'' -d "{ \
+        curl -v -i -X PUT -H 'Authorization: token '${{GITHUB_TOKEN}}'' -d "{ \
           \"message\": \"update formula version $VERSION\", \
           \"content\": \"$(openssl base64 -A -in codefresh.rb)\", \
           \"sha\": $(curl -X GET https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb | jq .sha) \
