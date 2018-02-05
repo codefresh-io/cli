@@ -14,6 +14,45 @@ const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 
+const hasSubCommands = async (command) => {
+    const files = await recursive(path.resolve(__dirname, '../lib/interface/cli/commands'));
+
+    let hasSubCommand = false;
+    for (let j = 0; j < files.length && !hasSubCommand; j++) {
+        const file = files[j];
+
+        if (!file.endsWith('.cmd.js')) {
+            continue;
+        }
+
+        const currCommand = require(file);
+        if (_.isEqual(currCommand.parentCommand, command) && !command.isRoot()) {
+            hasSubCommand = true;
+        }
+    }
+    return hasSubCommand;
+};
+
+const getNestedCategories = async (command) => {
+    let nestedCategory = '';
+    const categoryArr = [];
+    let docs = command.prepareDocs();
+    categoryArr.push(docs.category);
+    let currCommand = command.parentCommand;
+    while (currCommand && await hasSubCommands(currCommand)) {
+        docs = currCommand.prepareDocs();
+        categoryArr.push(docs.category);
+        currCommand = currCommand.parentCommand;
+    }
+    nestedCategory = categoryArr.pop();
+    for (let i = categoryArr.length - 1; i >= 0; i--) {
+        nestedCategory = nestedCategory + '/' + categoryArr[i];
+    }
+    if (!nestedCategory) {
+        nestedCategory = command.prepareDocs().category;
+    }
+    return nestedCategory;
+};
 
 const deleteTempFolder = async () => {
     await rimraf(TEMP_DIR);
@@ -38,9 +77,8 @@ const copyTemplateToTmp = async () => {
  * in case the file already exists in the base docs folder it will extend it
  * possible extensions are: HEADER, DESCRIPTION, COMMANDS, ARGUMENTS, OPTIONS
  */
-const createCommandFile = async (docs) => {
-    const { subCategory , category } = docs;
-    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`, `${(subCategory || '').toLowerCase()}`);
+const createCommandFile = async (nestedCategory,docs) => {
+    const dir = path.resolve(baseDir, `${(nestedCategory || 'undefined').toLowerCase()}`);
 
     const commandFilePath = path.resolve(dir, `./${docs.title}.md`);
     let finalFileString = '';
@@ -51,7 +89,13 @@ const createCommandFile = async (docs) => {
     }
 
     // HEADER STRING
-    const headerString = `${docs.header}\n\n`;
+    let headerString;
+    if (docs.nestedTitle) {
+        headerString = `+++\ntitle = "${docs.nestedTitle}"\n+++\n\n`;
+    } else {
+        headerString = `${docs.header}\n\n`;
+    }
+
     if (skeletonFileExists) {
         finalFileString = finalFileString.replace('{{HEADER}}', headerString);
     } else {
@@ -132,20 +176,28 @@ const createCategoryFile = async (content, category) => {
  * updates the category main file with a specific command
  * possible extensions are: HEADER, COMMANDS
  */
-const updateCategoryFileContent = async (docs, existingContent) => {
-    const { subCategory,category } = docs;
-    const currCat = subCategory || category;
+const updateCategoryFileContent = async (nestedCategory,command, existingContent) => {
+    const docs = command.prepareDocs();
+    const { category } = docs;
     let finalCategoryFileString = existingContent || "";
 
     if (!finalCategoryFileString) {
-        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}`, `./${(subCategory || '').toLowerCase()}/_index.md`);
+        const indexFile = path.resolve(baseDir, `./${(nestedCategory || 'undefined').toLowerCase()}/_index.md`);
         if (fs.existsSync(indexFile)) {
             finalCategoryFileString = fs.readFileSync(indexFile, 'utf8');
         }
     }
 
     // HEADER string
-    const headerString = `+++\ntitle = "${currCat}"\n+++\n\n`;
+    const parent = command.parentCommand;
+    let title = category;
+    if (parent) {
+        const parentdocs = parent.prepareDocs();
+        if (parentdocs.nestedTitle) {
+            title = parentdocs.nestedTitle;
+        }
+    }
+    const headerString = `+++\ntitle = "${title}"\n+++\n\n`;
     finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
     if (!finalCategoryFileString) {
         finalCategoryFileString = headerString;
@@ -169,8 +221,8 @@ const updateCategoryFileContent = async (docs, existingContent) => {
     return finalCategoryFileString;
 };
 
-const upsertCategoryFolder = async (category,subCategory) => {
-    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`,`${(subCategory || '').toLowerCase()}`);
+const upsertCategoryFolder = async (nestedCategory) => {
+    const dir = path.resolve(baseDir, `${(nestedCategory || 'undefined').toLowerCase()}`);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
     }
@@ -181,8 +233,7 @@ const createAutomatedDocs = async () => {
     const files = await recursive(path.resolve(__dirname, '../lib/interface/cli/commands'));
 
     const categories = {};
-    const subcategories = {};
-    const categoriesOfSub = {};
+    const nestedCategories = {};
 
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
@@ -201,29 +252,20 @@ const createAutomatedDocs = async () => {
 
         // document only in case category field exists
         const docs = command.prepareDocs();
-        const { subCategory, category } = docs;
-        if (!category) {
+        const {category} = docs;
+        if (!category || await hasSubCommands(command)) {
             continue;
         }
 
-        if (!subCategory) {
-            categories[category] = await updateCategoryFileContent(docs, categories[category]);
-            await upsertCategoryFolder(category, subCategory);
-            await createCommandFile(docs);
-        }
-        else{
-            categoriesOfSub[subCategory] = category;
-            subcategories[subCategory] = await updateCategoryFileContent(docs, subcategories[subCategory]);
-            await upsertCategoryFolder(category, subCategory);
-            await createCommandFile(docs);
-        }
+        nestedCategories[category] = await getNestedCategories(command);
+        const nestedCategory = nestedCategories[category];
+        categories[category] = await updateCategoryFileContent(nestedCategory,command, categories[category]);
+        await upsertCategoryFolder(nestedCategory);
+        await createCommandFile(nestedCategory,docs);
     }
 
     _.forEach(categories, async (content, category) => {
-        await createCategoryFile(content, category);
-    });
-    _.forEach(subcategories, async (content, subCategory) => {
-        await createCategoryFile(content, categoriesOfSub[subCategory] + '/' + subCategory);
+        await createCategoryFile(content, nestedCategories[category]);
     });
 };
 
@@ -269,6 +311,7 @@ const createDownloadPage = async () => {
     }
 
 };
+
 
 const main = async () => {
     try {
