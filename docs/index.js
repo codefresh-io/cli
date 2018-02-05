@@ -6,6 +6,7 @@ const copydir = require('copy-dir');
 const path = require('path');
 const _ = require('lodash');
 const rp = require('request-promise');
+const CFError = require('cf-errors');
 
 const TEMP_DIR = path.resolve(__dirname, '../temp');
 const TEMPLATE_DIR = path.resolve(__dirname);
@@ -264,7 +265,7 @@ const createDownloadPage = async () => {
             'If your operating system is missing please feel free to open us an issue in our <a href="https://github.com/codefresh-io/cli/issues" target="_blank">Github repository</a>.\n';
         fs.writeFileSync(commandFilePath, finalContent);
     } catch (err) {
-
+        throw new CFError(err);
     }
 
 };
