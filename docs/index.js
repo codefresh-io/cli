@@ -240,32 +240,33 @@ const createDownloadPage = async () => {
         _.forEach(res.assets, ((asset) => {
             links.push(asset.browser_download_url);
         }));
+        const commandFilePath = path.resolve(baseDir, './installation/download.md');
+        const finalContent=
+            '+++\n' +
+            'title = "Download"\n' +
+            'description = "asd"\n' +
+            'date = "2017-04-24T18:36:24+02:00"\n' +
+            'weight = 40\n' +
+            '+++\n' +
+            '\n' +
+            'Navigate to <a href="https://github.com/codefresh-io/cli/releases" target="_blank">Official Releases</a>\n' +
+            'and download the binary that matches your operating system.<br>\n' +
+            'We currently support the following OS: <br>\n' +
+            '<ul>\n' +
+            '    <li><a href=' + links[0] + ' target="_blank">Linux-x64</a></li>\n' +
+            '    <li><a href=' + links[1] + ' target="_blank">Macos-x64</a></li>\n' +
+            '    <li><a href=' + links[2] + ' target="_blank">Windows-x64</a></li>\n' +
+            '</ul> \n' +
+            '\n' +
+            'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +
+            'You can also add the binary to your system PATH environment variable so you can use it easily.\n' +
+            '\n' +
+            'If your operating system is missing please feel free to open us an issue in our <a href="https://github.com/codefresh-io/cli/issues" target="_blank">Github repository</a>.\n';
+        fs.writeFileSync(commandFilePath, finalContent);
     } catch (err) {
-        links = [];
+
     }
-    const commandFilePath = path.resolve(baseDir, './installation/download.md');
-    const finalContent=
-        '+++\n' +
-        'title = "Download"\n' +
-        'description = "asd"\n' +
-        'date = "2017-04-24T18:36:24+02:00"\n' +
-        'weight = 40\n' +
-        '+++\n' +
-        '\n' +
-        'Navigate to <a href="https://github.com/codefresh-io/cli/releases" target="_blank">Official Releases</a>\n' +
-        'and download the binary that matches your operating system.<br>\n' +
-        'We currently support the following OS: <br>\n' +
-        '<ul>\n' +
-        '    <li><a href=' + links[0] + ' target="_blank">Linux-x64</a></li>\n' +
-        '    <li><a href=' + links[1] + ' target="_blank">Macos-x64</a></li>\n' +
-        '    <li><a href=' + links[2] + ' target="_blank">Windows-x64</a></li>\n' +
-        '</ul> \n' +
-        '\n' +
-        'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +
-        'You can also add the binary to your system PATH environment variable so you can use it easily.\n' +
-        '\n' +
-        'If your operating system is missing please feel free to open us an issue in our <a href="https://github.com/codefresh-io/cli/issues" target="_blank">Github repository</a>.\n';
-    fs.writeFileSync(commandFilePath, finalContent);
+
 };
 
 const main = async () => {
