@@ -37,8 +37,8 @@ const copyTemplateToTmp = async () => {
  * possible extensions are: HEADER, DESCRIPTION, COMMANDS, ARGUMENTS, OPTIONS
  */
 const createCommandFile = async (docs) => {
-    const { category } = docs;
-    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
+    const { subCategory , category } = docs;
+    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`, `${(subCategory || '').toLowerCase()}`);
 
     const commandFilePath = path.resolve(dir, `./${docs.title}.md`);
     let finalFileString = '';
@@ -131,19 +131,19 @@ const createCategoryFile = async (content, category) => {
  * possible extensions are: HEADER, COMMANDS
  */
 const updateCategoryFileContent = async (docs, existingContent) => {
-    const { category } = docs;
-
+    const { subCategory,category } = docs;
+    const currCat = subCategory || category;
     let finalCategoryFileString = existingContent || "";
 
     if (!finalCategoryFileString) {
-        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}/_index.md`);
+        const indexFile = path.resolve(baseDir, `./${(category || 'undefined').toLowerCase()}`, `./${(subCategory || '').toLowerCase()}/_index.md`);
         if (fs.existsSync(indexFile)) {
             finalCategoryFileString = fs.readFileSync(indexFile, 'utf8');
         }
     }
 
     // HEADER string
-    const headerString = `+++\ntitle = "${category}"\n+++\n\n`;
+    const headerString = `+++\ntitle = "${currCat}"\n+++\n\n`;
     finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
     if (!finalCategoryFileString) {
         finalCategoryFileString = headerString;
@@ -167,8 +167,8 @@ const updateCategoryFileContent = async (docs, existingContent) => {
     return finalCategoryFileString;
 };
 
-const upsertCategoryFolder = async (category) => {
-    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`);
+const upsertCategoryFolder = async (category,subCategory) => {
+    const dir = path.resolve(baseDir, `${(category || 'undefined').toLowerCase()}`,`${(subCategory || '').toLowerCase()}`);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
     }
@@ -179,6 +179,8 @@ const createAutomatedDocs = async () => {
     const files = await recursive(path.resolve(__dirname, '../lib/interface/cli/commands'));
 
     const categories = {};
+    const subcategories = {};
+    const categoriesOfSub = {};
 
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
@@ -197,18 +199,29 @@ const createAutomatedDocs = async () => {
 
         // document only in case category field exists
         const docs = command.prepareDocs();
-        const { category } = docs;
+        const { subCategory, category } = docs;
         if (!category) {
             continue;
         }
 
-        categories[category] = await updateCategoryFileContent(docs, categories[category]);
-        await upsertCategoryFolder(category);
-        await createCommandFile(docs);
+        if (!subCategory) {
+            categories[category] = await updateCategoryFileContent(docs, categories[category]);
+            await upsertCategoryFolder(category, subCategory);
+            await createCommandFile(docs);
+        }
+        else{
+            categoriesOfSub[subCategory] = category;
+            subcategories[subCategory] = await updateCategoryFileContent(docs, subcategories[subCategory]);
+            await upsertCategoryFolder(category, subCategory);
+            await createCommandFile(docs);
+        }
     }
 
     _.forEach(categories, async (content, category) => {
         await createCategoryFile(content, category);
+    });
+    _.forEach(subcategories, async (content, subCategory) => {
+        await createCategoryFile(content, categoriesOfSub[subCategory] + '/' + subCategory);
     });
 };
 
