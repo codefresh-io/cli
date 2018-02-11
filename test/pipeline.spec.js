@@ -27,7 +27,7 @@ const authManager     = auth.manager;
     console.log('after handler');
     console.log(a);
 
-    const workflowId = await pipelines.runPipelineById('599a72291b3376000106331f', {});
+    const workflowId = await pipelines.runPipelineByName('599a72291b3376000106331f', {});
     const util  = require('util');
     const http = require('../lib/logic/api/helper');
     let options = {
