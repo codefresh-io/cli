@@ -16,7 +16,7 @@ kind: "pipeline"
 metadata:
   name: "new-pipeline"
   labels:
-    repo: "github:ArikMaor/ping-server"
+    repo: "ArikMaor/ping-server"
 spec:
   triggers:
     - type: "scm"
@@ -48,7 +48,7 @@ kind: "pipeline"
 metadata:
   name: "ew-pipeline-git"
   labels:
-    repo: "github:ArikMaor/ping-server"
+    repo: "ArikMaor/ping-server"
 spec:
   triggers:
     - type: "scm"
@@ -76,7 +76,7 @@ kind: "pipeline"
 metadata:
   name: "new-pipeline-url"
   labels:
-    repo: "github:codefresh-io/cli"
+    repo: "codefresh-io/cli"
 spec:
   triggers:
     - type: "scm"
