@@ -90,8 +90,8 @@ const createCommandFile = async (nestedCategory,docs) => {
 
     // HEADER STRING
     let headerString;
-    if (docs.nestedTitle) {
-        headerString = `+++\ntitle = "${docs.nestedTitle}"\n+++\n\n`;
+    if (docs.subCategory) {
+        headerString = `+++\ntitle = "${docs.subCategory}"\n+++\n\n`;
     } else {
         headerString = `${docs.header}\n\n`;
     }
@@ -193,8 +193,8 @@ const updateCategoryFileContent = async (nestedCategory,command, existingContent
     let title = category;
     if (parent) {
         const parentdocs = parent.prepareDocs();
-        if (parentdocs.nestedTitle) {
-            title = parentdocs.nestedTitle;
+        if (parentdocs.subCategory) {
+            title = parentdocs.subCategory;
         }
     }
     const headerString = `+++\ntitle = "${title}"\n+++\n\n`;
@@ -250,7 +250,7 @@ const createAutomatedDocs = async () => {
             continue;
         }
 
-        // document only in case category field exists
+        // document only in case category field exists and there are no sub commands under it
         const docs = command.prepareDocs();
         const {category} = docs;
         if (!category || await hasSubCommands(command)) {
