@@ -2,7 +2,7 @@
 title = "HOMEBREW"
 description = "Homebrew install"
 date = "2018-01-30T12:00:00+02:00"
-weight = 20
+weight = 60
 +++
 
 Install Codefresh CLI on macOS with [Homebrew](https://brew.sh).
