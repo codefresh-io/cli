@@ -197,7 +197,7 @@ const updateCategoryFileContent = async (nestedCategory,command, existingContent
             title = parentdocs.subCategory;
         }
     }
-    const headerString = `+++\ntitle = "${title}"\n+++\n\n`;
+    const headerString = `+++\ntitle = "${title}"\nweight = 100\n+++\n\n`;
     finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
     if (!finalCategoryFileString) {
         finalCategoryFileString = headerString;
