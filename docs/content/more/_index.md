@@ -1,6 +1,6 @@
 +++
-title = "More"
-weight = 40
+title = "More..."
+weight = 110
 +++
 
 
