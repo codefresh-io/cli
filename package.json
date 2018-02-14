@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
+    "aws-sdk": "^2.194.0",
     "bluebird": "^3.5.1",
     "cf-errors": "^0.1.11",
     "chalk": "^1.1.3",
