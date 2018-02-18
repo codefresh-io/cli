@@ -132,7 +132,7 @@ const createCommandFile = async (nestedCategory,docs) => {
     // ARGUMENTS string
     docs.command.shift();
     if (docs.positionals.length) {
-        const argumentsString = `### Arguments\n\nOption | Default | Description\n--------- | ----------- | -----------\n${docs.positionals}`;
+        const argumentsString = `### Arguments\n\nOption | Alias | Default | Description\n--------- | --------- | ----------- | -----------\n${docs.positionals}`;
         if (skeletonFileExists) {
             finalFileString = finalFileString.replace('{{ARGUMENTS}}', argumentsString);
         } else {
@@ -144,7 +144,7 @@ const createCommandFile = async (nestedCategory,docs) => {
     if (docs.options) {
         let optionsString = '';
         _.forEach(docs.options, (options, group) => {
-            optionsString = `### ${group}\n\nOption | Default | Description\n--------- | ----------- | -----------\n${options}` + optionsString;
+            optionsString = `### ${group}\n\nOption | Alias | Default | Description\n--------- | --------- | ----------- | -----------\n${options}` + optionsString;
         });
         if (skeletonFileExists) {
             finalFileString = finalFileString.replace('{{OPTIONS}}', optionsString);
@@ -197,7 +197,7 @@ const updateCategoryFileContent = async (nestedCategory,command, existingContent
             title = parentdocs.subCategory;
         }
     }
-    const headerString = `+++\ntitle = "${title}"\n+++\n\n`;
+    const headerString = `+++\ntitle = "${title}"\nweight = 100\n+++\n\n`;
     finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
     if (!finalCategoryFileString) {
         finalCategoryFileString = headerString;
