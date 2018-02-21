@@ -25,7 +25,7 @@ steps:
     type: build
     dockerfile: Dockerfile
     image-name: codefresh/cli
-    tag: ${{CF_BRANCH}}
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
   push_to_registry_revision:
     title: "Pushing image tagged with revision to registry"
