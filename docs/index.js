@@ -273,9 +273,6 @@ const createDownloadPage = async () => {
     let links = [];
     const RequestOptions = {
         url: 'https://api.github.com/repos/codefresh-io/cli/releases/latest',
-        headers: {
-            'User-Agent': 'codefresh-cli}',
-        },
         json: true,
     };
     try {
