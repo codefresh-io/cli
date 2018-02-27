@@ -13,6 +13,28 @@ const TEMPLATE_DIR = path.resolve(__dirname);
 const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/pipelines v2/spec.md'];
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
+const weightValues = {
+    create: 10,
+    annotate: 20,
+    apply : 30 ,
+    delete : 40 ,
+    generate : 50 ,
+    get : 5 ,
+    replace : 70,
+    version : 80,
+};
+const categoriesOrder = {
+    authentication: 10,
+    builds: 20,
+    compositions : 30 ,
+    contexts : 40 ,
+    environments : 50 ,
+    images : 5 ,
+    pipelines : 70,
+    'predefined pipelines': 80,
+    triggers : 90,
+};
+
 
 const hasSubCommands = async (command) => {
     const files = await recursive(path.resolve(__dirname, '../lib/interface/cli/commands'));
@@ -90,10 +112,12 @@ const createCommandFile = async (nestedCategory,docs) => {
 
     // HEADER STRING
     let headerString;
+    const w = docs.weight;
+    const weight = weightValues[w];
     if (docs.subCategory) {
-        headerString = `+++\ntitle = "${docs.subCategory}"\n+++\n\n`;
+        headerString = `+++\ntitle = "${docs.subCategory}"\nweight = ${weight || 100}\n+++\n\n`;
     } else {
-        headerString = `${docs.header}\n\n`;
+        headerString = `+++\ntitle = "${docs.title}"\nweight = ${weight || 100}\n+++\n\n`;
     }
 
     if (skeletonFileExists) {
@@ -197,7 +221,7 @@ const updateCategoryFileContent = async (nestedCategory,command, existingContent
             title = parentdocs.subCategory;
         }
     }
-    const headerString = `+++\ntitle = "${title}"\nweight = 100\n+++\n\n`;
+    const headerString = `+++\ntitle = "${title}"\nweight = ${categoriesOrder[title.toLowerCase()] || 100}\n+++\n\n`;
     finalCategoryFileString = finalCategoryFileString.replace('{{HEADER}}', headerString);
     if (!finalCategoryFileString) {
         finalCategoryFileString = headerString;
