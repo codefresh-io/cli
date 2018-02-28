@@ -107,7 +107,8 @@ const getWeight = async (command) => {
     }
 };
 
-const createCommandFile = async (nestedCategory,docs,command) => {
+const createCommandFile = async (nestedCategory,command) => {
+    const docs = command.prepareDocs();
     const dir = path.resolve(baseDir, `${(nestedCategory || 'undefined').toLowerCase()}`);
 
     const commandFilePath = path.resolve(dir, `./${docs.title}.md`);
@@ -292,7 +293,7 @@ const createAutomatedDocs = async () => {
         const nestedCategory = nestedCategories[category];
         categories[category] = await updateCategoryFileContent(nestedCategory,command, categories[category]);
         await upsertCategoryFolder(nestedCategory);
-        await createCommandFile(nestedCategory,docs,command);
+        await createCommandFile(nestedCategory,command);
     }
 
     _.forEach(categories, async (content, category) => {
