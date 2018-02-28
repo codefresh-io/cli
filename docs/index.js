@@ -13,23 +13,13 @@ const TEMPLATE_DIR = path.resolve(__dirname);
 const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/pipelines v2/spec.md'];
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
-const weightValues = {
-    create: 10,
-    annotate: 20,
-    apply : 30 ,
-    delete : 40 ,
-    generate : 50 ,
-    get : 5 ,
-    replace : 70,
-    version : 80,
-};
 const categoriesOrder = {
     authentication: 10,
     builds: 20,
     compositions : 30 ,
     contexts : 40 ,
     environments : 50 ,
-    images : 5 ,
+    images : 60 ,
     pipelines : 70,
     'predefined pipelines': 80,
     triggers : 90,
@@ -99,7 +89,25 @@ const copyTemplateToTmp = async () => {
  * in case the file already exists in the base docs folder it will extend it
  * possible extensions are: HEADER, DESCRIPTION, COMMANDS, ARGUMENTS, OPTIONS
  */
-const createCommandFile = async (nestedCategory,docs) => {
+const getWeight = async (command) => {
+    const docs = command.prepareDocs();
+    let weight = 0;
+    if (docs.weight) {
+        return docs.weight;
+    }
+    else {
+        let parent = command.getParentCommand();
+        while (parent && !parent.prepareDocs().weight) {
+            parent = parent.getParentCommand();
+        }
+        if (parent) {
+            weight = parent.prepareDocs().weight;
+        }
+        return weight;
+    }
+};
+
+const createCommandFile = async (nestedCategory,docs,command) => {
     const dir = path.resolve(baseDir, `${(nestedCategory || 'undefined').toLowerCase()}`);
 
     const commandFilePath = path.resolve(dir, `./${docs.title}.md`);
@@ -112,8 +120,7 @@ const createCommandFile = async (nestedCategory,docs) => {
 
     // HEADER STRING
     let headerString;
-    const w = docs.weight;
-    const weight = weightValues[w];
+    const weight = await getWeight(command);
     if (docs.subCategory) {
         headerString = `+++\ntitle = "${docs.subCategory}"\nweight = ${weight || 100}\n+++\n\n`;
     } else {
@@ -285,7 +292,7 @@ const createAutomatedDocs = async () => {
         const nestedCategory = nestedCategories[category];
         categories[category] = await updateCategoryFileContent(nestedCategory,command, categories[category]);
         await upsertCategoryFolder(nestedCategory);
-        await createCommandFile(nestedCategory,docs);
+        await createCommandFile(nestedCategory,docs,command);
     }
 
     _.forEach(categories, async (content, category) => {
