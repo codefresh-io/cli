@@ -1,6 +1,6 @@
 +++
 title = "Operate On Resources"
-weight = 30
+weight = 60
 +++
 
 The CLI supports the ability to work with `spec` files when working with resources.<br>
