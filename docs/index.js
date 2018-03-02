@@ -17,13 +17,14 @@ const categoriesOrder = {
     authentication: 30,
     pipelines : 40,
     builds: 50,
+    'operate on resources' : 60,
     contexts : 70 ,
     images : 80 ,
     triggers : 90,
     environments : 100 ,
     compositions : 110 ,
     'predefined pipelines': 120,
-
+    more : 130 ,
 };
 
 
@@ -226,8 +227,13 @@ const updateCategoryFileArray = async (nestedCategory,command, existingContent) 
     const indexFile = path.resolve(baseDir, `./${(nestedCategory || 'undefined').toLowerCase()}/_index.md`);
     finalCategoryArr.indexPath = indexFile;
 
-    const headerString = `+++\ntitle = "${title}"\nweight = ${categoriesOrder[title.toLowerCase()] || 100}\n+++\n\n`;
-    finalCategoryArr.header = headerString;
+    if (!_.isEqual(title.toLowerCase(), 'more') && !_.isEqual(title.toLowerCase(), 'operate on resources')) {
+        const headerString = `+++\ntitle = "${title}"\nweight = ${categoriesOrder[title.toLowerCase()] || 100}\n+++\n\n`;
+        finalCategoryArr.header = headerString;
+    }
+    else {
+        finalCategoryArr.header = '';
+    }
 
     let commandString = '';
     const formattedTitle = docs.title.replace(/\s+/g, '-')
