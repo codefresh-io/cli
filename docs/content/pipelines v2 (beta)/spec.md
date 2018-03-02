@@ -1,6 +1,5 @@
 +++
 title = "Spec"
-weight = 10
 +++
 
 A Pipeline needs `.apiVersion`, `.kind`, and `.metadata` fields. 
