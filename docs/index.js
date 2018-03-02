@@ -10,12 +10,13 @@ const CFError = require('cf-errors');
 
 const TEMP_DIR = path.resolve(__dirname, '../temp');
 const TEMPLATE_DIR = path.resolve(__dirname);
-const FILES_TO_IGNORE = ['index.js', 'content/pipelines v2/_index.md', 'content/pipelines v2/spec.md'];
+const FILES_TO_IGNORE = ['index.js'];
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 const categoriesOrder = {
     authentication: 30,
     pipelines : 40,
+    'pipelines v2 (beta)' : 42,
     builds: 50,
     'operate on resources' : 60,
     contexts : 70 ,
@@ -340,7 +341,7 @@ const createDownloadPage = async () => {
     const RequestOptions = {
         url: 'https://api.github.com/repos/codefresh-io/cli/releases/latest',
         headers: {
-            'User-Agent': 'codefresh-cli}',
+            'User-Agent': 'codefresh-cli-build',
         },
         json: true,
     };
