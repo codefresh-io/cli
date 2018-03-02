@@ -18,8 +18,7 @@ metadata:
   description: "my description"
   labels:
     repo: "ArikMaor/ping-server"
-    key1: "Asd"
-    key2: "asd"
+    key1: "value1"
     project: "asd"
     
 spec:
