@@ -59,7 +59,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-mocha": "^4.11.0",
     "hugo-cli": "^0.5.4",
-    "jest": "^21.2.1",
+    "jest": "^22.4.2",
     "pkg": "^4.3.0-beta.5"
   },
   "bugs": {
