@@ -29,7 +29,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         })
         .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
             try {
-                authManager.loadContexts(configFilePath, process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL);
+                authManager.loadContexts(process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL , configFilePath);
                 _.forEach(files, (file) => {
                     if (file.endsWith('.cmd.js')) {
                         const command = require(file);

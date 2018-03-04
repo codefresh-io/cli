@@ -1,6 +1,5 @@
 +++
 title = "Spec"
-weight = 10
 +++
 
 A Pipeline needs `.apiVersion`, `.kind`, and `.metadata` fields. 
@@ -15,8 +14,12 @@ apiVersion: "v1"
 kind: "pipeline"
 metadata:
   name: "new-pipeline"
+  description: "my description"
   labels:
-    repo: "github:ArikMaor/ping-server"
+    repo: "ArikMaor/ping-server"
+    key1: "value1"
+    project: "asd"
+    
 spec:
   triggers:
     - type: "scm"
@@ -32,13 +35,25 @@ spec:
       value: "BLA BLA"
       encrypted: true
   steps:
-    test_step:
+    clone_step:
+      repo: github.com/itai-codefresh/test-env-file
+      revision: master
+    test_step_1:
       image: "alpine"
+      working_directory: ${{clone_step}}
       commands:
+      - echo ls
       - echo "hello world"
       - echo "plain value $PORT"
       - echo "encrypted value $PAPA"
       - echo "value from context $COOKIE"
+    build:
+      type: build
+      working_directory: ${{clone_step}}
+      dockerfile: ./Dockerfile
+      image_name: itai/test
+      tag: bla
+  
 ```
 
 #### Pipeline which is stored on a remote git
@@ -48,7 +63,7 @@ kind: "pipeline"
 metadata:
   name: "ew-pipeline-git"
   labels:
-    repo: "github:ArikMaor/ping-server"
+    repo: "ArikMaor/ping-server"
 spec:
   triggers:
     - type: "scm"
@@ -76,7 +91,7 @@ kind: "pipeline"
 metadata:
   name: "new-pipeline-url"
   labels:
-    repo: "github:codefresh-io/cli"
+    repo: "codefresh-io/cli"
 spec:
   triggers:
     - type: "scm"
