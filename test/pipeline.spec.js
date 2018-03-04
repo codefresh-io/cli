@@ -1,5 +1,5 @@
 //const pipeline = require('../lib/logic')
-  debugger;
+
 const { auth }        = require('../lib/logic');
 console.log(auth);
 const _ = require('lodash');

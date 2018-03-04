@@ -8,7 +8,7 @@ const CFError = require('cf-errors');
 const DEFAULTS = require('./defaults');
 const authManager = require('../../logic').auth.manager;
 const { printError } = require('./helpers/general');
-debugger;
+
 process.on('uncaughtException', function (err) {
     console.error('uncaughtException', err.stack);
 });
