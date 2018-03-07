@@ -1,11 +1,11 @@
 {
   "name": "codefresh",
-  "version": "0.8.29",
+  "version": "0.8.30",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest .spec.js --coverage",
     "eslint": "eslint lib/logic/**",
     "ci-publish": "ci-publish",
     "pkg": "pkg . -t node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist",
@@ -60,7 +60,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-mocha": "^4.11.0",
     "hugo-cli": "^0.5.4",
-    "jest": "^21.2.1",
+    "jest": "^22.4.2",
     "pkg": "^4.3.0-beta.5"
   },
   "bugs": {
