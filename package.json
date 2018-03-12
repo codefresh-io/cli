@@ -5,7 +5,8 @@
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
-    "test": "jest .spec.js --coverage",
+    "unit-test": "jest unit.spec.js --coverage",
+    "e2e-test": "jest e2e.spec.js --coverage",
     "eslint": "eslint lib1logic/**",
     "ci-publish": "ci-publish",
     "pkg": "pkg . -t node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist",

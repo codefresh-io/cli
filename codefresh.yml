@@ -19,7 +19,13 @@ steps:
     title: 'Running unit tests'
     image: codefresh/node-tester-image:8.8.0
     commands:
-        - yarn test
+        - yarn unit-test
+
+  e2e-tests:
+    title: 'Running e2e tests'
+    image: codefresh/node-tester-image:8.8.0
+    commands:
+        - yarn e2e-test
 
   build_step:
     type: build
