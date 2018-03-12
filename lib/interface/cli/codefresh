@@ -10,12 +10,13 @@ const authManager = require('../../logic').auth.manager;
 const { printError } = require('./helpers/general');
 
 process.on('uncaughtException', function (err) {
-    console.error('uncaughtException', err.stack);
+    printError(err);
+    process.exit(1);
 });
 
 process.on('unhandledRejection', error => {
-    // Will print "unhandledRejection err is not defined"
-    console.error('unhandledRejection', error.stack);
+    printError(error);
+    process.exit(1);
 });
 
 
