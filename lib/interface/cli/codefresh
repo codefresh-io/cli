@@ -8,6 +8,19 @@ const CFError = require('cf-errors');
 const DEFAULTS = require('./defaults');
 const authManager = require('../../logic').auth.manager;
 const { printError } = require('./helpers/general');
+const nock = require('nock');
+
+if (!process.env.MOCK_REQUEST) {
+    const httpMock = nock('https://g.codefresh.io')
+        .get('/api/pipelines?limit=25&page=0')
+        .reply(200, {
+            _id: '123ABC',
+            _rev: '946B7D1C',
+            username: 'pgte',
+            email: 'pedro.teixeira@gmail.com',
+        });
+}
+
 
 process.on('uncaughtException', function (err) {
     printError(err);
@@ -22,6 +35,8 @@ process.on('unhandledRejection', error => {
 
 recursive(path.resolve(__dirname, 'commands'), (err, files) => {
     const rootCommands = [];
+    const x = require("/Users/codefresh/Documents/cli/lib/interface/cli/commands/auth/create-context.cmd.js");
+    const y =5;
     yargs
         .env('')
         .options('cfconfig', {

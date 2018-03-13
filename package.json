@@ -63,6 +63,7 @@
     "eslint-plugin-mocha": "^4.11.0",
     "hugo-cli": "^0.5.4",
     "jest": "^22.4.2",
+    "nock": "^9.2.3",
     "pkg": "^4.3.0-beta.5"
   },
   "bugs": {
