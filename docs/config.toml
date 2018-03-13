@@ -1,7 +1,7 @@
 theme = "docdock"
 baseurl = "https://cli.codefresh.io"
 title = "Codefresh CLI Documentation"
-publishDir = "../public"
+publishDir = "../public/cli"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 
