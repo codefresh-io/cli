@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://cli.codefresh.io/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/create-pipeline-trigger/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/config/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/getting-started/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/npm/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-config-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/predefined-pipelines/delete-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/get/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/get-build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/compositions/get-composition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/get-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/authentication/get-contexts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/environments/get-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/images/get-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines-v2-beta/get-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines/get-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/get-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/get-trigger-types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/get-triggers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-http-web-server/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/secret/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/yarn/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/create/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/compositions/create-composition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/authentication/create-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/create-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/delete-pipeline-trigger/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-secret-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/show-build-logs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/docker/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/yaml/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/compositions/delete-composition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/delete-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/environments/delete-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines-v2-beta/delete-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/delete-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/authentication/get-activated-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/restart-build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-secret-yaml-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/predefined-pipelines/test-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/download/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/secret-yaml/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/patch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/authentication/set-active-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/terminate-build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines/update-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-yaml-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines-v2-beta/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/helm-repository/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/images/annotate-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines/run-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/builds/wait-for-build-condition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/installation/homebrew/</loc>
+    <lastmod>2018-01-30T12:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/images/tag-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/more/image-pull-secret/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/images/untag-image/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/images/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/operate-on-resources/replace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/compositions/replace-composition/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/triggers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/update-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/compositions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/predefined-pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/more/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/_header/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/external-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/contexts/spec/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/pipelines-v2-beta/spec/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cli.codefresh.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

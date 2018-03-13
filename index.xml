@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codefresh CLI Documentation</title>
+    <link>https://cli.codefresh.io/</link>
+    <description>Recent content on Codefresh CLI Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://cli.codefresh.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create Pipeline Trigger</title>
+      <link>https://cli.codefresh.io/triggers/create-pipeline-trigger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/create-pipeline-trigger/</guid>
+      <description>Description Create trigger: link pipeline to trigger-event.
+Command codefresh create trigger &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
+Aliases codefresh create t &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
+Arguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Create trigger by linking 5a43&amp;hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
+    </item>
+    
+    <item>
+      <title>Config</title>
+      <link>https://cli.codefresh.io/contexts/spec/config/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/spec/config/</guid>
+      <description> Config context stores a set of keys and values.
+Type .spec.type should be config.
+Data .spec.data should be an array of keys and values.
+Examples config with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-config-context&amp;#34; spec: type: &amp;#34;config&amp;#34; data: dbUrl: &amp;#34;db-url&amp;#34; sysUrl: &amp;#34;sys-url&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>NPM</title>
+      <link>https://cli.codefresh.io/installation/npm/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/installation/npm/</guid>
+      <description>the CLI requires node version 8.0.0 or higher Codefresh&amp;rsquo;s CLI is available for installation through NPM registry.
+Install: npm install -g codefresh
+Install a specific version: npm install -g codefresh@{VERSION}
+Update to latest version: npm install -g codefresh
+Update to a specific version: npm install -g codefresh@${VERSION}</description>
+    </item>
+    
+    <item>
+      <title>Config</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-config-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-config-context/</guid>
+      <description>Description Create a config context.
+Command codefresh create context config &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;owner  account Owner of the context
+Possible values:
+- user
+- account   &amp;ndash;variable - v  Variables list    Examples Create a config.</description>
+    </item>
+    
+    <item>
+      <title>Delete Helm Release</title>
+      <link>https://cli.codefresh.io/predefined-pipelines/delete-helm-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/predefined-pipelines/delete-helm-release/</guid>
+      <description>Description Delete a helm release from a kubernetes cluster.
+Command codefresh delete-release [name]
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;cluster   Run on cluster. required   &amp;ndash;timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   &amp;ndash;purge   remove the release from the store and make its name free for later use (default true)   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;no-hooks   prevent hooks from running during deletion    Examples Delete release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh delete-release my-release --cluster my-cluster</description>
+    </item>
+    
+    <item>
+      <title>Get</title>
+      <link>https://cli.codefresh.io/operate-on-resources/get/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/operate-on-resources/get/</guid>
+      <description> Description Get a resource from a file, directory or url
+Supported resources:.
+Command codefresh get
+Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format
+Possible values:
+- json
+- yaml
+- wide
+- name
+- id   &amp;ndash;watch - w  Watching updates to a particular resource   &amp;ndash;watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Get Build</title>
+      <link>https://cli.codefresh.io/builds/get-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/builds/get-build/</guid>
+      <description>Description Get a specific build or an array of builds.
+Passing [id] argument will cause a retrieval of a specific build.
+In case of not passing [id] argument, a list will be returned.
+Command codefresh get builds [id..]
+Aliases codefresh get build [id..]
+Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page   &amp;ndash;status   Filter results by statuses</description>
+    </item>
+    
+    <item>
+      <title>Get Composition</title>
+      <link>https://cli.codefresh.io/compositions/get-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/compositions/get-composition/</guid>
+      <description>Description Get a specific composition or an array of compositions.
+Passing [id|name] argument will cause a retrieval of a specific composition.
+In case of not passing [id|name] argument, a list will be returned.
+Command codefresh get compositions [id|name..]
+Aliases codefresh get com [id|name..]
+codefresh get composition [id|name..]
+Arguments    Option Alias Default Description     id  composition id or name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Context</title>
+      <link>https://cli.codefresh.io/contexts/get-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/get-context/</guid>
+      <description>Description Get a specific context or an array of contexts.
+Passing [name] argument will cause a retrieval of a specific context.
+In case of not passing [name] argument, a list will be returned.
+Command codefresh get contexts [name..]
+Aliases codefresh get ctx [name..]
+codefresh get context [name..]
+Arguments    Option Alias Default Description     name  context name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;type   Context type</description>
+    </item>
+    
+    <item>
+      <title>Get Contexts</title>
+      <link>https://cli.codefresh.io/authentication/get-contexts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/authentication/get-contexts/</guid>
+      <description>Description Get all possible authentication contexts.
+Command codefresh auth get-contexts
+Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts</description>
+    </item>
+    
+    <item>
+      <title>Get Environment</title>
+      <link>https://cli.codefresh.io/environments/get-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/environments/get-environment/</guid>
+      <description>Description Get a specific environment or an array of environments.
+Passing [id] argument will cause a retrieval of a specific environment.
+In case of not passing [id] argument, a list will be returned.
+Command codefresh get environments [id..]
+Aliases codefresh get env [id..]
+codefresh get environment [id..]
+Arguments    Option Alias Default Description     id  environment id or name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Image</title>
+      <link>https://cli.codefresh.io/images/get-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/images/get-image/</guid>
+      <description>Description Get a specific image or an array of images.
+Passing [id] argument will cause a retrieval of a specific image.
+In case of not passing [id] argument, a list will be returned.
+Command codefresh get images [id..]
+Aliases codefresh get img [id..]
+codefresh get image [id..]
+Arguments    Option Alias Default Description     id  Docker Image id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;all - a  Return images from all possible registries (by default only r.</description>
+    </item>
+    
+    <item>
+      <title>Get Pipeline</title>
+      <link>https://cli.codefresh.io/pipelines-v2-beta/get-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines-v2-beta/get-pipeline/</guid>
+      <description>Description Get a specific pipeline or an array of pipelines.
+Command codefresh get pipelines-v2 [name..]
+Aliases codefresh get pip-v2 [name..]
+codefresh get pipeline-v2 [name..]
+Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;name-regex   Filter pipelines by name   &amp;ndash;label - l  Filter by a label   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Pipeline</title>
+      <link>https://cli.codefresh.io/pipelines/get-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines/get-pipeline/</guid>
+      <description>Description Get a specific pipeline or an array of pipelines.
+Passing [id] argument will cause a retrieval of a specific pipeline.
+In case of not passing [id] argument, a list will be returned.
+Command codefresh get pipelines [id..]
+Aliases codefresh get pip [id..]
+codefresh get pipeline [id..]
+Arguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;repo-owner   Repository owner   &amp;ndash;repo-name   Repository name   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page   &amp;ndash;name   Filter results by pipeline name    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Trigger Event</title>
+      <link>https://cli.codefresh.io/triggers/get-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/get-trigger-event/</guid>
+      <description>Description Get trigger-event.
+Command codefresh get trigger-events [event-uri]
+Aliases codefresh get trigger-event [event-uri]
+Arguments    Option Alias Default Description     event-uri  trigger-event URI)     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;type   trigger-event type   &amp;ndash;kind   trigger-event kind   &amp;ndash;filter   trigger-event URI filter (regex)   &amp;ndash;public  true get public trigger-event(s)    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Trigger Types</title>
+      <link>https://cli.codefresh.io/triggers/get-trigger-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/get-trigger-types/</guid>
+      <description>Description Get a list of available trigger-types.
+Command codefresh get trigger-types
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;type   filter by a specific trigger type (e.g. registry, cron)   &amp;ndash;kind   filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Triggers</title>
+      <link>https://cli.codefresh.io/triggers/get-triggers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/get-triggers/</guid>
+      <description>Description Get triggers, optionally filtered by pipeline or event.
+Command codefresh get trigger
+Aliases codefresh get t trigger
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;pipeline   pipeline id   &amp;ndash;event-uri   event URI    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-http-web-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-http-web-server/</guid>
+      <description>Description Create a helm-repository context from HTTP server.
+
+A chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.
+When you&amp;rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.
+Read more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.
+Command codefresh create context helm-repository http &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;url   Url to the web server.</description>
+    </item>
+    
+    <item>
+      <title>Secret</title>
+      <link>https://cli.codefresh.io/contexts/spec/secret/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/spec/secret/</guid>
+      <description> Secret context stores a set of keys and values encrypted.
+Type .spec.type should be secret.
+Data .spec.data should be an array of keys and values.
+Examples secret with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-secret-context&amp;#34; spec: type: &amp;#34;secret&amp;#34; data: dbPassword: &amp;#34;secret-db-password&amp;#34; adminPassword: &amp;#34;secret-admin-password&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>YARN</title>
+      <link>https://cli.codefresh.io/installation/yarn/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/installation/yarn/</guid>
+      <description>the CLI requires node version 8.0.0 or higher Codefresh&amp;rsquo;s CLI is available for installation using YARN.
+Install: yarn global add codefresh
+Install a specific version: yarn global add codefresh@{VERSION}
+Update to latest version: yarn global upgrade codefresh
+Update to a specific version: yarn global upgrade codefresh@{VERSION}</description>
+    </item>
+    
+    <item>
+      <title>Create</title>
+      <link>https://cli.codefresh.io/operate-on-resources/create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/operate-on-resources/create/</guid>
+      <description> Description Create a resource from a file, directory or url
+Supported resources: &amp;lsquo;context&amp;rsquo;
+&amp;lsquo;pipeline-v2&amp;rsquo;.
+Command codefresh create
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Create Composition</title>
+      <link>https://cli.codefresh.io/compositions/create-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/compositions/create-composition/</guid>
+      <description>Description Create a composition.
+Command codefresh create composition &amp;lt;name&amp;gt;
+Aliases codefresh create com &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Name of composition     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;variable - v  Variables list   &amp;ndash;advanced   Advanced composition   &amp;ndash;compose-file - c  Path to docker-compose.</description>
+    </item>
+    
+    <item>
+      <title>Create Context</title>
+      <link>https://cli.codefresh.io/authentication/create-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/authentication/create-context/</guid>
+      <description>Description Create or update an authentication context.
+Creating authentication contexts enables the ability to work against multiple accounts.
+Command codefresh auth create-context [name]
+Arguments    Option Alias Default Description     name default Context name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;url  https://g.codefresh.io Codefresh system custom url   &amp;ndash;api-key   API key.</description>
+    </item>
+    
+    <item>
+      <title>Create Trigger Event</title>
+      <link>https://cli.codefresh.io/triggers/create-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/create-trigger-event/</guid>
+      <description>Description Create new trigger-event.
+Command codefresh create trigger-event
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;type   trigger-event type   &amp;ndash;kind   trigger-event kind   &amp;ndash;public   wether trigger-event is public (system-wide): can be linked to any pipeline in any account   &amp;ndash;secret  !generate trigger-event secret (omit to auto-generate)   &amp;ndash;value   trigger-event specific values pairs (key=value), as required by trigger-type   &amp;ndash;context   context with credentials required to setup event on remote system    Examples Create registry/dockerhub trigger-event codefresh create trigger-event --type registry --kind dockerhub --value namespace=codefresh --value name=fortune --value action=push</description>
+    </item>
+    
+    <item>
+      <title>Delete Pipeline Trigger</title>
+      <link>https://cli.codefresh.io/triggers/delete-pipeline-trigger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/delete-pipeline-trigger/</guid>
+      <description>Description Delete trigger: unlink pipeline from trigger-event.
+Command codefresh delete trigger &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
+Aliases codefresh delete t &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
+Arguments    Option Alias Default Description     event-uri  trigger-event URI (as defined by trigger type[/kind]). required    pipeline  pipeline ID. required     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Delete trigger by unlinking 5a43&amp;hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
+    </item>
+    
+    <item>
+      <title>Install or Upgrade Helm Chart</title>
+      <link>https://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/predefined-pipelines/install-or-upgrade-helm-chart/</guid>
+      <description>Description Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.
+Command codefresh install-chart
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;cluster   Install on cluster. required   &amp;ndash;namespace  default Install on namespace   &amp;ndash;tiller-namespace  kube-system Where tiller has been installed   &amp;ndash;repository  https://kubernetes-charts.</description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</guid>
+      <description>Description Create a helm-repository context from s3 bucket.
+
+Helm repository can be stored in AWS S3 bucket.
+Codefresh will integrate with the bucket in the following order
+If environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.
+You can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.
+Command codefresh create context helm-repository s3 &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;aws-access-key-id   Amazon access key id.</description>
+    </item>
+    
+    <item>
+      <title>Secret</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-secret-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-secret-context/</guid>
+      <description>Description Create a secret context.
+Command codefresh create context secret &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;owner  account Owner of the context
+Possible values:
+- user
+- account   &amp;ndash;variable - v  Variables list    Examples Create a secret.</description>
+    </item>
+    
+    <item>
+      <title>Show Build Logs</title>
+      <link>https://cli.codefresh.io/builds/show-build-logs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/builds/show-build-logs/</guid>
+      <description>Description Show logs of a build.
+Command codefresh logs &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID</description>
+    </item>
+    
+    <item>
+      <title>Docker Image</title>
+      <link>https://cli.codefresh.io/installation/docker/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/installation/docker/</guid>
+      <description>You can run the CLI using our official docker image which is published to Dockerhub
+Pull the latest version: docker pull codefresh/cli
+Pull a specific version: docker pull codefresh/cli:${VERSION}</description>
+    </item>
+    
+    <item>
+      <title>Yaml</title>
+      <link>https://cli.codefresh.io/contexts/spec/yaml/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/spec/yaml/</guid>
+      <description> Yaml context stores an yaml file.
+Type .spec.type should be yaml.
+Data .spec.data should be an array of keys and values.
+Examples yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-yaml-context&amp;#34; spec: type: &amp;#34;yaml&amp;#34; data: serviceType: &amp;#34;LoadBalancer&amp;#34; image: &amp;#34;mongo&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>Delete</title>
+      <link>https://cli.codefresh.io/operate-on-resources/delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/operate-on-resources/delete/</guid>
+      <description> Description Delete a resource from a file, directory or url
+Supported resources: &amp;lsquo;Context&amp;rsquo;
+&amp;lsquo;Pipeline-v2&amp;rsquo;.
+Command codefresh delete
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Delete Composition</title>
+      <link>https://cli.codefresh.io/compositions/delete-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/compositions/delete-composition/</guid>
+      <description>Description Delete a composition.
+Command codefresh delete composition &amp;lt;name&amp;gt;
+Aliases codefresh delete com &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Composition name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Delete a composition codefresh delete composition NAME</description>
+    </item>
+    
+    <item>
+      <title>Delete Context</title>
+      <link>https://cli.codefresh.io/contexts/delete-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/delete-context/</guid>
+      <description>Description Delete a context.
+Command codefresh delete context [name]
+Aliases codefresh delete ctx [name]
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Delete context NAME codefresh delete context NAME</description>
+    </item>
+    
+    <item>
+      <title>Delete Environment</title>
+      <link>https://cli.codefresh.io/environments/delete-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/environments/delete-environment/</guid>
+      <description>Description Delete an environment.
+Command codefresh delete environment &amp;lt;id&amp;gt;
+Aliases codefresh delete env &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Environment id     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Delete environment ID codefresh delete environment ID</description>
+    </item>
+    
+    <item>
+      <title>Delete Pipeline</title>
+      <link>https://cli.codefresh.io/pipelines-v2-beta/delete-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines-v2-beta/delete-pipeline/</guid>
+      <description> Description Delete a pipeline.
+Command codefresh delete pipeline-v2 [name]
+Aliases codefresh delete pip-v2 [name]
+Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    </description>
+    </item>
+    
+    <item>
+      <title>Delete Trigger Event</title>
+      <link>https://cli.codefresh.io/triggers/delete-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/triggers/delete-trigger-event/</guid>
+      <description>Description Delete trigger-event.
+Command codefresh delete trigger-event &amp;lt;event-uri&amp;gt;
+Arguments    Option Alias Default Description     event-uri  trigger-event URI     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;context   context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push</description>
+    </item>
+    
+    <item>
+      <title>Get Activated Context</title>
+      <link>https://cli.codefresh.io/authentication/get-activated-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/authentication/get-activated-context/</guid>
+      <description>Description Get the current activated authentication context.
+Command codefresh auth current-context
+Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Show active authentication context codefresh auth current-context</description>
+    </item>
+    
+    <item>
+      <title>Restart Build</title>
+      <link>https://cli.codefresh.io/builds/restart-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/builds/restart-build/</guid>
+      <description>Description Restart a build by its id.
+Command codefresh restart &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;detach - d  Run build and print workflow ID    Examples Restart build ID and attach the created new build codefresh restart ID</description>
+    </item>
+    
+    <item>
+      <title>Secret Yaml</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-secret-yaml-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-secret-yaml-context/</guid>
+      <description> Description Create a secret-yaml context.
+Command codefresh create context secret-yaml &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;owner  account Owner of the context
+Possible values:
+- user
+- account   &amp;ndash;variable - v  Variables list    </description>
+    </item>
+    
+    <item>
+      <title>Test Helm Release</title>
+      <link>https://cli.codefresh.io/predefined-pipelines/test-helm-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/predefined-pipelines/test-helm-release/</guid>
+      <description> Description Test a helm release.
+Command codefresh test-release [name]
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;cluster   Run on cluster. required   &amp;ndash;timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;cleanup  false delete test pods upon completion (default false)    </description>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>https://cli.codefresh.io/installation/download/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/installation/download/</guid>
+      <description>Navigate to Official Releases and download the binary that matches your operating system.
+We currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 
+After downloading the binary, untar or unzip it and your are good to go.
+You can also add the binary to your system PATH environment variable so you can use it easily.
+If your operating system is missing please feel free to open us an issue in our Github repository.</description>
+    </item>
+    
+    <item>
+      <title>Secret Yaml</title>
+      <link>https://cli.codefresh.io/contexts/spec/secret-yaml/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/spec/secret-yaml/</guid>
+      <description> Secret-Yaml context stores an yaml file encrypted.
+Type .spec.type should be secret-yaml.
+Data .spec.data should be an array of keys and values.
+Examples secret-yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-secret-yaml-context&amp;#34; spec: type: &amp;#34;secret-yaml&amp;#34; data: serviceType: &amp;#34;LoadBalancer&amp;#34; image: &amp;#34;mongo&amp;#34; type: - &amp;#34;encrypted&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>Patch</title>
+      <link>https://cli.codefresh.io/operate-on-resources/patch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/operate-on-resources/patch/</guid>
+      <description> Description Patch a resource from a file, directory or url
+Patch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.
+Supported resources: &amp;lsquo;Context&amp;rsquo;.
+Command codefresh patch
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Set Active Context</title>
+      <link>https://cli.codefresh.io/authentication/set-active-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/authentication/set-active-context/</guid>
+      <description>Description Set the current active authentication context.
+Command codefresh auth use-context &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  a context-name that exists in cfconfig file     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME</description>
+    </item>
+    
+    <item>
+      <title>Terminate Build</title>
+      <link>https://cli.codefresh.io/builds/terminate-build/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/builds/terminate-build/</guid>
+      <description>Description Terminate a build by its id.
+This command will return once the request has been received from the server.
+The termination process can take time according to the pipeline definition.
+Command codefresh terminate &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Terminate build ID codefresh terminate ID</description>
+    </item>
+    
+    <item>
+      <title>Update Pipeline</title>
+      <link>https://cli.codefresh.io/pipelines/update-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines/update-pipeline/</guid>
+      <description>Description Apply changes to a pipeline.
+Command codefresh patch pipeline &amp;lt;id&amp;gt;
+Aliases codefresh patch pip &amp;lt;id&amp;gt;
+codefresh patch pipelines &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;context - c  context in form of: type=name   &amp;ndash;engine-cluster   K8 cluster name to use for execution   &amp;ndash;engine-namespace   K8 namespace in the chosen cluster to use for execution   &amp;ndash;default-engine   Use the default engine configured by the system    Examples Add the &amp;lsquo;my-list&amp;rsquo; secret context to pipeline ID codefresh apply pipeline ID --context secret=my-list</description>
+    </item>
+    
+    <item>
+      <title>Yaml</title>
+      <link>https://cli.codefresh.io/contexts/create-context/create-yaml-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/create-context/create-yaml-context/</guid>
+      <description> Description Create a yaml context.
+Command codefresh create context yaml &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;owner  account Owner of the context
+Possible values:
+- user
+- account   &amp;ndash;variable - v  Variables list    </description>
+    </item>
+    
+    <item>
+      <title>Helm Repository</title>
+      <link>https://cli.codefresh.io/contexts/spec/helm-repository/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/spec/helm-repository/</guid>
+      <description> Helm-Repository context stores an integration with a helm repository.
+Type .spec.type should be helm-repository.
+Data .spec.data should be an array of keys and values.
+Examples </description>
+    </item>
+    
+    <item>
+      <title>Annotate Image</title>
+      <link>https://cli.codefresh.io/images/annotate-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/images/annotate-image/</guid>
+      <description>Description Annotate an image.
+Annotating an image gives the ability to add extra context on your already existing images.
+Command codefresh annotate image &amp;lt;id&amp;gt;
+Aliases codefresh annotate img &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Docker image full name or id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;label - l  annotations to add to the image    Examples Annotate an image with a single label codefresh annotate image 2dfacdaad466 -l coverage=75%</description>
+    </item>
+    
+    <item>
+      <title>Run Pipeline</title>
+      <link>https://cli.codefresh.io/pipelines/run-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines/run-pipeline/</guid>
+      <description>Description Run a pipeline and attach the created workflow logs.
+Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
+Command codefresh run &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - n- c  Ignore cached images   &amp;ndash;reset-volume - r- v  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - v- a- r- &amp;ndash; f- i- l- e  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
+    </item>
+    
+    <item>
+      <title>Wait For Build Condition</title>
+      <link>https://cli.codefresh.io/builds/wait-for-build-condition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/builds/wait-for-build-condition/</guid>
+      <description>Description Wait until a condition will be met on a build.
+Wait command is useful in case there is a need to wait for a desired status on a specific set of builds.
+Command codefresh wait &amp;lt;id..&amp;gt;
+Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;status - s success Build status.</description>
+    </item>
+    
+    <item>
+      <title>HOMEBREW</title>
+      <link>https://cli.codefresh.io/installation/homebrew/</link>
+      <pubDate>Tue, 30 Jan 2018 12:00:00 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/installation/homebrew/</guid>
+      <description> Install Codefresh CLI on macOS with Homebrew.
+Install # tap Codefresh homebrew repo brew tap codefresh-io/cli # install Codefresh CLI brew install codefresh Update to the latest version brew upgrade codefresh Uninstall brew uninstall codefresh</description>
+    </item>
+    
+    <item>
+      <title>Tag Image</title>
+      <link>https://cli.codefresh.io/images/tag-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/images/tag-image/</guid>
+      <description>Description Add an image tag.
+Tagging an image will result in the creation of a new Docker Image tag.
+Command codefresh tag &amp;lt;id&amp;gt; [tags..]
+Arguments    Option Alias Default Description     id  Docker image id    names  Tag names     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Tag image &amp;lsquo;2dfacdaad466&amp;rsquo; with a new tag: &amp;lsquo;1.</description>
+    </item>
+    
+    <item>
+      <title>Image Pull Secret</title>
+      <link>https://cli.codefresh.io/more/image-pull-secret/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/more/image-pull-secret/</guid>
+      <description>Description Generate image pull secret on Kubernetes cluster from integrated Docker registry.
+
+For Kuberentes cluster to pull an image from your private registry it needs special secret typed as kubernetes.io/dockercfg.
+After this secret been created you can use them in pod template that lives in the same namespace.
+You can generate this secret from any integrated Docker registry on your account.
+More information about image pull secret can be found here: https://kubernetes.</description>
+    </item>
+    
+    <item>
+      <title>Untag Image</title>
+      <link>https://cli.codefresh.io/images/untag-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/images/untag-image/</guid>
+      <description>Description Untag an image.
+Command codefresh untag &amp;lt;id&amp;gt; [tags..]
+Arguments    Option Alias Default Description     id  Docker image id    names  Tag names     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Remove tag &amp;lsquo;1.0.0&amp;rsquo; from image &amp;lsquo;2dfacdaad466&amp;rsquo; codefresh untag 2dfacdaad466 1.0.0</description>
+    </item>
+    
+    <item>
+      <title>Replace</title>
+      <link>https://cli.codefresh.io/operate-on-resources/replace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/operate-on-resources/replace/</guid>
+      <description> Description Replace a resource from a file, directory or url
+Supported resources: &amp;lsquo;Context&amp;rsquo;
+&amp;lsquo;Pipeline-v2&amp;rsquo;.
+Command codefresh replace
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Replace Composition</title>
+      <link>https://cli.codefresh.io/compositions/replace-composition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/compositions/replace-composition/</guid>
+      <description> Description Replace a composition resource.
+Command codefresh replace composition
+Aliases codefresh replace com composition
+Options    Option Alias Default Description     &amp;ndash;help   Print help information    </description>
+    </item>
+    
+    <item>
+      <title>Update Context</title>
+      <link>https://cli.codefresh.io/contexts/update-context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/contexts/update-context/</guid>
+      <description>Description Apply changes to a context.
+Use apply to patch an existing context.
+Command codefresh patch context
+Aliases codefresh patch ctx context
+Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml</description>
+    </item>
+    
+    <item>
+      <title>header</title>
+      <link>https://cli.codefresh.io/_header/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>https://cli.codefresh.io/_header/</guid>
+      <description>Codefresh CLI</description>
+    </item>
+    
+    <item>
+      <title>External Resources</title>
+      <link>https://cli.codefresh.io/external-resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/external-resources/</guid>
+      <description> https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield </description>
+    </item>
+    
+    <item>
+      <title>Spec</title>
+      <link>https://cli.codefresh.io/pipelines-v2-beta/spec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cli.codefresh.io/pipelines-v2-beta/spec/</guid>
+      <description>A Pipeline needs .apiVersion, .kind, and .metadata fields.
+A Pipeline also needs a .spec section.
+Examples Pipeline which is stored entirely in Codefresh apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;pipeline&amp;#34; metadata: name: &amp;#34;new-pipeline&amp;#34; description: &amp;#34;my description&amp;#34; labels: repo: &amp;#34;ArikMaor/ping-server&amp;#34; key1: &amp;#34;value1&amp;#34; project: &amp;#34;asd&amp;#34; spec: triggers: - type: &amp;#34;scm&amp;#34; repo: &amp;#34;ArikMaor/ping-server&amp;#34; events: [&amp;#34;push&amp;#34;, &amp;#34;pullrequest&amp;#34;] branchRegex: &amp;#39;.&amp;#39; contexts: [] variables: - key: &amp;#34;PORT&amp;#34; value: 3000 encrypted: false - key: &amp;#34;PAPA&amp;#34; value: &amp;#34;BLA BLA&amp;#34; encrypted: true steps: clone_step: repo: github.</description>
+    </item>
+    
+  </channel>
+</rss>
