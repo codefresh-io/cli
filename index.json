@@ -1,573 +1,573 @@
 [
 {
-	"uri": "https://cli.codefresh.io/cli/",
+	"uri": "https://codefresh-io.github.io/cli/",
 	"title": "",
 	"tags": [],
 	"description": "Codefresh CLI",
 	"content": " Codefresh CLI Welcome to Codefresh official CLI documentation!\nCodefresh CLI provides a full and flexible interface to interact with Codefresh.\nThe CLI can be used to achieve the following:  Perform any opeartion you would be able to do through the UI. Create complex automations from your local machine. Run complex pipeline use cases by using the CLI inside your pipeline steps. \nTo get started please navigate to Getting started page.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/create-pipeline-trigger/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/",
 	"title": "Create Pipeline Trigger",
 	"tags": [],
 	"description": "",
 	"content": " Description Create trigger: link pipeline to trigger-event.\nCommand codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nAliases codefresh create t \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nArguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Create trigger by linking 5a43\u0026hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/config/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/config/",
 	"title": "Config",
 	"tags": [],
 	"description": "",
 	"content": " Config context stores a set of keys and values.\nType .spec.type should be config.\nData .spec.data should be an array of keys and values.\nExamples config with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-config-context\u0026#34; spec: type: \u0026#34;config\u0026#34; data: dbUrl: \u0026#34;db-url\u0026#34; sysUrl: \u0026#34;sys-url\u0026#34;"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/getting-started/",
+	"uri": "https://codefresh-io.github.io/cli/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
 	"content": " Install Install the CLI through one of the possible ways described in the Installation page.\nAuthenticate In order to start working with the cli you will need to update the authentication configuration. Updating the authentication configuration is done via an API-KEY you generate from Codefresh. If you already have an API-KEY you can just use it.\nYou can generate a new one from the account settings page. You must be an account admin to generate api keys Once you have an API key, create a new authentication context:\ncodefresh auth create-context --api-key {API_KEY}\nGetting Help To get help and usage instructions run codefresh [COMMAND]--help.\nA help message will appear in the terminal.\nShowing Current Version Run codefresh version to see the current CLI version.\n\nThat\u0026rsquo;s it, you are good to go! "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/npm/",
+	"uri": "https://codefresh-io.github.io/cli/installation/npm/",
 	"title": "NPM",
 	"tags": [],
 	"description": "asd",
 	"content": "the CLI requires node version 8.0.0 or higher Codefresh\u0026rsquo;s CLI is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-config-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/",
 	"title": "Config",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a config context.\nCommand codefresh create context config \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;owner  account Owner of the context\nPossible values:\n- user\n- account   \u0026ndash;variable - v  Variables list    Examples Create a config. codefresh create context config my-config -v key1=valu1 -v key2=value2\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/predefined-pipelines/delete-helm-release/",
+	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/",
 	"title": "Delete Helm Release",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a helm release from a kubernetes cluster.\nCommand codefresh delete-release [name]\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;cluster   Run on cluster. required   \u0026ndash;timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   \u0026ndash;purge   remove the release from the store and make its name free for later use (default true)   \u0026ndash;detach - d  Run pipeline and print build ID   \u0026ndash;no-hooks   prevent hooks from running during deletion    Examples Delete release \u0026ldquo;my-release\u0026rdquo; from cluster \u0026ldquo;my-cluster\u0026rdquo; codefresh delete-release my-release --cluster my-cluster\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/get/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/get/",
 	"title": "Get",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a resource from a file, directory or url\nSupported resources:.\nCommand codefresh get\nOutput Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/get-build/",
+	"uri": "https://codefresh-io.github.io/cli/builds/get-build/",
 	"title": "Get Build",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific build or an array of builds.\nPassing [id] argument will cause a retrieval of a specific build.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get builds [id..]\nAliases codefresh get build [id..]\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;limit  25 Limit amount of returned results   \u0026ndash;page  1 Paginated page   \u0026ndash;status   Filter results by statuses\nPossible values:\n- pending\n- elected\n- error\n- running\n- success\n- terminated   \u0026ndash;trigger   Filter results by triggers\nPossible values:\n- build\n- launch   \u0026ndash;pipeline-id   Filter results by pipeline id   \u0026ndash;pipeline-name   Filter results by pipeline name    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get build ID codefresh get build ID\nGet all builds codefresh get builds\nGet all builds that are executions of pipeline \u0026ldquo;ID\u0026rdquo; codefresh bet builds --pipeline-id ID\nGet all builds that are executions of pipelines that are named \u0026ldquo;NAME\u0026rdquo; codefresh get builds --pipeline-name NAME\nGet all builds that their status is error codefresh get builds --status=error\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/compositions/get-composition/",
+	"uri": "https://codefresh-io.github.io/cli/compositions/get-composition/",
 	"title": "Get Composition",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific composition or an array of compositions.\nPassing [id|name] argument will cause a retrieval of a specific composition.\nIn case of not passing [id|name] argument, a list will be returned.\nCommand codefresh get compositions [id|name..]\nAliases codefresh get com [id|name..]\ncodefresh get composition [id|name..]\nArguments    Option Alias Default Description     id  composition id or name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all compositions codefresh get compositions\nGet a specific composition codefresh get compositions NAME\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/get-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/get-context/",
 	"title": "Get Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific context or an array of contexts.\nPassing [name] argument will cause a retrieval of a specific context.\nIn case of not passing [name] argument, a list will be returned.\nCommand codefresh get contexts [name..]\nAliases codefresh get ctx [name..]\ncodefresh get context [name..]\nArguments    Option Alias Default Description     name  context name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   Context type\nPossible values:\n- config\n- secret\n- helm-repository\n- yaml\n- secret-yaml   \u0026ndash;owner   Owner of the context\nPossible values:\n- user\n- account    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get context NAME codefresh get context NAME\nGet all contexts codefresh get contexts\nGet all secret contexts codefresh get context --type secret\nGet all helm-repository contexts codefresh get context --type helm-repository\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/authentication/get-contexts/",
+	"uri": "https://codefresh-io.github.io/cli/authentication/get-contexts/",
 	"title": "Get Contexts",
 	"tags": [],
 	"description": "",
 	"content": " Description Get all possible authentication contexts.\nCommand codefresh auth get-contexts\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/environments/get-environment/",
+	"uri": "https://codefresh-io.github.io/cli/environments/get-environment/",
 	"title": "Get Environment",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific environment or an array of environments.\nPassing [id] argument will cause a retrieval of a specific environment.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get environments [id..]\nAliases codefresh get env [id..]\ncodefresh get environment [id..]\nArguments    Option Alias Default Description     id  environment id or name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get environment ID codefresh get environment ID\nGet all environments codefresh get environments\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/images/get-image/",
+	"uri": "https://codefresh-io.github.io/cli/images/get-image/",
 	"title": "Get Image",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific image or an array of images.\nPassing [id] argument will cause a retrieval of a specific image.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get images [id..]\nAliases codefresh get img [id..]\ncodefresh get image [id..]\nArguments    Option Alias Default Description     id  Docker Image id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;limit  25 Limit amount of returned results   \u0026ndash;all - a  Return images from all possible registries (by default only r.cfcr.io images will be returned)   \u0026ndash;label - l  Filter by a list of annotated labels   \u0026ndash;tag - t  Filter by a list of tags   \u0026ndash;sha - s  Filter by specific commit sha   \u0026ndash;image-name   Filter by specific image name   \u0026ndash;branch   Filter by specific branch   \u0026ndash;page  1 Paginated page    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get image ID codefresh get image ID\nGet all images codefresh get images\nGet all images that their name contains the word \u0026lsquo;node\u0026rsquo; codefresh get images --image-name node\nGet all images that are annotated with \u0026lsquo;value1\u0026rsquo; for \u0026lsquo;key1\u0026rsquo; codefresh get images -l key1=value1\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines-v2-beta/get-pipeline/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines-v2-beta/get-pipeline/",
 	"title": "Get Pipeline",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific pipeline or an array of pipelines.\nCommand codefresh get pipelines-v2 [name..]\nAliases codefresh get pip-v2 [name..]\ncodefresh get pipeline-v2 [name..]\nArguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;name-regex   Filter pipelines by name   \u0026ndash;label - l  Filter by a label   \u0026ndash;limit  25 Limit amount of returned results   \u0026ndash;page  1 Paginated page    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines/get-pipeline/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines/get-pipeline/",
 	"title": "Get Pipeline",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a specific pipeline or an array of pipelines.\nPassing [id] argument will cause a retrieval of a specific pipeline.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get pipelines [id..]\nAliases codefresh get pip [id..]\ncodefresh get pipeline [id..]\nArguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;repo-owner   Repository owner   \u0026ndash;repo-name   Repository name   \u0026ndash;limit  25 Limit amount of returned results   \u0026ndash;page  1 Paginated page   \u0026ndash;name   Filter results by pipeline name    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get pipeline ID codefresh get pipeline ID\nGet all pipelines codefresh get pipelines\nGet all pipelines that their name is release codefresh get pipelines --name release\nGet all pipelines that are associated with the repository name \u0026lsquo;node\u0026rsquo; codefresh get pipelines --repo-name node\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/get-trigger-event/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/get-trigger-event/",
 	"title": "Get Trigger Event",
 	"tags": [],
 	"description": "",
 	"content": " Description Get trigger-event.\nCommand codefresh get trigger-events [event-uri]\nAliases codefresh get trigger-event [event-uri]\nArguments    Option Alias Default Description     event-uri  trigger-event URI)     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   trigger-event type   \u0026ndash;kind   trigger-event kind   \u0026ndash;filter   trigger-event URI filter (regex)   \u0026ndash;public  true get public trigger-event(s)    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get DockerHub codefresh/fortune push trigger-event codefresh get trigger-event registry:dockerhub:codefresh:fortune:push\nGet all DockerHub codefresh/* push trigger-events codefresh get trigger-event --type registry --kind dockerhub --filter *codefresh\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/get-trigger-types/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/get-trigger-types/",
 	"title": "Get Trigger Types",
 	"tags": [],
 	"description": "",
 	"content": " Description Get a list of available trigger-types.\nCommand codefresh get trigger-types\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   filter by a specific trigger type (e.g. registry, cron)   \u0026ndash;kind   filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get Docker registry trigger types codefresh get trigger-types --type registry\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/get-triggers/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/get-triggers/",
 	"title": "Get Triggers",
 	"tags": [],
 	"description": "",
 	"content": " Description Get triggers, optionally filtered by pipeline or event.\nCommand codefresh get trigger\nAliases codefresh get t trigger\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;pipeline   pipeline id   \u0026ndash;event-uri   event URI    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/",
 	"title": "HTTP",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nCommand codefresh create context helm-repository http \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;url   Url to the web server. required    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/secret/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/secret/",
 	"title": "Secret",
 	"tags": [],
 	"description": "",
 	"content": " Secret context stores a set of keys and values encrypted.\nType .spec.type should be secret.\nData .spec.data should be an array of keys and values.\nExamples secret with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-secret-context\u0026#34; spec: type: \u0026#34;secret\u0026#34; data: dbPassword: \u0026#34;secret-db-password\u0026#34; adminPassword: \u0026#34;secret-admin-password\u0026#34;"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/yarn/",
+	"uri": "https://codefresh-io.github.io/cli/installation/yarn/",
 	"title": "YARN",
 	"tags": [],
 	"description": "asd",
 	"content": "the CLI requires node version 8.0.0 or higher Codefresh\u0026rsquo;s CLI is available for installation using YARN.\nInstall: yarn global add codefresh\nInstall a specific version: yarn global add codefresh@{VERSION}\nUpdate to latest version: yarn global upgrade codefresh\nUpdate to a specific version: yarn global upgrade codefresh@{VERSION}\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/create/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/create/",
 	"title": "Create",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nCommand codefresh create\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/compositions/create-composition/",
+	"uri": "https://codefresh-io.github.io/cli/compositions/create-composition/",
 	"title": "Create Composition",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a composition.\nCommand codefresh create composition \u0026lt;name\u0026gt;\nAliases codefresh create com \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Name of composition     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;variable - v  Variables list   \u0026ndash;advanced   Advanced composition   \u0026ndash;compose-file - c  Path to docker-compose.yaml file to use to create the resource. required    Examples Creating a composition using a docker-compose.yml file codefresh create composition NAME --compose-file ./docker-compose.yml\nDefining composition variables codefresh create composition NAME --compose-file ./docker-compose.yml -v key1=value1 -v key2=value2\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/authentication/create-context/",
+	"uri": "https://codefresh-io.github.io/cli/authentication/create-context/",
 	"title": "Create Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Create or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nCommand codefresh auth create-context [name]\nArguments    Option Alias Default Description     name default Context name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;url  https://g.codefresh.io Codefresh system custom url   \u0026ndash;api-key   API key. required    Examples Creating a default context using KEY as the api-key codefresh auth create-context --api-key KEY\nCreating a named context codefresh auth create-context my-context --api-key KEY\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/create-trigger-event/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/create-trigger-event/",
 	"title": "Create Trigger Event",
 	"tags": [],
 	"description": "",
 	"content": " Description Create new trigger-event.\nCommand codefresh create trigger-event\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   trigger-event type   \u0026ndash;kind   trigger-event kind   \u0026ndash;public   wether trigger-event is public (system-wide): can be linked to any pipeline in any account   \u0026ndash;secret  !generate trigger-event secret (omit to auto-generate)   \u0026ndash;value   trigger-event specific values pairs (key=value), as required by trigger-type   \u0026ndash;context   context with credentials required to setup event on remote system    Examples Create registry/dockerhub trigger-event codefresh create trigger-event --type registry --kind dockerhub --value namespace=codefresh --value name=fortune --value action=push\nCreate cron (once in hour) trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;0 0 */1 * * *\u0026quot; --value message=hello\nCreate daily cron trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;@daily\u0026quot; --value message=hello-all\nCreate git trigger-event codefresh create trigger-event --type git --kind github --value owner=codefresh-io --value name=cf-api --value action=push\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/delete-pipeline-trigger/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/",
 	"title": "Delete Pipeline Trigger",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete trigger: unlink pipeline from trigger-event.\nCommand codefresh delete trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nAliases codefresh delete t \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nArguments    Option Alias Default Description     event-uri  trigger-event URI (as defined by trigger type[/kind]). required    pipeline  pipeline ID. required     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete trigger by unlinking 5a43\u0026hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/",
+	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/",
 	"title": "Install or Upgrade Helm Chart",
 	"tags": [],
 	"description": "",
 	"content": " Description Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nCommand codefresh install-chart\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;cluster   Install on cluster. required   \u0026ndash;namespace  default Install on namespace   \u0026ndash;tiller-namespace  kube-system Where tiller has been installed   \u0026ndash;repository  https://kubernetes-charts.storage.googleapis.com Helm repository (absolute url or name of context with type help-repository). required   \u0026ndash;name   Name of the chart in the repository. required   \u0026ndash;version   Version of the chart in the repository. required   \u0026ndash;context   Contexts (yaml   \u0026ndash;set   set of KEY=VALUE to be passed to the install   \u0026ndash;detach - d  Run pipeline and print build ID   \u0026ndash;release-name   The name to set to the release    Examples Install chart from public helm repo codefresh install-chart --repo https://kubernetes-charts.storage.googleapis.com\nGet all helm repos codefresh get ctx --type helm-repository\nInstall chart saved repo codefresh install-chart --repo my-help-repository\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/",
+	"uri": "https://codefresh-io.github.io/cli/installation/",
 	"title": "Installation",
 	"tags": [],
 	"description": "",
 	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use NPM or YARN to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by Donwloading it directly.\nIt is also possible to run the CLI using a Docker image.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/",
 	"title": "S3",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\nCommand codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;aws-access-key-id   Amazon access key id. required   \u0026ndash;aws-secret-access-key   Amazon access secret key with permissions to the bucket. required   \u0026ndash;aws-default-region   Amazon default region. required   \u0026ndash;bucket   Name of the bucket. required    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-secret-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-context/",
 	"title": "Secret",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a secret context.\nCommand codefresh create context secret \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;owner  account Owner of the context\nPossible values:\n- user\n- account   \u0026ndash;variable - v  Variables list    Examples Create a secret. codefresh create context secret my-secret -v key1=valu1 -v key2=value2\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/show-build-logs/",
+	"uri": "https://codefresh-io.github.io/cli/builds/show-build-logs/",
 	"title": "Show Build Logs",
 	"tags": [],
 	"description": "",
 	"content": " Description Show logs of a build.\nCommand codefresh logs \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID\nGet all previous logs of build ID and attach to future logs codefresh logs -f ID\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/docker/",
+	"uri": "https://codefresh-io.github.io/cli/installation/docker/",
 	"title": "Docker Image",
 	"tags": [],
 	"description": "asdsd",
 	"content": "You can run the CLI using our official docker image which is published to Dockerhub\nPull the latest version: docker pull codefresh/cli\nPull a specific version: docker pull codefresh/cli:${VERSION}\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/yaml/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/yaml/",
 	"title": "Yaml",
 	"tags": [],
 	"description": "",
 	"content": " Yaml context stores an yaml file.\nType .spec.type should be yaml.\nData .spec.data should be an array of keys and values.\nExamples yaml with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-yaml-context\u0026#34; spec: type: \u0026#34;yaml\u0026#34; data: serviceType: \u0026#34;LoadBalancer\u0026#34; image: \u0026#34;mongo\u0026#34;"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/authentication/",
+	"uri": "https://codefresh-io.github.io/cli/authentication/",
 	"title": "Authentication",
 	"tags": [],
 	"description": "",
 	"content": " Get Contexts codefresh auth get-contexts\nGet all possible authentication contexts.\nCreate Context codefresh auth create-context [name]\nCreate or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nGet Activated Context codefresh auth current-context\nGet the current activated authentication context.\nSet Active Context codefresh auth use-context \u0026lt;name\u0026gt;\nSet the current active authentication context.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/delete/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/delete/",
 	"title": "Delete",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nCommand codefresh delete\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/compositions/delete-composition/",
+	"uri": "https://codefresh-io.github.io/cli/compositions/delete-composition/",
 	"title": "Delete Composition",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a composition.\nCommand codefresh delete composition \u0026lt;name\u0026gt;\nAliases codefresh delete com \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Composition name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete a composition codefresh delete composition NAME\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/delete-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/delete-context/",
 	"title": "Delete Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a context.\nCommand codefresh delete context [name]\nAliases codefresh delete ctx [name]\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete context NAME codefresh delete context NAME\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/environments/delete-environment/",
+	"uri": "https://codefresh-io.github.io/cli/environments/delete-environment/",
 	"title": "Delete Environment",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete an environment.\nCommand codefresh delete environment \u0026lt;id\u0026gt;\nAliases codefresh delete env \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Environment id     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete environment ID codefresh delete environment ID\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines-v2-beta/delete-pipeline/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/",
 	"title": "Delete Pipeline",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a pipeline.\nCommand codefresh delete pipeline-v2 [name]\nAliases codefresh delete pip-v2 [name]\nArguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/delete-trigger-event/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/delete-trigger-event/",
 	"title": "Delete Trigger Event",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete trigger-event.\nCommand codefresh delete trigger-event \u0026lt;event-uri\u0026gt;\nArguments    Option Alias Default Description     event-uri  trigger-event URI     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;context   context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/authentication/get-activated-context/",
+	"uri": "https://codefresh-io.github.io/cli/authentication/get-activated-context/",
 	"title": "Get Activated Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Get the current activated authentication context.\nCommand codefresh auth current-context\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Show active authentication context codefresh auth current-context\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/restart-build/",
+	"uri": "https://codefresh-io.github.io/cli/builds/restart-build/",
 	"title": "Restart Build",
 	"tags": [],
 	"description": "",
 	"content": " Description Restart a build by its id.\nCommand codefresh restart \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;detach - d  Run build and print workflow ID    Examples Restart build ID and attach the created new build codefresh restart ID\nRestart build ID and return the new build id codefresh restart ID -d\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-secret-yaml-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-yaml-context/",
 	"title": "Secret Yaml",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a secret-yaml context.\nCommand codefresh create context secret-yaml \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;owner  account Owner of the context\nPossible values:\n- user\n- account   \u0026ndash;variable - v  Variables list    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/predefined-pipelines/test-helm-release/",
+	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/",
 	"title": "Test Helm Release",
 	"tags": [],
 	"description": "",
 	"content": " Description Test a helm release.\nCommand codefresh test-release [name]\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;cluster   Run on cluster. required   \u0026ndash;timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   \u0026ndash;detach - d  Run pipeline and print build ID   \u0026ndash;cleanup  false delete test pods upon completion (default false)    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/download/",
+	"uri": "https://codefresh-io.github.io/cli/installation/download/",
 	"title": "Download",
 	"tags": [],
 	"description": "asd",
 	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/secret-yaml/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/",
 	"title": "Secret Yaml",
 	"tags": [],
 	"description": "",
 	"content": " Secret-Yaml context stores an yaml file encrypted.\nType .spec.type should be secret-yaml.\nData .spec.data should be an array of keys and values.\nExamples secret-yaml with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-secret-yaml-context\u0026#34; spec: type: \u0026#34;secret-yaml\u0026#34; data: serviceType: \u0026#34;LoadBalancer\u0026#34; image: \u0026#34;mongo\u0026#34; type: - \u0026#34;encrypted\u0026#34;"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/patch/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/patch/",
 	"title": "Patch",
 	"tags": [],
 	"description": "",
 	"content": " Description Patch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nCommand codefresh patch\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines/",
 	"title": "Pipelines",
 	"tags": [],
 	"description": "",
 	"content": " Get Pipeline codefresh get pipelines [id..]\nGet a specific pipeline or an array of pipelines.\nPassing [id] argument will cause a retrieval of a specific pipeline.\nIn case of not passing [id] argument, a list will be returned.\nUpdate Pipeline codefresh patch pipeline \u0026lt;id\u0026gt;\nApply changes to a pipeline.\nRun Pipeline codefresh run \u0026lt;id\u0026gt;\nRun a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/authentication/set-active-context/",
+	"uri": "https://codefresh-io.github.io/cli/authentication/set-active-context/",
 	"title": "Set Active Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Set the current active authentication context.\nCommand codefresh auth use-context \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  a context-name that exists in cfconfig file     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/terminate-build/",
+	"uri": "https://codefresh-io.github.io/cli/builds/terminate-build/",
 	"title": "Terminate Build",
 	"tags": [],
 	"description": "",
 	"content": " Description Terminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nCommand codefresh terminate \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Terminate build ID codefresh terminate ID\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines/update-pipeline/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines/update-pipeline/",
 	"title": "Update Pipeline",
 	"tags": [],
 	"description": "",
 	"content": " Description Apply changes to a pipeline.\nCommand codefresh patch pipeline \u0026lt;id\u0026gt;\nAliases codefresh patch pip \u0026lt;id\u0026gt;\ncodefresh patch pipelines \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  pipeline id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;context - c  context in form of: type=name   \u0026ndash;engine-cluster   K8 cluster name to use for execution   \u0026ndash;engine-namespace   K8 namespace in the chosen cluster to use for execution   \u0026ndash;default-engine   Use the default engine configured by the system    Examples Add the \u0026lsquo;my-list\u0026rsquo; secret context to pipeline ID codefresh apply pipeline ID --context secret=my-list\nDefine pipeline ID executions to run on k8 cluster \u0026lsquo;my-cluster\u0026rsquo; on namespace \u0026lsquo;my-namespace\u0026rsquo; codefresh apply pipeline ID --engine-cluster=my-cluster --engine-namespace=my-namespace\nDefine pipeline ID executions to run on the default engine of Codefresh codefresh apply pipeline ID --default-engine\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-yaml-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/",
 	"title": "Yaml",
 	"tags": [],
 	"description": "",
 	"content": " Description Create a yaml context.\nCommand codefresh create context yaml \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;owner  account Owner of the context\nPossible values:\n- user\n- account   \u0026ndash;variable - v  Variables list    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines-v2-beta/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines-v2-beta/",
 	"title": "Pipelines V2 (beta)",
 	"tags": [],
 	"description": "",
 	"content": " Get Pipeline codefresh get pipelines-v2 [name..]\nGet a specific pipeline or an array of pipelines.\nDelete Pipeline codefresh delete pipeline-v2 [name]\nDelete a pipeline.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/helm-repository/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/helm-repository/",
 	"title": "Helm Repository",
 	"tags": [],
 	"description": "",
 	"content": " Helm-Repository context stores an integration with a helm repository.\nType .spec.type should be helm-repository.\nData .spec.data should be an array of keys and values.\nExamples "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/images/annotate-image/",
+	"uri": "https://codefresh-io.github.io/cli/images/annotate-image/",
 	"title": "Annotate Image",
 	"tags": [],
 	"description": "",
 	"content": " Description Annotate an image.\nAnnotating an image gives the ability to add extra context on your already existing images.\nCommand codefresh annotate image \u0026lt;id\u0026gt;\nAliases codefresh annotate img \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Docker image full name or id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;label - l  annotations to add to the image    Examples Annotate an image with a single label codefresh annotate image 2dfacdaad466 -l coverage=75%\nAnnotate an image with multiple labels codefresh annotate image 2dfacdaad466 -l coverage=75% -l tests_passed=true\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/",
+	"uri": "https://codefresh-io.github.io/cli/builds/",
 	"title": "Builds",
 	"tags": [],
 	"description": "",
 	"content": " Get Build codefresh get builds [id..]\nGet a specific build or an array of builds.\nPassing [id] argument will cause a retrieval of a specific build.\nIn case of not passing [id] argument, a list will be returned.\nShow Build Logs codefresh logs \u0026lt;id\u0026gt;\nShow logs of a build.\nRestart Build codefresh restart \u0026lt;id\u0026gt;\nRestart a build by its id.\nTerminate Build codefresh terminate \u0026lt;id\u0026gt;\nTerminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nWait For Build Condition codefresh wait \u0026lt;id..\u0026gt;\nWait until a condition will be met on a build.\nWait command is useful in case there is a need to wait for a desired status on a specific set of builds.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines/run-pipeline/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines/run-pipeline/",
 	"title": "Run Pipeline",
 	"tags": [],
 	"description": "",
 	"content": " Description Run a pipeline and attach the created workflow logs.\nReturns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).\nCommand codefresh run \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;branch - b  Branch   \u0026ndash;sha - s  Set commit sha   \u0026ndash;no-cache - n- c  Ignore cached images   \u0026ndash;reset-volume - r- v  Reset pipeline cached volume   \u0026ndash;variable - v  Set build variables   \u0026ndash;detach - d  Run pipeline and print build ID   \u0026ndash;context - c  Run pipeline with contexts   \u0026ndash;variable-file - v- a- r- \u0026ndash; f- i- l- e  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file. (supported format: json and yaml) The variables file structure should be an array. The pipeline will be triggered multiple times according to the array length.\nVariable yaml file with 2 sets of variables - key: value key2: key1 - key: value key2: key2 Variable json file with 2 sets of variables [ { \u0026#34;key\u0026#34;: \u0026#34;value\u0026#34;, \u0026#34;key2\u0026#34;: \u0026#34;key1\u0026#34; }, { \u0026#34;key\u0026#34;: \u0026#34;value\u0026#34;, \u0026#34;key2\u0026#34;: \u0026#34;key2\u0026#34; } ] Examples Defining the source control context using a branch codefresh run PIPELINE_ID -b=master\nDefining the source control context using a commit codefresh run PIPELINE_ID -s=52b992e783d2f84dd0123c70ac8623b4f0f938d1\nSetting variables through the command codefresh run PIPELINE_ID -b=master -v key1=value1 -v key2=value2\nSettings variables through a yml file codefresh run PIPELINE_ID -b=master --var-file ./var_file.yml\nInject contexts to the pipeline execution codefresh run PIPELINE_ID -b=master --context context\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/builds/wait-for-build-condition/",
+	"uri": "https://codefresh-io.github.io/cli/builds/wait-for-build-condition/",
 	"title": "Wait For Build Condition",
 	"tags": [],
 	"description": "",
 	"content": " Description Wait until a condition will be met on a build.\nWait command is useful in case there is a need to wait for a desired status on a specific set of builds.\nCommand codefresh wait \u0026lt;id..\u0026gt;\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;status - s success Build status. required\nPossible values:\n- pending\n- elected\n- running\n- error\n- success\n- terminating\n- terminated   \u0026ndash;debug - d  Show debug output until the condition will be met   \u0026ndash;timeout - t 30 Define a timeout for the wait operation in minutes    Examples Wait until build \u0026ldquo;ID\u0026rdquo; will reach \u0026ldquo;success\u0026rdquo; status codefresh wait ID\nWait until build \u0026ldquo;ID\u0026rdquo; will reach \u0026ldquo;terminated\u0026rdquo; status codefresh wait ID --status=terminated\nWait until build \u0026ldquo;ID1\u0026rdquo; and build \u0026ldquo;ID2\u0026rdquo; will reach \u0026ldquo;success\u0026rdquo; status codefresh wait ID1 ID2\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/installation/homebrew/",
+	"uri": "https://codefresh-io.github.io/cli/installation/homebrew/",
 	"title": "HOMEBREW",
 	"tags": [],
 	"description": "Homebrew install",
 	"content": " Install Codefresh CLI on macOS with Homebrew.\nInstall # tap Codefresh homebrew repo brew tap codefresh-io/cli # install Codefresh CLI brew install codefresh Update to the latest version brew upgrade codefresh Uninstall brew uninstall codefresh"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/",
 	"title": "Operate On Resources",
 	"tags": [],
 	"description": "",
 	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/images/tag-image/",
+	"uri": "https://codefresh-io.github.io/cli/images/tag-image/",
 	"title": "Tag Image",
 	"tags": [],
 	"description": "",
 	"content": " Description Add an image tag.\nTagging an image will result in the creation of a new Docker Image tag.\nCommand codefresh tag \u0026lt;id\u0026gt; [tags..]\nArguments    Option Alias Default Description     id  Docker image id    names  Tag names     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Tag image \u0026lsquo;2dfacdaad466\u0026rsquo; with a new tag: \u0026lsquo;1.0.0\u0026rsquo; codefresh tag 2dfacdaad466 1.0.0\nTag image \u0026lsquo;2dfacdaad466\u0026rsquo; with multiple tags: \u0026lsquo;1.0.0\u0026rsquo; and \u0026lsquo;my-tag\u0026rsquo; codefresh tag 2dfacdaad466 1.0.0 my-tag\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/",
 	"title": "Contexts",
 	"tags": [],
 	"description": "",
 	"content": " Get Context codefresh get contexts [name..]\nGet a specific context or an array of contexts.\nPassing [name] argument will cause a retrieval of a specific context.\nIn case of not passing [name] argument, a list will be returned.\nDelete Context codefresh delete context [name]\nDelete a context.\nUpdate Context codefresh patch context\nApply changes to a context.\nUse apply to patch an existing context.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/more/image-pull-secret/",
+	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
 	"title": "Image Pull Secret",
 	"tags": [],
 	"description": "",
 	"content": " Description Generate image pull secret on Kubernetes cluster from integrated Docker registry.\n\nFor Kuberentes cluster to pull an image from your private registry it needs special secret typed as kubernetes.io/dockercfg.\nAfter this secret been created you can use them in pod template that lives in the same namespace.\nYou can generate this secret from any integrated Docker registry on your account.\nMore information about image pull secret can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.\nCommand codefresh generate image-pull-secret\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;cluster   cluster name. required   \u0026ndash;namespace  default namespace name   \u0026ndash;registry   name of Docker registry to generate pull secret from. required    Examples Generate image pull secret codefresh generate image-pull-secret --cluster cluster --registry cfcr\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/images/untag-image/",
+	"uri": "https://codefresh-io.github.io/cli/images/untag-image/",
 	"title": "Untag Image",
 	"tags": [],
 	"description": "",
 	"content": " Description Untag an image.\nCommand codefresh untag \u0026lt;id\u0026gt; [tags..]\nArguments    Option Alias Default Description     id  Docker image id    names  Tag names     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Remove tag \u0026lsquo;1.0.0\u0026rsquo; from image \u0026lsquo;2dfacdaad466\u0026rsquo; codefresh untag 2dfacdaad466 1.0.0\nRemove tags \u0026lsquo;1.0.0\u0026rsquo; and \u0026lsquo;my-tag\u0026rsquo; from image\u0026rsquo;2dfacdaad466\u0026rsquo; codefresh untag 2dfacdaad466 1.0.0 my-tag\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/images/",
+	"uri": "https://codefresh-io.github.io/cli/images/",
 	"title": "Images",
 	"tags": [],
 	"description": "",
 	"content": " Get Image codefresh get images [id..]\nGet a specific image or an array of images.\nPassing [id] argument will cause a retrieval of a specific image.\nIn case of not passing [id] argument, a list will be returned.\nAnnotate Image codefresh annotate image \u0026lt;id\u0026gt;\nAnnotate an image.\nAnnotating an image gives the ability to add extra context on your already existing images.\nTag Image codefresh tag \u0026lt;id\u0026gt; [tags..]\nAdd an image tag.\nTagging an image will result in the creation of a new Docker Image tag.\nUntag Image codefresh untag \u0026lt;id\u0026gt; [tags..]\nUntag an image.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/operate-on-resources/replace/",
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/replace/",
 	"title": "Replace",
 	"tags": [],
 	"description": "",
 	"content": " Description Replace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nCommand codefresh replace\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/compositions/replace-composition/",
+	"uri": "https://codefresh-io.github.io/cli/compositions/replace-composition/",
 	"title": "Replace Composition",
 	"tags": [],
 	"description": "",
 	"content": " Description Replace a composition resource.\nCommand codefresh replace composition\nAliases codefresh replace com composition\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information    "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/triggers/",
+	"uri": "https://codefresh-io.github.io/cli/triggers/",
 	"title": "Triggers",
 	"tags": [],
 	"description": "",
 	"content": " Create Pipeline Trigger codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nCreate trigger: link pipeline to trigger-event.\nGet Triggers codefresh get trigger\nGet triggers, optionally filtered by pipeline or event.\nGet Trigger Event codefresh get trigger-events [event-uri]\nGet trigger-event.\nGet Trigger Types codefresh get trigger-types\nGet a list of available trigger-types.\nDelete Pipeline Trigger codefresh delete trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nDelete trigger: unlink pipeline from trigger-event.\nCreate Trigger Event codefresh create trigger-event\nCreate new trigger-event.\nDelete Trigger Event codefresh delete trigger-event \u0026lt;event-uri\u0026gt;\nDelete trigger-event.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/update-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/update-context/",
 	"title": "Update Context",
 	"tags": [],
 	"description": "",
 	"content": " Description Apply changes to a context.\nUse apply to patch an existing context.\nCommand codefresh patch context\nAliases codefresh patch ctx context\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/",
 	"title": "Create Context",
 	"tags": [],
 	"description": "",
 	"content": " Create Config Context codefresh create context config \u0026lt;name\u0026gt;\nCreate a config context.\nCreate Secret Context codefresh create context secret \u0026lt;name\u0026gt;\nCreate a secret context.\nCreate Secret-Yaml Context codefresh create context secret-yaml \u0026lt;name\u0026gt;\nCreate a secret-yaml context.\nCreate Yaml Context codefresh create context yaml \u0026lt;name\u0026gt;\nCreate a yaml context.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/environments/",
+	"uri": "https://codefresh-io.github.io/cli/environments/",
 	"title": "Environments",
 	"tags": [],
 	"description": "",
 	"content": " Get Environment codefresh get environments [id..]\nGet a specific environment or an array of environments.\nPassing [id] argument will cause a retrieval of a specific environment.\nIn case of not passing [id] argument, a list will be returned.\nDelete Environment codefresh delete environment \u0026lt;id\u0026gt;\nDelete an environment.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/create-context/create-helm-repository-context/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",
 	"title": "Helm Repository",
 	"tags": [],
 	"description": "",
 	"content": " From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/compositions/",
+	"uri": "https://codefresh-io.github.io/cli/compositions/",
 	"title": "Compositions",
 	"tags": [],
 	"description": "",
 	"content": " Get Composition codefresh get compositions [id|name..]\nGet a specific composition or an array of compositions.\nPassing [id|name] argument will cause a retrieval of a specific composition.\nIn case of not passing [id|name] argument, a list will be returned.\nCreate Composition codefresh create composition \u0026lt;name\u0026gt;\nCreate a composition.\nDelete Composition codefresh delete composition \u0026lt;name\u0026gt;\nDelete a composition.\nReplace Composition codefresh replace composition\nReplace a composition resource.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/predefined-pipelines/",
+	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/",
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
 	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/more/",
+	"uri": "https://codefresh-io.github.io/cli/more/",
 	"title": "More...",
 	"tags": [],
 	"description": "",
 	"content": " Image Pull Secret codefresh generate image-pull-secret\nGenerate image pull secret on Kubernetes cluster from integrated Docker registry.\n\nFor Kuberentes cluster to pull an image from your private registry it needs special secret typed as kubernetes.io/dockercfg.\nAfter this secret been created you can use them in pod template that lives in the same namespace.\nYou can generate this secret from any integrated Docker registry on your account.\nMore information about image pull secret can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/_header/",
+	"uri": "https://codefresh-io.github.io/cli/_header/",
 	"title": "header",
 	"tags": [],
 	"description": "",
 	"content": "Codefresh CLI\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/categories/",
+	"uri": "https://codefresh-io.github.io/cli/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://cli.codefresh.io/cli/external-resources/",
+	"uri": "https://codefresh-io.github.io/cli/external-resources/",
 	"title": "External Resources",
 	"tags": [],
 	"description": "Hugo-built Sites with docdock theme",
 	"content": " https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield "
 },
 {
-	"uri": "https://cli.codefresh.io/cli/contexts/spec/",
+	"uri": "https://codefresh-io.github.io/cli/contexts/spec/",
 	"title": "Spec",
 	"tags": [],
 	"description": "",
 	"content": " A Context needs .apiVersion, .kind, and .metadata fields.\nA Context also needs a .spec section.\nOwner A context can be either attached to a user or to an account.\n.owner can be either account or user. The default is account. Type .spec.type should be one of the following:  config  secret  yaml  secret-yaml  helm-repository  \nData .spec.data should be different according to the type of the context\n"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/pipelines-v2-beta/spec/",
+	"uri": "https://codefresh-io.github.io/cli/pipelines-v2-beta/spec/",
 	"title": "Spec",
 	"tags": [],
 	"description": "",
 	"content": " A Pipeline needs .apiVersion, .kind, and .metadata fields.\nA Pipeline also needs a .spec section.\nExamples Pipeline which is stored entirely in Codefresh apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;pipeline\u0026#34; metadata: name: \u0026#34;new-pipeline\u0026#34; description: \u0026#34;my description\u0026#34; labels: repo: \u0026#34;ArikMaor/ping-server\u0026#34; key1: \u0026#34;value1\u0026#34; project: \u0026#34;asd\u0026#34; spec: triggers: - type: \u0026#34;scm\u0026#34; repo: \u0026#34;ArikMaor/ping-server\u0026#34; events: [\u0026#34;push\u0026#34;, \u0026#34;pullrequest\u0026#34;] branchRegex: \u0026#39;.\u0026#39; contexts: [] variables: - key: \u0026#34;PORT\u0026#34; value: 3000 encrypted: false - key: \u0026#34;PAPA\u0026#34; value: \u0026#34;BLA BLA\u0026#34; encrypted: true steps: clone_step: repo: github.com/itai-codefresh/test-env-file revision: master test_step_1: image: \u0026#34;alpine\u0026#34; working_directory: ${{clone_step}} commands: - echo ls - echo \u0026#34;hello world\u0026#34; - echo \u0026#34;plain value $PORT\u0026#34; - echo \u0026#34;encrypted value $PAPA\u0026#34; - echo \u0026#34;value from context $COOKIE\u0026#34; build: type: build working_directory: ${{clone_step}} dockerfile: ./Dockerfile image_name: itai/test tag: bla  Pipeline which is stored on a remote git apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;pipeline\u0026#34; metadata: name: \u0026#34;ew-pipeline-git\u0026#34; labels: repo: \u0026#34;ArikMaor/ping-server\u0026#34; spec: triggers: - type: \u0026#34;scm\u0026#34; repo: \u0026#34;ArikMaor/ping-server\u0026#34; events: [\u0026#34;push\u0026#34;, \u0026#34;pullrequest\u0026#34;] branchRegex: \u0026#39;.\u0026#39; contexts: [] variables: - key: \u0026#34;PORT\u0026#34; value: 3000 encrypted: false - key: \u0026#34;PAPA\u0026#34; value: \u0026#34;BLA BLA\u0026#34; encrypted: true source: location: \u0026#34;git\u0026#34; repo: \u0026#34;codefresh-io/cli\u0026#34; path: \u0026#34;codefresh.yml\u0026#34; Pipeline which is stored on a specific url apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;pipeline\u0026#34; metadata: name: \u0026#34;new-pipeline-url\u0026#34; labels: repo: \u0026#34;codefresh-io/cli\u0026#34; spec: triggers: - type: \u0026#34;scm\u0026#34; repo: \u0026#34;ArikMaor/ping-server\u0026#34; events: [\u0026#34;push\u0026#34;, \u0026#34;pullrequest\u0026#34;] branchRegex: \u0026#39;.\u0026#39; contexts: [] variables: - key: \u0026#34;PORT\u0026#34; value: 3000 encrypted: false - key: \u0026#34;PAPA\u0026#34; value: \u0026#34;BLA BLA\u0026#34; encrypted: true source: location: \u0026#34;url\u0026#34; url: \u0026#34;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml\u0026#34;"
 },
 {
-	"uri": "https://cli.codefresh.io/cli/tags/",
+	"uri": "https://codefresh-io.github.io/cli/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
