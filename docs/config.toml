@@ -1,5 +1,5 @@
 theme = "docdock"
-baseurl = "http://cli.codefresh.io"
+baseurl = "https://cli.codefresh.io"
 title = "Codefresh CLI Documentation"
 publishDir = "../public"
 languageCode = "en-us"
