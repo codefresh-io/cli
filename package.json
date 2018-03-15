@@ -64,7 +64,8 @@
     "hugo-cli": "^0.5.4",
     "jest": "^22.4.2",
     "nock": "^9.2.3",
-    "pkg": "^4.3.0-beta.5"
+    "pkg": "^4.3.0-beta.5",
+    "std-mocks": "^1.0.1"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cli/issues"
