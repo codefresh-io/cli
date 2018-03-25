@@ -20,7 +20,7 @@
       <description>Description Create trigger: link pipeline to trigger-event.
 Command codefresh create trigger &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
 Aliases codefresh create t &amp;lt;event-uri&amp;gt; &amp;lt;pipeline&amp;gt;
-Arguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Create trigger by linking 5a43&amp;hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
+Arguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filter   trigger filter name=condition pairs    Examples Create trigger by linking 5a43&amp;hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
     </item>
     
     <item>

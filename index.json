@@ -11,7 +11,7 @@
 	"title": "Create Pipeline Trigger",
 	"tags": [],
 	"description": "",
-	"content": " Description Create trigger: link pipeline to trigger-event.\nCommand codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nAliases codefresh create t \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nArguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Create trigger by linking 5a43\u0026hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0\n"
+	"content": " Description Create trigger: link pipeline to trigger-event.\nCommand codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nAliases codefresh create t \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nArguments    Option Alias Default Description     event-uri  trigger-event URI    pipeline  pipeline to be triggered by the trigger-event     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filter   trigger filter name=condition pairs    Examples Create trigger by linking 5a43\u0026hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/config/",
