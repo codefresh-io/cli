@@ -693,9 +693,9 @@
 <ul>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#pipeline-which-is-stored-entirely-in-codefresh">Pipeline which is stored entirely in Codefresh</a></li>
-<li><a href="#pipeline-which-is-stored-on-a-remote-git">Pipeline which is stored on a remote git</a></li>
-<li><a href="#pipeline-which-is-stored-on-a-specific-url">Pipeline which is stored on a specific url</a></li>
+<li><a href="#basic-pipeline">Basic Pipeline</a></li>
+<li><a href="#pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</a></li>
+<li><a href="#pipeline-with-a-remote-spec-template-brought-from-a-git-repository-1">Pipeline with a remote spec template brought from a git repository</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -720,36 +720,35 @@
     
     
 
-<p>A Pipeline needs <code>.apiVersion</code>, <code>.kind</code>, and <code>.metadata</code> fields.</p>
+<p>A Pipeline needs <code>.version</code>, <code>.kind</code>, and <code>.metadata</code> fields.</p>
 
 <p>A Pipeline also needs a <code>.spec</code> section.</p>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="pipeline-which-is-stored-entirely-in-codefresh">Pipeline which is stored entirely in Codefresh</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion<span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
+<h4 id="basic-pipeline">Basic Pipeline</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
 kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;new-pipeline&#34;</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;basic-pipeline&#34;</span>
   description<span style="color:#111">:</span> <span style="color:#d88200">&#34;my description&#34;</span>
   labels<span style="color:#111">:</span>
-    repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;ArikMaor/ping-server&#34;</span>
     key<span style="color:#ae81ff">1</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value1&#34;</span>
-    project<span style="color:#111">:</span> <span style="color:#d88200">&#34;asd&#34;</span>
-    
+    key<span style="color:#ae81ff">2</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value2&#34;</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
-    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;scm&#34;</span>
-      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;ArikMaor/ping-server&#34;</span>
-      events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;pullrequest&#34;</span><span style="color:#111">]</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+      events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">]</span>
       branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
       value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PAPA&#34;</span>
-      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;BLA BLA&#34;</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
   steps<span style="color:#111">:</span>
     clone_step<span style="color:#111">:</span>
@@ -771,17 +770,16 @@ spec<span style="color:#111">:</span>
       image_name<span style="color:#111">:</span> itai/test
       tag<span style="color:#111">:</span> bla
   </code></pre></div>
-<h4 id="pipeline-which-is-stored-on-a-remote-git">Pipeline which is stored on a remote git</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion<span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
+<h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
 kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;ew-pipeline-git&#34;</span>
-  labels<span style="color:#111">:</span>
-    repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;ArikMaor/ping-server&#34;</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-pipeline-1&#34;</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
-    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;scm&#34;</span>
-      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;ArikMaor/ping-server&#34;</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
       events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;pullrequest&#34;</span><span style="color:#111">]</span>
       branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
@@ -789,24 +787,23 @@ spec<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
       value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PAPA&#34;</span>
-      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;BLA BLA&#34;</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
-  source<span style="color:#111">:</span>
+  specTemplate<span style="color:#111">:</span>
     location<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
     repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
     path<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh.yml&#34;</span></code></pre></div>
-<h4 id="pipeline-which-is-stored-on-a-specific-url">Pipeline which is stored on a specific url</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion<span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
+<h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository-1">Pipeline with a remote spec template brought from a git repository</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
 kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;new-pipeline-url&#34;</span>
-  labels<span style="color:#111">:</span>
-    repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-pipeline-1&#34;</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
-    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;scm&#34;</span>
-      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;ArikMaor/ping-server&#34;</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
       events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;pullrequest&#34;</span><span style="color:#111">]</span>
       branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
@@ -814,10 +811,10 @@ spec<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
       value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PAPA&#34;</span>
-      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;BLA BLA&#34;</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
-  source<span style="color:#111">:</span>
+  specTemplate<span style="color:#111">:</span>
     location<span style="color:#111">:</span> <span style="color:#d88200">&#34;url&#34;</span>
     url<span style="color:#111">:</span> <span style="color:#d88200">&#34;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml&#34;</span></code></pre></div>
 
