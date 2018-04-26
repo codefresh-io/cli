@@ -21,10 +21,10 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
       events: ["push"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
@@ -35,7 +35,7 @@ spec:
       encrypted: true
   steps:
     clone_step:
-      repo: github.com/itai-codefresh/test-env-file
+      repo: github.com/nodejs/node
       revision: master
     test_step_1:
       image: "alpine"
@@ -64,10 +64,10 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
       events: ["push", "pullrequest"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
@@ -91,10 +91,10 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
       events: ["push", "pullrequest"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
