@@ -738,10 +738,10 @@ metadata<span style="color:#111">:</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
-      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
       repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
       events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">]</span>
-      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
@@ -752,7 +752,7 @@ spec<span style="color:#111">:</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
   steps<span style="color:#111">:</span>
     clone_step<span style="color:#111">:</span>
-      repo<span style="color:#111">:</span> github.com/itai-codefresh/test-env-file
+      repo<span style="color:#111">:</span> github.com/nodejs/node
       revision<span style="color:#111">:</span> master
     test_step_<span style="color:#ae81ff">1</span><span style="color:#111">:</span>
       image<span style="color:#111">:</span> <span style="color:#d88200">&#34;alpine&#34;</span>
@@ -778,10 +778,10 @@ metadata<span style="color:#111">:</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
-      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
       repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
       events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;pullrequest&#34;</span><span style="color:#111">]</span>
-      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
@@ -802,10 +802,10 @@ metadata<span style="color:#111">:</span>
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
-      kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
       repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
       events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;pullrequest&#34;</span><span style="color:#111">]</span>
-      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;.&#39;</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
