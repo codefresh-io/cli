@@ -91,6 +91,13 @@
 	"content": " Description Get a specific environment or an array of environments.\nPassing [id] argument will cause a retrieval of a specific environment.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get environments [id..]\nAliases codefresh get env [id..]\ncodefresh get environment [id..]\nArguments    Option Alias Default Description     id  environment id or name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get environment ID codefresh get environment ID\nGet all environments codefresh get environments\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/",
+	"title": "Get Helm Repo",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a specific helm-repo or an array of helm-repos.\nCommand codefresh get helm-repo [name..]\nArguments    Option Alias Default Description     name  Helm repo name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all helm repos codefresh get helm-repo\nGet a specific helm repo codefresh get helm-repo my-repo\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/images/get-image/",
 	"title": "Get Image",
 	"tags": [],
@@ -173,6 +180,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nCommand codefresh auth create-context [name]\nArguments    Option Alias Default Description     name default Context name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;url  https://g.codefresh.io Codefresh system custom url   \u0026ndash;api-key   API key. required    Examples Creating a default context using KEY as the api-key codefresh auth create-context --api-key KEY\nCreating a named context codefresh auth create-context my-context --api-key KEY\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/",
+	"title": "Create Helm Repo",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a Codefresh managed helm repo.\nATM it is only possible to create a helm repository against Codefresh managed helm registry.\nCommand codefresh create helm-repo [name]\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;public - p  Mark the helm repo as public    Examples Create a private helm repo managed by Codefresh. codefresh create helm-repo\nCreate a public helm repo managed by Codefresh. codefresh create helm-repo --public\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/create-trigger-event/",
@@ -273,6 +287,13 @@
 	"content": " Description Delete an environment.\nCommand codefresh delete environment \u0026lt;id\u0026gt;\nAliases codefresh delete env \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Environment id     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete environment ID codefresh delete environment ID\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/",
+	"title": "Delete Helm Repo",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a helm repo.\nCommand codefresh delete helm-repo [name]\nArguments    Option Alias Default Description     name  Helm repo name     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Delete a helm repo. codefresh delete helm-repo my-repo\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/",
 	"title": "Delete Pipeline",
 	"tags": [],
@@ -315,6 +336,13 @@
 	"content": " Description Test a helm release.\nCommand codefresh test-release [name]\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;cluster   Run on cluster. required   \u0026ndash;timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   \u0026ndash;detach - d  Run pipeline and print build ID   \u0026ndash;cleanup  false delete test pods upon completion (default false)    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/",
+	"title": "Operate On Resources",
+	"tags": [],
+	"description": "",
+	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/installation/download/",
 	"title": "Download",
 	"tags": [],
@@ -355,6 +383,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Terminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nCommand codefresh terminate \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     \u0026ndash;help   Print help information    Examples Terminate build ID codefresh terminate ID\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/",
+	"title": "Update Helm Repo",
+	"tags": [],
+	"description": "",
+	"content": " Description Update a helm repo.\nCommand codefresh patch helm-repo [name]\nArguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;public - p  Mark the helm repo as public    Examples Update helm repo to be public codefresh patch helm-repo my-repo -p\nUpdate helm repo to be private codefresh patch helm-repo my-repo -p=false\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/pipelines/update-pipeline/",
@@ -418,13 +453,6 @@
 	"tags": [],
 	"description": "Homebrew install",
 	"content": " Install Codefresh CLI on macOS with Homebrew.\nInstall # tap Codefresh homebrew repo brew tap codefresh-io/cli # install Codefresh CLI brew install codefresh Update to the latest version brew upgrade codefresh Uninstall brew uninstall codefresh"
-},
-{
-	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/",
-	"title": "Operate On Resources",
-	"tags": [],
-	"description": "",
-	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/images/tag-image/",
@@ -516,6 +544,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Get Composition codefresh get compositions [id|name..]\nGet a specific composition or an array of compositions.\nPassing [id|name] argument will cause a retrieval of a specific composition.\nIn case of not passing [id|name] argument, a list will be returned.\nCreate Composition codefresh create composition \u0026lt;name\u0026gt;\nCreate a composition.\nDelete Composition codefresh delete composition \u0026lt;name\u0026gt;\nDelete a composition.\nReplace Composition codefresh replace composition\nReplace a composition resource.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/helm-repos/",
+	"title": "Helm Repos",
+	"tags": [],
+	"description": "",
+	"content": " Get Helm Repo codefresh get helm-repo [name..]\nGet a specific helm-repo or an array of helm-repos.\nCreate Helm Repo codefresh create helm-repo [name]\nCreate a Codefresh managed helm repo.\nATM it is only possible to create a helm repository against Codefresh managed helm registry.\nDelete Helm Repo codefresh delete helm-repo [name]\nDelete a helm repo.\nUpdate Helm Repo codefresh patch helm-repo [name]\nUpdate a helm repo.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/",

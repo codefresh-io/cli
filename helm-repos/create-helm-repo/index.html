@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Test Helm Release :: Codefresh CLI Documentation</title>
+<title>Create Helm Repo :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/predefined-pipelines/test-helm-release/">
+  <body data-url="/cli/helm-repos/create-helm-repo/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -572,10 +572,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/helm-repos/" class="dd-item haschildren
+    <li data-nav-id="/cli/helm-repos/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/helm-repos/">Helm Repos</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/helm-repos/">Helm Repos</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/helm-repos/get-helm-repo/" class="dd-item">
@@ -585,7 +586,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/helm-repos/create-helm-repo/" class="dd-item">
+      <li data-nav-id="/cli/helm-repos/create-helm-repo/" class="dd-item active">
         <div>
           <a href="/cli/helm-repos/create-helm-repo/">
             Create Helm Repo
@@ -608,11 +609,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/predefined-pipelines/delete-helm-release/" class="dd-item">
@@ -629,7 +629,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/predefined-pipelines/test-helm-release/" class="dd-item active">
+      <li data-nav-id="/cli/predefined-pipelines/test-helm-release/" class="dd-item">
         <div>
           <a href="/cli/predefined-pipelines/test-helm-release/">
             Test Helm Release
@@ -708,7 +708,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/predefined-pipelines/'>Predefined Pipelines</a> > Test Helm Release
+ <a href='/cli/'></a> > <a href='/cli/helm-repos/'>Helm Repos</a> > Create Helm Repo
 
  
 
@@ -729,7 +729,13 @@
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
+<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#create-a-private-helm-repo-managed-by-codefresh">Create a private helm repo managed by Codefresh.</a></li>
+<li><a href="#create-a-public-helm-repo-managed-by-codefresh">Create a public helm repo managed by Codefresh.</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -743,7 +749,7 @@
 
 <div id="body-inner">
   
-    <h1>Test Helm Release</h1>
+    <h1>Create Helm Repo</h1>
   
 
 
@@ -755,11 +761,35 @@
 
 <h3 id="description">Description</h3>
 
-<p>Test a helm release.</p>
+<p>Create a Codefresh managed helm repo.</p>
+
+<p>ATM it is only possible to create a helm repository against Codefresh managed helm registry.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh test-release [name]</code></p>
+<p><code>codefresh create helm-repo [name]</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Name of context</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -782,34 +812,23 @@
 </tr>
 
 <tr>
-<td>&ndash;cluster</td>
+<td>&ndash;public</td>
+<td>- p</td>
 <td></td>
-<td></td>
-<td>Run on cluster. <code>required</code></td>
-</tr>
-
-<tr>
-<td>&ndash;timeout</td>
-<td></td>
-<td>300</td>
-<td>time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)</td>
-</tr>
-
-<tr>
-<td>&ndash;detach</td>
-<td>- d</td>
-<td></td>
-<td>Run pipeline and print build ID</td>
-</tr>
-
-<tr>
-<td>&ndash;cleanup</td>
-<td></td>
-<td>false</td>
-<td>delete test pods upon completion (default false)</td>
+<td>Mark the helm repo as public</td>
 </tr>
 </tbody>
 </table>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="create-a-private-helm-repo-managed-by-codefresh">Create a private helm repo managed by Codefresh.</h4>
+
+<p><code>codefresh create helm-repo</code></p>
+
+<h4 id="create-a-public-helm-repo-managed-by-codefresh">Create a public helm repo managed by Codefresh.</h4>
+
+<p><code>codefresh create helm-repo --public</code></p>
 
 
     

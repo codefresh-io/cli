@@ -162,6 +162,17 @@ Arguments    Option Alias Default Description     id  environment id or name    
     </item>
     
     <item>
+      <title>Get Helm Repo</title>
+      <link>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</guid>
+      <description>Description Get a specific helm-repo or an array of helm-repos.
+Command codefresh get helm-repo [name..]
+Arguments    Option Alias Default Description     name  Helm repo name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+    </item>
+    
+    <item>
       <title>Get Image</title>
       <link>https://codefresh-io.github.io/cli/images/get-image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -317,6 +328,18 @@ Arguments    Option Alias Default Description     name default Context name     
     </item>
     
     <item>
+      <title>Create Helm Repo</title>
+      <link>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</guid>
+      <description>Description Create a Codefresh managed helm repo.
+ATM it is only possible to create a helm repository against Codefresh managed helm registry.
+Command codefresh create helm-repo [name]
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;public - p  Mark the helm repo as public    Examples Create a private helm repo managed by Codefresh.</description>
+    </item>
+    
+    <item>
       <title>Create Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -464,6 +487,17 @@ Arguments    Option Alias Default Description     id  Environment id     Options
     </item>
     
     <item>
+      <title>Delete Helm Repo</title>
+      <link>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</guid>
+      <description>Description Delete a helm repo.
+Command codefresh delete helm-repo [name]
+Arguments    Option Alias Default Description     name  Helm repo name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Delete a helm repo. codefresh delete helm-repo my-repo</description>
+    </item>
+    
+    <item>
       <title>Delete Pipeline</title>
       <link>https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -593,6 +627,17 @@ This command will return once the request has been received from the server.
 The termination process can take time according to the pipeline definition.
 Command codefresh terminate &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id  Build id     Options    Option Alias Default Description     &amp;ndash;help   Print help information    Examples Terminate build ID codefresh terminate ID</description>
+    </item>
+    
+    <item>
+      <title>Update Helm Repo</title>
+      <link>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</guid>
+      <description>Description Update a helm repo.
+Command codefresh patch helm-repo [name]
+Arguments    Option Alias Default Description     name  Name of context     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;public - p  Mark the helm repo as public    Examples Update helm repo to be public codefresh patch helm-repo my-repo -p</description>
     </item>
     
     <item>

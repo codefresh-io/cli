@@ -59,6 +59,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/images/get-image/</loc>
   </url>
   
@@ -106,6 +110,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/authentication/create-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</loc>
   </url>
   
   <url>
@@ -168,6 +176,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/</loc>
   </url>
   
@@ -189,6 +201,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/</loc>
   </url>
   
   <url>
@@ -215,6 +231,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/builds/terminate-build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</loc>
   </url>
   
   <url>
@@ -253,10 +273,6 @@
   <url>
     <loc>https://codefresh-io.github.io/cli/installation/homebrew/</loc>
     <lastmod>2018-01-30T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/</loc>
   </url>
   
   <url>
@@ -309,6 +325,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/compositions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/</loc>
   </url>
   
   <url>
