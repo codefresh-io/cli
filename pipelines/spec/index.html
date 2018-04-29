@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Trigger Types :: Codefresh CLI Documentation</title>
+<title>Spec :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/triggers/get-trigger-types/">
+  <body data-url="/cli/pipelines/spec/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -190,10 +190,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/pipelines/" class="dd-item haschildren
+    <li data-nav-id="/cli/pipelines/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/pipelines/">Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/pipelines/get-pipeline/" class="dd-item">
@@ -217,7 +218,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/pipelines/spec/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/spec/" class="dd-item active">
         <div>
           <a href="/cli/pipelines/spec/">
             Spec
@@ -435,11 +436,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/triggers/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/triggers/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/triggers/">Triggers</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/triggers/">Triggers</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/triggers/create-pipeline-trigger/" class="dd-item">
@@ -456,7 +456,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-trigger-types/" class="dd-item active">
+      <li data-nav-id="/cli/triggers/get-trigger-types/" class="dd-item">
         <div>
           <a href="/cli/triggers/get-trigger-types/">
             Get Trigger Types
@@ -686,7 +686,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/triggers/'>Triggers</a> > Get Trigger Types
+ <a href='/cli/'></a> > <a href='/cli/pipelines/'>Pipelines</a> > Spec
 
  
 
@@ -705,13 +705,11 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#get-docker-registry-trigger-types">Get Docker registry trigger types</a></li>
+<li><a href="#basic-pipeline">Basic Pipeline</a></li>
+<li><a href="#pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</a></li>
+<li><a href="#pipeline-with-a-remote-spec-template-brought-from-a-git-repository-1">Pipeline with a remote spec template brought from a git repository</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -726,7 +724,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Trigger Types</h1>
+    <h1>Spec</h1>
   
 
 
@@ -736,92 +734,103 @@
     
     
 
-<h3 id="description">Description</h3>
+<p>A Pipeline needs <code>.version</code>, <code>.kind</code>, and <code>.metadata</code> fields.</p>
 
-<p>Get a list of available trigger-types.</p>
-
-<h3 id="command">Command</h3>
-
-<p><code>codefresh get trigger-types</code></p>
-
-<h3 id="options">Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>&ndash;help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>&ndash;type</td>
-<td></td>
-<td></td>
-<td>filter by a specific trigger type (e.g. <code>registry</code>, <code>cron</code>)</td>
-</tr>
-
-<tr>
-<td>&ndash;kind</td>
-<td></td>
-<td></td>
-<td>filter by a specific trigger kind (e.g. <code>dockerhub</code>, <code>cfcr</code>, <code>gcr</code>, <code>acr</code>); only some <code>trigger-types</code> may have kinds</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>&ndash;output</td>
-<td>- o</td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
-</tr>
-
-<tr>
-<td>&ndash;watch</td>
-<td>- w</td>
-<td></td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>&ndash;watch-interval</td>
-<td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
-</tr>
-</tbody>
-</table>
+<p>A Pipeline also needs a <code>.spec</code> section.</p>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="get-docker-registry-trigger-types">Get Docker registry trigger types</h4>
-
-<p><code>codefresh get trigger-types --type registry</code></p>
-
+<h4 id="basic-pipeline">Basic Pipeline</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
+kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;basic-pipeline&#34;</span>
+  description<span style="color:#111">:</span> <span style="color:#d88200">&#34;my description&#34;</span>
+  labels<span style="color:#111">:</span>
+    key<span style="color:#ae81ff">1</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value1&#34;</span>
+    key<span style="color:#ae81ff">2</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value2&#34;</span>
+spec<span style="color:#111">:</span>
+  triggers<span style="color:#111">:</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+      events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">]</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
+  contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
+  variables<span style="color:#111">:</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  steps<span style="color:#111">:</span>
+    clone_step<span style="color:#111">:</span>
+      repo<span style="color:#111">:</span> github.com/nodejs/node
+      revision<span style="color:#111">:</span> master
+    test_step_<span style="color:#ae81ff">1</span><span style="color:#111">:</span>
+      image<span style="color:#111">:</span> <span style="color:#d88200">&#34;alpine&#34;</span>
+      working_directory<span style="color:#111">:</span> ${{clone_step}}
+      commands<span style="color:#111">:</span>
+      - echo ls
+      - echo <span style="color:#d88200">&#34;hello world&#34;</span>
+      - echo <span style="color:#d88200">&#34;plain value $PORT&#34;</span>
+      - echo <span style="color:#d88200">&#34;encrypted value $PAPA&#34;</span>
+      - echo <span style="color:#d88200">&#34;value from context $COOKIE&#34;</span>
+    build<span style="color:#111">:</span>
+      type<span style="color:#111">:</span> build
+      working_directory<span style="color:#111">:</span> ${{clone_step}}
+      dockerfile<span style="color:#111">:</span> ./Dockerfile
+      image_name<span style="color:#111">:</span> itai/test
+      tag<span style="color:#111">:</span> bla
+  </code></pre></div>
+<h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
+kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-pipeline&#34;</span>
+spec<span style="color:#111">:</span>
+  triggers<span style="color:#111">:</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+      events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">]</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
+  contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
+  variables<span style="color:#111">:</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  specTemplate<span style="color:#111">:</span>
+    location<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+    repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+    path<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh.yml&#34;</span></code></pre></div>
+<h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository-1">Pipeline with a remote spec template brought from a git repository</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#34;1.0&#34;</span>
+kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;pipeline&#34;</span>
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-pipeline&#34;</span>
+spec<span style="color:#111">:</span>
+  triggers<span style="color:#111">:</span>
+    - type<span style="color:#111">:</span> <span style="color:#d88200">&#34;git&#34;</span>
+      provider<span style="color:#111">:</span> <span style="color:#d88200">&#34;github&#34;</span>
+      repo<span style="color:#111">:</span> <span style="color:#d88200">&#34;codefresh-io/cli&#34;</span>
+      events<span style="color:#111">:</span> <span style="color:#111">[</span><span style="color:#d88200">&#34;push&#34;</span><span style="color:#111">]</span>
+      branchRegex<span style="color:#111">:</span> <span style="color:#d88200">&#39;/./&#39;</span>
+  contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
+  variables<span style="color:#111">:</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;PORT&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#ae81ff">3000</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+    - key<span style="color:#111">:</span> <span style="color:#d88200">&#34;SECRET&#34;</span>
+      value<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-value&#34;</span>
+      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  specTemplate<span style="color:#111">:</span>
+    location<span style="color:#111">:</span> <span style="color:#d88200">&#34;url&#34;</span>
+    url<span style="color:#111">:</span> <span style="color:#d88200">&#34;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml&#34;</span></code></pre></div>
 
     
     

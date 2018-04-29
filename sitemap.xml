@@ -67,10 +67,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines-v2-beta/get-pipeline/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</loc>
   </url>
   
@@ -180,7 +176,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/</loc>
+    <loc>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</loc>
   </url>
   
   <url>
@@ -238,15 +234,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines/update-pipeline/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines-v2-beta/</loc>
   </url>
   
   <url>
@@ -359,7 +347,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines-v2-beta/spec/</loc>
+    <loc>https://codefresh-io.github.io/cli/pipelines/spec/</loc>
   </url>
   
   <url>

@@ -189,30 +189,15 @@ Arguments    Option Alias Default Description     id  Docker Image id     Option
     
     <item>
       <title>Get Pipeline</title>
-      <link>https://codefresh-io.github.io/cli/pipelines-v2-beta/get-pipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/pipelines-v2-beta/get-pipeline/</guid>
-      <description>Description Get a specific pipeline or an array of pipelines.
-Command codefresh get pipelines-v2 [name..]
-Aliases codefresh get pip-v2 [name..]
-codefresh get pipeline-v2 [name..]
-Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;name-regex   Filter pipelines by name   &amp;ndash;label - l  Filter by a label   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
-    </item>
-    
-    <item>
-      <title>Get Pipeline</title>
       <link>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</guid>
       <description>Description Get a specific pipeline or an array of pipelines.
-Passing [id] argument will cause a retrieval of a specific pipeline.
-In case of not passing [id] argument, a list will be returned.
 Command codefresh get pipelines [id..]
 Aliases codefresh get pip [id..]
 codefresh get pipeline [id..]
-Arguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;repo-owner   Repository owner   &amp;ndash;repo-name   Repository name   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page   &amp;ndash;name   Filter results by pipeline name    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+Arguments    Option Alias Default Description     id  Pipeline name/id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;decrypt-variables - d  Will decrypt encrypted variables   &amp;ndash;name   Filter pipelines by name   &amp;ndash;label - l  Filter by a label   &amp;ndash;limit  25 Limit amount of returned results   &amp;ndash;page  1 Paginated page    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
     </item>
     
     <item>
@@ -499,13 +484,13 @@ Arguments    Option Alias Default Description     name  Helm repo name     Optio
     
     <item>
       <title>Delete Pipeline</title>
-      <link>https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/</link>
+      <link>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/pipelines-v2-beta/delete-pipeline/</guid>
+      <guid>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</guid>
       <description> Description Delete a pipeline.
-Command codefresh delete pipeline-v2 [name]
-Aliases codefresh delete pip-v2 [name]
+Command codefresh delete pipeline [name]
+Aliases codefresh delete pip [name]
 Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information    </description>
     </item>
     
@@ -641,19 +626,6 @@ Arguments    Option Alias Default Description     name  Name of context     Opti
     </item>
     
     <item>
-      <title>Update Pipeline</title>
-      <link>https://codefresh-io.github.io/cli/pipelines/update-pipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/pipelines/update-pipeline/</guid>
-      <description>Description Apply changes to a pipeline.
-Command codefresh patch pipeline &amp;lt;id&amp;gt;
-Aliases codefresh patch pip &amp;lt;id&amp;gt;
-codefresh patch pipelines &amp;lt;id&amp;gt;
-Arguments    Option Alias Default Description     id  pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;context - c  context in form of: type=name   &amp;ndash;engine-cluster   K8 cluster name to use for execution   &amp;ndash;engine-namespace   K8 namespace in the chosen cluster to use for execution   &amp;ndash;default-engine   Use the default engine configured by the system    Examples Add the &amp;lsquo;my-list&amp;rsquo; secret context to pipeline ID codefresh apply pipeline ID --context secret=my-list</description>
-    </item>
-    
-    <item>
       <title>Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -700,8 +672,8 @@ Arguments    Option Alias Default Description     id  Docker image full name or 
       <guid>https://codefresh-io.github.io/cli/pipelines/run-pipeline/</guid>
       <description>Description Run a pipeline and attach the created workflow logs.
 Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-Command codefresh run &amp;lt;id&amp;gt;
-Arguments    Option Alias Default Description     id  Pipeline id     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - n- c  Ignore cached images   &amp;ndash;reset-volume - r- v  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - v- a- r- &amp;ndash; f- i- l- e  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
+Command codefresh run &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - n- c  Ignore cached images   &amp;ndash;reset-volume - r- v  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - v- a- r- &amp;ndash; f- i- l- e  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
     </item>
     
     <item>
@@ -821,10 +793,10 @@ Options    Option Alias Default Description     &amp;ndash;help   Print help inf
     
     <item>
       <title>Spec</title>
-      <link>https://codefresh-io.github.io/cli/pipelines-v2-beta/spec/</link>
+      <link>https://codefresh-io.github.io/cli/pipelines/spec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/pipelines-v2-beta/spec/</guid>
+      <guid>https://codefresh-io.github.io/cli/pipelines/spec/</guid>
       <description>A Pipeline needs .version, .kind, and .metadata fields.
 A Pipeline also needs a .spec section.
 Examples Basic Pipeline version: &amp;#34;1.0&amp;#34; kind: &amp;#34;pipeline&amp;#34; metadata: name: &amp;#34;basic-pipeline&amp;#34; description: &amp;#34;my description&amp;#34; labels: key1: &amp;#34;value1&amp;#34; key2: &amp;#34;value2&amp;#34; spec: triggers: - type: &amp;#34;git&amp;#34; provider: &amp;#34;github&amp;#34; repo: &amp;#34;codefresh-io/cli&amp;#34; events: [&amp;#34;push&amp;#34;] branchRegex: &amp;#39;/./&amp;#39; contexts: [] variables: - key: &amp;#34;PORT&amp;#34; value: 3000 encrypted: false - key: &amp;#34;SECRET&amp;#34; value: &amp;#34;secret-value&amp;#34; encrypted: true steps: clone_step: repo: github.com/nodejs/node revision: master test_step_1: image: &amp;#34;alpine&amp;#34; working_directory: ${{clone_step}} commands: - echo ls - echo &amp;#34;hello world&amp;#34; - echo &amp;#34;plain value $PORT&amp;#34; - echo &amp;#34;encrypted value $PAPA&amp;#34; - echo &amp;#34;value from context $COOKIE&amp;#34; build: type: build working_directory: ${{clone_step}} dockerfile: .</description>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Trigger Types :: Codefresh CLI Documentation</title>
+<title>Delete Pipeline :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/triggers/get-trigger-types/">
+  <body data-url="/cli/pipelines/delete-pipeline/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -190,10 +190,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/pipelines/" class="dd-item haschildren
+    <li data-nav-id="/cli/pipelines/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/pipelines/">Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/pipelines/get-pipeline/" class="dd-item">
@@ -203,7 +204,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/pipelines/delete-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/delete-pipeline/" class="dd-item active">
         <div>
           <a href="/cli/pipelines/delete-pipeline/">
             Delete Pipeline
@@ -435,11 +436,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/triggers/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/triggers/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/triggers/">Triggers</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/triggers/">Triggers</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/triggers/create-pipeline-trigger/" class="dd-item">
@@ -456,7 +456,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-trigger-types/" class="dd-item active">
+      <li data-nav-id="/cli/triggers/get-trigger-types/" class="dd-item">
         <div>
           <a href="/cli/triggers/get-trigger-types/">
             Get Trigger Types
@@ -686,7 +686,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/triggers/'>Triggers</a> > Get Trigger Types
+ <a href='/cli/'></a> > <a href='/cli/pipelines/'>Pipelines</a> > Delete Pipeline
 
  
 
@@ -706,13 +706,12 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
+<li><a href="#command">Command</a>
 <ul>
-<li><a href="#get-docker-registry-trigger-types">Get Docker registry trigger types</a></li>
+<li><a href="#aliases">Aliases</a></li>
 </ul></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -726,7 +725,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Trigger Types</h1>
+    <h1>Delete Pipeline</h1>
   
 
 
@@ -738,11 +737,37 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get a list of available trigger-types.</p>
+<p>Delete a pipeline.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get trigger-types</code></p>
+<p><code>codefresh delete pipeline [name]</code></p>
+
+<h4 id="aliases">Aliases</h4>
+
+<p><code>codefresh delete pip [name]</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td>Pipeline name</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -763,64 +788,8 @@
 <td></td>
 <td>Print help information</td>
 </tr>
-
-<tr>
-<td>&ndash;type</td>
-<td></td>
-<td></td>
-<td>filter by a specific trigger type (e.g. <code>registry</code>, <code>cron</code>)</td>
-</tr>
-
-<tr>
-<td>&ndash;kind</td>
-<td></td>
-<td></td>
-<td>filter by a specific trigger kind (e.g. <code>dockerhub</code>, <code>cfcr</code>, <code>gcr</code>, <code>acr</code>); only some <code>trigger-types</code> may have kinds</td>
-</tr>
 </tbody>
 </table>
-
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>&ndash;output</td>
-<td>- o</td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
-</tr>
-
-<tr>
-<td>&ndash;watch</td>
-<td>- w</td>
-<td></td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>&ndash;watch-interval</td>
-<td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="get-docker-registry-trigger-types">Get Docker registry trigger types</h4>
-
-<p><code>codefresh get trigger-types --type registry</code></p>
 
 
     

@@ -204,10 +204,10 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/pipelines/update-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/delete-pipeline/" class="dd-item">
         <div>
-          <a href="/cli/pipelines/update-pipeline/">
-            Update Pipeline
+          <a href="/cli/pipelines/delete-pipeline/">
+            Delete Pipeline
           </a>
         </div>
     </li>
@@ -218,31 +218,9 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/pipelines-v2-beta/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/pipelines-v2-beta/">Pipelines V2 (beta)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/pipelines-v2-beta/get-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/spec/" class="dd-item">
         <div>
-          <a href="/cli/pipelines-v2-beta/get-pipeline/">
-            Get Pipeline
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/pipelines-v2-beta/delete-pipeline/" class="dd-item">
-        <div>
-          <a href="/cli/pipelines-v2-beta/delete-pipeline/">
-            Delete Pipeline
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/pipelines-v2-beta/spec/" class="dd-item">
-        <div>
-          <a href="/cli/pipelines-v2-beta/spec/">
+          <a href="/cli/pipelines/spec/">
             Spec
           </a>
         </div>
@@ -723,7 +701,7 @@
 <li>
 <ul>
 <li><a href="#get-pipeline-get-pipeline"><a href="get-pipeline">Get Pipeline</a></a></li>
-<li><a href="#update-pipeline-update-pipeline"><a href="update-pipeline">Update Pipeline</a></a></li>
+<li><a href="#delete-pipeline-delete-pipeline"><a href="delete-pipeline">Delete Pipeline</a></a></li>
 <li><a href="#run-pipeline-run-pipeline"><a href="run-pipeline">Run Pipeline</a></a></li>
 </ul></li>
 </ul></li>
@@ -755,17 +733,15 @@
 
 <p>Get a specific pipeline or an array of pipelines.</p>
 
-<p>Passing [id] argument will cause a retrieval of a specific pipeline.<br> In case of not passing [id] argument, a list will be returned.</p>
+<h3 id="delete-pipeline-delete-pipeline"><a href="delete-pipeline">Delete Pipeline</a></h3>
 
-<h3 id="update-pipeline-update-pipeline"><a href="update-pipeline">Update Pipeline</a></h3>
+<p><code>codefresh delete pipeline [name]</code></p>
 
-<p><code>codefresh patch pipeline &lt;id&gt;</code></p>
-
-<p>Apply changes to a pipeline.</p>
+<p>Delete a pipeline.</p>
 
 <h3 id="run-pipeline-run-pipeline"><a href="run-pipeline">Run Pipeline</a></h3>
 
-<p><code>codefresh run &lt;id&gt;</code></p>
+<p><code>codefresh run &lt;name&gt;</code></p>
 
 <p>Run a pipeline and attach the created workflow logs.</p>
 

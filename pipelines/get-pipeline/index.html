@@ -204,10 +204,10 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/pipelines/update-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/delete-pipeline/" class="dd-item">
         <div>
-          <a href="/cli/pipelines/update-pipeline/">
-            Update Pipeline
+          <a href="/cli/pipelines/delete-pipeline/">
+            Delete Pipeline
           </a>
         </div>
     </li>
@@ -218,31 +218,9 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/pipelines-v2-beta/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/pipelines-v2-beta/">Pipelines V2 (beta)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/pipelines-v2-beta/get-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/pipelines/spec/" class="dd-item">
         <div>
-          <a href="/cli/pipelines-v2-beta/get-pipeline/">
-            Get Pipeline
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/pipelines-v2-beta/delete-pipeline/" class="dd-item">
-        <div>
-          <a href="/cli/pipelines-v2-beta/delete-pipeline/">
-            Delete Pipeline
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/pipelines-v2-beta/spec/" class="dd-item">
-        <div>
-          <a href="/cli/pipelines-v2-beta/spec/">
+          <a href="/cli/pipelines/spec/">
             Spec
           </a>
         </div>
@@ -735,13 +713,6 @@
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-pipeline-id">Get pipeline ID</a></li>
-<li><a href="#get-all-pipelines">Get all pipelines</a></li>
-<li><a href="#get-all-pipelines-that-their-name-is-release">Get all pipelines that their name is release</a></li>
-<li><a href="#get-all-pipelines-that-are-associated-with-the-repository-name-node">Get all pipelines that are associated with the repository name &lsquo;node&rsquo;</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -769,8 +740,6 @@
 
 <p>Get a specific pipeline or an array of pipelines.</p>
 
-<p>Passing [id] argument will cause a retrieval of a specific pipeline.<br> In case of not passing [id] argument, a list will be returned.</p>
-
 <h3 id="command">Command</h3>
 
 <p><code>codefresh get pipelines [id..]</code></p>
@@ -797,7 +766,7 @@
 <tr>
 <td>id</td>
 <td></td>
-<td>Pipeline id</td>
+<td>Pipeline name/id</td>
 <td></td>
 </tr>
 </tbody>
@@ -824,17 +793,24 @@
 </tr>
 
 <tr>
-<td>&ndash;repo-owner</td>
+<td>&ndash;decrypt-variables</td>
+<td>- d</td>
 <td></td>
-<td></td>
-<td>Repository owner</td>
+<td>Will decrypt encrypted variables</td>
 </tr>
 
 <tr>
-<td>&ndash;repo-name</td>
+<td>&ndash;name</td>
 <td></td>
 <td></td>
-<td>Repository name</td>
+<td>Filter pipelines by name</td>
+</tr>
+
+<tr>
+<td>&ndash;label</td>
+<td>- l</td>
+<td></td>
+<td>Filter by a label</td>
 </tr>
 
 <tr>
@@ -849,13 +825,6 @@
 <td></td>
 <td>1</td>
 <td>Paginated page</td>
-</tr>
-
-<tr>
-<td>&ndash;name</td>
-<td></td>
-<td></td>
-<td>Filter results by pipeline name</td>
 </tr>
 </tbody>
 </table>
@@ -895,24 +864,6 @@
 </tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="get-pipeline-id">Get pipeline ID</h4>
-
-<p><code>codefresh get pipeline ID</code></p>
-
-<h4 id="get-all-pipelines">Get all pipelines</h4>
-
-<p><code>codefresh get pipelines</code></p>
-
-<h4 id="get-all-pipelines-that-their-name-is-release">Get all pipelines that their name is release</h4>
-
-<p><code>codefresh get pipelines --name release</code></p>
-
-<h4 id="get-all-pipelines-that-are-associated-with-the-repository-name-node">Get all pipelines that are associated with the repository name &lsquo;node&rsquo;</h4>
-
-<p><code>codefresh get pipelines --repo-name node</code></p>
 
 
     
