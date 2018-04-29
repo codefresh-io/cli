@@ -21,7 +21,7 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
       events: ["push"]
       branchRegex: '.'
@@ -64,9 +64,9 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
-      events: ["push", "pullrequest"]
+      events: ["push"]
       branchRegex: '.'
   contexts: []
   variables:
@@ -91,9 +91,9 @@ metadata:
 spec:
   triggers:
     - type: "git"
-      kind: "github"
+      provider: "github"
       repo: "codefresh-io/cli"
-      events: ["push", "pullrequest"]
+      events: ["push"]
       branchRegex: '.'
   contexts: []
   variables:
