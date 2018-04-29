@@ -24,7 +24,7 @@ spec:
       provider: "github"
       repo: "codefresh-io/cli"
       events: ["push"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
@@ -35,7 +35,7 @@ spec:
       encrypted: true
   steps:
     clone_step:
-      repo: github.com/itai-codefresh/test-env-file
+      repo: github.com/nodejs/node
       revision: master
     test_step_1:
       image: "alpine"
@@ -67,7 +67,7 @@ spec:
       provider: "github"
       repo: "codefresh-io/cli"
       events: ["push"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
@@ -94,7 +94,7 @@ spec:
       provider: "github"
       repo: "codefresh-io/cli"
       events: ["push"]
-      branchRegex: '.'
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
