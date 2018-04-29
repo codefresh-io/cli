@@ -60,13 +60,13 @@ spec:
 version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "my-pipeline-1"
+  name: "my-pipeline"
 spec:
   triggers:
     - type: "git"
       provider: "github"
       repo: "codefresh-io/cli"
-      events: ["push", "pullrequest"]
+      events: ["push"]
       branchRegex: '/./'
   contexts: []
   variables:
@@ -87,13 +87,13 @@ spec:
 version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "my-pipeline-1"
+  name: "my-pipeline"
 spec:
   triggers:
     - type: "git"
       provider: "github"
       repo: "codefresh-io/cli"
-      events: ["push", "pullrequest"]
+      events: ["push"]
       branchRegex: '/./'
   contexts: []
   variables:
