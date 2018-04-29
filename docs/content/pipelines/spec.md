@@ -60,7 +60,7 @@ spec:
 version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "my-pipeline-1"
+  name: "my-pipeline"
 spec:
   triggers:
     - type: "git"
@@ -87,7 +87,7 @@ spec:
 version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "my-pipeline-1"
+  name: "my-pipeline"
 spec:
   triggers:
     - type: "git"
