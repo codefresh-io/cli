@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Authentication :: Codefresh CLI Documentation</title>
+<title>gitlab :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/authentication/">
+  <body data-url="/cli/contexts/create-context/create-git-context/gitlab/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -111,11 +111,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/authentication/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/authentication/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/authentication/">Authentication</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/authentication/">Authentication</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/authentication/get-contexts/" class="dd-item">
@@ -270,10 +269,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/">Contexts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/">Contexts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/get-context/" class="dd-item">
@@ -297,10 +297,11 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/">Create Context</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
@@ -331,10 +332,11 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-git-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-git-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-git-context/">Git</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
@@ -351,7 +353,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item active">
         <div>
           <a href="/cli/contexts/create-context/create-git-context/gitlab/">
             gitlab
@@ -719,7 +721,22 @@
 
 
 
- <a href='/cli/'></a> > Authentication
+
+
+
+
+
+
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/create-context/'>Create Context</a> > <a href='/cli/contexts/create-context/create-git-context/'>Git</a> > gitlab
+
+ 
+
+ 
+
+ 
 
  
 
@@ -736,10 +753,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#get-contexts-get-contexts"><a href="get-contexts">Get Contexts</a></a></li>
-<li><a href="#create-context-create-context"><a href="create-context">Create Context</a></a></li>
-<li><a href="#get-activated-context-get-activated-context"><a href="get-activated-context">Get Activated Context</a></a></li>
-<li><a href="#set-active-context-set-active-context"><a href="set-active-context">Set Active Context</a></a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -753,7 +769,7 @@
 
 <div id="body-inner">
   
-    <h1>Authentication</h1>
+    <h1>gitlab</h1>
   
 
 
@@ -761,35 +777,67 @@
     
     
     
+    
 
+<h3 id="description">Description</h3>
 
+<p>Create a gitlab context.</p>
 
-<h3 id="get-contexts-get-contexts"><a href="get-contexts">Get Contexts</a></h3>
+<p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create gitlab context you need to generate the token here: <a href="https://gitlab.com/profile/personal_access_tokens">https://gitlab.com/profile/personal_access_tokens</a>.</p>
 
-<p><code>codefresh auth get-contexts</code></p>
+<h3 id="command">Command</h3>
 
-<p>Get all possible authentication contexts.</p>
+<p><code>codefresh create context git gitlab &lt;name&gt;</code></p>
 
-<h3 id="create-context-create-context"><a href="create-context">Create Context</a></h3>
+<h3 id="options">Options</h3>
 
-<p><code>codefresh auth create-context [name]</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>Create or update an authentication context.</p>
+<tbody>
+<tr>
+<td>&ndash;help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
 
-<p>Creating authentication contexts enables the ability to work against multiple accounts.</p>
+<tr>
+<td>&ndash;access-token</td>
+<td>- t</td>
+<td></td>
+<td>Access token from to be used to clone repositories. <code>required</code></td>
+</tr>
 
-<h3 id="get-activated-context-get-activated-context"><a href="get-activated-context">Get Activated Context</a></h3>
+<tr>
+<td>&ndash;owner</td>
+<td>- o</td>
+<td>account</td>
+<td>Owner of the context, user owned contexts cannot be accessible by other users across the account. <code>required</code><br><br>Possible values:<br> - account<br> - user</td>
+</tr>
 
-<p><code>codefresh auth current-context</code></p>
+<tr>
+<td>&ndash;use-ssl</td>
+<td>- s</td>
+<td>true</td>
+<td>Connect to the git host using ssl. <code>required</code><br><br>Possible values:<br> - true<br> - false</td>
+</tr>
 
-<p>Get the current activated authentication context.</p>
-
-<h3 id="set-active-context-set-active-context"><a href="set-active-context">Set Active Context</a></h3>
-
-<p><code>codefresh auth use-context &lt;name&gt;</code></p>
-
-<p>Set the current active authentication context.</p>
-
+<tr>
+<td>&ndash;host</td>
+<td>- h</td>
+<td>gitlab.com</td>
+<td>Host name of your gitlab (without protocol). <code>required</code></td>
+</tr>
+</tbody>
+</table>
 
 
     

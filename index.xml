@@ -251,6 +251,62 @@ Options    Option Alias Default Description     &amp;ndash;help   Print help inf
     </item>
     
     <item>
+      <title>bitbucket</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</guid>
+      <description>Description Create a bitbucket context.
+Git context are used to clone repositories during pipeline execution.
+Learn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.
+To create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.
+Command codefresh create context git bitbucket &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;app-password - a  Application password generated in bitbucket.</description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</guid>
+      <description>Description Create a github context.
+Git context are used to clone repositories during pipeline execution.
+Learn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.
+To create Github context you need to generate the token here: https://github.com/settings/tokens.
+Command codefresh create context git github &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;access-token - t  Access token from to be used to clone repositories.</description>
+    </item>
+    
+    <item>
+      <title>gitlab</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</guid>
+      <description>Description Create a gitlab context.
+Git context are used to clone repositories during pipeline execution.
+Learn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.
+To create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.
+Command codefresh create context git gitlab &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;access-token - t  Access token from to be used to clone repositories.</description>
+    </item>
+    
+    <item>
+      <title>stash</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</guid>
+      <description>Description Create a stash context.
+Git context are used to clone repositories during pipeline execution.
+Learn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.
+To create Stash context you need to provider username and password.
+Command codefresh create context git stash &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;username - u  Username. required   &amp;ndash;password - p  Password.</description>
+    </item>
+    
+    <item>
       <title>Secret</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/secret/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>

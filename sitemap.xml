@@ -87,6 +87,22 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/secret/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -305,6 +321,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/</loc>
   </url>
   
   <url>

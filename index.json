@@ -74,7 +74,7 @@
 	"title": "Get Context",
 	"tags": [],
 	"description": "",
-	"content": " Description Get a specific context or an array of contexts.\nPassing [name] argument will cause a retrieval of a specific context.\nIn case of not passing [name] argument, a list will be returned.\nCommand codefresh get contexts [name..]\nAliases codefresh get ctx [name..]\ncodefresh get context [name..]\nArguments    Option Alias Default Description     name  context name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   Context type\nPossible values:\n- config\n- secret\n- helm-repository\n- yaml\n- secret-yaml   \u0026ndash;owner   Owner of the context\nPossible values:\n- user\n- account    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get context NAME codefresh get context NAME\nGet all contexts codefresh get contexts\nGet all secret contexts codefresh get context --type secret\nGet all helm-repository contexts codefresh get context --type helm-repository\n"
+	"content": " Description Get a specific context or an array of contexts.\nPassing [name] argument will cause a retrieval of a specific context.\nIn case of not passing [name] argument, a list will be returned.\nCommand codefresh get contexts [name..]\nAliases codefresh get ctx [name..]\ncodefresh get context [name..]\nArguments    Option Alias Default Description     name  context name     Options    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;type   Context type\nPossible values:\n- config\n- secret\n- helm-repository\n- yaml\n- secret-yaml\n- git   \u0026ndash;owner   Owner of the context\nPossible values:\n- user\n- account    Output Options    Option Alias Default Description     \u0026ndash;output - o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   \u0026ndash;watch - w  Watching updates to a particular resource   \u0026ndash;watch-interval  3 Interval time at watching mode (in seconds)    Examples Get context NAME codefresh get context NAME\nGet all contexts codefresh get contexts\nGet all secret contexts codefresh get context --type secret\nGet all git based contexts for github kind codefresh get context --type git.github\nGet all helm-repository contexts codefresh get context --type helm-repository\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/authentication/get-contexts/",
@@ -138,6 +138,34 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nCommand codefresh create context helm-repository http \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;url   Url to the web server. required    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/",
+	"title": "bitbucket",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\nCommand codefresh create context git bitbucket \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;app-password - a  Application password generated in bitbucket. required   \u0026ndash;username - u  username that has permissions to use app password. required   \u0026ndash;owner - o account Owner of the context, user owned contexts cannot be accessible by other users across the account. required\nPossible values:\n- account\n- user    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/",
+	"title": "github",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\nCommand codefresh create context git github \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;access-token - t  Access token from to be used to clone repositories. required   \u0026ndash;owner - o account Owner of the context, user owned contexts cannot be accessible by other users across the account. required\nPossible values:\n- account\n- user   \u0026ndash;use-ssl - s true Connect to the git host using ssl. required\nPossible values:\n- true\n- false   \u0026ndash;host - h github.com Host name of your github (without protocol). required    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/",
+	"title": "gitlab",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nCommand codefresh create context git gitlab \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;access-token - t  Access token from to be used to clone repositories. required   \u0026ndash;owner - o account Owner of the context, user owned contexts cannot be accessible by other users across the account. required\nPossible values:\n- account\n- user   \u0026ndash;use-ssl - s true Connect to the git host using ssl. required\nPossible values:\n- true\n- false   \u0026ndash;host - h gitlab.com Host name of your gitlab (without protocol). required    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/",
+	"title": "stash",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\nCommand codefresh create context git stash \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;username - u  Username. required   \u0026ndash;password - p  Password. required   \u0026ndash;host - h  Host name of your stash (without protocol, may include port). required   \u0026ndash;use-ssl - s true Connect to the git host using ssl. required\nPossible values:\n- true\n- false   \u0026ndash;owner - o account Owner of the context, user owned contexts cannot be accessible by other users across the account. required\nPossible values:\n- account\n- user    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/secret/",
@@ -509,6 +537,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Get Environment codefresh get environments [id..]\nGet a specific environment or an array of environments.\nPassing [id] argument will cause a retrieval of a specific environment.\nIn case of not passing [id] argument, a list will be returned.\nDelete Environment codefresh delete environment \u0026lt;id\u0026gt;\nDelete an environment.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/",
+	"title": "Git",
+	"tags": [],
+	"description": "",
+	"content": " bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",
