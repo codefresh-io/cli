@@ -726,10 +726,10 @@ Arguments    Option Alias Default Description     id  Docker image full name or 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/pipelines/run-pipeline/</guid>
-      <description>Description Run a pipeline and attach the created workflow logs.
+      <description>Description Run a pipeline by id or name and attach the created workflow logs.
 Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
 Command codefresh run &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - n- c  Ignore cached images   &amp;ndash;reset-volume - r- v  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - v- a- r- &amp;ndash; f- i- l- e  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
+Arguments    Option Alias Default Description     name  Pipeline name     Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - nc  Ignore cached images   &amp;ndash;reset-volume - rv  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - var-file  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
     </item>
     
     <item>

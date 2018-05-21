@@ -783,7 +783,7 @@
 
 <h3 id="description">Description</h3>
 
-<p>Run a pipeline and attach the created workflow logs.</p>
+<p>Run a pipeline by id or name and attach the created workflow logs.</p>
 
 <p>Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).</p>
 
@@ -849,14 +849,14 @@
 
 <tr>
 <td>&ndash;no-cache</td>
-<td>- n- c</td>
+<td>- nc</td>
 <td></td>
 <td>Ignore cached images</td>
 </tr>
 
 <tr>
 <td>&ndash;reset-volume</td>
-<td>- r- v</td>
+<td>- rv</td>
 <td></td>
 <td>Reset pipeline cached volume</td>
 </tr>
@@ -884,7 +884,7 @@
 
 <tr>
 <td>&ndash;variable-file</td>
-<td>- v- a- r- &ndash; f- i- l- e</td>
+<td>- var-file</td>
 <td></td>
 <td>Set build variables from a file</td>
 </tr>
@@ -917,23 +917,23 @@ The pipeline will be triggered multiple times according to the array length.</p>
 
 <h4 id="defining-the-source-control-context-using-a-branch">Defining the source control context using a branch</h4>
 
-<p><code>codefresh run PIPELINE_ID -b=master</code></p>
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master</code></p>
 
 <h4 id="defining-the-source-control-context-using-a-commit">Defining the source control context using a commit</h4>
 
-<p><code>codefresh run PIPELINE_ID -s=52b992e783d2f84dd0123c70ac8623b4f0f938d1</code></p>
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -s=52b992e783d2f84dd0123c70ac8623b4f0f938d1</code></p>
 
 <h4 id="setting-variables-through-the-command">Setting variables through the command</h4>
 
-<p><code>codefresh run PIPELINE_ID -b=master -v key1=value1 -v key2=value2</code></p>
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master -v key1=value1 -v key2=value2</code></p>
 
 <h4 id="settings-variables-through-a-yml-file">Settings variables through a yml file</h4>
 
-<p><code>codefresh run PIPELINE_ID -b=master --var-file ./var_file.yml</code></p>
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master --var-file ./var_file.yml</code></p>
 
 <h4 id="inject-contexts-to-the-pipeline-execution">Inject contexts to the pipeline execution</h4>
 
-<p><code>codefresh run PIPELINE_ID -b=master --context context</code></p>
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master --context context</code></p>
 
 
     
