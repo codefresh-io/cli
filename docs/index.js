@@ -15,15 +15,16 @@ const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 const categoriesOrder = {
     authentication: 30,
+    'operate on resources' : 31,
     pipelines : 40,
     'pipelines v2 (beta)' : 42,
     builds: 50,
-    'operate on resources' : 60,
     contexts : 70 ,
     images : 80 ,
     triggers : 90,
     environments : 100 ,
     compositions : 110 ,
+    'helm repos' : 111 ,
     'predefined pipelines': 120,
     more : 130 ,
 };

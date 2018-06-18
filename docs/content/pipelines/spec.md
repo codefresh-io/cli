@@ -2,41 +2,40 @@
 title = "Spec"
 +++
 
-A Pipeline needs `.apiVersion`, `.kind`, and `.metadata` fields. 
+A Pipeline needs `.version`, `.kind`, and `.metadata` fields. 
 
 A Pipeline also needs a `.spec` section.
 
 ### Examples
 
-#### Pipeline which is stored entirely in Codefresh
+#### Basic Pipeline
 ```yaml
-apiVersion: "v1"
+version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "new-pipeline"
+  name: "basic-pipeline"
   description: "my description"
   labels:
-    repo: "ArikMaor/ping-server"
     key1: "value1"
-    project: "asd"
-    
+    key2: "value2"
 spec:
   triggers:
-    - type: "scm"
-      repo: "ArikMaor/ping-server"
-      events: ["push", "pullrequest"]
-      branchRegex: '.'
+    - type: "git"
+      provider: "github"
+      repo: "codefresh-io/cli"
+      events: ["push"]
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
       value: 3000
       encrypted: false
-    - key: "PAPA"
-      value: "BLA BLA"
+    - key: "SECRET"
+      value: "secret-value"
       encrypted: true
   steps:
     clone_step:
-      repo: github.com/itai-codefresh/test-env-file
+      repo: github.com/nodejs/node
       revision: master
     test_step_1:
       image: "alpine"
@@ -56,57 +55,55 @@ spec:
   
 ```
 
-#### Pipeline which is stored on a remote git
+#### Pipeline with a remote spec template brought from a git repository
 ```yaml
-apiVersion: "v1"
+version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "ew-pipeline-git"
-  labels:
-    repo: "ArikMaor/ping-server"
+  name: "my-pipeline"
 spec:
   triggers:
-    - type: "scm"
-      repo: "ArikMaor/ping-server"
-      events: ["push", "pullrequest"]
-      branchRegex: '.'
+    - type: "git"
+      provider: "github"
+      repo: "codefresh-io/cli"
+      events: ["push"]
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
       value: 3000
       encrypted: false
-    - key: "PAPA"
-      value: "BLA BLA"
+    - key: "SECRET"
+      value: "secret-value"
       encrypted: true
-  source:
+  specTemplate:
     location: "git"
     repo: "codefresh-io/cli"
     path: "codefresh.yml"
 ```
 
-#### Pipeline which is stored on a specific url
+#### Pipeline with a remote spec template brought from a git repository
 ```yaml
-apiVersion: "v1"
+version: "1.0"
 kind: "pipeline"
 metadata:
-  name: "new-pipeline-url"
-  labels:
-    repo: "codefresh-io/cli"
+  name: "my-pipeline"
 spec:
   triggers:
-    - type: "scm"
-      repo: "ArikMaor/ping-server"
-      events: ["push", "pullrequest"]
-      branchRegex: '.'
+    - type: "git"
+      provider: "github"
+      repo: "codefresh-io/cli"
+      events: ["push"]
+      branchRegex: '/./'
   contexts: []
   variables:
     - key: "PORT"
       value: 3000
       encrypted: false
-    - key: "PAPA"
-      value: "BLA BLA"
+    - key: "SECRET"
+      value: "secret-value"
       encrypted: true
-  source:
+  specTemplate:
     location: "url"
     url: "https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml"
 ```
