@@ -71,6 +71,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/get-runtime-environments/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</loc>
   </url>
   
@@ -308,6 +312,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/replace-runtime-environments/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/</loc>
   </url>
   
@@ -329,6 +337,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/</loc>
   </url>
   
   <url>

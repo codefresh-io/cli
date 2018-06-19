@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Delete Environment :: Codefresh CLI Documentation</title>
+<title>Get Runtime-Environments :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/environments/delete-environment/">
+  <body data-url="/cli/runtime-environments-on-prem/get-runtime-environments/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -528,11 +528,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/environments/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/environments/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/environments/">Environments</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/environments/">Environments</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/environments/get-environment/" class="dd-item">
@@ -542,7 +541,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/environments/delete-environment/" class="dd-item active">
+      <li data-nav-id="/cli/environments/delete-environment/" class="dd-item">
         <div>
           <a href="/cli/environments/delete-environment/">
             Delete Environment
@@ -551,13 +550,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runtime-environments-on-prem/" class="dd-item haschildren
+    <li data-nav-id="/cli/runtime-environments-on-prem/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/runtime-environments-on-prem/">Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runtime-environments-on-prem/">Runtime-Environments (On Prem)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/runtime-environments-on-prem/get-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments-on-prem/get-runtime-environments/" class="dd-item active">
         <div>
           <a href="/cli/runtime-environments-on-prem/get-runtime-environments/">
             Get Runtime-Environments
@@ -744,7 +744,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/environments/'>Environments</a> > Delete Environment
+ <a href='/cli/'></a> > <a href='/cli/runtime-environments-on-prem/'>Runtime-Environments (On Prem)</a> > Get Runtime-Environments
 
  
 
@@ -770,10 +770,7 @@
 </ul></li>
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#delete-environment-id">Delete environment ID</a></li>
-</ul></li>
+<li><a href="#output-options">Output Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -787,7 +784,7 @@
 
 <div id="body-inner">
   
-    <h1>Delete Environment</h1>
+    <h1>Get Runtime-Environments</h1>
   
 
 
@@ -799,15 +796,17 @@
 
 <h3 id="description">Description</h3>
 
-<p>Delete an environment.</p>
+<p>Get a runtime environments configuration.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh delete environment &lt;id&gt;</code></p>
+<p><code>codefresh get runtime-environments [name] [version]</code></p>
 
 <h4 id="aliases">Aliases</h4>
 
-<p><code>codefresh delete env &lt;id&gt;</code></p>
+<p><code>codefresh get re [name] [version]</code></p>
+
+<p><code>codefresh get runtime-environment [name] [version]</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -823,10 +822,17 @@
 
 <tbody>
 <tr>
-<td>id</td>
+<td>name</td>
+<td></td>
+<td>default</td>
+<td>Runtime environments name</td>
+</tr>
+
+<tr>
+<td>version</td>
 <td></td>
 <td></td>
-<td>Environment id</td>
+<td>Runtime environments version</td>
 </tr>
 </tbody>
 </table>
@@ -850,14 +856,58 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>&ndash;account</td>
+<td></td>
+<td></td>
+<td>Return a specific account configuration from the current runtime environments by his name</td>
+</tr>
+
+<tr>
+<td>&ndash;history</td>
+<td></td>
+<td></td>
+<td>Return all the history of the specific runtime environments</td>
+</tr>
 </tbody>
 </table>
 
-<h3 id="examples">Examples</h3>
+<h3 id="output-options">Output Options</h3>
 
-<h4 id="delete-environment-id">Delete environment ID</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p><code>codefresh delete environment ID</code></p>
+<tbody>
+<tr>
+<td>&ndash;output</td>
+<td>- o</td>
+<td></td>
+<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
+</tr>
+
+<tr>
+<td>&ndash;watch</td>
+<td>- w</td>
+<td></td>
+<td>Watching updates to a particular resource</td>
+</tr>
+
+<tr>
+<td>&ndash;watch-interval</td>
+<td></td>
+<td>3</td>
+<td>Interval time at watching mode (in seconds)</td>
+</tr>
+</tbody>
+</table>
 
 
     
