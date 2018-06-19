@@ -9,3 +9,4 @@ coverage
 *.zip
 public
 temp
+package-lock.json

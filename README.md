@@ -23,26 +23,26 @@ codefresh <command>
 
 Commands:
   codefresh completion             generate bash completion script
-  codefresh tag <id> [tags..]      Add an image tag
-  codefresh annotate               Annotate a resource with labels
-  codefresh patch                  Patch a resource by filename or stdin
-  codefresh auth                   Manage authentication contexts
-  codefresh create                 Create a resource from a file or from stdin
-  codefresh delete                 Delete a resource by file or resource name
-  codefresh get                    Display one or many resources
-  codefresh replace                Replace a resource by filename or stdin
-  codefresh version                Print version
-  codefresh logs <id>              Show logs of a build
-  codefresh restart <id>           Restart a build by its id
-  codefresh terminate <id>         Terminate a build by its id
-  codefresh wait <id..>            Wait until a condition will be met on a build
-  codefresh run <id>               Run a pipeline and attach the created workflow logs.
-                                   Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
-  codefresh delete-release [name]  Delete a helm release
-  codefresh install-chart          Install or upgrade a Helm chart
-                                               Repository flag can be either absolute url or saved repository in Codefresh
-  codefresh test-release [name]    Test a helm release
-  
+  codefresh tag <id> [tags..]      Add an image tag.
+  codefresh untag <id> [tags..]    Untag an image.
+  codefresh annotate               Annotate a resource with labels.
+  codefresh patch                  Patch a resource by filename or stdin.
+  codefresh auth                   Manage authentication contexts.
+  codefresh create                 Create a resource from a file or stdin.
+  codefresh delete                 Delete a resource by file or resource name.
+  codefresh generate               Generate resources as Kubernetes image pull secret and Codefresh Registry token.
+  codefresh get                    Display one or many resources.
+  codefresh replace                Replace a resource by filename.
+  codefresh version                Print version.
+  codefresh logs <id>              Show logs of a build.
+  codefresh restart <id>           Restart a build by its id.
+  codefresh terminate <id>         Terminate a build by its id.
+  codefresh wait <id..>            Wait until a condition will be met on a build.
+  codefresh run <name>             Run a pipeline by id or name and attach the created workflow logs.
+  codefresh delete-release [name]  Delete a helm release from a kubernetes cluster.
+  codefresh install-chart          Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.
+  codefresh test-release [name]    Test a helm release.
+
 Options:
   --cfconfig  Custom path for authentication contexts config file  [default: "/Users/itaigendler/.cfconfig"]
   --help      Show help  [boolean]
