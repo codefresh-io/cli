@@ -210,7 +210,7 @@ Arguments    Option Alias Default Description     id   Pipeline name/id    Optio
 Command codefresh get runtime-environments [name] [version]
 Aliases codefresh get re [name] [version]
 codefresh get runtime-environment [name] [version]
-Arguments    Option Alias Default Description     name  default Runtime environments name   version   Runtime environments version    Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;account   Return a specific account configuration from the current runtime environments by his name   &amp;ndash;history   Return all the history of the specific runtime environments    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
+Arguments    Option Alias Default Description     name  default Runtime environments name   version   Runtime environments version    Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;history   Return all the history of the specific runtime environments    Output Options    Option Alias Default Description     &amp;ndash;output - o  Output format</description>
     </item>
     
     <item>
@@ -744,7 +744,7 @@ Arguments    Option Alias Default Description     id   Docker image full name or
       <description>Description Run a pipeline by id or name and attach the created workflow logs.
 Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
 Command codefresh run &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - nc  Ignore cached images   &amp;ndash;reset-volume - rv  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - var-file  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
+Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;branch - b  Branch   &amp;ndash;sha - s  Set commit sha   &amp;ndash;no-cache - nc  Ignore cached images   &amp;ndash;enable-notifications - en  Report notifications about pipeline execution   &amp;ndash;reset-volume - rv  Reset pipeline cached volume   &amp;ndash;variable - v  Set build variables   &amp;ndash;detach - d  Run pipeline and print build ID   &amp;ndash;context - c  Run pipeline with contexts   &amp;ndash;variable-file - var-file  Set build variables from a file    variable-file (var-file) It is possible to pass build variables using a file.</description>
     </item>
     
     <item>
