@@ -71,5 +71,8 @@
   "license": "ISC",
   "engines": {
     "node": ">8.0.0"
+  },
+  "yargs": {
+    "boolean-negation": false
   }
 }
