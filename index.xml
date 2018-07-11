@@ -363,7 +363,7 @@ Update to a specific version: yarn global upgrade codefresh@{VERSION}</descripti
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/create/</guid>
       <description> Description Create a resource from a file, directory or url
 Supported resources: &amp;lsquo;context&amp;rsquo;
-&amp;lsquo;pipeline-v2&amp;rsquo;.
+&amp;lsquo;pipeline&amp;rsquo;.
 Command codefresh create
 Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
     </item>
@@ -507,7 +507,7 @@ Examples yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;cont
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/delete/</guid>
       <description> Description Delete a resource from a file, directory or url
 Supported resources: &amp;lsquo;Context&amp;rsquo;
-&amp;lsquo;Pipeline-v2&amp;rsquo;.
+&amp;lsquo;Pipeline&amp;rsquo;.
 Command codefresh delete
 Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
     </item>
@@ -814,7 +814,7 @@ Arguments    Option Alias Default Description     id   Docker image id   names  
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/replace/</guid>
       <description> Description Replace a resource from a file, directory or url
 Supported resources: &amp;lsquo;Context&amp;rsquo;
-&amp;lsquo;Pipeline-v2&amp;rsquo;.
+&amp;lsquo;Pipeline&amp;rsquo;.
 Command codefresh replace
 Options    Option Alias Default Description     &amp;ndash;help   Print help information   &amp;ndash;filename - f  Filename or directory of spec files use to create the resource    </description>
     </item>

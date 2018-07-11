@@ -193,7 +193,7 @@
 	"title": "Create",
 	"tags": [],
 	"description": "",
-	"content": " Description Create a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nCommand codefresh create\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
+	"content": " Description Create a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;.\nCommand codefresh create\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/create-composition/",
@@ -291,7 +291,7 @@
 	"title": "Delete",
 	"tags": [],
 	"description": "",
-	"content": " Description Delete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nCommand codefresh delete\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
+	"content": " Description Delete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nCommand codefresh delete\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/delete-composition/",
@@ -368,7 +368,7 @@
 	"title": "Operate On Resources",
 	"tags": [],
 	"description": "",
-	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline-v2\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\n"
+	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/installation/download/",
@@ -508,7 +508,7 @@
 	"title": "Replace",
 	"tags": [],
 	"description": "",
-	"content": " Description Replace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline-v2\u0026rsquo;.\nCommand codefresh replace\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
+	"content": " Description Replace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nCommand codefresh replace\nOptions    Option Alias Default Description     \u0026ndash;help   Print help information   \u0026ndash;filename - f  Filename or directory of spec files use to create the resource    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/replace-composition/",
