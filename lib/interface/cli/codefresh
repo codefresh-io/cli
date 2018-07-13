@@ -25,7 +25,7 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
     yargs
         .env('')
         .options('no-auth', {
-            description: 'Make anonymous API requests, do not use auth context',
+            description: 'Make anonymous API requests, do not pass API token',
             type: 'boolean',
             global: true,
         })

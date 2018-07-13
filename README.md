@@ -44,6 +44,7 @@ Commands:
   codefresh test-release [name]    Test a helm release.
 
 Options:
+  --no-auth   Make anonymous API requests, do not pass API token  [boolean]
   --cfconfig  Custom path for authentication contexts config file  [default: "/Users/itaigendler/.cfconfig"]
   --help      Show help  [boolean]
 ```
