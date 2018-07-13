@@ -24,6 +24,11 @@ recursive(path.resolve(__dirname, 'commands'), (err, files) => {
     const rootCommands = [];
     yargs
         .env('')
+        .options('no-auth', {
+            description: 'Make anonymous API requests, do not use auth context',
+            type: 'boolean',
+            global: true,
+        })
         .options('cfconfig', {
             default: DEFAULTS.CFCONFIG,
             global: false,
