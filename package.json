@@ -34,6 +34,7 @@
     "columnify": "^1.5.4",
     "copy-dir": "^0.3.0",
     "debug": "^3.1.0",
+    "diff": "^3.5.0",
     "draftlog": "^1.0.12",
     "filesize": "^3.5.11",
     "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
