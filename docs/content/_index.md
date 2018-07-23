@@ -16,4 +16,4 @@ The CLI can be used to achieve the following:
     <li>Run complex pipeline use cases by using the CLI inside your pipeline steps.</li>
 </ul>
 
-To get started please navigate to [Getting started](/getting-started) page.
+To get started please navigate to [Getting started](getting-started) page.
