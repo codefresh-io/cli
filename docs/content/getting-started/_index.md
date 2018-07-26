@@ -6,7 +6,7 @@ weight = 10
 +++
 
 ## Install
-Install the CLI through one of the possible ways described in the [Installation](/installation) page.
+Install the CLI through one of the possible ways described in the [Installation](/cli/installation) page.
 
 ## Authenticate
 In order to start working with the cli you will need to update the authentication configuration. <br />

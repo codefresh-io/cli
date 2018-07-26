@@ -13,7 +13,7 @@ In case you have node.js installed you can easily install with NPM.
 For other installation possibilities check out the <a href="http://cli.codefresh.io/installation" target="_blank">installation documentation</a>.
 
 ## Authenticate
-Generate a new api key from the <a href="https://g.codefresh.io/account/tokens" target="_blank">account settings</a> page.
+Generate a new api key from the <a href="https://g.codefresh.io/account-conf/tokens" target="_blank">account settings</a> page.
 
 `codefresh auth create-context --api-key {{API_KEY}}`
 

@@ -14,11 +14,11 @@ The default is `account`. <br>
 ### Type
 `.spec.type` should be one of the following:  <br>
 <ul>
-    <li>[config](/contexts/spec/config) </li> 
-    <li>[secret](/contexts/spec/secret) </li> 
-    <li>[yaml](/contexts/spec/yaml) </li> 
-    <li>[secret-yaml](/contexts/spec/secret-yaml) </li> 
-    <li>[helm-repository](/contexts/spec/helm-repository) </li> 
+    <li>[config](config) </li> 
+    <li>[secret](secret) </li> 
+    <li>[yaml](yaml) </li> 
+    <li>[secret-yaml](secret-yaml) </li> 
+    <li>[helm-repository](helm-repository) </li> 
 </ul>
 
 ### Data
