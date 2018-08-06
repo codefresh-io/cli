@@ -18,6 +18,8 @@ disableSearch = false # default is false
 disableNavChevron = true # set true to hide next/prev chevron, default is false
 highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 
+[blackfriday]
+  smartDashes = false
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
