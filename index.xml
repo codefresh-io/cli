@@ -211,6 +211,19 @@ Arguments    Option Alias Default Description     name  default Runtime environm
     </item>
     
     <item>
+      <title>Get Teams</title>
+      <link>https://codefresh-io.github.io/cli/teams/get-teams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/teams/get-teams/</guid>
+      <description>Description Get an array of all current user teams, with specifying user-id get all teams for that user.
+Command codefresh get teams [id|name..]
+Aliases codefresh get team [id|name..]
+codefresh get tm [id|name..]
+Options    Option Alias Default Description     --help   Print help information   --user-id -u  User id    Output Options    Option Alias Default Description     --output -o  Output format</description>
+    </item>
+    
+    <item>
       <title>Get Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -416,6 +429,20 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Create team</title>
+      <link>https://codefresh-io.github.io/cli/teams/create-team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/teams/create-team/</guid>
+      <description>Description Create a team.
+You can create a new team specifying only name of team or specify path to json file for include extended options
+Possible fields in file:
+name - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.
+Command codefresh create teams &amp;lt;name&amp;gt;
+Aliases codefresh create team &amp;lt;name&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>Delete Pipeline Trigger</title>
       <link>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -594,6 +621,20 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Remove user</title>
+      <link>https://codefresh-io.github.io/cli/teams/remove-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/teams/remove-user/</guid>
+      <description>Description Remove user from team.
+Pass user id and team id to remove user from team.
+Command codefresh delete teams
+Aliases codefresh delete team teams
+codefresh delete tm teams
+Options    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to remove a user. required   --user-id -u  Id of a user to remove him in team.</description>
+    </item>
+    
+    <item>
       <title>Restart Build</title>
       <link>https://codefresh-io.github.io/cli/builds/restart-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -649,6 +690,20 @@ If your operating system is missing please feel free to open us an issue in our 
 Type .spec.type should be secret-yaml.
 Data .spec.data should be an array of keys and values.
 Examples secret-yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-secret-yaml-context&amp;#34; spec: type: &amp;#34;secret-yaml&amp;#34; data: serviceType: &amp;#34;LoadBalancer&amp;#34; image: &amp;#34;mongo&amp;#34; type: - &amp;#34;encrypted&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>Add user</title>
+      <link>https://codefresh-io.github.io/cli/teams/add-user/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/teams/add-user/</guid>
+      <description>Description Assign user to a team.
+Use patch command and pass user id and team id to assign user to a team.
+Command codefresh patch teams
+Aliases codefresh patch team teams
+codefresh patch tm teams
+Options    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to add a user. required   --user-id -u  Id of a user to add him in team.</description>
     </item>
     
     <item>
@@ -855,6 +910,19 @@ Use apply to patch an existing context.
 Command codefresh patch context
 Aliases codefresh patch ctx context
 Options    Option Alias Default Description     --help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml</description>
+    </item>
+    
+    <item>
+      <title>Synchronize Teams</title>
+      <link>https://codefresh-io.github.io/cli/teams/synchronize-teams/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/teams/synchronize-teams/</guid>
+      <description>Description Synchronize team with group.
+Command codefresh synchronize teams client-name
+Aliases codefresh synchronize team client-name
+codefresh synchronize tm client-name
+Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github. required    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType]</description>
     </item>
     
     <item>

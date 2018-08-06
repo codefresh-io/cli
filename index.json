@@ -119,6 +119,13 @@
 	"content": " Description Get a runtime environments configuration.\nCommand codefresh get runtime-environments [name] [version]\nAliases codefresh get re [name] [version]\ncodefresh get runtime-environment [name] [version]\nArguments    Option Alias Default Description     name  default Runtime environments name   version   Runtime environments version    Options    Option Alias Default Description     --help   Print help information   --history   Return all the history of the specific runtime environments    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/teams/get-teams/",
+	"title": "Get Teams",
+	"tags": [],
+	"description": "",
+	"content": " Description Get an array of all current user teams, with specifying user-id get all teams for that user.\nCommand codefresh get teams [id|name..]\nAliases codefresh get team [id|name..]\ncodefresh get tm [id|name..]\nOptions    Option Alias Default Description     --help   Print help information   --user-id -u  User id    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all teams for current user codefresh get teams\nGet all teams for specific user codefresh get teams -u [userID]\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/triggers/get-trigger-event/",
 	"title": "Get Trigger Event",
 	"tags": [],
@@ -222,6 +229,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create new trigger-event.\nCommand codefresh create trigger-event\nOptions    Option Alias Default Description     --help   Print help information   --type   trigger-event type   --kind   trigger-event kind   --public   wether trigger-event is public (system-wide): can be linked to any pipeline in any account   --secret  !generate trigger-event secret (omit to auto-generate)   --value   trigger-event specific values pairs (key=value), as required by trigger-type   --context   context with credentials required to setup event on remote system    Examples Create registry/dockerhub trigger-event codefresh create trigger-event --type registry --kind dockerhub --value namespace=codefresh --value name=fortune --value action=push\nCreate cron (once in hour) trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;0 0 */1 * * *\u0026quot; --value message=hello\nCreate daily cron trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;@daily\u0026quot; --value message=hello-all\nCreate git trigger-event codefresh create trigger-event --type git --kind github --value owner=codefresh-io --value name=cf-api --value action=push\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/teams/create-team/",
+	"title": "Create team",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a team.\nYou can create a new team specifying only name of team or specify path to json file for include extended options\nPossible fields in file:\nname - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.\nCommand codefresh create teams \u0026lt;name\u0026gt;\nAliases codefresh create team \u0026lt;name\u0026gt;\ncodefresh create tm \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of team    Options    Option Alias Default Description     --help   Print help information    Examples Creating a team specifying only team name codefresh create team NAME\nCreating a team using a file to specify additional options codefresh create team NAME -f [pathToFile]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/",
@@ -343,6 +357,13 @@
 	"content": " Description Get the current activated authentication context.\nCommand codefresh auth current-context\nOptions    Option Alias Default Description     --help   Print help information    Examples Show active authentication context codefresh auth current-context\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/teams/remove-user/",
+	"title": "Remove user",
+	"tags": [],
+	"description": "",
+	"content": " Description Remove user from team.\nPass user id and team id to remove user from team.\nCommand codefresh delete teams\nAliases codefresh delete team teams\ncodefresh delete tm teams\nOptions    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to remove a user. required   --user-id -u  Id of a user to remove him in team. required    Examples Remove user from team codefresh delete tm -u [userID] -t [teamID]\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/builds/restart-build/",
 	"title": "Restart Build",
 	"tags": [],
@@ -383,6 +404,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Secret-Yaml context stores an yaml file encrypted.\nType .spec.type should be secret-yaml.\nData .spec.data should be an array of keys and values.\nExamples secret-yaml with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-secret-yaml-context\u0026#34; spec: type: \u0026#34;secret-yaml\u0026#34; data: serviceType: \u0026#34;LoadBalancer\u0026#34; image: \u0026#34;mongo\u0026#34; type: - \u0026#34;encrypted\u0026#34;"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/teams/add-user/",
+	"title": "Add user",
+	"tags": [],
+	"description": "",
+	"content": " Description Assign user to a team.\nUse patch command and pass user id and team id to assign user to a team.\nCommand codefresh patch teams\nAliases codefresh patch team teams\ncodefresh patch tm teams\nOptions    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to add a user. required   --user-id -u  Id of a user to add him in team. required    Examples Assign user to team codefresh patch tm -u [userID] -t [teamID]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/patch/",
@@ -574,6 +602,13 @@
 	"content": " Get Runtime-Environments codefresh get runtime-environments [name] [version]\nGet a runtime environments configuration.\nReplace Runtime-Environments codefresh replace runtime-environments name\nReplace a runtime-environments resource.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/teams/synchronize-teams/",
+	"title": "Synchronize Teams",
+	"tags": [],
+	"description": "",
+	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams client-name\nAliases codefresh synchronize team client-name\ncodefresh synchronize tm client-name\nOptions    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github. required    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType]\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/compositions/",
 	"title": "Compositions",
 	"tags": [],
@@ -600,6 +635,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Image Pull Secret codefresh generate image-pull-secret\nGenerate image pull secret on Kubernetes cluster from integrated Docker registry.\n\nFor Kuberentes cluster to pull an image from your private registry it needs special secret typed as kubernetes.io/dockercfg.\nAfter this secret been created you can use them in pod template that lives in the same namespace.\nYou can generate this secret from any integrated Docker registry on your account.\nMore information about image pull secret can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/teams/",
+	"title": "Teams",
+	"tags": [],
+	"description": "",
+	"content": " Get Teams codefresh get teams [id|name..]\nGet an array of all current user teams, with specifying user-id get all teams for that user.\nCreate team codefresh create teams \u0026lt;name\u0026gt;\nCreate a team.\nYou can create a new team specifying only name of team or specify path to json file for include extended options\nPossible fields in file:\nname - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.\nRemove user codefresh delete teams\nRemove user from team.\nPass user id and team id to remove user from team.\nAdd user codefresh patch teams\nAssign user to a team.\nUse patch command and pass user id and team id to assign user to a team.\nSynchronize Teams codefresh synchronize teams client-name\nSynchronize team with group.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/_header/",

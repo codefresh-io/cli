@@ -75,6 +75,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/teams/get-teams/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</loc>
   </url>
   
@@ -134,6 +138,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/teams/create-team/</loc>
   </url>
   
   <url>
@@ -208,6 +216,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/teams/remove-user/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/builds/restart-build/</loc>
   </url>
   
@@ -231,6 +243,10 @@
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/teams/add-user/</loc>
   </url>
   
   <url>
@@ -344,6 +360,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/compositions/</loc>
   </url>
   
@@ -357,6 +377,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/more/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/teams/</loc>
   </url>
   
   <url>
