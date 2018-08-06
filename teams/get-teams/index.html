@@ -815,8 +815,7 @@
 <li><a href="#output-options">Output Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#get-all-teams-for-current-user">Get all teams for current user</a></li>
-<li><a href="#get-all-teams-for-specific-user">Get all teams for specific user</a></li>
+<li><a href="#get-all-teams-for-current-account">Get all teams for current account</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -843,17 +842,17 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get an array of all current user teams, with specifying user-id get all teams for that user.</p>
+<p>Get an array of all current user teams.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get teams [id|name..]</code></p>
+<p><code>codefresh get teams</code></p>
 
 <h4 id="aliases">Aliases</h4>
 
-<p><code>codefresh get team [id|name..]</code></p>
+<p><code>codefresh get team teams</code></p>
 
-<p><code>codefresh get tm [id|name..]</code></p>
+<p><code>codefresh get tm teams</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -873,13 +872,6 @@
 <td></td>
 <td></td>
 <td>Print help information</td>
-</tr>
-
-<tr>
-<td>--user-id</td>
-<td>-u</td>
-<td></td>
-<td>User id</td>
 </tr>
 </tbody>
 </table>
@@ -922,13 +914,9 @@
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="get-all-teams-for-current-user">Get all teams for current user</h4>
+<h4 id="get-all-teams-for-current-account">Get all teams for current account</h4>
 
 <p><code>codefresh get teams</code></p>
-
-<h4 id="get-all-teams-for-specific-user">Get all teams for specific user</h4>
-
-<p><code>codefresh get teams -u [userID]</code></p>
 
 
     

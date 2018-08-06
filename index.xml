@@ -216,11 +216,15 @@ Arguments    Option Alias Default Description     name  default Runtime environm
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/teams/get-teams/</guid>
-      <description>Description Get an array of all current user teams, with specifying user-id get all teams for that user.
-Command codefresh get teams [id|name..]
-Aliases codefresh get team [id|name..]
-codefresh get tm [id|name..]
-Options    Option Alias Default Description     --help   Print help information   --user-id -u  User id    Output Options    Option Alias Default Description     --output -o  Output format</description>
+      <description>Description Get an array of all current user teams.
+Command codefresh get teams
+Aliases codefresh get team teams
+codefresh get tm teams
+Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format
+Possible values:
+- json
+- yaml
+- wide</description>
     </item>
     
     <item>

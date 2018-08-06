@@ -123,7 +123,7 @@
 	"title": "Get Teams",
 	"tags": [],
 	"description": "",
-	"content": " Description Get an array of all current user teams, with specifying user-id get all teams for that user.\nCommand codefresh get teams [id|name..]\nAliases codefresh get team [id|name..]\ncodefresh get tm [id|name..]\nOptions    Option Alias Default Description     --help   Print help information   --user-id -u  User id    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all teams for current user codefresh get teams\nGet all teams for specific user codefresh get teams -u [userID]\n"
+	"content": " Description Get an array of all current user teams.\nCommand codefresh get teams\nAliases codefresh get team teams\ncodefresh get tm teams\nOptions    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all teams for current account codefresh get teams\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/get-trigger-event/",
@@ -641,7 +641,7 @@
 	"title": "Teams",
 	"tags": [],
 	"description": "",
-	"content": " Get Teams codefresh get teams [id|name..]\nGet an array of all current user teams, with specifying user-id get all teams for that user.\nCreate team codefresh create teams \u0026lt;name\u0026gt;\nCreate a team.\nYou can create a new team specifying only name of team or specify path to json file for include extended options\nPossible fields in file:\nname - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.\nRemove user codefresh delete teams\nRemove user from team.\nPass user id and team id to remove user from team.\nAdd user codefresh patch teams\nAssign user to a team.\nUse patch command and pass user id and team id to assign user to a team.\nSynchronize Teams codefresh synchronize teams client-name\nSynchronize team with group.\n"
+	"content": " Get Teams codefresh get teams\nGet an array of all current user teams.\nCreate team codefresh create teams \u0026lt;name\u0026gt;\nCreate a team.\nYou can create a new team specifying only name of team or specify path to json file for include extended options\nPossible fields in file:\nname - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.\nRemove user codefresh delete teams\nRemove user from team.\nPass user id and team id to remove user from team.\nAdd user codefresh patch teams\nAssign user to a team.\nUse patch command and pass user id and team id to assign user to a team.\nSynchronize Teams codefresh synchronize teams client-name\nSynchronize team with group.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/_header/",
