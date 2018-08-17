@@ -606,7 +606,7 @@
 	"title": "Synchronize Teams",
 	"tags": [],
 	"description": "",
-	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams client-name\nAliases codefresh synchronize team client-name\ncodefresh synchronize tm client-name\nOptions    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github. required    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType]\n"
+	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams client-name\nAliases codefresh synchronize team client-name\ncodefresh synchronize tm client-name\nOptions    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github. required   --access-token --tk  Access token (for github personal access token)    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType] -tk [accessToken]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/",
