@@ -336,34 +336,6 @@
       <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
-            bitbucket
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/github/">
-            github
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
-            gitlab
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/stash/">
-            stash
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item haschildren
@@ -845,13 +817,13 @@
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh synchronize teams client-name</code></p>
+<p><code>codefresh synchronize teams [client-name]</code></p>
 
 <h4 id="aliases">Aliases</h4>
 
-<p><code>codefresh synchronize team client-name</code></p>
+<p><code>codefresh synchronize team [client-name]</code></p>
 
-<p><code>codefresh synchronize tm client-name</code></p>
+<p><code>codefresh synchronize tm [client-name]</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -877,14 +849,14 @@
 <td>--client-type</td>
 <td>-t</td>
 <td></td>
-<td>Client type like github. <code>required</code></td>
+<td>Client type like github, okta, azure. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--access-token</td>
 <td>--tk</td>
 <td></td>
-<td>Access token (for github personal access token)</td>
+<td>Github Personal Access Token that overrides the default one (Optional and only valid for Github)</td>
 </tr>
 </tbody>
 </table>

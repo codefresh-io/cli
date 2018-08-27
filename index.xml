@@ -923,10 +923,10 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/teams/synchronize-teams/</guid>
       <description>Description Synchronize team with group.
-Command codefresh synchronize teams client-name
-Aliases codefresh synchronize team client-name
-codefresh synchronize tm client-name
-Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github. required   --access-token --tk  Access token (for github personal access token)    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType] -tk [accessToken]</description>
+Command codefresh synchronize teams [client-name]
+Aliases codefresh synchronize team [client-name]
+codefresh synchronize tm [client-name]
+Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [clientName] -t [clientType] -tk [accessToken]</description>
     </item>
     
     <item>
