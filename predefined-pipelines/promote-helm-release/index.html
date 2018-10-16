@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Secret Yaml :: Codefresh CLI Documentation</title>
+<title>Promote Helm Release :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/contexts/spec/secret-yaml/">
+  <body data-url="/cli/predefined-pipelines/promote-helm-release/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -269,11 +269,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/contexts/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/contexts/">Contexts</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/contexts/">Contexts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/get-context/" class="dd-item">
@@ -391,11 +390,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/spec/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/contexts/spec/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/contexts/spec/">Spec</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/contexts/spec/">Spec</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/spec/config/" class="dd-item">
@@ -419,7 +417,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/spec/secret-yaml/" class="dd-item active">
+      <li data-nav-id="/cli/contexts/spec/secret-yaml/" class="dd-item">
         <div>
           <a href="/cli/contexts/spec/secret-yaml/">
             Secret Yaml
@@ -646,10 +644,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item haschildren
+    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/predefined-pipelines/delete-helm-release/" class="dd-item">
@@ -666,7 +665,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/predefined-pipelines/promote-helm-release/" class="dd-item">
+      <li data-nav-id="/cli/predefined-pipelines/promote-helm-release/" class="dd-item active">
         <div>
           <a href="/cli/predefined-pipelines/promote-helm-release/">
             Promote Helm Release
@@ -795,12 +794,7 @@
 
 
 
-
-
-
- <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/spec/'>Spec</a> > Secret Yaml
-
- 
+ <a href='/cli/'></a> > <a href='/cli/predefined-pipelines/'>Predefined Pipelines</a> > Promote Helm Release
 
  
 
@@ -819,11 +813,12 @@
 <ul>
 <li>
 <ul>
-<li><a href="#type">Type</a></li>
-<li><a href="#data">Data</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#secret-yaml-with-two-keys">secret-yaml with two keys</a></li>
+<li><a href="#promote-application-release-on-board-app-from-dev-to-test-environment">Promote &lsquo;application&rsquo; release on board &lsquo;app&rsquo; from &lsquo;dev&rsquo; to &lsquo;test&rsquo; environment</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -838,7 +833,7 @@
 
 <div id="body-inner">
   
-    <h1>Secret Yaml</h1>
+    <h1>Promote Helm Release</h1>
   
 
 
@@ -848,31 +843,126 @@
     
     
 
-<p>Secret-Yaml context stores an yaml file encrypted.</p>
+<h3 id="description">Description</h3>
 
-<h3 id="type">Type</h3>
+<p>Promote a Helm release in another environment.</p>
 
-<p><code>.spec.type</code> should be <code>secret-yaml</code>.</p>
+<h3 id="command">Command</h3>
 
-<h3 id="data">Data</h3>
+<p><code>codefresh helm-promotion</code></p>
 
-<p><code>.spec.data</code> should be an array of keys and values.</p>
+<h3 id="options">Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>--help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
+
+<tr>
+<td>--board</td>
+<td></td>
+<td></td>
+<td>Board for promotion</td>
+</tr>
+
+<tr>
+<td>--source</td>
+<td></td>
+<td></td>
+<td>Source column</td>
+</tr>
+
+<tr>
+<td>--target</td>
+<td></td>
+<td></td>
+<td>Target column</td>
+</tr>
+
+<tr>
+<td>--namespace</td>
+<td></td>
+<td>default</td>
+<td>Promote to namespace</td>
+</tr>
+
+<tr>
+<td>--source-tiller-namespace</td>
+<td></td>
+<td>kube-system</td>
+<td>Where tiller has been installed in source cluster</td>
+</tr>
+
+<tr>
+<td>--target-tiller-namespace</td>
+<td></td>
+<td>kube-system</td>
+<td>Where tiller has been installed in target cluster</td>
+</tr>
+
+<tr>
+<td>--source-release</td>
+<td></td>
+<td></td>
+<td>The name of source release</td>
+</tr>
+
+<tr>
+<td>--revision</td>
+<td></td>
+<td></td>
+<td>Revision of source release</td>
+</tr>
+
+<tr>
+<td>--target-release</td>
+<td></td>
+<td></td>
+<td>The name to set to the release</td>
+</tr>
+
+<tr>
+<td>--context</td>
+<td></td>
+<td></td>
+<td>Contexts (yaml</td>
+</tr>
+
+<tr>
+<td>--set</td>
+<td></td>
+<td></td>
+<td>set of KEY=VALUE to be passed to the install</td>
+</tr>
+
+<tr>
+<td>--detach</td>
+<td>-d</td>
+<td></td>
+<td>Run pipeline and print build ID</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="secret-yaml-with-two-keys">secret-yaml with two keys</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion<span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
-kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;context&#34;</span>
-owner<span style="color:#111">:</span> <span style="color:#d88200">&#34;account&#34;</span>
-metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-secret-yaml-context&#34;</span>
-spec<span style="color:#111">:</span>
-  type<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-yaml&#34;</span>
-  data<span style="color:#111">:</span>
-    serviceType<span style="color:#111">:</span> <span style="color:#d88200">&#34;LoadBalancer&#34;</span>
-    image<span style="color:#111">:</span> <span style="color:#d88200">&#34;mongo&#34;</span>
-    type<span style="color:#111">:</span> 
-      - <span style="color:#d88200">&#34;encrypted&#34;</span></code></pre></div>
+<h4 id="promote-application-release-on-board-app-from-dev-to-test-environment">Promote &lsquo;application&rsquo; release on board &lsquo;app&rsquo; from &lsquo;dev&rsquo; to &lsquo;test&rsquo; environment</h4>
+
+<p><code>codefresh helm-promotion --board app --source dev --target test --source-release application</code></p>
+
 
     
     

@@ -578,6 +578,34 @@
       <a href="/cli/compositions/">Compositions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/compositions/get-composition/" class="dd-item">
+        <div>
+          <a href="/cli/compositions/get-composition/">
+            Get Composition
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/compositions/create-composition/" class="dd-item">
+        <div>
+          <a href="/cli/compositions/create-composition/">
+            Create Composition
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/compositions/delete-composition/" class="dd-item">
+        <div>
+          <a href="/cli/compositions/delete-composition/">
+            Delete Composition
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/compositions/replace-composition/" class="dd-item">
+        <div>
+          <a href="/cli/compositions/replace-composition/">
+            Replace Composition
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/helm-repos/" class="dd-item haschildren
@@ -586,6 +614,34 @@
       <a href="/cli/helm-repos/">Helm Repos</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/helm-repos/get-helm-repo/" class="dd-item">
+        <div>
+          <a href="/cli/helm-repos/get-helm-repo/">
+            Get Helm Repo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/helm-repos/create-helm-repo/" class="dd-item">
+        <div>
+          <a href="/cli/helm-repos/create-helm-repo/">
+            Create Helm Repo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/helm-repos/delete-helm-repo/" class="dd-item">
+        <div>
+          <a href="/cli/helm-repos/delete-helm-repo/">
+            Delete Helm Repo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/helm-repos/update-helm-repo/" class="dd-item">
+        <div>
+          <a href="/cli/helm-repos/update-helm-repo/">
+            Update Helm Repo
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent active haschildren
@@ -606,6 +662,13 @@
         <div>
           <a href="/cli/predefined-pipelines/install-or-upgrade-helm-chart/">
             Install or Upgrade Helm Chart
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/predefined-pipelines/promote-helm-release/" class="dd-item">
+        <div>
+          <a href="/cli/predefined-pipelines/promote-helm-release/">
+            Promote Helm Release
           </a>
         </div>
     </li>
@@ -746,6 +809,7 @@
 <li>
 <ul>
 <li><a href="#delete-helm-release-delete-helm-release"><a href="delete-helm-release">Delete Helm Release</a></a></li>
+<li><a href="#promote-helm-release-promote-helm-release"><a href="promote-helm-release">Promote Helm Release</a></a></li>
 <li><a href="#install-or-upgrade-helm-chart-install-or-upgrade-helm-chart"><a href="install-or-upgrade-helm-chart">Install or Upgrade Helm Chart</a></a></li>
 <li><a href="#test-helm-release-test-helm-release"><a href="test-helm-release">Test Helm Release</a></a></li>
 </ul></li>
@@ -777,6 +841,12 @@
 <p><code>codefresh delete-release [name]</code></p>
 
 <p>Delete a helm release from a kubernetes cluster.</p>
+
+<h3 id="promote-helm-release-promote-helm-release"><a href="promote-helm-release">Promote Helm Release</a></h3>
+
+<p><code>codefresh helm-promotion</code></p>
+
+<p>Promote a Helm release in another environment.</p>
 
 <h3 id="install-or-upgrade-helm-chart-install-or-upgrade-helm-chart"><a href="install-or-upgrade-helm-chart">Install or Upgrade Helm Chart</a></h3>
 

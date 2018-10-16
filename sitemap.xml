@@ -158,6 +158,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</loc>
   </url>
   

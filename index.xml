@@ -470,6 +470,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Promote Helm Release</title>
+      <link>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</guid>
+      <description>Description Promote a Helm release in another environment.
+Command codefresh helm-promotion
+Options    Option Alias Default Description     --help   Print help information   --board   Board for promotion   --source   Source column   --target   Target column   --namespace  default Promote to namespace   --source-tiller-namespace  kube-system Where tiller has been installed in source cluster   --target-tiller-namespace  kube-system Where tiller has been installed in target cluster   --source-release   The name of source release   --revision   Revision of source release   --target-release   The name to set to the release   --context   Contexts (yaml   --set   set of KEY=VALUE to be passed to the install   --detach -d  Run pipeline and print build ID    Examples Promote &amp;lsquo;application&amp;rsquo; release on board &amp;lsquo;app&amp;rsquo; from &amp;lsquo;dev&amp;rsquo; to &amp;lsquo;test&amp;rsquo; environment codefresh helm-promotion --board app --source dev --target test --source-release application</description>
+    </item>
+    
+    <item>
       <title>S3</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
