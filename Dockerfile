@@ -12,4 +12,6 @@ COPY . /cf-cli
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
+VOLUME /root
+
 ENTRYPOINT ["codefresh"]
