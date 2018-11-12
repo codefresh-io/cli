@@ -41,6 +41,7 @@ Commands:
   codefresh run <name>             Run a pipeline by id or name and attach the created workflow logs.
   codefresh delete-release [name]  Delete a helm release from a kubernetes cluster.
   codefresh install-chart          Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.
+  codefresh helm-promotion         Promote a Helm release in another environment.
   codefresh test-release [name]    Test a helm release.
 
 Options:
