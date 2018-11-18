@@ -89,6 +89,18 @@ Possible values:
     </item>
     
     <item>
+      <title>Get Board</title>
+      <link>https://codefresh-io.github.io/cli/boards/get-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/boards/get-board/</guid>
+      <description>Description Get a specific board or an array of boards.
+Command codefresh get boards [id..]
+Aliases codefresh get board [id..]
+Options    Option Alias Default Description     --help   Print help information   --id   Board by id   --name   Board by name    Output Options    Option Alias Default Description     --output -o  Output format</description>
+    </item>
+    
+    <item>
       <title>Get Build</title>
       <link>https://codefresh-io.github.io/cli/builds/get-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -199,15 +211,27 @@ Arguments    Option Alias Default Description     id   Pipeline name/id    Optio
     
     <item>
       <title>Get Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/runtime-environments-on-prem/get-runtime-environments/</link>
+      <link>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/runtime-environments-on-prem/get-runtime-environments/</guid>
+      <guid>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</guid>
       <description>Description Get a runtime environments configuration.
-Command codefresh get runtime-environments [name] [version]
-Aliases codefresh get re [name] [version]
-codefresh get runtime-environment [name] [version]
-Arguments    Option Alias Default Description     name  default Runtime environments name   version   Runtime environments version    Options    Option Alias Default Description     --help   Print help information   --history   Return all the history of the specific runtime environments    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Command codefresh get runtime-environments [name]
+Aliases codefresh get re [name]
+codefresh get runtime-environment [name]
+Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment    Output Options    Option Alias Default Description     --output -o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Section</title>
+      <link>https://codefresh-io.github.io/cli/sections/get-section/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/sections/get-section/</guid>
+      <description>Description Get a specific section or an array of sections.
+Command codefresh get sections
+Aliases codefresh get section sections
+Options    Option Alias Default Description     --help   Print help information   --board-id   Board id   --board-name   Board name   --id   Section by id   --name   Section by name    Output Options    Option Alias Default Description     --output -o  Output format</description>
     </item>
     
     <item>
@@ -433,6 +457,30 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Create board</title>
+      <link>https://codefresh-io.github.io/cli/boards/create-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/boards/create-board/</guid>
+      <description>Description Create a team.
+You can create a board specifying name unique for account.
+Command codefresh create board &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name   Name of board    Options    Option Alias Default Description     --help   Print help information   --filter   Filter for clusters&amp;rsquo; names    Examples Creating a board codefresh create board NAME</description>
+    </item>
+    
+    <item>
+      <title>Create section</title>
+      <link>https://codefresh-io.github.io/cli/sections/create-section/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/sections/create-section/</guid>
+      <description>Description Create a section.
+You can create a section specifying name unique for account.
+Command codefresh create section &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name   Name of section    Options    Option Alias Default Description     --help   Print help information   --board-id   Id of board where section is creating   --board-name   Name of board where section is creating   --cluster   Name of linked cluster   --color  #CCAA00 Color of section   --index  1 Index of section    Examples Creating a section with board name codefresh create section NAME --board-name BOARD_NAME --cluster CLUSTER_NAME</description>
+    </item>
+    
+    <item>
       <title>Create team</title>
       <link>https://codefresh-io.github.io/cli/teams/create-team/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -614,6 +662,19 @@ Arguments    Option Alias Default Description     name   Pipeline name    Option
     </item>
     
     <item>
+      <title>Delete Runtime-Environments</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</guid>
+      <description> Description Delete a runtime-environment.
+Command codefresh delete runtime-environments name
+Aliases codefresh delete re name
+codefresh delete runtime-environment name
+Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --force   Delete runtime environment in force mode    </description>
+    </item>
+    
+    <item>
       <title>Delete Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -622,6 +683,29 @@ Arguments    Option Alias Default Description     name   Pipeline name    Option
       <description>Description Delete trigger-event.
 Command codefresh delete trigger-event &amp;lt;event-uri&amp;gt;
 Arguments    Option Alias Default Description     event-uri   trigger-event URI    Options    Option Alias Default Description     --help   Print help information   --context   context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push</description>
+    </item>
+    
+    <item>
+      <title>Delete board</title>
+      <link>https://codefresh-io.github.io/cli/board/delete-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/board/delete-board/</guid>
+      <description>Description Delete a board.
+Command codefresh delete board [id]
+Arguments    Option Alias Default Description     id   board id   name   board name    Options    Option Alias Default Description     --help   Print help information    Examples Delete board by name. codefresh delete board --name NAME
+Delete board by Id.</description>
+    </item>
+    
+    <item>
+      <title>Delete section</title>
+      <link>https://codefresh-io.github.io/cli/section/delete-section/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/section/delete-section/</guid>
+      <description>Description Delete a section.
+Command codefresh delete section [id]
+Arguments    Option Alias Default Description     id   section id   boardId   board Id   boardName   board name   name   section name    Options    Option Alias Default Description     --help   Print help information    Examples Delete section by board name and section name.</description>
     </item>
     
     <item>
@@ -759,6 +843,17 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
     </item>
     
     <item>
+      <title>Update Board</title>
+      <link>https://codefresh-io.github.io/cli/board/update-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/board/update-board/</guid>
+      <description>Description Update a board.
+Command codefresh patch board [id]
+Arguments    Option Alias Default Description     id   Id of existing board    Options    Option Alias Default Description     --help   Print help information   --name   Name of existing board   --newName   New name   --filter   New filter    Examples Update name and filter of board.</description>
+    </item>
+    
+    <item>
       <title>Update Helm Repo</title>
       <link>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -767,6 +862,17 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
       <description>Description Update a helm repo.
 Command codefresh patch helm-repo [name]
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --public -p  Mark the helm repo as public    Examples Update helm repo to be public codefresh patch helm-repo my-repo -p</description>
+    </item>
+    
+    <item>
+      <title>Update Section</title>
+      <link>https://codefresh-io.github.io/cli/section/update-section/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/section/update-section/</guid>
+      <description>Description Update a section.
+Command codefresh patch section [id]
+Arguments    Option Alias Default Description     id   Id of existing section    Options    Option Alias Default Description     --help   Print help information   --boardId   Id of existing board   --boardName   Name of existing board   --name   Name of existing section   --newName   New name   --cluster   Link to cluster   --color   New color   --index   New index    Examples Update name and filter of section.</description>
     </item>
     
     <item>
@@ -902,16 +1008,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
-      <title>Replace Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/runtime-environments-on-prem/replace-runtime-environments/</link>
+      <title>Apply Runtime-Environments</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments-on-prem/apply-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/runtime-environments-on-prem/replace-runtime-environments/</guid>
-      <description> Description Replace a runtime-environments resource.
-Command codefresh replace runtime-environments name
-Aliases codefresh replace re name
-codefresh replace runtime-environment name
-Arguments    Option Alias Default Description     name  default Runtime environments name    Options    Option Alias Default Description     --help   Print help information    </description>
+      <guid>https://codefresh-io.github.io/cli/runtime-environments-on-prem/apply-runtime-environments/</guid>
+      <description>Description apply changes to runtime-environments resource.
+Use apply to patch an existing context.
+Command codefresh patch runtime-environments [name]
+Aliases codefresh patch re [name]
+codefresh patch runtime-environment [name]
+Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --namespace --ns  Set the desire namespace   --cluster -c  Set the desire cluster   --description -d  Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f .</description>
     </item>
     
     <item>
@@ -925,6 +1032,31 @@ Use apply to patch an existing context.
 Command codefresh patch context
 Aliases codefresh patch ctx context
 Options    Option Alias Default Description     --help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml</description>
+    </item>
+    
+    <item>
+      <title>Diff</title>
+      <link>https://codefresh-io.github.io/cli/operate-on-resources/diff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/operate-on-resources/diff/</guid>
+      <description> Description Show diff between two resources
+Supported resources: runtime-environments.
+Command codefresh diff
+Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Diff Runtime-Environments</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments-on-prem/diff-runtime-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments-on-prem/diff-runtime-environments/</guid>
+      <description> Description Show diff between two runtime environments configuration.
+Command codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]
+Aliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]
+codefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]
+Options    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --second-name   Second runtime environment name   --second-version   Second runtime environment version    </description>
     </item>
     
     <item>

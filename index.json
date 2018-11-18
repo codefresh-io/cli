@@ -56,6 +56,13 @@
 	"content": " Description Get a resource from a file, directory or url\nSupported resources:.\nCommand codefresh get\nOutput Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/boards/get-board/",
+	"title": "Get Board",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a specific board or an array of boards.\nCommand codefresh get boards [id..]\nAliases codefresh get board [id..]\nOptions    Option Alias Default Description     --help   Print help information   --id   Board by id   --name   Board by name    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/builds/get-build/",
 	"title": "Get Build",
 	"tags": [],
@@ -112,11 +119,18 @@
 	"content": " Description Get a specific pipeline or an array of pipelines.\nCommand codefresh get pipelines [id..]\nAliases codefresh get pip [id..]\ncodefresh get pipeline [id..]\nArguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/get-runtime-environments/",
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/",
 	"title": "Get Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Description Get a runtime environments configuration.\nCommand codefresh get runtime-environments [name] [version]\nAliases codefresh get re [name] [version]\ncodefresh get runtime-environment [name] [version]\nArguments    Option Alias Default Description     name  default Runtime environments name   version   Runtime environments version    Options    Option Alias Default Description     --help   Print help information   --history   Return all the history of the specific runtime environments    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+	"content": " Description Get a runtime environments configuration.\nCommand codefresh get runtime-environments [name]\nAliases codefresh get re [name]\ncodefresh get runtime-environment [name]\nArguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/sections/get-section/",
+	"title": "Get Section",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a specific section or an array of sections.\nCommand codefresh get sections\nAliases codefresh get section sections\nOptions    Option Alias Default Description     --help   Print help information   --board-id   Board id   --board-name   Board name   --id   Section by id   --name   Section by name    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/get-teams/",
@@ -229,6 +243,20 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create new trigger-event.\nCommand codefresh create trigger-event\nOptions    Option Alias Default Description     --help   Print help information   --type   trigger-event type   --kind   trigger-event kind   --public   wether trigger-event is public (system-wide): can be linked to any pipeline in any account   --secret  !generate trigger-event secret (omit to auto-generate)   --value   trigger-event specific values pairs (key=value), as required by trigger-type   --context   context with credentials required to setup event on remote system    Examples Create registry/dockerhub trigger-event codefresh create trigger-event --type registry --kind dockerhub --value namespace=codefresh --value name=fortune --value action=push\nCreate cron (once in hour) trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;0 0 */1 * * *\u0026quot; --value message=hello\nCreate daily cron trigger-event codefresh create trigger-event --type cron --kind codefresh --value expression=\u0026quot;@daily\u0026quot; --value message=hello-all\nCreate git trigger-event codefresh create trigger-event --type git --kind github --value owner=codefresh-io --value name=cf-api --value action=push\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/boards/create-board/",
+	"title": "Create board",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a team.\nYou can create a board specifying name unique for account.\nCommand codefresh create board \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of board    Options    Option Alias Default Description     --help   Print help information   --filter   Filter for clusters\u0026rsquo; names    Examples Creating a board codefresh create board NAME\nCreating a board with filter /app-.*/gi codefresh create board NAME --filter /app-.*/gi\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/sections/create-section/",
+	"title": "Create section",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a section.\nYou can create a section specifying name unique for account.\nCommand codefresh create section \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of section    Options    Option Alias Default Description     --help   Print help information   --board-id   Id of board where section is creating   --board-name   Name of board where section is creating   --cluster   Name of linked cluster   --color  #CCAA00 Color of section   --index  1 Index of section    Examples Creating a section with board name codefresh create section NAME --board-name BOARD_NAME --cluster CLUSTER_NAME\nCreating a section with board id codefresh create section NAME --board-id ID --cluster CLUSTER_NAME --color \u0026quot;#00AACC\u0026quot; --index 1\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/create-team/",
@@ -350,11 +378,32 @@
 	"content": " Description Delete a pipeline.\nCommand codefresh delete pipeline [name]\nAliases codefresh delete pip [name]\nArguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/",
+	"title": "Delete Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a runtime-environment.\nCommand codefresh delete runtime-environments name\nAliases codefresh delete re name\ncodefresh delete runtime-environment name\nArguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --force   Delete runtime environment in force mode    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/triggers/delete-trigger-event/",
 	"title": "Delete Trigger Event",
 	"tags": [],
 	"description": "",
 	"content": " Description Delete trigger-event.\nCommand codefresh delete trigger-event \u0026lt;event-uri\u0026gt;\nArguments    Option Alias Default Description     event-uri   trigger-event URI    Options    Option Alias Default Description     --help   Print help information   --context   context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/board/delete-board/",
+	"title": "Delete board",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a board.\nCommand codefresh delete board [id]\nArguments    Option Alias Default Description     id   board id   name   board name    Options    Option Alias Default Description     --help   Print help information    Examples Delete board by name. codefresh delete board --name NAME\nDelete board by Id. codefresh delete board ID\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/section/delete-section/",
+	"title": "Delete section",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a section.\nCommand codefresh delete section [id]\nArguments    Option Alias Default Description     id   section id   boardId   board Id   boardName   board name   name   section name    Options    Option Alias Default Description     --help   Print help information    Examples Delete section by board name and section name. codefresh delete section --board-name BOARD --name NAME\nDelete section by id. codefresh delete section SECTION_ID\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/authentication/get-activated-context/",
@@ -396,7 +445,7 @@
 	"title": "Operate On Resources",
 	"tags": [],
 	"description": "",
-	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\n"
+	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nDiff codefresh diff\nShow diff between two resources\nSupported resources: runtime-environments.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/installation/download/",
@@ -448,11 +497,25 @@
 	"content": " Description Terminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nCommand codefresh terminate \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information    Examples Terminate build ID codefresh terminate ID\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/board/update-board/",
+	"title": "Update Board",
+	"tags": [],
+	"description": "",
+	"content": " Description Update a board.\nCommand codefresh patch board [id]\nArguments    Option Alias Default Description     id   Id of existing board    Options    Option Alias Default Description     --help   Print help information   --name   Name of existing board   --newName   New name   --filter   New filter    Examples Update name and filter of board. Specifying board by ID codefresh patch board ID --new-name NEW_NAME --filter /app-*/gi\nUpdate name and filter of board. Specifying board by NAME codefresh patch board --name OLD_NAME --new-name NEW_NAME --filter /app-*/gi\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/",
 	"title": "Update Helm Repo",
 	"tags": [],
 	"description": "",
 	"content": " Description Update a helm repo.\nCommand codefresh patch helm-repo [name]\nArguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --public -p  Mark the helm repo as public    Examples Update helm repo to be public codefresh patch helm-repo my-repo -p\nUpdate helm repo to be private codefresh patch helm-repo my-repo -p=false\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/section/update-section/",
+	"title": "Update Section",
+	"tags": [],
+	"description": "",
+	"content": " Description Update a section.\nCommand codefresh patch section [id]\nArguments    Option Alias Default Description     id   Id of existing section    Options    Option Alias Default Description     --help   Print help information   --boardId   Id of existing board   --boardName   Name of existing board   --name   Name of existing section   --newName   New name   --cluster   Link to cluster   --color   New color   --index   New index    Examples Update name and filter of section. Specifying section by ID codefresh patch section ID --new-name NEW_NAME --filter /app-*/gi\nUpdate name and filter of section. Specifying section by NAME codefresh patch section --name OLD_NAME --new-name NEW_NAME --filter /app-*/gi\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/",
@@ -553,11 +616,11 @@
 	"content": " Description Replace a composition resource.\nCommand codefresh replace composition\nAliases codefresh replace com composition\nOptions    Option Alias Default Description     --help   Print help information    "
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/replace-runtime-environments/",
-	"title": "Replace Runtime-Environments",
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/apply-runtime-environments/",
+	"title": "Apply Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Description Replace a runtime-environments resource.\nCommand codefresh replace runtime-environments name\nAliases codefresh replace re name\ncodefresh replace runtime-environment name\nArguments    Option Alias Default Description     name  default Runtime environments name    Options    Option Alias Default Description     --help   Print help information    "
+	"content": " Description apply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCommand codefresh patch runtime-environments [name]\nAliases codefresh patch re [name]\ncodefresh patch runtime-environment [name]\nArguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --namespace --ns  Set the desire namespace   --cluster -c  Set the desire cluster   --description -d  Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f ./re.yml\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/",
@@ -574,11 +637,39 @@
 	"content": " Description Apply changes to a context.\nUse apply to patch an existing context.\nCommand codefresh patch context\nAliases codefresh patch ctx context\nOptions    Option Alias Default Description     --help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/board/",
+	"title": "Board",
+	"tags": [],
+	"description": "",
+	"content": " Delete board codefresh delete board [id]\nDelete a board.\nUpdate Board codefresh patch board [id]\nUpdate a board.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/boards/",
+	"title": "Boards",
+	"tags": [],
+	"description": "",
+	"content": " Get Board codefresh get boards [id..]\nGet a specific board or an array of boards.\nCreate board codefresh create board \u0026lt;name\u0026gt;\nCreate a team.\nYou can create a board specifying name unique for account.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/",
 	"title": "Create Context",
 	"tags": [],
 	"description": "",
 	"content": " Create Config Context codefresh create context config \u0026lt;name\u0026gt;\nCreate a config context.\nCreate Secret Context codefresh create context secret \u0026lt;name\u0026gt;\nCreate a secret context.\nCreate Secret-Yaml Context codefresh create context secret-yaml \u0026lt;name\u0026gt;\nCreate a secret-yaml context.\nCreate Yaml Context codefresh create context yaml \u0026lt;name\u0026gt;\nCreate a yaml context.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/diff/",
+	"title": "Diff",
+	"tags": [],
+	"description": "",
+	"content": " Description Show diff between two resources\nSupported resources: runtime-environments.\nCommand codefresh diff\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/diff-runtime-environments/",
+	"title": "Diff Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Show diff between two runtime environments configuration.\nCommand codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nAliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]\ncodefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nOptions    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --second-name   Second runtime environment name   --second-version   Second runtime environment version    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/environments/",
@@ -592,7 +683,7 @@
 	"title": "Git",
 	"tags": [],
 	"description": "",
-	"content": " github codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\nbitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
+	"content": " bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",
@@ -602,11 +693,32 @@
 	"content": " From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/",
+	"title": "Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nGet Runtime-Environments codefresh get system-runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nDelete Runtime-Environments codefresh delete system-runtime-environments name\nDelete a runtime-environment.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/",
 	"title": "Runtime-Environments (On Prem)",
 	"tags": [],
 	"description": "",
-	"content": " Get Runtime-Environments codefresh get runtime-environments [name] [version]\nGet a runtime environments configuration.\nReplace Runtime-Environments codefresh replace runtime-environments name\nReplace a runtime-environments resource.\n"
+	"content": " Apply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nApply Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nDiff Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/section/",
+	"title": "Section",
+	"tags": [],
+	"description": "",
+	"content": " Delete section codefresh delete section [id]\nDelete a section.\nUpdate Section codefresh patch section [id]\nUpdate a section.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/sections/",
+	"title": "Sections",
+	"tags": [],
+	"description": "",
+	"content": " Get Section codefresh get sections\nGet a specific section or an array of sections.\nCreate section codefresh create section \u0026lt;name\u0026gt;\nCreate a section.\nYou can create a section specifying name unique for account.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/synchronize-teams/",
@@ -634,7 +746,7 @@
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
+	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/",

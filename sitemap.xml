@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/boards/get-board/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/builds/get-build/</loc>
   </url>
   
@@ -71,7 +75,11 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/get-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/sections/get-section/</loc>
   </url>
   
   <url>
@@ -138,6 +146,14 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/boards/create-board/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/sections/create-section/</loc>
   </url>
   
   <url>
@@ -212,7 +228,19 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/board/delete-board/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/section/delete-section/</loc>
   </url>
   
   <url>
@@ -270,7 +298,15 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/board/update-board/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/section/update-section/</loc>
   </url>
   
   <url>
@@ -332,7 +368,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/replace-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/apply-runtime-environments/</loc>
   </url>
   
   <url>
@@ -344,7 +380,23 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/board/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/boards/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/diff/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/diff-runtime-environments/</loc>
   </url>
   
   <url>
@@ -360,7 +412,19 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/section/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/sections/</loc>
   </url>
   
   <url>
