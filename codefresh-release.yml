@@ -93,7 +93,7 @@ steps:
       - "mv ./dist/codefresh-alpine ./dist/codefresh"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar README.md LICENSE -C ./dist ./codefresh "
       - "gzip codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar"
-      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar.gz'
+      - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar.gz'
 
   update_documentation:
     title: "Update documentation http://cli.codefresh.io"
