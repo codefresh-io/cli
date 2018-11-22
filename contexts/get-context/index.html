@@ -942,6 +942,7 @@
 <ul>
 <li><a href="#get-context-name">Get context NAME</a></li>
 <li><a href="#get-all-contexts">Get all contexts</a></li>
+<li><a href="#get-all-contexts-with-credentials-decrypted">Get all contexts with credentials decrypted</a></li>
 <li><a href="#get-all-secret-contexts">Get all secret contexts</a></li>
 <li><a href="#get-all-git-based-contexts-for-github-kind">Get all git based contexts for github kind</a></li>
 <li><a href="#get-all-helm-repository-contexts">Get all helm-repository contexts</a></li>
@@ -1033,6 +1034,13 @@
 <td></td>
 <td>Context type<br><br>Possible values:<br> - config<br> - secret<br> - helm-repository<br> - yaml<br> - secret-yaml<br> - git</td>
 </tr>
+
+<tr>
+<td>--decrypt</td>
+<td></td>
+<td></td>
+<td>Either to show decoded credentials or not</td>
+</tr>
 </tbody>
 </table>
 
@@ -1081,6 +1089,10 @@
 <h4 id="get-all-contexts">Get all contexts</h4>
 
 <p><code>codefresh get contexts</code></p>
+
+<h4 id="get-all-contexts-with-credentials-decrypted">Get all contexts with credentials decrypted</h4>
+
+<p><code>codefresh get context --decrypt</code></p>
 
 <h4 id="get-all-secret-contexts">Get all secret contexts</h4>
 
