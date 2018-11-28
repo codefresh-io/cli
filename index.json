@@ -70,6 +70,13 @@
 	"content": " Description Get a specific build or an array of builds.\nPassing [id] argument will cause a retrieval of a specific build.\nIn case of not passing [id] argument, a list will be returned.\nCommand codefresh get builds [id..]\nAliases codefresh get build [id..]\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --limit  25 Limit amount of returned results   --page  1 Paginated page   --status   Filter results by statuses\nPossible values:\n- pending\n- elected\n- error\n- running\n- success\n- terminated   --trigger   Filter results by triggers\nPossible values:\n- build\n- launch   --pipeline-id   Filter results by pipeline id   --pipeline-name   Filter results by pipeline name    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get build ID codefresh get build ID\nGet all builds codefresh get builds\nGet all builds that are executions of pipeline \u0026ldquo;ID\u0026rdquo; codefresh get builds --pipeline-id ID\nGet all builds that are executions of pipelines that are named \u0026ldquo;NAME\u0026rdquo; codefresh get builds --pipeline-name NAME\nGet all builds that their status is error codefresh get builds --status=error\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/clusters/get-clusters/",
+	"title": "Get Clusters",
+	"tags": [],
+	"description": "",
+	"content": " Description Get an array of clusters.\nCommand codefresh get clusters\nAliases codefresh get cluster clusters\nOptions    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all clusters codefresh get clusters\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/compositions/get-composition/",
 	"title": "Get Composition",
 	"tags": [],
@@ -341,6 +348,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nCommand codefresh delete\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/clusters/delete-cluster/",
+	"title": "Delete Cluster",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a cluster.\nCommand codefresh delete cluster \u0026lt;name\u0026gt;\nAliases codefresh delete clusters \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Cluster name. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete cluster NAME codefresh delete cluster NAME\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/delete-composition/",
@@ -651,11 +665,32 @@
 	"content": " Get Board codefresh get boards [id..]\nGet a specific board or an array of boards.\nCreate board codefresh create board \u0026lt;name\u0026gt;\nCreate a team.\nYou can create a board specifying name unique for account.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/clusters/",
+	"title": "Clusters",
+	"tags": [],
+	"description": "",
+	"content": " Get Clusters codefresh get clusters\nGet an array of clusters.\nDelete Cluster codefresh delete cluster \u0026lt;name\u0026gt;\nDelete a cluster.\nCreate Cluster codefresh create clusters [name]\nCreate a cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/clusters/create-cluster/",
+	"title": "Create Cluster",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a cluster.\nCommand codefresh create clusters [name]\nAliases codefresh create cluster [name]\nArguments    Option Alias Default Description     name   cluster name. required    Options    Option Alias Default Description     --help   Print help information    Examples Creating a cluster codefresh create cluster [name]\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/",
 	"title": "Create Context",
 	"tags": [],
 	"description": "",
 	"content": " Create Config Context codefresh create context config \u0026lt;name\u0026gt;\nCreate a config context.\nCreate Secret Context codefresh create context secret \u0026lt;name\u0026gt;\nCreate a secret context.\nCreate Secret-Yaml Context codefresh create context secret-yaml \u0026lt;name\u0026gt;\nCreate a secret-yaml context.\nCreate Yaml Context codefresh create context yaml \u0026lt;name\u0026gt;\nCreate a yaml context.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/create-runtime-environments/",
+	"title": "Create Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nArguments    Option Alias Default Description     cluster   cluster name. required    Options    Option Alias Default Description     --help   Print help information   --namespace   namespace   --local   set if run the script from local file system   --context   set your kubectl context    Examples Creating a runtime environment codefresh create re [cluster] --namespace codefresh --context kubeCodefresh\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/diff/",
@@ -704,7 +739,7 @@
 	"title": "Runtime-Environments (On Prem)",
 	"tags": [],
 	"description": "",
-	"content": " Apply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nApply Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nDiff Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
+	"content": " Apply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nApply Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nDiff Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/section/",

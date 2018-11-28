@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/clusters/get-clusters/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/compositions/get-composition/</loc>
   </url>
   
@@ -205,6 +209,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/clusters/delete-cluster/</loc>
   </url>
   
   <url>
@@ -388,7 +396,19 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/clusters/create-cluster/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/create-runtime-environments/</loc>
   </url>
   
   <url>

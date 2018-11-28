@@ -115,6 +115,24 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
     </item>
     
     <item>
+      <title>Get Clusters</title>
+      <link>https://codefresh-io.github.io/cli/clusters/get-clusters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/clusters/get-clusters/</guid>
+      <description>Description Get an array of clusters.
+Command codefresh get clusters
+Aliases codefresh get cluster clusters
+Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format
+Possible values:
+- json
+- yaml
+- wide
+- name
+- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all clusters codefresh get clusters</description>
+    </item>
+    
+    <item>
       <title>Get Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/get-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -603,6 +621,18 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Delete Cluster</title>
+      <link>https://codefresh-io.github.io/cli/clusters/delete-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/clusters/delete-cluster/</guid>
+      <description>Description Delete a cluster.
+Command codefresh delete cluster &amp;lt;name&amp;gt;
+Aliases codefresh delete clusters &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name   Cluster name. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete cluster NAME codefresh delete cluster NAME</description>
+    </item>
+    
+    <item>
       <title>Delete Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/delete-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1032,6 +1062,31 @@ Use apply to patch an existing context.
 Command codefresh patch context
 Aliases codefresh patch ctx context
 Options    Option Alias Default Description     --help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml</description>
+    </item>
+    
+    <item>
+      <title>Create Cluster</title>
+      <link>https://codefresh-io.github.io/cli/clusters/create-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/clusters/create-cluster/</guid>
+      <description>Description Create a cluster.
+Command codefresh create clusters [name]
+Aliases codefresh create cluster [name]
+Arguments    Option Alias Default Description     name   cluster name. required    Options    Option Alias Default Description     --help   Print help information    Examples Creating a cluster codefresh create cluster [name]</description>
+    </item>
+    
+    <item>
+      <title>Create Runtime-Environments</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments-on-prem/create-runtime-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments-on-prem/create-runtime-environments/</guid>
+      <description>Description Create a runtime environment.
+Command codefresh create runtime-environments [cluster]
+Aliases codefresh create re [cluster]
+codefresh create runtime-environment [cluster]
+Arguments    Option Alias Default Description     cluster   cluster name. required    Options    Option Alias Default Description     --help   Print help information   --namespace   namespace   --local   set if run the script from local file system   --context   set your kubectl context    Examples Creating a runtime environment codefresh create re [cluster] --namespace codefresh --context kubeCodefresh</description>
     </item>
     
     <item>
