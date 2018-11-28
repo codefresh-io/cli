@@ -291,7 +291,7 @@
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use NPM or YARN to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by Donwloading it directly.\nIt is also possible to run the CLI using a Docker image.\n"
+	"content": "Codefresh CLI is developed and built with node.js. In case you have node.js installed on your machine you can use NPM or YARN to install it.\nIf you don\u0026rsquo;t have node.js installed you can install the CLI by Downloading it directly.\nIt is also possible to run the CLI using a Docker image.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/",
@@ -466,7 +466,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "asd",
-	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
+	"content": "Navigate to Official Releases and download the binary that matches your operating system.\nWe currently support the following OS:  Alpine-x64 Linux-x64 Macos-x64 Windows-x64 \nAfter downloading the binary, untar or unzip it and your are good to go.\nYou can also add the binary to your system PATH environment variable so you can use it easily.\nIf your operating system is missing please feel free to open us an issue in our Github repository.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/",

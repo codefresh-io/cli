@@ -803,7 +803,7 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/installation/download/</guid>
       <description>Navigate to Official Releases and download the binary that matches your operating system.
-We currently support the following OS:  Linux-x64 Macos-x64 Windows-x64 
+We currently support the following OS:  Alpine-x64 Linux-x64 Macos-x64 Windows-x64 
 After downloading the binary, untar or unzip it and your are good to go.
 You can also add the binary to your system PATH environment variable so you can use it easily.
 If your operating system is missing please feel free to open us an issue in our Github repository.</description>
