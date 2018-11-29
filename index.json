@@ -140,6 +140,13 @@
 	"content": " Description Get a specific section or an array of sections.\nCommand codefresh get sections\nAliases codefresh get section sections\nOptions    Option Alias Default Description     --help   Print help information   --board-id   Board id   --board-name   Board name   --id   Section by id   --name   Section by name    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments/get-system-runtime-environments/",
+	"title": "Get System Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a runtime environments configuration.\nCommand codefresh get system-runtime-environments [name]\nAliases codefresh get sys-re [name]\ncodefresh get system-runtime-environment [name]\nArguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --successors -s  Return all the successors of specific runtime environment   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment   --plan   Set the plan of system plan runtime environment   --account   id of the account we want to view his runtime environments   --accountIds   array of accounts ids to view theirs runtime environments    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/teams/get-teams/",
 	"title": "Get Teams",
 	"tags": [],
@@ -399,6 +406,13 @@
 	"content": " Description Delete a runtime-environment.\nCommand codefresh delete runtime-environments name\nAliases codefresh delete re name\ncodefresh delete runtime-environment name\nArguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --force   Delete runtime environment in force mode    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments/delete-system-runtime-environments/",
+	"title": "Delete System Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a runtime-environment.\nCommand codefresh delete system-runtime-environments name\nAliases codefresh delete sys-re name\ncodefresh delete system-runtime-environment name\nArguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --plan   Runtime environment plan   --force   Delete runtime environment in force mode    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/triggers/delete-trigger-event/",
 	"title": "Delete Trigger Event",
 	"tags": [],
@@ -637,6 +651,13 @@
 	"content": " Description apply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCommand codefresh patch runtime-environments [name]\nAliases codefresh patch re [name]\ncodefresh patch runtime-environment [name]\nArguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --namespace --ns  Set the desire namespace   --cluster -c  Set the desire cluster   --description -d  Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f ./re.yml\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/",
+	"title": "Apply System Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description apply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCommand codefresh patch system-runtime-environments [name]\nAliases codefresh patch sys-re [name]\ncodefresh patch system-runtime-environment [name]\nArguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --plan   Set the plan of system plan runtime environment   --description -d  Description of the new runtime environment    Examples Apply changes to a system runtime environment codefresh patch system-runtime-environments -f ./re.yml\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/triggers/",
 	"title": "Triggers",
 	"tags": [],
@@ -690,7 +711,7 @@
 	"title": "Create Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nArguments    Option Alias Default Description     cluster   cluster name. required    Options    Option Alias Default Description     --help   Print help information   --namespace   namespace   --local   set if run the script from local file system   --context   set your kubectl context    Examples Creating a runtime environment codefresh create re [cluster] --namespace codefresh --context kubeCodefresh\n"
+	"content": " Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nArguments    Option Alias Default Description     cluster   cluster name. required    Options    Option Alias Default Description     --help   Print help information   --namespace   namespace   --context   set your kubectl context    Examples Creating a runtime environment codefresh create re [cluster] --namespace codefresh --context kubeCodefresh\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/diff/",
@@ -705,6 +726,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Show diff between two runtime environments configuration.\nCommand codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nAliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]\ncodefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nOptions    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --second-name   Second runtime environment name   --second-version   Second runtime environment version    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/",
+	"title": "Diff System Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Show diff between two runtime environments configuration.\nCommand codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nAliases codefresh diff sys-re [first-re-name] [first-re-version] [second-re-name] [second-re-version]\ncodefresh diff system-runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nOptions    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --first-plan   Plan of the first runtime environment (relevant only when it is a system plan runtime environment)   --second-name   Second runtime environment name   --second-version   Second runtime environment version   --second-plan   Plan of the second runtime environment (relevant only when it is a system plan runtime environment)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/environments/",
@@ -732,14 +760,14 @@
 	"title": "Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nGet Runtime-Environments codefresh get system-runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nDelete Runtime-Environments codefresh delete system-runtime-environments name\nDelete a runtime-environment.\n"
+	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments-on-prem/",
 	"title": "Runtime-Environments (On Prem)",
 	"tags": [],
 	"description": "",
-	"content": " Apply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nApply Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nDiff Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
+	"content": " Apply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/section/",
@@ -761,6 +789,20 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nOptions    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments/",
+	"title": "System Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Get System Runtime-Environments codefresh get system-runtime-environments [name]\nGet a runtime environments configuration.\nDelete System Runtime-Environments codefresh delete system-runtime-environments name\nDelete a runtime-environment.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/",
+	"title": "System Runtime-Environments (On Prem)",
+	"tags": [],
+	"description": "",
+	"content": " Apply System Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nDiff System Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/",
