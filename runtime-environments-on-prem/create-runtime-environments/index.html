@@ -1015,11 +1015,10 @@
 <ul>
 <li><a href="#aliases">Aliases</a></li>
 </ul></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#creating-a-runtime-environment">Creating a runtime environment</a></li>
+<li><a href="#creating-a-runtime-environment-which-configured-to-cluster-prod-and-namespace-codefresh">Creating a runtime environment which configured to cluster prod and namespace codefresh</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1058,28 +1057,6 @@
 
 <p><code>codefresh create runtime-environment [cluster]</code></p>
 
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>cluster</td>
-<td></td>
-<td></td>
-<td>cluster name. <code>required</code></td>
-</tr>
-</tbody>
-</table>
-
 <h3 id="options">Options</h3>
 
 <table>
@@ -1101,26 +1078,33 @@
 </tr>
 
 <tr>
+<td>--cluster</td>
+<td>-c</td>
+<td></td>
+<td>codefresh cluster integration name. <code>required</code></td>
+</tr>
+
+<tr>
 <td>--namespace</td>
-<td></td>
-<td></td>
+<td>-n</td>
+<td>codefresh</td>
 <td>namespace</td>
 </tr>
 
 <tr>
-<td>--context</td>
+<td>--kube-context</td>
+<td>--kc</td>
 <td></td>
-<td></td>
-<td>set your kubectl context</td>
+<td>kubectl context name</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="creating-a-runtime-environment">Creating a runtime environment</h4>
+<h4 id="creating-a-runtime-environment-which-configured-to-cluster-prod-and-namespace-codefresh">Creating a runtime environment which configured to cluster prod and namespace codefresh</h4>
 
-<p><code>codefresh create re [cluster] --namespace codefresh --context kubeCodefresh</code></p>
+<p><code>codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh</code></p>
 
 
     

@@ -1015,11 +1015,10 @@
 <ul>
 <li><a href="#aliases">Aliases</a></li>
 </ul></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#creating-a-cluster">Creating a cluster</a></li>
+<li><a href="#creating-a-cluster-in-codefresh">Creating a cluster in codefresh</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1056,28 +1055,6 @@
 
 <p><code>codefresh create cluster [name]</code></p>
 
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>cluster name. <code>required</code></td>
-</tr>
-</tbody>
-</table>
-
 <h3 id="options">Options</h3>
 
 <table>
@@ -1097,14 +1074,21 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--kube-context</td>
+<td>--kc</td>
+<td></td>
+<td>kubectl context name. <code>required</code></td>
+</tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="creating-a-cluster">Creating a cluster</h4>
+<h4 id="creating-a-cluster-in-codefresh">Creating a cluster in codefresh</h4>
 
-<p><code>codefresh create cluster [name]</code></p>
+<p><code>codefresh create cluster --kube-context production</code></p>
 
 
     

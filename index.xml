@@ -1113,7 +1113,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <description>Description Create a cluster.
 Command codefresh create clusters [name]
 Aliases codefresh create cluster [name]
-Arguments    Option Alias Default Description     name   cluster name. required    Options    Option Alias Default Description     --help   Print help information    Examples Creating a cluster codefresh create cluster [name]</description>
+Options    Option Alias Default Description     --help   Print help information   --kube-context --kc  kubectl context name. required    Examples Creating a cluster in codefresh codefresh create cluster --kube-context production</description>
     </item>
     
     <item>
@@ -1126,7 +1126,7 @@ Arguments    Option Alias Default Description     name   cluster name. required 
 Command codefresh create runtime-environments [cluster]
 Aliases codefresh create re [cluster]
 codefresh create runtime-environment [cluster]
-Arguments    Option Alias Default Description     cluster   cluster name. required    Options    Option Alias Default Description     --help   Print help information   --namespace   namespace   --context   set your kubectl context    Examples Creating a runtime environment codefresh create re [cluster] --namespace codefresh --context kubeCodefresh</description>
+Options    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh</description>
     </item>
     
     <item>
