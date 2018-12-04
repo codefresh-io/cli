@@ -27,6 +27,7 @@ const categoriesOrder = {
     'helm repos' : 111 ,
     'predefined pipelines': 120,
     teams: 130,
+    'cli config': 121,
     more : 150,
 };
 
