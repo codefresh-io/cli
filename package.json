@@ -38,6 +38,7 @@
     "decompress": "^4.2.0",
     "decompress-targz": "^4.1.1",
     "diff": "^3.5.0",
+    "dockerode": "^2.5.7",
     "draftlog": "^1.0.12",
     "filesize": "^3.5.11",
     "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
