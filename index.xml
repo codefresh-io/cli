@@ -85,7 +85,7 @@ Possible values:
 - yaml
 - wide
 - name
-- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
     
     <item>
@@ -129,7 +129,7 @@ Possible values:
 - yaml
 - wide
 - name
-- id   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all clusters codefresh get clusters</description>
+- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all clusters codefresh get clusters</description>
     </item>
     
     <item>
