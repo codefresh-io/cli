@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.8.107",
+  "version": "0.8.108",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -8,7 +8,7 @@
     "test": "jest .spec.js --coverage",
     "eslint": "eslint lib1logic/**",
     "ci-publish": "ci-publish",
-    "pkg": "pkg . -t node9-alpine-x64,node9-macos-x64,node9-linux-x64,node9-win-x64 --out-path ./dist",
+    "pkg": "pkg . -t node10-alpine-x64,node10-macos-x64,node10-linux-x64,node10-win-x64 --out-path ./dist",
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
@@ -65,7 +65,7 @@
     "eslint-plugin-mocha": "^4.11.0",
     "hugo-cli": "^0.5.4",
     "jest": "^22.4.2",
-    "pkg": "^4.3.0-beta.5"
+    "pkg": "^4.3.5"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cli/issues"
