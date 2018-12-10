@@ -10,25 +10,8 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Defines whether to show data in table view in pretty mode or not"
-                },
-                "test": {
-                    "type": "object",
-                    "properties": {
-                        "first": {
-                            "type": ["string", "null"],
-                            "pattern": ".*",
-                            "default": null,
-                            "description": "Some empty string"
-                        },
-                        "second": {
-                            "type": ["string", "null"],
-                            "default": "not empty string"
-                        }
-                    },
-                    "default": {}
                 }
-            },
-            "default": {}
+            }
         }
     }
 }
