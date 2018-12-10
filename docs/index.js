@@ -26,6 +26,7 @@ const categoriesOrder = {
     compositions : 110 ,
     'helm repos' : 111 ,
     'predefined pipelines': 120,
+    'cli config': 121,
     teams: 130,
     more : 150,
 };
