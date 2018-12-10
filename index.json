@@ -784,6 +784,13 @@
 	"content": " Get Section codefresh get sections\nGet a specific section or an array of sections.\nCreate section codefresh create section \u0026lt;name\u0026gt;\nCreate a section.\nYou can create a section specifying name unique for account.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/cli-config/show-config/",
+	"title": "Show Config",
+	"tags": [],
+	"description": "",
+	"content": " Description Codefresh CLI configuration. Uses profiles\nCLI configuration is used for user-specific properties, for example pretty-print.\nCommand codefresh cli-config\nOptions    Option Alias Default Description     --help   Print help information   --output -o  Output format    Examples Print configuration for current profile codefresh cli-config\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/teams/synchronize-teams/",
 	"title": "Synchronize Teams",
 	"tags": [],
@@ -812,6 +819,20 @@
 	"content": " Get Composition codefresh get compositions [id|name..]\nGet a specific composition or an array of compositions.\nPassing [id|name] argument will cause a retrieval of a specific composition.\nIn case of not passing [id|name] argument, a list will be returned.\nCreate Composition codefresh create composition \u0026lt;name\u0026gt;\nCreate a composition.\nDelete Composition codefresh delete composition \u0026lt;name\u0026gt;\nDelete a composition.\nReplace Composition codefresh replace composition\nReplace a composition resource.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/cli-config/get-config-properties/",
+	"title": "Get Config Properties",
+	"tags": [],
+	"description": "",
+	"content": " Description For current profile get all properties containing provided \u0026ldquo;name\u0026rdquo;\nUsed when you may need to know some exact properties values.\nCommand codefresh cli-config get [name]\nArguments    Option Alias Default Description     name   Property name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print available property names codefresh cli-config get\nPrint properties, containing \u0026ldquo;output\u0026rdquo; word codefresh cli-config get output\nPrint properties, containing \u0026ldquo;output.pretty\u0026rdquo; path codefresh cli-config get output.pretty\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/cli-config/set-config-property/",
+	"title": "Set Config Property",
+	"tags": [],
+	"description": "",
+	"content": " Description For current profile set an available property\nCommand codefresh cli-config set [name] [value]\nArguments    Option Alias Default Description     name   Property name   value   Property value    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print available property names codefresh cli-config set\nSet \u0026ldquo;output.pretty\u0026rdquo; property codefresh cli-config set output.pretty false\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/helm-repos/",
 	"title": "Helm Repos",
 	"tags": [],
@@ -824,6 +845,27 @@
 	"tags": [],
 	"description": "",
 	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/cli-config/profiles/",
+	"title": "Profiles",
+	"tags": [],
+	"description": "",
+	"content": " Description Change cli-config profile\nUsing profiles gives an ability to switch fast between the different configuration sets.\nCommand codefresh cli-config profile [name]\nArguments    Option Alias Default Description     name   Profile name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Use or create profile with name \u0026ldquo;myProfile\u0026rdquo; codefresh cli-config profile myProfile\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/cli-config/",
+	"title": "CLI Config",
+	"tags": [],
+	"description": "",
+	"content": " Show Config codefresh cli-config\nCodefresh CLI configuration. Uses profiles\nCLI configuration is used for user-specific properties, for example pretty-print.\nGet Config Properties codefresh cli-config get [name]\nFor current profile get all properties containing provided \u0026ldquo;name\u0026rdquo;\nUsed when you may need to know some exact properties values.\nSet Config Property codefresh cli-config set [name] [value]\nFor current profile set an available property\nProfiles codefresh cli-config profile [name]\nChange cli-config profile\nUsing profiles gives an ability to switch fast between the different configuration sets.\nDescribe Config Properties codefresh cli-config help [name]\nShow help for properties. Used when you may need to know some properties types, defaults, description etc.\nUsed when you may need to know some properties types, defaults, description etc.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/cli-config/describe-config-properties/",
+	"title": "Describe Config Properties",
+	"tags": [],
+	"description": "",
+	"content": " Description Show help for properties. Used when you may need to know some properties types, defaults, description etc.\nUsed when you may need to know some properties types, defaults, description etc.\nCommand codefresh cli-config help [name]\nArguments    Option Alias Default Description     name   Property name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print help for all properties codefresh cli-config help\nPrint help for properties, containing \u0026ldquo;output\u0026rdquo; word codefresh cli-config help output\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/",

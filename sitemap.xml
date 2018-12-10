@@ -464,6 +464,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/show-config/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
   </url>
   
@@ -480,11 +484,31 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/set-config-property/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/helm-repos/</loc>
   </url>
   
   <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/profiles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</loc>
   </url>
   
   <url>

@@ -1168,6 +1168,18 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Show Config</title>
+      <link>https://codefresh-io.github.io/cli/cli-config/show-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/cli-config/show-config/</guid>
+      <description>Description Codefresh CLI configuration. Uses profiles
+CLI configuration is used for user-specific properties, for example pretty-print.
+Command codefresh cli-config
+Options    Option Alias Default Description     --help   Print help information   --output -o  Output format    Examples Print configuration for current profile codefresh cli-config</description>
+    </item>
+    
+    <item>
       <title>Synchronize Teams</title>
       <link>https://codefresh-io.github.io/cli/teams/synchronize-teams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1178,6 +1190,53 @@ Command codefresh synchronize teams [client-name]
 Aliases codefresh synchronize team [client-name]
 codefresh synchronize tm [client-name]
 Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]</description>
+    </item>
+    
+    <item>
+      <title>Get Config Properties</title>
+      <link>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</guid>
+      <description>Description For current profile get all properties containing provided &amp;ldquo;name&amp;rdquo;
+Used when you may need to know some exact properties values.
+Command codefresh cli-config get [name]
+Arguments    Option Alias Default Description     name   Property name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print available property names codefresh cli-config get</description>
+    </item>
+    
+    <item>
+      <title>Set Config Property</title>
+      <link>https://codefresh-io.github.io/cli/cli-config/set-config-property/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/cli-config/set-config-property/</guid>
+      <description>Description For current profile set an available property
+Command codefresh cli-config set [name] [value]
+Arguments    Option Alias Default Description     name   Property name   value   Property value    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print available property names codefresh cli-config set</description>
+    </item>
+    
+    <item>
+      <title>Profiles</title>
+      <link>https://codefresh-io.github.io/cli/cli-config/profiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/cli-config/profiles/</guid>
+      <description>Description Change cli-config profile
+Using profiles gives an ability to switch fast between the different configuration sets.
+Command codefresh cli-config profile [name]
+Arguments    Option Alias Default Description     name   Profile name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Use or create profile with name &amp;ldquo;myProfile&amp;rdquo; codefresh cli-config profile myProfile</description>
+    </item>
+    
+    <item>
+      <title>Describe Config Properties</title>
+      <link>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</guid>
+      <description>Description Show help for properties. Used when you may need to know some properties types, defaults, description etc.
+Used when you may need to know some properties types, defaults, description etc.
+Command codefresh cli-config help [name]
+Arguments    Option Alias Default Description     name   Property name    Options    Option Alias Default Description     --output -o  Output format   --help   Print help information    Examples Print help for all properties codefresh cli-config help</description>
     </item>
     
     <item>
