@@ -1126,7 +1126,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh create runtime-environments [cluster]
 Aliases codefresh create re [cluster]
 codefresh create runtime-environment [cluster]
-Options    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh</description>
+Options    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name   --gcloud   set if your cluster provider is gcloud    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh</description>
     </item>
     
     <item>

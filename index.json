@@ -711,7 +711,7 @@
 	"title": "Create Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nOptions    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh\n"
+	"content": " Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nOptions    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name   --gcloud   set if your cluster provider is gcloud    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/diff/",
