@@ -1193,6 +1193,18 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Validate pipeline yaml</title>
+      <link>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</guid>
+      <description> Description Validate codefresh pipeline yaml config files
+Validate one or many pipeline yaml files or attach validator to one and validate on changes.
+Command codefresh validate [filenames..]
+Arguments    Option Alias Default Description     filenames   Paths to yaml files. required    Options    Option Alias Default Description     --help   Print help information   --attach -a  Attach validator to the file and validate on change    </description>
+    </item>
+    
+    <item>
       <title>Get Config Properties</title>
       <link>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

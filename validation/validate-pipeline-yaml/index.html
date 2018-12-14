@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Delete section :: Codefresh CLI Documentation</title>
+<title>Validate pipeline yaml :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/section/delete-section/">
+  <body data-url="/cli/validation/validate-pipeline-yaml/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -681,14 +681,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/section/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/section/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/section/">Section</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/section/">Section</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/section/delete-section/" class="dd-item active">
+      <li data-nav-id="/cli/section/delete-section/" class="dd-item">
         <div>
           <a href="/cli/section/delete-section/">
             Delete section
@@ -754,29 +753,44 @@
       <a href="/cli/system-runtime-environments-on-prem/">System Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/">
-            Apply System Runtime-Environments
+          <a href="/cli/contexts/create-context/create-config-context/">
+            Config
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-secret-context/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/">
-            Diff System Runtime-Environments
+          <a href="/cli/contexts/create-context/create-secret-context/">
+            Secret
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-yaml-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-yaml-context/">
+            Secret Yaml
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-yaml-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-yaml-context/">
+            Yaml
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/validation/" class="dd-item haschildren
+    <li data-nav-id="/cli/validation/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/validation/">Validation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/validation/">Validation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/validation/validate-pipeline-yaml/" class="dd-item">
+      <li data-nav-id="/cli/validation/validate-pipeline-yaml/" class="dd-item active">
         <div>
           <a href="/cli/validation/validate-pipeline-yaml/">
             Validate pipeline yaml
@@ -1049,7 +1063,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/section/'>Section</a> > Delete section
+ <a href='/cli/'></a> > <a href='/cli/validation/'>Validation</a> > Validate pipeline yaml
 
  
 
@@ -1072,11 +1086,6 @@
 <li><a href="#command">Command</a></li>
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#delete-section-by-board-name-and-section-name">Delete section by board name and section name.</a></li>
-<li><a href="#delete-section-by-id">Delete section by id.</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1090,7 +1099,7 @@
 
 <div id="body-inner">
   
-    <h1>Delete section</h1>
+    <h1>Validate pipeline yaml</h1>
   
 
 
@@ -1102,11 +1111,13 @@
 
 <h3 id="description">Description</h3>
 
-<p>Delete a section.</p>
+<p>Validate codefresh pipeline yaml config files</p>
+
+<p>Validate one or many pipeline yaml files or attach validator to one and validate on changes.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh delete section [id]</code></p>
+<p><code>codefresh validate [filenames..]</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -1122,31 +1133,10 @@
 
 <tbody>
 <tr>
-<td>id</td>
+<td>filenames</td>
 <td></td>
 <td></td>
-<td>section id</td>
-</tr>
-
-<tr>
-<td>boardId</td>
-<td></td>
-<td></td>
-<td>board Id</td>
-</tr>
-
-<tr>
-<td>boardName</td>
-<td></td>
-<td></td>
-<td>board name</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>section name</td>
+<td>Paths to yaml files. <code>required</code></td>
 </tr>
 </tbody>
 </table>
@@ -1170,18 +1160,15 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--attach</td>
+<td>-a</td>
+<td></td>
+<td>Attach validator to the file and validate on change</td>
+</tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="delete-section-by-board-name-and-section-name">Delete section by board name and section name.</h4>
-
-<p><code>codefresh delete section --board-name BOARD --name NAME</code></p>
-
-<h4 id="delete-section-by-id">Delete section by id.</h4>
-
-<p><code>codefresh delete section SECTION_ID</code></p>
 
 
     

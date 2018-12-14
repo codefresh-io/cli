@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Delete section :: Codefresh CLI Documentation</title>
+<title>Validation :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/section/delete-section/">
+  <body data-url="/cli/validation/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -681,14 +681,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/section/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/section/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/section/">Section</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/section/">Section</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/section/delete-section/" class="dd-item active">
+      <li data-nav-id="/cli/section/delete-section/" class="dd-item">
         <div>
           <a href="/cli/section/delete-section/">
             Delete section
@@ -770,10 +769,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/validation/" class="dd-item haschildren
+    <li data-nav-id="/cli/validation/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/validation/">Validation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/validation/">Validation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/validation/validate-pipeline-yaml/" class="dd-item">
@@ -1046,12 +1046,7 @@
 
 
 
-
-
-
- <a href='/cli/'></a> > <a href='/cli/section/'>Section</a> > Delete section
-
- 
+ <a href='/cli/'></a> > Validation
 
  
 
@@ -1068,15 +1063,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#delete-section-by-board-name-and-section-name">Delete section by board name and section name.</a></li>
-<li><a href="#delete-section-by-id">Delete section by id.</a></li>
-</ul></li>
+<li><a href="#validate-pipeline-yaml-validate-pipeline-yaml"><a href="validate-pipeline-yaml">Validate pipeline yaml</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1090,7 +1077,7 @@
 
 <div id="body-inner">
   
-    <h1>Delete section</h1>
+    <h1>Validation</h1>
   
 
 
@@ -1098,90 +1085,17 @@
     
     
     
-    
 
-<h3 id="description">Description</h3>
 
-<p>Delete a section.</p>
 
-<h3 id="command">Command</h3>
+<h3 id="validate-pipeline-yaml-validate-pipeline-yaml"><a href="validate-pipeline-yaml">Validate pipeline yaml</a></h3>
 
-<p><code>codefresh delete section [id]</code></p>
+<p><code>codefresh validate [filenames..]</code></p>
 
-<h3 id="arguments">Arguments</h3>
+<p>Validate codefresh pipeline yaml config files</p>
 
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<p>Validate one or many pipeline yaml files or attach validator to one and validate on changes.</p>
 
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>section id</td>
-</tr>
-
-<tr>
-<td>boardId</td>
-<td></td>
-<td></td>
-<td>board Id</td>
-</tr>
-
-<tr>
-<td>boardName</td>
-<td></td>
-<td></td>
-<td>board name</td>
-</tr>
-
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>section name</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="options">Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="delete-section-by-board-name-and-section-name">Delete section by board name and section name.</h4>
-
-<p><code>codefresh delete section --board-name BOARD --name NAME</code></p>
-
-<h4 id="delete-section-by-id">Delete section by id.</h4>
-
-<p><code>codefresh delete section SECTION_ID</code></p>
 
 
     

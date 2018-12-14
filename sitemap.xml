@@ -480,6 +480,14 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/validation/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/compositions/</loc>
   </url>
   

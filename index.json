@@ -812,6 +812,20 @@
 	"content": " Apply System Runtime-Environments codefresh patch system-runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nDiff System Runtime-Environments codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",
+	"title": "Validate pipeline yaml",
+	"tags": [],
+	"description": "",
+	"content": " Description Validate codefresh pipeline yaml config files\nValidate one or many pipeline yaml files or attach validator to one and validate on changes.\nCommand codefresh validate [filenames..]\nArguments    Option Alias Default Description     filenames   Paths to yaml files. required    Options    Option Alias Default Description     --help   Print help information   --attach -a  Attach validator to the file and validate on change    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/validation/",
+	"title": "Validation",
+	"tags": [],
+	"description": "",
+	"content": " Validate pipeline yaml codefresh validate [filenames..]\nValidate codefresh pipeline yaml config files\nValidate one or many pipeline yaml files or attach validator to one and validate on changes.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/compositions/",
 	"title": "Compositions",
 	"tags": [],
