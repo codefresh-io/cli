@@ -697,7 +697,7 @@
 	"title": "Create Cluster",
 	"tags": [],
 	"description": "",
-	"content": " Description Create a cluster.\nCommand codefresh create clusters [name]\nAliases codefresh create cluster [name]\nOptions    Option Alias Default Description     --help   Print help information   --kube-context --kc  kubectl context name. required    Examples Creating a cluster in codefresh codefresh create cluster --kube-context production\n"
+	"content": " Description Create a cluster.\nCommand codefresh create clusters [name]\nAliases codefresh create cluster [name]\nOptions    Option Alias Default Description     --help   Print help information   --kube-context --kc  kubectl context name. required   --namespace --ns default Kubernetes namespace to use while looking for service account. required   --serviceaccount --sa default Kubernetes serviceaccount credentials to be added to Codefresh. required    Examples Creating a cluster in codefresh codefresh create cluster --kube-context production\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/",

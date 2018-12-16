@@ -563,20 +563,6 @@
       <a href="/cli/boards/">Boards</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/boards/get-board/" class="dd-item">
-        <div>
-          <a href="/cli/boards/get-board/">
-            Get Board
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/boards/create-board/" class="dd-item">
-        <div>
-          <a href="/cli/boards/create-board/">
-            Create board
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/clusters/" class="dd-item parent haschildren
@@ -1138,6 +1124,20 @@
 <td>--kc</td>
 <td></td>
 <td>kubectl context name. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--namespace</td>
+<td>--ns</td>
+<td>default</td>
+<td>Kubernetes namespace to use while looking for service account. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--serviceaccount</td>
+<td>--sa</td>
+<td>default</td>
+<td>Kubernetes serviceaccount credentials to be added to Codefresh. <code>required</code></td>
 </tr>
 </tbody>
 </table>
