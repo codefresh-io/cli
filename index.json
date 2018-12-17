@@ -35,6 +35,13 @@
 	"content": "the CLI requires node version 8.0.0 or higher Codefresh\u0026rsquo;s CLI is available for installation through NPM registry.\nInstall: npm install -g codefresh\nInstall a specific version: npm install -g codefresh@{VERSION}\nUpdate to latest version: npm install -g codefresh\nUpdate to a specific version: npm install -g codefresh@${VERSION}\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/repository/add-repository/",
+	"title": "Add Repository",
+	"tags": [],
+	"description": "",
+	"content": " Description Add a repository from git context to codefresh.\nCommand codefresh add repository [fullname]\nAliases codefresh add repo [fullname]\nArguments    Option Alias Default Description     fullname   Full name of repo (template: \u0026ldquo;owner/repo\u0026rdquo;). required    Options    Option Alias Default Description     --help   Print help information   --context -c  Name of the git context to use, if not passed the default will be used    Examples Add repo \u0026ldquo;some-repo\u0026rdquo; of \u0026ldquo;codefresh-io\u0026rdquo; owner from default git context codefresh add repo codefresh-io/some-repo\nAdd repo \u0026ldquo;some-repo\u0026rdquo; of \u0026ldquo;codefresh-io\u0026rdquo; owner from git context \u0026ldquo;bitbucket\u0026rdquo; codefresh add repo codefresh-io/some-repo -c bitbucket\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/",
 	"title": "Config",
 	"tags": [],
@@ -287,6 +294,13 @@
 	"content": " Description Delete trigger: unlink pipeline from trigger-event.\nCommand codefresh delete trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nAliases codefresh delete t \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nArguments    Option Alias Default Description     event-uri   trigger-event URI (as defined by trigger type[/kind]). required   pipeline   pipeline ID. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete trigger by unlinking 5a43\u0026hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/repository/get-repositories/",
+	"title": "Get Repositories",
+	"tags": [],
+	"description": "",
+	"content": " Description You can either get codefresh repos (previously added) or any repo from your git context (using option \u0026ldquo;--available\u0026rdquo; and \u0026ldquo;--context\u0026rdquo;).\nCommand codefresh get repository [names..]\nAliases codefresh get repo [names..]\nArguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Default Description     --help   Print help information   --available -a  Get all available git repos from provided or default git context   --limit -l 25 Maximum displayed repos number   --context -c  Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all codefresh repos codefresh get repo\nGet codefresh repos containing \u0026ldquo;codefresh-io\u0026rdquo; in its name codefresh get repo codefresh-io\nGet codefresh repos containing \u0026ldquo;some-repo\u0026rdquo; in its name codefresh get repo some-repo\nGet all available repos from default git context codefresh get repo -a\nGet all available repos from \u0026ldquo;bitbucket\u0026rdquo; git context codefresh get repo -a -c bitbucket\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/",
 	"title": "Install or Upgrade Helm Chart",
 	"tags": [],
@@ -397,6 +411,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a pipeline.\nCommand codefresh delete pipeline [name]\nAliases codefresh delete pip [name]\nArguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/repository/delete-repository/",
+	"title": "Delete Repository",
+	"tags": [],
+	"description": "",
+	"content": " Description Remove repository by name_id (\u0026ldquo;name_id\u0026rdquo; can be retrieved with \u0026ldquo;get\u0026rdquo; command, typically \u0026ldquo;repo_owner/repo_name\u0026rdquo;)\nCommand codefresh delete repository [name_id]\nAliases codefresh delete repo [name_id]\nArguments    Option Alias Default Description     name_id   Repository \u0026ldquo;name_id\u0026rdquo; (can be retrieved with \u0026ldquo;get\u0026rdquo; command, typically \u0026ldquo;repo_owner/repo_name\u0026rdquo;). required    Options    Option Alias Default Description     --help   Print help information   --context -c  Name of the git context to use, if not passed the default will be used    Examples Delete codefresh repo with name_id \u0026ldquo;codefresh-io/some-repo\u0026rdquo; codefresh delete repo codefresh-io/some-repo\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/",
@@ -754,6 +775,13 @@
 	"tags": [],
 	"description": "",
 	"content": " From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/repository/",
+	"title": "Repository",
+	"tags": [],
+	"description": "",
+	"content": " Add Repository codefresh add repository [fullname]\nAdd a repository from git context to codefresh.\nGet Repositories codefresh get repository [names..]\nYou can either get codefresh repos (previously added) or any repo from your git context (using option \u0026ldquo;--available\u0026rdquo; and \u0026ldquo;--context\u0026rdquo;).\nDelete Repository codefresh delete repository [name_id]\nRemove repository by name_id (\u0026ldquo;name_id\u0026rdquo; can be retrieved with \u0026ldquo;get\u0026rdquo; command, typically \u0026ldquo;repo_owner/repo_name\u0026rdquo;)\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments/",

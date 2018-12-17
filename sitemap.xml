@@ -27,6 +27,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/repository/add-repository/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</loc>
   </url>
   
@@ -173,6 +177,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/repository/get-repositories/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
   </url>
   
@@ -237,6 +245,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/repository/delete-repository/</loc>
   </url>
   
   <url>
@@ -445,6 +457,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/repository/</loc>
   </url>
   
   <url>

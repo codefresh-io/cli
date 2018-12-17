@@ -49,6 +49,18 @@ Update to a specific version: npm install -g codefresh@${VERSION}</description>
     </item>
     
     <item>
+      <title>Add Repository</title>
+      <link>https://codefresh-io.github.io/cli/repository/add-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/repository/add-repository/</guid>
+      <description>Description Add a repository from git context to codefresh.
+Command codefresh add repository [fullname]
+Aliases codefresh add repo [fullname]
+Arguments    Option Alias Default Description     fullname   Full name of repo (template: &amp;ldquo;owner/repo&amp;rdquo;). required    Options    Option Alias Default Description     --help   Print help information   --context -c  Name of the git context to use, if not passed the default will be used    Examples Add repo &amp;ldquo;some-repo&amp;rdquo; of &amp;ldquo;codefresh-io&amp;rdquo; owner from default git context codefresh add repo codefresh-io/some-repo</description>
+    </item>
+    
+    <item>
       <title>Config</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -538,6 +550,18 @@ Arguments    Option Alias Default Description     event-uri   trigger-event URI 
     </item>
     
     <item>
+      <title>Get Repositories</title>
+      <link>https://codefresh-io.github.io/cli/repository/get-repositories/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/repository/get-repositories/</guid>
+      <description>Description You can either get codefresh repos (previously added) or any repo from your git context (using option &amp;ldquo;--available&amp;rdquo; and &amp;ldquo;--context&amp;rdquo;).
+Command codefresh get repository [names..]
+Aliases codefresh get repo [names..]
+Arguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Default Description     --help   Print help information   --available -a  Get all available git repos from provided or default git context   --limit -l 25 Maximum displayed repos number   --context -c  Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Default Description     --output -o  Output format</description>
+    </item>
+    
+    <item>
       <title>Install or Upgrade Helm Chart</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -702,6 +726,18 @@ Arguments    Option Alias Default Description     name   Helm repo name    Optio
 Command codefresh delete pipeline [name]
 Aliases codefresh delete pip [name]
 Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
+      <title>Delete Repository</title>
+      <link>https://codefresh-io.github.io/cli/repository/delete-repository/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/repository/delete-repository/</guid>
+      <description>Description Remove repository by name_id (&amp;ldquo;name_id&amp;rdquo; can be retrieved with &amp;ldquo;get&amp;rdquo; command, typically &amp;ldquo;repo_owner/repo_name&amp;rdquo;)
+Command codefresh delete repository [name_id]
+Aliases codefresh delete repo [name_id]
+Arguments    Option Alias Default Description     name_id   Repository &amp;ldquo;name_id&amp;rdquo; (can be retrieved with &amp;ldquo;get&amp;rdquo; command, typically &amp;ldquo;repo_owner/repo_name&amp;rdquo;). required    Options    Option Alias Default Description     --help   Print help information   --context -c  Name of the git context to use, if not passed the default will be used    Examples Delete codefresh repo with name_id &amp;ldquo;codefresh-io/some-repo&amp;rdquo; codefresh delete repo codefresh-io/some-repo</description>
     </item>
     
     <item>
