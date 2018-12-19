@@ -396,11 +396,11 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/apply-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/apply-runtime-environments/</loc>
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/apply-system-runtime-environments/</loc>
   </url>
   
   <url>
@@ -432,7 +432,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/create-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</loc>
   </url>
   
   <url>
@@ -440,11 +440,11 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/diff-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/diff-runtime-environments/</loc>
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/</loc>
+    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/diff-system-runtime-environments/</loc>
   </url>
   
   <url>
@@ -468,10 +468,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-on-prem/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/section/</loc>
   </url>
   
@@ -489,10 +485,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/system-runtime-environments/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments-on-prem/</loc>
   </url>
   
   <url>

@@ -379,20 +379,6 @@
       <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/">
-            HTTP
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/">
-            S3
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
         </ul>
@@ -680,31 +666,23 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/runtime-environments-on-prem/">Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/runtime-environments-on-prem/apply-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/apply-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/apply-runtime-environments/">
+          <a href="/cli/runtime-environments/apply-runtime-environments/">
             Apply Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/create-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/create-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/create-runtime-environments/">
+          <a href="/cli/runtime-environments/create-runtime-environments/">
             Create Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/diff-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/diff-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/diff-runtime-environments/">
+          <a href="/cli/runtime-environments/diff-runtime-environments/">
             Diff Runtime-Environments
           </a>
         </div>
@@ -775,24 +753,16 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/system-runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/system-runtime-environments-on-prem/">System Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/apply-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/apply-system-runtime-environments/">
             Apply System Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/diff-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/diff-system-runtime-environments/">
             Diff System Runtime-Environments
           </a>
         </div>
@@ -1094,6 +1064,9 @@
 <ul>
 <li><a href="#get-runtime-environments-get-runtime-environments"><a href="get-runtime-environments">Get Runtime-Environments</a></a></li>
 <li><a href="#delete-runtime-environments-delete-runtime-environments"><a href="delete-runtime-environments">Delete Runtime-Environments</a></a></li>
+<li><a href="#apply-runtime-environments-apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></a></li>
+<li><a href="#create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></a></li>
+<li><a href="#diff-runtime-environments-diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1129,6 +1102,26 @@
 <p><code>codefresh delete runtime-environments name</code></p>
 
 <p>Delete a runtime-environment.</p>
+
+<h3 id="apply-runtime-environments-apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></h3>
+
+<p><code>codefresh patch runtime-environments [name]</code></p>
+
+<p>apply changes to runtime-environments resource.</p>
+
+<p>Use apply to patch an existing context.</p>
+
+<h3 id="create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></h3>
+
+<p><code>codefresh create runtime-environments [cluster]</code></p>
+
+<p>Create a runtime environment.</p>
+
+<h3 id="diff-runtime-environments-diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></h3>
+
+<p><code>codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]</code></p>
+
+<p>Show diff between two runtime environments configuration.</p>
 
 
 

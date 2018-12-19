@@ -679,31 +679,23 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/runtime-environments-on-prem/">Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/runtime-environments-on-prem/apply-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/apply-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/apply-runtime-environments/">
+          <a href="/cli/runtime-environments/apply-runtime-environments/">
             Apply Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/create-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/create-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/create-runtime-environments/">
+          <a href="/cli/runtime-environments/create-runtime-environments/">
             Create Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/diff-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/diff-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/diff-runtime-environments/">
+          <a href="/cli/runtime-environments/diff-runtime-environments/">
             Diff Runtime-Environments
           </a>
         </div>
@@ -775,24 +767,16 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/system-runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/system-runtime-environments-on-prem/">System Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/apply-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/apply-system-runtime-environments/">
             Apply System Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/diff-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/diff-system-runtime-environments/">
             Diff System Runtime-Environments
           </a>
         </div>
@@ -1094,6 +1078,8 @@
 <ul>
 <li><a href="#get-system-runtime-environments-get-system-runtime-environments"><a href="get-system-runtime-environments">Get System Runtime-Environments</a></a></li>
 <li><a href="#delete-system-runtime-environments-delete-system-runtime-environments"><a href="delete-system-runtime-environments">Delete System Runtime-Environments</a></a></li>
+<li><a href="#apply-system-runtime-environments-apply-system-runtime-environments"><a href="apply-system-runtime-environments">Apply System Runtime-Environments</a></a></li>
+<li><a href="#diff-system-runtime-environments-diff-system-runtime-environments"><a href="diff-system-runtime-environments">Diff System Runtime-Environments</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1129,6 +1115,20 @@
 <p><code>codefresh delete system-runtime-environments name</code></p>
 
 <p>Delete a runtime-environment.</p>
+
+<h3 id="apply-system-runtime-environments-apply-system-runtime-environments"><a href="apply-system-runtime-environments">Apply System Runtime-Environments</a></h3>
+
+<p><code>codefresh patch system-runtime-environments [name]</code></p>
+
+<p>apply changes to runtime-environments resource.</p>
+
+<p>Use apply to patch an existing context.</p>
+
+<h3 id="diff-system-runtime-environments-diff-system-runtime-environments"><a href="diff-system-runtime-environments">Diff System Runtime-Environments</a></h3>
+
+<p><code>codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]</code></p>
+
+<p>Show diff between two runtime environments configuration.</p>
 
 
 

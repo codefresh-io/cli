@@ -682,31 +682,23 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/runtime-environments-on-prem/">Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/runtime-environments-on-prem/apply-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/apply-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/apply-runtime-environments/">
+          <a href="/cli/runtime-environments/apply-runtime-environments/">
             Apply Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/create-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/create-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/create-runtime-environments/">
+          <a href="/cli/runtime-environments/create-runtime-environments/">
             Create Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runtime-environments-on-prem/diff-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/runtime-environments/diff-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/runtime-environments-on-prem/diff-runtime-environments/">
+          <a href="/cli/runtime-environments/diff-runtime-environments/">
             Diff Runtime-Environments
           </a>
         </div>
@@ -777,24 +769,16 @@
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/cli/system-runtime-environments-on-prem/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/system-runtime-environments-on-prem/">System Runtime-Environments (On Prem)</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/apply-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/apply-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/apply-system-runtime-environments/">
             Apply System Runtime-Environments
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/" class="dd-item">
+      <li data-nav-id="/cli/system-runtime-environments/diff-system-runtime-environments/" class="dd-item">
         <div>
-          <a href="/cli/system-runtime-environments-on-prem/diff-system-runtime-environments/">
+          <a href="/cli/system-runtime-environments/diff-system-runtime-environments/">
             Diff System Runtime-Environments
           </a>
         </div>
@@ -1104,8 +1088,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#bitbucket-bitbucket"><a href="bitbucket">bitbucket</a></a></li>
 <li><a href="#github-github"><a href="github">github</a></a></li>
+<li><a href="#bitbucket-bitbucket"><a href="bitbucket">bitbucket</a></a></li>
 <li><a href="#gitlab-gitlab"><a href="gitlab">gitlab</a></a></li>
 <li><a href="#stash-stash"><a href="stash">stash</a></a></li>
 </ul></li>
@@ -1132,14 +1116,6 @@
 
 
 
-<h3 id="bitbucket-bitbucket"><a href="bitbucket">bitbucket</a></h3>
-
-<p><code>codefresh create context git bitbucket &lt;name&gt;</code></p>
-
-<p>Create a bitbucket context.</p>
-
-<p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create bitbucket context you need to generate application password from here: <a href="https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords">https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords</a>.</p>
-
 <h3 id="github-github"><a href="github">github</a></h3>
 
 <p><code>codefresh create context git github &lt;name&gt;</code></p>
@@ -1147,6 +1123,14 @@
 <p>Create a github context.</p>
 
 <p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create Github context you need to generate the token here: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>.</p>
+
+<h3 id="bitbucket-bitbucket"><a href="bitbucket">bitbucket</a></h3>
+
+<p><code>codefresh create context git bitbucket &lt;name&gt;</code></p>
+
+<p>Create a bitbucket context.</p>
+
+<p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create bitbucket context you need to generate application password from here: <a href="https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords">https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords</a>.</p>
 
 <h3 id="gitlab-gitlab"><a href="gitlab">gitlab</a></h3>
 
