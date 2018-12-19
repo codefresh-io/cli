@@ -5,6 +5,7 @@
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
+    "build": "node ./lib/interface/cli/completion/generate.js",
     "test": "jest .spec.js --coverage",
     "eslint": "eslint lib1logic/**",
     "ci-publish": "ci-publish",

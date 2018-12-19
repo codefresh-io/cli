@@ -1,0 +1,319 @@
+{
+  "codefresh": {
+    "tag": {},
+    "untag": {},
+    "add": {
+      "repository": {},
+      "repo": {
+        "alias": "repository"
+      }
+    },
+    "annotate": {
+      "image": {},
+      "img": {
+        "alias": "image"
+      }
+    },
+    "patch": {
+      "board": {},
+      "section": {},
+      "runtime-environments": {},
+      "re": {
+        "alias": "runtime-environments"
+      },
+      "runtime-environment": {
+        "alias": "runtime-environments"
+      },
+      "system-runtime-environments": {},
+      "sys-re": {
+        "alias": "system-runtime-environments"
+      },
+      "system-runtime-environment": {
+        "alias": "system-runtime-environments"
+      },
+      "teams": {},
+      "team": {
+        "alias": "teams"
+      },
+      "tm": {
+        "alias": "teams"
+      },
+      "helm-repo": {},
+      "context": {},
+      "ctx": {
+        "alias": "context"
+      }
+    },
+    "auth": {
+      "create-context": {},
+      "current-context": {},
+      "get-contexts": {},
+      "use-context": {}
+    },
+    "create": {
+      "board": {},
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      },
+      "clusters": {},
+      "cluster": {
+        "alias": "clusters"
+      },
+      "section": {},
+      "runtime-environments": {},
+      "re": {
+        "alias": "runtime-environments"
+      },
+      "runtime-environment": {
+        "alias": "runtime-environments"
+      },
+      "teams": {},
+      "team": {
+        "alias": "teams"
+      },
+      "tm": {
+        "alias": "teams"
+      },
+      "helm-repo": {},
+      "trigger": {},
+      "t": {
+        "alias": "trigger"
+      },
+      "trigger-event": {},
+      "context": {
+        "config": {},
+        "secret": {},
+        "secret-yaml": {},
+        "yaml": {},
+        "git": {
+          "bitbucket": {},
+          "github": {},
+          "gitlab": {},
+          "stash": {}
+        },
+        "helm-repository": {
+          "http": {},
+          "s3": {}
+        }
+      },
+      "ctx": {
+        "alias": "context",
+        "config": {},
+        "secret": {},
+        "secret-yaml": {},
+        "yaml": {},
+        "git": {
+          "bitbucket": {},
+          "github": {},
+          "gitlab": {},
+          "stash": {}
+        },
+        "helm-repository": {
+          "http": {},
+          "s3": {}
+        }
+      }
+    },
+    "delete": {
+      "board": {},
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      },
+      "cluster": {},
+      "clusters": {
+        "alias": "cluster"
+      },
+      "environment": {},
+      "env": {
+        "alias": "environment"
+      },
+      "repository": {},
+      "repo": {
+        "alias": "repository"
+      },
+      "section": {},
+      "runtime-environments": {},
+      "re": {
+        "alias": "runtime-environments"
+      },
+      "runtime-environment": {
+        "alias": "runtime-environments"
+      },
+      "system-runtime-environments": {},
+      "sys-re": {
+        "alias": "system-runtime-environments"
+      },
+      "system-runtime-environment": {
+        "alias": "system-runtime-environments"
+      },
+      "teams": {},
+      "team": {
+        "alias": "teams"
+      },
+      "tm": {
+        "alias": "teams"
+      },
+      "pipeline": {},
+      "pip": {
+        "alias": "pipeline"
+      },
+      "helm-repo": {},
+      "trigger": {},
+      "t": {
+        "alias": "trigger"
+      },
+      "trigger-event": {},
+      "context": {},
+      "ctx": {
+        "alias": "context"
+      }
+    },
+    "diff": {
+      "runtime-environments": {},
+      "re": {
+        "alias": "runtime-environments"
+      },
+      "runtime-environment": {
+        "alias": "runtime-environments"
+      },
+      "system-runtime-environments": {},
+      "sys-re": {
+        "alias": "system-runtime-environments"
+      },
+      "system-runtime-environment": {
+        "alias": "system-runtime-environments"
+      }
+    },
+    "generate": {
+      "image-pull-secret": {}
+    },
+    "get": {
+      "boards": {},
+      "board": {
+        "alias": "boards"
+      },
+      "compositions": {},
+      "com": {
+        "alias": "compositions"
+      },
+      "composition": {
+        "alias": "compositions"
+      },
+      "clusters": {},
+      "cluster": {
+        "alias": "clusters"
+      },
+      "environments": {},
+      "env": {
+        "alias": "environments"
+      },
+      "environment": {
+        "alias": "environments"
+      },
+      "images": {},
+      "img": {
+        "alias": "images"
+      },
+      "image": {
+        "alias": "images"
+      },
+      "repository": {},
+      "repo": {
+        "alias": "repository"
+      },
+      "sections": {},
+      "section": {
+        "alias": "sections"
+      },
+      "runtime-environments": {},
+      "re": {
+        "alias": "runtime-environments"
+      },
+      "runtime-environment": {
+        "alias": "runtime-environments"
+      },
+      "system-runtime-environments": {},
+      "sys-re": {
+        "alias": "system-runtime-environments"
+      },
+      "system-runtime-environment": {
+        "alias": "system-runtime-environments"
+      },
+      "teams": {},
+      "team": {
+        "alias": "teams"
+      },
+      "tm": {
+        "alias": "teams"
+      },
+      "builds": {},
+      "build": {
+        "alias": "builds"
+      },
+      "pipelines": {},
+      "pip": {
+        "alias": "pipelines"
+      },
+      "pipeline": {
+        "alias": "pipelines"
+      },
+      "helm-repo": {},
+      "triggers": {},
+      "trigger": {
+        "alias": "triggers"
+      },
+      "t": {
+        "alias": "triggers"
+      },
+      "trigger-events": {},
+      "trigger-event": {
+        "alias": "trigger-events"
+      },
+      "trigger-types": {},
+      "trigger-type": {
+        "alias": "trigger-types"
+      },
+      "contexts": {},
+      "ctx": {
+        "alias": "contexts"
+      },
+      "context": {
+        "alias": "contexts"
+      }
+    },
+    "replace": {
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      }
+    },
+    "synchronize": {
+      "teams": {},
+      "team": {
+        "alias": "teams"
+      },
+      "tm": {
+        "alias": "teams"
+      }
+    },
+    "validate": {},
+    "version": {},
+    "logs": {},
+    "restart": {},
+    "terminate": {},
+    "wait": {},
+    "cli-config": {
+      "get": {},
+      "help": {},
+      "profile": {},
+      "set": {}
+    },
+    "run": {},
+    "delete-release": {},
+    "install-chart": {},
+    "helm-promotion": {},
+    "test-release": {}
+  }
+}
