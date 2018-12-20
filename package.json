@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.9.5",
+  "version": "0.9.8",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -51,6 +51,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.19.4",
     "mongodb": "^3.0.1",
+    "ora": "^3.0.0",
     "prettyjson": "^1.2.1",
     "recursive-readdir": "^2.2.1",
     "request": "^2.88.0",
