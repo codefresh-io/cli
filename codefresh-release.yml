@@ -38,6 +38,13 @@ steps:
     tag: latest
     registry: dockerhub
 
+  generate_comletion:
+    title: "Generating commands completion tree"
+    image: codefresh/cli-build
+    commands:
+      - "yarn install"
+      - "yarn generate-completion"
+
   deploy_to_npm:
     title: "Publishing To Npm"
     image: codefresh/npm-publish:master

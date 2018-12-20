@@ -16,7 +16,6 @@
     },
     "patch": {
       "board": {},
-      "section": {},
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -24,6 +23,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "system-runtime-environments": {},
       "sys-re": {
         "alias": "system-runtime-environments"
@@ -52,15 +52,14 @@
     },
     "create": {
       "board": {},
-      "composition": {},
-      "com": {
-        "alias": "composition"
-      },
       "clusters": {},
       "cluster": {
         "alias": "clusters"
       },
-      "section": {},
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      },
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -68,6 +67,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "teams": {},
       "team": {
         "alias": "teams"
@@ -117,10 +117,6 @@
     },
     "delete": {
       "board": {},
-      "composition": {},
-      "com": {
-        "alias": "composition"
-      },
       "cluster": {},
       "clusters": {
         "alias": "cluster"
@@ -129,11 +125,14 @@
       "env": {
         "alias": "environment"
       },
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      },
       "repository": {},
       "repo": {
         "alias": "repository"
       },
-      "section": {},
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -141,6 +140,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "system-runtime-environments": {},
       "sys-re": {
         "alias": "system-runtime-environments"
@@ -155,11 +155,11 @@
       "tm": {
         "alias": "teams"
       },
+      "helm-repo": {},
       "pipeline": {},
       "pip": {
         "alias": "pipeline"
       },
-      "helm-repo": {},
       "trigger": {},
       "t": {
         "alias": "trigger"
@@ -194,13 +194,6 @@
       "board": {
         "alias": "boards"
       },
-      "compositions": {},
-      "com": {
-        "alias": "compositions"
-      },
-      "composition": {
-        "alias": "compositions"
-      },
       "clusters": {},
       "cluster": {
         "alias": "clusters"
@@ -211,6 +204,13 @@
       },
       "environment": {
         "alias": "environments"
+      },
+      "compositions": {},
+      "com": {
+        "alias": "compositions"
+      },
+      "composition": {
+        "alias": "compositions"
       },
       "images": {},
       "img": {
@@ -223,16 +223,16 @@
       "repo": {
         "alias": "repository"
       },
-      "sections": {},
-      "section": {
-        "alias": "sections"
-      },
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
       },
       "runtime-environment": {
         "alias": "runtime-environments"
+      },
+      "sections": {},
+      "section": {
+        "alias": "sections"
       },
       "system-runtime-environments": {},
       "sys-re": {
@@ -252,6 +252,7 @@
       "build": {
         "alias": "builds"
       },
+      "helm-repo": {},
       "pipelines": {},
       "pip": {
         "alias": "pipelines"
@@ -259,7 +260,6 @@
       "pipeline": {
         "alias": "pipelines"
       },
-      "helm-repo": {},
       "triggers": {},
       "trigger": {
         "alias": "triggers"
@@ -299,7 +299,6 @@
       }
     },
     "validate": {},
-    "version": {},
     "logs": {},
     "restart": {},
     "terminate": {},

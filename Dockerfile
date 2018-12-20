@@ -10,7 +10,7 @@ RUN yarn --prod install
 
 COPY . /cf-cli
 
-RUN yarn build
+RUN yarn generate-completion
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
