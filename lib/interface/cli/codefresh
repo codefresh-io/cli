@@ -61,6 +61,7 @@ if (process.argv.includes('--get-yargs-completions')) {
 
 
         yargs // eslint-disable-line
+            .completion()
             .demandCommand(1, 'You need at least one command before moving on')
             .wrap(null)
             .version(false)
