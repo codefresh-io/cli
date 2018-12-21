@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -56,6 +56,7 @@
     "recursive-readdir": "^2.2.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
+    "requestretry": "^3.1.0",
     "rimraf": "^2.6.2",
     "tty-table": "^2.5.5",
     "uuid": "^3.1.0",
