@@ -265,19 +265,6 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
-      <title>Get System Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/system-runtime-environments/get-system-runtime-environments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/system-runtime-environments/get-system-runtime-environments/</guid>
-      <description>Description Get a runtime environments configuration.
-Command codefresh get system-runtime-environments [name]
-Aliases codefresh get sys-re [name]
-codefresh get system-runtime-environment [name]
-Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --successors -s  Return all the successors of specific runtime environment   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment   --plan   Set the plan of system plan runtime environment   --account   id of the account we want to view his runtime environments   --accountIds   array of accounts ids to view theirs runtime environments    Output Options    Option Alias Default Description     --output -o  Output format</description>
-    </item>
-    
-    <item>
       <title>Get Teams</title>
       <link>https://codefresh-io.github.io/cli/teams/get-teams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -754,19 +741,6 @@ Arguments    Option Alias Default Description     name   Runtime environment nam
     </item>
     
     <item>
-      <title>Delete System Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/system-runtime-environments/delete-system-runtime-environments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/system-runtime-environments/delete-system-runtime-environments/</guid>
-      <description> Description Delete a runtime-environment.
-Command codefresh delete system-runtime-environments name
-Aliases codefresh delete sys-re name
-codefresh delete system-runtime-environment name
-Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --plan   Runtime environment plan   --force   Delete runtime environment in force mode    </description>
-    </item>
-    
-    <item>
       <title>Delete Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1114,20 +1088,6 @@ Arguments    Option Alias Default Description     name   Runtime environments na
     </item>
     
     <item>
-      <title>Apply System Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/system-runtime-environments/apply-system-runtime-environments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/system-runtime-environments/apply-system-runtime-environments/</guid>
-      <description>Description apply changes to runtime-environments resource.
-Use apply to patch an existing context.
-Command codefresh patch system-runtime-environments [name]
-Aliases codefresh patch sys-re [name]
-codefresh patch system-runtime-environment [name]
-Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --plan   Set the plan of system plan runtime environment   --description -d  Description of the new runtime environment    Examples Apply changes to a system runtime environment codefresh patch system-runtime-environments -f .</description>
-    </item>
-    
-    <item>
       <title>Update Context</title>
       <link>https://codefresh-io.github.io/cli/contexts/update-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1188,19 +1148,6 @@ Command codefresh diff runtime-environments [first-re-name] [first-re-version] [
 Aliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]
 codefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]
 Options    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --second-name   Second runtime environment name   --second-version   Second runtime environment version    </description>
-    </item>
-    
-    <item>
-      <title>Diff System Runtime-Environments</title>
-      <link>https://codefresh-io.github.io/cli/system-runtime-environments/diff-system-runtime-environments/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/system-runtime-environments/diff-system-runtime-environments/</guid>
-      <description> Description Show diff between two runtime environments configuration.
-Command codefresh diff system-runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]
-Aliases codefresh diff sys-re [first-re-name] [first-re-version] [second-re-name] [second-re-version]
-codefresh diff system-runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]
-Options    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --first-plan   Plan of the first runtime environment (relevant only when it is a system plan runtime environment)   --second-name   Second runtime environment name   --second-version   Second runtime environment version   --second-plan   Plan of the second runtime environment (relevant only when it is a system plan runtime environment)    </description>
     </item>
     
     <item>

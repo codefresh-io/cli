@@ -91,10 +91,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/get-system-runtime-environments/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/teams/get-teams/</loc>
   </url>
   
@@ -256,10 +252,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/delete-system-runtime-environments/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</loc>
   </url>
   
@@ -400,10 +392,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/apply-system-runtime-environments/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/triggers/</loc>
   </url>
   
@@ -444,10 +432,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/diff-system-runtime-environments/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/environments/</loc>
   </url>
   
@@ -481,10 +465,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/system-runtime-environments/</loc>
   </url>
   
   <url>
