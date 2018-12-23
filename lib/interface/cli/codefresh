@@ -2,7 +2,7 @@
 
 if (process.argv.includes('--get-yargs-completions')) {
     const initCompletion = require('./completion');
-    initCompletion();
+    initCompletion().argv;
 } else {
     const _ = require('lodash');
     const yargs = require('yargs');
@@ -61,7 +61,6 @@ if (process.argv.includes('--get-yargs-completions')) {
 
 
         yargs // eslint-disable-line
-            .completion()
             .demandCommand(1, 'You need at least one command before moving on')
             .wrap(null)
             .version(false)

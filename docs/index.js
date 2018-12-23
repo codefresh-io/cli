@@ -14,8 +14,9 @@ const FILES_TO_IGNORE = ['index.js'];
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 const categoriesOrder = {
-    authentication: 30,
-    'operate on resources' : 31,
+    completion: 30,
+    authentication: 31,
+    'operate on resources' : 32,
     pipelines : 40,
     'pipelines v2 (beta)' : 42,
     builds: 50,
