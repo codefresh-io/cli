@@ -56,7 +56,6 @@ steps:
     image: codefresh/cli-build
     commands:
       - "rm -rf dist"
-      - "yarn install"
       - "yarn pkg"
 
   create_release:
