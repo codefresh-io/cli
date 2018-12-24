@@ -17,7 +17,6 @@
     },
     "patch": {
       "board": {},
-      "section": {},
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -25,6 +24,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "system-runtime-environments": {},
       "sys-re": {
         "alias": "system-runtime-environments"
@@ -46,22 +46,21 @@
       }
     },
     "auth": {
-      "current-context": {},
       "create-context": {},
+      "current-context": {},
       "get-contexts": {},
       "use-context": {}
     },
     "create": {
       "board": {},
-      "composition": {},
-      "com": {
-        "alias": "composition"
-      },
       "clusters": {},
       "cluster": {
         "alias": "clusters"
       },
-      "section": {},
+      "composition": {},
+      "com": {
+        "alias": "composition"
+      },
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -69,6 +68,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "teams": {},
       "team": {
         "alias": "teams"
@@ -118,23 +118,22 @@
     },
     "delete": {
       "board": {},
-      "composition": {},
-      "com": {
-        "alias": "composition"
+      "cluster": {},
+      "clusters": {
+        "alias": "cluster"
       },
       "environment": {},
       "env": {
         "alias": "environment"
       },
-      "cluster": {},
-      "clusters": {
-        "alias": "cluster"
+      "composition": {},
+      "com": {
+        "alias": "composition"
       },
       "repository": {},
       "repo": {
         "alias": "repository"
       },
-      "section": {},
       "runtime-environments": {},
       "re": {
         "alias": "runtime-environments"
@@ -142,6 +141,7 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "section": {},
       "system-runtime-environments": {},
       "sys-re": {
         "alias": "system-runtime-environments"
@@ -195,12 +195,9 @@
       "board": {
         "alias": "boards"
       },
-      "compositions": {},
-      "com": {
-        "alias": "compositions"
-      },
-      "composition": {
-        "alias": "compositions"
+      "clusters": {},
+      "cluster": {
+        "alias": "clusters"
       },
       "environments": {},
       "env": {
@@ -209,10 +206,6 @@
       "environment": {
         "alias": "environments"
       },
-      "clusters": {},
-      "cluster": {
-        "alias": "clusters"
-      },
       "images": {},
       "img": {
         "alias": "images"
@@ -220,13 +213,16 @@
       "image": {
         "alias": "images"
       },
+      "compositions": {},
+      "com": {
+        "alias": "compositions"
+      },
+      "composition": {
+        "alias": "compositions"
+      },
       "repository": {},
       "repo": {
         "alias": "repository"
-      },
-      "sections": {},
-      "section": {
-        "alias": "sections"
       },
       "runtime-environments": {},
       "re": {
@@ -235,6 +231,10 @@
       "runtime-environment": {
         "alias": "runtime-environments"
       },
+      "sections": {},
+      "section": {
+        "alias": "sections"
+      },
       "system-runtime-environments": {},
       "sys-re": {
         "alias": "system-runtime-environments"
@@ -242,16 +242,16 @@
       "system-runtime-environment": {
         "alias": "system-runtime-environments"
       },
-      "builds": {},
-      "build": {
-        "alias": "builds"
-      },
       "teams": {},
       "team": {
         "alias": "teams"
       },
       "tm": {
         "alias": "teams"
+      },
+      "builds": {},
+      "build": {
+        "alias": "builds"
       },
       "helm-repo": {},
       "pipelines": {},
