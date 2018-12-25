@@ -18,8 +18,12 @@ _codefresh_completions()
     COMPREPLY=( $(compgen -W "${type_list}" -- ${cur_word}) )
 
     # erase user input while operation runs
-    stty -icanon time 0 min 0
-    read line
+    export __BEFORE_PREVIOUS=$__PREVIOUS
+    export __PREVIOUS=$COMPREPLY
+    if [[ ${__PREVIOUS} == ${__BEFORE_PREVIOUS} ]]; then
+        stty -icanon time 0 min 0
+        line=$(head -n 1)
+    fi
 
     return 0
 }
