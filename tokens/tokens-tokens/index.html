@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Compositions :: Codefresh CLI Documentation</title>
+<title>Tokens tokens :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/compositions/">
+  <body data-url="/cli/tokens/tokens-tokens/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -746,13 +746,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/tokens/" class="dd-item haschildren
+    <li data-nav-id="/cli/tokens/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/tokens/">Tokens</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/tokens/">Tokens</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/tokens/tokens-tokens/" class="dd-item">
+      <li data-nav-id="/cli/tokens/tokens-tokens/" class="dd-item active">
         <div>
           <a href="/cli/tokens/tokens-tokens/">
             Tokens tokens
@@ -776,11 +777,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/compositions/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/compositions/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/compositions/">Compositions</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/compositions/">Compositions</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/compositions/get-composition/" class="dd-item">
@@ -1038,7 +1038,12 @@
 
 
 
- <a href='/cli/'></a> > Compositions
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/tokens/'>Tokens</a> > Tokens tokens
+
+ 
 
  
 
@@ -1055,10 +1060,16 @@
 <ul>
 <li>
 <ul>
-<li><a href="#get-composition-get-composition"><a href="get-composition">Get Composition</a></a></li>
-<li><a href="#create-composition-create-composition"><a href="create-composition">Create Composition</a></a></li>
-<li><a href="#delete-composition-delete-composition"><a href="delete-composition">Delete Composition</a></a></li>
-<li><a href="#replace-composition-replace-composition"><a href="replace-composition">Replace Composition</a></a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#aliases">Aliases</a></li>
+</ul></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#create-token-form-runtime-environment">Create token form runtime environment</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1072,7 +1083,7 @@
 
 <div id="body-inner">
   
-    <h1>Compositions</h1>
+    <h1>Tokens tokens</h1>
   
 
 
@@ -1080,35 +1091,70 @@
     
     
     
+    
 
+<h3 id="description">Description</h3>
 
+<p>Create Codefresh token.</p>
 
-<h3 id="get-composition-get-composition"><a href="get-composition">Get Composition</a></h3>
+<p>Create Codefresh token.</p>
 
-<p><code>codefresh get compositions [id|name..]</code></p>
+<h3 id="command">Command</h3>
 
-<p>Get a specific composition or an array of compositions.</p>
+<p><code>codefresh create tokens</code></p>
 
-<p>Passing [id|name] argument will cause a retrieval of a specific composition.<br> In case of not passing [id|name] argument, a list will be returned.</p>
+<h4 id="aliases">Aliases</h4>
 
-<h3 id="create-composition-create-composition"><a href="create-composition">Create Composition</a></h3>
+<p><code>codefresh create token tokens</code></p>
 
-<p><code>codefresh create composition &lt;name&gt;</code></p>
+<h3 id="options">Options</h3>
 
-<p>Create a composition.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<h3 id="delete-composition-delete-composition"><a href="delete-composition">Delete Composition</a></h3>
+<tbody>
+<tr>
+<td>--help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
 
-<p><code>codefresh delete composition &lt;name&gt;</code></p>
+<tr>
+<td>--subject</td>
+<td></td>
+<td></td>
+<td>name of the token subject. <code>required</code></td>
+</tr>
 
-<p>Delete a composition.</p>
+<tr>
+<td>--type</td>
+<td></td>
+<td>runtime-environment</td>
+<td>Type of the subject</td>
+</tr>
 
-<h3 id="replace-composition-replace-composition"><a href="replace-composition">Replace Composition</a></h3>
+<tr>
+<td>--name</td>
+<td></td>
+<td></td>
+<td>token name. <code>required</code></td>
+</tr>
+</tbody>
+</table>
 
-<p><code>codefresh replace composition</code></p>
+<h3 id="examples">Examples</h3>
 
-<p>Replace a composition resource.</p>
+<h4 id="create-token-form-runtime-environment">Create token form runtime environment</h4>
 
+<p><code>codefresh create token --subject my-k8s-cluster/namespace --name new-token</code></p>
 
 
     

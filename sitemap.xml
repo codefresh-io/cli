@@ -202,6 +202,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/installation/docker/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
@@ -465,6 +469,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/</loc>
   </url>
   
   <url>

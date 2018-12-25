@@ -336,6 +336,13 @@
 	"content": " Description Show logs of a build.\nCommand codefresh logs \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID\nGet all previous logs of build ID and attach to future logs codefresh logs -f ID\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/tokens/tokens-tokens/",
+	"title": "Tokens tokens",
+	"tags": [],
+	"description": "",
+	"content": " Description Create Codefresh token.\nCreate Codefresh token.\nCommand codefresh create tokens\nAliases codefresh create token tokens\nOptions    Option Alias Default Description     --help   Print help information   --subject   name of the token subject. required   --type  runtime-environment Type of the subject   --name   token name. required    Examples Create token form runtime environment codefresh create token --subject my-k8s-cluster/namespace --name new-token\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/installation/docker/",
 	"title": "Docker Image",
 	"tags": [],
@@ -791,6 +798,13 @@
 	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nOptions    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/tokens/",
+	"title": "Tokens",
+	"tags": [],
+	"description": "",
+	"content": " Tokens tokens codefresh create tokens\nCreate Codefresh token.\nCreate Codefresh token.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",
 	"title": "Validate pipeline yaml",
 	"tags": [],
@@ -837,7 +851,7 @@
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
+	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/cli-config/profiles/",

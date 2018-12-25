@@ -609,6 +609,19 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
     </item>
     
     <item>
+      <title>Tokens tokens</title>
+      <link>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</guid>
+      <description>Description Create Codefresh token.
+Create Codefresh token.
+Command codefresh create tokens
+Aliases codefresh create token tokens
+Options    Option Alias Default Description     --help   Print help information   --subject   name of the token subject. required   --type  runtime-environment Type of the subject   --name   token name. required    Examples Create token form runtime environment codefresh create token --subject my-k8s-cluster/namespace --name new-token</description>
+    </item>
+    
+    <item>
       <title>Docker Image</title>
       <link>https://codefresh-io.github.io/cli/installation/docker/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
