@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 
+const { printError } = require('./helpers/general');
+
+process.on('uncaughtException', (err) => {
+    printError(err);
+    process.exit(1);
+});
+
+process.on('unhandledRejection', (err) => {
+    printError(err);
+    process.exit(1);
+});
+
 if (process.argv.includes('--get-yargs-completions')) {
     const initCompletion = require('./completion');
     initCompletion().argv;
@@ -8,21 +20,8 @@ if (process.argv.includes('--get-yargs-completions')) {
     const yargs = require('yargs');
     const path = require('path');
     const recursive = require('recursive-readdir');
-    const CFError = require('cf-errors');
     const DEFAULTS = require('./defaults');
     const authManager = require('../../logic').auth.manager;
-    const { printError } = require('./helpers/general');
-
-    process.on('uncaughtException', function (err) {
-        printError(err);
-        process.exit(1);
-    });
-
-    process.on('unhandledRejection', error => {
-        printError(error);
-        process.exit(1);
-    });
-
 
     recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         const rootCommands = [];
