@@ -10,4 +10,3 @@ coverage
 public
 temp
 package-lock.json
-**/completion/tree.json
