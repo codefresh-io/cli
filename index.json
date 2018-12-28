@@ -49,6 +49,13 @@
 	"content": " Description Create a config context.\nCommand codefresh create context config \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list    Examples Create a config. codefresh create context config my-config -v key1=valu1 -v key2=value2\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/tokens/create-tokens/",
+	"title": "Create tokens",
+	"tags": [],
+	"description": "",
+	"content": " Description Generate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nCommand codefresh create token [name]\nArguments    Option Alias Default Description     name   token name. required    Options    Option Alias Default Description     --help   Print help information   --subject   Name of the token subject   --type  user Type of the subject\nPossible values:\n- runtime-environment\n- user    Examples Create token with default type codefresh create token some-token\nCreate token from runtime environment codefresh create token some-token --subject my-k8s-cluster/namespace --type runtime-environment\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/",
 	"title": "Delete Helm Release",
 	"tags": [],
@@ -294,6 +301,13 @@
 	"content": " Description You can either get codefresh repos (previously added) or any repo from your git context (using option \u0026ldquo;--available\u0026rdquo; and \u0026ldquo;--context\u0026rdquo;).\nCommand codefresh get repository [names..]\nAliases codefresh get repo [names..]\nArguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Default Description     --help   Print help information   --available -a  Get all available git repos from provided or default git context   --limit -l 25 Maximum displayed repos number   --context -c  Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all codefresh repos codefresh get repo\nGet codefresh repos containing \u0026ldquo;codefresh-io\u0026rdquo; in its name codefresh get repo codefresh-io\nGet codefresh repos containing \u0026ldquo;some-repo\u0026rdquo; in its name codefresh get repo some-repo\nGet all available repos from default git context codefresh get repo -a\nGet all available repos from \u0026ldquo;bitbucket\u0026rdquo; git context codefresh get repo -a -c bitbucket\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/tokens/get-tokens/",
+	"title": "Get tokens",
+	"tags": [],
+	"description": "",
+	"content": " Description Get Codefresh tokens.\nProvide names/ids to filter results by them.\nCommand codefresh get tokens [names|ids..]\nAliases codefresh get token [names|ids..]\nArguments    Option Alias Default Description     names   Token names or ids    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all tokens codefresh get tokens\nGet tokens filtered by names or ids codefresh get tokens [token_1_name] [token_2_id]\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/",
 	"title": "Install or Upgrade Helm Chart",
 	"tags": [],
@@ -334,13 +348,6 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Show logs of a build.\nCommand codefresh logs \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID\nGet all previous logs of build ID and attach to future logs codefresh logs -f ID\n"
-},
-{
-	"uri": "https://codefresh-io.github.io/cli/tokens/tokens-tokens/",
-	"title": "Tokens tokens",
-	"tags": [],
-	"description": "",
-	"content": " Description Create Codefresh token.\nCreate Codefresh token.\nCommand codefresh create tokens\nAliases codefresh create token tokens\nOptions    Option Alias Default Description     --help   Print help information   --subject   name of the token subject. required   --type  runtime-environment Type of the subject   --name   token name. required    Examples Create token form runtime environment codefresh create token --subject my-k8s-cluster/namespace --name new-token\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/installation/docker/",
@@ -509,6 +516,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Assign user to a team.\nUse patch command and pass user id and team id to assign user to a team.\nCommand codefresh patch teams\nAliases codefresh patch team teams\ncodefresh patch tm teams\nOptions    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to add a user. required   --user-id -u  Id of a user to add him in team. required    Examples Assign user to team codefresh patch tm -u [userID] -t [teamID]\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/tokens/delete-tokens/",
+	"title": "Delete tokens",
+	"tags": [],
+	"description": "",
+	"content": " Description Revoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\nCommand codefresh delete tokens [ids..]\nAliases codefresh delete token [ids..]\nArguments    Option Alias Default Description     ids   token names or ids. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete one token codefresh delete token [token_id]\nDelete many tokens codefresh delete tokens [token_id_1] [token_id_2]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/patch/",
@@ -802,7 +816,7 @@
 	"title": "Tokens",
 	"tags": [],
 	"description": "",
-	"content": " Tokens tokens codefresh create tokens\nCreate Codefresh token.\nCreate Codefresh token.\n"
+	"content": " Create tokens codefresh create token [name]\nGenerate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nGet tokens codefresh get tokens [names|ids..]\nGet Codefresh tokens.\nProvide names/ids to filter results by them.\nDelete tokens codefresh delete tokens [ids..]\nRevoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",
@@ -851,7 +865,7 @@
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
+	"content": " Delete Helm Release codefresh delete-release [name]\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release [name]\nTest a helm release.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/cli-config/profiles/",

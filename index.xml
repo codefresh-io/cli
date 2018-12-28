@@ -72,6 +72,18 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
     </item>
     
     <item>
+      <title>Create tokens</title>
+      <link>https://codefresh-io.github.io/cli/tokens/create-tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/tokens/create-tokens/</guid>
+      <description>Description Generate Codefresh token.
+Create default token or provide --type and --subject. See options for more details.
+Command codefresh create token [name]
+Arguments    Option Alias Default Description     name   token name. required    Options    Option Alias Default Description     --help   Print help information   --subject   Name of the token subject   --type  user Type of the subject</description>
+    </item>
+    
+    <item>
       <title>Delete Helm Release</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -549,6 +561,19 @@ Arguments    Option Alias Default Description     names   Names for filtering re
     </item>
     
     <item>
+      <title>Get tokens</title>
+      <link>https://codefresh-io.github.io/cli/tokens/get-tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/tokens/get-tokens/</guid>
+      <description>Description Get Codefresh tokens.
+Provide names/ids to filter results by them.
+Command codefresh get tokens [names|ids..]
+Aliases codefresh get token [names|ids..]
+Arguments    Option Alias Default Description     names   Token names or ids    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format</description>
+    </item>
+    
+    <item>
       <title>Install or Upgrade Helm Chart</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -606,19 +631,6 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
       <description>Description Show logs of a build.
 Command codefresh logs &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID</description>
-    </item>
-    
-    <item>
-      <title>Tokens tokens</title>
-      <link>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</guid>
-      <description>Description Create Codefresh token.
-Create Codefresh token.
-Command codefresh create tokens
-Aliases codefresh create token tokens
-Options    Option Alias Default Description     --help   Print help information   --subject   name of the token subject. required   --type  runtime-environment Type of the subject   --name   token name. required    Examples Create token form runtime environment codefresh create token --subject my-k8s-cluster/namespace --name new-token</description>
     </item>
     
     <item>
@@ -882,6 +894,19 @@ Command codefresh patch teams
 Aliases codefresh patch team teams
 codefresh patch tm teams
 Options    Option Alias Default Description     --help   Print help information   --team-id -t  Id team in which to add a user. required   --user-id -u  Id of a user to add him in team.</description>
+    </item>
+    
+    <item>
+      <title>Delete tokens</title>
+      <link>https://codefresh-io.github.io/cli/tokens/delete-tokens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/tokens/delete-tokens/</guid>
+      <description>Description Revoke Codefresh token.
+Provide one or many token ids to delete. Ids can be retrieved with &amp;ldquo;get&amp;rdquo; command.
+Command codefresh delete tokens [ids..]
+Aliases codefresh delete token [ids..]
+Arguments    Option Alias Default Description     ids   token names or ids. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete one token codefresh delete token [token_id]</description>
     </item>
     
     <item>

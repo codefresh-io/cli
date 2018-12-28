@@ -35,6 +35,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/create-tokens/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</loc>
   </url>
   
@@ -177,6 +181,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/get-tokens/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
   </url>
   
@@ -199,10 +207,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/builds/show-build-logs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/tokens/tokens-tokens/</loc>
   </url>
   
   <url>
@@ -303,6 +307,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/teams/add-user/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/delete-tokens/</loc>
   </url>
   
   <url>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Trigger Event :: Codefresh CLI Documentation</title>
+<title>Create tokens :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/triggers/get-trigger-event/">
+  <body data-url="/cli/tokens/create-tokens/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -478,11 +478,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/triggers/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/triggers/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/triggers/">Triggers</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/triggers/">Triggers</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/triggers/create-pipeline-trigger/" class="dd-item">
@@ -492,7 +491,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-trigger-event/" class="dd-item active">
+      <li data-nav-id="/cli/triggers/get-trigger-event/" class="dd-item">
         <div>
           <a href="/cli/triggers/get-trigger-event/">
             Get Trigger Event
@@ -747,13 +746,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/tokens/" class="dd-item haschildren
+    <li data-nav-id="/cli/tokens/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/tokens/">Tokens</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/tokens/">Tokens</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/tokens/create-tokens/" class="dd-item">
+      <li data-nav-id="/cli/tokens/create-tokens/" class="dd-item active">
         <div>
           <a href="/cli/tokens/create-tokens/">
             Create tokens
@@ -1055,7 +1055,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/triggers/'>Triggers</a> > Get Trigger Event
+ <a href='/cli/'></a> > <a href='/cli/tokens/'>Tokens</a> > Create tokens
 
  
 
@@ -1075,17 +1075,13 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
+<li><a href="#command">Command</a></li>
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#get-dockerhub-codefresh-fortune-push-trigger-event">Get DockerHub codefresh/fortune push <code>trigger-event</code></a></li>
-<li><a href="#get-all-dockerhub-codefresh-push-trigger-events">Get all DockerHub codefresh/* push <code>trigger-events</code></a></li>
+<li><a href="#create-token-with-default-type">Create token with default type</a></li>
+<li><a href="#create-token-from-runtime-environment">Create token from runtime environment</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1100,7 +1096,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Trigger Event</h1>
+    <h1>Create tokens</h1>
   
 
 
@@ -1112,15 +1108,13 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get <code>trigger-event</code>.</p>
+<p>Generate Codefresh token.</p>
+
+<p>Create default token or provide --type and --subject. See options for more details.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get trigger-events [event-uri]</code></p>
-
-<h4 id="aliases">Aliases</h4>
-
-<p><code>codefresh get trigger-event [event-uri]</code></p>
+<p><code>codefresh create token [name]</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -1136,10 +1130,10 @@
 
 <tbody>
 <tr>
-<td>event-uri</td>
+<td>name</td>
 <td></td>
 <td></td>
-<td>trigger-event URI)</td>
+<td>token name. <code>required</code></td>
 </tr>
 </tbody>
 </table>
@@ -1165,87 +1159,30 @@
 </tr>
 
 <tr>
+<td>--subject</td>
+<td></td>
+<td></td>
+<td>Name of the token subject</td>
+</tr>
+
+<tr>
 <td>--type</td>
 <td></td>
-<td></td>
-<td>trigger-event type</td>
-</tr>
-
-<tr>
-<td>--kind</td>
-<td></td>
-<td></td>
-<td>trigger-event kind</td>
-</tr>
-
-<tr>
-<td>--filter</td>
-<td></td>
-<td></td>
-<td>trigger-event URI filter (regex)</td>
-</tr>
-
-<tr>
-<td>--public</td>
-<td></td>
-<td>true</td>
-<td>get public trigger-event(s)</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
-</tr>
-
-<tr>
-<td>--pretty</td>
-<td></td>
-<td></td>
-<td>Use colors and signs for output</td>
-</tr>
-
-<tr>
-<td>--watch</td>
-<td>-w</td>
-<td></td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>--watch-interval</td>
-<td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
+<td>user</td>
+<td>Type of the subject<br><br>Possible values:<br> - runtime-environment<br> - user</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="get-dockerhub-codefresh-fortune-push-trigger-event">Get DockerHub codefresh/fortune push <code>trigger-event</code></h4>
+<h4 id="create-token-with-default-type">Create token with default type</h4>
 
-<p><code>codefresh get trigger-event registry:dockerhub:codefresh:fortune:push</code></p>
+<p><code>codefresh create token some-token</code></p>
 
-<h4 id="get-all-dockerhub-codefresh-push-trigger-events">Get all DockerHub codefresh/* push <code>trigger-events</code></h4>
+<h4 id="create-token-from-runtime-environment">Create token from runtime environment</h4>
 
-<p><code>codefresh get trigger-event --type registry --kind dockerhub --filter *codefresh</code></p>
+<p><code>codefresh create token some-token --subject my-k8s-cluster/namespace --type runtime-environment</code></p>
 
 
     
