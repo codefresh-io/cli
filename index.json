@@ -364,11 +364,18 @@
 	"content": " Yaml context stores an yaml file.\nType .spec.type should be yaml.\nData .spec.data should be an array of keys and values.\nExamples yaml with two keys apiVersion: \u0026#34;v1\u0026#34; kind: \u0026#34;context\u0026#34; owner: \u0026#34;account\u0026#34; metadata: name: \u0026#34;my-yaml-context\u0026#34; spec: type: \u0026#34;yaml\u0026#34; data: serviceType: \u0026#34;LoadBalancer\u0026#34; image: \u0026#34;mongo\u0026#34;"
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/authentication/",
-	"title": "Authentication",
+	"uri": "https://codefresh-io.github.io/cli/completion/codefresh-completion/",
+	"title": "Codefresh Completion",
 	"tags": [],
 	"description": "",
-	"content": " Get Contexts codefresh auth get-contexts\nGet all possible authentication contexts.\nCreate Context codefresh auth create-context [name]\nCreate or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nGet Activated Context codefresh auth current-context\nGet the current activated authentication context.\nSet Active Context codefresh auth use-context \u0026lt;name\u0026gt;\nSet the current active authentication context.\n"
+	"content": " Description Generate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\nCommand codefresh completion\nOptions    Option Alias Default Description     --help   Print help information   --executable -e  Name or path to your codefresh executable (default same as alias)   --alias -a codefresh Alias used for calling codefresh executable    Examples Print completion script codefresh completion\nPrint completion script for codefresh aliased as \u0026ldquo;cf\u0026rdquo; cf completion --alias cf\nPrint completion script with specified path to codefresh executable /some/path/codefresh completion --e /some/path/codefresh\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/completion/",
+	"title": "Completion",
+	"tags": [],
+	"description": "",
+	"content": " Codefresh Completion codefresh completion\nGenerate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/delete/",
@@ -488,6 +495,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Test a helm release.\nCommand codefresh test-release [name]\nOptions    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup  false delete test pods upon completion (default false)    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/authentication/",
+	"title": "Authentication",
+	"tags": [],
+	"description": "",
+	"content": " Get Contexts codefresh auth get-contexts\nGet all possible authentication contexts.\nCreate Context codefresh auth create-context [name]\nCreate or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nGet Activated Context codefresh auth current-context\nGet the current activated authentication context.\nSet Active Context codefresh auth use-context \u0026lt;name\u0026gt;\nSet the current active authentication context.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/",

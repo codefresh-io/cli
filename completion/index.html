@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Contexts :: Codefresh CLI Documentation</title>
+<title>Completion :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/authentication/get-contexts/">
+  <body data-url="/cli/completion/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -111,10 +111,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/completion/" class="dd-item haschildren
+    <li data-nav-id="/cli/completion/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/completion/">Completion</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/completion/">Completion</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/completion/codefresh-completion/" class="dd-item">
@@ -126,14 +127,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/authentication/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/authentication/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/authentication/">Authentication</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/authentication/">Authentication</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/authentication/get-contexts/" class="dd-item active">
+      <li data-nav-id="/cli/authentication/get-contexts/" class="dd-item">
         <div>
           <a href="/cli/authentication/get-contexts/">
             Get Contexts
@@ -1067,12 +1067,7 @@
 
 
 
-
-
-
- <a href='/cli/'></a> > <a href='/cli/authentication/'>Authentication</a> > Get Contexts
-
- 
+ <a href='/cli/'></a> > Completion
 
  
 
@@ -1089,13 +1084,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#list-all-existing-authentication-contexts">List all existing authentication contexts</a></li>
-</ul></li>
+<li><a href="#codefresh-completion-codefresh-completion"><a href="codefresh-completion">Codefresh Completion</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1109,7 +1098,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Contexts</h1>
+    <h1>Completion</h1>
   
 
 
@@ -1117,43 +1106,17 @@
     
     
     
-    
 
-<h3 id="description">Description</h3>
 
-<p>Get all possible authentication contexts.</p>
 
-<h3 id="command">Command</h3>
+<h3 id="codefresh-completion-codefresh-completion"><a href="codefresh-completion">Codefresh Completion</a></h3>
 
-<p><code>codefresh auth get-contexts</code></p>
+<p><code>codefresh completion</code></p>
 
-<h3 id="options">Options</h3>
+<p>Generate codefresh completion. See details on <a href="codefresh-completion">usage</a></p>
 
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<p>Prints completion script with specified or default path to executable and command alias.</p>
 
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="list-all-existing-authentication-contexts">List all existing authentication contexts</h4>
-
-<p><code>codefresh auth get-contexts</code></p>
 
 
     

@@ -657,6 +657,18 @@ Examples yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;cont
     </item>
     
     <item>
+      <title>Codefresh Completion</title>
+      <link>https://codefresh-io.github.io/cli/completion/codefresh-completion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/completion/codefresh-completion/</guid>
+      <description>Description Generate codefresh completion. See details on usage
+Prints completion script with specified or default path to executable and command alias.
+Command codefresh completion
+Options    Option Alias Default Description     --help   Print help information   --executable -e  Name or path to your codefresh executable (default same as alias)   --alias -a codefresh Alias used for calling codefresh executable    Examples Print completion script codefresh completion</description>
+    </item>
+    
+    <item>
       <title>Delete</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

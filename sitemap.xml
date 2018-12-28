@@ -220,7 +220,11 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/authentication/</loc>
+    <loc>https://codefresh-io.github.io/cli/completion/codefresh-completion/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/completion/</loc>
   </url>
   
   <url>
@@ -289,6 +293,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/authentication/</loc>
   </url>
   
   <url>
