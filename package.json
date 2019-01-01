@@ -1,10 +1,11 @@
 {
   "name": "codefresh",
-  "version": "0.9.12",
+  "version": "0.9.18",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
+    "generate-completion": "node ./lib/interface/cli/completion/generate",
     "test": "jest .spec.js --coverage",
     "eslint": "eslint lib1logic/**",
     "ci-publish": "ci-publish",
@@ -22,7 +23,8 @@
     "command line"
   ],
   "pkg": {
-    "scripts": "lib/**/*.js"
+    "scripts": "lib/**/*.js",
+    "assets": "lib/**/*.hbs"
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
