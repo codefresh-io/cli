@@ -10,6 +10,12 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Defines whether to show data in table view in pretty mode or not"
+                },
+                "dateFormat": {
+                    "type": "string",
+                    "enum": ["default", "date", "datetime", "date-diff"],
+                    "default": "default",
+                    "description": "Defines date format: date, datetime, date-diff, default (default for resource)"
                 }
             }
         },
