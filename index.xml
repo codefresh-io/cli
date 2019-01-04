@@ -103,13 +103,13 @@ Options    Option Alias Default Description     --help   Print help information 
       <description> Description Get a resource from a file, directory or url
 Supported resources:.
 Command codefresh get
-Output Options    Option Alias Default Description     --output -o  Output format
+Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format
 Possible values:
 - json
 - yaml
 - wide
 - name
-- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+- id   --date-format --df  Date format: default, date, datetime, date-diff or custom   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
     
     <item>
@@ -121,7 +121,7 @@ Possible values:
       <description>Description Get a specific board or an array of boards.
 Command codefresh get boards [id..]
 Aliases codefresh get board [id..]
-Options    Option Alias Default Description     --help   Print help information   --id   Board by id   --name   Board by name    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Options    Option Alias Default Description     --help   Print help information   --id   Board by id   --name   Board by name    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -147,13 +147,9 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
       <description>Description Get an array of clusters.
 Command codefresh get clusters
 Aliases codefresh get cluster clusters
-Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format
+Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format
 Possible values:
-- json
-- yaml
-- wide
-- name
-- id   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all clusters codefresh get clusters</description>
+- json</description>
     </item>
     
     <item>
@@ -168,7 +164,7 @@ In case of not passing [id|name] argument, a list will be returned.
 Command codefresh get compositions [id|name..]
 Aliases codefresh get com [id|name..]
 codefresh get composition [id|name..]
-Arguments    Option Alias Default Description     id   composition id or name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     id   composition id or name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -209,7 +205,7 @@ In case of not passing [id] argument, a list will be returned.
 Command codefresh get environments [id..]
 Aliases codefresh get env [id..]
 codefresh get environment [id..]
-Arguments    Option Alias Default Description     id   environment id or name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     id   environment id or name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -220,7 +216,7 @@ Arguments    Option Alias Default Description     id   environment id or name   
       <guid>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</guid>
       <description>Description Get a specific helm-repo or an array of helm-repos.
 Command codefresh get helm-repo [name..]
-Arguments    Option Alias Default Description     name   Helm repo name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     name   Helm repo name    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -248,7 +244,7 @@ Arguments    Option Alias Default Description     id   Docker Image id    Option
 Command codefresh get pipelines [id..]
 Aliases codefresh get pip [id..]
 codefresh get pipeline [id..]
-Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -261,7 +257,7 @@ Arguments    Option Alias Default Description     id   Pipeline name/id    Optio
 Command codefresh get runtime-environments [name]
 Aliases codefresh get re [name]
 codefresh get runtime-environment [name]
-Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --version   Runtime environments version   --history   Return all the history of the specific runtime environments   --limit  25 Limit amount of returned results   --page  1 Paginated page   --extend   Return an extend runtime environment    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -273,7 +269,7 @@ Arguments    Option Alias Default Description     name   Runtime environments na
       <description>Description Get a specific section or an array of sections.
 Command codefresh get sections
 Aliases codefresh get section sections
-Options    Option Alias Default Description     --help   Print help information   --board-id   Board id   --board-name   Board name   --id   Section by id   --name   Section by name    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Options    Option Alias Default Description     --help   Print help information   --board-id   Board id   --board-name   Board name   --id   Section by id   --name   Section by name    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -286,11 +282,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh get teams
 Aliases codefresh get team teams
 codefresh get tm teams
-Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format
-Possible values:
-- json
-- yaml
-- wide</description>
+Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -302,7 +294,7 @@ Possible values:
       <description>Description Get trigger-event.
 Command codefresh get trigger-events [event-uri]
 Aliases codefresh get trigger-event [event-uri]
-Arguments    Option Alias Default Description     event-uri   trigger-event URI)    Options    Option Alias Default Description     --help   Print help information   --type   trigger-event type   --kind   trigger-event kind   --filter   trigger-event URI filter (regex)   --public  true get public trigger-event(s)    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     event-uri   trigger-event URI)    Options    Option Alias Default Description     --help   Print help information   --type   trigger-event type   --kind   trigger-event kind   --filter   trigger-event URI filter (regex)   --public  true get public trigger-event(s)    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -314,7 +306,7 @@ Arguments    Option Alias Default Description     event-uri   trigger-event URI)
       <description>Description Get a list of available trigger-types.
 Command codefresh get trigger-types
 Aliases codefresh get trigger-type trigger-types
-Options    Option Alias Default Description     --help   Print help information   --type   filter by a specific trigger type (e.g. registry, cron)   --kind   filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Options    Option Alias Default Description     --help   Print help information   --type   filter by a specific trigger type (e.g. registry, cron)   --kind   filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -327,7 +319,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh get triggers
 Aliases codefresh get trigger triggers
 codefresh get t triggers
-Options    Option Alias Default Description     --help   Print help information   --pipeline   pipeline id   --event-uri   event URI    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Options    Option Alias Default Description     --help   Print help information   --pipeline   pipeline id   --event-uri   event URI    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -557,7 +549,7 @@ Arguments    Option Alias Default Description     event-uri   trigger-event URI 
       <description>Description You can either get codefresh repos (previously added) or any repo from your git context (using option &amp;ldquo;--available&amp;rdquo; and &amp;ldquo;--context&amp;rdquo;).
 Command codefresh get repository [names..]
 Aliases codefresh get repo [names..]
-Arguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Default Description     --help   Print help information   --available -a  Get all available git repos from provided or default git context   --limit -l 25 Maximum displayed repos number   --context -c  Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Default Description     --help   Print help information   --available -a  Get all available git repos from provided or default git context   --limit -l 25 Maximum displayed repos number   --context -c  Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -570,7 +562,7 @@ Arguments    Option Alias Default Description     names   Names for filtering re
 Provide names/ids to filter results by them.
 Command codefresh get tokens [names|ids..]
 Aliases codefresh get token [names|ids..]
-Arguments    Option Alias Default Description     names   Token names or ids    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --output -o  Output format</description>
+Arguments    Option Alias Default Description     names   Token names or ids    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
