@@ -1,0 +1,21 @@
+###-begin-{{app_name}}-completions-###
+#
+# codefresh command completion script
+#
+# Installation: {{app_name}} {{completion_command}} zsh >> ~/.zshrc
+#    or echo 'source <({{app_name}} {{completion_command}} zsh)' >> ~/.zshrc
+#
+_codefresh_completions()
+{
+    type_list=($({{app_path}} --impl-file-dir --get-yargs-completions "${words[@]}"))
+
+    if [[ ${type_list[1]} == '__files_completion__' ]]; then
+        compadd -- "${type_list[@]:1}"
+    else
+        compadd -- "${type_list[@]}"
+    fi
+
+    return 0
+}
+compdef _codefresh_completions {{app_name}}
+###-end-{{app_name}}-completions-###
