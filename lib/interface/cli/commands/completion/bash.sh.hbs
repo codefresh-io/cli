@@ -3,18 +3,17 @@
 # codefresh command completion script
 #
 # Installation: {{app_path}} {{completion_command}} >> ~/.bashrc
-#    or {{app_path}} {{completion_command}} >> ~/.bash_profile on OSX
-#    or echo 'source <({{app_name}} {{completion_command}} bash)' >> ~/.bash_profile for both.
+#    or {{app_path}} {{completion_command}} >> ~/.bash_profile on OSX.
 #
 _codefresh_completions()
 {
-    local cur_word args type_list
+    local cur args type_list
 
-    cur_word="${COMP_WORDS[COMP_CWORD]}"
+    cur="${COMP_WORDS[COMP_CWORD]}"
     args=("${COMP_WORDS[@]}")
 
     # ask codefresh to generate completions.
-    type_list=$({{app_path}} --get-yargs-completions "${args[@]}")
+    type_list=$(codefresh --get-yargs-completions "${args[@]}")
 
     if [[ ${type_list} == '__files_completion__' ]]; then
         _filedir "@(yaml|yml|json)"
