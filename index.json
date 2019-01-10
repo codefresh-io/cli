@@ -368,14 +368,14 @@
 	"title": "Codefresh Completion",
 	"tags": [],
 	"description": "",
-	"content": " Description Generate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\nCommand codefresh completion\nOptions    Option Alias Default Description     --help   Print help information   --executable -e  Name or path to your codefresh executable (default same as alias)   --alias -a codefresh Alias used for calling codefresh executable    Examples Print completion script codefresh completion\nPrint completion script for codefresh aliased as \u0026ldquo;cf\u0026rdquo; cf completion --alias cf\nPrint completion script with specified path to codefresh executable /some/path/codefresh completion --e /some/path/codefresh\n"
+	"content": " Description Generate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\nCommand codefresh completion [shell-name]\nAliases codefresh completions [shell-name]\nArguments    Option Alias Default Description     shellName  bash Name of the shell to generate completion for\nPossible values:\n- bash\n- zsh    Options    Option Alias Default Description     --help   Print help information   --executable -e  Name or path to your codefresh executable (default same as alias)   --alias -a codefresh Alias used for calling codefresh executable    Examples Print bash completion script codefresh completion\nPrint zsh completion script codefresh completion zsh\nInstall zsh completion script codefresh completion zsh \u0026gt;\u0026gt; ~/.zshrc\nInstall bash completion script codefresh completion bash \u0026gt;\u0026gt; ~/.bashrc\nInstall bash completion script (on OSX) codefresh completion bash \u0026gt;\u0026gt; ~/.bash_profile\nPrint completion script for codefresh aliased as \u0026ldquo;cf\u0026rdquo; cf completion --alias cf\nPrint completion script with specified path to codefresh executable /some/path/codefresh completion -e /some/path/codefresh\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/completion/",
 	"title": "Completion",
 	"tags": [],
 	"description": "",
-	"content": " Codefresh Completion codefresh completion\nGenerate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\n"
+	"content": " Codefresh Completion codefresh completion [shell-name]\nGenerate codefresh completion. See details on usage\nPrints completion script with specified or default path to executable and command alias.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/delete/",

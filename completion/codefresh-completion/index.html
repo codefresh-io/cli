@@ -1090,11 +1090,19 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#aliases">Aliases</a></li>
+</ul></li>
+<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#print-completion-script">Print completion script</a></li>
+<li><a href="#print-bash-completion-script">Print bash completion script</a></li>
+<li><a href="#print-zsh-completion-script">Print zsh completion script</a></li>
+<li><a href="#install-zsh-completion-script">Install zsh completion script</a></li>
+<li><a href="#install-bash-completion-script">Install bash completion script</a></li>
+<li><a href="#install-bash-completion-script-on-osx">Install bash completion script (on OSX)</a></li>
 <li><a href="#print-completion-script-for-codefresh-aliased-as-cf">Print completion script for codefresh aliased as &ldquo;cf&rdquo;</a></li>
 <li><a href="#print-completion-script-with-specified-path-to-codefresh-executable">Print completion script with specified path to codefresh executable</a></li>
 </ul></li>
@@ -1129,7 +1137,33 @@
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh completion</code></p>
+<p><code>codefresh completion [shell-name]</code></p>
+
+<h4 id="aliases">Aliases</h4>
+
+<p><code>codefresh completions [shell-name]</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>shellName</td>
+<td></td>
+<td>bash</td>
+<td>Name of the shell to generate completion for<br><br>Possible values:<br> - bash<br> - zsh</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -1169,9 +1203,25 @@
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="print-completion-script">Print completion script</h4>
+<h4 id="print-bash-completion-script">Print bash completion script</h4>
 
 <p><code>codefresh completion</code></p>
+
+<h4 id="print-zsh-completion-script">Print zsh completion script</h4>
+
+<p><code>codefresh completion zsh</code></p>
+
+<h4 id="install-zsh-completion-script">Install zsh completion script</h4>
+
+<p><code>codefresh completion zsh &gt;&gt; ~/.zshrc</code></p>
+
+<h4 id="install-bash-completion-script">Install bash completion script</h4>
+
+<p><code>codefresh completion bash &gt;&gt; ~/.bashrc</code></p>
+
+<h4 id="install-bash-completion-script-on-osx">Install bash completion script (on OSX)</h4>
+
+<p><code>codefresh completion bash &gt;&gt; ~/.bash_profile</code></p>
 
 <h4 id="print-completion-script-for-codefresh-aliased-as-cf">Print completion script for codefresh aliased as &ldquo;cf&rdquo;</h4>
 
@@ -1179,7 +1229,7 @@
 
 <h4 id="print-completion-script-with-specified-path-to-codefresh-executable">Print completion script with specified path to codefresh executable</h4>
 
-<p><code>/some/path/codefresh completion --e /some/path/codefresh</code></p>
+<p><code>/some/path/codefresh completion -e /some/path/codefresh</code></p>
 
 
     
