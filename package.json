@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.9.25",
+  "version": "0.9.26",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -13,7 +13,9 @@
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
-    "build-public-docs": "node ./docs/index.js && cd temp && hugo"
+    "build-public-docs": "node ./docs/index.js && cd temp && hugo",
+    "requirements-check": "node check-version.js",
+    "postinstall": "npm run requirements-check"
   },
   "bin": {
     "codefresh": "./lib/interface/cli/codefresh"
@@ -60,6 +62,7 @@
     "request-promise": "^4.2.2",
     "requestretry": "^3.1.0",
     "rimraf": "^2.6.2",
+    "semver": "^5.6.0",
     "tty-table": "^2.5.5",
     "uuid": "^3.1.0",
     "yargs": "^10.0.3"
@@ -81,7 +84,7 @@
   "author": "Codefresh",
   "license": "ISC",
   "engines": {
-    "node": ">8.0.0"
+    "node": ">=8.0.0"
   },
   "yargs": {
     "boolean-negation": false
