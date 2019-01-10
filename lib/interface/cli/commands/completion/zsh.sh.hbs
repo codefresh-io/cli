@@ -7,7 +7,7 @@
 #
 _codefresh_completions()
 {
-    type_list=($({{app_path}} --impl-file-dir --get-yargs-completions "${words[@]}"))
+    type_list=($({{app_path}} --impl-zsh-file-dir --get-yargs-completions "${words[@]}"))
 
     if [[ ${type_list[1]} == '__files_completion__' ]]; then
         compadd -- "${type_list[@]:1}"
