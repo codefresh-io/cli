@@ -15,7 +15,7 @@
                     "type": "string",
                     "enum": ["default", "date", "datetime", "date-diff"],
                     "default": "default",
-                    "description": "Defines date format: date, datetime, date-diff, default (default for resource)"
+                    "description": "Defines date format. Choices: [\"date\", \"datetime\", \"date-diff\", \"default\"] (default for resource)"
                 }
             }
         },
