@@ -109,7 +109,7 @@ Possible values:
 - yaml
 - wide
 - name
-- id   --date-format --df  Date format: default, date, datetime, date-diff or custom   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+- id   --date-format --df  Provide predefined or custom date format. Predefined options: [&amp;ldquo;default&amp;rdquo;, &amp;ldquo;date&amp;rdquo;, &amp;ldquo;datetime&amp;rdquo;, &amp;ldquo;date-diff&amp;rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
     
     <item>
@@ -452,7 +452,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <description>Description Create a composition.
 Command codefresh create composition &amp;lt;name&amp;gt;
 Aliases codefresh create com &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name   Name of composition    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list   --advanced   Advanced composition   --compose-file -c  Path to docker-compose.</description>
+Arguments    Option Alias Default Description     name   Name of composition    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --variable -v  Variables list   --advanced   Advanced composition   --compose-file -c  Path to docker-compose.</description>
     </item>
     
     <item>
@@ -698,7 +698,7 @@ Arguments    Option Alias Default Description     name   Cluster name. required 
       <description>Description Delete a composition.
 Command codefresh delete composition &amp;lt;name&amp;gt;
 Aliases codefresh delete com &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name   Composition name    Options    Option Alias Default Description     --help   Print help information    Examples Delete a composition codefresh delete composition NAME</description>
+Arguments    Option Alias Default Description     name   Composition name    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Delete a composition codefresh delete composition NAME</description>
     </item>
     
     <item>
@@ -710,7 +710,7 @@ Arguments    Option Alias Default Description     name   Composition name    Opt
       <description>Description Delete a context.
 Command codefresh delete context [name]
 Aliases codefresh delete ctx [name]
-Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information    Examples Delete context NAME codefresh delete context NAME</description>
+Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Delete context NAME codefresh delete context NAME</description>
     </item>
     
     <item>
@@ -1116,7 +1116,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <description> Description Replace a composition resource.
 Command codefresh replace composition
 Aliases codefresh replace com composition
-Options    Option Alias Default Description     --help   Print help information    </description>
+Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
     
     <item>
@@ -1130,7 +1130,7 @@ Use apply to patch an existing context.
 Command codefresh patch runtime-environments [name]
 Aliases codefresh patch re [name]
 codefresh patch runtime-environment [name]
-Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --namespace --ns  Set the desire namespace   --cluster -c  Set the desire cluster   --description -d  Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f .</description>
+Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --default   Set the chosen runtime environment as default   --extends   Set the runtime environments you want to extends from   --namespace --ns  Set the desire namespace   --cluster -c  Set the desire cluster   --description -d  Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f .</description>
     </item>
     
     <item>
@@ -1143,7 +1143,7 @@ Arguments    Option Alias Default Description     name   Runtime environments na
 Use apply to patch an existing context.
 Command codefresh patch context
 Aliases codefresh patch ctx context
-Options    Option Alias Default Description     --help   Print help information    Examples Apply changes to a context codefresh apply context -f ./context.yml</description>
+Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Apply changes to a context codefresh apply context -f .</description>
     </item>
     
     <item>
