@@ -770,7 +770,7 @@ Arguments    Option Alias Default Description     name_id   Repository &amp;ldqu
 Command codefresh delete runtime-environments name
 Aliases codefresh delete re name
 codefresh delete runtime-environment name
-Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --force   Delete runtime environment in force mode    </description>
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
@@ -1164,11 +1164,11 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</guid>
-      <description>Description Create a runtime environment.
+      <description> Description Create a runtime environment.
 Command codefresh create runtime-environments [cluster]
 Aliases codefresh create re [cluster]
 codefresh create runtime-environment [cluster]
-Options    Option Alias Default Description     --help   Print help information   --cluster -c  codefresh cluster integration name. required   --namespace -n codefresh namespace   --kube-context --kc  kubectl context name   --gcloud   set if your cluster provider is gcloud    Examples Creating a runtime environment which configured to cluster prod and namespace codefresh codefresh create re --cluster prod --namespace codefresh --kube-context kubeCodefresh</description>
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
