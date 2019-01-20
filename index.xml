@@ -351,7 +351,7 @@ Command codefresh create context git bitbucket &amp;lt;name&amp;gt;
 Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts
 Possible values:
 - AccountAdmins
-- AllUsersInAccount   --help   Print help information   --app-password -a  Application password generated in bitbucket.</description>
+- AllUsersInAccount   --skip-validation   Set to true to skip validation   --help   Print help information   --app-password -a  Application password generated in bitbucket.</description>
     </item>
     
     <item>
@@ -368,7 +368,7 @@ Command codefresh create context git github &amp;lt;name&amp;gt;
 Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts
 Possible values:
 - AccountAdmins
-- AllUsersInAccount   --help   Print help information   --access-token -t  Access token from to be used to clone repositories.</description>
+- AllUsersInAccount   --skip-validation   Set to true to skip validation   --help   Print help information   --access-token -t  Access token from to be used to clone repositories.</description>
     </item>
     
     <item>
@@ -385,7 +385,7 @@ Command codefresh create context git gitlab &amp;lt;name&amp;gt;
 Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts
 Possible values:
 - AccountAdmins
-- AllUsersInAccount   --help   Print help information   --access-token -t  Access token from to be used to clone repositories.</description>
+- AllUsersInAccount   --skip-validation   Set to true to skip validation   --help   Print help information   --access-token -t  Access token from to be used to clone repositories.</description>
     </item>
     
     <item>
@@ -402,7 +402,7 @@ Command codefresh create context git stash &amp;lt;name&amp;gt;
 Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts
 Possible values:
 - AccountAdmins
-- AllUsersInAccount   --help   Print help information   --username -u  Username.</description>
+- AllUsersInAccount   --skip-validation   Set to true to skip validation   --help   Print help information   --username -u  Username.</description>
     </item>
     
     <item>
