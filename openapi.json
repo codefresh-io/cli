@@ -1,0 +1,4112 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "contact": {
+      "name": "Codefresh api team",
+      "url": "http://www.codefresh.io"
+    },
+    "description": "Codefresh api openapi-3.0 specification",
+    "termsOfService": "http://www.codefresh.io",
+    "title": "Codefresh API",
+    "version": "0.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://g.codefresh.io/api"
+    }
+  ],
+  "paths": {
+    "/abac": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "get all rules"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "create rule",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "action": {
+                    "type": "string"
+                  },
+                  "resource": {
+                    "type": "string"
+                  },
+                  "team": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/abac/batch": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "create or delete rules",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "create": {
+                    "items": {
+                      "$ref": "#/components/requestBodies/abac"
+                    },
+                    "type": "array"
+                  },
+                  "delete": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/abac/resource/{resource}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "The id of the resource",
+            "in": "path",
+            "name": "resource",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "get rules by resource"
+      }
+    },
+    "/abac/tags/rule/{rule}": {
+      "post": {
+        "parameters": [
+          {
+            "description": "The id of the rule",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "update rule tags",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/abac/tags/rules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "update rules tags",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "rules": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/abac/team/{team}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "The id of the team",
+            "in": "path",
+            "name": "team",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "get rules by teamid"
+      }
+    },
+    "/abac/teamRules": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "create rules in batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/requestBodies/abac"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/abac/{rule}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "The id of the rule",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "delete one rule by id"
+      },
+      "get": {
+        "parameters": [
+          {
+            "description": "The id of the rule",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "rbac"
+        ],
+        "operationId": "get rules by ruleid"
+      }
+    },
+    "/accounts/{accountId}/{userId}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Not implemented yet",
+        "operationId": "deleteUserFromAccount"
+      }
+    },
+    "/accounts/{accountId}/{userId}/adduser": {
+      "post": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "addExistingUserToAccount"
+      }
+    },
+    "/accounts/{accountId}/{userId}/admin": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "deleteAdmin"
+      },
+      "post": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "aetAsAdmin"
+      }
+    },
+    "/accounts/{id}/adduser": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Adds a not existing user to an account. the provider field is optional and if not provided it will be taken from the account model",
+        "operationId": "addUserToAccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "userDetails": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{id}/update": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Not implemented yet: update the user defined account fields. Receives a settings object (will be defined later)",
+        "operationId": "updateAccountPublicSettings",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "notifications": {
+                    "items": {
+                      "properties": {
+                        "events": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "slack": {
+                          "properties": {
+                            "uri": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": {
+                          "enum": [
+                            "webhook",
+                            "slack"
+                          ],
+                          "type": "string"
+                        },
+                        "webhook": {
+                          "properties": {
+                            "method": {
+                              "type": "string"
+                            },
+                            "uri": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{id}/updateuser": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Not implemented yet",
+        "operationId": "updateUserDetails",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "settings": {
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/accounts/{id}/users": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Get all users of an account",
+        "operationId": "getUsersForAccount"
+      }
+    },
+    "/admin/accounts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "get all the accounts in the system",
+        "operationId": "getAllAccounts"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Add new account. Receives an account object ",
+        "operationId": "addAccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/accounts/addpendinguser": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "addPendingUserWithoutAccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "account": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "provider": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "userName": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "userName",
+                  "provider"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/accounts/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Not implemented yet",
+        "operationId": "deleteAccount"
+      },
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Get an account by id",
+        "operationId": "getById1"
+      }
+    },
+    "/admin/accounts/{id}/update": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "accounts"
+        ],
+        "description": "Not implemented yet: Update the account info that only codefresh admins (codefresh employees, not account admin) can access",
+        "operationId": "updateAccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "settings": {
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/builds": {
+      "get": {
+        "parameters": [
+          {
+            "description": "account name",
+            "in": "query",
+            "name": "account",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "repo owner",
+            "in": "query",
+            "name": "repoOwner",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "repo name",
+            "in": "query",
+            "name": "repoName",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "builds"
+        ],
+        "operationId": "getAll1"
+      }
+    },
+    "/builds/{buildId}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/buildId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "builds"
+        ],
+        "operationId": "get5"
+      }
+    },
+    "/builds/{buildId}/update": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/buildId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "builds"
+        ],
+        "operationId": "update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "pullRequest": {
+                    "properties": {
+                      "createOnSuccess": {
+                        "type": "boolean"
+                      },
+                      "mergeOnSuccess": {
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/builds/rebuild/{buildId}": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/buildId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "builds"
+        ],
+        "operationId": "rebuild"
+      }
+    },
+    "/builds/{serviceId}/": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/serviceId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "builds"
+        ],
+        "operationId": "buildByService",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "branch": {
+                    "type": "string"
+                  },
+                  "buildFlags": {
+                    "properties": {
+                      "nocache": {
+                        "default": false,
+                        "description": "use docker cache",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "sha": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compositions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "getAll3"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "create3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "isAdvanced": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "vars": {
+                    "default": [],
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "yamlJson": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/compositions/{identifier}/run": {
+      "post": {
+        "parameters": [
+          {
+            "description": "id or name of a composition",
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "launch1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "vars": {
+                    "default": [],
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compositions/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "delete1"
+      },
+      "get": {
+        "parameters": [
+          {
+            "description": "id or name of a composition",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "getByIdentifier"
+      },
+      "put": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "update1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "isAdvanced": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "vars": {
+                    "default": [],
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "yamlJson": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Update the name/variables/body of the composition with the id inserted",
+          "required": true
+        }
+      }
+    },
+    "/compositions/{id}/duplicate": {
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "duplicate"
+      }
+    },
+    "/environments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "index"
+      }
+    },
+    "/environments/all/terminate": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "terminateAll"
+      }
+    },
+    "/environments/{id}/pause": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "pause"
+      }
+    },
+    "/environments/{id}/rename/{newName}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "The ID of the environment to rename",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The new name to assign to the environment",
+            "in": "path",
+            "name": "newName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "rename"
+      }
+    },
+    "/environments/{id}/start": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "start"
+      }
+    },
+    "/environments/{id}/status": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "status"
+      }
+    },
+    "/environments/{id}/stop": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "stop"
+      }
+    },
+    "/environments/{id}/terminate": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "terminate"
+      }
+    },
+    "/environments/{id}/unpause": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "environments"
+        ],
+        "operationId": "unpause"
+      }
+    },
+    "/features/{accountId}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "The ID of the account to query for feature availability",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "features"
+        ],
+        "operationId": "account"
+      }
+    },
+    "/helm/boards": {
+      "delete": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "n": {
+                      "example": 2,
+                      "type": "integer"
+                    },
+                    "ok": {
+                      "example": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Result of deleting"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "delete all boards of account"
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "__v": {
+                        "type": "number"
+                      },
+                      "_id": {
+                        "type": "string"
+                      },
+                      "accountId": {
+                        "type": "string"
+                      },
+                      "filter": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Array of Board objects"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get boards of account"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "create board",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/create_boardOptions"
+        }
+      }
+    },
+    "/helm/boards/name/{boardName}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/boardName"
+          },
+          {
+            "description": "include sections in response",
+            "in": "query",
+            "name": "columns",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get board by name"
+      }
+    },
+    "/helm/boards/sections": {
+      "post": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "boardId": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "example": "Helm",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Section object"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "create section",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/create_sectionOptions"
+        }
+      }
+    },
+    "/helm/boards/sections/reorder": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "reorder sections",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "[sectionId]": {
+                    "example": "<section index>",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/helm/boards/sections/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "boardId": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "example": "Helm",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "delete section by id"
+      },
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get section by id"
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "patch section by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "section": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "update section by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "section": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/helm/boards/{boardIdpath}/sections/": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/boardIdpath"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "n": {
+                      "example": 2,
+                      "type": "integer"
+                    },
+                    "ok": {
+                      "example": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Result of deleting"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "delete all sections of board"
+      },
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/boardIdpath"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "boardId": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "example": "Helm",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Section object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get sections by board id"
+      }
+    },
+    "/helm/boards/{boardIdpath}/sections/name/{sectionName}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/boardIdpath"
+          },
+          {
+            "$ref": "#/components/parameters/sectionName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get section by name"
+      }
+    },
+    "/helm/boards/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "delete board by id"
+      },
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "get board by id"
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "patch board by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm boards"
+        ],
+        "operationId": "update board by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/images": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "getAll"
+      }
+    },
+    "/images/external": {
+      "parameters": [],
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "operationId": "add image from external source"
+      }
+    },
+    "/images/{imageId}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "id of the Image",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "get2"
+      }
+    },
+    "/images/{imageName}/tags": {
+      "get": {
+        "parameters": [
+          {
+            "description": "name of the image",
+            "in": "path",
+            "name": "imageName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "getTags"
+      }
+    },
+    "/images/{internalImageId}/metadata": {
+      "get": {
+        "parameters": [
+          {
+            "description": "id of the Image (from docker inspect)",
+            "in": "path",
+            "name": "internalImageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "getImageMetadata"
+      },
+      "post": {
+        "parameters": [
+          {
+            "description": "id of the Image (from docker inspect)",
+            "in": "path",
+            "name": "internalImageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "upsertImageMetadata",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "CF_QUALITY": {
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "comment": {
+                    "default": "image for qa",
+                    "type": "string"
+                  },
+                  "coverage": {
+                    "default": "60%",
+                    "type": "string"
+                  },
+                  "failed_tests": {
+                    "default": 7,
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/images/{internalImageId}/metadata/{keyName}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of the Image from docker inspect",
+            "in": "path",
+            "name": "internalImageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "name of the metadata key",
+            "in": "path",
+            "name": "keyName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "getImageMetadata1"
+      }
+    },
+    "/payments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "payments"
+        ],
+        "operationId": "getAll2"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "payments"
+        ],
+        "operationId": "create2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "couponId": {
+                    "type": "string"
+                  },
+                  "plan": {
+                    "properties": {
+                      "builds": {
+                        "default": 2,
+                        "type": "integer"
+                      },
+                      "environments": {
+                        "default": 2,
+                        "type": "integer"
+                      },
+                      "id": {
+                        "default": "BASIC",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "token": {
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/payments/plans": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "payments"
+        ],
+        "operationId": "getPlans"
+      }
+    },
+    "/pipelines": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "pipelines"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "getAll9"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "create1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pipelines/{name}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "Name of pipeline",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "delete"
+      },
+      "get": {
+        "parameters": [
+          {
+            "description": "Name of pipeline",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "getByName"
+      },
+      "put": {
+        "parameters": [
+          {
+            "description": "Name of pipeline",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "replaceByName"
+      }
+    },
+    "/progress/download/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "progress structure"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "progress"
+        ],
+        "operationId": "download"
+      }
+    },
+    "/progress/{id}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "progress structure"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "progress"
+        ],
+        "operationId": "getFromIndex"
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "progress structure"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "progress"
+        ],
+        "operationId": "terminate"
+      }
+    },
+    "/providers/github/hook": {
+      "post": {
+        "parameters": [
+          {
+            "description": "event type of this hook",
+            "in": "header",
+            "name": "x-github-event",
+            "schema": {
+              "enum": [
+                "push",
+                "pull_request"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "will this hook send notification to related users",
+            "in": "header",
+            "name": "send-mail-and-update-github",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "the id from github ",
+            "in": "header",
+            "name": "x-github-delivery",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "the signature from github",
+            "in": "header",
+            "name": "x-github-signature",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "providers"
+        ],
+        "operationId": "githubHook",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "commits": {
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "head_commit": {
+                    "properties": {
+                      "message": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "repository": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "owner": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "sender": {
+                    "properties": {
+                      "avatar_url": {
+                        "description": "user picture url",
+                        "type": "string"
+                      },
+                      "login": {
+                        "description": "github username of the user who initiated the hook",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/registry/auth/token": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "Codefresh Registry"
+        ],
+        "operationId": "generateCfcrToken",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Description of the token",
+          "required": true
+        }
+      }
+    },
+    "/repos/settings/{repoOwner}/{repoName}": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/repoOwner"
+          },
+          {
+            "$ref": "#/components/parameters/repoName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "repos"
+        ],
+        "operationId": "getSettings"
+      }
+    },
+    "/runtime/testit": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "runtime"
+        ],
+        "operationId": "launch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "branch": {
+                    "type": "string"
+                  },
+                  "repoData": {
+                    "properties": {
+                      "url": {
+                        "properties": {
+                          "https": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "repoName": {
+                    "type": "string"
+                  },
+                  "repoOwner": {
+                    "type": "string"
+                  },
+                  "serviceId": {
+                    "type": "string"
+                  },
+                  "sha": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services": {
+      "post": {
+        "parameters": [
+          {
+            "description": "The git context name",
+            "in": "query",
+            "name": "context",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "repos"
+        ],
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "serviceDetails": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "scm": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "owner": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/team": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "team"
+        ],
+        "operationId": "get teams for account"
+      }
+    },
+    "/team/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "team"
+        ],
+        "operationId": "create token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "tags": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "users": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Team data",
+          "required": true
+        }
+      }
+    },
+    "/team/{teamId}/{userId}/assignUserToTeam": {
+      "put": {
+        "parameters": [
+          {
+            "description": "The id of the team",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The user id for assign",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "team"
+        ],
+        "operationId": "assign user to team"
+      }
+    },
+    "/team/{teamId}/{userId}/deleteUserFromTeam": {
+      "put": {
+        "parameters": [
+          {
+            "description": "The id of the team",
+            "in": "path",
+            "name": "teamId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The user id for assign",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "team"
+        ],
+        "operationId": "delete user from team"
+      }
+    },
+    "/user": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "user structure"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "operationId": "get"
+      }
+    },
+    "/user/changeaccount/{accountId}": {
+      "post": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user structure"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "operationId": "changeAccount",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workflow": {
+      "get": {
+        "operationId": "getAll7",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trigger",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pipeline",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "workflows"
+        ]
+      }
+    },
+    "/workflow/{repoOwner}/{repoName}/file": {
+      "post": {
+        "parameters": [
+          {
+            "description": "The name of the repo owner",
+            "in": "path",
+            "name": "repoOwner",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The name of the repo",
+            "in": "path",
+            "name": "repoName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "workflows"
+        ],
+        "operationId": "service",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "branch": {
+                    "type": "string"
+                  },
+                  "revision": {
+                    "type": "string"
+                  },
+                  "variables": {
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "accountName": {
+        "in": "path",
+        "name": "accountName",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "boardId": {
+        "in": "query",
+        "name": "boardId",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "boardIdpath": {
+        "description": "id of a board",
+        "in": "path",
+        "name": "boardIdpath",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "boardName": {
+        "description": "name of a board",
+        "in": "path",
+        "name": "boardName",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "buildId": {
+        "description": "id of a build object",
+        "in": "path",
+        "name": "buildId",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "id": {
+        "description": "id of an object",
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "repoName": {
+        "description": "repository name",
+        "in": "path",
+        "name": "repoName",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "repoOwner": {
+        "description": "name of owner of repository",
+        "in": "path",
+        "name": "repoOwner",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "sectionName": {
+        "description": "name of a section",
+        "in": "path",
+        "name": "sectionName",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "serviceId": {
+        "description": "id of a service object",
+        "in": "path",
+        "name": "serviceId",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "requestBodies": {
+      "create_boardOptions": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "filter": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "required": true
+      },
+      "create_sectionOptions": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "boardId": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "index": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "required": true
+      },
+      "updateAccountAccountdetails": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "settings": {
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          }
+        }
+      },
+      "abac": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "teams": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "resource": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "internalApiKey": {
+        "in": "header",
+        "name": "Authorization",
+        "type": "apiKey"
+      }
+    }
+  },
+  "security": [
+    {
+      "internalApiKey": []
+    }
+  ]
+}
