@@ -1104,7 +1104,7 @@ Arguments    Option Alias Default Description     id   Docker image id   names  
 Supported resources: &amp;lsquo;Context&amp;rsquo;
 &amp;lsquo;Pipeline&amp;rsquo;.
 Command codefresh replace
-Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --skip-trigger-validation   Set to true to skip validation (for pipeline replace)    </description>
     </item>
     
     <item>
@@ -1116,7 +1116,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <description> Description Replace a composition resource.
 Command codefresh replace composition
 Aliases codefresh replace com composition
-Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+Options    Option Alias Default Description     --skip-trigger-validation   Set to true to skip validation (for pipeline replace)   --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
     
     <item>
