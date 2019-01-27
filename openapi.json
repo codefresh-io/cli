@@ -1378,7 +1378,7 @@
           }
         ],
         "tags": [
-          "token"
+          "tokens"
         ],
         "operationId": "generateToken",
         "parameters": [
@@ -1422,7 +1422,7 @@
           }
         ],
         "tags": [
-          "token"
+          "tokens"
         ],
         "operationId": "delete",
         "parameters": [
@@ -1451,7 +1451,7 @@
           }
         ],
         "tags": [
-          "token"
+          "tokens"
         ],
         "operationId": "getTokens",
         "parameters": [],
@@ -1538,9 +1538,9 @@
           }
         ],
         "tags": [
-          "workflow"
+          "workflows"
         ],
-        "operationId": "restartWorkflowById",
+        "operationId": "restart",
         "parameters": [
           {
             "in": "path",
@@ -1551,7 +1551,7 @@
             "required": true
           }
         ],
-        "summary": "restartWorkflowById"
+        "summary": "restart"
       }
     },
     "/builds/{buildId}": {
@@ -1688,7 +1688,7 @@
           }
         ],
         "tags": [
-          "cluster"
+          "clusters"
         ],
         "operationId": "getAll",
         "parameters": [],
@@ -1773,7 +1773,7 @@
           }
         ],
         "tags": [
-          "composition"
+          "compositions"
         ],
         "operationId": "create",
         "parameters": [],
@@ -1952,7 +1952,7 @@
           }
         ],
         "tags": [
-          "composition"
+          "compositions"
         ],
         "operationId": "patch",
         "parameters": [
@@ -2014,7 +2014,7 @@
           }
         ],
         "tags": [
-          "context"
+          "contexts"
         ],
         "operationId": "getAll",
         "parameters": [
@@ -2086,7 +2086,7 @@
           }
         ],
         "tags": [
-          "context"
+          "contexts"
         ],
         "operationId": "delete",
         "parameters": [
@@ -2113,7 +2113,7 @@
           }
         ],
         "tags": [
-          "context"
+          "contexts"
         ],
         "operationId": "replace",
         "parameters": [
@@ -2149,7 +2149,7 @@
           }
         ],
         "tags": [
-          "context"
+          "contexts"
         ],
         "operationId": "patch",
         "parameters": [
@@ -2185,7 +2185,7 @@
           }
         ],
         "tags": [
-          "context"
+          "contexts"
         ],
         "operationId": "get",
         "parameters": [
@@ -2259,7 +2259,7 @@
           }
         ],
         "tags": [
-          "environment"
+          "environments"
         ],
         "operationId": "get",
         "parameters": [
@@ -2539,8 +2539,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete all boards of account",
-        "summary": "delete all boards of account"
+        "operationId": "deleteAllBoardsOfAccount",
+        "summary": "deleteAllBoardsOfAccount"
       },
       "get": {
         "responses": {
@@ -2605,8 +2605,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get boards of account",
-        "summary": "get boards of account"
+        "operationId": "getBoardsOfAccount",
+        "summary": "getBoardsOfAccount"
       },
       "post": {
         "responses": {
@@ -2668,11 +2668,11 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "create board",
+        "operationId": "createBoard",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
         },
-        "summary": "create board"
+        "summary": "createBoard"
       }
     },
     "/helm/boards/name/{boardName}": {
@@ -2753,8 +2753,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get board by name",
-        "summary": "get board by name"
+        "operationId": "getBoardByName",
+        "summary": "getBoardByName"
       }
     },
     "/helm/boards/sections": {
@@ -2828,11 +2828,11 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "create section",
+        "operationId": "createSection",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
         },
-        "summary": "create section"
+        "summary": "createSection"
       }
     },
     "/helm/boards/sections/reorder": {
@@ -2869,7 +2869,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "reorder sections",
+        "operationId": "reorderSections",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2886,7 +2886,7 @@
           },
           "required": true
         },
-        "summary": "reorder sections"
+        "summary": "reorderSections"
       }
     },
     "/helm/boards/sections/{id}": {
@@ -2968,8 +2968,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete section by id",
-        "summary": "delete section by id"
+        "operationId": "deleteSectionById",
+        "summary": "deleteSectionById"
       },
       "get": {
         "parameters": [
@@ -3039,8 +3039,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get section by id",
-        "summary": "get section by id"
+        "operationId": "getSectionById",
+        "summary": "getSectionById"
       },
       "patch": {
         "parameters": [
@@ -3107,7 +3107,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "patch section by id",
+        "operationId": "patchSectionById",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3135,7 +3135,7 @@
           },
           "required": true
         },
-        "summary": "patch section by id"
+        "summary": "patchSectionById"
       },
       "put": {
         "parameters": [
@@ -3202,7 +3202,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "update section by id",
+        "operationId": "updateSectionById",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3230,7 +3230,7 @@
           },
           "required": true
         },
-        "summary": "update section by id"
+        "summary": "updateSectionById"
       }
     },
     "/helm/boards/{boardIdpath}/sections/": {
@@ -3289,8 +3289,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete all sections of board",
-        "summary": "delete all sections of board"
+        "operationId": "deleteAllSectionsOfBoard",
+        "summary": "deleteAllSectionsOfBoard"
       },
       "get": {
         "parameters": [
@@ -3370,8 +3370,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get sections by board id",
-        "summary": "get sections by board id"
+        "operationId": "getSectionsByBoardId",
+        "summary": "getSectionsByBoardId"
       }
     },
     "/helm/boards/{boardIdpath}/sections/name/{sectionName}": {
@@ -3446,8 +3446,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get section by name",
-        "summary": "get section by name"
+        "operationId": "getSectionByName",
+        "summary": "getSectionByName"
       }
     },
     "/helm/boards/{boardId}/sections": {
@@ -3548,8 +3548,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete board by id",
-        "summary": "delete board by id"
+        "operationId": "deleteBoardById",
+        "summary": "deleteBoardById"
       },
       "get": {
         "parameters": [
@@ -3619,8 +3619,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get board by id",
-        "summary": "get board by id"
+        "operationId": "getBoardById",
+        "summary": "getBoardById"
       },
       "patch": {
         "parameters": [
@@ -3690,7 +3690,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "patch board by id",
+        "operationId": "patchBoardById",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3709,7 +3709,7 @@
           },
           "required": true
         },
-        "summary": "patch board by id"
+        "summary": "patchBoardById"
       },
       "put": {
         "parameters": [
@@ -3779,7 +3779,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "update board by id",
+        "operationId": "updateBoardById",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3798,7 +3798,7 @@
           },
           "required": true
         },
-        "summary": "update board by id"
+        "summary": "updateBoardById"
       }
     },
     "/helm/repos": {
@@ -3961,7 +3961,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "createEvent",
         "parameters": [
@@ -3996,7 +3996,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getEvents",
         "parameters": [
@@ -4045,7 +4045,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getEvent",
         "parameters": [
@@ -4074,7 +4074,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "deleteEvent",
         "parameters": [
@@ -4111,7 +4111,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getTriggers",
         "parameters": [],
@@ -4131,7 +4131,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getEventTriggers",
         "parameters": [
@@ -4160,7 +4160,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getPipelineTriggers",
         "parameters": [
@@ -4189,7 +4189,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "create",
         "parameters": [
@@ -4233,7 +4233,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "deleteTrigger",
         "parameters": [
@@ -4270,7 +4270,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getAllTypes",
         "parameters": [],
@@ -4290,7 +4290,7 @@
           }
         ],
         "tags": [
-          "trigger"
+          "triggers"
         ],
         "operationId": "getType",
         "parameters": [
@@ -4347,7 +4347,7 @@
           }
         ],
         "tags": [
-          "image"
+          "images"
         ],
         "operationId": "getAll",
         "parameters": [],
@@ -4367,8 +4367,11 @@
             "internalApiKey": []
           }
         ],
-        "operationId": "add image from external source",
-        "summary": "add image from external source"
+        "tags": [
+          "images"
+        ],
+        "operationId": "addImageFromExternalSource",
+        "summary": "addImageFromExternalSource"
       }
     },
     "/images/{imageId}": {
@@ -4842,7 +4845,7 @@
           }
         ],
         "tags": [
-          "pipeline"
+          "pipelines"
         ],
         "operationId": "run",
         "parameters": [
@@ -5226,7 +5229,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "getAllAvailableGitRepos",
         "parameters": [
@@ -5254,7 +5257,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "getAll",
         "parameters": [
@@ -5316,7 +5319,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "getAvailableGitRepo",
         "parameters": [
@@ -5680,7 +5683,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "create",
         "parameters": [
@@ -5717,7 +5720,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "get",
         "parameters": [
@@ -5751,7 +5754,7 @@
           }
         ],
         "tags": [
-          "repository"
+          "repos"
         ],
         "operationId": "delete",
         "parameters": [
@@ -5787,7 +5790,7 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
         "operationId": "createToken",
         "requestBody": {
@@ -5832,7 +5835,7 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
         "operationId": "getAll",
         "parameters": [],
@@ -5852,7 +5855,7 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
         "operationId": "synchronizeClientWithGroup",
         "parameters": [
@@ -5916,10 +5919,10 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
-        "operationId": "assign user to team",
-        "summary": "assign user to team"
+        "operationId": "assignUserToTeam",
+        "summary": "assignUserToTeam"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -5955,10 +5958,10 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
-        "operationId": "delete user from team",
-        "summary": "delete user from team"
+        "operationId": "deleteUserFromTeam",
+        "summary": "deleteUserFromTeam"
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -5974,7 +5977,7 @@
           }
         ],
         "tags": [
-          "team"
+          "teams"
         ],
         "operationId": "getTeamsByUserId",
         "parameters": [
@@ -6003,7 +6006,7 @@
           }
         ],
         "tags": [
-          "user"
+          "users"
         ],
         "operationId": "get",
         "summary": "get"
@@ -6033,7 +6036,7 @@
           }
         ],
         "tags": [
-          "user"
+          "users"
         ],
         "operationId": "changeAccount",
         "requestBody": {
