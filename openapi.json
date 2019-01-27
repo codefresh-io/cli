@@ -31,7 +31,8 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getAllRules"
+        "operationId": "getAllRules",
+        "summary": "getAllRules"
       },
       "post": {
         "responses": {
@@ -74,7 +75,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "createRule"
       }
     },
     "/abac/batch": {
@@ -116,7 +118,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "createOrDeleteRules"
       }
     },
     "/abac/resource/{resource}": {
@@ -145,7 +148,8 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByResource"
+        "operationId": "getRulesByResource",
+        "summary": "getRulesByResource"
       }
     },
     "/abac/tags/rule/{rule}": {
@@ -192,7 +196,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "updateRuleTags"
       }
     },
     "/abac/tags/rules": {
@@ -234,7 +239,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "createRulesTags"
       }
     },
     "/abac/team/{team}": {
@@ -263,7 +269,8 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByTeamId"
+        "operationId": "getRulesByTeamId",
+        "summary": "getRulesByTeamId"
       }
     },
     "/abac/teamRules": {
@@ -291,7 +298,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "createRulesInBatch"
       }
     },
     "/abac/{rule}": {
@@ -320,7 +328,8 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "deleteRule"
+        "operationId": "deleteRule",
+        "summary": "deleteRule"
       },
       "get": {
         "parameters": [
@@ -347,7 +356,8 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRule"
+        "operationId": "getRule",
+        "summary": "getRule"
       }
     },
     "/accounts/{accountId}/{userId}": {
@@ -386,7 +396,8 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteUserFromAccount"
+        "operationId": "deleteUserFromAccount",
+        "summary": "deleteUserFromAccount"
       }
     },
     "/accounts/{accountId}/{userId}/adduser": {
@@ -424,7 +435,8 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "addExistingUserToAccount"
+        "operationId": "addExistingUserToAccount",
+        "summary": "addExistingUserToAccount"
       }
     },
     "/accounts/{accountId}/{userId}/admin": {
@@ -462,7 +474,8 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "deleteAdmin"
+        "operationId": "deleteAdmin",
+        "summary": "deleteAdmin"
       },
       "post": {
         "parameters": [
@@ -498,7 +511,8 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "aetAsAdmin"
+        "operationId": "aetAsAdmin",
+        "summary": "aetAsAdmin"
       }
     },
     "/accounts/{id}/adduser": {
@@ -536,7 +550,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "addUserToAccount"
       }
     },
     "/accounts/{id}/update": {
@@ -611,7 +626,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "updateAccountPublicSettings"
       }
     },
     "/accounts/{id}/updateuser": {
@@ -649,7 +665,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "updateUserDetails"
       }
     },
     "/accounts/{id}/users": {
@@ -673,7 +690,8 @@
           "accounts"
         ],
         "description": "Get all users of an account",
-        "operationId": "getUsersForAccount"
+        "operationId": "getUsersForAccount",
+        "summary": "getUsersForAccount"
       }
     },
     "/admin/accounts": {
@@ -692,7 +710,8 @@
           "accounts"
         ],
         "description": "get all the accounts in the system",
-        "operationId": "getAllAccounts"
+        "operationId": "getAllAccounts",
+        "summary": "getAllAccounts"
       },
       "post": {
         "responses": {
@@ -729,7 +748,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "addAccount"
       }
     },
     "/admin/accounts/addpendinguser": {
@@ -782,7 +802,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "addPendingUserWithoutAccount"
       }
     },
     "/admin/accounts/{id}": {
@@ -806,7 +827,8 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteAccount"
+        "operationId": "deleteAccount",
+        "summary": "deleteAccount"
       },
       "get": {
         "parameters": [
@@ -828,7 +850,8 @@
           "accounts"
         ],
         "description": "Get an account by id",
-        "operationId": "getById1"
+        "operationId": "getById1",
+        "summary": "getById"
       }
     },
     "/admin/accounts/{id}/update": {
@@ -866,7 +889,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "updateAccount"
       }
     },
     "/admin/runtime-environments": {
@@ -907,7 +931,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/admin/runtime-environments/account/default/{account}/{name}": {
@@ -932,16 +957,19 @@
             "name": "account",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "setDefaultForAccount"
       }
     },
     "/admin/runtime-environments/account/{account}": {
@@ -966,7 +994,8 @@
             "name": "account",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -989,7 +1018,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getByAccount"
       }
     },
     "/admin/runtime-environments/default/{plan}/{name}": {
@@ -1014,16 +1044,19 @@
             "name": "plan",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "setDefault"
       }
     },
     "/admin/runtime-environments/{name}": {
@@ -1048,7 +1081,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1073,7 +1107,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "updateSysRe"
       },
       "delete": {
         "responses": {
@@ -1096,7 +1131,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1105,7 +1141,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "deleteSysRe"
       },
       "get": {
         "responses": {
@@ -1128,7 +1165,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1158,7 +1196,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getSysRe"
       }
     },
     "/admin/runtime-environments/{plan}/{name}": {
@@ -1183,14 +1222,16 @@
             "name": "plan",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1215,7 +1256,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "update"
       },
       "delete": {
         "responses": {
@@ -1238,14 +1280,16 @@
             "name": "plan",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1254,7 +1298,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "delete"
       },
       "get": {
         "responses": {
@@ -1277,14 +1322,16 @@
             "name": "plan",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -1314,7 +1361,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "get"
       }
     },
     "/auth/key": {
@@ -1357,7 +1405,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "generateToken"
       }
     },
     "/auth/key/{id}": {
@@ -1382,9 +1431,11 @@
             "name": "id",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "delete"
       }
     },
     "/auth/keys": {
@@ -1403,7 +1454,8 @@
           "token"
         ],
         "operationId": "getTokens",
-        "parameters": []
+        "parameters": [],
+        "summary": "getTokens"
       }
     },
     "/builds": {
@@ -1447,7 +1499,8 @@
         "tags": [
           "builds"
         ],
-        "operationId": "getAll1"
+        "operationId": "getAll1",
+        "summary": "getAll"
       }
     },
     "/builds/rebuild/{buildId}": {
@@ -1470,7 +1523,8 @@
         "tags": [
           "builds"
         ],
-        "operationId": "rebuild"
+        "operationId": "rebuild",
+        "summary": "rebuild"
       },
       "get": {
         "responses": {
@@ -1490,12 +1544,14 @@
         "parameters": [
           {
             "in": "path",
-            "name": "__undefined__",
+            "name": "buildId",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "restartWorkflowById"
       }
     },
     "/builds/{buildId}": {
@@ -1518,7 +1574,8 @@
         "tags": [
           "builds"
         ],
-        "operationId": "get5"
+        "operationId": "get5",
+        "summary": "get"
       }
     },
     "/builds/{buildId}/update": {
@@ -1563,7 +1620,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "update"
       }
     },
     "/builds/{serviceId}/": {
@@ -1613,7 +1671,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "buildByService"
       }
     },
     "/clusters": {
@@ -1632,7 +1691,8 @@
           "cluster"
         ],
         "operationId": "getAll",
-        "parameters": []
+        "parameters": [],
+        "summary": "getAll"
       }
     },
     "/compositions": {
@@ -1650,7 +1710,8 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getAll3"
+        "operationId": "getAll3",
+        "summary": "getAll"
       },
       "post": {
         "responses": {
@@ -1695,7 +1756,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "create"
       }
     },
     "/compositions/": {
@@ -1723,7 +1785,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/compositions/{identifier}/run": {
@@ -1770,7 +1833,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "launch"
       }
     },
     "/compositions/{id}": {
@@ -1793,7 +1857,8 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "delete1"
+        "operationId": "delete1",
+        "summary": "delete"
       },
       "get": {
         "parameters": [
@@ -1820,7 +1885,8 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getByIdentifier"
+        "operationId": "getByIdentifier",
+        "summary": "getByIdentifier"
       },
       "put": {
         "parameters": [
@@ -1871,7 +1937,8 @@
           },
           "description": "Update the name/variables/body of the composition with the id inserted",
           "required": true
-        }
+        },
+        "summary": "update"
       },
       "patch": {
         "responses": {
@@ -1894,7 +1961,8 @@
             "name": "id",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -1905,7 +1973,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "patch"
       }
     },
     "/compositions/{id}/duplicate": {
@@ -1928,7 +1997,8 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "duplicate"
+        "operationId": "duplicate",
+        "summary": "duplicate"
       }
     },
     "/contexts": {
@@ -1962,7 +2032,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/contexts/": {
@@ -1998,7 +2069,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/contexts/{name}": {
@@ -2023,9 +2095,11 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "delete"
       },
       "put": {
         "responses": {
@@ -2048,7 +2122,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -2059,7 +2134,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "replace"
       },
       "patch": {
         "responses": {
@@ -2082,7 +2158,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -2093,7 +2170,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "patch"
       },
       "get": {
         "responses": {
@@ -2116,7 +2194,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -2125,7 +2204,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "get"
       }
     },
     "/environments": {
@@ -2143,7 +2223,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "index"
+        "operationId": "index",
+        "summary": "index"
       }
     },
     "/environments/all/terminate": {
@@ -2161,7 +2242,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "terminateAll"
+        "operationId": "terminateAll",
+        "summary": "terminateAll"
       }
     },
     "/environments/{id}": {
@@ -2186,9 +2268,11 @@
             "name": "id",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "get"
       }
     },
     "/environments/{id}/pause": {
@@ -2211,7 +2295,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "pause"
+        "operationId": "pause",
+        "summary": "pause"
       }
     },
     "/environments/{id}/rename/{newName}": {
@@ -2249,7 +2334,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "rename"
+        "operationId": "rename",
+        "summary": "rename"
       }
     },
     "/environments/{id}/start": {
@@ -2272,7 +2358,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "start"
+        "operationId": "start",
+        "summary": "start"
       }
     },
     "/environments/{id}/status": {
@@ -2295,7 +2382,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "status"
+        "operationId": "status",
+        "summary": "status"
       }
     },
     "/environments/{id}/stop": {
@@ -2318,7 +2406,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "stop"
+        "operationId": "stop",
+        "summary": "stop"
       }
     },
     "/environments/{id}/terminate": {
@@ -2341,7 +2430,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "terminate"
+        "operationId": "terminate",
+        "summary": "terminate"
       }
     },
     "/environments/{id}/unpause": {
@@ -2364,7 +2454,8 @@
         "tags": [
           "environments"
         ],
-        "operationId": "unpause"
+        "operationId": "unpause",
+        "summary": "unpause"
       }
     },
     "/features/{accountId}": {
@@ -2393,7 +2484,8 @@
         "tags": [
           "features"
         ],
-        "operationId": "account"
+        "operationId": "account",
+        "summary": "account"
       }
     },
     "/helm/boards": {
@@ -2447,7 +2539,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete all boards of account"
+        "operationId": "delete all boards of account",
+        "summary": "delete all boards of account"
       },
       "get": {
         "responses": {
@@ -2512,7 +2605,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get boards of account"
+        "operationId": "get boards of account",
+        "summary": "get boards of account"
       },
       "post": {
         "responses": {
@@ -2577,7 +2671,8 @@
         "operationId": "create board",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
-        }
+        },
+        "summary": "create board"
       }
     },
     "/helm/boards/name/{boardName}": {
@@ -2658,7 +2753,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get board by name"
+        "operationId": "get board by name",
+        "summary": "get board by name"
       }
     },
     "/helm/boards/sections": {
@@ -2735,7 +2831,8 @@
         "operationId": "create section",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
-        }
+        },
+        "summary": "create section"
       }
     },
     "/helm/boards/sections/reorder": {
@@ -2788,7 +2885,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "reorder sections"
       }
     },
     "/helm/boards/sections/{id}": {
@@ -2870,7 +2968,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete section by id"
+        "operationId": "delete section by id",
+        "summary": "delete section by id"
       },
       "get": {
         "parameters": [
@@ -2940,7 +3039,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get section by id"
+        "operationId": "get section by id",
+        "summary": "get section by id"
       },
       "patch": {
         "parameters": [
@@ -3034,7 +3134,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "patch section by id"
       },
       "put": {
         "parameters": [
@@ -3128,7 +3229,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "update section by id"
       }
     },
     "/helm/boards/{boardIdpath}/sections/": {
@@ -3187,7 +3289,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete all sections of board"
+        "operationId": "delete all sections of board",
+        "summary": "delete all sections of board"
       },
       "get": {
         "parameters": [
@@ -3267,7 +3370,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get sections by board id"
+        "operationId": "get sections by board id",
+        "summary": "get sections by board id"
       }
     },
     "/helm/boards/{boardIdpath}/sections/name/{sectionName}": {
@@ -3342,7 +3446,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get section by name"
+        "operationId": "get section by name",
+        "summary": "get section by name"
       }
     },
     "/helm/boards/{boardId}/sections": {
@@ -3367,9 +3472,11 @@
             "name": "boardId",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/helm/boards/{id}": {
@@ -3441,7 +3548,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "delete board by id"
+        "operationId": "delete board by id",
+        "summary": "delete board by id"
       },
       "get": {
         "parameters": [
@@ -3511,7 +3619,8 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "get board by id"
+        "operationId": "get board by id",
+        "summary": "get board by id"
       },
       "patch": {
         "parameters": [
@@ -3599,7 +3708,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "patch board by id"
       },
       "put": {
         "parameters": [
@@ -3687,7 +3797,8 @@
             }
           },
           "required": true
-        }
+        },
+        "summary": "update board by id"
       }
     },
     "/helm/repos": {
@@ -3715,7 +3826,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "createRepo"
       },
       "get": {
         "responses": {
@@ -3740,7 +3852,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAllRepos"
       }
     },
     "/helm/repos/{name}": {
@@ -3765,9 +3878,11 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "deleteRepo"
       },
       "put": {
         "responses": {
@@ -3790,7 +3905,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -3801,7 +3917,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "updateRepo"
       },
       "get": {
         "responses": {
@@ -3824,9 +3941,11 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "get"
       }
     },
     "/hermes/events": {
@@ -3862,7 +3981,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "createEvent"
       },
       "get": {
         "responses": {
@@ -3908,7 +4028,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getEvents"
       }
     },
     "/hermes/events/{event}": {
@@ -3933,9 +4054,11 @@
             "name": "event",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getEvent"
       }
     },
     "/hermes/events/{event}/{context}": {
@@ -3960,16 +4083,19 @@
             "name": "event",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "deleteEvent"
       }
     },
     "/hermes/triggers/": {
@@ -3988,7 +4114,8 @@
           "trigger"
         ],
         "operationId": "getTriggers",
-        "parameters": []
+        "parameters": [],
+        "summary": "getTriggers"
       }
     },
     "/hermes/triggers/event/{event}": {
@@ -4010,12 +4137,14 @@
         "parameters": [
           {
             "in": "path",
-            "name": "__undefined__",
+            "name": "event",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getEventTriggers"
       }
     },
     "/hermes/triggers/pipeline/{pipeline}": {
@@ -4037,12 +4166,14 @@
         "parameters": [
           {
             "in": "path",
-            "name": "__undefined__",
+            "name": "pipeline",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getPipelineTriggers"
       }
     },
     "/hermes/triggers/{event}/{pipeline}": {
@@ -4067,14 +4198,16 @@
             "name": "event",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "pipeline",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -4085,7 +4218,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       },
       "delete": {
         "responses": {
@@ -4108,16 +4242,19 @@
             "name": "event",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "pipeline",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "deleteTrigger"
       }
     },
     "/hermes/types": {
@@ -4136,7 +4273,8 @@
           "trigger"
         ],
         "operationId": "getAllTypes",
-        "parameters": []
+        "parameters": [],
+        "summary": "getAllTypes"
       }
     },
     "/hermes/types/{type}/{kind}": {
@@ -4161,16 +4299,19 @@
             "name": "type",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "kind",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getType"
       }
     },
     "/hermes/version": {
@@ -4189,7 +4330,8 @@
           "version"
         ],
         "operationId": "getHermesVersion",
-        "parameters": []
+        "parameters": [],
+        "summary": "getHermesVersion"
       }
     },
     "/images": {
@@ -4208,7 +4350,8 @@
           "image"
         ],
         "operationId": "getAll",
-        "parameters": []
+        "parameters": [],
+        "summary": "getAll"
       }
     },
     "/images/external": {
@@ -4224,7 +4367,8 @@
             "internalApiKey": []
           }
         ],
-        "operationId": "add image from external source"
+        "operationId": "add image from external source",
+        "summary": "add image from external source"
       }
     },
     "/images/{imageId}": {
@@ -4253,7 +4397,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "get2"
+        "operationId": "get2",
+        "summary": "get"
       }
     },
     "/images/{imageName}/tags": {
@@ -4282,7 +4427,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "getTags"
+        "operationId": "getTags",
+        "summary": "getTags"
       }
     },
     "/images/{internalImageId}/metadata": {
@@ -4311,7 +4457,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata"
+        "operationId": "getImageMetadata",
+        "summary": "getImageMetadata"
       },
       "post": {
         "parameters": [
@@ -4365,7 +4512,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "upsertImageMetadata"
       }
     },
     "/images/{internalImageId}/metadata/{keyName}": {
@@ -4403,7 +4551,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata1"
+        "operationId": "getImageMetadata1",
+        "summary": "getImageMetadata"
       }
     },
     "/kubernetes/releases/{releaseName}/delete": {
@@ -4428,7 +4577,8 @@
             "name": "releaseName",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -4446,7 +4596,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "deleteRelease"
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -4471,7 +4622,8 @@
             "name": "releaseName",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -4489,7 +4641,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "testRelease"
       }
     },
     "/nomios/version": {
@@ -4508,7 +4661,8 @@
           "version"
         ],
         "operationId": "getNomiosVersion",
-        "parameters": []
+        "parameters": [],
+        "summary": "getNomiosVersion"
       }
     },
     "/payments": {
@@ -4526,7 +4680,8 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll2"
+        "operationId": "getAll2",
+        "summary": "getAll"
       },
       "post": {
         "responses": {
@@ -4576,7 +4731,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/payments/plans": {
@@ -4594,7 +4750,8 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getPlans"
+        "operationId": "getPlans",
+        "summary": "getPlans"
       }
     },
     "/pipelines": {
@@ -4642,7 +4799,8 @@
             }
           }
         ],
-        "operationId": "getAll9"
+        "operationId": "getAll9",
+        "summary": "getAll"
       },
       "post": {
         "responses": {
@@ -4667,7 +4825,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/pipelines/run/{name}": {
@@ -4692,7 +4851,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -4703,7 +4863,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "run"
       }
     },
     "/pipelines/yaml/validator": {
@@ -4731,7 +4892,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "validateYaml"
       }
     },
     "/pipelines/{name}": {
@@ -4760,7 +4922,8 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "delete"
+        "operationId": "delete",
+        "summary": "delete"
       },
       "get": {
         "parameters": [
@@ -4794,7 +4957,8 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "getByName"
+        "operationId": "getByName",
+        "summary": "getByName"
       },
       "put": {
         "parameters": [
@@ -4821,7 +4985,8 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "replaceByName"
+        "operationId": "replaceByName",
+        "summary": "replaceByName"
       }
     },
     "/progress/download/{id}": {
@@ -4844,7 +5009,8 @@
         "tags": [
           "progress"
         ],
-        "operationId": "download"
+        "operationId": "download",
+        "summary": "download"
       }
     },
     "/progress/{id}": {
@@ -4867,7 +5033,8 @@
         "tags": [
           "progress"
         ],
-        "operationId": "getFromIndex"
+        "operationId": "getFromIndex",
+        "summary": "getFromIndex"
       },
       "delete": {
         "parameters": [
@@ -4888,7 +5055,8 @@
         "tags": [
           "progress"
         ],
-        "operationId": "terminate"
+        "operationId": "terminate",
+        "summary": "terminate"
       }
     },
     "/providers/github/hook": {
@@ -5006,7 +5174,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "githubHook"
       }
     },
     "/registry/auth/token": {
@@ -5040,7 +5209,8 @@
           },
           "description": "Description of the token",
           "required": true
-        }
+        },
+        "summary": "generateCfcrToken"
       }
     },
     "/repos": {
@@ -5067,7 +5237,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAllAvailableGitRepos"
       }
     },
     "/repos/existing": {
@@ -5101,7 +5272,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/repos/settings/{repoOwner}/{repoName}": {
@@ -5127,7 +5299,8 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getSettings"
+        "operationId": "getSettings",
+        "summary": "getSettings"
       }
     },
     "/repos/{owner}/{repo}": {
@@ -5152,14 +5325,16 @@
             "name": "owner",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "repo",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5168,7 +5343,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAvailableGitRepo"
       }
     },
     "/runtime-environments": {
@@ -5202,7 +5378,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/runtime-environments/default/{name}": {
@@ -5227,9 +5404,11 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "setDefault"
       }
     },
     "/runtime-environments/{name}": {
@@ -5254,7 +5433,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5279,7 +5459,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "update"
       },
       "delete": {
         "responses": {
@@ -5302,7 +5483,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5311,7 +5493,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "delete"
       },
       "get": {
         "responses": {
@@ -5334,7 +5517,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5357,7 +5541,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "get"
       }
     },
     "/runtime/testit": {
@@ -5414,7 +5599,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "launch"
       }
     },
     "/services": {
@@ -5477,7 +5663,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/services/": {
@@ -5513,7 +5700,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "create"
       }
     },
     "/services/{name}": {
@@ -5538,7 +5726,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5547,7 +5736,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "get"
       },
       "delete": {
         "responses": {
@@ -5570,7 +5760,8 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5579,7 +5770,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "delete"
       }
     },
     "/team": {
@@ -5625,7 +5817,8 @@
           },
           "description": "Team data",
           "required": true
-        }
+        },
+        "summary": "createToken"
       },
       "get": {
         "responses": {
@@ -5642,7 +5835,8 @@
           "team"
         ],
         "operationId": "getAll",
-        "parameters": []
+        "parameters": [],
+        "summary": "getAll"
       }
     },
     "/team/group/synchronize/name/{name}/type/{type}": {
@@ -5667,14 +5861,16 @@
             "name": "name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "path",
             "name": "type",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "in": "query",
@@ -5683,7 +5879,8 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "summary": "synchronizeClientWithGroup"
       }
     },
     "/team/{teamId}/{userId}/assignUserToTeam": {
@@ -5721,7 +5918,8 @@
         "tags": [
           "team"
         ],
-        "operationId": "assign user to team"
+        "operationId": "assign user to team",
+        "summary": "assign user to team"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -5759,7 +5957,8 @@
         "tags": [
           "team"
         ],
-        "operationId": "delete user from team"
+        "operationId": "delete user from team",
+        "summary": "delete user from team"
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -5784,9 +5983,11 @@
             "name": "userId",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
-        ]
+        ],
+        "summary": "getTeamsByUserId"
       }
     },
     "/user": {
@@ -5804,7 +6005,8 @@
         "tags": [
           "user"
         ],
-        "operationId": "get"
+        "operationId": "get",
+        "summary": "get"
       }
     },
     "/user/changeaccount/{accountId}": {
@@ -5842,7 +6044,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "changeAccount"
       }
     },
     "/version": {
@@ -5861,7 +6064,8 @@
           "version"
         ],
         "operationId": "getServerVersion",
-        "parameters": []
+        "parameters": [],
+        "summary": "getServerVersion"
       }
     },
     "/workflow": {
@@ -5916,7 +6120,8 @@
         ],
         "tags": [
           "workflows"
-        ]
+        ],
+        "summary": "getAll"
       }
     },
     "/workflow/{repoOwner}/{repoName}/file": {
@@ -5974,7 +6179,8 @@
               }
             }
           }
-        }
+        },
+        "summary": "service"
       }
     }
   },
