@@ -31,7 +31,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getAllRules",
+        "operationId": "getAllRules1",
         "summary": "getAllRules"
       },
       "post": {
@@ -48,7 +48,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRule",
+        "operationId": "createRule1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -94,7 +94,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createOrDeleteRules",
+        "operationId": "createOrDeleteRules1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -148,7 +148,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByResource",
+        "operationId": "getRulesByResource1",
         "summary": "getRulesByResource"
       }
     },
@@ -178,7 +178,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "updateRuleTags",
+        "operationId": "updateRuleTags1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -215,7 +215,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRulesTags",
+        "operationId": "createRulesTags1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -269,7 +269,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByTeamId",
+        "operationId": "getRulesByTeamId1",
         "summary": "getRulesByTeamId"
       }
     },
@@ -288,7 +288,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRulesInBatch",
+        "operationId": "createRulesInBatch1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -328,7 +328,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "deleteRule",
+        "operationId": "deleteRule1",
         "summary": "deleteRule"
       },
       "get": {
@@ -356,7 +356,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRule",
+        "operationId": "getRule1",
         "summary": "getRule"
       }
     },
@@ -396,7 +396,7 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteUserFromAccount",
+        "operationId": "deleteUserFromAccount1",
         "summary": "deleteUserFromAccount"
       }
     },
@@ -435,7 +435,7 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "addExistingUserToAccount",
+        "operationId": "addExistingUserToAccount1",
         "summary": "addExistingUserToAccount"
       }
     },
@@ -474,7 +474,7 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "deleteAdmin",
+        "operationId": "deleteAdmin1",
         "summary": "deleteAdmin"
       },
       "post": {
@@ -511,7 +511,7 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "aetAsAdmin",
+        "operationId": "aetAsAdmin1",
         "summary": "aetAsAdmin"
       }
     },
@@ -536,7 +536,7 @@
           "accounts"
         ],
         "description": "Adds a not existing user to an account. the provider field is optional and if not provided it will be taken from the account model",
-        "operationId": "addUserToAccount",
+        "operationId": "addUserToAccount1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -575,7 +575,7 @@
           "accounts"
         ],
         "description": "Not implemented yet: update the user defined account fields. Receives a settings object (will be defined later)",
-        "operationId": "updateAccountPublicSettings",
+        "operationId": "updateAccountPublicSettings1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -651,7 +651,7 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "updateUserDetails",
+        "operationId": "updateUserDetails1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -690,7 +690,7 @@
           "accounts"
         ],
         "description": "Get all users of an account",
-        "operationId": "getUsersForAccount",
+        "operationId": "getUsersForAccount1",
         "summary": "getUsersForAccount"
       }
     },
@@ -710,7 +710,7 @@
           "accounts"
         ],
         "description": "get all the accounts in the system",
-        "operationId": "getAllAccounts",
+        "operationId": "getAllAccounts1",
         "summary": "getAllAccounts"
       },
       "post": {
@@ -728,7 +728,7 @@
           "accounts"
         ],
         "description": "Add new account. Receives an account object ",
-        "operationId": "addAccount",
+        "operationId": "addAccount1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -767,7 +767,7 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "addPendingUserWithoutAccount",
+        "operationId": "addPendingUserWithoutAccount1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -827,7 +827,7 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteAccount",
+        "operationId": "deleteAccount1",
         "summary": "deleteAccount"
       },
       "get": {
@@ -875,7 +875,7 @@
           "accounts"
         ],
         "description": "Not implemented yet: Update the account info that only codefresh admins (codefresh employees, not account admin) can access",
-        "operationId": "updateAccount",
+        "operationId": "updateAccount1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -908,7 +908,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll1",
         "parameters": [
           {
             "in": "query",
@@ -950,7 +950,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "setDefaultForAccount",
+        "operationId": "setDefaultForAccount1",
         "parameters": [
           {
             "in": "path",
@@ -987,7 +987,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "getByAccount",
+        "operationId": "getByAccount1",
         "parameters": [
           {
             "in": "path",
@@ -1037,7 +1037,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "setDefault",
+        "operationId": "setDefault1",
         "parameters": [
           {
             "in": "path",
@@ -1074,7 +1074,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "updateSysRe",
+        "operationId": "updateSysRe1",
         "parameters": [
           {
             "in": "path",
@@ -1124,7 +1124,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "deleteSysRe",
+        "operationId": "deleteSysRe1",
         "parameters": [
           {
             "in": "path",
@@ -1158,7 +1158,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "getSysRe",
+        "operationId": "getSysRe1",
         "parameters": [
           {
             "in": "path",
@@ -1215,7 +1215,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "update",
+        "operationId": "update1",
         "parameters": [
           {
             "in": "path",
@@ -1273,7 +1273,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "delete",
+        "operationId": "delete1",
         "parameters": [
           {
             "in": "path",
@@ -1315,7 +1315,7 @@
         "tags": [
           "adminRuntimeEnvironments"
         ],
-        "operationId": "get",
+        "operationId": "get1",
         "parameters": [
           {
             "in": "path",
@@ -1380,7 +1380,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "generateToken",
+        "operationId": "generateToken1",
         "parameters": [
           {
             "in": "query",
@@ -1424,7 +1424,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "delete",
+        "operationId": "delete2",
         "parameters": [
           {
             "in": "path",
@@ -1453,7 +1453,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "getTokens",
+        "operationId": "getTokens1",
         "parameters": [],
         "summary": "getTokens"
       }
@@ -1499,7 +1499,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "getAll1",
+        "operationId": "getAll2",
         "summary": "getAll"
       }
     },
@@ -1523,7 +1523,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "rebuild",
+        "operationId": "rebuild1",
         "summary": "rebuild"
       },
       "get": {
@@ -1540,7 +1540,7 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "restart",
+        "operationId": "restart1",
         "parameters": [
           {
             "in": "path",
@@ -1574,7 +1574,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "get5",
+        "operationId": "get2",
         "summary": "get"
       }
     },
@@ -1598,7 +1598,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "update",
+        "operationId": "update2",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1644,7 +1644,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "buildByService",
+        "operationId": "buildByService1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1690,7 +1690,7 @@
         "tags": [
           "clusters"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll3",
         "parameters": [],
         "summary": "getAll"
       }
@@ -1710,7 +1710,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getAll3",
+        "operationId": "getAll4",
         "summary": "getAll"
       },
       "post": {
@@ -1727,7 +1727,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "create3",
+        "operationId": "create1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1775,7 +1775,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "create",
+        "operationId": "create2",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -1857,7 +1857,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "delete1",
+        "operationId": "delete3",
         "summary": "delete"
       },
       "get": {
@@ -1885,7 +1885,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getByIdentifier",
+        "operationId": "getByIdentifier1",
         "summary": "getByIdentifier"
       },
       "put": {
@@ -1907,7 +1907,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "update1",
+        "operationId": "update3",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1954,7 +1954,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "patch",
+        "operationId": "patch1",
         "parameters": [
           {
             "in": "path",
@@ -1997,7 +1997,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "duplicate",
+        "operationId": "duplicate1",
         "summary": "duplicate"
       }
     },
@@ -2016,7 +2016,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll5",
         "parameters": [
           {
             "in": "query",
@@ -2051,7 +2051,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "create",
+        "operationId": "create3",
         "parameters": [
           {
             "in": "query",
@@ -2088,7 +2088,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "delete",
+        "operationId": "delete4",
         "parameters": [
           {
             "in": "path",
@@ -2115,7 +2115,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "replace",
+        "operationId": "replace1",
         "parameters": [
           {
             "in": "path",
@@ -2151,7 +2151,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "patch",
+        "operationId": "patch2",
         "parameters": [
           {
             "in": "path",
@@ -2187,7 +2187,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "get",
+        "operationId": "get3",
         "parameters": [
           {
             "in": "path",
@@ -2223,7 +2223,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "index",
+        "operationId": "index1",
         "summary": "index"
       }
     },
@@ -2242,7 +2242,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "terminateAll",
+        "operationId": "terminateAll1",
         "summary": "terminateAll"
       }
     },
@@ -2261,7 +2261,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "get",
+        "operationId": "get4",
         "parameters": [
           {
             "in": "path",
@@ -2295,7 +2295,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "pause",
+        "operationId": "pause1",
         "summary": "pause"
       }
     },
@@ -2334,7 +2334,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "rename",
+        "operationId": "rename1",
         "summary": "rename"
       }
     },
@@ -2358,7 +2358,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "start",
+        "operationId": "start1",
         "summary": "start"
       }
     },
@@ -2382,7 +2382,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "status",
+        "operationId": "status1",
         "summary": "status"
       }
     },
@@ -2406,7 +2406,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "stop",
+        "operationId": "stop1",
         "summary": "stop"
       }
     },
@@ -2430,7 +2430,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "terminate",
+        "operationId": "terminate1",
         "summary": "terminate"
       }
     },
@@ -2454,7 +2454,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "unpause",
+        "operationId": "unpause1",
         "summary": "unpause"
       }
     },
@@ -2484,7 +2484,7 @@
         "tags": [
           "features"
         ],
-        "operationId": "account",
+        "operationId": "account1",
         "summary": "account"
       }
     },
@@ -2539,7 +2539,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "deleteAllBoardsOfAccount",
+        "operationId": "deleteAllBoardsOfAccount1",
         "summary": "deleteAllBoardsOfAccount"
       },
       "get": {
@@ -2605,7 +2605,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getBoardsOfAccount",
+        "operationId": "getBoardsOfAccount1",
         "summary": "getBoardsOfAccount"
       },
       "post": {
@@ -2668,7 +2668,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "createBoard",
+        "operationId": "createBoard1",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
         },
@@ -2753,7 +2753,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getBoardByName",
+        "operationId": "getBoardByName1",
         "summary": "getBoardByName"
       }
     },
@@ -2828,7 +2828,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "createSection",
+        "operationId": "createSection1",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
         },
@@ -2869,7 +2869,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "reorderSections",
+        "operationId": "reorderSections1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2968,7 +2968,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "deleteSectionById",
+        "operationId": "deleteSectionById1",
         "summary": "deleteSectionById"
       },
       "get": {
@@ -3039,7 +3039,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getSectionById",
+        "operationId": "getSectionById1",
         "summary": "getSectionById"
       },
       "patch": {
@@ -3107,7 +3107,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "patchSectionById",
+        "operationId": "patchSectionById1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3202,7 +3202,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "updateSectionById",
+        "operationId": "updateSectionById1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3289,7 +3289,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "deleteAllSectionsOfBoard",
+        "operationId": "deleteAllSectionsOfBoard1",
         "summary": "deleteAllSectionsOfBoard"
       },
       "get": {
@@ -3370,7 +3370,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getSectionsByBoardId",
+        "operationId": "getSectionsByBoardId1",
         "summary": "getSectionsByBoardId"
       }
     },
@@ -3446,7 +3446,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getSectionByName",
+        "operationId": "getSectionByName1",
         "summary": "getSectionByName"
       }
     },
@@ -3465,7 +3465,7 @@
         "tags": [
           "section"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll6",
         "parameters": [
           {
             "in": "path",
@@ -3548,7 +3548,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "deleteBoardById",
+        "operationId": "deleteBoardById1",
         "summary": "deleteBoardById"
       },
       "get": {
@@ -3619,7 +3619,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getBoardById",
+        "operationId": "getBoardById1",
         "summary": "getBoardById"
       },
       "patch": {
@@ -3690,7 +3690,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "patchBoardById",
+        "operationId": "patchBoardById1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3779,7 +3779,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "updateBoardById",
+        "operationId": "updateBoardById1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3816,7 +3816,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "createRepo",
+        "operationId": "createRepo1",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -3843,7 +3843,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "getAllRepos",
+        "operationId": "getAllRepos1",
         "parameters": [
           {
             "in": "query",
@@ -3871,7 +3871,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "deleteRepo",
+        "operationId": "deleteRepo1",
         "parameters": [
           {
             "in": "path",
@@ -3898,7 +3898,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "updateRepo",
+        "operationId": "updateRepo1",
         "parameters": [
           {
             "in": "path",
@@ -3934,7 +3934,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "get",
+        "operationId": "get5",
         "parameters": [
           {
             "in": "path",
@@ -3963,7 +3963,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "createEvent",
+        "operationId": "createEvent1",
         "parameters": [
           {
             "in": "query",
@@ -3998,7 +3998,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getEvents",
+        "operationId": "getEvents1",
         "parameters": [
           {
             "in": "query",
@@ -4047,7 +4047,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getEvent",
+        "operationId": "getEvent1",
         "parameters": [
           {
             "in": "path",
@@ -4076,7 +4076,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "deleteEvent",
+        "operationId": "deleteEvent1",
         "parameters": [
           {
             "in": "path",
@@ -4113,7 +4113,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getTriggers",
+        "operationId": "getTriggers1",
         "parameters": [],
         "summary": "getTriggers"
       }
@@ -4133,7 +4133,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getEventTriggers",
+        "operationId": "getEventTriggers1",
         "parameters": [
           {
             "in": "path",
@@ -4162,7 +4162,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getPipelineTriggers",
+        "operationId": "getPipelineTriggers1",
         "parameters": [
           {
             "in": "path",
@@ -4191,7 +4191,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "create",
+        "operationId": "create4",
         "parameters": [
           {
             "in": "path",
@@ -4235,7 +4235,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "deleteTrigger",
+        "operationId": "deleteTrigger1",
         "parameters": [
           {
             "in": "path",
@@ -4272,7 +4272,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getAllTypes",
+        "operationId": "getAllTypes1",
         "parameters": [],
         "summary": "getAllTypes"
       }
@@ -4292,7 +4292,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getType",
+        "operationId": "getType1",
         "parameters": [
           {
             "in": "path",
@@ -4329,7 +4329,7 @@
         "tags": [
           "version"
         ],
-        "operationId": "getHermesVersion",
+        "operationId": "getHermesVersion1",
         "parameters": [],
         "summary": "getHermesVersion"
       }
@@ -4349,7 +4349,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll7",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4370,7 +4370,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "addImageFromExternalSource",
+        "operationId": "addImageFromExternalSource1",
         "summary": "addImageFromExternalSource"
       }
     },
@@ -4400,7 +4400,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "get2",
+        "operationId": "get6",
         "summary": "get"
       }
     },
@@ -4430,7 +4430,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getTags",
+        "operationId": "getTags1",
         "summary": "getTags"
       }
     },
@@ -4460,7 +4460,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata",
+        "operationId": "getImageMetadata1",
         "summary": "getImageMetadata"
       },
       "post": {
@@ -4488,7 +4488,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "upsertImageMetadata",
+        "operationId": "upsertImageMetadata1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4554,7 +4554,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata1",
+        "operationId": "getImageMetadata2",
         "summary": "getImageMetadata"
       }
     },
@@ -4573,7 +4573,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "deleteRelease",
+        "operationId": "deleteRelease1",
         "parameters": [
           {
             "in": "path",
@@ -4618,7 +4618,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "testRelease",
+        "operationId": "testRelease1",
         "parameters": [
           {
             "in": "path",
@@ -4663,7 +4663,7 @@
         "tags": [
           "version"
         ],
-        "operationId": "getNomiosVersion",
+        "operationId": "getNomiosVersion1",
         "parameters": [],
         "summary": "getNomiosVersion"
       }
@@ -4683,7 +4683,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll2",
+        "operationId": "getAll8",
         "summary": "getAll"
       },
       "post": {
@@ -4700,7 +4700,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "create2",
+        "operationId": "create5",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4753,7 +4753,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getPlans",
+        "operationId": "getPlans1",
         "summary": "getPlans"
       }
     },
@@ -4819,7 +4819,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "create1",
+        "operationId": "create6",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4847,7 +4847,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "run",
+        "operationId": "run1",
         "parameters": [
           {
             "in": "path",
@@ -4885,7 +4885,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "validateYaml",
+        "operationId": "validateYaml1",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -4925,7 +4925,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "delete",
+        "operationId": "delete5",
         "summary": "delete"
       },
       "get": {
@@ -4960,8 +4960,8 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "getByName",
-        "summary": "getByName"
+        "operationId": "get7",
+        "summary": "get"
       },
       "put": {
         "parameters": [
@@ -4988,7 +4988,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "replaceByName",
+        "operationId": "replaceByName1",
         "summary": "replaceByName"
       }
     },
@@ -5012,7 +5012,7 @@
         "tags": [
           "progress"
         ],
-        "operationId": "download",
+        "operationId": "download1",
         "summary": "download"
       }
     },
@@ -5036,7 +5036,7 @@
         "tags": [
           "progress"
         ],
-        "operationId": "getFromIndex",
+        "operationId": "getFromIndex1",
         "summary": "getFromIndex"
       },
       "delete": {
@@ -5058,7 +5058,7 @@
         "tags": [
           "progress"
         ],
-        "operationId": "terminate",
+        "operationId": "terminate2",
         "summary": "terminate"
       }
     },
@@ -5115,7 +5115,7 @@
         "tags": [
           "providers"
         ],
-        "operationId": "githubHook",
+        "operationId": "githubHook1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5196,7 +5196,7 @@
         "tags": [
           "Codefresh Registry"
         ],
-        "operationId": "generateCfcrToken",
+        "operationId": "generateCfcrToken1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5231,7 +5231,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAllAvailableGitRepos",
+        "operationId": "getAllAvailableGitRepos1",
         "parameters": [
           {
             "in": "query",
@@ -5259,7 +5259,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll10",
         "parameters": [
           {
             "in": "query",
@@ -5302,7 +5302,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getSettings",
+        "operationId": "getSettings1",
         "summary": "getSettings"
       }
     },
@@ -5321,7 +5321,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAvailableGitRepo",
+        "operationId": "getAvailableGitRepo1",
         "parameters": [
           {
             "in": "path",
@@ -5365,7 +5365,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll11",
         "parameters": [
           {
             "in": "query",
@@ -5400,7 +5400,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "setDefault",
+        "operationId": "setDefault2",
         "parameters": [
           {
             "in": "path",
@@ -5429,7 +5429,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "update",
+        "operationId": "update4",
         "parameters": [
           {
             "in": "path",
@@ -5479,7 +5479,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "delete",
+        "operationId": "delete6",
         "parameters": [
           {
             "in": "path",
@@ -5513,7 +5513,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "get",
+        "operationId": "get8",
         "parameters": [
           {
             "in": "path",
@@ -5563,7 +5563,7 @@
         "tags": [
           "runtime"
         ],
-        "operationId": "launch",
+        "operationId": "launch2",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5631,7 +5631,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "create",
+        "operationId": "create7",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5685,7 +5685,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "create",
+        "operationId": "create8",
         "parameters": [
           {
             "in": "query",
@@ -5722,7 +5722,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "get",
+        "operationId": "get9",
         "parameters": [
           {
             "in": "path",
@@ -5756,7 +5756,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "delete",
+        "operationId": "delete7",
         "parameters": [
           {
             "in": "path",
@@ -5792,7 +5792,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "createToken",
+        "operationId": "createToken1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5837,7 +5837,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAll",
+        "operationId": "getAll12",
         "parameters": [],
         "summary": "getAll"
       }
@@ -5857,7 +5857,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "synchronizeClientWithGroup",
+        "operationId": "synchronizeClientWithGroup1",
         "parameters": [
           {
             "in": "path",
@@ -5921,7 +5921,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "assignUserToTeam",
+        "operationId": "assignUserToTeam1",
         "summary": "assignUserToTeam"
       }
     },
@@ -5960,7 +5960,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "deleteUserFromTeam",
+        "operationId": "deleteUserFromTeam1",
         "summary": "deleteUserFromTeam"
       }
     },
@@ -5979,7 +5979,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getTeamsByUserId",
+        "operationId": "getTeamsByUserId1",
         "parameters": [
           {
             "in": "path",
@@ -6008,7 +6008,7 @@
         "tags": [
           "users"
         ],
-        "operationId": "get",
+        "operationId": "get10",
         "summary": "get"
       }
     },
@@ -6038,7 +6038,7 @@
         "tags": [
           "users"
         ],
-        "operationId": "changeAccount",
+        "operationId": "changeAccount1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6066,14 +6066,14 @@
         "tags": [
           "version"
         ],
-        "operationId": "getServerVersion",
+        "operationId": "getServerVersion1",
         "parameters": [],
         "summary": "getServerVersion"
       }
     },
     "/workflow": {
       "get": {
-        "operationId": "getAll7",
+        "operationId": "getAll13",
         "parameters": [
           {
             "name": "limit",
@@ -6162,7 +6162,7 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "service",
+        "operationId": "service1",
         "requestBody": {
           "content": {
             "application/json": {
