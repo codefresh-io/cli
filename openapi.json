@@ -1380,7 +1380,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "generateToken1",
+        "operationId": "generate10",
         "parameters": [
           {
             "in": "query",
@@ -1406,7 +1406,7 @@
             }
           }
         },
-        "summary": "generateToken"
+        "summary": "generate"
       }
     },
     "/auth/key/{id}": {
@@ -1453,9 +1453,9 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "getTokens1",
+        "operationId": "getAll16",
         "parameters": [],
-        "summary": "getTokens"
+        "summary": "getAll"
       }
     },
     "/builds": {
