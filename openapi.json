@@ -1380,7 +1380,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "generate10",
+        "operationId": "generate1",
         "parameters": [
           {
             "in": "query",
@@ -1453,7 +1453,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "getAll16",
+        "operationId": "getAll2",
         "parameters": [],
         "summary": "getAll"
       }
@@ -1499,7 +1499,7 @@
         "tags": [
           "builds"
         ],
-        "operationId": "getAll2",
+        "operationId": "getAll3",
         "summary": "getAll"
       }
     },
@@ -1685,7 +1685,7 @@
         "tags": [
           "clusters"
         ],
-        "operationId": "getAll3",
+        "operationId": "getAll4",
         "parameters": [],
         "summary": "getAll"
       }
@@ -1705,7 +1705,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getAll4",
+        "operationId": "getAll5",
         "summary": "getAll"
       },
       "post": {
@@ -2011,7 +2011,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "getAll5",
+        "operationId": "getAll6",
         "parameters": [
           {
             "in": "query",
@@ -2600,7 +2600,7 @@
         "tags": [
           "helm boards"
         ],
-        "operationId": "getAll6",
+        "operationId": "getAll7",
         "summary": "getAll"
       },
       "post": {
@@ -3365,7 +3365,7 @@
         "tags": [
           "sections"
         ],
-        "operationId": "getAll7",
+        "operationId": "getAll8",
         "summary": "getAll"
       }
     },
@@ -3460,7 +3460,7 @@
         "tags": [
           "sections"
         ],
-        "operationId": "getAll8",
+        "operationId": "getAll9",
         "parameters": [
           {
             "in": "path",
@@ -4344,7 +4344,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getAll9",
+        "operationId": "getAll10",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4678,7 +4678,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll10",
+        "operationId": "getAll11",
         "summary": "getAll"
       },
       "post": {
@@ -4797,7 +4797,7 @@
             }
           }
         ],
-        "operationId": "getAll11",
+        "operationId": "getAll12",
         "summary": "getAll"
       },
       "post": {
@@ -5040,7 +5040,7 @@
         "tags": [
           "progress"
         ],
-        "operationId": "get15",
+        "operationId": "get12",
         "summary": "get"
       },
       "delete": {
@@ -5235,7 +5235,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAllAvailableGitRepos1",
+        "operationId": "getAllGitRepos1",
         "parameters": [
           {
             "in": "query",
@@ -5245,7 +5245,7 @@
             }
           }
         ],
-        "summary": "getAllAvailableGitRepos"
+        "summary": "getAllGitRepos"
       }
     },
     "/repos/existing": {
@@ -5263,7 +5263,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAll12",
+        "operationId": "getAll13",
         "parameters": [
           {
             "in": "query",
@@ -5277,7 +5277,8 @@
             "name": "thin",
             "schema": {
               "type": "string"
-            }
+            },
+            "allowEmptyValue": true
           }
         ],
         "summary": "getAll"
@@ -5325,7 +5326,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAvailableGitRepo1",
+        "operationId": "getGitRepo1",
         "parameters": [
           {
             "in": "path",
@@ -5351,7 +5352,7 @@
             }
           }
         ],
-        "summary": "getAvailableGitRepo"
+        "summary": "getGitRepo"
       }
     },
     "/runtime-environments": {
@@ -5369,7 +5370,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "getAll13",
+        "operationId": "getAll14",
         "parameters": [
           {
             "in": "query",
@@ -5517,7 +5518,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "get12",
+        "operationId": "get13",
         "parameters": [
           {
             "in": "path",
@@ -5674,43 +5675,6 @@
         "summary": "create"
       }
     },
-    "/services/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "security": [
-          {
-            "internalApiKey": []
-          }
-        ],
-        "tags": [
-          "repos"
-        ],
-        "operationId": "create10",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "context",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        },
-        "summary": "create"
-      }
-    },
     "/services/{name}": {
       "get": {
         "responses": {
@@ -5726,7 +5690,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "get13",
+        "operationId": "get14",
         "parameters": [
           {
             "in": "path",
@@ -5841,7 +5805,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAll14",
+        "operationId": "getAll15",
         "parameters": [],
         "summary": "getAll"
       }
@@ -6012,7 +5976,7 @@
         "tags": [
           "users"
         ],
-        "operationId": "get14",
+        "operationId": "get15",
         "summary": "get"
       }
     },
@@ -6057,8 +6021,7 @@
     },
     "/user/firebaseAuth": {
       "get": {
-        "parameters": [
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "token"
@@ -6098,7 +6061,7 @@
     },
     "/workflow": {
       "get": {
-        "operationId": "getAll15",
+        "operationId": "getAll16",
         "parameters": [
           {
             "name": "limit",
