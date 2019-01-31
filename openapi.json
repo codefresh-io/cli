@@ -1755,42 +1755,13 @@
         "summary": "create"
       }
     },
-    "/compositions/": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "security": [
-          {
-            "internalApiKey": []
-          }
-        ],
-        "tags": [
-          "compositions"
-        ],
-        "operationId": "create2",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        },
-        "summary": "create"
-      }
-    },
-    "/compositions/{identifier}/run": {
+    "/compositions/{id}/run": {
       "post": {
         "parameters": [
           {
             "description": "id or name of a composition",
             "in": "path",
-            "name": "identifier",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
@@ -1880,8 +1851,8 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getByIdentifier1",
-        "summary": "getByIdentifier"
+        "operationId": "get3",
+        "summary": "get"
       },
       "put": {
         "parameters": [
@@ -2046,7 +2017,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "create3",
+        "operationId": "create2",
         "parameters": [
           {
             "in": "query",
@@ -2182,7 +2153,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "get3",
+        "operationId": "get4",
         "parameters": [
           {
             "in": "path",
@@ -2256,7 +2227,7 @@
         "tags": [
           "environments"
         ],
-        "operationId": "get4",
+        "operationId": "get5",
         "parameters": [
           {
             "in": "path",
@@ -2663,7 +2634,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "create4",
+        "operationId": "create3",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
         },
@@ -2823,7 +2794,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "create5",
+        "operationId": "create4",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
         },
@@ -3034,7 +3005,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "get5",
+        "operationId": "get6",
         "summary": "get"
       },
       "patch": {
@@ -3614,7 +3585,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "get6",
+        "operationId": "get7",
         "summary": "get"
       },
       "patch": {
@@ -3929,7 +3900,7 @@
         "tags": [
           "helm"
         ],
-        "operationId": "get7",
+        "operationId": "get8",
         "parameters": [
           {
             "in": "path",
@@ -4186,7 +4157,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "create6",
+        "operationId": "create5",
         "parameters": [
           {
             "in": "path",
@@ -4395,7 +4366,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "get8",
+        "operationId": "get9",
         "summary": "get"
       }
     },
@@ -4695,7 +4666,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "create7",
+        "operationId": "create6",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4814,7 +4785,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "create8",
+        "operationId": "create7",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4955,7 +4926,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "get9",
+        "operationId": "get10",
         "summary": "get"
       },
       "put": {
@@ -5040,7 +5011,7 @@
         "tags": [
           "progress"
         ],
-        "operationId": "get10",
+        "operationId": "get11",
         "summary": "get"
       },
       "delete": {
@@ -5518,7 +5489,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "get11",
+        "operationId": "get12",
         "parameters": [
           {
             "in": "path",
@@ -5636,7 +5607,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "create9",
+        "operationId": "create8",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5690,7 +5661,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "get12",
+        "operationId": "get13",
         "parameters": [
           {
             "in": "path",
@@ -5976,7 +5947,7 @@
         "tags": [
           "users"
         ],
-        "operationId": "get13",
+        "operationId": "get14",
         "summary": "get"
       }
     },
