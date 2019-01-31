@@ -4316,7 +4316,71 @@
           "images"
         ],
         "operationId": "getAll14",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metadata",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "branch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "imageDisplayNameRegex",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "select",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sha",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "summary": "getAll"
       }
     },
@@ -4336,17 +4400,17 @@
         "tags": [
           "images"
         ],
-        "operationId": "addImageFromExternalSource1",
-        "summary": "addImageFromExternalSource"
+        "operationId": "addFromExternalSource1",
+        "summary": "addFromExternalSource"
       }
     },
-    "/images/{imageId}": {
+    "/images/{id}": {
       "get": {
         "parameters": [
           {
             "description": "id of the Image",
             "in": "path",
-            "name": "imageId",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
@@ -4400,6 +4464,82 @@
         "summary": "getTags"
       }
     },
+    "/images/{imageId}/tag/{tag}": {
+      "post": {
+        "parameters": [
+          {
+            "description": "image id",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "tag",
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "tag1",
+        "summary": "tag"
+      },
+      "delete": {
+        "parameters": [
+          {
+            "description": "image id",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "tag",
+            "in": "path",
+            "name": "tag",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "images"
+        ],
+        "operationId": "untag1",
+        "summary": "untag"
+      }
+    },
     "/images/{internalImageId}/metadata": {
       "get": {
         "parameters": [
@@ -4426,8 +4566,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata1",
-        "summary": "getImageMetadata"
+        "operationId": "getMetadata1",
+        "summary": "getMetadata"
       },
       "post": {
         "parameters": [
@@ -4454,7 +4594,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "upsertImageMetadata1",
+        "operationId": "upsertMetadata1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4482,7 +4622,7 @@
             }
           }
         },
-        "summary": "upsertImageMetadata"
+        "summary": "upsertMetadata"
       }
     },
     "/images/{internalImageId}/metadata/{keyName}": {
@@ -4520,8 +4660,8 @@
         "tags": [
           "images"
         ],
-        "operationId": "getImageMetadata2",
-        "summary": "getImageMetadata"
+        "operationId": "deleteMetadata1",
+        "summary": "deleteMetadata"
       }
     },
     "/kubernetes/releases/{releaseName}/delete": {
