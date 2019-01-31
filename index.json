@@ -697,7 +697,7 @@
 	"title": "Triggers",
 	"tags": [],
 	"description": "",
-	"content": " Create Pipeline Trigger codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nCreate trigger: link pipeline to trigger-event.\nGet Triggers codefresh get triggers\nGet triggers, optionally filtered by pipeline or event.\nGet Trigger Types codefresh get trigger-types\nGet a list of available trigger-types.\nGet Trigger Event codefresh get trigger-events [event-uri]\nGet trigger-event.\nDelete Pipeline Trigger codefresh delete trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nDelete trigger: unlink pipeline from trigger-event.\nCreate Trigger Event codefresh create trigger-event\nCreate new trigger-event.\nDelete Trigger Event codefresh delete trigger-event \u0026lt;event-uri\u0026gt;\nDelete trigger-event.\n"
+	"content": " Create Pipeline Trigger codefresh create trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nCreate trigger: link pipeline to trigger-event.\nGet Triggers codefresh get triggers\nGet triggers, optionally filtered by pipeline or event.\nGet Trigger Event codefresh get trigger-events [event-uri]\nGet trigger-event.\nGet Trigger Types codefresh get trigger-types\nGet a list of available trigger-types.\nDelete Pipeline Trigger codefresh delete trigger \u0026lt;event-uri\u0026gt; \u0026lt;pipeline\u0026gt;\nDelete trigger: unlink pipeline from trigger-event.\nCreate Trigger Event codefresh create trigger-event\nCreate new trigger-event.\nDelete Trigger Event codefresh delete trigger-event \u0026lt;event-uri\u0026gt;\nDelete trigger-event.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/update-context/",
