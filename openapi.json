@@ -3780,9 +3780,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.repos"
         ],
-        "operationId": "createRepo1",
+        "operationId": "create5",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -3793,7 +3793,7 @@
             }
           }
         },
-        "summary": "createRepo"
+        "summary": "create"
       },
       "get": {
         "responses": {
@@ -3807,9 +3807,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.repos"
         ],
-        "operationId": "getAllRepos1",
+        "operationId": "getAll10",
         "parameters": [
           {
             "in": "query",
@@ -3819,7 +3819,7 @@
             }
           }
         ],
-        "summary": "getAllRepos"
+        "summary": "getAll"
       }
     },
     "/helm/repos/{name}": {
@@ -3835,9 +3835,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.repos"
         ],
-        "operationId": "deleteRepo1",
+        "operationId": "delete7",
         "parameters": [
           {
             "in": "path",
@@ -3848,7 +3848,7 @@
             "required": true
           }
         ],
-        "summary": "deleteRepo"
+        "summary": "delete"
       },
       "put": {
         "responses": {
@@ -3862,9 +3862,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.repos"
         ],
-        "operationId": "updateRepo1",
+        "operationId": "update6",
         "parameters": [
           {
             "in": "path",
@@ -3884,7 +3884,7 @@
             }
           }
         },
-        "summary": "updateRepo"
+        "summary": "update"
       },
       "get": {
         "responses": {
@@ -3898,7 +3898,7 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.repos"
         ],
         "operationId": "get8",
         "parameters": [
@@ -3929,7 +3929,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "create5",
+        "operationId": "create6",
         "parameters": [
           {
             "in": "query",
@@ -3964,7 +3964,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "getAll10",
+        "operationId": "getAll11",
         "parameters": [
           {
             "in": "query",
@@ -4042,7 +4042,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "delete7",
+        "operationId": "delete8",
         "parameters": [
           {
             "in": "path",
@@ -4057,7 +4057,8 @@
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "summary": "delete"
@@ -4078,7 +4079,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getAll11",
+        "operationId": "getAll12",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4109,7 +4110,7 @@
             "required": true
           }
         ],
-        "summary": "getAllByEvent"
+        "summary": "getEventTriggers"
       }
     },
     "/hermes/triggers/pipeline/{pipeline}": {
@@ -4138,7 +4139,7 @@
             "required": true
           }
         ],
-        "summary": "getAllByPipeline"
+        "summary": "getPipelineTriggers"
       }
     },
     "/hermes/triggers/{event}/{pipeline}": {
@@ -4156,7 +4157,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "create6",
+        "operationId": "create7",
         "parameters": [
           {
             "in": "path",
@@ -4200,7 +4201,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "delete8",
+        "operationId": "delete9",
         "parameters": [
           {
             "in": "path",
@@ -4237,7 +4238,7 @@
         "tags": [
           "triggers.types"
         ],
-        "operationId": "getAll12",
+        "operationId": "getAll13",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4314,7 +4315,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getAll13",
+        "operationId": "getAll14",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4536,9 +4537,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.releases"
         ],
-        "operationId": "deleteRelease1",
+        "operationId": "delete10",
         "parameters": [
           {
             "in": "path",
@@ -4553,7 +4554,16 @@
             "name": "selector",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -4565,7 +4575,7 @@
             }
           }
         },
-        "summary": "deleteRelease"
+        "summary": "delete"
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -4581,9 +4591,9 @@
           }
         ],
         "tags": [
-          "helm"
+          "helm.releases"
         ],
-        "operationId": "testRelease1",
+        "operationId": "test1",
         "parameters": [
           {
             "in": "path",
@@ -4610,7 +4620,98 @@
             }
           }
         },
-        "summary": "testRelease"
+        "summary": "test"
+      }
+    },
+    "/kubernetes/chart/install": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm.charts"
+        ],
+        "operationId": "install1",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "install"
+      }
+    },
+    "/kubernetes/chart/promote": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "helm.charts"
+        ],
+        "operationId": "promote1",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "promote"
       }
     },
     "/nomios/version": {
@@ -4648,7 +4749,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll14",
+        "operationId": "getAll15",
         "summary": "getAll"
       },
       "post": {
@@ -4665,7 +4766,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "create7",
+        "operationId": "create8",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4767,7 +4868,7 @@
             }
           }
         ],
-        "operationId": "getAll15",
+        "operationId": "getAll16",
         "summary": "getAll"
       },
       "post": {
@@ -4784,7 +4885,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "create8",
+        "operationId": "create9",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4890,7 +4991,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "delete9",
+        "operationId": "delete11",
         "summary": "delete"
       },
       "get": {
@@ -5233,7 +5334,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAll16",
+        "operationId": "getAll17",
         "parameters": [
           {
             "in": "query",
@@ -5340,7 +5441,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "getAll17",
+        "operationId": "getAll18",
         "parameters": [
           {
             "in": "query",
@@ -5404,7 +5505,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "update6",
+        "operationId": "update7",
         "parameters": [
           {
             "in": "path",
@@ -5454,7 +5555,7 @@
         "tags": [
           "runtimeEnvironments"
         ],
-        "operationId": "delete10",
+        "operationId": "delete12",
         "parameters": [
           {
             "in": "path",
@@ -5606,7 +5707,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "create9",
+        "operationId": "create10",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5694,7 +5795,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "delete11",
+        "operationId": "delete13",
         "parameters": [
           {
             "in": "path",
@@ -5730,7 +5831,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "create10",
+        "operationId": "create11",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5775,7 +5876,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAll18",
+        "operationId": "getAll19",
         "parameters": [],
         "summary": "getAll"
       }
@@ -6031,7 +6132,7 @@
     },
     "/workflow": {
       "get": {
-        "operationId": "getAll19",
+        "operationId": "getAll20",
         "parameters": [
           {
             "name": "limit",
