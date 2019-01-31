@@ -5731,7 +5731,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "createToken1",
+        "operationId": "create9",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5760,7 +5760,7 @@
           "description": "Team data",
           "required": true
         },
-        "summary": "createToken"
+        "summary": "create"
       },
       "get": {
         "responses": {
@@ -5860,8 +5860,8 @@
         "tags": [
           "teams"
         ],
-        "operationId": "assignUserToTeam1",
-        "summary": "assignUserToTeam"
+        "operationId": "addUser1",
+        "summary": "addUser"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -5899,8 +5899,8 @@
         "tags": [
           "teams"
         ],
-        "operationId": "deleteUserFromTeam1",
-        "summary": "deleteUserFromTeam"
+        "operationId": "removeUser1",
+        "summary": "removeUser"
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -5918,7 +5918,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getTeamsByUserId1",
+        "operationId": "getAllByUser1",
         "parameters": [
           {
             "in": "path",
@@ -5929,7 +5929,7 @@
             "required": true
           }
         ],
-        "summary": "getTeamsByUserId"
+        "summary": "getAllByUser"
       }
     },
     "/user": {
