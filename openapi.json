@@ -4434,13 +4434,13 @@
         "summary": "get"
       }
     },
-    "/images/{imageName}/tags": {
+    "/images/{id}/tags": {
       "get": {
         "parameters": [
           {
             "description": "name of the image",
             "in": "path",
-            "name": "imageName",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
@@ -4464,13 +4464,13 @@
         "summary": "getTags"
       }
     },
-    "/images/{imageId}/tag/{tag}": {
+    "/images/{id}/tag/{tag}": {
       "post": {
         "parameters": [
           {
-            "description": "image id",
+            "description": "image ObjectId",
             "in": "path",
-            "name": "imageId",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
@@ -4505,16 +4505,16 @@
       "delete": {
         "parameters": [
           {
-            "description": "image id",
+            "description": "image ObjectId",
             "in": "path",
-            "name": "imageId",
+            "name": "id",
             "required": true,
             "schema": {
               "type": "string"
             }
           },
           {
-            "description": "tag",
+            "description": "tag ObjectId",
             "in": "path",
             "name": "tag",
             "required": true,
@@ -4540,13 +4540,13 @@
         "summary": "untag"
       }
     },
-    "/images/{internalImageId}/metadata": {
+    "/images/{dockerImageId}/metadata": {
       "get": {
         "parameters": [
           {
             "description": "id of the Image (from docker inspect)",
             "in": "path",
-            "name": "internalImageId",
+            "name": "dockerImageId",
             "required": true,
             "schema": {
               "type": "string"
@@ -4574,7 +4574,7 @@
           {
             "description": "id of the Image (from docker inspect)",
             "in": "path",
-            "name": "internalImageId",
+            "name": "dockerImageId",
             "required": true,
             "schema": {
               "type": "string"
@@ -4625,13 +4625,13 @@
         "summary": "upsertMetadata"
       }
     },
-    "/images/{internalImageId}/metadata/{keyName}": {
+    "/images/{dockerImageId}/metadata/{keyName}": {
       "delete": {
         "parameters": [
           {
             "description": "id of the Image from docker inspect",
             "in": "path",
-            "name": "internalImageId",
+            "name": "dockerImageId",
             "required": true,
             "schema": {
               "type": "string"
