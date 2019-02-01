@@ -906,7 +906,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "getAll1",
         "parameters": [
@@ -948,7 +948,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "setDefaultForAccount1",
         "parameters": [
@@ -985,7 +985,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "getByAccount1",
         "parameters": [
@@ -1035,7 +1035,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "setDefault1",
         "parameters": [
@@ -1072,7 +1072,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "updateSysRe1",
         "parameters": [
@@ -1122,7 +1122,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "deleteSysRe1",
         "parameters": [
@@ -1156,7 +1156,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "getSysRe1",
         "parameters": [
@@ -1213,7 +1213,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "update1",
         "parameters": [
@@ -1271,7 +1271,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "delete1",
         "parameters": [
@@ -1313,7 +1313,7 @@
           }
         ],
         "tags": [
-          "adminRuntimeEnvironments"
+          "adminruntimeEnvs"
         ],
         "operationId": "get1",
         "parameters": [
@@ -5579,7 +5579,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "getAll18",
         "parameters": [
@@ -5614,7 +5614,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "setDefault2",
         "parameters": [
@@ -5643,7 +5643,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "update7",
         "parameters": [
@@ -5693,7 +5693,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "delete12",
         "parameters": [
@@ -5727,7 +5727,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvironments"
+          "runtimeEnvs"
         ],
         "operationId": "get14",
         "parameters": [
