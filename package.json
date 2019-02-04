@@ -14,7 +14,6 @@
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
     "build-public-docs": "node ./docs/index.js && cd temp && hugo",
-    "check-node-version": "node check-version.js",
     "postinstall": "node check-version.js"
   },
   "bin": {
