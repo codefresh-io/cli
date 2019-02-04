@@ -1690,6 +1690,43 @@
         "summary": "getAll"
       }
     },
+    "/clusters/{provider}/cluster/{id}": {
+      "delete":  {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "clusters"
+        ],
+        "operationId": "delete3",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "delete"
+      }
+    },
     "/compositions": {
       "get": {
         "responses": {
@@ -1823,7 +1860,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "delete3",
+        "operationId": "delete4",
         "summary": "delete"
       },
       "get": {
@@ -2054,7 +2091,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "delete4",
+        "operationId": "delete5",
         "parameters": [
           {
             "in": "path",
@@ -2934,7 +2971,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "delete5",
+        "operationId": "delete6",
         "summary": "delete"
       },
       "get": {
@@ -3514,7 +3551,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "delete6",
+        "operationId": "delete7",
         "summary": "delete"
       },
       "get": {
@@ -3837,7 +3874,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "delete7",
+        "operationId": "delete8",
         "parameters": [
           {
             "in": "path",
@@ -4042,7 +4079,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "delete8",
+        "operationId": "delete9",
         "parameters": [
           {
             "in": "path",
@@ -4201,7 +4238,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "delete9",
+        "operationId": "delete10",
         "parameters": [
           {
             "in": "path",
@@ -4679,7 +4716,7 @@
         "tags": [
           "helm.releases"
         ],
-        "operationId": "delete10",
+        "operationId": "delete11",
         "parameters": [
           {
             "in": "path",
@@ -5131,7 +5168,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "delete11",
+        "operationId": "delete12",
         "summary": "delete"
       },
       "get": {
@@ -5695,7 +5732,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "delete12",
+        "operationId": "delete13",
         "parameters": [
           {
             "in": "path",
@@ -5935,7 +5972,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "delete13",
+        "operationId": "delete14",
         "parameters": [
           {
             "in": "path",
