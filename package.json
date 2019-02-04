@@ -14,7 +14,7 @@
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
     "build-public-docs": "node ./docs/index.js && cd temp && hugo",
-    "check-node-version": "npm config set unsafe-perm true && node check-version.js",
+    "check-node-version": "node check-version.js",
     "postinstall": "npm run check-node-version"
   },
   "bin": {
