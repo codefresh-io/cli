@@ -906,7 +906,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "getAll1",
         "parameters": [
@@ -948,7 +948,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "setDefaultForAccount1",
         "parameters": [
@@ -985,7 +985,7 @@
           }
         ],
         "tags": [
-          "runtimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "getByAccount1",
         "parameters": [
@@ -1035,7 +1035,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "setDefault1",
         "parameters": [
@@ -1072,7 +1072,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "updateSysRe1",
         "parameters": [
@@ -1122,7 +1122,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "deleteSysRe1",
         "parameters": [
@@ -1156,7 +1156,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "getSysRe1",
         "parameters": [
@@ -1213,7 +1213,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "update1",
         "parameters": [
@@ -1271,7 +1271,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "delete1",
         "parameters": [
@@ -1313,7 +1313,7 @@
           }
         ],
         "tags": [
-          "adminruntimeEnvs"
+          "sysRuntimeEnvs"
         ],
         "operationId": "get1",
         "parameters": [
