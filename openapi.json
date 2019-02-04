@@ -1691,7 +1691,7 @@
       }
     },
     "/clusters/{provider}/cluster/{id}": {
-      "delete":  {
+      "delete": {
         "responses": {
           "200": {
             "description": "ok"
@@ -2224,10 +2224,10 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
-        "operationId": "index1",
-        "summary": "index"
+        "operationId": "getAll7",
+        "summary": "getAll"
       }
     },
     "/environments/all/terminate": {
@@ -2243,7 +2243,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "terminateAll1",
         "summary": "terminateAll"
@@ -2262,7 +2262,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "get5",
         "parameters": [
@@ -2296,7 +2296,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "pause1",
         "summary": "pause"
@@ -2335,7 +2335,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "rename1",
         "summary": "rename"
@@ -2359,7 +2359,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "start1",
         "summary": "start"
@@ -2383,7 +2383,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "status1",
         "summary": "status"
@@ -2407,7 +2407,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "stop1",
         "summary": "stop"
@@ -2431,7 +2431,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "terminate1",
         "summary": "terminate"
@@ -2455,7 +2455,7 @@
           }
         ],
         "tags": [
-          "environments"
+          "envs"
         ],
         "operationId": "unpause1",
         "summary": "unpause"
@@ -2608,7 +2608,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "getAll7",
+        "operationId": "getAll8",
         "summary": "getAll"
       },
       "post": {
@@ -3373,7 +3373,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "getAll8",
+        "operationId": "getAll9",
         "summary": "getAll"
       }
     },
@@ -3468,7 +3468,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "getAll9",
+        "operationId": "getAll10",
         "parameters": [
           {
             "in": "path",
@@ -3846,7 +3846,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "getAll10",
+        "operationId": "getAll11",
         "parameters": [
           {
             "in": "query",
@@ -4001,7 +4001,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "getAll11",
+        "operationId": "getAll12",
         "parameters": [
           {
             "in": "query",
@@ -4116,7 +4116,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getAll12",
+        "operationId": "getAll13",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4275,7 +4275,7 @@
         "tags": [
           "triggers.types"
         ],
-        "operationId": "getAll13",
+        "operationId": "getAll14",
         "parameters": [],
         "summary": "getAll"
       }
@@ -4352,7 +4352,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getAll14",
+        "operationId": "getAll15",
         "parameters": [
           {
             "in": "query",
@@ -4926,7 +4926,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll15",
+        "operationId": "getAll16",
         "summary": "getAll"
       },
       "post": {
@@ -5045,7 +5045,7 @@
             }
           }
         ],
-        "operationId": "getAll16",
+        "operationId": "getAll17",
         "summary": "getAll"
       },
       "post": {
@@ -5511,7 +5511,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAll17",
+        "operationId": "getAll18",
         "parameters": [
           {
             "in": "query",
@@ -5618,7 +5618,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "getAll18",
+        "operationId": "getAll19",
         "parameters": [
           {
             "in": "query",
@@ -6053,7 +6053,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAll19",
+        "operationId": "getAll20",
         "parameters": [],
         "summary": "getAll"
       }
@@ -6309,7 +6309,7 @@
     },
     "/workflow": {
       "get": {
-        "operationId": "getAll20",
+        "operationId": "getAll21",
         "parameters": [
           {
             "name": "limit",
