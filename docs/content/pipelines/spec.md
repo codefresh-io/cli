@@ -149,7 +149,7 @@ spec:
   stages: []
 ```
 
-#### Pipeline with a remote spec template brought from a git repository
+#### Pipeline with a remote spec template from a public git URL
 ```yaml
 version: '1.0'
 kind: pipeline
