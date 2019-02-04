@@ -4800,6 +4800,51 @@
         "summary": "test"
       }
     },
+    "/kubernetes/releases/secrets/imagePullSecret": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "kubernetes"
+        ],
+        "operationId": "generateImagePullSecret1",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "namespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "generateImagePullSecret"
+      }
+    },
     "/kubernetes/chart/install": {
       "post": {
         "responses": {
