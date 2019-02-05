@@ -905,14 +905,17 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codefresh-sdk@codefresh-sdk:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.0.3.tgz#3e3aaac7def690382b71b07156ccf27c5d3ff514"
-  integrity sha512-cm1sDFiLfr0wpi63WZnjaxt0aU3Wlwn+u8/coIFfifG7zGooy9DHSozKAyApJ+qCgv4jU63VON8qlFidsWI1Kw==
+codefresh-sdk@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.0.4.tgz#15284e048e2e974e20801cee495eb3e2282e02ca"
+  integrity sha512-tsUn5/d72IAAV+hijYClQ8TPy2X5N0Mbi16HLclYfn2G6FocjBVhlskr/WrUlPX7K0/1GaBArj9uP0PmChbfuQ==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.11"
+    compare-versions "^3.4.0"
     debug "^4.1.1"
+    decompress "^4.2.0"
+    decompress-targz "^4.1.1"
     firebase "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5"
     lodash "^4.17.11"
     moment "^2.24.0"
