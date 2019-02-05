@@ -33,7 +33,7 @@
     "cf-errors": "^0.1.11",
     "chalk": "^1.1.3",
     "cli-progress": "^1.6.1",
-    "codefresh-sdk": "../../codefresh-sdk",
+    "codefresh-sdk": "codefresh-sdk",
     "colors": "^1.1.2",
     "columnify": "^1.5.4",
     "compare-versions": "^3.4.0",
@@ -83,6 +83,12 @@
   "license": "ISC",
   "engines": {
     "node": ">8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./test-setup.js"
+    ]
   },
   "yargs": {
     "boolean-negation": false
