@@ -8,6 +8,7 @@ jest.mock('./lib/output/Output');
 // mock entities
 jest.mock('./lib/logic/entities/Board');
 jest.mock('./lib/logic/entities/Cluster');
+jest.mock('./lib/logic/entities/Composition');
 
 sdk.configure({
     url: 'http://not.needed',
