@@ -87,6 +87,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/registries/get-registries/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</loc>
   </url>
   
@@ -124,6 +128,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/registries/registries/standard/</loc>
   </url>
   
   <url>
@@ -253,6 +261,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/registries/delete-registry/</loc>
   </url>
   
   <url>
@@ -464,6 +476,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/registries/registries/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/repository/</loc>
   </url>
   
@@ -551,6 +567,11 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/external-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/registries/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -248,6 +248,21 @@ Arguments    Option Alias Default Description     id   Pipeline name/id    Optio
     </item>
     
     <item>
+      <title>Get Registries</title>
+      <link>https://codefresh-io.github.io/cli/registries/get-registries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/registries/get-registries/</guid>
+      <description>Description Get an array of accounts registries.
+Command codefresh get registry
+Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format
+Possible values:
+- json
+- yaml
+- wide</description>
+    </item>
+    
+    <item>
       <title>Get Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -386,6 +401,17 @@ Options    Option Alias Default Description     --sharing-policy  AccountAdmins 
 Possible values:
 - AccountAdmins
 - AllUsersInAccount   --behind-firewall   Set to true to mark this context with behind firewall flag   --help   Print help information   --access-token -t  Access token from to be used to clone repositories.</description>
+    </item>
+    
+    <item>
+      <title>standard</title>
+      <link>https://codefresh-io.github.io/cli/registries/registries/standard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/registries/registries/standard/</guid>
+      <description>Description Integrate a standard container registry into Codefresh.
+Command codefresh create registry standard &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name   Registry name    Options    Option Alias Default Description     --help   Print help information   --username   Username to access the docker registry. required   --password   Password to access the docker registry.</description>
     </item>
     
     <item>
@@ -746,6 +772,17 @@ Arguments    Option Alias Default Description     name   Helm repo name    Optio
 Command codefresh delete pipeline [name]
 Aliases codefresh delete pip [name]
 Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
+      <title>Delete Registry</title>
+      <link>https://codefresh-io.github.io/cli/registries/delete-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/registries/delete-registry/</guid>
+      <description> Description Delete registry from Codefresh.
+Command codefresh delete registry &amp;lt;ID&amp;gt;
+Arguments    Option Alias Default Description     ID   ID of a registry to delete    Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>

@@ -140,6 +140,13 @@
 	"content": " Description Get a specific pipeline or an array of pipelines.\nCommand codefresh get pipelines [id..]\nAliases codefresh get pip [id..]\ncodefresh get pipeline [id..]\nArguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/registries/get-registries/",
+	"title": "Get Registries",
+	"tags": [],
+	"description": "",
+	"content": " Description Get an array of accounts registries.\nCommand codefresh get registry\nOptions    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all registries connected to the account codefresh get registry\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/",
 	"title": "Get Runtime-Environments",
 	"tags": [],
@@ -208,6 +215,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nCommand codefresh create context git gitlab \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --behind-firewall   Set to true to mark this context with behind firewall flag   --help   Print help information   --access-token -t  Access token from to be used to clone repositories. required   --api-url -a https://gitlab.com/api/v4/ URL of the api. required    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/registries/registries/standard/",
+	"title": "standard",
+	"tags": [],
+	"description": "",
+	"content": " Description Integrate a standard container registry into Codefresh.\nCommand codefresh create registry standard \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Registry name    Options    Option Alias Default Description     --help   Print help information   --username   Username to access the docker registry. required   --password   Password to access the docker registry. required   --domain   Domain to access the docker registry. required   --behind-firewall   Set if the registry is behind a firewall    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/",
@@ -425,6 +439,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Delete a pipeline.\nCommand codefresh delete pipeline [name]\nAliases codefresh delete pip [name]\nArguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/registries/delete-registry/",
+	"title": "Delete Registry",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete registry from Codefresh.\nCommand codefresh delete registry \u0026lt;ID\u0026gt;\nArguments    Option Alias Default Description     ID   ID of a registry to delete    Options    Option Alias Default Description     --help   Print help information    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/repository/delete-repository/",
@@ -784,6 +805,13 @@
 	"content": " From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/registries/registries/",
+	"title": "Registries",
+	"tags": [],
+	"description": "",
+	"content": " Get Registries codefresh get registry\nGet an array of accounts registries.\nStandard codefresh create registry standard \u0026lt;name\u0026gt;\nIntegrate a standard container registry into Codefresh.\nDelete Registry codefresh delete registry \u0026lt;ID\u0026gt;\nDelete registry from Codefresh.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/repository/",
 	"title": "Repository",
 	"tags": [],
@@ -938,6 +966,13 @@
 	"content": " https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/registries/",
+	"title": "Registries",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/",
 	"title": "Spec",
 	"tags": [],
@@ -949,7 +984,7 @@
 	"title": "Spec",
 	"tags": [],
 	"description": "",
-	"content": " A Pipeline needs .version, .kind, and .metadata fields.\nA Pipeline also needs a .spec section.\nExamples Basic Pipeline with implicit clone step (will checkout connected repo automatically) version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/default-pipeline labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true steps: test_step_1: image: alpine working_directory: \u0026#39;${{clone_step}}\u0026#39; commands: - echo ls - echo \u0026#34;hello world\u0026#34; - echo \u0026#34;plain value $PORT\u0026#34; - echo \u0026#34;encrypted value $PAPA\u0026#34; - echo \u0026#34;value from context $COOKIE\u0026#34; build: type: build working_directory: \u0026#39;${{clone_step}}\u0026#39; dockerfile: ./Dockerfile image_name: my-custom-docker-image tag: foo stages: [] Basic Pipeline with explicit clone step version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/basic-pipeline labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true steps: clone_step: repo: codefresh-contrib/python-flask-sample-app revision: master type: git-clone git: CF-default test_step_1: image: alpine working_directory: \u0026#39;${{clone_step}}\u0026#39; commands: - echo ls - echo \u0026#34;hello world\u0026#34; - echo \u0026#34;plain value $PORT\u0026#34; - echo \u0026#34;encrypted value $PAPA\u0026#34; - echo \u0026#34;value from context $COOKIE\u0026#34; build: type: build working_directory: \u0026#39;${{clone_step}}\u0026#39; dockerfile: ./Dockerfile image_name: my-custom-docker-image tag: bla stages: [] Pipeline with a remote spec template brought from a git repository version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/from-repo isPublic: false labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true specTemplate: location: git repo: codefresh-io/cli path: codefresh.yml steps: {} stages: [] Pipeline with a remote spec template brought from a git repository version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/from-external isPublic: false labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true project: codefresh-io/cli spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true specTemplate: location: url url: \u0026#39;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml\u0026#39; steps: {} stages: []"
+	"content": " A Pipeline needs .version, .kind, and .metadata fields.\nA Pipeline also needs a .spec section.\nExamples Basic Pipeline with implicit clone step (will checkout connected repo automatically) version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/default-pipeline labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true steps: test_step_1: image: alpine working_directory: \u0026#39;${{clone_step}}\u0026#39; commands: - echo ls - echo \u0026#34;hello world\u0026#34; - echo \u0026#34;plain value $PORT\u0026#34; - echo \u0026#34;encrypted value $PAPA\u0026#34; - echo \u0026#34;value from context $COOKIE\u0026#34; build: type: build working_directory: \u0026#39;${{clone_step}}\u0026#39; dockerfile: ./Dockerfile image_name: my-custom-docker-image tag: foo stages: [] Basic Pipeline with explicit clone step version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/basic-pipeline labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true steps: clone_step: repo: codefresh-contrib/python-flask-sample-app revision: master type: git-clone git: CF-default test_step_1: image: alpine working_directory: \u0026#39;${{clone_step}}\u0026#39; commands: - echo ls - echo \u0026#34;hello world\u0026#34; - echo \u0026#34;plain value $PORT\u0026#34; - echo \u0026#34;encrypted value $PAPA\u0026#34; - echo \u0026#34;value from context $COOKIE\u0026#34; build: type: build working_directory: \u0026#39;${{clone_step}}\u0026#39; dockerfile: ./Dockerfile image_name: my-custom-docker-image tag: bla stages: [] Pipeline with a remote spec template brought from a git repository version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/from-repo isPublic: false labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true specTemplate: location: git repo: codefresh-io/cli path: codefresh.yml steps: {} stages: [] Pipeline with a remote spec template from a public git URL version: \u0026#39;1.0\u0026#39; kind: pipeline metadata: name: codefresh-io/cli/from-external isPublic: false labels: tags: [] deprecate: applicationPort: \u0026#39;8080\u0026#39; repoPipeline: true project: codefresh-io/cli spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: \u0026#39;3000\u0026#39; - key: SECRET value: \u0026#39;secret-value\u0026#39; encrypted: true specTemplate: location: url url: \u0026#39;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml\u0026#39; steps: {} stages: []"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/tags/",
