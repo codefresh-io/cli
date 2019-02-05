@@ -5,7 +5,9 @@ const _ = require('lodash');
 
 jest.mock('./lib/output/Output');
 
+// mock entities
 jest.mock('./lib/logic/entities/Board');
+jest.mock('./lib/logic/entities/Cluster');
 
 sdk.configure({
     url: 'http://not.needed',
@@ -23,7 +25,7 @@ global.expectOutputEquals = (data) => {
 global.expectThrows = async (func, ExpectedError) => {
     try {
         await func();
-        throw new NotThrownError();
+        throw new NotThrownError('Expected error not thrown!');
     } catch (e) {
         if (e instanceof NotThrownError) {
             throw e;
