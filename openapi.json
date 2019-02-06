@@ -5544,7 +5544,8 @@
             "name": "selector",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
