@@ -2,9 +2,9 @@ const sdk = require('./lib/logic/sdk');
 const openapi = require('./openapi');
 const Output = require('./lib/output/Output');
 const _ = require('lodash');
+const request = require('requestretry');
 
 jest.mock('./lib/output/Output');
-
 
 sdk.configure({
     url: 'http://not.needed',
@@ -15,8 +15,11 @@ sdk.configure({
 class NotThrownError extends Error {
 }
 
-global.expectOutputEquals = (data) => {
-    expect(_.first(_.last(Output.print.mock.calls))).toEqual(data);
+global.verifyResponsesReturned = async (responses) => {
+    const { results } = request.mock;
+    let returnedResponses = _.map(results, r => r.value);
+    returnedResponses = await Promise.all(returnedResponses);
+    expect(returnedResponses).toEqual(responses);
 };
 
 global.expectThrows = async (func, ExpectedError) => {
