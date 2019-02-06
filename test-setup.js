@@ -5,11 +5,6 @@ const _ = require('lodash');
 
 jest.mock('./lib/output/Output');
 
-// mock entities
-jest.mock('./lib/logic/entities/Board');
-jest.mock('./lib/logic/entities/Cluster');
-jest.mock('./lib/logic/entities/Composition');
-jest.mock('./lib/logic/entities/Environment');
 
 sdk.configure({
     url: 'http://not.needed',
