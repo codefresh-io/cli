@@ -32,7 +32,14 @@
           "rbac"
         ],
         "operationId": "getAllRules1",
-        "summary": "getAllRules"
+        "summary": "getAllRules",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.getAllRules()"
+          }
+        ],
+        "parameters": []
       },
       "post": {
         "responses": {
@@ -76,7 +83,14 @@
           },
           "required": true
         },
-        "summary": "createRule"
+        "summary": "createRule",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.createRule(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/abac/batch": {
@@ -119,7 +133,14 @@
           },
           "required": true
         },
-        "summary": "createOrDeleteRules"
+        "summary": "createOrDeleteRules",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.createOrDeleteRules(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/abac/resource/{resource}": {
@@ -149,7 +170,13 @@
           "rbac"
         ],
         "operationId": "getRulesByResource1",
-        "summary": "getRulesByResource"
+        "summary": "getRulesByResource",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.getRulesByResource({ resource })"
+          }
+        ]
       }
     },
     "/abac/tags/rule/{rule}": {
@@ -197,7 +224,13 @@
           },
           "required": true
         },
-        "summary": "updateRuleTags"
+        "summary": "updateRuleTags",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.updateRuleTags({ rule }, body)"
+          }
+        ]
       }
     },
     "/abac/tags/rules": {
@@ -240,7 +273,14 @@
           },
           "required": true
         },
-        "summary": "createRulesTags"
+        "summary": "createRulesTags",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.createRulesTags(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/abac/team/{team}": {
@@ -270,7 +310,13 @@
           "rbac"
         ],
         "operationId": "getRulesByTeamId1",
-        "summary": "getRulesByTeamId"
+        "summary": "getRulesByTeamId",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.getRulesByTeamId({ team })"
+          }
+        ]
       }
     },
     "/abac/teamRules": {
@@ -299,7 +345,14 @@
           },
           "required": true
         },
-        "summary": "createRulesInBatch"
+        "summary": "createRulesInBatch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.createRulesInBatch(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/abac/{rule}": {
@@ -329,7 +382,13 @@
           "rbac"
         ],
         "operationId": "deleteRule1",
-        "summary": "deleteRule"
+        "summary": "deleteRule",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.deleteRule({ rule })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -357,7 +416,13 @@
           "rbac"
         ],
         "operationId": "getRule1",
-        "summary": "getRule"
+        "summary": "getRule",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.rbac.getRule({ rule })"
+          }
+        ]
       }
     },
     "/accounts/{accountId}/{userId}": {
@@ -397,7 +462,13 @@
         ],
         "description": "Not implemented yet",
         "operationId": "deleteUserFromAccount1",
-        "summary": "deleteUserFromAccount"
+        "summary": "deleteUserFromAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.deleteUserFromAccount({ accountId, userId })"
+          }
+        ]
       }
     },
     "/accounts/{accountId}/{userId}/adduser": {
@@ -436,7 +507,13 @@
           "accounts"
         ],
         "operationId": "addExistingUserToAccount1",
-        "summary": "addExistingUserToAccount"
+        "summary": "addExistingUserToAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.addExistingUserToAccount({ accountId, userId })"
+          }
+        ]
       }
     },
     "/accounts/{accountId}/{userId}/admin": {
@@ -475,7 +552,13 @@
           "accounts"
         ],
         "operationId": "deleteAdmin1",
-        "summary": "deleteAdmin"
+        "summary": "deleteAdmin",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.deleteAdmin({ accountId, userId })"
+          }
+        ]
       },
       "post": {
         "parameters": [
@@ -512,7 +595,13 @@
           "accounts"
         ],
         "operationId": "aetAsAdmin1",
-        "summary": "aetAsAdmin"
+        "summary": "aetAsAdmin",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.aetAsAdmin({ accountId, userId })"
+          }
+        ]
       }
     },
     "/accounts/{id}/adduser": {
@@ -551,7 +640,13 @@
             }
           }
         },
-        "summary": "addUserToAccount"
+        "summary": "addUserToAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.addUserToAccount({ id }, body)"
+          }
+        ]
       }
     },
     "/accounts/{id}/update": {
@@ -627,7 +722,13 @@
             }
           }
         },
-        "summary": "updateAccountPublicSettings"
+        "summary": "updateAccountPublicSettings",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.updateAccountPublicSettings({ id }, body)"
+          }
+        ]
       }
     },
     "/accounts/{id}/updateuser": {
@@ -666,7 +767,13 @@
             }
           }
         },
-        "summary": "updateUserDetails"
+        "summary": "updateUserDetails",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.updateUserDetails({ id }, body)"
+          }
+        ]
       }
     },
     "/accounts/{id}/users": {
@@ -691,7 +798,13 @@
         ],
         "description": "Get all users of an account",
         "operationId": "getUsersForAccount1",
-        "summary": "getUsersForAccount"
+        "summary": "getUsersForAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.getUsersForAccount({ id })"
+          }
+        ]
       }
     },
     "/admin/accounts": {
@@ -711,7 +824,14 @@
         ],
         "description": "get all the accounts in the system",
         "operationId": "getAllAccounts1",
-        "summary": "getAllAccounts"
+        "summary": "getAllAccounts",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.getAllAccounts()"
+          }
+        ],
+        "parameters": []
       },
       "post": {
         "responses": {
@@ -749,7 +869,14 @@
             }
           }
         },
-        "summary": "addAccount"
+        "summary": "addAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.addAccount(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/admin/accounts/addpendinguser": {
@@ -803,7 +930,14 @@
             }
           }
         },
-        "summary": "addPendingUserWithoutAccount"
+        "summary": "addPendingUserWithoutAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.addPendingUserWithoutAccount(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/admin/accounts/{id}": {
@@ -828,7 +962,13 @@
         ],
         "description": "Not implemented yet",
         "operationId": "deleteAccount1",
-        "summary": "deleteAccount"
+        "summary": "deleteAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.deleteAccount({ id })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -851,7 +991,13 @@
         ],
         "description": "Get an account by id",
         "operationId": "getById1",
-        "summary": "getById"
+        "summary": "getById",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.getById({ id })"
+          }
+        ]
       }
     },
     "/admin/accounts/{id}/update": {
@@ -890,7 +1036,13 @@
             }
           }
         },
-        "summary": "updateAccount"
+        "summary": "updateAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.accounts.updateAccount({ id }, body)"
+          }
+        ]
       }
     },
     "/admin/runtime-environments": {
@@ -932,7 +1084,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.getAll({ limit, offset, accountIds })"
+          }
+        ]
       }
     },
     "/admin/runtime-environments/account/default/{account}/{name}": {
@@ -969,7 +1127,13 @@
             "required": true
           }
         ],
-        "summary": "setDefaultForAccount"
+        "summary": "setDefaultForAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.setDefaultForAccount({ account, name })"
+          }
+        ]
       }
     },
     "/admin/runtime-environments/account/{account}": {
@@ -1019,7 +1183,13 @@
             }
           }
         ],
-        "summary": "getByAccount"
+        "summary": "getByAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.getByAccount({ account, limit, offset, accountIds })"
+          }
+        ]
       }
     },
     "/admin/runtime-environments/default/{plan}/{name}": {
@@ -1056,7 +1226,13 @@
             "required": true
           }
         ],
-        "summary": "setDefault"
+        "summary": "setDefault",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.setDefault({ plan, name })"
+          }
+        ]
       }
     },
     "/admin/runtime-environments/{name}": {
@@ -1108,7 +1284,13 @@
             }
           }
         },
-        "summary": "updateSysRe"
+        "summary": "updateSysRe",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.updateSysRe({ name, extend, description }, body)"
+          }
+        ]
       },
       "delete": {
         "responses": {
@@ -1142,7 +1324,13 @@
             }
           }
         ],
-        "summary": "deleteSysRe"
+        "summary": "deleteSysRe",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.deleteSysRe({ name, force })"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -1197,7 +1385,13 @@
             }
           }
         ],
-        "summary": "getSysRe"
+        "summary": "getSysRe",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.getSysRe({ name, version, extend, history, successors })"
+          }
+        ]
       }
     },
     "/admin/runtime-environments/{plan}/{name}": {
@@ -1257,7 +1451,13 @@
             }
           }
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.update({ plan, name, extend, description }, body)"
+          }
+        ]
       },
       "delete": {
         "responses": {
@@ -1299,7 +1499,13 @@
             }
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.delete({ plan, name, force })"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -1362,7 +1568,13 @@
             }
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.sysRuntimeEnvs.get({ plan, name, version, extend, history, successors })"
+          }
+        ]
       }
     },
     "/auth/key": {
@@ -1406,7 +1618,13 @@
             }
           }
         },
-        "summary": "generate"
+        "summary": "generate",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.tokens.generate({ subjectType, subjectReference }, body)"
+          }
+        ]
       }
     },
     "/auth/key/{id}": {
@@ -1435,7 +1653,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.tokens.delete({ id })"
+          }
+        ]
       }
     },
     "/auth/keys": {
@@ -1455,7 +1679,13 @@
         ],
         "operationId": "getAll2",
         "parameters": [],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.tokens.getAll()"
+          }
+        ]
       }
     },
     "/builds": {
@@ -1500,7 +1730,13 @@
           "builds"
         ],
         "operationId": "getAll3",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.builds.getAll({ account, repoOwner, repoName })"
+          }
+        ]
       }
     },
     "/builds/rebuild/{id}": {
@@ -1524,7 +1760,13 @@
           "builds"
         ],
         "operationId": "rebuild1",
-        "summary": "rebuild"
+        "summary": "rebuild",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.builds.rebuild({ id })"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -1546,7 +1788,13 @@
             "$ref": "#/components/parameters/id"
           }
         ],
-        "summary": "restart"
+        "summary": "restart",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.restart({ id })"
+          }
+        ]
       }
     },
     "/builds/{id}": {
@@ -1570,7 +1818,13 @@
           "workflows"
         ],
         "operationId": "get2",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.get({ id })"
+          }
+        ]
       }
     },
     "/builds/{buildId}/update": {
@@ -1616,7 +1870,13 @@
             }
           }
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.update({ buildId }, body)"
+          }
+        ]
       }
     },
     "/builds/{serviceId}/": {
@@ -1667,7 +1927,13 @@
             }
           }
         },
-        "summary": "buildByService"
+        "summary": "buildByService",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.buildByService({ serviceId }, body)"
+          }
+        ]
       }
     },
     "/clusters": {
@@ -1687,7 +1953,13 @@
         ],
         "operationId": "getAll4",
         "parameters": [],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.clusters.getAll()"
+          }
+        ]
       }
     },
     "/clusters/{provider}/cluster/{id}": {
@@ -1724,7 +1996,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.clusters.delete({ provider, id })"
+          }
+        ]
       }
     },
     "/compositions": {
@@ -1743,7 +2021,14 @@
           "compositions"
         ],
         "operationId": "getAll5",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.getAll()"
+          }
+        ],
+        "parameters": []
       },
       "post": {
         "responses": {
@@ -1789,7 +2074,14 @@
           },
           "required": true
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.create(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/compositions/{id}/run": {
@@ -1837,7 +2129,13 @@
             }
           }
         },
-        "summary": "launch"
+        "summary": "launch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.launch({ id }, body)"
+          }
+        ]
       }
     },
     "/compositions/{id}": {
@@ -1861,7 +2159,13 @@
           "compositions"
         ],
         "operationId": "delete4",
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.delete({ id })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -1889,7 +2193,13 @@
           "compositions"
         ],
         "operationId": "get3",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.get({ id })"
+          }
+        ]
       },
       "put": {
         "parameters": [
@@ -1941,7 +2251,13 @@
           "description": "Update the name/variables/body of the composition with the id inserted",
           "required": true
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.update({ id }, body)"
+          }
+        ]
       },
       "patch": {
         "responses": {
@@ -1977,7 +2293,13 @@
             }
           }
         },
-        "summary": "patch"
+        "summary": "patch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.patch({ id }, body)"
+          }
+        ]
       }
     },
     "/compositions/{id}/duplicate": {
@@ -2001,7 +2323,13 @@
           "compositions"
         ],
         "operationId": "duplicate1",
-        "summary": "duplicate"
+        "summary": "duplicate",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.compositions.duplicate({ id })"
+          }
+        ]
       }
     },
     "/contexts": {
@@ -2036,7 +2364,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.getAll({ type, decrypt })"
+          }
+        ]
       }
     },
     "/contexts/": {
@@ -2073,7 +2407,13 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.create({ skipValidation }, body)"
+          }
+        ]
       }
     },
     "/contexts/{name}": {
@@ -2102,7 +2442,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.delete({ name })"
+          }
+        ]
       },
       "put": {
         "responses": {
@@ -2138,7 +2484,13 @@
             }
           }
         },
-        "summary": "replace"
+        "summary": "replace",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.replace({ name }, body)"
+          }
+        ]
       },
       "patch": {
         "responses": {
@@ -2174,7 +2526,13 @@
             }
           }
         },
-        "summary": "patch"
+        "summary": "patch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.patch({ name }, body)"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -2208,7 +2566,13 @@
             }
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.contexts.get({ name, decrypt })"
+          }
+        ]
       }
     },
     "/environments": {
@@ -2227,7 +2591,14 @@
           "envs"
         ],
         "operationId": "getAll7",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.getAll()"
+          }
+        ],
+        "parameters": []
       }
     },
     "/environments/all/terminate": {
@@ -2246,7 +2617,14 @@
           "envs"
         ],
         "operationId": "terminateAll1",
-        "summary": "terminateAll"
+        "summary": "terminateAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.terminateAll()"
+          }
+        ],
+        "parameters": []
       }
     },
     "/environments/{id}": {
@@ -2275,7 +2653,13 @@
             "required": true
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.get({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/pause": {
@@ -2299,7 +2683,13 @@
           "envs"
         ],
         "operationId": "pause1",
-        "summary": "pause"
+        "summary": "pause",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.pause({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/rename/{newName}": {
@@ -2338,7 +2728,13 @@
           "envs"
         ],
         "operationId": "rename1",
-        "summary": "rename"
+        "summary": "rename",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.rename({ id, newName })"
+          }
+        ]
       }
     },
     "/environments/{id}/start": {
@@ -2362,7 +2758,13 @@
           "envs"
         ],
         "operationId": "start1",
-        "summary": "start"
+        "summary": "start",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.start({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/status": {
@@ -2386,7 +2788,13 @@
           "envs"
         ],
         "operationId": "status1",
-        "summary": "status"
+        "summary": "status",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.status({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/stop": {
@@ -2410,7 +2818,13 @@
           "envs"
         ],
         "operationId": "stop1",
-        "summary": "stop"
+        "summary": "stop",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.stop({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/terminate": {
@@ -2434,7 +2848,13 @@
           "envs"
         ],
         "operationId": "terminate1",
-        "summary": "terminate"
+        "summary": "terminate",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.terminate({ id })"
+          }
+        ]
       }
     },
     "/environments/{id}/unpause": {
@@ -2458,7 +2878,13 @@
           "envs"
         ],
         "operationId": "unpause1",
-        "summary": "unpause"
+        "summary": "unpause",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.envs.unpause({ id })"
+          }
+        ]
       }
     },
     "/features/{accountId}": {
@@ -2488,7 +2914,13 @@
           "features"
         ],
         "operationId": "account1",
-        "summary": "account"
+        "summary": "account",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.features.account({ accountId })"
+          }
+        ]
       }
     },
     "/helm/boards": {
@@ -2543,7 +2975,14 @@
           "helm.boards"
         ],
         "operationId": "deleteAll1",
-        "summary": "deleteAll"
+        "summary": "deleteAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.deleteAll()"
+          }
+        ],
+        "parameters": []
       },
       "get": {
         "responses": {
@@ -2609,7 +3048,14 @@
           "helm.boards"
         ],
         "operationId": "getAll8",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.getAll()"
+          }
+        ],
+        "parameters": []
       },
       "post": {
         "responses": {
@@ -2675,7 +3121,14 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.create(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/helm/boards/name/{name}": {
@@ -2757,7 +3210,13 @@
           "helm.boards"
         ],
         "operationId": "getByName1",
-        "summary": "getByName"
+        "summary": "getByName",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.getByName({ name, columns })"
+          }
+        ]
       }
     },
     "/helm/boards/sections": {
@@ -2835,7 +3294,14 @@
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.create(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/helm/boards/sections/reorder": {
@@ -2889,7 +3355,14 @@
           },
           "required": true
         },
-        "summary": "reorder"
+        "summary": "reorder",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.reorder(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/helm/boards/sections/{id}": {
@@ -2972,7 +3445,13 @@
           "helm.sections"
         ],
         "operationId": "delete6",
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.delete({ id })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -3043,7 +3522,13 @@
           "helm.sections"
         ],
         "operationId": "get6",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.get({ id })"
+          }
+        ]
       },
       "patch": {
         "parameters": [
@@ -3138,7 +3623,13 @@
           },
           "required": true
         },
-        "summary": "patch"
+        "summary": "patch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.patch({ id }, body)"
+          }
+        ]
       },
       "put": {
         "parameters": [
@@ -3233,7 +3724,13 @@
           },
           "required": true
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.update({ id }, body)"
+          }
+        ]
       }
     },
     "/helm/boards/{boardId}/sections/": {
@@ -3293,7 +3790,13 @@
           "helm.sections"
         ],
         "operationId": "deleteAll2",
-        "summary": "deleteAll"
+        "summary": "deleteAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.deleteAll({ boardId })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -3374,7 +3877,13 @@
           "helm.sections"
         ],
         "operationId": "getAll9",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.getAll({ boardId })"
+          }
+        ]
       }
     },
     "/helm/boards/{boardId}/sections/name/{name}": {
@@ -3450,7 +3959,13 @@
           "helm.sections"
         ],
         "operationId": "getByName2",
-        "summary": "getByName"
+        "summary": "getByName",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.getByName({ boardId, name })"
+          }
+        ]
       }
     },
     "/helm/boards/{boardId}/sections": {
@@ -3479,7 +3994,13 @@
             "required": true
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.sections.getAll({ boardId })"
+          }
+        ]
       }
     },
     "/helm/boards/{id}": {
@@ -3552,7 +4073,13 @@
           "helm.boards"
         ],
         "operationId": "delete7",
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.delete({ id })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -3623,7 +4150,13 @@
           "helm.boards"
         ],
         "operationId": "get7",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.get({ id })"
+          }
+        ]
       },
       "patch": {
         "parameters": [
@@ -3712,7 +4245,13 @@
           },
           "required": true
         },
-        "summary": "patch"
+        "summary": "patch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.patch({ id }, body)"
+          }
+        ]
       },
       "put": {
         "parameters": [
@@ -3801,7 +4340,13 @@
           },
           "required": true
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.boards.update({ id }, body)"
+          }
+        ]
       }
     },
     "/helm/repos": {
@@ -3830,7 +4375,13 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.repos.create(body)"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -3856,7 +4407,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.repos.getAll({ query })"
+          }
+        ]
       }
     },
     "/helm/repos/{name}": {
@@ -3885,7 +4442,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.repos.delete({ name })"
+          }
+        ]
       },
       "put": {
         "responses": {
@@ -3921,7 +4484,13 @@
             }
           }
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.repos.update({ name }, body)"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -3948,7 +4517,13 @@
             "required": true
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.repos.get({ name })"
+          }
+        ]
       }
     },
     "/hermes/events": {
@@ -3985,7 +4560,13 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.events.create({ public }, body)"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -4032,7 +4613,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.events.getAll({ type, kind, filter, public })"
+          }
+        ]
       }
     },
     "/hermes/events/{event}": {
@@ -4061,7 +4648,13 @@
             "required": true
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.events.get({ event })"
+          }
+        ]
       }
     },
     "/hermes/events/{event}/{context}": {
@@ -4098,7 +4691,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.events.delete({ event, context })"
+          }
+        ]
       }
     },
     "/hermes/triggers": {
@@ -4118,7 +4717,13 @@
         ],
         "operationId": "getAll13",
         "parameters": [],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.getAll()"
+          }
+        ]
       }
     },
     "/hermes/triggers/event/{event}": {
@@ -4147,7 +4752,13 @@
             "required": true
           }
         ],
-        "summary": "getEventTriggers"
+        "summary": "getEventTriggers",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.getEventTriggers({ event })"
+          }
+        ]
       }
     },
     "/hermes/triggers/pipeline/{pipeline}": {
@@ -4176,7 +4787,13 @@
             "required": true
           }
         ],
-        "summary": "getPipelineTriggers"
+        "summary": "getPipelineTriggers",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.getPipelineTriggers({ pipeline })"
+          }
+        ]
       }
     },
     "/hermes/triggers/{event}/{pipeline}": {
@@ -4222,7 +4839,13 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.create({ event, pipeline }, body)"
+          }
+        ]
       },
       "delete": {
         "responses": {
@@ -4257,7 +4880,13 @@
             "required": true
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.delete({ event, pipeline })"
+          }
+        ]
       }
     },
     "/hermes/types": {
@@ -4277,7 +4906,13 @@
         ],
         "operationId": "getAll14",
         "parameters": [],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.types.getAll()"
+          }
+        ]
       }
     },
     "/hermes/types/{type}/{kind}": {
@@ -4314,7 +4949,13 @@
             "required": true
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.triggers.types.get({ type, kind })"
+          }
+        ]
       }
     },
     "/hermes/version": {
@@ -4334,7 +4975,13 @@
         ],
         "operationId": "getHermesVersion1",
         "parameters": [],
-        "summary": "getHermesVersion"
+        "summary": "getHermesVersion",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.version.getHermesVersion()"
+          }
+        ]
       }
     },
     "/images": {
@@ -4418,7 +5065,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.getAll({ limit, offset, metadata, tag, type, branch, imageDisplayNameRegex, select, sha })"
+          }
+        ]
       }
     },
     "/images/external": {
@@ -4438,7 +5091,14 @@
           "images"
         ],
         "operationId": "addFromExternalSource1",
-        "summary": "addFromExternalSource"
+        "summary": "addFromExternalSource",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.addFromExternalSource()"
+          }
+        ],
+        "parameters": []
       }
     },
     "/images/{id}": {
@@ -4468,7 +5128,13 @@
           "images"
         ],
         "operationId": "get11",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.get({ id })"
+          }
+        ]
       }
     },
     "/images/{id}/tags": {
@@ -4498,7 +5164,13 @@
           "images"
         ],
         "operationId": "getTags1",
-        "summary": "getTags"
+        "summary": "getTags",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.getTags({ id })"
+          }
+        ]
       }
     },
     "/images/{id}/tag/{tag}": {
@@ -4537,7 +5209,13 @@
           "images"
         ],
         "operationId": "tag1",
-        "summary": "tag"
+        "summary": "tag",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.tag({ id, tag })"
+          }
+        ]
       },
       "delete": {
         "parameters": [
@@ -4574,7 +5252,13 @@
           "images"
         ],
         "operationId": "untag1",
-        "summary": "untag"
+        "summary": "untag",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.untag({ id, tag })"
+          }
+        ]
       }
     },
     "/images/{dockerImageId}/metadata": {
@@ -4604,7 +5288,13 @@
           "images"
         ],
         "operationId": "getMetadata1",
-        "summary": "getMetadata"
+        "summary": "getMetadata",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.getMetadata({ dockerImageId })"
+          }
+        ]
       },
       "post": {
         "parameters": [
@@ -4659,7 +5349,13 @@
             }
           }
         },
-        "summary": "upsertMetadata"
+        "summary": "upsertMetadata",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.upsertMetadata({ dockerImageId }, body)"
+          }
+        ]
       }
     },
     "/images/{dockerImageId}/metadata/{keyName}": {
@@ -4698,7 +5394,13 @@
           "images"
         ],
         "operationId": "deleteMetadata1",
-        "summary": "deleteMetadata"
+        "summary": "deleteMetadata",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.images.deleteMetadata({ dockerImageId, keyName })"
+          }
+        ]
       }
     },
     "/kubernetes/releases/{releaseName}/delete": {
@@ -4752,7 +5454,13 @@
             }
           }
         },
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.releases.delete({ releaseName, selector, tillerNamespace }, body)"
+          }
+        ]
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -4797,7 +5505,13 @@
             }
           }
         },
-        "summary": "test"
+        "summary": "test",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.releases.test({ releaseName, selector }, body)"
+          }
+        ]
       }
     },
     "/kubernetes/releases/secrets/imagePullSecret": {
@@ -4842,7 +5556,13 @@
             }
           }
         },
-        "summary": "generateImagePullSecret"
+        "summary": "generateImagePullSecret",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.kubernetes.generateImagePullSecret({ namespace, selector }, body)"
+          }
+        ]
       }
     },
     "/kubernetes/chart/install": {
@@ -4888,7 +5608,13 @@
             }
           }
         },
-        "summary": "install"
+        "summary": "install",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.charts.install({ selector, tillerNamespace }, body)"
+          }
+        ]
       }
     },
     "/kubernetes/chart/promote": {
@@ -4933,7 +5659,13 @@
             }
           }
         },
-        "summary": "promote"
+        "summary": "promote",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.helm.charts.promote({ selector, tillerNamespace }, body)"
+          }
+        ]
       }
     },
     "/nomios/version": {
@@ -4953,7 +5685,13 @@
         ],
         "operationId": "getNomiosVersion1",
         "parameters": [],
-        "summary": "getNomiosVersion"
+        "summary": "getNomiosVersion",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.version.getNomiosVersion()"
+          }
+        ]
       }
     },
     "/payments": {
@@ -4972,7 +5710,14 @@
           "payments"
         ],
         "operationId": "getAll16",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.payments.getAll()"
+          }
+        ],
+        "parameters": []
       },
       "post": {
         "responses": {
@@ -5023,7 +5768,14 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.payments.create(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/payments/plans": {
@@ -5042,7 +5794,14 @@
           "payments"
         ],
         "operationId": "getPlans1",
-        "summary": "getPlans"
+        "summary": "getPlans",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.payments.getPlans()"
+          }
+        ],
+        "parameters": []
       }
     },
     "/pipelines": {
@@ -5091,7 +5850,13 @@
           }
         ],
         "operationId": "getAll17",
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.getAll({ offset, id, limit, labels })"
+          }
+        ]
       },
       "post": {
         "responses": {
@@ -5117,7 +5882,14 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.create(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/pipelines/run/{name}": {
@@ -5155,7 +5927,13 @@
             }
           }
         },
-        "summary": "run"
+        "summary": "run",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.run({ name }, body)"
+          }
+        ]
       }
     },
     "/pipelines/yaml/validator": {
@@ -5184,7 +5962,13 @@
             }
           }
         },
-        "summary": "validateYaml"
+        "summary": "validateYaml",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.validateYaml(body)"
+          }
+        ]
       }
     },
     "/pipelines/{name}": {
@@ -5214,7 +5998,13 @@
           "pipelines"
         ],
         "operationId": "delete12",
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.delete({ name })"
+          }
+        ]
       },
       "get": {
         "parameters": [
@@ -5249,7 +6039,13 @@
           "pipelines"
         ],
         "operationId": "get12",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.get({ name, decryptVariables })"
+          }
+        ]
       },
       "put": {
         "parameters": [
@@ -5286,7 +6082,13 @@
           "pipelines"
         ],
         "operationId": "replace2",
-        "summary": "replace"
+        "summary": "replace",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.pipelines.replace({ name }, body)"
+          }
+        ]
       }
     },
     "/progress/download/{id}": {
@@ -5310,7 +6112,13 @@
           "progress"
         ],
         "operationId": "download1",
-        "summary": "download"
+        "summary": "download",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.progress.download({ id })"
+          }
+        ]
       }
     },
     "/progress/{id}": {
@@ -5334,7 +6142,13 @@
           "progress"
         ],
         "operationId": "get13",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.progress.get({ id })"
+          }
+        ]
       },
       "delete": {
         "parameters": [
@@ -5356,7 +6170,13 @@
           "progress"
         ],
         "operationId": "terminate2",
-        "summary": "terminate"
+        "summary": "terminate",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.progress.terminate({ id })"
+          }
+        ]
       }
     },
     "/providers/github/hook": {
@@ -5475,7 +6295,13 @@
             }
           }
         },
-        "summary": "githubHook"
+        "summary": "githubHook",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.providers.githubHook({ x-github-event, send-mail-and-update-github, x-github-delivery, x-github-signature }, body)"
+          }
+        ]
       }
     },
     "/registry/auth/token": {
@@ -5510,7 +6336,14 @@
           "description": "Description of the token",
           "required": true
         },
-        "summary": "generateCfcrToken"
+        "summary": "generateCfcrToken",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.Codefresh Registry.generateCfcrToken(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/repos": {
@@ -5538,7 +6371,13 @@
             }
           }
         ],
-        "summary": "getAllGitRepos"
+        "summary": "getAllGitRepos",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.getAllGitRepos({ context })"
+          }
+        ]
       }
     },
     "/repos/existing": {
@@ -5574,7 +6413,13 @@
             "allowEmptyValue": true
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.getAll({ context, thin })"
+          }
+        ]
       }
     },
     "/repos/settings/{repoOwner}/{repoName}": {
@@ -5601,7 +6446,13 @@
           "repos"
         ],
         "operationId": "getSettings1",
-        "summary": "getSettings"
+        "summary": "getSettings",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.getSettings({ repoOwner, repoName })"
+          }
+        ]
       }
     },
     "/repos/{owner}/{repo}": {
@@ -5645,7 +6496,13 @@
             }
           }
         ],
-        "summary": "getGitRepo"
+        "summary": "getGitRepo",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.getGitRepo({ owner, repo, context })"
+          }
+        ]
       }
     },
     "/runtime-environments": {
@@ -5680,7 +6537,13 @@
             }
           }
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtimeEnvs.getAll({ limit, offset })"
+          }
+        ]
       }
     },
     "/runtime-environments/default/{name}": {
@@ -5709,7 +6572,13 @@
             "required": true
           }
         ],
-        "summary": "setDefault"
+        "summary": "setDefault",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtimeEnvs.setDefault({ name })"
+          }
+        ]
       }
     },
     "/runtime-environments/{name}": {
@@ -5761,7 +6630,13 @@
             }
           }
         },
-        "summary": "update"
+        "summary": "update",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtimeEnvs.update({ name, extend, description }, body)"
+          }
+        ]
       },
       "delete": {
         "responses": {
@@ -5795,7 +6670,13 @@
             }
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtimeEnvs.delete({ name, force })"
+          }
+        ]
       },
       "get": {
         "responses": {
@@ -5843,7 +6724,13 @@
             }
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtimeEnvs.get({ name, version, extend, history })"
+          }
+        ]
       }
     },
     "/runtime/testit": {
@@ -5901,7 +6788,14 @@
             }
           }
         },
-        "summary": "launch"
+        "summary": "launch",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.runtime.launch(body)"
+          }
+        ],
+        "parameters": []
       }
     },
     "/services": {
@@ -5965,7 +6859,13 @@
             }
           }
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.create({ context }, body)"
+          }
+        ]
       }
     },
     "/services/{name}": {
@@ -6001,7 +6901,13 @@
             }
           }
         ],
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.get({ name, context })"
+          }
+        ]
       },
       "delete": {
         "responses": {
@@ -6035,7 +6941,13 @@
             }
           }
         ],
-        "summary": "delete"
+        "summary": "delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.repos.delete({ name, context })"
+          }
+        ]
       }
     },
     "/team": {
@@ -6082,7 +6994,14 @@
           "description": "Team data",
           "required": true
         },
-        "summary": "create"
+        "summary": "create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.create(body)"
+          }
+        ],
+        "parameters": []
       },
       "get": {
         "responses": {
@@ -6100,7 +7019,13 @@
         ],
         "operationId": "getAll20",
         "parameters": [],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.getAll()"
+          }
+        ]
       }
     },
     "/team/group/synchronize/name/{name}/type/{type}": {
@@ -6144,7 +7069,13 @@
             }
           }
         ],
-        "summary": "synchronizeClientWithGroup"
+        "summary": "synchronizeClientWithGroup",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.synchronizeClientWithGroup({ name, type, access_token })"
+          }
+        ]
       }
     },
     "/team/{teamId}/{userId}/assignUserToTeam": {
@@ -6183,7 +7114,13 @@
           "teams"
         ],
         "operationId": "addUser1",
-        "summary": "addUser"
+        "summary": "addUser",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.addUser({ teamId, userId })"
+          }
+        ]
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -6222,7 +7159,13 @@
           "teams"
         ],
         "operationId": "removeUser1",
-        "summary": "removeUser"
+        "summary": "removeUser",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.removeUser({ teamId, userId })"
+          }
+        ]
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -6251,7 +7194,13 @@
             "required": true
           }
         ],
-        "summary": "getAllByUser"
+        "summary": "getAllByUser",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.teams.getAllByUser({ userId })"
+          }
+        ]
       }
     },
     "/user": {
@@ -6270,7 +7219,14 @@
           "users"
         ],
         "operationId": "get16",
-        "summary": "get"
+        "summary": "get",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.users.get()"
+          }
+        ],
+        "parameters": []
       }
     },
     "/user/changeaccount/{accountId}": {
@@ -6309,7 +7265,13 @@
             }
           }
         },
-        "summary": "changeAccount"
+        "summary": "changeAccount",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.users.changeAccount({ accountId }, body)"
+          }
+        ]
       }
     },
     "/user/firebaseAuth": {
@@ -6329,7 +7291,13 @@
           "firebase"
         ],
         "operationId": "getToken1",
-        "summary": "getToken"
+        "summary": "getToken",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.firebase.getToken()"
+          }
+        ]
       }
     },
     "/version": {
@@ -6349,7 +7317,13 @@
         ],
         "operationId": "getServerVersion1",
         "parameters": [],
-        "summary": "getServerVersion"
+        "summary": "getServerVersion",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.version.getServerVersion()"
+          }
+        ]
       }
     },
     "/workflow": {
@@ -6405,7 +7379,13 @@
         "tags": [
           "workflows"
         ],
-        "summary": "getAll"
+        "summary": "getAll",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.getAll({ limit, page, status, trigger, pipeline })"
+          }
+        ]
       }
     },
     "/workflow/{repoOwner}/{repoName}/file": {
@@ -6464,7 +7444,13 @@
             }
           }
         },
-        "summary": "service"
+        "summary": "service",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.workflows.service({ repoOwner, repoName }, body)"
+          }
+        ]
       }
     }
   },
