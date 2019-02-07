@@ -2,13 +2,18 @@
   "openapi": "3.0.0",
   "info": {
     "contact": {
-      "name": "Codefresh api team",
-      "url": "http://www.codefresh.io"
+      "name": "Codefresh",
+      "url": "https://www.codefresh.io"
     },
-    "description": "Codefresh api openapi-3.0 specification",
-    "termsOfService": "http://www.codefresh.io",
+    "description": "Codefresh API openAPI 3.0 specification",
+    "termsOfService": "https://codefresh.io/docs/docs/terms-and-privacy-policy/terms-of-service/",
     "title": "Codefresh API",
-    "version": "0.0.0"
+    "version": "0.0.1",
+    "x-logo": {
+      "url": "https://photos.prnewswire.com/prnfull/20160929/413350LOGO?max=200",
+      "backgroundColor": "#FFFFFF",
+      "altText": "Codefresh"
+    }
   },
   "servers": [
     {
