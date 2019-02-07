@@ -5,6 +5,7 @@ RUN apk add --update git curl jq py-pip && pip install yq
 WORKDIR /cf-cli
 
 COPY package.json /cf-cli
+COPY check-version.js /cf-cli
 
 RUN yarn --prod install
 
