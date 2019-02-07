@@ -3738,7 +3738,7 @@
         ]
       }
     },
-    "/helm/boards/{boardId}/sections/": {
+    "/helm/boards/{boardId}/sections": {
       "delete": {
         "parameters": [
           {
@@ -3969,41 +3969,6 @@
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.getByName({ boardId, name })"
-          }
-        ]
-      }
-    },
-    "/helm/boards/{boardId}/sections": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "security": [
-          {
-            "internalApiKey": []
-          }
-        ],
-        "tags": [
-          "helm.sections"
-        ],
-        "operationId": "getAll10",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "boardId",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "getAll",
-        "x-code-samples": [
-          {
-            "lang": "JavaScript",
-            "source": "sdk.helm.sections.getAll({ boardId })"
           }
         ]
       }
