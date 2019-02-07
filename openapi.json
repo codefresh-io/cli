@@ -36,15 +36,16 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getAllRules1",
-        "summary": "getAllRules",
+        "operationId": "rbac-get-all-rules",
+        "summary": "Get all rules",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.getAllRules()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "rbac.getAllRules"
       },
       "post": {
         "responses": {
@@ -60,7 +61,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRule1",
+        "operationId": "rbac-create-rule",
         "requestBody": {
           "content": {
             "application/json": {
@@ -88,14 +89,15 @@
           },
           "required": true
         },
-        "summary": "createRule",
+        "summary": "Create rule",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.createRule(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "rbac.createRule"
       }
     },
     "/abac/batch": {
@@ -113,7 +115,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createOrDeleteRules1",
+        "operationId": "rbac-create-or-delete-rules",
         "requestBody": {
           "content": {
             "application/json": {
@@ -138,14 +140,15 @@
           },
           "required": true
         },
-        "summary": "createOrDeleteRules",
+        "summary": "Create or delete rules",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.createOrDeleteRules(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "rbac.createOrDeleteRules"
       }
     },
     "/abac/resource/{resource}": {
@@ -174,14 +177,15 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByResource1",
-        "summary": "getRulesByResource",
+        "operationId": "rbac-get-rules-by-resource",
+        "summary": "Get rules by resource",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.getRulesByResource({ resource })"
           }
-        ]
+        ],
+        "x-sdk-interface": "rbac.getRulesByResource"
       }
     },
     "/abac/tags/rule/{rule}": {
@@ -210,7 +214,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "updateRuleTags1",
+        "operationId": "rbac-update-rule-tags",
         "requestBody": {
           "content": {
             "application/json": {
@@ -229,13 +233,14 @@
           },
           "required": true
         },
-        "summary": "updateRuleTags",
+        "summary": "Update rule tags",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.updateRuleTags({ rule }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "rbac.updateRuleTags"
       }
     },
     "/abac/tags/rules": {
@@ -253,7 +258,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRulesTags1",
+        "operationId": "rbac-create-rules-tags",
         "requestBody": {
           "content": {
             "application/json": {
@@ -278,14 +283,15 @@
           },
           "required": true
         },
-        "summary": "createRulesTags",
+        "summary": "Create rules tags",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.createRulesTags(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "rbac.createRulesTags"
       }
     },
     "/abac/team/{team}": {
@@ -314,14 +320,15 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRulesByTeamId1",
-        "summary": "getRulesByTeamId",
+        "operationId": "rbac-get-rules-by-team-id",
+        "summary": "Get rules by team id",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.getRulesByTeamId({ team })"
           }
-        ]
+        ],
+        "x-sdk-interface": "rbac.getRulesByTeamId"
       }
     },
     "/abac/teamRules": {
@@ -339,7 +346,7 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "createRulesInBatch1",
+        "operationId": "rbac-create-rules-in-batch",
         "requestBody": {
           "content": {
             "application/json": {
@@ -350,14 +357,15 @@
           },
           "required": true
         },
-        "summary": "createRulesInBatch",
+        "summary": "Create rules in batch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.createRulesInBatch(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "rbac.createRulesInBatch"
       }
     },
     "/abac/{rule}": {
@@ -386,14 +394,15 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "deleteRule1",
-        "summary": "deleteRule",
+        "operationId": "rbac-delete-rule",
+        "summary": "Delete rule",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.deleteRule({ rule })"
           }
-        ]
+        ],
+        "x-sdk-interface": "rbac.deleteRule"
       },
       "get": {
         "parameters": [
@@ -420,14 +429,15 @@
         "tags": [
           "rbac"
         ],
-        "operationId": "getRule1",
-        "summary": "getRule",
+        "operationId": "rbac-get-rule",
+        "summary": "Get rule",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.rbac.getRule({ rule })"
           }
-        ]
+        ],
+        "x-sdk-interface": "rbac.getRule"
       }
     },
     "/accounts/{accountId}/{userId}": {
@@ -466,14 +476,15 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteUserFromAccount1",
-        "summary": "deleteUserFromAccount",
+        "operationId": "accounts-delete-user-from-account",
+        "summary": "Delete user from account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.deleteUserFromAccount({ accountId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.deleteUserFromAccount"
       }
     },
     "/accounts/{accountId}/{userId}/adduser": {
@@ -511,14 +522,15 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "addExistingUserToAccount1",
-        "summary": "addExistingUserToAccount",
+        "operationId": "accounts-add-existing-user-to-account",
+        "summary": "Add existing user to account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.addExistingUserToAccount({ accountId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.addExistingUserToAccount"
       }
     },
     "/accounts/{accountId}/{userId}/admin": {
@@ -556,14 +568,15 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "deleteAdmin1",
-        "summary": "deleteAdmin",
+        "operationId": "accounts-delete-admin",
+        "summary": "Delete admin",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.deleteAdmin({ accountId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.deleteAdmin"
       },
       "post": {
         "parameters": [
@@ -599,14 +612,15 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "aetAsAdmin1",
-        "summary": "aetAsAdmin",
+        "operationId": "accounts-aet-as-admin",
+        "summary": "Aet as admin",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.aetAsAdmin({ accountId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.aetAsAdmin"
       }
     },
     "/accounts/{id}/adduser": {
@@ -630,7 +644,7 @@
           "accounts"
         ],
         "description": "Adds a not existing user to an account. the provider field is optional and if not provided it will be taken from the account model",
-        "operationId": "addUserToAccount1",
+        "operationId": "accounts-add-user-to-account",
         "requestBody": {
           "content": {
             "application/json": {
@@ -645,13 +659,14 @@
             }
           }
         },
-        "summary": "addUserToAccount",
+        "summary": "Add user to account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.addUserToAccount({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.addUserToAccount"
       }
     },
     "/accounts/{id}/update": {
@@ -675,7 +690,7 @@
           "accounts"
         ],
         "description": "Not implemented yet: update the user defined account fields. Receives a settings object (will be defined later)",
-        "operationId": "updateAccountPublicSettings1",
+        "operationId": "accounts-update-account-public-settings",
         "requestBody": {
           "content": {
             "application/json": {
@@ -727,13 +742,14 @@
             }
           }
         },
-        "summary": "updateAccountPublicSettings",
+        "summary": "Update account public settings",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.updateAccountPublicSettings({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.updateAccountPublicSettings"
       }
     },
     "/accounts/{id}/updateuser": {
@@ -757,7 +773,7 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "updateUserDetails1",
+        "operationId": "accounts-update-user-details",
         "requestBody": {
           "content": {
             "application/json": {
@@ -772,13 +788,14 @@
             }
           }
         },
-        "summary": "updateUserDetails",
+        "summary": "Update user details",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.updateUserDetails({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.updateUserDetails"
       }
     },
     "/accounts/{id}/users": {
@@ -802,14 +819,15 @@
           "accounts"
         ],
         "description": "Get all users of an account",
-        "operationId": "getUsersForAccount1",
-        "summary": "getUsersForAccount",
+        "operationId": "accounts-get-users-for-account",
+        "summary": "Get users for account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.getUsersForAccount({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.getUsersForAccount"
       }
     },
     "/admin/accounts": {
@@ -828,15 +846,16 @@
           "accounts"
         ],
         "description": "get all the accounts in the system",
-        "operationId": "getAllAccounts1",
-        "summary": "getAllAccounts",
+        "operationId": "accounts-get-all-accounts",
+        "summary": "Get all accounts",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.getAllAccounts()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "accounts.getAllAccounts"
       },
       "post": {
         "responses": {
@@ -853,7 +872,7 @@
           "accounts"
         ],
         "description": "Add new account. Receives an account object ",
-        "operationId": "addAccount1",
+        "operationId": "accounts-add-account",
         "requestBody": {
           "content": {
             "application/json": {
@@ -874,14 +893,15 @@
             }
           }
         },
-        "summary": "addAccount",
+        "summary": "Add account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.addAccount(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "accounts.addAccount"
       }
     },
     "/admin/accounts/addpendinguser": {
@@ -899,7 +919,7 @@
         "tags": [
           "accounts"
         ],
-        "operationId": "addPendingUserWithoutAccount1",
+        "operationId": "accounts-add-pending-user-without-account",
         "requestBody": {
           "content": {
             "application/json": {
@@ -935,14 +955,15 @@
             }
           }
         },
-        "summary": "addPendingUserWithoutAccount",
+        "summary": "Add pending user without account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.addPendingUserWithoutAccount(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "accounts.addPendingUserWithoutAccount"
       }
     },
     "/admin/accounts/{id}": {
@@ -966,14 +987,15 @@
           "accounts"
         ],
         "description": "Not implemented yet",
-        "operationId": "deleteAccount1",
-        "summary": "deleteAccount",
+        "operationId": "accounts-delete-account",
+        "summary": "Delete account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.deleteAccount({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.deleteAccount"
       },
       "get": {
         "parameters": [
@@ -995,14 +1017,15 @@
           "accounts"
         ],
         "description": "Get an account by id",
-        "operationId": "getById1",
-        "summary": "getById",
+        "operationId": "accounts-get-by-id",
+        "summary": "Get by id",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.getById({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.getById"
       }
     },
     "/admin/accounts/{id}/update": {
@@ -1026,7 +1049,7 @@
           "accounts"
         ],
         "description": "Not implemented yet: Update the account info that only codefresh admins (codefresh employees, not account admin) can access",
-        "operationId": "updateAccount1",
+        "operationId": "accounts-update-account",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1041,13 +1064,14 @@
             }
           }
         },
-        "summary": "updateAccount",
+        "summary": "Update account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.accounts.updateAccount({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "accounts.updateAccount"
       }
     },
     "/admin/runtime-environments": {
@@ -1065,7 +1089,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "getAll1",
+        "operationId": "sys-runtime-envs-get-all",
         "parameters": [
           {
             "in": "query",
@@ -1089,13 +1113,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.getAll({ limit, offset, accountIds })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.getAll"
       }
     },
     "/admin/runtime-environments/account/default/{account}/{name}": {
@@ -1113,7 +1138,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "setDefaultForAccount1",
+        "operationId": "sys-runtime-envs-set-default-for-account",
         "parameters": [
           {
             "in": "path",
@@ -1132,13 +1157,14 @@
             "required": true
           }
         ],
-        "summary": "setDefaultForAccount",
+        "summary": "Set default for account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.setDefaultForAccount({ account, name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.setDefaultForAccount"
       }
     },
     "/admin/runtime-environments/account/{account}": {
@@ -1156,7 +1182,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "getByAccount1",
+        "operationId": "sys-runtime-envs-get-by-account",
         "parameters": [
           {
             "in": "path",
@@ -1188,13 +1214,14 @@
             }
           }
         ],
-        "summary": "getByAccount",
+        "summary": "Get by account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.getByAccount({ account, limit, offset, accountIds })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.getByAccount"
       }
     },
     "/admin/runtime-environments/default/{plan}/{name}": {
@@ -1212,7 +1239,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "setDefault1",
+        "operationId": "sys-runtime-envs-set-default",
         "parameters": [
           {
             "in": "path",
@@ -1231,13 +1258,14 @@
             "required": true
           }
         ],
-        "summary": "setDefault",
+        "summary": "Set default",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.setDefault({ plan, name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.setDefault"
       }
     },
     "/admin/runtime-environments/{name}": {
@@ -1255,7 +1283,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "updateSysRe1",
+        "operationId": "sys-runtime-envs-update-sys-re",
         "parameters": [
           {
             "in": "path",
@@ -1289,13 +1317,14 @@
             }
           }
         },
-        "summary": "updateSysRe",
+        "summary": "Update sys re",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.updateSysRe({ name, extend, description }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.updateSysRe"
       },
       "delete": {
         "responses": {
@@ -1311,7 +1340,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "deleteSysRe1",
+        "operationId": "sys-runtime-envs-delete-sys-re",
         "parameters": [
           {
             "in": "path",
@@ -1329,13 +1358,14 @@
             }
           }
         ],
-        "summary": "deleteSysRe",
+        "summary": "Delete sys re",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.deleteSysRe({ name, force })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.deleteSysRe"
       },
       "get": {
         "responses": {
@@ -1351,7 +1381,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "getSysRe1",
+        "operationId": "sys-runtime-envs-get-sys-re",
         "parameters": [
           {
             "in": "path",
@@ -1390,13 +1420,14 @@
             }
           }
         ],
-        "summary": "getSysRe",
+        "summary": "Get sys re",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.getSysRe({ name, version, extend, history, successors })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.getSysRe"
       }
     },
     "/admin/runtime-environments/{plan}/{name}": {
@@ -1414,7 +1445,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "update1",
+        "operationId": "sys-runtime-envs-update",
         "parameters": [
           {
             "in": "path",
@@ -1456,13 +1487,14 @@
             }
           }
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.update({ plan, name, extend, description }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.update"
       },
       "delete": {
         "responses": {
@@ -1478,7 +1510,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "delete1",
+        "operationId": "sys-runtime-envs-delete",
         "parameters": [
           {
             "in": "path",
@@ -1504,13 +1536,14 @@
             }
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.delete({ plan, name, force })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.delete"
       },
       "get": {
         "responses": {
@@ -1526,7 +1559,7 @@
         "tags": [
           "sysRuntimeEnvs"
         ],
-        "operationId": "get1",
+        "operationId": "sys-runtime-envs-get",
         "parameters": [
           {
             "in": "path",
@@ -1573,13 +1606,14 @@
             }
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.sysRuntimeEnvs.get({ plan, name, version, extend, history, successors })"
           }
-        ]
+        ],
+        "x-sdk-interface": "sysRuntimeEnvs.get"
       }
     },
     "/auth/key": {
@@ -1597,7 +1631,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "generate1",
+        "operationId": "tokens-generate",
         "parameters": [
           {
             "in": "query",
@@ -1623,13 +1657,14 @@
             }
           }
         },
-        "summary": "generate",
+        "summary": "Generate",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.tokens.generate({ subjectType, subjectReference }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "tokens.generate"
       }
     },
     "/auth/key/{id}": {
@@ -1647,7 +1682,7 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "delete2",
+        "operationId": "tokens-delete",
         "parameters": [
           {
             "in": "path",
@@ -1658,13 +1693,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.tokens.delete({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "tokens.delete"
       }
     },
     "/auth/keys": {
@@ -1682,15 +1718,16 @@
         "tags": [
           "tokens"
         ],
-        "operationId": "getAll2",
+        "operationId": "tokens-get-all",
         "parameters": [],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.tokens.getAll()"
           }
-        ]
+        ],
+        "x-sdk-interface": "tokens.getAll"
       }
     },
     "/builds": {
@@ -1734,14 +1771,15 @@
         "tags": [
           "builds"
         ],
-        "operationId": "getAll3",
-        "summary": "getAll",
+        "operationId": "builds-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.builds.getAll({ account, repoOwner, repoName })"
           }
-        ]
+        ],
+        "x-sdk-interface": "builds.getAll"
       }
     },
     "/builds/rebuild/{id}": {
@@ -1764,14 +1802,15 @@
         "tags": [
           "builds"
         ],
-        "operationId": "rebuild1",
-        "summary": "rebuild",
+        "operationId": "builds-rebuild",
+        "summary": "Rebuild",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.builds.rebuild({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "builds.rebuild"
       },
       "get": {
         "responses": {
@@ -1787,19 +1826,20 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "restart1",
+        "operationId": "workflows-restart",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
           }
         ],
-        "summary": "restart",
+        "summary": "Restart",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.restart({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.restart"
       }
     },
     "/builds/{id}": {
@@ -1822,14 +1862,15 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "get2",
-        "summary": "get",
+        "operationId": "workflows-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.get"
       }
     },
     "/builds/{buildId}/update": {
@@ -1852,7 +1893,7 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "update2",
+        "operationId": "workflows-update",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1875,13 +1916,14 @@
             }
           }
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.update({ buildId }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.update"
       }
     },
     "/builds/{serviceId}/": {
@@ -1904,7 +1946,7 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "buildByService1",
+        "operationId": "workflows-build-by-service",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1932,13 +1974,14 @@
             }
           }
         },
-        "summary": "buildByService",
+        "summary": "Build by service",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.buildByService({ serviceId }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.buildByService"
       }
     },
     "/clusters": {
@@ -1956,15 +1999,16 @@
         "tags": [
           "clusters"
         ],
-        "operationId": "getAll4",
+        "operationId": "clusters-get-all",
         "parameters": [],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.clusters.getAll()"
           }
-        ]
+        ],
+        "x-sdk-interface": "clusters.getAll"
       }
     },
     "/clusters/{provider}/cluster/{id}": {
@@ -1982,7 +2026,7 @@
         "tags": [
           "clusters"
         ],
-        "operationId": "delete3",
+        "operationId": "clusters-delete",
         "parameters": [
           {
             "name": "provider",
@@ -2001,13 +2045,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.clusters.delete({ provider, id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "clusters.delete"
       }
     },
     "/compositions": {
@@ -2025,15 +2070,16 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "getAll5",
-        "summary": "getAll",
+        "operationId": "compositions-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.getAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "compositions.getAll"
       },
       "post": {
         "responses": {
@@ -2049,7 +2095,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "create1",
+        "operationId": "compositions-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2079,14 +2125,15 @@
           },
           "required": true
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "compositions.create"
       }
     },
     "/compositions/{id}/run": {
@@ -2115,7 +2162,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "launch1",
+        "operationId": "compositions-launch",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2134,13 +2181,14 @@
             }
           }
         },
-        "summary": "launch",
+        "summary": "Launch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.launch({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.launch"
       }
     },
     "/compositions/{id}": {
@@ -2163,14 +2211,15 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "delete4",
-        "summary": "delete",
+        "operationId": "compositions-delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.delete({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.delete"
       },
       "get": {
         "parameters": [
@@ -2197,14 +2246,15 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "get3",
-        "summary": "get",
+        "operationId": "compositions-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.get"
       },
       "put": {
         "parameters": [
@@ -2225,7 +2275,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "update3",
+        "operationId": "compositions-update",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2256,13 +2306,14 @@
           "description": "Update the name/variables/body of the composition with the id inserted",
           "required": true
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.update({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.update"
       },
       "patch": {
         "responses": {
@@ -2278,7 +2329,7 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "patch1",
+        "operationId": "compositions-patch",
         "parameters": [
           {
             "in": "path",
@@ -2298,13 +2349,14 @@
             }
           }
         },
-        "summary": "patch",
+        "summary": "Patch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.patch({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.patch"
       }
     },
     "/compositions/{id}/duplicate": {
@@ -2327,14 +2379,15 @@
         "tags": [
           "compositions"
         ],
-        "operationId": "duplicate1",
-        "summary": "duplicate",
+        "operationId": "compositions-duplicate",
+        "summary": "Duplicate",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.compositions.duplicate({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "compositions.duplicate"
       }
     },
     "/contexts": {
@@ -2352,7 +2405,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "getAll6",
+        "operationId": "contexts-get-all",
         "parameters": [
           {
             "in": "query",
@@ -2369,13 +2422,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.getAll({ type, decrypt })"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.getAll"
       }
     },
     "/contexts/": {
@@ -2393,7 +2447,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "create2",
+        "operationId": "contexts-create",
         "parameters": [
           {
             "in": "query",
@@ -2412,13 +2466,14 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.create({ skipValidation }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.create"
       }
     },
     "/contexts/{name}": {
@@ -2436,7 +2491,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "delete5",
+        "operationId": "contexts-delete",
         "parameters": [
           {
             "in": "path",
@@ -2447,13 +2502,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.delete({ name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.delete"
       },
       "put": {
         "responses": {
@@ -2469,7 +2525,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "replace1",
+        "operationId": "contexts-replace",
         "parameters": [
           {
             "in": "path",
@@ -2489,13 +2545,14 @@
             }
           }
         },
-        "summary": "replace",
+        "summary": "Replace",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.replace({ name }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.replace"
       },
       "patch": {
         "responses": {
@@ -2511,7 +2568,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "patch2",
+        "operationId": "contexts-patch",
         "parameters": [
           {
             "in": "path",
@@ -2531,13 +2588,14 @@
             }
           }
         },
-        "summary": "patch",
+        "summary": "Patch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.patch({ name }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.patch"
       },
       "get": {
         "responses": {
@@ -2553,7 +2611,7 @@
         "tags": [
           "contexts"
         ],
-        "operationId": "get4",
+        "operationId": "contexts-get",
         "parameters": [
           {
             "in": "path",
@@ -2571,13 +2629,14 @@
             }
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.contexts.get({ name, decrypt })"
           }
-        ]
+        ],
+        "x-sdk-interface": "contexts.get"
       }
     },
     "/environments": {
@@ -2595,15 +2654,16 @@
         "tags": [
           "envs"
         ],
-        "operationId": "getAll7",
-        "summary": "getAll",
+        "operationId": "envs-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.getAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "envs.getAll"
       }
     },
     "/environments/all/terminate": {
@@ -2621,15 +2681,16 @@
         "tags": [
           "envs"
         ],
-        "operationId": "terminateAll1",
-        "summary": "terminateAll",
+        "operationId": "envs-terminate-all",
+        "summary": "Terminate all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.terminateAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "envs.terminateAll"
       }
     },
     "/environments/{id}": {
@@ -2647,7 +2708,7 @@
         "tags": [
           "envs"
         ],
-        "operationId": "get5",
+        "operationId": "envs-get",
         "parameters": [
           {
             "in": "path",
@@ -2658,13 +2719,14 @@
             "required": true
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.get"
       }
     },
     "/environments/{id}/pause": {
@@ -2687,14 +2749,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "pause1",
-        "summary": "pause",
+        "operationId": "envs-pause",
+        "summary": "Pause",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.pause({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.pause"
       }
     },
     "/environments/{id}/rename/{newName}": {
@@ -2732,14 +2795,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "rename1",
-        "summary": "rename",
+        "operationId": "envs-rename",
+        "summary": "Rename",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.rename({ id, newName })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.rename"
       }
     },
     "/environments/{id}/start": {
@@ -2762,14 +2826,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "start1",
-        "summary": "start",
+        "operationId": "envs-start",
+        "summary": "Start",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.start({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.start"
       }
     },
     "/environments/{id}/status": {
@@ -2792,14 +2857,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "status1",
-        "summary": "status",
+        "operationId": "envs-status",
+        "summary": "Status",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.status({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.status"
       }
     },
     "/environments/{id}/stop": {
@@ -2822,14 +2888,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "stop1",
-        "summary": "stop",
+        "operationId": "envs-stop",
+        "summary": "Stop",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.stop({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.stop"
       }
     },
     "/environments/{id}/terminate": {
@@ -2852,14 +2919,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "terminate1",
-        "summary": "terminate",
+        "operationId": "envs-terminate",
+        "summary": "Terminate",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.terminate({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.terminate"
       }
     },
     "/environments/{id}/unpause": {
@@ -2882,14 +2950,15 @@
         "tags": [
           "envs"
         ],
-        "operationId": "unpause1",
-        "summary": "unpause",
+        "operationId": "envs-unpause",
+        "summary": "Unpause",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.envs.unpause({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "envs.unpause"
       }
     },
     "/features/{accountId}": {
@@ -2918,14 +2987,15 @@
         "tags": [
           "features"
         ],
-        "operationId": "account1",
-        "summary": "account",
+        "operationId": "features-account",
+        "summary": "Account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.features.account({ accountId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "features.account"
       }
     },
     "/helm/boards": {
@@ -2979,15 +3049,16 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "deleteAll1",
-        "summary": "deleteAll",
+        "operationId": "helm-boards-delete-all",
+        "summary": "Delete all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.deleteAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "helm.boards.deleteAll"
       },
       "get": {
         "responses": {
@@ -3052,15 +3123,16 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "getAll8",
-        "summary": "getAll",
+        "operationId": "helm-boards-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.getAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "helm.boards.getAll"
       },
       "post": {
         "responses": {
@@ -3122,18 +3194,19 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "create3",
+        "operationId": "helm-boards-create",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_boardOptions"
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "helm.boards.create"
       }
     },
     "/helm/boards/name/{name}": {
@@ -3214,14 +3287,15 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "getByName1",
-        "summary": "getByName",
+        "operationId": "helm-boards-get-by-name",
+        "summary": "Get by name",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.getByName({ name, columns })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.boards.getByName"
       }
     },
     "/helm/boards/sections": {
@@ -3295,18 +3369,19 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "create4",
+        "operationId": "helm-sections-create",
         "requestBody": {
           "$ref": "#/components/requestBodies/create_sectionOptions"
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "helm.sections.create"
       }
     },
     "/helm/boards/sections/reorder": {
@@ -3343,7 +3418,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "reorder1",
+        "operationId": "helm-sections-reorder",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3360,14 +3435,15 @@
           },
           "required": true
         },
-        "summary": "reorder",
+        "summary": "Reorder",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.reorder(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "helm.sections.reorder"
       }
     },
     "/helm/boards/sections/{id}": {
@@ -3449,14 +3525,15 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "delete6",
-        "summary": "delete",
+        "operationId": "helm-sections-delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.delete({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.delete"
       },
       "get": {
         "parameters": [
@@ -3526,14 +3603,15 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "get6",
-        "summary": "get",
+        "operationId": "helm-sections-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.get"
       },
       "patch": {
         "parameters": [
@@ -3600,7 +3678,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "patch3",
+        "operationId": "helm-sections-patch",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3628,13 +3706,14 @@
           },
           "required": true
         },
-        "summary": "patch",
+        "summary": "Patch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.patch({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.patch"
       },
       "put": {
         "parameters": [
@@ -3701,7 +3780,7 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "update4",
+        "operationId": "helm-sections-update",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3729,13 +3808,14 @@
           },
           "required": true
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.update({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.update"
       }
     },
     "/helm/boards/{boardId}/sections": {
@@ -3794,14 +3874,15 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "deleteAll2",
-        "summary": "deleteAll",
+        "operationId": "helm-sections-delete-all",
+        "summary": "Delete all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.deleteAll({ boardId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.deleteAll"
       },
       "get": {
         "parameters": [
@@ -3881,14 +3962,15 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "getAll9",
-        "summary": "getAll",
+        "operationId": "helm-sections-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.getAll({ boardId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.getAll"
       }
     },
     "/helm/boards/{boardId}/sections/name/{name}": {
@@ -3963,14 +4045,15 @@
         "tags": [
           "helm.sections"
         ],
-        "operationId": "getByName2",
-        "summary": "getByName",
+        "operationId": "helm-sections-get-by-name",
+        "summary": "Get by name",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.sections.getByName({ boardId, name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.sections.getByName"
       }
     },
     "/helm/boards/{id}": {
@@ -4042,14 +4125,15 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "delete7",
-        "summary": "delete",
+        "operationId": "helm-boards-delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.delete({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.boards.delete"
       },
       "get": {
         "parameters": [
@@ -4119,14 +4203,15 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "get7",
-        "summary": "get",
+        "operationId": "helm-boards-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.boards.get"
       },
       "patch": {
         "parameters": [
@@ -4196,7 +4281,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "patch4",
+        "operationId": "helm-boards-patch",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4215,13 +4300,14 @@
           },
           "required": true
         },
-        "summary": "patch",
+        "summary": "Patch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.patch({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.boards.patch"
       },
       "put": {
         "parameters": [
@@ -4291,7 +4377,7 @@
         "tags": [
           "helm.boards"
         ],
-        "operationId": "update5",
+        "operationId": "helm-boards-update",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4310,13 +4396,14 @@
           },
           "required": true
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.boards.update({ id }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.boards.update"
       }
     },
     "/helm/repos": {
@@ -4334,7 +4421,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "create5",
+        "operationId": "helm-repos-create",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -4345,13 +4432,14 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.repos.create(body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.repos.create"
       },
       "get": {
         "responses": {
@@ -4367,7 +4455,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "getAll11",
+        "operationId": "helm-repos-get-all",
         "parameters": [
           {
             "in": "query",
@@ -4377,13 +4465,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.repos.getAll({ query })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.repos.getAll"
       }
     },
     "/helm/repos/{name}": {
@@ -4401,7 +4490,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "delete8",
+        "operationId": "helm-repos-delete",
         "parameters": [
           {
             "in": "path",
@@ -4412,13 +4501,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.repos.delete({ name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.repos.delete"
       },
       "put": {
         "responses": {
@@ -4434,7 +4524,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "update6",
+        "operationId": "helm-repos-update",
         "parameters": [
           {
             "in": "path",
@@ -4454,13 +4544,14 @@
             }
           }
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.repos.update({ name }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.repos.update"
       },
       "get": {
         "responses": {
@@ -4476,7 +4567,7 @@
         "tags": [
           "helm.repos"
         ],
-        "operationId": "get8",
+        "operationId": "helm-repos-get",
         "parameters": [
           {
             "in": "path",
@@ -4487,13 +4578,14 @@
             "required": true
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.repos.get({ name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.repos.get"
       }
     },
     "/hermes/events": {
@@ -4511,7 +4603,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "create6",
+        "operationId": "triggers-events-create",
         "parameters": [
           {
             "in": "query",
@@ -4530,13 +4622,14 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.events.create({ public }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.events.create"
       },
       "get": {
         "responses": {
@@ -4552,7 +4645,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "getAll12",
+        "operationId": "triggers-events-get-all",
         "parameters": [
           {
             "in": "query",
@@ -4583,13 +4676,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.events.getAll({ type, kind, filter, public })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.events.getAll"
       }
     },
     "/hermes/events/{event}": {
@@ -4607,7 +4701,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "get9",
+        "operationId": "triggers-events-get",
         "parameters": [
           {
             "in": "path",
@@ -4618,13 +4712,14 @@
             "required": true
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.events.get({ event })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.events.get"
       }
     },
     "/hermes/events/{event}/{context}": {
@@ -4642,7 +4737,7 @@
         "tags": [
           "triggers.events"
         ],
-        "operationId": "delete9",
+        "operationId": "triggers-events-delete",
         "parameters": [
           {
             "in": "path",
@@ -4661,13 +4756,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.events.delete({ event, context })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.events.delete"
       }
     },
     "/hermes/triggers": {
@@ -4685,15 +4781,16 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getAll13",
+        "operationId": "triggers-get-all",
         "parameters": [],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.getAll()"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.getAll"
       }
     },
     "/hermes/triggers/event/{event}": {
@@ -4711,7 +4808,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getEventTriggers1",
+        "operationId": "triggers-get-event-triggers",
         "parameters": [
           {
             "in": "path",
@@ -4722,13 +4819,14 @@
             "required": true
           }
         ],
-        "summary": "getEventTriggers",
+        "summary": "Get event triggers",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.getEventTriggers({ event })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.getEventTriggers"
       }
     },
     "/hermes/triggers/pipeline/{pipeline}": {
@@ -4746,7 +4844,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "getPipelineTriggers1",
+        "operationId": "triggers-get-pipeline-triggers",
         "parameters": [
           {
             "in": "path",
@@ -4757,13 +4855,14 @@
             "required": true
           }
         ],
-        "summary": "getPipelineTriggers",
+        "summary": "Get pipeline triggers",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.getPipelineTriggers({ pipeline })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.getPipelineTriggers"
       }
     },
     "/hermes/triggers/{event}/{pipeline}": {
@@ -4781,7 +4880,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "create7",
+        "operationId": "triggers-create",
         "parameters": [
           {
             "in": "path",
@@ -4809,13 +4908,14 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.create({ event, pipeline }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.create"
       },
       "delete": {
         "responses": {
@@ -4831,7 +4931,7 @@
         "tags": [
           "triggers"
         ],
-        "operationId": "delete10",
+        "operationId": "triggers-delete",
         "parameters": [
           {
             "in": "path",
@@ -4850,13 +4950,14 @@
             "required": true
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.delete({ event, pipeline })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.delete"
       }
     },
     "/hermes/types": {
@@ -4874,15 +4975,16 @@
         "tags": [
           "triggers.types"
         ],
-        "operationId": "getAll14",
+        "operationId": "triggers-types-get-all",
         "parameters": [],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.types.getAll()"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.types.getAll"
       }
     },
     "/hermes/types/{type}/{kind}": {
@@ -4900,7 +5002,7 @@
         "tags": [
           "triggers.types"
         ],
-        "operationId": "get10",
+        "operationId": "triggers-types-get",
         "parameters": [
           {
             "in": "path",
@@ -4919,13 +5021,14 @@
             "required": true
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.triggers.types.get({ type, kind })"
           }
-        ]
+        ],
+        "x-sdk-interface": "triggers.types.get"
       }
     },
     "/hermes/version": {
@@ -4943,15 +5046,16 @@
         "tags": [
           "version"
         ],
-        "operationId": "getHermesVersion1",
+        "operationId": "version-get-hermes-version",
         "parameters": [],
-        "summary": "getHermesVersion",
+        "summary": "Get hermes version",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.version.getHermesVersion()"
           }
-        ]
+        ],
+        "x-sdk-interface": "version.getHermesVersion"
       }
     },
     "/images": {
@@ -4969,7 +5073,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "getAll15",
+        "operationId": "images-get-all",
         "parameters": [
           {
             "in": "query",
@@ -5035,13 +5139,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.getAll({ limit, offset, metadata, tag, type, branch, imageDisplayNameRegex, select, sha })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.getAll"
       }
     },
     "/images/external": {
@@ -5060,15 +5165,16 @@
         "tags": [
           "images"
         ],
-        "operationId": "addFromExternalSource1",
-        "summary": "addFromExternalSource",
+        "operationId": "images-add-from-external-source",
+        "summary": "Add from external source",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.addFromExternalSource()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "images.addFromExternalSource"
       }
     },
     "/images/{id}": {
@@ -5097,14 +5203,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "get11",
-        "summary": "get",
+        "operationId": "images-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.get"
       }
     },
     "/images/{id}/tags": {
@@ -5133,14 +5240,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "getTags1",
-        "summary": "getTags",
+        "operationId": "images-get-tags",
+        "summary": "Get tags",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.getTags({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.getTags"
       }
     },
     "/images/{id}/tag/{tag}": {
@@ -5178,14 +5286,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "tag1",
-        "summary": "tag",
+        "operationId": "images-tag",
+        "summary": "Tag",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.tag({ id, tag })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.tag"
       },
       "delete": {
         "parameters": [
@@ -5221,14 +5330,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "untag1",
-        "summary": "untag",
+        "operationId": "images-untag",
+        "summary": "Untag",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.untag({ id, tag })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.untag"
       }
     },
     "/images/{dockerImageId}/metadata": {
@@ -5257,14 +5367,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "getMetadata1",
-        "summary": "getMetadata",
+        "operationId": "images-get-metadata",
+        "summary": "Get metadata",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.getMetadata({ dockerImageId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.getMetadata"
       },
       "post": {
         "parameters": [
@@ -5291,7 +5402,7 @@
         "tags": [
           "images"
         ],
-        "operationId": "upsertMetadata1",
+        "operationId": "images-upsert-metadata",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5319,13 +5430,14 @@
             }
           }
         },
-        "summary": "upsertMetadata",
+        "summary": "Upsert metadata",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.upsertMetadata({ dockerImageId }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.upsertMetadata"
       }
     },
     "/images/{dockerImageId}/metadata/{keyName}": {
@@ -5363,14 +5475,15 @@
         "tags": [
           "images"
         ],
-        "operationId": "deleteMetadata1",
-        "summary": "deleteMetadata",
+        "operationId": "images-delete-metadata",
+        "summary": "Delete metadata",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.images.deleteMetadata({ dockerImageId, keyName })"
           }
-        ]
+        ],
+        "x-sdk-interface": "images.deleteMetadata"
       }
     },
     "/kubernetes/releases/{releaseName}/delete": {
@@ -5388,7 +5501,7 @@
         "tags": [
           "helm.releases"
         ],
-        "operationId": "delete11",
+        "operationId": "helm-releases-delete",
         "parameters": [
           {
             "in": "path",
@@ -5424,13 +5537,14 @@
             }
           }
         },
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.releases.delete({ releaseName, selector, tillerNamespace }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.releases.delete"
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -5448,7 +5562,7 @@
         "tags": [
           "helm.releases"
         ],
-        "operationId": "test1",
+        "operationId": "helm-releases-test",
         "parameters": [
           {
             "in": "path",
@@ -5475,13 +5589,14 @@
             }
           }
         },
-        "summary": "test",
+        "summary": "Test",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.releases.test({ releaseName, selector }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.releases.test"
       }
     },
     "/kubernetes/releases/secrets/imagePullSecret": {
@@ -5499,7 +5614,7 @@
         "tags": [
           "kubernetes"
         ],
-        "operationId": "generateImagePullSecret1",
+        "operationId": "kubernetes-generate-image-pull-secret",
         "parameters": [
           {
             "in": "query",
@@ -5527,13 +5642,14 @@
             }
           }
         },
-        "summary": "generateImagePullSecret",
+        "summary": "Generate image pull secret",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.kubernetes.generateImagePullSecret({ namespace, selector }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "kubernetes.generateImagePullSecret"
       }
     },
     "/kubernetes/chart/install": {
@@ -5551,7 +5667,7 @@
         "tags": [
           "helm.charts"
         ],
-        "operationId": "install1",
+        "operationId": "helm-charts-install",
         "parameters": [
           {
             "in": "query",
@@ -5579,13 +5695,14 @@
             }
           }
         },
-        "summary": "install",
+        "summary": "Install",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.charts.install({ selector, tillerNamespace }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.charts.install"
       }
     },
     "/kubernetes/chart/promote": {
@@ -5603,7 +5720,7 @@
         "tags": [
           "helm.charts"
         ],
-        "operationId": "promote1",
+        "operationId": "helm-charts-promote",
         "parameters": [
           {
             "in": "query",
@@ -5630,13 +5747,14 @@
             }
           }
         },
-        "summary": "promote",
+        "summary": "Promote",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.helm.charts.promote({ selector, tillerNamespace }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "helm.charts.promote"
       }
     },
     "/nomios/version": {
@@ -5654,15 +5772,16 @@
         "tags": [
           "version"
         ],
-        "operationId": "getNomiosVersion1",
+        "operationId": "version-get-nomios-version",
         "parameters": [],
-        "summary": "getNomiosVersion",
+        "summary": "Get nomios version",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.version.getNomiosVersion()"
           }
-        ]
+        ],
+        "x-sdk-interface": "version.getNomiosVersion"
       }
     },
     "/payments": {
@@ -5680,15 +5799,16 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getAll16",
-        "summary": "getAll",
+        "operationId": "payments-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.payments.getAll()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "payments.getAll"
       },
       "post": {
         "responses": {
@@ -5704,7 +5824,7 @@
         "tags": [
           "payments"
         ],
-        "operationId": "create8",
+        "operationId": "payments-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5739,14 +5859,15 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.payments.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "payments.create"
       }
     },
     "/payments/plans": {
@@ -5764,15 +5885,16 @@
         "tags": [
           "payments"
         ],
-        "operationId": "getPlans1",
-        "summary": "getPlans",
+        "operationId": "payments-get-plans",
+        "summary": "Get plans",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.payments.getPlans()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "payments.getPlans"
       }
     },
     "/pipelines": {
@@ -5820,14 +5942,15 @@
             }
           }
         ],
-        "operationId": "getAll17",
-        "summary": "getAll",
+        "operationId": "pipelines-get-all",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.getAll({ offset, id, limit, labels })"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.getAll"
       },
       "post": {
         "responses": {
@@ -5843,7 +5966,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "create9",
+        "operationId": "pipelines-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5853,14 +5976,15 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "pipelines.create"
       }
     },
     "/pipelines/run/{name}": {
@@ -5878,7 +6002,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "run1",
+        "operationId": "pipelines-run",
         "parameters": [
           {
             "in": "path",
@@ -5898,13 +6022,14 @@
             }
           }
         },
-        "summary": "run",
+        "summary": "Run",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.run({ name }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.run"
       }
     },
     "/pipelines/yaml/validator": {
@@ -5922,7 +6047,7 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "validateYaml1",
+        "operationId": "pipelines-validate-yaml",
         "parameters": [],
         "requestBody": {
           "content": {
@@ -5933,13 +6058,14 @@
             }
           }
         },
-        "summary": "validateYaml",
+        "summary": "Validate yaml",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.validateYaml(body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.validateYaml"
       }
     },
     "/pipelines/{name}": {
@@ -5968,14 +6094,15 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "delete12",
-        "summary": "delete",
+        "operationId": "pipelines-delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.delete({ name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.delete"
       },
       "get": {
         "parameters": [
@@ -6009,14 +6136,15 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "get12",
-        "summary": "get",
+        "operationId": "pipelines-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.get({ name, decryptVariables })"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.get"
       },
       "put": {
         "parameters": [
@@ -6052,14 +6180,15 @@
         "tags": [
           "pipelines"
         ],
-        "operationId": "replace2",
-        "summary": "replace",
+        "operationId": "pipelines-replace",
+        "summary": "Replace",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.pipelines.replace({ name }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "pipelines.replace"
       }
     },
     "/progress/download/{id}": {
@@ -6082,14 +6211,15 @@
         "tags": [
           "progress"
         ],
-        "operationId": "download1",
-        "summary": "download",
+        "operationId": "progress-download",
+        "summary": "Download",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.progress.download({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "progress.download"
       }
     },
     "/progress/{id}": {
@@ -6112,14 +6242,15 @@
         "tags": [
           "progress"
         ],
-        "operationId": "get13",
-        "summary": "get",
+        "operationId": "progress-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.progress.get({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "progress.get"
       },
       "delete": {
         "parameters": [
@@ -6140,14 +6271,15 @@
         "tags": [
           "progress"
         ],
-        "operationId": "terminate2",
-        "summary": "terminate",
+        "operationId": "progress-terminate",
+        "summary": "Terminate",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.progress.terminate({ id })"
           }
-        ]
+        ],
+        "x-sdk-interface": "progress.terminate"
       }
     },
     "/providers/github/hook": {
@@ -6203,7 +6335,7 @@
         "tags": [
           "providers"
         ],
-        "operationId": "githubHook1",
+        "operationId": "providers-github-hook",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6266,13 +6398,14 @@
             }
           }
         },
-        "summary": "githubHook",
+        "summary": "Github hook",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.providers.githubHook({ x-github-event, send-mail-and-update-github, x-github-delivery, x-github-signature }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "providers.githubHook"
       }
     },
     "/registry/auth/token": {
@@ -6290,7 +6423,7 @@
         "tags": [
           "Codefresh Registry"
         ],
-        "operationId": "generateCfcrToken1",
+        "operationId": "codefresh-registry-generate-cfcr-token",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6307,14 +6440,15 @@
           "description": "Description of the token",
           "required": true
         },
-        "summary": "generateCfcrToken",
+        "summary": "Generate cfcr token",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.Codefresh Registry.generateCfcrToken(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "Codefresh Registry.generateCfcrToken"
       }
     },
     "/repos": {
@@ -6332,7 +6466,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAllGitRepos1",
+        "operationId": "repos-get-all-git-repos",
         "parameters": [
           {
             "in": "query",
@@ -6342,13 +6476,14 @@
             }
           }
         ],
-        "summary": "getAllGitRepos",
+        "summary": "Get all git repos",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.getAllGitRepos({ context })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.getAllGitRepos"
       }
     },
     "/repos/existing": {
@@ -6366,7 +6501,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getAll18",
+        "operationId": "repos-get-all",
         "parameters": [
           {
             "in": "query",
@@ -6384,13 +6519,14 @@
             "allowEmptyValue": true
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.getAll({ context, thin })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.getAll"
       }
     },
     "/repos/settings/{repoOwner}/{repoName}": {
@@ -6416,14 +6552,15 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getSettings1",
-        "summary": "getSettings",
+        "operationId": "repos-get-settings",
+        "summary": "Get settings",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.getSettings({ repoOwner, repoName })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.getSettings"
       }
     },
     "/repos/{owner}/{repo}": {
@@ -6441,7 +6578,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "getGitRepo1",
+        "operationId": "repos-get-git-repo",
         "parameters": [
           {
             "in": "path",
@@ -6467,13 +6604,14 @@
             }
           }
         ],
-        "summary": "getGitRepo",
+        "summary": "Get git repo",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.getGitRepo({ owner, repo, context })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.getGitRepo"
       }
     },
     "/runtime-environments": {
@@ -6491,7 +6629,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "getAll19",
+        "operationId": "runtime-envs-get-all",
         "parameters": [
           {
             "in": "query",
@@ -6508,13 +6646,14 @@
             }
           }
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtimeEnvs.getAll({ limit, offset })"
           }
-        ]
+        ],
+        "x-sdk-interface": "runtimeEnvs.getAll"
       }
     },
     "/runtime-environments/default/{name}": {
@@ -6532,7 +6671,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "setDefault2",
+        "operationId": "runtime-envs-set-default",
         "parameters": [
           {
             "in": "path",
@@ -6543,13 +6682,14 @@
             "required": true
           }
         ],
-        "summary": "setDefault",
+        "summary": "Set default",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtimeEnvs.setDefault({ name })"
           }
-        ]
+        ],
+        "x-sdk-interface": "runtimeEnvs.setDefault"
       }
     },
     "/runtime-environments/{name}": {
@@ -6567,7 +6707,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "update7",
+        "operationId": "runtime-envs-update",
         "parameters": [
           {
             "in": "path",
@@ -6601,13 +6741,14 @@
             }
           }
         },
-        "summary": "update",
+        "summary": "Update",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtimeEnvs.update({ name, extend, description }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "runtimeEnvs.update"
       },
       "delete": {
         "responses": {
@@ -6623,7 +6764,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "delete13",
+        "operationId": "runtime-envs-delete",
         "parameters": [
           {
             "in": "path",
@@ -6641,13 +6782,14 @@
             }
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtimeEnvs.delete({ name, force })"
           }
-        ]
+        ],
+        "x-sdk-interface": "runtimeEnvs.delete"
       },
       "get": {
         "responses": {
@@ -6663,7 +6805,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "get14",
+        "operationId": "runtime-envs-get",
         "parameters": [
           {
             "in": "path",
@@ -6695,13 +6837,14 @@
             }
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtimeEnvs.get({ name, version, extend, history })"
           }
-        ]
+        ],
+        "x-sdk-interface": "runtimeEnvs.get"
       }
     },
     "/runtime/testit": {
@@ -6719,7 +6862,7 @@
         "tags": [
           "runtime"
         ],
-        "operationId": "launch2",
+        "operationId": "runtime-launch",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6759,14 +6902,15 @@
             }
           }
         },
-        "summary": "launch",
+        "summary": "Launch",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.runtime.launch(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "runtime.launch"
       }
     },
     "/services": {
@@ -6794,7 +6938,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "create10",
+        "operationId": "repos-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6830,13 +6974,14 @@
             }
           }
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.create({ context }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.create"
       }
     },
     "/services/{name}": {
@@ -6854,7 +6999,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "get15",
+        "operationId": "repos-get",
         "parameters": [
           {
             "in": "path",
@@ -6872,13 +7017,14 @@
             }
           }
         ],
-        "summary": "get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.get({ name, context })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.get"
       },
       "delete": {
         "responses": {
@@ -6894,7 +7040,7 @@
         "tags": [
           "repos"
         ],
-        "operationId": "delete14",
+        "operationId": "repos-delete",
         "parameters": [
           {
             "in": "path",
@@ -6912,13 +7058,14 @@
             }
           }
         ],
-        "summary": "delete",
+        "summary": "Delete",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.repos.delete({ name, context })"
           }
-        ]
+        ],
+        "x-sdk-interface": "repos.delete"
       }
     },
     "/team": {
@@ -6936,7 +7083,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "create11",
+        "operationId": "teams-create",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6965,14 +7112,15 @@
           "description": "Team data",
           "required": true
         },
-        "summary": "create",
+        "summary": "Create",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.create(body)"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "teams.create"
       },
       "get": {
         "responses": {
@@ -6988,15 +7136,16 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAll20",
+        "operationId": "teams-get-all",
         "parameters": [],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.getAll()"
           }
-        ]
+        ],
+        "x-sdk-interface": "teams.getAll"
       }
     },
     "/team/group/synchronize/name/{name}/type/{type}": {
@@ -7014,7 +7163,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "synchronizeClientWithGroup1",
+        "operationId": "teams-synchronize-client-with-group",
         "parameters": [
           {
             "in": "path",
@@ -7040,13 +7189,14 @@
             }
           }
         ],
-        "summary": "synchronizeClientWithGroup",
+        "summary": "Synchronize client with group",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.synchronizeClientWithGroup({ name, type, access_token })"
           }
-        ]
+        ],
+        "x-sdk-interface": "teams.synchronizeClientWithGroup"
       }
     },
     "/team/{teamId}/{userId}/assignUserToTeam": {
@@ -7084,14 +7234,15 @@
         "tags": [
           "teams"
         ],
-        "operationId": "addUser1",
-        "summary": "addUser",
+        "operationId": "teams-add-user",
+        "summary": "Add user",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.addUser({ teamId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "teams.addUser"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -7129,14 +7280,15 @@
         "tags": [
           "teams"
         ],
-        "operationId": "removeUser1",
-        "summary": "removeUser",
+        "operationId": "teams-remove-user",
+        "summary": "Remove user",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.removeUser({ teamId, userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "teams.removeUser"
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -7154,7 +7306,7 @@
         "tags": [
           "teams"
         ],
-        "operationId": "getAllByUser1",
+        "operationId": "teams-get-all-by-user",
         "parameters": [
           {
             "in": "path",
@@ -7165,13 +7317,14 @@
             "required": true
           }
         ],
-        "summary": "getAllByUser",
+        "summary": "Get all by user",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.teams.getAllByUser({ userId })"
           }
-        ]
+        ],
+        "x-sdk-interface": "teams.getAllByUser"
       }
     },
     "/user": {
@@ -7189,15 +7342,16 @@
         "tags": [
           "users"
         ],
-        "operationId": "get16",
-        "summary": "get",
+        "operationId": "users-get",
+        "summary": "Get",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.users.get()"
           }
         ],
-        "parameters": []
+        "parameters": [],
+        "x-sdk-interface": "users.get"
       }
     },
     "/user/changeaccount/{accountId}": {
@@ -7226,7 +7380,7 @@
         "tags": [
           "users"
         ],
-        "operationId": "changeAccount1",
+        "operationId": "users-change-account",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7236,13 +7390,14 @@
             }
           }
         },
-        "summary": "changeAccount",
+        "summary": "Change account",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.users.changeAccount({ accountId }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "users.changeAccount"
       }
     },
     "/user/firebaseAuth": {
@@ -7261,14 +7416,15 @@
         "tags": [
           "firebase"
         ],
-        "operationId": "getToken1",
-        "summary": "getToken",
+        "operationId": "firebase-get-token",
+        "summary": "Get token",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.firebase.getToken()"
           }
-        ]
+        ],
+        "x-sdk-interface": "firebase.getToken"
       }
     },
     "/version": {
@@ -7286,20 +7442,21 @@
         "tags": [
           "version"
         ],
-        "operationId": "getServerVersion1",
+        "operationId": "version-get-server-version",
         "parameters": [],
-        "summary": "getServerVersion",
+        "summary": "Get server version",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.version.getServerVersion()"
           }
-        ]
+        ],
+        "x-sdk-interface": "version.getServerVersion"
       }
     },
     "/workflow": {
       "get": {
-        "operationId": "getAll21",
+        "operationId": "workflows-get-all",
         "parameters": [
           {
             "name": "limit",
@@ -7350,13 +7507,14 @@
         "tags": [
           "workflows"
         ],
-        "summary": "getAll",
+        "summary": "Get all",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.getAll({ limit, page, status, trigger, pipeline })"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.getAll"
       }
     },
     "/workflow/{repoOwner}/{repoName}/file": {
@@ -7394,7 +7552,7 @@
         "tags": [
           "workflows"
         ],
-        "operationId": "service1",
+        "operationId": "workflows-service",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7415,13 +7573,14 @@
             }
           }
         },
-        "summary": "service",
+        "summary": "Service",
         "x-code-samples": [
           {
             "lang": "JavaScript",
             "source": "sdk.workflows.service({ repoOwner, repoName }, body)"
           }
-        ]
+        ],
+        "x-sdk-interface": "workflows.service"
       }
     }
   },
