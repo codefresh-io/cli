@@ -6486,6 +6486,180 @@
         "x-sdk-interface": "repos.getAllGitRepos"
       }
     },
+    "/registries": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "registries"
+        ],
+        "operationId": "registries-get-all",
+        "parameters": [],
+        "summary": "Get all registries",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.registries.getAll({ context })"
+          }
+        ],
+        "x-sdk-interface": "registries.getAll"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "registries"
+        ],
+        "operationId": "registries-create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "domain": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "behindFirewall": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Description of the token",
+          "required": true
+        },
+        "summary": "Create",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.registries.create(body)"
+          }
+        ],
+        "x-sdk-interface": "registries.create"
+      }
+    },
+    "/registries/{id}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "registries"
+        ],
+        "operationId": "registries-delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "summary": "Delete",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.registries.delete({ id })"
+          }
+        ],
+        "x-sdk-interface": "registries.delete"
+      }
+    },
+    "/registries/test": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [
+          {
+            "internalApiKey": []
+          }
+        ],
+        "tags": [
+          "registries"
+        ],
+        "operationId": "registries-test",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "domain": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "behindFirewall": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Description of the token",
+          "required": true
+        },
+        "summary": "Test",
+        "x-code-samples": [
+          {
+            "lang": "JavaScript",
+            "source": "sdk.registries.test(body)"
+          }
+        ],
+        "x-sdk-interface": "registries.test"
+      }
+    },
     "/repos/existing": {
       "get": {
         "responses": {

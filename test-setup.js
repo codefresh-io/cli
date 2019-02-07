@@ -38,7 +38,7 @@ global.expectThrows = async (func, ExpectedError) => {
  * */
 global.configureSdk = async () => {
     if (!DOWNLOADED_SPEC) {
-        DOWNLOADED_SPEC = await loadOpenApiSpec({ useCache: false });
+        DOWNLOADED_SPEC = await loadOpenApiSpec({ useCache: true });
     }
 
     sdk.configure({
