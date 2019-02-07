@@ -1,16 +1,12 @@
-const sdk = require('./lib/logic/sdk');
-const openapi = require('./openapi');
-const Output = require('./lib/output/Output');
 const _ = require('lodash');
 const request = require('requestretry');
+const sdk = require('./lib/logic/sdk');
+const { loadOpenApiSpec } = require('./lib/interface/cli/helpers/openapi');
 
-jest.mock('./lib/output/Output');
+process.env.USE_MAUAL_SDK_CONFIG = 'true';
+jest.mock('./lib/output/Output'); // eslint
 
-sdk.configure({
-    url: 'http://not.needed',
-    spec: openapi,
-    apiKey: 'not-needed',
-});
+let DOWNLOADED_SPEC;
 
 class NotThrownError extends Error {
 }
@@ -35,4 +31,19 @@ global.expectThrows = async (func, ExpectedError) => {
         }
         return e;
     }
+};
+
+/**
+ * downloads spec one time for all tests
+ * */
+global.configureSdk = async () => {
+    if (!DOWNLOADED_SPEC) {
+        DOWNLOADED_SPEC = await loadOpenApiSpec({ useCache: false });
+    }
+
+    sdk.configure({
+        url: 'http://not.needed',
+        spec: DOWNLOADED_SPEC,
+        apiKey: 'not-needed',
+    });
 };
