@@ -1,12 +1,11 @@
 const _ = require('lodash');
 const request = require('requestretry');
 const sdk = require('./lib/logic/sdk');
-const { loadOpenApiSpec } = require('./lib/interface/cli/helpers/openapi');
 
 process.env.USE_MAUAL_SDK_CONFIG = 'true';
 jest.mock('./lib/output/Output'); // eslint
 
-let DOWNLOADED_SPEC;
+let SDK_CONFIGURED;
 
 class NotThrownError extends Error {
 }
@@ -37,13 +36,14 @@ global.expectThrows = async (func, ExpectedError) => {
  * downloads spec one time for all tests
  * */
 global.configureSdk = async () => {
-    if (!DOWNLOADED_SPEC) {
-        DOWNLOADED_SPEC = await loadOpenApiSpec({ useCache: true });
+    if (!SDK_CONFIGURED) {
+        SDK_CONFIGURED = true;
+        sdk.configure({
+            url: 'http://not.needed',
+            apiKey: 'not-needed',
+            cache: {
+                forceRefresh: true,
+            },
+        });
     }
-
-    sdk.configure({
-        url: 'http://not.needed',
-        spec: DOWNLOADED_SPEC,
-        apiKey: 'not-needed',
-    });
 };

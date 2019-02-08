@@ -911,10 +911,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codefresh-sdk@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.1.0.tgz#83df2e308848d943e68610be5d5da4370d3c4067"
-  integrity sha512-Os6/PJwdWa19COy5GO+Empcd53n5zL0fE/lgBRMHtZ3fsQmXK+o7jRimhNffJwFiwfOWPHGgcAyeHH53vFiexQ==
+codefresh-sdk@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.2.0.tgz#38edc23ddfaa506595404265e9be89e1b12d9607"
+  integrity sha512-rrzZBJf5xbx7a1s9TXoRiiSL0RXoxNA8bQAdmR8WdQ7AkpyYHautyIUTxflNFJ/yIVIVACYvGj77rQwN6VXqHQ==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.11"
@@ -4819,7 +4819,7 @@ semver@5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-semver@^5.6.0:
+semver@^5.5.0, semver@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
   integrity sha512-RS9R6R35NYgQn++fkDWaOmqGoj4Ek9gGs+DPxNUZKuwE183xjJroKvyo1IzVFeXvUrvmALy6FWD5xrdJT25gMg==
