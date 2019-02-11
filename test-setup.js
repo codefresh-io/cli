@@ -42,7 +42,7 @@ global.configureSdk = async () => {
             url: 'http://not.needed',
             apiKey: 'not-needed',
             cache: {
-                forceRefresh: true,
+                forceRefresh: false,
             },
         });
     }
