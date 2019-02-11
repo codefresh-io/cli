@@ -2,7 +2,7 @@
 title = "Spec"
 +++
 
-A Pipeline needs `.version`, `.kind`, and `.metadata` fields. 
+A Pipeline needs `.version`, `.kind`, and `.metadata` fields.
 
 A Pipeline also needs a `.spec` section.
 
@@ -57,7 +57,7 @@ spec:
   stages: []
 ```
 
-#### Basic Pipeline with explicit clone step 
+#### Basic Pipeline with explicit clone step
 
 ```yaml
 version: '1.0'
@@ -143,8 +143,10 @@ spec:
       encrypted: true
   specTemplate:
     location: git
+    context: git-context-name # if not specified will use the default git-context
     repo: codefresh-io/cli
     path: codefresh.yml
+    revision: master # can be a branch or commit. if not specified will use CF_BRANCH variable value
   steps: {}
   stages: []
 ```
