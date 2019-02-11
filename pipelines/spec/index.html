@@ -1288,8 +1288,10 @@ spec<span style="color:#111">:</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
   specTemplate<span style="color:#111">:</span>
     location<span style="color:#111">:</span> git
+    context<span style="color:#111">:</span> git-context-name <span style="color:#75715e"># if not specified will use the default git-context</span>
     repo<span style="color:#111">:</span> codefresh-io/cli
     path<span style="color:#111">:</span> codefresh.yml
+    revision<span style="color:#111">:</span> master <span style="color:#75715e"># can be a branch or commit. if not specified will use CF_BRANCH variable value</span>
   steps<span style="color:#111">:</span> {}
   stages<span style="color:#111">:</span> <span style="color:#111">[]</span></code></pre></div>
 <h4 id="pipeline-with-a-remote-spec-template-from-a-public-git-url">Pipeline with a remote spec template from a public git URL</h4>
