@@ -1,5 +1,6 @@
 # Codefresh-cli
-[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/codefresh-inc/codefresh-io%2Fcli%2Fbuild?branch=master&type=cf-2)]( https://g.codefresh.io/pipelines/build/builds?repoOwner=codefresh-io&repoName=cli&serviceName=codefresh-io%2Fcli&filter=trigger:build~Build;branch:master;pipeline:5a4c94b54e6e5f0001c4f913~build)
+Build: [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/codefresh-inc/codefresh-io%2Fcli%2Fbuild?type=cf-2)]( https://g.codefresh.io/public/accounts/codefresh-inc/pipelines/codefresh-io/cli/build)
+Release: [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/codefresh-inc/codefresh-io%2Fcli%2Frelease?type=cf-2)]( https://g.codefresh.io/public/accounts/codefresh-inc/pipelines/codefresh-io/cli/release)
 
 
 Codefresh CLI provides a full and flexible interface to interact with Codefresh.
