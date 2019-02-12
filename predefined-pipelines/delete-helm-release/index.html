@@ -1162,7 +1162,7 @@
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh delete-release [name]</code></p>
+<p><code>codefresh delete-release &lt;name&gt;</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1186,21 +1186,21 @@
 
 <tr>
 <td>--cluster</td>
-<td></td>
+<td>-c</td>
 <td></td>
 <td>Run on cluster. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--timeout</td>
-<td></td>
+<td>-t</td>
 <td>300</td>
 <td>time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)</td>
 </tr>
 
 <tr>
 <td>--purge</td>
-<td></td>
+<td>-p</td>
 <td></td>
 <td>remove the release from the store and make its name free for later use (default true)</td>
 </tr>
@@ -1214,8 +1214,15 @@
 
 <tr>
 <td>--no-hooks</td>
+<td>--nh</td>
 <td></td>
-<td></td>
+<td>prevent hooks from running during deletion</td>
+</tr>
+
+<tr>
+<td>--tiller-namespace</td>
+<td>-n</td>
+<td>kube-system</td>
 <td>prevent hooks from running during deletion</td>
 </tr>
 </tbody>

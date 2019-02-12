@@ -1127,7 +1127,10 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#aliases">Aliases</a></li>
+</ul></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
@@ -1167,6 +1170,10 @@
 
 <p><code>codefresh create trigger-event</code></p>
 
+<h4 id="aliases">Aliases</h4>
+
+<p><code>codefresh create te trigger-event</code></p>
+
 <h3 id="options">Options</h3>
 
 <table>
@@ -1191,14 +1198,14 @@
 <td>--type</td>
 <td></td>
 <td></td>
-<td>trigger-event type</td>
+<td>trigger-event type. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--kind</td>
 <td></td>
 <td></td>
-<td>trigger-event kind</td>
+<td>trigger-event kind. <code>required</code></td>
 </tr>
 
 <tr>
@@ -1212,12 +1219,12 @@
 <td>--secret</td>
 <td></td>
 <td>!generate</td>
-<td>trigger-event secret (omit to auto-generate)</td>
+<td>trigger-event secret (omit to auto-generate). <code>required</code></td>
 </tr>
 
 <tr>
 <td>--value</td>
-<td></td>
+<td>-v</td>
 <td></td>
 <td>trigger-event specific values pairs (key=value), as required by trigger-type</td>
 </tr>

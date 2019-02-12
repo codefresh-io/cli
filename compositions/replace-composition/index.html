@@ -1131,7 +1131,13 @@
 <ul>
 <li><a href="#aliases">Aliases</a></li>
 </ul></li>
+<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#replace-a-composition-using-a-spec-file">Replace a composition using a spec file</a></li>
+<li><a href="#replace-a-composition-using-options">Replace a composition using options</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1161,11 +1167,33 @@
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh replace composition</code></p>
+<p><code>codefresh replace composition [name]</code></p>
 
 <h4 id="aliases">Aliases</h4>
 
-<p><code>codefresh replace com composition</code></p>
+<p><code>codefresh replace com [name]</code></p>
+
+<h3 id="arguments">Arguments</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td></td>
+<td>Name of composition</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -1200,8 +1228,39 @@
 <td></td>
 <td>Filename or directory of spec files use to create the resource</td>
 </tr>
+
+<tr>
+<td>--compose-file</td>
+<td>-c</td>
+<td></td>
+<td>Path to docker-compose.yaml file to use to create the resource. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--variable</td>
+<td>-v</td>
+<td></td>
+<td>Variables list</td>
+</tr>
+
+<tr>
+<td>--advanced</td>
+<td>-a</td>
+<td></td>
+<td>Advanced composition</td>
+</tr>
 </tbody>
 </table>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="replace-a-composition-using-a-spec-file">Replace a composition using a spec file</h4>
+
+<p><code>codefresh replace composition -f ./composition-spec.yml</code></p>
+
+<h4 id="replace-a-composition-using-options">Replace a composition using options</h4>
+
+<p><code>codefresh replace composition NAME --compose-file ./docker-compose.yml -v key1=value1 -v key2=value2</code></p>
 
 
     
