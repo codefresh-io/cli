@@ -911,10 +911,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codefresh-sdk@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.2.6.tgz#3dbf2f95f55938fbb37f1556f1cc7c454e771db1"
-  integrity sha512-LJsj0U03PNX/S9o40J0cy8HoCMNSmHByMXnWu/GiJYOCTQqIdZVkyH7jFfF1G8rzAgWYuoTsneETXaZHZ+81qg==
+codefresh-sdk@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-0.2.7.tgz#03ac2eb890e213866527550792be77f7ebb2a34d"
+  integrity sha512-/My5NDlEQscg2GG6HDj+71ELeh6cdZOM/mc1Cn98tOKVyDJ4C4Jmh+/o3sXA+E29WcN+bCIqfGK/VUH5+eDrIQ==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.11"
