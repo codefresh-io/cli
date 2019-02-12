@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.15.1",
+  "version": "0.16.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -24,7 +24,7 @@
     "command line"
   ],
   "pkg": {
-    "scripts": "lib/**/*.js",
+    "scripts": ["lib/**/*.js", "node_modules/codefresh-sdk/lib/**/*.js"],
     "assets": "lib/**/*.hbs"
   },
   "dependencies": {
