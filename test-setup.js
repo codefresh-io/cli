@@ -2,7 +2,6 @@ const _ = require('lodash');
 const request = require('requestretry');
 const sdk = require('./lib/logic/sdk');
 
-process.env.USE_MAUAL_SDK_CONFIG = 'true';
 jest.mock('./lib/output/Output'); // eslint
 
 let SDK_CONFIGURED;
