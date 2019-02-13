@@ -53,7 +53,7 @@ if (process.argv.includes('--get-yargs-completions')) {
                         yargs.command(command.toCommand());
                     });
                 } catch (err) {
-                    printError(err);
+                    Output.printError(err);
                     process.exit(1);
                 }
             });
