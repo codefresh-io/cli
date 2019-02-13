@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-const { printError } = require('./helpers/general');
+const Output = require('../../output/Output');
 
 process.on('uncaughtException', (err) => {
-    printError(err);
+    Output.printError(err);
     process.exit(1);
 });
 
 process.on('unhandledRejection', (err) => {
-    printError(err);
+    Output.printError(err);
     process.exit(1);
 });
 
