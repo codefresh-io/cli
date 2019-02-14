@@ -1,6 +1,8 @@
 const _ = require('lodash');
 const request = require('requestretry');
 const sdk = require('./lib/logic/sdk');
+const openapi = require('./openapi');
+
 
 jest.mock('./lib/output/Output'); // eslint
 
@@ -40,9 +42,7 @@ global.configureSdk = async () => {
         sdk.configure({
             url: 'http://not.needed',
             apiKey: 'not-needed',
-            cache: {
-                forceRefresh: true,
-            },
+            spec: openapi,
         });
     }
 };
