@@ -1,10 +1,11 @@
 const _ = require('lodash');
 const request = require('requestretry');
 const sdk = require('./lib/logic/sdk');
+const { Config } = require('codefresh-sdk');
 const openapi = require('./openapi');
 
-
-jest.mock('./lib/output/Output'); // eslint
+jest.mock('./lib/output/Output');
+jest.mock('codefresh-sdk/lib/auth/contexts/whoami');
 
 let SDK_CONFIGURED;
 
@@ -39,10 +40,10 @@ global.expectThrows = async (func, ExpectedError) => {
 global.configureSdk = async () => {
     if (!SDK_CONFIGURED) {
         SDK_CONFIGURED = true;
-        sdk.configure({
+        sdk.configure(await Config.fromProvided({
             url: 'http://not.needed',
             apiKey: 'not-needed',
-            spec: openapi,
-        });
+            spec: { json: openapi },
+        }));
     }
 };

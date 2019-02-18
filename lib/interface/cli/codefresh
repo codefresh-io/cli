@@ -21,7 +21,7 @@ if (process.argv.includes('--get-yargs-completions')) {
     const path = require('path');
     const recursive = require('recursive-readdir');
     const DEFAULTS = require('./defaults');
-    const authManager = require('../../logic').auth.manager;
+    const { Config } = require('codefresh-sdk');
 
     recursive(path.resolve(__dirname, 'commands'), (err, files) => {
         const rootCommands = [];
@@ -31,15 +31,16 @@ if (process.argv.includes('--get-yargs-completions')) {
                 default: DEFAULTS.CFCONFIG,
                 global: false,
             })
-            .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
+            .config('cfconfig', 'Custom path for authentication contexts config file', (configPath) => {
                 try {
-                    authManager.loadContexts(process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL, configFilePath);
+                    const configManager = Config.manager();
+                    configManager.loadConfigSync(configPath); // need to be sync
                     _.forEach(files, (file) => {
                         if (file.endsWith('.cmd.js')) {
                             const command = require(file);
                             if (command.isRoot()) {
                                 if (command.isBetaCommand()) {
-                                    const currentContext = authManager.getCurrentContext();
+                                    const currentContext = configManager.getCurrentContext();
                                     if (currentContext && currentContext.isBetaFeatEnabled()) {
                                         rootCommands.push(command);
                                     }
@@ -65,9 +66,6 @@ if (process.argv.includes('--get-yargs-completions')) {
             .version(false)
             .help('help')
             .epilogue('For more information, find our official documentation at http://cli.codefresh.io')
-            // .option('help', {
-            //     global: false,
-            // })
             .argv;
     });
 }
