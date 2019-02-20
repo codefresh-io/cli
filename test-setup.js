@@ -40,7 +40,7 @@ global.expectThrows = async (func, ExpectedError) => {
 global.configureSdk = async () => {
     if (!SDK_CONFIGURED) {
         SDK_CONFIGURED = true;
-        sdk.configure(await Config.fromProvided({
+        sdk.configure(await Config.load({
             url: 'http://not.needed',
             apiKey: 'not-needed',
             spec: { json: openapi },
