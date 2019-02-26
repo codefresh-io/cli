@@ -76,7 +76,7 @@ steps:
 
   upload_executables:
     title: "Upload executables to github release"
-    image: codefresh/build-cli
+    image: codefresh/cli-build # todo: move to new codefresh/build-cli
     commands:
 # delete all previous .zip/.gz created files
       - "rm -rf *.gz"
