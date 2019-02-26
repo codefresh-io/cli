@@ -109,7 +109,7 @@
 	"title": "Get Contexts",
 	"tags": [],
 	"description": "",
-	"content": " Description Get all possible authentication contexts.\nCommand codefresh auth get-contexts\nOptions    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: \u0026lsquo;/root/.cfconfig\u0026rsquo;)   --help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts\n"
+	"content": " Description Get all possible authentication contexts.\nCommand codefresh auth get-contexts\nOptions    Option Alias Default Description     --help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/environments/get-environment/",
@@ -263,7 +263,7 @@
 	"title": "Create Context",
 	"tags": [],
 	"description": "",
-	"content": " Description Create or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nCommand codefresh auth create-context [name]\nArguments    Option Alias Default Description     name  default Context name    Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: \u0026lsquo;/root/.cfconfig\u0026rsquo;)   --help   Print help information   --url  https://g.codefresh.io Codefresh system custom url   --api-key   API key. required    Examples Creating a default context using KEY as the api-key codefresh auth create-context --api-key KEY\nCreating a named context codefresh auth create-context my-context --api-key KEY\n"
+	"content": " Description Create or update an authentication context.\nCreating authentication contexts enables the ability to work against multiple accounts.\nCommand codefresh auth create-context [name]\nArguments    Option Alias Default Description     name  default Context name    Options    Option Alias Default Description     --help   Print help information   --url  https://g.codefresh.io Codefresh system custom url   --api-key   API key. required    Examples Creating a default context using KEY as the api-key codefresh auth create-context --api-key KEY\nCreating a named context codefresh auth create-context my-context --api-key KEY\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/",
@@ -487,7 +487,7 @@
 	"title": "Get Activated Context",
 	"tags": [],
 	"description": "",
-	"content": " Description Get the current activated authentication context.\nCommand codefresh auth current-context\nOptions    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: \u0026lsquo;/root/.cfconfig\u0026rsquo;)   --help   Print help information    Examples Show active authentication context codefresh auth current-context\n"
+	"content": " Description Get the current activated authentication context.\nCommand codefresh auth current-context\nOptions    Option Alias Default Description     --help   Print help information    Examples Show active authentication context codefresh auth current-context\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/remove-user/",
@@ -578,7 +578,7 @@
 	"title": "Set Active Context",
 	"tags": [],
 	"description": "",
-	"content": " Description Set the current active authentication context.\nCommand codefresh auth use-context \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   a context-name that exists in cfconfig file    Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: \u0026lsquo;/root/.cfconfig\u0026rsquo;)   --help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME\n"
+	"content": " Description Set the current active authentication context.\nCommand codefresh auth use-context \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   a context-name that exists in cfconfig file    Options    Option Alias Default Description     --help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/builds/terminate-build/",
