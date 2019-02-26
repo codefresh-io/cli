@@ -22,7 +22,7 @@
         "request": {
             "type": "object",
             "properties": {
-                "maxAttempts": {
+                "maxRetries": {
                     "type": "integer",
                     "default": 10,
                     "description": "Defines how many times request will be retried in case of network error"

@@ -13,13 +13,62 @@ process.on('unhandledRejection', (err) => {
 });
 
 if (process.argv.includes('--get-yargs-completions')) {
-    const completionInterface = require('./completion');
-    completionInterface().argv; // eslint-disable-line
+    const initCompletion = require('./completion');
+    initCompletion().argv;
 } else {
-    const commandLineInterface = require('./commad-line-interface');
-    commandLineInterface().catch((err) => {
-        Output.printError(err);
-        process.exit(1);
+    const _ = require('lodash');
+    const yargs = require('yargs');
+    const path = require('path');
+    const recursive = require('recursive-readdir');
+    const DEFAULTS = require('./defaults');
+    const authManager = require('../../logic').auth.manager;
+
+    recursive(path.resolve(__dirname, 'commands'), (err, files) => {
+        const rootCommands = [];
+        yargs
+            .env('')
+            .options('cfconfig', {
+                default: DEFAULTS.CFCONFIG,
+                global: false,
+            })
+            .config('cfconfig', 'Custom path for authentication contexts config file', (configFilePath) => {
+                try {
+                    authManager.loadContexts(process.env.CF_API_KEY, process.env.CF_URL || DEFAULTS.URL, configFilePath);
+                    _.forEach(files, (file) => {
+                        if (file.endsWith('.cmd.js')) {
+                            const command = require(file);
+                            if (command.isRoot()) {
+                                if (command.isBetaCommand()) {
+                                    const currentContext = authManager.getCurrentContext();
+                                    if (currentContext && currentContext.isBetaFeatEnabled()) {
+                                        rootCommands.push(command);
+                                    }
+                                } else {
+                                    rootCommands.push(command);
+                                }
+                            }
+                        }
+                    });
+                    _.forEach(rootCommands, (command) => {
+                        yargs.command(command.toCommand());
+                    });
+                } catch (err) {
+                    Output.printError(err);
+                    process.exit(1);
+                }
+            });
+
+
+        yargs // eslint-disable-line
+            .demandCommand(1, 'You need at least one command before moving on')
+            .wrap(null)
+            .version(false)
+            .help('help')
+            .epilogue('For more information, find our official documentation at http://cli.codefresh.io')
+            // .option('help', {
+            //     global: false,
+            // })
+            .argv;
     });
 }
 
