@@ -5,7 +5,7 @@ steps:
 
   fail_if_not_master:
     title: "Validate running on master branch"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - 'echo This pipeline should be run only on master'
       - 'exit 1'
@@ -15,7 +15,7 @@ steps:
 
   extract_version:
     title: "Exporting package.json version"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
@@ -40,7 +40,7 @@ steps:
 
   generate_comletion:
     title: "Generating commands completion tree"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - "yarn install"
       - "yarn generate-completion"
@@ -53,21 +53,21 @@ steps:
 
   compile_executables:
     title: "Compiling executables"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - "rm -rf dist"
       - "yarn pkg"
 
   create_release:
     title: "Create github release"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{GITHUB_TOKEN}}" https://api.github.com/repos/codefresh-io/cli/releases'
 
   get_release:
     title: "Get github release"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - "curl --fail https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}}"
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
@@ -76,7 +76,7 @@ steps:
 
   upload_executables:
     title: "Upload executables to github release"
-    image: codefresh/cli-build # todo: move to new codefresh/build-cli
+    image: codefresh/cli-build
     commands:
 # delete all previous .zip/.gz created files
       - "rm -rf *.gz"
@@ -119,7 +119,7 @@ steps:
 
   update_brew_formula:
     title: "Updating homebrew formula"
-    image: codefresh/build-cli
+    image: codefresh/cli-build
     commands:
       - VERSION=v${{PACKAGE_VERSION}}
       - curl -L https://github.com/codefresh-io/cli/releases/download/$VERSION/codefresh-$VERSION-macos-x64.tar.gz > $VERSION.tar.gz

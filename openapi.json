@@ -6746,28 +6746,6 @@
         "x-sdk-interface": "users.get"
       }
     },
-    "/user/context": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "response"
-          }
-        },
-        "tags": [
-          "users"
-        ],
-        "operationId": "users-notify-context-created",
-        "summary": "Notify context created",
-        "x-code-samples": [
-          {
-            "lang": "JavaScript",
-            "source": "sdk.auth.notifyContextCreated()"
-          }
-        ],
-        "parameters": [],
-        "x-sdk-interface": "auth.notifyContextCreated"
-      }
-    },
     "/user/changeaccount/{accountId}": {
       "post": {
         "parameters": [
