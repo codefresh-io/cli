@@ -1,4 +1,4 @@
-FROM node:9.2.0-alpine
+FROM node:10.13.0-alpine
 
 RUN apk add --update git curl jq py-pip && pip install yq
 
