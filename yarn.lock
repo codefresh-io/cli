@@ -916,10 +916,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codefresh-sdk@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.0.0.tgz#eed7db1c1b92bf95519058988fcae5935c2df095"
-  integrity sha512-agnnXt6K6iCKm7nBjOYYKZJK3YrMxU6TatBZNNLPWhjwT5wX+CHCJsUM653/mUtKBQz9yXsK+mNio2yOrMPDpQ==
+"codefresh-sdk@git+https://github.com/codefresh-io/js-sdk/#7362ab88c90cb8a3c082d4b10de04df6da8a6db6":
+  version "1.0.2"
+  resolved "git+https://github.com/codefresh-io/js-sdk/#7362ab88c90cb8a3c082d4b10de04df6da8a6db6"
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.11"
@@ -928,6 +927,7 @@ codefresh-sdk@1.0.0:
     decompress "^4.2.0"
     decompress-targz "^4.1.1"
     firebase "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5"
+    fs-extra "^7.0.1"
     js-yaml "^3.12.1"
     jsonwebtoken "^8.4.0"
     lodash "^4.17.11"
@@ -2013,9 +2013,10 @@ fs-extra@6.0.1:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@7.0.1:
+fs-extra@7.0.1, fs-extra@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
