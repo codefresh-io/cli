@@ -76,11 +76,12 @@ steps:
 
   upload_executables:
     title: "Upload executables to github release"
-    image: codefresh/cli-build # todo: move to new codefresh/build-cli
+    image: codefresh/build-cli
     commands:
-# delete all previous .zip/.gz created files
+# delete all previous .zip/.gz created files and copy readme and license to ./dist
       - "rm -rf *.gz"
       - "rm -rf *.zip"
+      - "cp README.md LICENSE ./dist --force"
 # upload linux-x64 asset
       - "mv ./dist/codefresh-linux ./dist/codefresh"
       - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh "
