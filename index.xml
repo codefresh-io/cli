@@ -190,7 +190,7 @@ Arguments    Option Alias Default Description     name   context name    Options
       <guid>https://codefresh-io.github.io/cli/authentication/get-contexts/</guid>
       <description>Description Get all possible authentication contexts.
 Command codefresh auth get-contexts
-Options    Option Alias Default Description     --help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts</description>
+Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help   Print help information    Examples List all existing authentication contexts codefresh auth get-contexts</description>
     </item>
     
     <item>
@@ -492,7 +492,7 @@ Arguments    Option Alias Default Description     name   Name of composition    
       <description>Description Create or update an authentication context.
 Creating authentication contexts enables the ability to work against multiple accounts.
 Command codefresh auth create-context [name]
-Arguments    Option Alias Default Description     name  default Context name    Options    Option Alias Default Description     --help   Print help information   --url  https://g.codefresh.io Codefresh system custom url   --api-key   API key.</description>
+Arguments    Option Alias Default Description     name  default Context name    Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help   Print help information   --url  https://g.</description>
     </item>
     
     <item>
@@ -856,7 +856,7 @@ Arguments    Option Alias Default Description     id   section id    Options    
       <guid>https://codefresh-io.github.io/cli/authentication/get-activated-context/</guid>
       <description>Description Get the current activated authentication context.
 Command codefresh auth current-context
-Options    Option Alias Default Description     --help   Print help information    Examples Show active authentication context codefresh auth current-context</description>
+Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help   Print help information    Examples Show active authentication context codefresh auth current-context</description>
     </item>
     
     <item>
@@ -979,7 +979,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/authentication/set-active-context/</guid>
       <description>Description Set the current active authentication context.
 Command codefresh auth use-context &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name   a context-name that exists in cfconfig file    Options    Option Alias Default Description     --help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME</description>
+Arguments    Option Alias Default Description     name   a context-name that exists in cfconfig file    Options    Option Alias Default Description     --cfconfig   Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help   Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME</description>
     </item>
     
     <item>
