@@ -10,7 +10,7 @@ const CFError = require('cf-errors');
 
 const TEMP_DIR = path.resolve(__dirname, '../temp');
 const TEMPLATE_DIR = path.resolve(__dirname);
-const FILES_TO_IGNORE = ['index.js'];
+const FILES_TO_IGNORE = ['index.js', 'docs.spec.js'];
 const baseDir = path.resolve(TEMP_DIR, './content');
 const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 const categoriesOrder = {
@@ -384,16 +384,23 @@ const createDownloadPage = async () => {
 
 };
 
+const generateDocs = async () => {
+    await deleteTempFolder();
+    await copyTemplateToTmp();
+    await createAutomatedDocs();
+    await createDownloadPage();
+};
 
 const main = async () => {
     try {
-        await deleteTempFolder();
-        await copyTemplateToTmp();
-        await createAutomatedDocs();
-        await createDownloadPage();
+        await generateDocs();
     } catch (err) {
         console.error(err.stack);
     }
 };
 
-main();
+if (require.main === module) {
+    main();
+} else {
+    module.exports = generateDocs;
+}
