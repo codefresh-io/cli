@@ -5167,6 +5167,30 @@
         "x-sdk-interface": "helm.charts.promote"
       }
     },
+    "/charts/{repo}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "charts"
+        ],
+        "operationId": "charts-list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "repo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Get charts by repo",
+        "x-sdk-interface": "charts.list"
+      }
+    },
     "/nomios/version": {
       "get": {
         "responses": {
