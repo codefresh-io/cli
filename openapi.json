@@ -360,29 +360,7 @@
                 "properties": {
                   "create": {
                     "items": {
-                      "properties": {
-                        "teams": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "actions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "resource": {
-                          "type": "string"
-                        },
-                        "tags": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        }
-                      }
+                      "$ref": "#/components/schemas/abac"
                     },
                     "type": "array"
                   },
@@ -555,29 +533,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "properties": {
-                  "teams": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "actions": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "resource": {
-                    "type": "string"
-                  },
-                  "tags": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/abac"
               }
             }
           },
@@ -781,13 +737,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -822,13 +772,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -900,13 +844,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -941,13 +879,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1071,13 +1003,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1096,13 +1022,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1123,13 +1043,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1677,13 +1591,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -1755,13 +1663,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of a build object",
-            "in": "path",
-            "name": "buildId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/buildId"
           }
         ],
         "responses": {
@@ -1812,13 +1714,7 @@
         "operationId": "workflows-restart",
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "summary": "Restart",
@@ -1829,13 +1725,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of a service object",
-            "in": "path",
-            "name": "serviceId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/serviceId"
           }
         ],
         "responses": {
@@ -2034,13 +1924,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2082,13 +1966,7 @@
       "put": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2170,13 +2048,7 @@
       "post": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2436,13 +2308,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2497,13 +2363,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2523,13 +2383,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2549,13 +2403,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2575,13 +2423,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2601,13 +2443,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -2820,22 +2656,7 @@
         ],
         "operationId": "helm-boards-create",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "filter": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/create_boardOptions"
         },
         "summary": "Create",
         "parameters": [],
@@ -2846,13 +2667,7 @@
       "get": {
         "parameters": [
           {
-            "description": "name of a board",
-            "in": "path",
-            "name": "name",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/boardName"
           },
           {
             "description": "include sections in response",
@@ -2994,31 +2809,7 @@
         ],
         "operationId": "helm-sections-create",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "boardId": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "string"
-                  },
-                  "index": {
-                    "type": "integer"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "section": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/create_sectionOptions"
         },
         "summary": "Create",
         "parameters": [],
@@ -3080,13 +2871,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3163,13 +2948,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3236,13 +3015,7 @@
       "patch": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3333,13 +3106,7 @@
       "put": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3432,13 +3199,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of a board",
-            "in": "path",
-            "name": "boardId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/boardIdpath"
           }
         ],
         "responses": {
@@ -3492,13 +3253,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of a board",
-            "in": "path",
-            "name": "boardId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/boardIdpath"
           }
         ],
         "responses": {
@@ -3577,22 +3332,10 @@
       "get": {
         "parameters": [
           {
-            "description": "id of a board",
-            "in": "path",
-            "name": "boardId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/boardIdpath"
           },
           {
-            "description": "name of a section",
-            "in": "path",
-            "name": "name",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/sectionName"
           }
         ],
         "responses": {
@@ -3661,13 +3404,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3734,13 +3471,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3807,13 +3538,7 @@
       "patch": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -3898,13 +3623,7 @@
       "put": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -5346,13 +5065,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -5372,13 +5085,7 @@
       "get": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -5396,13 +5103,7 @@
       "delete": {
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "responses": {
@@ -5551,13 +5252,7 @@
         "operationId": "registries-delete",
         "parameters": [
           {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/id"
           }
         ],
         "summary": "Delete",
@@ -5650,22 +5345,10 @@
       "get": {
         "parameters": [
           {
-            "description": "name of owner of repository",
-            "in": "path",
-            "name": "repoOwner",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/repoOwner"
           },
           {
-            "description": "repository name",
-            "in": "path",
-            "name": "repoName",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/repoName"
           }
         ],
         "responses": {
