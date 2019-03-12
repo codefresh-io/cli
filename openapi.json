@@ -51,64 +51,64 @@
     {
       "name": "Pipelines / Builds",
       "tags": [
-        "Builds",
-        "Firebase",
-        "Images",
-        "Pipelines",
-        "Progress",
-        "Triggers",
-        "Triggers Events",
-        "Triggers Types",
-        "Version"
+        "builds",
+        "images",
+        "pipelines",
+        "progress",
+        "triggers",
+        "triggers.events",
+        "triggers.types",
+        "version",
+        "firebase"
       ]
     },
     {
       "name": "Kubernetes / Helm",
       "tags": [
-        "Helm Boards",
-        "Helm Charts",
-        "Helm Releases",
-        "Helm Sections",
-        "Kubernetes"
+        "kubernetes",
+        "helm.boards",
+        "helm.charts",
+        "helm.releases",
+        "helm.sections"
       ]
     },
     {
       "name": "Swarm",
       "tags": [
-        "Compositions",
-        "Environments"
+        "compositions",
+        "environments"
       ]
     },
     {
       "name": "Integrations / Contexts",
       "tags": [
-        "Clusters",
-        "Codefresh Registry",
-        "Contexts",
-        "Helm Repos",
-        "Repos"
+        "clusters",
+        "contexts",
+        "helm.repos",
+        "registries",
+        "repos"
       ]
     },
     {
       "name": "Account Management",
       "tags": [
-        "Abac",
-        "Accounts",
-        "Payments",
-        "Runtime Environments",
-        "Teams",
-        "Tokens",
-        "Users"
+        "abac",
+        "accounts",
+        "payments",
+        "runtimeEnvs",
+        "teams",
+        "tokens",
+        "users"
       ]
     },
     {
       "name": "On-Premise",
       "tags": [
-        "Features",
-        "Runtime Environments",
-        "Runtime Environments (Account)",
-        "Runtime Environments (Plan)",
-        "Runtime Environments (System)"
+        "features",
+        "onPrem.runtimeEnvs",
+        "onPrem.runtimeEnvs.account",
+        "onPrem.runtimeEnvs.plan",
+        "onPrem.runtimeEnvs.system"
       ]
     }
   ],
@@ -286,6 +286,20 @@
   ],
   "paths": {
     "/abac": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "abac"
+        ],
+        "operationId": "abac-rules-list",
+        "summary": "List rules",
+        "parameters": [],
+        "x-sdk-interface": "abac.rules.list"
+      },
       "post": {
         "responses": {
           "200": {
@@ -293,7 +307,7 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-create",
         "requestBody": {
@@ -325,41 +339,7 @@
         },
         "summary": "Create rule",
         "parameters": [],
-        "x-sdk-interface": "abac.rules.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"tags\\\":[${TAGS_OBJ}],\\\"action\\\":\\\"${ACTION_STR}\\\",\\\"resource\\\":\\\"${RESOURCE_STR}\\\",\\\"team\\\":\\\"${TEAM_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/abac\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.create({\n    tags: [\n        { ...TAGS_OBJ }\n    ],\n    action: `${ACTION_STR}`,\n    resource: `${RESOURCE_STR}`,\n    team: `${TEAM_STR}`\n})"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Abac"
-        ],
-        "operationId": "abac-rules-list",
-        "summary": "List rules",
-        "parameters": [],
-        "x-sdk-interface": "abac.rules.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/abac\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.list()"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.create"
       }
     },
     "/abac/batch": {
@@ -370,7 +350,7 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-create-or-delete",
         "requestBody": {
@@ -421,17 +401,7 @@
         },
         "summary": "Create or delete rules",
         "parameters": [],
-        "x-sdk-interface": "abac.rules.createOrDelete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"create\\\":[${CREATE_OBJ}],\\\"delete\\\":[${DELETE_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/abac/batch\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.createOrDelete({\n    create: [\n        { ...CREATE_OBJ }\n    ],\n    delete: [\n        { ...DELETE_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.createOrDelete"
       }
     },
     "/abac/resource/{resource}": {
@@ -453,21 +423,11 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-list-by-resource",
         "summary": "Get rules by resource",
-        "x-sdk-interface": "abac.rules.listByResource",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/abac/resource/${RESOURCE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.listByResource({ resource })"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.listByResource"
       }
     },
     "/abac/tags/rule/{rule}": {
@@ -489,7 +449,7 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-tags-update",
         "requestBody": {
@@ -511,17 +471,7 @@
           "required": true
         },
         "summary": "Update rule tags",
-        "x-sdk-interface": "abac.rules.tags.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"tags\\\":[${TAGS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/abac/tags/rule/${RULE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.tags.update({ rule }, {\n    tags: [\n        { ...TAGS_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.tags.update"
       }
     },
     "/abac/tags/rules": {
@@ -532,7 +482,7 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-tags-create",
         "requestBody": {
@@ -561,17 +511,7 @@
         },
         "summary": "Create rules tags",
         "parameters": [],
-        "x-sdk-interface": "abac.rules.tags.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"tags\\\":[${TAGS_OBJ}],\\\"rules\\\":[${RULES_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/abac/tags/rules\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.tags.create({\n    tags: [\n        { ...TAGS_OBJ }\n    ],\n    rules: [\n        { ...RULES_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.tags.create"
       }
     },
     "/abac/team/{teamId}": {
@@ -593,21 +533,11 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-list-by-team",
         "summary": "Get rules by team id",
-        "x-sdk-interface": "abac.rules.listByTeam",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/abac/team/${TEAM_ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.listByTeam({ teamId })"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.listByTeam"
       }
     },
     "/abac/teamRules": {
@@ -618,7 +548,7 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-create-in-batch",
         "requestBody": {
@@ -655,54 +585,10 @@
         },
         "summary": "Create rules in batch",
         "parameters": [],
-        "x-sdk-interface": "abac.rules.createInBatch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/abac/teamRules\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.createInBatch({ ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "abac.rules.createInBatch"
       }
     },
     "/abac/{rule}": {
-      "get": {
-        "parameters": [
-          {
-            "description": "The id of the rule",
-            "in": "path",
-            "name": "rule",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Abac"
-        ],
-        "operationId": "abac-rules-get",
-        "summary": "Get rule",
-        "x-sdk-interface": "abac.rules.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/abac/${RULE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.get({ rule })"
-          }
-        ]
-      },
       "delete": {
         "parameters": [
           {
@@ -721,21 +607,35 @@
           }
         },
         "tags": [
-          "Abac"
+          "abac"
         ],
         "operationId": "abac-rules-delete",
         "summary": "Delete rule",
-        "x-sdk-interface": "abac.rules.delete",
-        "x-code-samples": [
+        "x-sdk-interface": "abac.rules.delete"
+      },
+      "get": {
+        "parameters": [
           {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/abac/${RULE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.abac.rules.delete({ rule })"
+            "description": "The id of the rule",
+            "in": "path",
+            "name": "rule",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "abac"
+        ],
+        "operationId": "abac-rules-get",
+        "summary": "Get rule",
+        "x-sdk-interface": "abac.rules.get"
       }
     },
     "/accounts/{accountId}/{userId}": {
@@ -766,22 +666,12 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Not implemented yet",
         "operationId": "accounts-delete-user-from-account",
         "summary": "Delete user from account",
-        "x-sdk-interface": "accounts.deleteUserFromAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.deleteUserFromAccount({ accountId, userId })"
-          }
-        ]
+        "x-sdk-interface": "accounts.deleteUserFromAccount"
       }
     },
     "/accounts/{accountId}/{userId}/adduser": {
@@ -812,67 +702,14 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "operationId": "accounts-add-existing-user-to-account",
         "summary": "Add existing user to account",
-        "x-sdk-interface": "accounts.addExistingUserToAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}/adduser\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.addExistingUserToAccount({ accountId, userId })"
-          }
-        ]
+        "x-sdk-interface": "accounts.addExistingUserToAccount"
       }
     },
     "/accounts/{accountId}/{userId}/admin": {
-      "post": {
-        "parameters": [
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "accountId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Accounts"
-        ],
-        "operationId": "accounts-set-as-admin",
-        "summary": "Set as admin",
-        "x-sdk-interface": "accounts.setAsAdmin",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}/admin\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.setAsAdmin({ accountId, userId })"
-          }
-        ]
-      },
       "delete": {
         "parameters": [
           {
@@ -900,21 +737,44 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "operationId": "accounts-delete-admin",
         "summary": "Delete admin",
-        "x-sdk-interface": "accounts.deleteAdmin",
-        "x-code-samples": [
+        "x-sdk-interface": "accounts.deleteAdmin"
+      },
+      "post": {
+        "parameters": [
           {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}/admin\""
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "lang": "node.js",
-            "source": "sdk.accounts.deleteAdmin({ accountId, userId })"
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "accounts-set-as-admin",
+        "summary": "Set as admin",
+        "x-sdk-interface": "accounts.setAsAdmin"
       }
     },
     "/accounts/{id}/adduser": {
@@ -936,7 +796,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Adds a not existing user to an account. the provider field is optional and if not provided it will be taken from the account model",
         "operationId": "accounts-add-user-to-account",
@@ -955,17 +815,7 @@
           }
         },
         "summary": "Add user to account",
-        "x-sdk-interface": "accounts.addUserToAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"userDetails\\\":\\\"${USER_DETAILS_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/accounts/${ID}/adduser\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.addUserToAccount({ id }, {\n    userDetails: `${USER_DETAILS_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "accounts.addUserToAccount"
       }
     },
     "/accounts/{id}/update": {
@@ -987,7 +837,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Not implemented yet: update the user defined account fields. Receives a settings object (will be defined later)",
         "operationId": "accounts-update-account-public-settings",
@@ -1043,17 +893,7 @@
           }
         },
         "summary": "Update account public settings",
-        "x-sdk-interface": "accounts.updateAccountPublicSettings",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"notifications\\\":[${NOTIFICATIONS_OBJ},${NOTIFICATIONS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/accounts/${ID}/update\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.updateAccountPublicSettings({ id }, {\n    notifications: [\n        { ...NOTIFICATIONS_OBJ },\n        { ...NOTIFICATIONS_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "accounts.updateAccountPublicSettings"
       }
     },
     "/accounts/{id}/updateuser": {
@@ -1075,7 +915,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Not implemented yet",
         "operationId": "accounts-update-user-details",
@@ -1094,17 +934,7 @@
           }
         },
         "summary": "Update user details",
-        "x-sdk-interface": "accounts.updateUserDetails",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"settings\\\":${SETTINGS_OBJ}}\" \\\n    \"https://g.codefresh.io/api/accounts/${ID}/updateuser\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.updateUserDetails({ id }, {\n    settings: { ...SETTINGS_OBJ }\n})"
-          }
-        ]
+        "x-sdk-interface": "accounts.updateUserDetails"
       }
     },
     "/accounts/{id}/users": {
@@ -1126,25 +956,30 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "List users of an account",
         "operationId": "accounts-get-users-for-account",
         "summary": "Get users for account",
-        "x-sdk-interface": "accounts.getUsersForAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ID}/users\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.getUsersForAccount({ id })"
-          }
-        ]
+        "x-sdk-interface": "accounts.getUsersForAccount"
       }
     },
     "/admin/accounts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "accounts"
+        ],
+        "description": "get all the accounts in the system",
+        "operationId": "accounts-list-accounts",
+        "summary": "List accounts",
+        "parameters": [],
+        "x-sdk-interface": "accounts.listAccounts"
+      },
       "post": {
         "responses": {
           "200": {
@@ -1152,7 +987,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Add new account. Receives an account object ",
         "operationId": "accounts-add-account",
@@ -1178,42 +1013,7 @@
         },
         "summary": "Add account",
         "parameters": [],
-        "x-sdk-interface": "accounts.addAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"name\\\":\\\"${NAME_STR}\\\",\\\"provider\\\":\\\"${PROVIDER_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/admin/accounts\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.addAccount({\n    name: `${NAME_STR}`,\n    provider: `${PROVIDER_STR}`\n})"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Accounts"
-        ],
-        "description": "get all the accounts in the system",
-        "operationId": "accounts-list-accounts",
-        "summary": "List accounts",
-        "parameters": [],
-        "x-sdk-interface": "accounts.listAccounts",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/accounts\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.listAccounts()"
-          }
-        ]
+        "x-sdk-interface": "accounts.addAccount"
       }
     },
     "/admin/accounts/addpendinguser": {
@@ -1224,7 +1024,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "operationId": "accounts-add-pending-user-without-account",
         "requestBody": {
@@ -1264,55 +1064,10 @@
         },
         "summary": "Add pending user without account",
         "parameters": [],
-        "x-sdk-interface": "accounts.addPendingUserWithoutAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"account\\\":[${ACCOUNT_OBJ}],\\\"provider\\\":{\\\"name\\\":\\\"${NAME_STR}\\\"},\\\"userName\\\":\\\"${USER_NAME_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/admin/accounts/addpendinguser\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.addPendingUserWithoutAccount({\n    account: [\n        { ...ACCOUNT_OBJ }\n    ],\n    provider: {\n        name: `${NAME_STR}`\n    },\n    userName: `${USER_NAME_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "accounts.addPendingUserWithoutAccount"
       }
     },
     "/admin/accounts/{id}": {
-      "get": {
-        "parameters": [
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Accounts"
-        ],
-        "description": "Get an account by id",
-        "operationId": "accounts-get-by-id",
-        "summary": "Get by id",
-        "x-sdk-interface": "accounts.getById",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/accounts/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.getById({ id })"
-          }
-        ]
-      },
       "delete": {
         "parameters": [
           {
@@ -1331,22 +1086,37 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Not implemented yet",
         "operationId": "accounts-delete-account",
         "summary": "Delete account",
-        "x-sdk-interface": "accounts.deleteAccount",
-        "x-code-samples": [
+        "x-sdk-interface": "accounts.deleteAccount"
+      },
+      "get": {
+        "parameters": [
           {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/accounts/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.deleteAccount({ id })"
+            "description": "id of an object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "accounts"
+        ],
+        "description": "Get an account by id",
+        "operationId": "accounts-get-by-id",
+        "summary": "Get by id",
+        "x-sdk-interface": "accounts.getById"
       }
     },
     "/admin/accounts/{id}/update": {
@@ -1368,7 +1138,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "accounts"
         ],
         "description": "Not implemented yet: Update the account info that only codefresh admins (codefresh employees, not account admin) can access",
         "operationId": "accounts-update-account",
@@ -1387,17 +1157,7 @@
           }
         },
         "summary": "Update account",
-        "x-sdk-interface": "accounts.updateAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"settings\\\":${SETTINGS_OBJ}}\" \\\n    \"https://g.codefresh.io/api/admin/accounts/${ID}/update\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.accounts.updateAccount({ id }, {\n    settings: { ...SETTINGS_OBJ }\n})"
-          }
-        ]
+        "x-sdk-interface": "accounts.updateAccount"
       }
     },
     "/admin/runtime-environments": {
@@ -1408,7 +1168,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "onPrem.runtimeEnvs"
         ],
         "operationId": "onPrem-runtimeEnvs-list",
         "parameters": [
@@ -1435,17 +1195,7 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "onPrem.runtimeEnvs.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments?limit=${LIMIT}&offset=${OFFSET}&accountIds=${ACCOUNT_IDS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.list({ limit, offset, accountIds })"
-          }
-        ]
+        "x-sdk-interface": "onPrem.runtimeEnvs.list"
       }
     },
     "/admin/runtime-environments/account/default/{account}/{name}": {
@@ -1456,7 +1206,7 @@
           }
         },
         "tags": [
-          "Runtime Environments (Account)"
+          "onPrem.runtimeEnvs.account"
         ],
         "operationId": "onPrem-runtimeEnvs-account-set-default",
         "parameters": [
@@ -1478,17 +1228,7 @@
           }
         ],
         "summary": "Set default for account",
-        "x-sdk-interface": "onPrem.runtimeEnvs.account.setDefault",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/default/${ACCOUNT}/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.account.setDefault({ account, name })"
-          }
-        ]
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.setDefault"
       }
     },
     "/admin/runtime-environments/account/{account}": {
@@ -1499,7 +1239,7 @@
           }
         },
         "tags": [
-          "Runtime Environments (Account)"
+          "onPrem.runtimeEnvs.account"
         ],
         "operationId": "onPrem-runtimeEnvs-account-list",
         "parameters": [
@@ -1534,17 +1274,7 @@
           }
         ],
         "summary": "Get by account",
-        "x-sdk-interface": "onPrem.runtimeEnvs.account.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/${ACCOUNT}?limit=${LIMIT}&offset=${OFFSET}&accountIds=${ACCOUNT_IDS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.account.list({\n    account,\n    limit,\n    offset,\n    accountIds\n})"
-          }
-        ]
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.list"
       }
     },
     "/admin/runtime-environments/default/{plan}/{name}": {
@@ -1555,7 +1285,7 @@
           }
         },
         "tags": [
-          "Runtime Environments (Plan)"
+          "onPrem.runtimeEnvs.plan"
         ],
         "operationId": "onPrem-runtimeEnvs-plan-set-default",
         "parameters": [
@@ -1577,20 +1307,86 @@
           }
         ],
         "summary": "Set default",
-        "x-sdk-interface": "onPrem.runtimeEnvs.plan.setDefault",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/default/${PLAN}/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.setDefault({ plan, name })"
-          }
-        ]
+        "x-sdk-interface": "onPrem.runtimeEnvs.plan.setDefault"
       }
     },
     "/admin/runtime-environments/{name}": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.system"
+        ],
+        "operationId": "onPrem-runtimeEnvs-system-update",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "extend",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Update sys re",
+        "x-sdk-interface": "onPrem.runtimeEnvs.system.update"
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.system"
+        ],
+        "operationId": "onPrem-runtimeEnvs-system-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Delete sys re",
+        "x-sdk-interface": "onPrem.runtimeEnvs.system.delete"
+      },
       "get": {
         "responses": {
           "200": {
@@ -1598,7 +1394,7 @@
           }
         },
         "tags": [
-          "Runtime Environments (System)"
+          "onPrem.runtimeEnvs.system"
         ],
         "operationId": "onPrem-runtimeEnvs-system-get",
         "parameters": [
@@ -1640,18 +1436,10 @@
           }
         ],
         "summary": "Get sys re",
-        "x-sdk-interface": "onPrem.runtimeEnvs.system.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.system.get({\n    name,\n    version,\n    extend,\n    history,\n    successors\n})"
-          }
-        ]
-      },
+        "x-sdk-interface": "onPrem.runtimeEnvs.system.get"
+      }
+    },
+    "/admin/runtime-environments/{plan}/{name}": {
       "put": {
         "responses": {
           "200": {
@@ -1659,10 +1447,18 @@
           }
         },
         "tags": [
-          "Runtime Environments (System)"
+          "onPrem.runtimeEnvs.plan"
         ],
-        "operationId": "onPrem-runtimeEnvs-system-update",
+        "operationId": "onPrem-runtimeEnvs-plan-update",
         "parameters": [
+          {
+            "in": "path",
+            "name": "plan",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
           {
             "in": "path",
             "name": "name",
@@ -1695,18 +1491,8 @@
             }
           }
         },
-        "summary": "Update sys re",
-        "x-sdk-interface": "onPrem.runtimeEnvs.system.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.system.update({ name, extend, description }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "summary": "Update",
+        "x-sdk-interface": "onPrem.runtimeEnvs.plan.update"
       },
       "delete": {
         "responses": {
@@ -1715,10 +1501,18 @@
           }
         },
         "tags": [
-          "Runtime Environments (System)"
+          "onPrem.runtimeEnvs.plan"
         ],
-        "operationId": "onPrem-runtimeEnvs-system-delete",
+        "operationId": "onPrem-runtimeEnvs-plan-delete",
         "parameters": [
+          {
+            "in": "path",
+            "name": "plan",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
           {
             "in": "path",
             "name": "name",
@@ -1735,21 +1529,9 @@
             }
           }
         ],
-        "summary": "Delete sys re",
-        "x-sdk-interface": "onPrem.runtimeEnvs.system.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${NAME}?force=${FORCE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.system.delete({ name, force })"
-          }
-        ]
-      }
-    },
-    "/admin/runtime-environments/{plan}/{name}": {
+        "summary": "Delete",
+        "x-sdk-interface": "onPrem.runtimeEnvs.plan.delete"
+      },
       "get": {
         "responses": {
           "200": {
@@ -1757,7 +1539,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "onPrem.runtimeEnvs"
         ],
         "operationId": "onPrem-runtimeEnvs-plan-get",
         "parameters": [
@@ -1807,129 +1589,7 @@
           }
         ],
         "summary": "Get",
-        "x-sdk-interface": "onPrem.runtimeEnvs.plan.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.get({\n    plan,\n    name,\n    version,\n    extend,\n    history,\n    successors\n})"
-          }
-        ]
-      },
-      "put": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Runtime Environments (Plan)"
-        ],
-        "operationId": "onPrem-runtimeEnvs-plan-update",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "plan",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "name",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "extend",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "description",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        },
-        "summary": "Update",
-        "x-sdk-interface": "onPrem.runtimeEnvs.plan.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.update({\n    plan,\n    name,\n    extend,\n    description\n}, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Runtime Environments (Plan)"
-        ],
-        "operationId": "onPrem-runtimeEnvs-plan-delete",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "plan",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "name",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "force",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "Delete",
-        "x-sdk-interface": "onPrem.runtimeEnvs.plan.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${NAME}?force=${FORCE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.delete({ plan, name, force })"
-          }
-        ]
+        "x-sdk-interface": "onPrem.runtimeEnvs.plan.get"
       }
     },
     "/auth/key": {
@@ -1940,7 +1600,7 @@
           }
         },
         "tags": [
-          "Tokens"
+          "tokens"
         ],
         "operationId": "tokens-generate",
         "parameters": [
@@ -1969,17 +1629,7 @@
           }
         },
         "summary": "Generate",
-        "x-sdk-interface": "tokens.generate",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/auth/key?subjectType=${SUBJECT_TYPE}&subjectReference=${SUBJECT_REFERENCE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.tokens.generate({ subjectType, subjectReference }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "tokens.generate"
       }
     },
     "/auth/key/{id}": {
@@ -1990,7 +1640,7 @@
           }
         },
         "tags": [
-          "Tokens"
+          "tokens"
         ],
         "operationId": "tokens-delete",
         "parameters": [
@@ -2004,17 +1654,7 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "tokens.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/auth/key/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.tokens.delete({ id })"
-          }
-        ]
+        "x-sdk-interface": "tokens.delete"
       }
     },
     "/auth/keys": {
@@ -2025,22 +1665,12 @@
           }
         },
         "tags": [
-          "Tokens"
+          "tokens"
         ],
         "operationId": "tokens-list",
         "parameters": [],
         "summary": "List",
-        "x-sdk-interface": "tokens.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/auth/keys\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.tokens.list()"
-          }
-        ]
+        "x-sdk-interface": "tokens.list"
       }
     },
     "/builds/{id}": {
@@ -2062,21 +1692,11 @@
           }
         },
         "tags": [
-          "Builds"
+          "builds"
         ],
         "operationId": "workflows-get",
         "summary": "Get",
-        "x-sdk-interface": "workflows.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/builds/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.workflows.get({ id })"
-          }
-        ]
+        "x-sdk-interface": "workflows.get"
       }
     },
     "/workflow": {
@@ -2125,20 +1745,10 @@
           }
         },
         "tags": [
-          "Builds"
+          "builds"
         ],
         "summary": "List",
-        "x-sdk-interface": "workflows.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/workflow?limit=${LIMIT}&page=${PAGE}&status=${STATUS}&trigger=${TRIGGER}&pipeline=${PIPELINE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.workflows.list({\n    limit,\n    page,\n    status,\n    trigger,\n    pipeline\n})"
-          }
-        ]
+        "x-sdk-interface": "workflows.list"
       }
     },
     "/builds/{buildId}/update": {
@@ -2160,7 +1770,7 @@
           }
         },
         "tags": [
-          "Builds"
+          "builds"
         ],
         "operationId": "workflows-update",
         "requestBody": {
@@ -2186,17 +1796,7 @@
           }
         },
         "summary": "Update",
-        "x-sdk-interface": "workflows.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"pullRequest\\\":{\\\"createOnSuccess\\\":${CREATE_ON_SUCCESS_BOOL},\\\"mergeOnSuccess\\\":${MERGE_ON_SUCCESS_BOOL}}}\" \\\n    \"https://g.codefresh.io/api/builds/${BUILD_ID}/update\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.workflows.update({ buildId }, {\n    pullRequest: {\n        createOnSuccess: CREATE_ON_SUCCESS_BOOL,\n        mergeOnSuccess: MERGE_ON_SUCCESS_BOOL\n    }\n})"
-          }
-        ]
+        "x-sdk-interface": "workflows.update"
       }
     },
     "/builds/rebuild/{id}": {
@@ -2207,7 +1807,7 @@
           }
         },
         "tags": [
-          "Builds"
+          "builds"
         ],
         "operationId": "workflows-restart",
         "parameters": [
@@ -2222,17 +1822,7 @@
           }
         ],
         "summary": "Restart",
-        "x-sdk-interface": "workflows.restart",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/builds/rebuild/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.workflows.restart({ id })"
-          }
-        ]
+        "x-sdk-interface": "workflows.restart"
       }
     },
     "/builds/{serviceId}/": {
@@ -2254,7 +1844,7 @@
           }
         },
         "tags": [
-          "Builds"
+          "builds"
         ],
         "operationId": "workflows-build-by-service",
         "requestBody": {
@@ -2285,17 +1875,7 @@
           }
         },
         "summary": "Build by service",
-        "x-sdk-interface": "workflows.buildByService",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"branch\\\":\\\"${BRANCH_STR}\\\",\\\"buildFlags\\\":{\\\"nocache\\\":${NOCACHE_BOOL}},\\\"sha\\\":\\\"${SHA_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/builds/${SERVICE_ID}/\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.workflows.buildByService({ serviceId }, {\n    branch: `${BRANCH_STR}`,\n    buildFlags: {\n        nocache: NOCACHE_BOOL\n    },\n    sha: `${SHA_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "workflows.buildByService"
       }
     },
     "/clusters": {
@@ -2306,22 +1886,12 @@
           }
         },
         "tags": [
-          "Clusters"
+          "clusters"
         ],
         "operationId": "clusters-list",
         "parameters": [],
         "summary": "List",
-        "x-sdk-interface": "clusters.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/clusters\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.clusters.list()"
-          }
-        ]
+        "x-sdk-interface": "clusters.list"
       }
     },
     "/clusters/{provider}/cluster/{id}": {
@@ -2332,7 +1902,7 @@
           }
         },
         "tags": [
-          "Clusters"
+          "clusters"
         ],
         "operationId": "clusters-delete",
         "parameters": [
@@ -2354,20 +1924,24 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "clusters.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/clusters/${PROVIDER}/cluster/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.clusters.delete({ provider, id })"
-          }
-        ]
+        "x-sdk-interface": "clusters.delete"
       }
     },
     "/compositions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "compositions-list",
+        "summary": "List",
+        "parameters": [],
+        "x-sdk-interface": "compositions.list"
+      },
       "post": {
         "responses": {
           "200": {
@@ -2375,7 +1949,7 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-create",
         "requestBody": {
@@ -2409,41 +1983,7 @@
         },
         "summary": "Create",
         "parameters": [],
-        "x-sdk-interface": "compositions.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"isAdvanced\\\":${IS_ADVANCED_BOOL},\\\"name\\\":\\\"${NAME_STR}\\\",\\\"vars\\\":[${VARS_OBJ}],\\\"yamlJson\\\":\\\"${YAML_JSON_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/compositions\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.create({\n    isAdvanced: IS_ADVANCED_BOOL,\n    name: `${NAME_STR}`,\n    vars: [\n        { ...VARS_OBJ }\n    ],\n    yamlJson: `${YAML_JSON_STR}`\n})"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Compositions"
-        ],
-        "operationId": "compositions-list",
-        "summary": "List",
-        "parameters": [],
-        "x-sdk-interface": "compositions.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/compositions\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.list()"
-          }
-        ]
+        "x-sdk-interface": "compositions.create"
       }
     },
     "/compositions/{id}/run": {
@@ -2465,7 +2005,7 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-launch",
         "requestBody": {
@@ -2487,20 +2027,34 @@
           }
         },
         "summary": "Launch",
-        "x-sdk-interface": "compositions.launch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"vars\\\":[${VARS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}/run\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.launch({ id }, {\n    vars: [\n        { ...VARS_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "compositions.launch"
       }
     },
     "/compositions/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "compositions"
+        ],
+        "operationId": "compositions-delete",
+        "summary": "Delete",
+        "x-sdk-interface": "compositions.delete"
+      },
       "get": {
         "parameters": [
           {
@@ -2519,21 +2073,11 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-get",
         "summary": "Get",
-        "x-sdk-interface": "compositions.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.get({ id })"
-          }
-        ]
+        "x-sdk-interface": "compositions.get"
       },
       "put": {
         "parameters": [
@@ -2553,7 +2097,7 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-update",
         "requestBody": {
@@ -2587,17 +2131,7 @@
           "required": true
         },
         "summary": "Update",
-        "x-sdk-interface": "compositions.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"isAdvanced\\\":${IS_ADVANCED_BOOL},\\\"name\\\":\\\"${NAME_STR}\\\",\\\"vars\\\":[${VARS_OBJ}],\\\"yamlJson\\\":\\\"${YAML_JSON_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.update({ id }, {\n    isAdvanced: IS_ADVANCED_BOOL,\n    name: `${NAME_STR}`,\n    vars: [\n        { ...VARS_OBJ }\n    ],\n    yamlJson: `${YAML_JSON_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "compositions.update"
       },
       "patch": {
         "responses": {
@@ -2606,7 +2140,7 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-patch",
         "parameters": [
@@ -2629,51 +2163,7 @@
           }
         },
         "summary": "Patch",
-        "x-sdk-interface": "compositions.patch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.patch({ id }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
-      },
-      "delete": {
-        "parameters": [
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Compositions"
-        ],
-        "operationId": "compositions-delete",
-        "summary": "Delete",
-        "x-sdk-interface": "compositions.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.delete({ id })"
-          }
-        ]
+        "x-sdk-interface": "compositions.patch"
       }
     },
     "/compositions/{id}/duplicate": {
@@ -2695,21 +2185,11 @@
           }
         },
         "tags": [
-          "Compositions"
+          "compositions"
         ],
         "operationId": "compositions-duplicate",
         "summary": "Duplicate",
-        "x-sdk-interface": "compositions.duplicate",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/compositions/${ID}/duplicate\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.compositions.duplicate({ id })"
-          }
-        ]
+        "x-sdk-interface": "compositions.duplicate"
       }
     },
     "/contexts": {
@@ -2720,7 +2200,7 @@
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
         "operationId": "contexts-list",
         "parameters": [
@@ -2740,17 +2220,7 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "contexts.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/contexts?type=${TYPE}&decrypt=${DECRYPT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.contexts.list({ type, decrypt })"
-          }
-        ]
+        "x-sdk-interface": "contexts.list"
       }
     },
     "/contexts/": {
@@ -2761,7 +2231,7 @@
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
         "operationId": "contexts-create",
         "parameters": [
@@ -2783,30 +2253,20 @@
           }
         },
         "summary": "Create",
-        "x-sdk-interface": "contexts.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/contexts/?skipValidation=${SKIP_VALIDATION}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.contexts.create({ skipValidation }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "contexts.create"
       }
     },
     "/contexts/{name}": {
-      "get": {
+      "delete": {
         "responses": {
           "200": {
             "description": "ok"
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
-        "operationId": "contexts-get",
+        "operationId": "contexts-delete",
         "parameters": [
           {
             "in": "path",
@@ -2815,27 +2275,10 @@
               "type": "string"
             },
             "required": true
-          },
-          {
-            "in": "query",
-            "name": "decrypt",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
-        "summary": "Get",
-        "x-sdk-interface": "contexts.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/contexts/${NAME}?decrypt=${DECRYPT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.contexts.get({ name, decrypt })"
-          }
-        ]
+        "summary": "Delete",
+        "x-sdk-interface": "contexts.delete"
       },
       "put": {
         "responses": {
@@ -2844,7 +2287,7 @@
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
         "operationId": "contexts-replace",
         "parameters": [
@@ -2867,17 +2310,7 @@
           }
         },
         "summary": "Replace",
-        "x-sdk-interface": "contexts.replace",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/contexts/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.contexts.replace({ name }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "contexts.replace"
       },
       "patch": {
         "responses": {
@@ -2886,7 +2319,7 @@
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
         "operationId": "contexts-patch",
         "parameters": [
@@ -2909,28 +2342,18 @@
           }
         },
         "summary": "Patch",
-        "x-sdk-interface": "contexts.patch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/contexts/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.contexts.patch({ name }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "contexts.patch"
       },
-      "delete": {
+      "get": {
         "responses": {
           "200": {
             "description": "ok"
           }
         },
         "tags": [
-          "Contexts"
+          "contexts"
         ],
-        "operationId": "contexts-delete",
+        "operationId": "contexts-get",
         "parameters": [
           {
             "in": "path",
@@ -2939,20 +2362,17 @@
               "type": "string"
             },
             "required": true
-          }
-        ],
-        "summary": "Delete",
-        "x-sdk-interface": "contexts.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/contexts/${NAME}\""
           },
           {
-            "lang": "node.js",
-            "source": "sdk.contexts.delete({ name })"
+            "in": "query",
+            "name": "decrypt",
+            "schema": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "summary": "Get",
+        "x-sdk-interface": "contexts.get"
       }
     },
     "/environments": {
@@ -2963,22 +2383,12 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-list",
         "summary": "List",
         "parameters": [],
-        "x-sdk-interface": "envs.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.list()"
-          }
-        ]
+        "x-sdk-interface": "envs.list"
       }
     },
     "/environments/all/terminate": {
@@ -2989,22 +2399,12 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-terminate-all",
         "summary": "Terminate all",
         "parameters": [],
-        "x-sdk-interface": "envs.terminateAll",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/all/terminate\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.terminateAll()"
-          }
-        ]
+        "x-sdk-interface": "envs.terminateAll"
       }
     },
     "/environments/{id}": {
@@ -3015,7 +2415,7 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-get",
         "parameters": [
@@ -3029,17 +2429,7 @@
           }
         ],
         "summary": "Get",
-        "x-sdk-interface": "envs.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.get({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.get"
       }
     },
     "/environments/{id}/pause": {
@@ -3061,21 +2451,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-pause",
         "summary": "Pause",
-        "x-sdk-interface": "envs.pause",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/pause\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.pause({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.pause"
       }
     },
     "/environments/{id}/rename/{newName}": {
@@ -3106,21 +2486,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-rename",
         "summary": "Rename",
-        "x-sdk-interface": "envs.rename",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/rename/${NEW_NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.rename({ id, newName })"
-          }
-        ]
+        "x-sdk-interface": "envs.rename"
       }
     },
     "/environments/{id}/start": {
@@ -3142,21 +2512,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-start",
         "summary": "Start",
-        "x-sdk-interface": "envs.start",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/start\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.start({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.start"
       }
     },
     "/environments/{id}/status": {
@@ -3178,21 +2538,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-status",
         "summary": "Status",
-        "x-sdk-interface": "envs.status",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/status\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.status({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.status"
       }
     },
     "/environments/{id}/stop": {
@@ -3214,21 +2564,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-stop",
         "summary": "Stop",
-        "x-sdk-interface": "envs.stop",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/stop\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.stop({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.stop"
       }
     },
     "/environments/{id}/terminate": {
@@ -3250,21 +2590,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-terminate",
         "summary": "Terminate",
-        "x-sdk-interface": "envs.terminate",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/terminate\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.terminate({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.terminate"
       }
     },
     "/environments/{id}/unpause": {
@@ -3286,21 +2616,11 @@
           }
         },
         "tags": [
-          "Environments"
+          "environments"
         ],
         "operationId": "envs-unpause",
         "summary": "Unpause",
-        "x-sdk-interface": "envs.unpause",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/environments/${ID}/unpause\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.envs.unpause({ id })"
-          }
-        ]
+        "x-sdk-interface": "envs.unpause"
       }
     },
     "/features/{accountId}": {
@@ -3322,55 +2642,35 @@
           }
         },
         "tags": [
-          "Features"
+          "features"
         ],
         "operationId": "features-account",
         "summary": "Account",
-        "x-sdk-interface": "features.account",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/features/${ACCOUNT_ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.features.account({ accountId })"
-          }
-        ]
+        "x-sdk-interface": "features.account"
       }
     },
     "/helm/boards": {
-      "post": {
+      "delete": {
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "__v": {
-                      "type": "number"
+                    "n": {
+                      "example": 2,
+                      "type": "integer"
                     },
-                    "_id": {
-                      "type": "string"
-                    },
-                    "accountId": {
-                      "type": "string"
-                    },
-                    "filter": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
+                    "ok": {
+                      "example": 1,
+                      "type": "integer"
                     }
                   },
                   "type": "object"
                 }
               }
             },
-            "description": "Board object"
+            "description": "Result of deleting"
           },
           "500": {
             "content": {
@@ -3393,40 +2693,12 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
-        "operationId": "helm-boards-create",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "filter": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "required": true
-        },
-        "summary": "Create",
+        "operationId": "helm-boards-delete-all",
+        "summary": "Delete all",
         "parameters": [],
-        "x-sdk-interface": "helm.boards.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"filter\\\":\\\"${FILTER_STR}\\\",\\\"name\\\":\\\"${NAME_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.create({\n    filter: `${FILTER_STR}`,\n    name: `${NAME_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.boards.deleteAll"
       },
       "get": {
         "responses": {
@@ -3484,44 +2756,44 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
         "operationId": "helm-boards-list",
         "summary": "List",
         "parameters": [],
-        "x-sdk-interface": "helm.boards.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.list()"
-          }
-        ]
+        "x-sdk-interface": "helm.boards.list"
       },
-      "delete": {
+      "post": {
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "n": {
-                      "example": 2,
-                      "type": "integer"
+                    "__v": {
+                      "type": "number"
                     },
-                    "ok": {
-                      "example": 1,
-                      "type": "integer"
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
                     }
                   },
                   "type": "object"
                 }
               }
             },
-            "description": "Result of deleting"
+            "description": "Board object"
           },
           "500": {
             "content": {
@@ -3544,22 +2816,30 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
-        "operationId": "helm-boards-delete-all",
-        "summary": "Delete all",
-        "parameters": [],
-        "x-sdk-interface": "helm.boards.deleteAll",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards\""
+        "operationId": "helm-boards-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
           },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.deleteAll()"
-          }
-        ]
+          "required": true
+        },
+        "summary": "Create",
+        "parameters": [],
+        "x-sdk-interface": "helm.boards.create"
       }
     },
     "/helm/boards/name/{name}": {
@@ -3639,21 +2919,11 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
         "operationId": "helm-boards-get-by-name",
         "summary": "Get by name",
-        "x-sdk-interface": "helm.boards.getByName",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/name/${NAME}?columns=${COLUMNS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.getByName({ name, columns })"
-          }
-        ]
+        "x-sdk-interface": "helm.boards.getByName"
       }
     },
     "/helm/boards/sections": {
@@ -3720,7 +2990,7 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-create",
         "requestBody": {
@@ -3752,17 +3022,7 @@
         },
         "summary": "Create",
         "parameters": [],
-        "x-sdk-interface": "helm.sections.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"boardId\\\":\\\"${BOARD_ID_STR}\\\",\\\"color\\\":\\\"${COLOR_STR}\\\",\\\"index\\\":${INDEX_NUM},\\\"name\\\":\\\"${NAME_STR}\\\",\\\"section\\\":\\\"${SECTION_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.create({\n    boardId: `${BOARD_ID_STR}`,\n    color: `${COLOR_STR}`,\n    index: INDEX_NUM,\n    name: `${NAME_STR}`,\n    section: `${SECTION_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.create"
       }
     },
     "/helm/boards/sections/reorder": {
@@ -3792,7 +3052,7 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-reorder",
         "requestBody": {
@@ -3813,20 +3073,93 @@
         },
         "summary": "Reorder",
         "parameters": [],
-        "x-sdk-interface": "helm.sections.reorder",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"[sectionId]\\\":${SECTION_ID_NUM}}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections/reorder\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.reorder({\n    [sectionId]: SECTION_ID_NUM\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.reorder"
       }
     },
     "/helm/boards/sections/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "boardId": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "example": "Helm",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "helm.sections"
+        ],
+        "operationId": "helm-sections-delete",
+        "summary": "Delete",
+        "x-sdk-interface": "helm.sections.delete"
+      },
       "get": {
         "parameters": [
           {
@@ -3894,128 +3227,11 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-get",
         "summary": "Get",
-        "x-sdk-interface": "helm.sections.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.get({ id })"
-          }
-        ]
-      },
-      "put": {
-        "parameters": [
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "__v": {
-                      "type": "number"
-                    },
-                    "_id": {
-                      "type": "string"
-                    },
-                    "accountId": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Board object"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "example": "Error",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Error"
-          }
-        },
-        "tags": [
-          "Helm Sections"
-        ],
-        "operationId": "helm-sections-update",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "boardId": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "string"
-                  },
-                  "index": {
-                    "type": "integer"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "section": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "required": true
-        },
-        "summary": "Update",
-        "x-sdk-interface": "helm.sections.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"boardId\\\":\\\"${BOARD_ID_STR}\\\",\\\"color\\\":\\\"${COLOR_STR}\\\",\\\"index\\\":${INDEX_NUM},\\\"name\\\":\\\"${NAME_STR}\\\",\\\"section\\\":\\\"${SECTION_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.update({ id }, {\n    boardId: `${BOARD_ID_STR}`,\n    color: `${COLOR_STR}`,\n    index: INDEX_NUM,\n    name: `${NAME_STR}`,\n    section: `${SECTION_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.get"
       },
       "patch": {
         "parameters": [
@@ -4081,7 +3297,7 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-patch",
         "requestBody": {
@@ -4112,19 +3328,9 @@
           "required": true
         },
         "summary": "Patch",
-        "x-sdk-interface": "helm.sections.patch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"boardId\\\":\\\"${BOARD_ID_STR}\\\",\\\"color\\\":\\\"${COLOR_STR}\\\",\\\"index\\\":${INDEX_NUM},\\\"name\\\":\\\"${NAME_STR}\\\",\\\"section\\\":\\\"${SECTION_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.patch({ id }, {\n    boardId: `${BOARD_ID_STR}`,\n    color: `${COLOR_STR}`,\n    index: INDEX_NUM,\n    name: `${NAME_STR}`,\n    section: `${SECTION_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.patch"
       },
-      "delete": {
+      "put": {
         "parameters": [
           {
             "description": "id of an object",
@@ -4151,23 +3357,10 @@
                     "accountId": {
                       "type": "string"
                     },
-                    "boardId": {
-                      "type": "string"
-                    },
-                    "color": {
-                      "type": "string"
-                    },
-                    "index": {
-                      "type": "integer"
-                    },
                     "name": {
                       "type": "string"
                     },
-                    "section": {
-                      "type": "string"
-                    },
                     "type": {
-                      "example": "Helm",
                       "type": "string"
                     }
                   },
@@ -4201,24 +3394,101 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
-        "operationId": "helm-sections-delete",
-        "summary": "Delete",
-        "x-sdk-interface": "helm.sections.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/sections/${ID}\""
+        "operationId": "helm-sections-update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "boardId": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "section": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
           },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.delete({ id })"
-          }
-        ]
+          "required": true
+        },
+        "summary": "Update",
+        "x-sdk-interface": "helm.sections.update"
       }
     },
     "/helm/boards/{boardId}/sections": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of a board",
+            "in": "path",
+            "name": "boardId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "n": {
+                      "example": 2,
+                      "type": "integer"
+                    },
+                    "ok": {
+                      "example": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Result of deleting"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "helm.sections"
+        ],
+        "operationId": "helm-sections-delete-all",
+        "summary": "Delete all",
+        "x-sdk-interface": "helm.sections.deleteAll"
+      },
       "get": {
         "parameters": [
           {
@@ -4296,91 +3566,11 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-list",
         "summary": "List",
-        "x-sdk-interface": "helm.sections.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${BOARD_ID}/sections\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.list({ boardId })"
-          }
-        ]
-      },
-      "delete": {
-        "parameters": [
-          {
-            "description": "id of a board",
-            "in": "path",
-            "name": "boardId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "n": {
-                      "example": 2,
-                      "type": "integer"
-                    },
-                    "ok": {
-                      "example": 1,
-                      "type": "integer"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Result of deleting"
-          },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "example": "Error",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Error"
-          }
-        },
-        "tags": [
-          "Helm Sections"
-        ],
-        "operationId": "helm-sections-delete-all",
-        "summary": "Delete all",
-        "x-sdk-interface": "helm.sections.deleteAll",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${BOARD_ID}/sections\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.deleteAll({ boardId })"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.list"
       }
     },
     "/helm/boards/{boardId}/sections/name/{name}": {
@@ -4460,24 +3650,87 @@
           }
         },
         "tags": [
-          "Helm Sections"
+          "helm.sections"
         ],
         "operationId": "helm-sections-get-by-name",
         "summary": "Get by name",
-        "x-sdk-interface": "helm.sections.getByName",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${BOARD_ID}/sections/name/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.sections.getByName({ boardId, name })"
-          }
-        ]
+        "x-sdk-interface": "helm.sections.getByName"
       }
     },
     "/helm/boards/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "filter": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Board object"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "helm.boards"
+        ],
+        "operationId": "helm-boards-delete",
+        "summary": "Delete",
+        "x-sdk-interface": "helm.boards.delete"
+      },
       "get": {
         "parameters": [
           {
@@ -4545,122 +3798,11 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
         "operationId": "helm-boards-get",
         "summary": "Get",
-        "x-sdk-interface": "helm.boards.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.get({ id })"
-          }
-        ]
-      },
-      "put": {
-        "parameters": [
-          {
-            "description": "id of an object",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "__v": {
-                      "type": "number"
-                    },
-                    "_id": {
-                      "type": "string"
-                    },
-                    "accountId": {
-                      "type": "string"
-                    },
-                    "filter": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Board object"
-          },
-          "404": {
-            "description": "Not found"
-          },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "example": "Error",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Error"
-          }
-        },
-        "tags": [
-          "Helm Boards"
-        ],
-        "operationId": "helm-boards-update",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "filter": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "required": true
-        },
-        "summary": "Update",
-        "x-sdk-interface": "helm.boards.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"filter\\\":\\\"${FILTER_STR}\\\",\\\"name\\\":\\\"${NAME_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.update({ id }, {\n    filter: `${FILTER_STR}`,\n    name: `${NAME_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.boards.get"
       },
       "patch": {
         "parameters": [
@@ -4729,7 +3871,7 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
         "operationId": "helm-boards-patch",
         "requestBody": {
@@ -4751,19 +3893,9 @@
           "required": true
         },
         "summary": "Patch",
-        "x-sdk-interface": "helm.boards.patch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"filter\\\":\\\"${FILTER_STR}\\\",\\\"name\\\":\\\"${NAME_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.patch({ id }, {\n    filter: `${FILTER_STR}`,\n    name: `${NAME_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "helm.boards.patch"
       },
-      "delete": {
+      "put": {
         "parameters": [
           {
             "description": "id of an object",
@@ -4830,21 +3962,29 @@
           }
         },
         "tags": [
-          "Helm Boards"
+          "helm.boards"
         ],
-        "operationId": "helm-boards-delete",
-        "summary": "Delete",
-        "x-sdk-interface": "helm.boards.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/boards/${ID}\""
+        "operationId": "helm-boards-update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "filter": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
           },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.boards.delete({ id })"
-          }
-        ]
+          "required": true
+        },
+        "summary": "Update",
+        "x-sdk-interface": "helm.boards.update"
       }
     },
     "/helm/repos": {
@@ -4855,7 +3995,7 @@
           }
         },
         "tags": [
-          "Helm Repos"
+          "helm.repos"
         ],
         "operationId": "helm-repos-create",
         "parameters": [],
@@ -4869,17 +4009,7 @@
           }
         },
         "summary": "Create",
-        "x-sdk-interface": "helm.repos.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/helm/repos\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.repos.create({ ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "helm.repos.create"
       },
       "get": {
         "responses": {
@@ -4888,7 +4018,7 @@
           }
         },
         "tags": [
-          "Helm Repos"
+          "helm.repos"
         ],
         "operationId": "helm-repos-list",
         "parameters": [
@@ -4901,30 +4031,20 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "helm.repos.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/repos?query=${QUERY}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.repos.list({ query })"
-          }
-        ]
+        "x-sdk-interface": "helm.repos.list"
       }
     },
     "/helm/repos/{name}": {
-      "get": {
+      "delete": {
         "responses": {
           "200": {
             "description": "ok"
           }
         },
         "tags": [
-          "Helm Repos"
+          "helm.repos"
         ],
-        "operationId": "helm-repos-get",
+        "operationId": "helm-repos-delete",
         "parameters": [
           {
             "in": "path",
@@ -4935,18 +4055,8 @@
             "required": true
           }
         ],
-        "summary": "Get",
-        "x-sdk-interface": "helm.repos.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/repos/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.repos.get({ name })"
-          }
-        ]
+        "summary": "Delete",
+        "x-sdk-interface": "helm.repos.delete"
       },
       "put": {
         "responses": {
@@ -4955,7 +4065,7 @@
           }
         },
         "tags": [
-          "Helm Repos"
+          "helm.repos"
         ],
         "operationId": "helm-repos-update",
         "parameters": [
@@ -4978,28 +4088,18 @@
           }
         },
         "summary": "Update",
-        "x-sdk-interface": "helm.repos.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/helm/repos/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.repos.update({ name }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "helm.repos.update"
       },
-      "delete": {
+      "get": {
         "responses": {
           "200": {
             "description": "ok"
           }
         },
         "tags": [
-          "Helm Repos"
+          "helm.repos"
         ],
-        "operationId": "helm-repos-delete",
+        "operationId": "helm-repos-get",
         "parameters": [
           {
             "in": "path",
@@ -5010,18 +4110,8 @@
             "required": true
           }
         ],
-        "summary": "Delete",
-        "x-sdk-interface": "helm.repos.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/helm/repos/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.repos.delete({ name })"
-          }
-        ]
+        "summary": "Get",
+        "x-sdk-interface": "helm.repos.get"
       }
     },
     "/hermes/events": {
@@ -5032,7 +4122,7 @@
           }
         },
         "tags": [
-          "Triggers Events"
+          "triggers.events"
         ],
         "operationId": "triggers-events-create",
         "parameters": [
@@ -5054,17 +4144,7 @@
           }
         },
         "summary": "Create",
-        "x-sdk-interface": "triggers.events.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/hermes/events?public=${PUBLIC}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.events.create({ public }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "triggers.events.create"
       },
       "get": {
         "responses": {
@@ -5073,7 +4153,7 @@
           }
         },
         "tags": [
-          "Triggers Events"
+          "triggers.events"
         ],
         "operationId": "triggers-events-list",
         "parameters": [
@@ -5107,17 +4187,7 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "triggers.events.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/events?type=${TYPE}&kind=${KIND}&filter=${FILTER}&public=${PUBLIC}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.events.list({\n    type,\n    kind,\n    filter,\n    public\n})"
-          }
-        ]
+        "x-sdk-interface": "triggers.events.list"
       }
     },
     "/hermes/events/{event}": {
@@ -5128,7 +4198,7 @@
           }
         },
         "tags": [
-          "Triggers Events"
+          "triggers.events"
         ],
         "operationId": "triggers-events-get",
         "parameters": [
@@ -5142,17 +4212,7 @@
           }
         ],
         "summary": "Get",
-        "x-sdk-interface": "triggers.events.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/events/${EVENT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.events.get({ event })"
-          }
-        ]
+        "x-sdk-interface": "triggers.events.get"
       }
     },
     "/hermes/events/{event}/{context}": {
@@ -5163,7 +4223,7 @@
           }
         },
         "tags": [
-          "Triggers Events"
+          "triggers.events"
         ],
         "operationId": "triggers-events-delete",
         "parameters": [
@@ -5185,17 +4245,7 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "triggers.events.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/events/${EVENT}/${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.events.delete({ event, context })"
-          }
-        ]
+        "x-sdk-interface": "triggers.events.delete"
       }
     },
     "/hermes/triggers": {
@@ -5206,22 +4256,12 @@
           }
         },
         "tags": [
-          "Triggers"
+          "triggers"
         ],
         "operationId": "triggers-list",
         "parameters": [],
         "summary": "List",
-        "x-sdk-interface": "triggers.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/triggers\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.list()"
-          }
-        ]
+        "x-sdk-interface": "triggers.list"
       }
     },
     "/hermes/triggers/event/{event}": {
@@ -5232,7 +4272,7 @@
           }
         },
         "tags": [
-          "Triggers"
+          "triggers"
         ],
         "operationId": "triggers-get-event-triggers",
         "parameters": [
@@ -5246,17 +4286,7 @@
           }
         ],
         "summary": "Get event triggers",
-        "x-sdk-interface": "triggers.getEventTriggers",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/triggers/event/${EVENT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.getEventTriggers({ event })"
-          }
-        ]
+        "x-sdk-interface": "triggers.getEventTriggers"
       }
     },
     "/hermes/triggers/pipeline/{pipeline}": {
@@ -5267,7 +4297,7 @@
           }
         },
         "tags": [
-          "Triggers"
+          "triggers"
         ],
         "operationId": "triggers-get-pipeline-triggers",
         "parameters": [
@@ -5281,17 +4311,7 @@
           }
         ],
         "summary": "Get pipeline triggers",
-        "x-sdk-interface": "triggers.getPipelineTriggers",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/triggers/pipeline/${PIPELINE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.getPipelineTriggers({ pipeline })"
-          }
-        ]
+        "x-sdk-interface": "triggers.getPipelineTriggers"
       }
     },
     "/hermes/triggers/{event}/{pipeline}": {
@@ -5302,7 +4322,7 @@
           }
         },
         "tags": [
-          "Triggers"
+          "triggers"
         ],
         "operationId": "triggers-create",
         "parameters": [
@@ -5333,17 +4353,7 @@
           }
         },
         "summary": "Create",
-        "x-sdk-interface": "triggers.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/hermes/triggers/${EVENT}/${PIPELINE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.create({ event, pipeline }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "triggers.create"
       },
       "delete": {
         "responses": {
@@ -5352,7 +4362,7 @@
           }
         },
         "tags": [
-          "Triggers"
+          "triggers"
         ],
         "operationId": "triggers-delete",
         "parameters": [
@@ -5374,17 +4384,7 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "triggers.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/triggers/${EVENT}/${PIPELINE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.delete({ event, pipeline })"
-          }
-        ]
+        "x-sdk-interface": "triggers.delete"
       }
     },
     "/hermes/types": {
@@ -5395,22 +4395,12 @@
           }
         },
         "tags": [
-          "Triggers Types"
+          "triggers.types"
         ],
         "operationId": "triggers-types-list",
         "parameters": [],
         "summary": "List",
-        "x-sdk-interface": "triggers.types.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/types\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.types.list()"
-          }
-        ]
+        "x-sdk-interface": "triggers.types.list"
       }
     },
     "/hermes/types/{type}/{kind}": {
@@ -5421,7 +4411,7 @@
           }
         },
         "tags": [
-          "Triggers Types"
+          "triggers.types"
         ],
         "operationId": "triggers-types-get",
         "parameters": [
@@ -5443,17 +4433,7 @@
           }
         ],
         "summary": "Get",
-        "x-sdk-interface": "triggers.types.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/types/${TYPE}/${KIND}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.triggers.types.get({ type, kind })"
-          }
-        ]
+        "x-sdk-interface": "triggers.types.get"
       }
     },
     "/hermes/version": {
@@ -5464,22 +4444,12 @@
           }
         },
         "tags": [
-          "Version"
+          "version"
         ],
         "operationId": "version-get-hermes-version",
         "parameters": [],
         "summary": "Get hermes version",
-        "x-sdk-interface": "version.getHermesVersion",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/hermes/version\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.version.getHermesVersion()"
-          }
-        ]
+        "x-sdk-interface": "version.getHermesVersion"
       }
     },
     "/images": {
@@ -5490,7 +4460,7 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-list",
         "parameters": [
@@ -5559,20 +4529,11 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "images.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images?limit=${LIMIT}&offset=${OFFSET}&metadata=${METADATA}&tag=${TAG}&type=${TYPE}&branch=${BRANCH}&imageDisplayNameRegex=${IMAGE_DISPLAY_NAME_REGEX}&select=${SELECT}&sha=${SHA}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.list({\n    limit,\n    offset,\n    metadata,\n    tag,\n    type,\n    branch,\n    imageDisplayNameRegex,\n    select,\n    sha\n})"
-          }
-        ]
+        "x-sdk-interface": "images.list"
       }
     },
     "/images/external": {
+      "parameters": [],
       "post": {
         "responses": {
           "200": {
@@ -5580,24 +4541,13 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-add-from-external-source",
         "summary": "Add from external source",
         "parameters": [],
-        "x-sdk-interface": "images.addFromExternalSource",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/external\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.addFromExternalSource()"
-          }
-        ]
-      },
-      "parameters": []
+        "x-sdk-interface": "images.addFromExternalSource"
+      }
     },
     "/images/{id}": {
       "get": {
@@ -5618,21 +4568,11 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-get",
         "summary": "Get",
-        "x-sdk-interface": "images.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.get({ id })"
-          }
-        ]
+        "x-sdk-interface": "images.get"
       }
     },
     "/images/{id}/tags": {
@@ -5654,21 +4594,11 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-get-tags",
         "summary": "Get tags",
-        "x-sdk-interface": "images.getTags",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${ID}/tags\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.getTags({ id })"
-          }
-        ]
+        "x-sdk-interface": "images.getTags"
       }
     },
     "/images/{id}/tag/{tag}": {
@@ -5699,21 +4629,11 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-tag",
         "summary": "Tag",
-        "x-sdk-interface": "images.tag",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${ID}/tag/${TAG}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.tag({ id, tag })"
-          }
-        ]
+        "x-sdk-interface": "images.tag"
       },
       "delete": {
         "parameters": [
@@ -5742,24 +4662,38 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-untag",
         "summary": "Untag",
-        "x-sdk-interface": "images.untag",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${ID}/tag/${TAG}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.untag({ id, tag })"
-          }
-        ]
+        "x-sdk-interface": "images.untag"
       }
     },
     "/images/{dockerImageId}/metadata": {
+      "get": {
+        "parameters": [
+          {
+            "description": "id of the Image (from docker inspect)",
+            "in": "path",
+            "name": "dockerImageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "images"
+        ],
+        "operationId": "images-get-metadata",
+        "summary": "Get metadata",
+        "x-sdk-interface": "images.getMetadata"
+      },
       "post": {
         "parameters": [
           {
@@ -5778,7 +4712,7 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-upsert-metadata",
         "requestBody": {
@@ -5809,51 +4743,7 @@
           }
         },
         "summary": "Upsert metadata",
-        "x-sdk-interface": "images.upsertMetadata",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"CF_QUALITY\\\":${CF_QUALITY_BOOL},\\\"comment\\\":\\\"${COMMENT_STR}\\\",\\\"coverage\\\":\\\"${COVERAGE_STR}\\\",\\\"failed_tests\\\":${FAILED_TESTS_NUM}}\" \\\n    \"https://g.codefresh.io/api/images/${DOCKER_IMAGE_ID}/metadata\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.upsertMetadata({ dockerImageId }, {\n    CF_QUALITY: CF_QUALITY_BOOL,\n    comment: `${COMMENT_STR}`,\n    coverage: `${COVERAGE_STR}`,\n    failed_tests: FAILED_TESTS_NUM\n})"
-          }
-        ]
-      },
-      "get": {
-        "parameters": [
-          {
-            "description": "id of the Image (from docker inspect)",
-            "in": "path",
-            "name": "dockerImageId",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Images"
-        ],
-        "operationId": "images-get-metadata",
-        "summary": "Get metadata",
-        "x-sdk-interface": "images.getMetadata",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${DOCKER_IMAGE_ID}/metadata\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.getMetadata({ dockerImageId })"
-          }
-        ]
+        "x-sdk-interface": "images.upsertMetadata"
       }
     },
     "/images/{dockerImageId}/metadata/{keyName}": {
@@ -5884,21 +4774,11 @@
           }
         },
         "tags": [
-          "Images"
+          "images"
         ],
         "operationId": "images-delete-metadata",
         "summary": "Delete metadata",
-        "x-sdk-interface": "images.deleteMetadata",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/images/${DOCKER_IMAGE_ID}/metadata/${KEY_NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.images.deleteMetadata({ dockerImageId, keyName })"
-          }
-        ]
+        "x-sdk-interface": "images.deleteMetadata"
       }
     },
     "/kubernetes/releases/{releaseName}/delete": {
@@ -5909,7 +4789,7 @@
           }
         },
         "tags": [
-          "Helm Releases"
+          "helm.releases"
         ],
         "operationId": "helm-releases-delete",
         "parameters": [
@@ -5948,17 +4828,7 @@
           }
         },
         "summary": "Delete",
-        "x-sdk-interface": "helm.releases.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/kubernetes/releases/${RELEASE_NAME}/delete?selector=${SELECTOR}&tillerNamespace=${TILLER_NAMESPACE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.releases.delete({ releaseName, selector, tillerNamespace }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "helm.releases.delete"
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -5969,7 +4839,7 @@
           }
         },
         "tags": [
-          "Helm Releases"
+          "helm.releases"
         ],
         "operationId": "helm-releases-test",
         "parameters": [
@@ -5999,20 +4869,10 @@
           }
         },
         "summary": "Test",
-        "x-sdk-interface": "helm.releases.test",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/kubernetes/releases/${RELEASE_NAME}/test?selector=${SELECTOR}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.releases.test({ releaseName, selector }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "helm.releases.test"
       }
     },
-    "/kubernetes/releases/secrets/imagePullSecret": {
+    "/kubernetes/secrets/imagePullSecret": {
       "post": {
         "responses": {
           "200": {
@@ -6020,7 +4880,7 @@
           }
         },
         "tags": [
-          "Kubernetes"
+          "kubernetes"
         ],
         "operationId": "kubernetes-generate-image-pull-secret",
         "parameters": [
@@ -6051,17 +4911,7 @@
           }
         },
         "summary": "Generate image pull secret",
-        "x-sdk-interface": "kubernetes.generateImagePullSecret",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/kubernetes/releases/secrets/imagePullSecret?namespace=${NAMESPACE}&selector=${SELECTOR}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.kubernetes.generateImagePullSecret({ namespace, selector }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "kubernetes.generateImagePullSecret"
       }
     },
     "/kubernetes/chart/install": {
@@ -6072,7 +4922,7 @@
           }
         },
         "tags": [
-          "Helm Charts"
+          "helm.charts"
         ],
         "operationId": "helm-charts-install",
         "parameters": [
@@ -6103,17 +4953,7 @@
           }
         },
         "summary": "Install",
-        "x-sdk-interface": "helm.charts.install",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/kubernetes/chart/install?selector=${SELECTOR}&tillerNamespace=${TILLER_NAMESPACE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.charts.install({ selector, tillerNamespace }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "helm.charts.install"
       }
     },
     "/kubernetes/chart/promote": {
@@ -6124,7 +4964,7 @@
           }
         },
         "tags": [
-          "Helm Charts"
+          "helm.charts"
         ],
         "operationId": "helm-charts-promote",
         "parameters": [
@@ -6154,17 +4994,31 @@
           }
         },
         "summary": "Promote",
-        "x-sdk-interface": "helm.charts.promote",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/kubernetes/chart/promote?selector=${SELECTOR}&tillerNamespace=${TILLER_NAMESPACE}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.helm.charts.promote({ selector, tillerNamespace }, { ...REQUEST_BODY_OBJ })"
+        "x-sdk-interface": "helm.charts.promote"
+      }
+    },
+    "/charts/{repo}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
           }
-        ]
+        },
+        "tags": [
+          "charts"
+        ],
+        "operationId": "charts-list",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "repo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Get charts by repo",
+        "x-sdk-interface": "charts.list"
       }
     },
     "/nomios/version": {
@@ -6175,25 +5029,29 @@
           }
         },
         "tags": [
-          "Version"
+          "version"
         ],
         "operationId": "version-get-nomios-version",
         "parameters": [],
         "summary": "Get nomios version",
-        "x-sdk-interface": "version.getNomiosVersion",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/nomios/version\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.version.getNomiosVersion()"
-          }
-        ]
+        "x-sdk-interface": "version.getNomiosVersion"
       }
     },
     "/payments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "payments"
+        ],
+        "operationId": "payments-list",
+        "summary": "List",
+        "parameters": [],
+        "x-sdk-interface": "payments.list"
+      },
       "post": {
         "responses": {
           "200": {
@@ -6201,7 +5059,7 @@
           }
         },
         "tags": [
-          "Payments"
+          "payments"
         ],
         "operationId": "payments-create",
         "requestBody": {
@@ -6240,41 +5098,7 @@
         },
         "summary": "Create",
         "parameters": [],
-        "x-sdk-interface": "payments.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"couponId\\\":\\\"${COUPON_ID_STR}\\\",\\\"plan\\\":{\\\"builds\\\":${BUILDS_NUM},\\\"environments\\\":${ENVIRONMENTS_NUM},\\\"id\\\":\\\"${ID_STR}\\\"},\\\"token\\\":${TOKEN_OBJ}}\" \\\n    \"https://g.codefresh.io/api/payments\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.payments.create({\n    couponId: `${COUPON_ID_STR}`,\n    plan: {\n        builds: BUILDS_NUM,\n        environments: ENVIRONMENTS_NUM,\n        id: `${ID_STR}`\n    },\n    token: { ...TOKEN_OBJ }\n})"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Payments"
-        ],
-        "operationId": "payments-list",
-        "summary": "List",
-        "parameters": [],
-        "x-sdk-interface": "payments.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/payments\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.payments.list()"
-          }
-        ]
+        "x-sdk-interface": "payments.create"
       }
     },
     "/payments/plans": {
@@ -6285,58 +5109,15 @@
           }
         },
         "tags": [
-          "Payments"
+          "payments"
         ],
         "operationId": "payments-get-plans",
         "summary": "Get plans",
         "parameters": [],
-        "x-sdk-interface": "payments.getPlans",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/payments/plans\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.payments.getPlans()"
-          }
-        ]
+        "x-sdk-interface": "payments.getPlans"
       }
     },
     "/pipelines": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Pipelines"
-        ],
-        "operationId": "pipelines-create",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        },
-        "summary": "Create",
-        "parameters": [],
-        "x-sdk-interface": "pipelines.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/pipelines\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.create({ ...REQUEST_BODY_OBJ })"
-          }
-        ]
-      },
       "get": {
         "responses": {
           "200": {
@@ -6344,7 +5125,7 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "parameters": [
           {
@@ -6378,17 +5159,30 @@
         ],
         "operationId": "pipelines-list",
         "summary": "List",
-        "x-sdk-interface": "pipelines.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/pipelines?offset=${OFFSET}&id=${ID}&limit=${LIMIT}&labels=${LABELS}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.list({\n    offset,\n    id,\n    limit,\n    labels\n})"
+        "x-sdk-interface": "pipelines.list"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
           }
-        ]
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Create",
+        "parameters": [],
+        "x-sdk-interface": "pipelines.create"
       }
     },
     "/pipelines/run/{name}": {
@@ -6407,7 +5201,7 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "operationId": "pipelines-run",
         "parameters": [
@@ -6430,17 +5224,7 @@
           }
         },
         "summary": "Run",
-        "x-sdk-interface": "pipelines.run",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/pipelines/run/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.run({ name }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "pipelines.run"
       }
     },
     "/pipelines/yaml/validator": {
@@ -6451,7 +5235,7 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "operationId": "pipelines-validate-yaml",
         "parameters": [],
@@ -6465,20 +5249,34 @@
           }
         },
         "summary": "Validate yaml",
-        "x-sdk-interface": "pipelines.validateYaml",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/pipelines/yaml/validator\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.validateYaml({ ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "pipelines.validateYaml"
       }
     },
     "/pipelines/{name}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "Name of pipeline",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-delete",
+        "summary": "Delete",
+        "x-sdk-interface": "pipelines.delete"
+      },
       "get": {
         "parameters": [
           {
@@ -6504,21 +5302,11 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "operationId": "pipelines-get",
         "summary": "Get",
-        "x-sdk-interface": "pipelines.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/pipelines/${NAME}?decryptVariables=${DECRYPT_VARIABLES}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.get({ name, decryptVariables })"
-          }
-        ]
+        "x-sdk-interface": "pipelines.get"
       },
       "put": {
         "parameters": [
@@ -6547,55 +5335,11 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "operationId": "pipelines-replace",
         "summary": "Replace",
-        "x-sdk-interface": "pipelines.replace",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/pipelines/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.replace({ name }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
-      },
-      "delete": {
-        "parameters": [
-          {
-            "description": "Name of pipeline",
-            "in": "path",
-            "name": "name",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Pipelines"
-        ],
-        "operationId": "pipelines-delete",
-        "summary": "Delete",
-        "x-sdk-interface": "pipelines.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/pipelines/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.pipelines.delete({ name })"
-          }
-        ]
+        "x-sdk-interface": "pipelines.replace"
       }
     },
     "/progress/download/{id}": {
@@ -6617,21 +5361,11 @@
           }
         },
         "tags": [
-          "Progress"
+          "progress"
         ],
         "operationId": "progress-download",
         "summary": "Download",
-        "x-sdk-interface": "progress.download",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/progress/download/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.progress.download({ id })"
-          }
-        ]
+        "x-sdk-interface": "progress.download"
       }
     },
     "/progress/{id}": {
@@ -6653,21 +5387,11 @@
           }
         },
         "tags": [
-          "Progress"
+          "progress"
         ],
         "operationId": "progress-get",
         "summary": "Get",
-        "x-sdk-interface": "progress.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/progress/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.progress.get({ id })"
-          }
-        ]
+        "x-sdk-interface": "progress.get"
       },
       "delete": {
         "parameters": [
@@ -6687,21 +5411,11 @@
           }
         },
         "tags": [
-          "Progress"
+          "progress"
         ],
         "operationId": "progress-terminate",
         "summary": "Terminate",
-        "x-sdk-interface": "progress.terminate",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/progress/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.progress.terminate({ id })"
-          }
-        ]
+        "x-sdk-interface": "progress.terminate"
       }
     },
     "/registry/auth/token": {
@@ -6712,7 +5426,7 @@
           }
         },
         "tags": [
-          "Codefresh Registry"
+          "registries"
         ],
         "operationId": "codefresh-registry-generate-cfcr-token",
         "requestBody": {
@@ -6733,17 +5447,7 @@
         },
         "summary": "Generate cfcr token",
         "parameters": [],
-        "x-sdk-interface": "registries.generateCfcrToken",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"description\\\":\\\"${DESCRIPTION_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/registry/auth/token\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.registries.generateCfcrToken({\n    description: `${DESCRIPTION_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "registries.generateCfcrToken"
       }
     },
     "/repos": {
@@ -6754,7 +5458,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-git-list",
         "parameters": [
@@ -6767,20 +5471,24 @@
           }
         ],
         "summary": "List git repos (github, bitbucket, etc)",
-        "x-sdk-interface": "repos.git.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/repos?context=${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.git.list({ context })"
-          }
-        ]
+        "x-sdk-interface": "repos.git.list"
       }
     },
     "/registries": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "registries"
+        ],
+        "operationId": "registries-list",
+        "parameters": [],
+        "summary": "List registries",
+        "x-sdk-interface": "registries.list"
+      },
       "post": {
         "responses": {
           "200": {
@@ -6788,7 +5496,7 @@
           }
         },
         "tags": [
-          "Codefresh Registry"
+          "registries"
         ],
         "operationId": "registries-create",
         "parameters": [],
@@ -6827,41 +5535,7 @@
           "required": true
         },
         "summary": "Create",
-        "x-sdk-interface": "registries.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"username\\\":\\\"${USERNAME_STR}\\\",\\\"password\\\":\\\"${PASSWORD_STR}\\\",\\\"domain\\\":\\\"${DOMAIN_STR}\\\",\\\"name\\\":\\\"${NAME_STR}\\\",\\\"behindFirewall\\\":\\\"${BEHIND_FIREWALL_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/registries\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.registries.create({\n    username: `${USERNAME_STR}`,\n    password: `${PASSWORD_STR}`,\n    domain: `${DOMAIN_STR}`,\n    name: `${NAME_STR}`,\n    behindFirewall: `${BEHIND_FIREWALL_STR}`\n})"
-          }
-        ]
-      },
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Codefresh Registry"
-        ],
-        "operationId": "registries-list",
-        "parameters": [],
-        "summary": "List registries",
-        "x-sdk-interface": "registries.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.registries.list()"
-          }
-        ]
+        "x-sdk-interface": "registries.create"
       }
     },
     "/registries/{id}": {
@@ -6872,7 +5546,7 @@
           }
         },
         "tags": [
-          "Codefresh Registry"
+          "registries"
         ],
         "operationId": "registries-delete",
         "parameters": [
@@ -6887,17 +5561,7 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "registries.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries/${ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.registries.delete({ id })"
-          }
-        ]
+        "x-sdk-interface": "registries.delete"
       }
     },
     "/registries/test": {
@@ -6908,7 +5572,7 @@
           }
         },
         "tags": [
-          "Codefresh Registry"
+          "registries"
         ],
         "operationId": "registries-test",
         "parameters": [],
@@ -6947,17 +5611,7 @@
           "required": true
         },
         "summary": "Test",
-        "x-sdk-interface": "registries.test",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"username\\\":\\\"${USERNAME_STR}\\\",\\\"password\\\":\\\"${PASSWORD_STR}\\\",\\\"domain\\\":\\\"${DOMAIN_STR}\\\",\\\"name\\\":\\\"${NAME_STR}\\\",\\\"behindFirewall\\\":\\\"${BEHIND_FIREWALL_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/registries/test\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.registries.test({\n    username: `${USERNAME_STR}`,\n    password: `${PASSWORD_STR}`,\n    domain: `${DOMAIN_STR}`,\n    name: `${NAME_STR}`,\n    behindFirewall: `${BEHIND_FIREWALL_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "registries.test"
       }
     },
     "/repos/existing": {
@@ -6968,7 +5622,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-list",
         "parameters": [
@@ -6989,17 +5643,7 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "repos.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/repos/existing?context=${CONTEXT}&thin=${THIN}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.list({ context, thin })"
-          }
-        ]
+        "x-sdk-interface": "repos.list"
       }
     },
     "/repos/settings/{repoOwner}/{repoName}": {
@@ -7030,21 +5674,11 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-get-settings",
         "summary": "Get settings",
-        "x-sdk-interface": "repos.getSettings",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/repos/settings/${REPO_OWNER}/${REPO_NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.getSettings({ repoOwner, repoName })"
-          }
-        ]
+        "x-sdk-interface": "repos.getSettings"
       }
     },
     "/repos/{owner}/{repo}": {
@@ -7055,7 +5689,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-git-get-repo",
         "parameters": [
@@ -7084,17 +5718,7 @@
           }
         ],
         "summary": "Get git repo",
-        "x-sdk-interface": "repos.git.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/repos/${OWNER}/${REPO}?context=${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.git.get({ owner, repo, context })"
-          }
-        ]
+        "x-sdk-interface": "repos.git.get"
       }
     },
     "/runtime-environments": {
@@ -7105,7 +5729,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "runtimeEnvs"
         ],
         "operationId": "runtime-envs-list",
         "parameters": [
@@ -7125,17 +5749,7 @@
           }
         ],
         "summary": "List",
-        "x-sdk-interface": "runtimeEnvs.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments?limit=${LIMIT}&offset=${OFFSET}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.runtimeEnvs.list({ limit, offset })"
-          }
-        ]
+        "x-sdk-interface": "runtimeEnvs.list"
       }
     },
     "/runtime-environments/default/{name}": {
@@ -7146,7 +5760,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "runtimeEnvs"
         ],
         "operationId": "runtime-envs-set-default",
         "parameters": [
@@ -7160,74 +5774,10 @@
           }
         ],
         "summary": "Set default",
-        "x-sdk-interface": "runtimeEnvs.setDefault",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/default/${NAME}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.runtimeEnvs.setDefault({ name })"
-          }
-        ]
+        "x-sdk-interface": "runtimeEnvs.setDefault"
       }
     },
     "/runtime-environments/{name}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "Runtime Environments"
-        ],
-        "operationId": "runtime-envs-get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "name",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "query",
-            "name": "version",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "extend",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "history",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "summary": "Get",
-        "x-sdk-interface": "runtimeEnvs.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.runtimeEnvs.get({\n    name,\n    version,\n    extend,\n    history\n})"
-          }
-        ]
-      },
       "put": {
         "responses": {
           "200": {
@@ -7235,7 +5785,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "runtimeEnvs"
         ],
         "operationId": "runtime-envs-update",
         "parameters": [
@@ -7272,17 +5822,7 @@
           }
         },
         "summary": "Update",
-        "x-sdk-interface": "runtimeEnvs.update",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.runtimeEnvs.update({ name, extend, description }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "runtimeEnvs.update"
       },
       "delete": {
         "responses": {
@@ -7291,7 +5831,7 @@
           }
         },
         "tags": [
-          "Runtime Environments"
+          "runtimeEnvs"
         ],
         "operationId": "runtime-envs-delete",
         "parameters": [
@@ -7312,17 +5852,51 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "runtimeEnvs.delete",
-        "x-code-samples": [
+        "x-sdk-interface": "runtimeEnvs.delete"
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "runtimeEnvs"
+        ],
+        "operationId": "runtime-envs-get",
+        "parameters": [
           {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${NAME}?force=${FORCE}\""
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           },
           {
-            "lang": "node.js",
-            "source": "sdk.runtimeEnvs.delete({ name, force })"
+            "in": "query",
+            "name": "version",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extend",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "history",
+            "schema": {
+              "type": "string"
+            }
           }
-        ]
+        ],
+        "summary": "Get",
+        "x-sdk-interface": "runtimeEnvs.get"
       }
     },
     "/runtime/testit": {
@@ -7333,7 +5907,7 @@
           }
         },
         "tags": [
-          "Pipelines"
+          "pipelines"
         ],
         "operationId": "runtime-launch",
         "requestBody": {
@@ -7377,17 +5951,7 @@
         },
         "summary": "Launch",
         "parameters": [],
-        "x-sdk-interface": "runtime.launch",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"branch\\\":\\\"${BRANCH_STR}\\\",\\\"repoData\\\":{\\\"url\\\":{\\\"https\\\":\\\"${HTTPS_STR}\\\"}},\\\"repoName\\\":\\\"${REPO_NAME_STR}\\\",\\\"repoOwner\\\":\\\"${REPO_OWNER_STR}\\\",\\\"serviceId\\\":\\\"${SERVICE_ID_STR}\\\",\\\"sha\\\":\\\"${SHA_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/runtime/testit\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.runtime.launch({\n    branch: `${BRANCH_STR}`,\n    repoData: {\n        url: {\n            https: `${HTTPS_STR}`\n        }\n    },\n    repoName: `${REPO_NAME_STR}`,\n    repoOwner: `${REPO_OWNER_STR}`,\n    serviceId: `${SERVICE_ID_STR}`,\n    sha: `${SHA_STR}`\n})"
-          }
-        ]
+        "x-sdk-interface": "runtime.launch"
       }
     },
     "/services": {
@@ -7408,7 +5972,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-create",
         "requestBody": {
@@ -7447,17 +6011,7 @@
           }
         },
         "summary": "Create",
-        "x-sdk-interface": "repos.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"serviceDetails\\\":{\\\"name\\\":\\\"${NAME_STR}\\\",\\\"scm\\\":{\\\"name\\\":\\\"${NAME_STR}\\\",\\\"owner\\\":{\\\"name\\\":\\\"${NAME_STR}\\\"}}}}\" \\\n    \"https://g.codefresh.io/api/services?context=${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.create({ context }, {\n    serviceDetails: {\n        name: `${NAME_STR}`,\n        scm: {\n            name: `${NAME_STR}`,\n            owner: {\n                name: `${NAME_STR}`\n            }\n        }\n    }\n})"
-          }
-        ]
+        "x-sdk-interface": "repos.create"
       }
     },
     "/services/{name}": {
@@ -7468,7 +6022,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-get",
         "parameters": [
@@ -7489,17 +6043,7 @@
           }
         ],
         "summary": "Get",
-        "x-sdk-interface": "repos.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/services/${NAME}?context=${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.get({ name, context })"
-          }
-        ]
+        "x-sdk-interface": "repos.get"
       },
       "delete": {
         "responses": {
@@ -7508,7 +6052,7 @@
           }
         },
         "tags": [
-          "Repos"
+          "repos"
         ],
         "operationId": "repos-delete",
         "parameters": [
@@ -7529,17 +6073,7 @@
           }
         ],
         "summary": "Delete",
-        "x-sdk-interface": "repos.delete",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/services/${NAME}?context=${CONTEXT}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.repos.delete({ name, context })"
-          }
-        ]
+        "x-sdk-interface": "repos.delete"
       }
     },
     "/team": {
@@ -7550,7 +6084,7 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-create",
         "requestBody": {
@@ -7583,17 +6117,7 @@
         },
         "summary": "Create",
         "parameters": [],
-        "x-sdk-interface": "teams.create",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"tags\\\":[${TAGS_OBJ}],\\\"name\\\":\\\"${NAME_STR}\\\",\\\"users\\\":[${USERS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/team\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.create({\n    tags: [\n        { ...TAGS_OBJ }\n    ],\n    name: `${NAME_STR}`,\n    users: [\n        { ...USERS_OBJ }\n    ]\n})"
-          }
-        ]
+        "x-sdk-interface": "teams.create"
       },
       "get": {
         "responses": {
@@ -7602,22 +6126,12 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-list",
         "parameters": [],
         "summary": "List",
-        "x-sdk-interface": "teams.list",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/team\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.list()"
-          }
-        ]
+        "x-sdk-interface": "teams.list"
       }
     },
     "/team/group/synchronize/name/{name}/type/{type}": {
@@ -7628,7 +6142,7 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-synchronize-client-with-group",
         "parameters": [
@@ -7657,17 +6171,7 @@
           }
         ],
         "summary": "Synchronize client with group",
-        "x-sdk-interface": "teams.synchronizeClientWithGroup",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/team/group/synchronize/name/${NAME}/type/${TYPE}?access_token=${ACCESS_TOKEN}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.synchronizeClientWithGroup({ name, type, access_token })"
-          }
-        ]
+        "x-sdk-interface": "teams.synchronizeClientWithGroup"
       }
     },
     "/team/{teamId}/{userId}/assignUserToTeam": {
@@ -7698,21 +6202,11 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-add-user",
         "summary": "Add user",
-        "x-sdk-interface": "teams.addUser",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/team/${TEAM_ID}/${USER_ID}/assignUserToTeam\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.addUser({ teamId, userId })"
-          }
-        ]
+        "x-sdk-interface": "teams.addUser"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
@@ -7743,21 +6237,11 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-remove-user",
         "summary": "Remove user",
-        "x-sdk-interface": "teams.removeUser",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/team/${TEAM_ID}/${USER_ID}/deleteUserFromTeam\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.removeUser({ teamId, userId })"
-          }
-        ]
+        "x-sdk-interface": "teams.removeUser"
       }
     },
     "/team/{userId}/findTeamsByUser": {
@@ -7768,7 +6252,7 @@
           }
         },
         "tags": [
-          "Teams"
+          "teams"
         ],
         "operationId": "teams-list-by-user",
         "parameters": [
@@ -7782,17 +6266,7 @@
           }
         ],
         "summary": "List by user",
-        "x-sdk-interface": "teams.listByUser",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/team/${USER_ID}/findTeamsByUser\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.teams.listByUser({ userId })"
-          }
-        ]
+        "x-sdk-interface": "teams.listByUser"
       }
     },
     "/user": {
@@ -7803,22 +6277,12 @@
           }
         },
         "tags": [
-          "Users"
+          "users"
         ],
         "operationId": "users-get",
         "summary": "Get",
         "parameters": [],
-        "x-sdk-interface": "users.get",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/user\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.users.get()"
-          }
-        ]
+        "x-sdk-interface": "users.get"
       }
     },
     "/user/context": {
@@ -7829,22 +6293,12 @@
           }
         },
         "tags": [
-          "Users"
+          "users"
         ],
         "operationId": "users-notify-context-created",
         "summary": "Notify context created",
         "parameters": [],
-        "x-sdk-interface": "auth.notifyContextCreated",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/user/context\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.auth.notifyContextCreated()"
-          }
-        ]
+        "x-sdk-interface": "auth.notifyContextCreated"
       }
     },
     "/user/changeaccount/{accountId}": {
@@ -7866,7 +6320,7 @@
           }
         },
         "tags": [
-          "Users"
+          "users"
         ],
         "operationId": "users-change-account",
         "requestBody": {
@@ -7879,17 +6333,7 @@
           }
         },
         "summary": "Change account",
-        "x-sdk-interface": "users.changeAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/user/changeaccount/${ACCOUNT_ID}\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.users.changeAccount({ accountId }, { ...REQUEST_BODY_OBJ })"
-          }
-        ]
+        "x-sdk-interface": "users.changeAccount"
       }
     },
     "/user/firebaseAuth": {
@@ -7901,21 +6345,11 @@
           }
         },
         "tags": [
-          "Firebase"
+          "firebase"
         ],
         "operationId": "firebase-get-token",
         "summary": "Get token",
-        "x-sdk-interface": "firebase.getToken",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/user/firebaseAuth\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.firebase.getToken()"
-          }
-        ]
+        "x-sdk-interface": "firebase.getToken"
       }
     },
     "/version": {
@@ -7926,22 +6360,12 @@
           }
         },
         "tags": [
-          "Version"
+          "version"
         ],
         "operationId": "version-get-server-version",
         "parameters": [],
         "summary": "Get server version",
-        "x-sdk-interface": "version.getServerVersion",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/version\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.version.getServerVersion()"
-          }
-        ]
+        "x-sdk-interface": "version.getServerVersion"
       }
     }
   },
