@@ -33,6 +33,24 @@
                     "description": "Defines delay between retries"
                 }
             }
+        },
+        "logs": {
+            "type": "object",
+            "properties": {
+                "fallback": {
+                    "type": "object",
+                    "properties": {
+                        "interval": {
+                            "type": "integer",
+                            "default": 5000
+                        },
+                        "maxAttempts": {
+                            "type": "integer",
+                            "default": 1000
+                        }
+                    }
+                }
+            }
         }
     }
 }
