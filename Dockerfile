@@ -1,6 +1,6 @@
 FROM node:9.2.0-alpine
 
-RUN apk add --update git curl jq py-pip && pip install yq
+RUN apk add --update git curl jq py-pip bash && pip install yq
 
 WORKDIR /cf-cli
 
