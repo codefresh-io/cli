@@ -19,6 +19,7 @@ const categoriesOrder = {
     'operate on resources' : 32,
     pipelines : 40,
     'pipelines v2 (beta)' : 42,
+    projects : 45,
     builds: 50,
     contexts : 70 ,
     images : 80 ,
