@@ -5252,7 +5252,8 @@
             "description": "project name",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
