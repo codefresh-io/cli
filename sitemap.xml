@@ -87,6 +87,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/projects/get-projects/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/registries/get-registries/</loc>
   </url>
   
@@ -162,6 +166,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/projects/create-project/</loc>
   </url>
   
   <url>
@@ -264,6 +272,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/projects/delete-project/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/registries/delete-registry/</loc>
   </url>
   
@@ -338,6 +350,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/projects/patch-project/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/pipelines/</loc>
   </url>
   
@@ -363,6 +379,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/projects/</loc>
   </url>
   
   <url>

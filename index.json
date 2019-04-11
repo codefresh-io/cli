@@ -137,7 +137,14 @@
 	"title": "Get Pipeline",
 	"tags": [],
 	"description": "",
-	"content": " Description Get a specific pipeline or an array of pipelines.\nCommand codefresh get pipelines [id..]\nAliases codefresh get pip [id..]\ncodefresh get pipeline [id..]\nArguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+	"content": " Description Get a specific pipeline or an array of pipelines.\nCommand codefresh get pipelines [id..]\nAliases codefresh get pip [id..]\ncodefresh get pipeline [id..]\nArguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --project-id   Filter pipelines by project id   --project   Filter pipelines by project name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/projects/get-projects/",
+	"title": "Get Projects",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a specific project or an array of projects.\nCommand codefresh get projects [id|name]\nAliases codefresh get project [id|name]\nArguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information   --name -n  Project name to filter by   --tag -t  Project tags array to filter by   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/registries/get-registries/",
@@ -271,6 +278,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a Codefresh managed helm repo.\nATM it is only possible to create a helm repository against Codefresh managed helm registry.\nCommand codefresh create helm-repo [name]\nArguments    Option Alias Default Description     name   Name of repo. required    Options    Option Alias Default Description     --help   Print help information   --public -p  Mark the helm repo as public    Examples Create a private helm repo managed by Codefresh. codefresh create helm-repo\nCreate a public helm repo managed by Codefresh. codefresh create helm-repo --public\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/projects/create-project/",
+	"title": "Create Project",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a project.\nCreate a project specifying name unique for account.\nCommand codefresh create project \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of project    Options    Option Alias Default Description     --help   Print help information   --tag -t  Project tags   --variable -v  Project variables   --encrypted -e  Variable names to encrypt    Examples Create a project codefresh create project NAME\nCreate a project with tags: [ \u0026ldquo;test\u0026rdquo;, \u0026ldquo;run\u0026rdquo;] codefresh create project NAME -t test -t run\nCreate a project with specific variables codefresh create project NAME -v test=true -v run=false\nCreate a project with encrypted variables codefresh create project NAME -v secret=secret -e secret\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/create-trigger-event/",
@@ -441,6 +455,13 @@
 	"content": " Description Delete a pipeline.\nCommand codefresh delete pipeline [name]\nAliases codefresh delete pip [name]\nArguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Default Description     --help   Print help information    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/projects/delete-project/",
+	"title": "Delete Project",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete a project.\nCommand codefresh delete project \u0026lt;id|name\u0026gt;\nArguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information    Examples Delete project by name. codefresh delete project NAME\nDelete project by Id. codefresh delete project ID\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/registries/delete-registry/",
 	"title": "Delete Registry",
 	"tags": [],
@@ -567,6 +588,13 @@
 	"content": " Description Patch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nCommand codefresh patch\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/projects/patch-project/",
+	"title": "Patch Project",
+	"tags": [],
+	"description": "",
+	"content": " Description Patch a project.\nCommand codefresh patch project [id|name]\nArguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information   --newName -n  New name   --tag -t  Project tags   --variable -v  Project variables   --encrypted -e  Variable names to encrypt    Examples Replace project name and tags. Specifying project by ID codefresh patch project ID --new-name NEW_NAME --tag test\nReplace project variables. Specifying project by NAME codefresh patch project NAME -v test=test\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/pipelines/",
 	"title": "Pipelines",
 	"tags": [],
@@ -614,6 +642,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a yaml context.\nCommand codefresh create context yaml \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/projects/",
+	"title": "Projects",
+	"tags": [],
+	"description": "",
+	"content": " Get Projects codefresh get projects [id|name]\nGet a specific project or an array of projects.\nCreate Project codefresh create project \u0026lt;name\u0026gt;\nCreate a project.\nCreate a project specifying name unique for account.\nDelete Project codefresh delete project \u0026lt;id|name\u0026gt;\nDelete a project.\nPatch Project codefresh patch project [id|name]\nPatch a project.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/helm-repository/",

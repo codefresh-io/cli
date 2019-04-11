@@ -244,7 +244,19 @@ Arguments    Option Alias Default Description     id   Docker Image id    Option
 Command codefresh get pipelines [id..]
 Aliases codefresh get pip [id..]
 codefresh get pipeline [id..]
-Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
+Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Default Description     --help   Print help information   --decrypt-variables -d  Will decrypt encrypted variables   --name   Filter pipelines by name   --project-id   Filter pipelines by project id   --project   Filter pipelines by project name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
+    </item>
+    
+    <item>
+      <title>Get Projects</title>
+      <link>https://codefresh-io.github.io/cli/projects/get-projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/projects/get-projects/</guid>
+      <description>Description Get a specific project or an array of projects.
+Command codefresh get projects [id|name]
+Aliases codefresh get project [id|name]
+Arguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information   --name -n  Project name to filter by   --tag -t  Project tags array to filter by   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -505,6 +517,18 @@ Arguments    Option Alias Default Description     name  default Context name    
 ATM it is only possible to create a helm repository against Codefresh managed helm registry.
 Command codefresh create helm-repo [name]
 Arguments    Option Alias Default Description     name   Name of repo. required    Options    Option Alias Default Description     --help   Print help information   --public -p  Mark the helm repo as public    Examples Create a private helm repo managed by Codefresh.</description>
+    </item>
+    
+    <item>
+      <title>Create Project</title>
+      <link>https://codefresh-io.github.io/cli/projects/create-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/projects/create-project/</guid>
+      <description>Description Create a project.
+Create a project specifying name unique for account.
+Command codefresh create project &amp;lt;name&amp;gt;
+Arguments    Option Alias Default Description     name   Name of project    Options    Option Alias Default Description     --help   Print help information   --tag -t  Project tags   --variable -v  Project variables   --encrypted -e  Variable names to encrypt    Examples Create a project codefresh create project NAME</description>
     </item>
     
     <item>
@@ -778,6 +802,18 @@ Arguments    Option Alias Default Description     name   Pipeline name    Option
     </item>
     
     <item>
+      <title>Delete Project</title>
+      <link>https://codefresh-io.github.io/cli/projects/delete-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/projects/delete-project/</guid>
+      <description>Description Delete a project.
+Command codefresh delete project &amp;lt;id|name&amp;gt;
+Arguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information    Examples Delete project by name. codefresh delete project NAME
+Delete project by Id. codefresh delete project ID</description>
+    </item>
+    
+    <item>
       <title>Delete Registry</title>
       <link>https://codefresh-io.github.io/cli/registries/delete-registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -969,6 +1005,17 @@ Patch operation will apply only passed changes to an existing resource and will 
 Supported resources: &amp;lsquo;Context&amp;rsquo;.
 Command codefresh patch
 Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
+      <title>Patch Project</title>
+      <link>https://codefresh-io.github.io/cli/projects/patch-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/projects/patch-project/</guid>
+      <description>Description Patch a project.
+Command codefresh patch project [id|name]
+Arguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information   --newName -n  New name   --tag -t  Project tags   --variable -v  Project variables   --encrypted -e  Variable names to encrypt    Examples Replace project name and tags.</description>
     </item>
     
     <item>
