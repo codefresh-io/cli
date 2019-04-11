@@ -4874,6 +4874,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "projectId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "project id"
           }
         ],
         "operationId": "pipelines-list",
@@ -5059,6 +5067,248 @@
         "operationId": "pipelines-replace",
         "summary": "Replace",
         "x-sdk-interface": "pipelines.replace"
+      }
+    },
+    "/projects": {
+      "post": {
+        "x-action": "createProject",
+        "x-entityId": {
+          "pathName": "body.projectName"
+        },
+        "x-sdk-interface": "projects.create",
+        "operationId": "projects-create",
+        "summary": "Create",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "projectName": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "variables": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      },
+      "get": {
+        "x-sdk-interface": "projects.list",
+        "operationId": "projects-list",
+        "summary": "List",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "limit",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "offset",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "description": "name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tags",
+            "description": "tags",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      }
+    },
+    "/projects/{id}": {
+      "get": {
+        "x-sdk-interface": "projects.get",
+        "operationId": "projects-get",
+        "summary": "Get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      },
+      "patch": {
+        "x-action": "updateProject",
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "body.name"
+        },
+        "x-sdk-interface": "projects.patch",
+        "operationId": "projects-patch",
+        "summary": "Patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": [
+                  "projectName",
+                  "tags"
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      },
+      "delete": {
+        "x-action": "deleteProject",
+        "x-entityId": {
+          "pathName": "params.id"
+        },
+        "x-sdk-interface": "projects.delete",
+        "operationId": "projects-delete",
+        "summary": "Delete",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      }
+    },
+    "/projects/name/{name}": {
+      "get": {
+        "x-sdk-interface": "projects.getByName",
+        "operationId": "projects-get-by-name",
+        "summary": "Get by name",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "description": "project name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      }
+    },
+    "/projects/context/{id}": {
+      "put": {
+        "x-action": "updateProjectContext",
+        "x-entityId": {
+          "pathName": "body.name",
+          "pathId": "params.id"
+        },
+        "x-sdk-interface": "projects.updateContext",
+        "operationId": "projects-update-context",
+        "summary": "Update context",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
+      },
+      "delete": {
+        "x-action": "deleteProjectContext",
+        "x-entityId": "params.id",
+        "x-sdk-interface": "projects.deleteContext",
+        "operationId": "projects-delete-context",
+        "summary": "Delete context",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "projects"
+        ]
       }
     },
     "/progress/download/{id}": {
