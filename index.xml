@@ -135,7 +135,7 @@ Passing [id] argument will cause a retrieval of a specific build.
 In case of not passing [id] argument, a list will be returned.
 Command codefresh get builds [id..]
 Aliases codefresh get build [id..]
-Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --limit  25 Limit amount of returned results   --page  1 Paginated page   --status   Filter results by statuses</description>
+Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --limit -l 25 Limit amount of returned results   --page -p 1 Paginated page   --status -s  Filter results by statuses</description>
     </item>
     
     <item>

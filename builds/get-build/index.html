@@ -1259,44 +1259,58 @@
 
 <tr>
 <td>--limit</td>
-<td></td>
+<td>-l</td>
 <td>25</td>
 <td>Limit amount of returned results</td>
 </tr>
 
 <tr>
 <td>--page</td>
-<td></td>
+<td>-p</td>
 <td>1</td>
 <td>Paginated page</td>
 </tr>
 
 <tr>
 <td>--status</td>
+<td>-s</td>
 <td></td>
-<td></td>
-<td>Filter results by statuses<br><br>Possible values:<br> - pending<br> - elected<br> - error<br> - running<br> - success<br> - terminated<br> - terminating</td>
+<td>Filter results by statuses<br><br>Possible values:<br> - pending<br> - elected<br> - error<br> - running<br> - success<br> - terminated<br> - terminating<br> - pending-approval</td>
 </tr>
 
 <tr>
 <td>--trigger</td>
-<td></td>
+<td>-t</td>
 <td></td>
 <td>Filter results by triggers<br><br>Possible values:<br> - build<br> - launch-image<br> - launch-composition</td>
 </tr>
 
 <tr>
 <td>--pipeline-id</td>
-<td></td>
+<td>--pid</td>
 <td></td>
 <td>Filter results by pipeline id</td>
 </tr>
 
 <tr>
 <td>--pipeline-name</td>
-<td></td>
+<td>--pipeline</td>
 <td></td>
 <td>Filter results by pipeline name</td>
+</tr>
+
+<tr>
+<td>--branch</td>
+<td>-b</td>
+<td></td>
+<td>Filter results by branch</td>
+</tr>
+
+<tr>
+<td>--commit-id</td>
+<td>--revision,r,sha</td>
+<td></td>
+<td>Filter results by commit revision sha</td>
 </tr>
 </tbody>
 </table>
