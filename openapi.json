@@ -1645,6 +1645,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "revision sha"
+          },
+          {
+            "name": "branchName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "branch name"
           }
         ],
         "responses": {
