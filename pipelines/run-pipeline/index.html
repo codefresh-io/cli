@@ -291,41 +291,6 @@
       <a href="/cli/builds/">Builds</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/builds/get-build/" class="dd-item">
-        <div>
-          <a href="/cli/builds/get-build/">
-            Get Build
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/builds/show-build-logs/" class="dd-item">
-        <div>
-          <a href="/cli/builds/show-build-logs/">
-            Show Build Logs
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/builds/restart-build/" class="dd-item">
-        <div>
-          <a href="/cli/builds/restart-build/">
-            Restart Build
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/builds/terminate-build/" class="dd-item">
-        <div>
-          <a href="/cli/builds/terminate-build/">
-            Terminate Build
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/builds/wait-for-build-condition/" class="dd-item">
-        <div>
-          <a href="/cli/builds/wait-for-build-condition/">
-            Wait For Build Condition
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/" class="dd-item haschildren
@@ -1173,6 +1138,7 @@
 </ul></li>
 <li><a href="#examples">Examples</a>
 <ul>
+<li><a href="#choosing-a-specific-trigger">Choosing a specific trigger</a></li>
 <li><a href="#defining-the-source-control-context-using-a-branch">Defining the source control context using a branch</a></li>
 <li><a href="#defining-the-source-control-context-using-a-commit">Defining the source control context using a commit</a></li>
 <li><a href="#setting-variables-through-the-command">Setting variables through the command</a></li>
@@ -1252,6 +1218,13 @@
 <td></td>
 <td></td>
 <td>Print help information</td>
+</tr>
+
+<tr>
+<td>--trigger</td>
+<td>-t</td>
+<td></td>
+<td>Trigger id or name</td>
 </tr>
 
 <tr>
@@ -1370,6 +1343,10 @@ The pipeline will be triggered multiple times according to the array length.</p>
   <span style="color:#111">}</span>
 <span style="color:#111">]</span></code></pre></div>
 <h3 id="examples">Examples</h3>
+
+<h4 id="choosing-a-specific-trigger">Choosing a specific trigger</h4>
+
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -trigger TRIGGER_ID | TRIGGER_NAME -b=master</code></p>
 
 <h4 id="defining-the-source-control-context-using-a-branch">Defining the source control context using a branch</h4>
 
