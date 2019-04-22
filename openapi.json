@@ -1617,6 +1617,9 @@
                       "entityType": {
                         "type": "string"
                       },
+                      "entityName": {
+                        "type": "string"
+                      },
                       "key": {
                         "type": "string"
                       },
@@ -1717,6 +1720,9 @@
                       "type": "string"
                     },
                     "entityType": {
+                      "type": "string"
+                    },
+                    "entityName": {
                       "type": "string"
                     },
                     "key": {
@@ -6497,6 +6503,9 @@
                   "type": "string"
                 },
                 "entityType": {
+                  "type": "string"
+                },
+                "entityName": {
                   "type": "string"
                 },
                 "key": {
