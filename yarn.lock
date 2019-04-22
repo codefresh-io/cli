@@ -1547,11 +1547,10 @@ eslint-plugin-import@^2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-mocha@^4.11.0:
-  version "4.12.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mocha/-/eslint-plugin-mocha-4.12.1.tgz#dbacc543b178b4536ec5b19d7f8e8864d85404bf"
-  dependencies:
-    ramda "^0.25.0"
+eslint-plugin-jest@^22.4.1:
+  version "22.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.4.1.tgz#a5fd6f7a2a41388d16f527073b778013c5189a9c"
+  integrity sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==
 
 eslint-restricted-globals@^0.1.1:
   version "0.1.1"
@@ -4370,10 +4369,6 @@ querystring@0.2.0:
 ramda@0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.15.1.tgz#b227f79e9ff0acee1955d582f18681eb02c4dc2a"
-
-ramda@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
 
 randomatic@^1.1.3:
   version "1.1.7"
