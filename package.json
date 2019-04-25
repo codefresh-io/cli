@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.17.12",
+  "version": "0.18.1",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -76,7 +76,7 @@
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-jest": "^22.4.1",
     "hugo-cli": "^0.5.4",
     "jest": "^23.6.0",
     "pkg": "^4.3.5"
