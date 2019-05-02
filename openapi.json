@@ -8,13 +8,17 @@
     "description": "Codefresh API openAPI 3.0 specification",
     "termsOfService": "https://codefresh.io/docs/docs/terms-and-privacy-policy/terms-of-service/",
     "title": "Codefresh API",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "x-logo": {
       "url": "https://i.ibb.co/X7kg7jb/image.png",
       "backgroundColor": "#FFFFFF",
       "altText": "Codefresh"
     }
   },
+  "x-service-name": "api-public",
+  "x-internal-services": [
+    "pipeline-manager"
+  ],
   "servers": [
     {
       "url": "https://g.codefresh.io/api"
@@ -58,6 +62,7 @@
         "triggers",
         "triggers.events",
         "triggers.types",
+        "annotations",
         "version",
         "firebase"
       ]
@@ -147,6 +152,11 @@
       "name": "Triggers Events",
       "description": "triggers.events",
       "x-id": "triggers.events"
+    },
+    {
+      "name": "Annotations",
+      "description": "annotations",
+      "x-id": "annotations"
     },
     {
       "name": "Environments",
@@ -239,6 +249,11 @@
       "x-id": "payments"
     },
     {
+      "name": "Providers",
+      "description": "providers",
+      "x-id": "providers"
+    },
+    {
       "name": "Features",
       "description": "features",
       "x-id": "features"
@@ -254,7 +269,7 @@
       "x-id": "tokens"
     },
     {
-      "name": "Runtime Environments",
+      "name": "Runtime Environments.",
       "description": "onPrem.runtimeEnvs",
       "x-id": "onPrem.runtimeEnvs"
     },
@@ -289,7 +304,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -301,9 +316,10 @@
         "x-sdk-interface": "abac.rules.list"
       },
       "post": {
+        "x-action": "createGrantRule",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -344,9 +360,10 @@
     },
     "/abac/batch": {
       "post": {
+        "x-action": "updateRules",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -397,7 +414,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -410,6 +427,11 @@
     },
     "/abac/tags/rule/{rule}": {
       "post": {
+        "x-action": "updateRule",
+        "x-entityId": {
+          "pathId": "params.rule",
+          "pathName": "body.tags[0]"
+        },
         "parameters": [
           {
             "description": "The id of the rule",
@@ -423,7 +445,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -454,9 +476,10 @@
     },
     "/abac/tags/rules": {
       "post": {
+        "x-action": "updateTagsForRules",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -507,7 +530,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -520,9 +543,13 @@
     },
     "/abac/teamRules": {
       "post": {
+        "x-action": "createRulesForTeam",
+        "x-entityId": {
+          "pathName": "body.teams[0]"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -546,6 +573,10 @@
     },
     "/abac/{rule}": {
       "delete": {
+        "x-action": "deleteRuleForTeam",
+        "x-entityId": {
+          "pathName": "params.rule"
+        },
         "parameters": [
           {
             "description": "The id of the rule",
@@ -559,7 +590,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -583,7 +614,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -596,6 +627,8 @@
     },
     "/accounts/{accountId}/{userId}": {
       "delete": {
+        "x-action": "removeUserFromAccount",
+        "x-entityId": "params.accountId",
         "parameters": [
           {
             "description": "id of an object",
@@ -618,7 +651,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -630,8 +663,16 @@
         "x-sdk-interface": "accounts.deleteUserFromAccount"
       }
     },
-    "/accounts/{accountId}/{userId}/adduser": {
+    "/accounts/{accountId}/{userId}/resendInvite": {
       "post": {
+        "x-action": "resendInviteToUser",
+        "x-entityId": "params.accountId",
+        "operationId": "accounts-resend-invite",
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Resend invite",
+        "x-sdk-interface": "accounts.resendInvite",
         "parameters": [
           {
             "description": "id of an object",
@@ -654,7 +695,38 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
+          }
+        }
+      }
+    },
+    "/accounts/{accountId}/{userId}/adduser": {
+      "post": {
+        "x-action": "addExistingUserToAccount",
+        "x-entityId": "params.accountId",
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -667,6 +739,8 @@
     },
     "/accounts/{accountId}/{userId}/admin": {
       "delete": {
+        "x-entityId": "params.accountId",
+        "x-action": "removeUserFromAdmins",
         "parameters": [
           {
             "description": "id of an object",
@@ -689,7 +763,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -700,6 +774,8 @@
         "x-sdk-interface": "accounts.deleteAdmin"
       },
       "post": {
+        "x-entityId": "params.accountId",
+        "x-action": "makeUserAdmin",
         "parameters": [
           {
             "description": "id of an object",
@@ -722,7 +798,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -733,16 +809,24 @@
         "x-sdk-interface": "accounts.setAsAdmin"
       }
     },
-    "/accounts/{id}/adduser": {
+    "/accounts/{accountId}/adduser": {
       "post": {
+        "x-action": "addUserToAccount",
+        "x-entityId": "body.accountId",
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -768,16 +852,27 @@
         "x-sdk-interface": "accounts.addUserToAccount"
       }
     },
-    "/accounts/{id}/update": {
+    "/accounts/{accountId}/update": {
       "post": {
+        "x-action": "updateAccount",
+        "x-entityId": {
+          "pathId": "params.accountId",
+          "pathName": "body.name"
+        },
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -790,6 +885,10 @@
             "application/json": {
               "schema": {
                 "properties": {
+                  "integrations": {
+                    "type": "object",
+                    "x-secure": true
+                  },
                   "notifications": {
                     "items": {
                       "properties": {
@@ -840,16 +939,33 @@
         "x-sdk-interface": "accounts.updateAccountPublicSettings"
       }
     },
-    "/accounts/{id}/updateuser": {
+    "/accounts/{accountId}/{userId}/updateuser": {
       "post": {
+        "x-action": "updateUserByAdmin",
+        "x-entityId": "params.accountId",
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -862,6 +978,14 @@
             "application/json": {
               "schema": {
                 "properties": {
+                  "logins": {
+                    "type": "object",
+                    "x-secure": true
+                  },
+                  "key": {
+                    "type": "object",
+                    "x-secure": true
+                  },
                   "settings": {
                     "type": "object"
                   }
@@ -875,16 +999,22 @@
         "x-sdk-interface": "accounts.updateUserDetails"
       }
     },
-    "/accounts/{id}/users": {
+    "/accounts/{accountId}/users": {
       "get": {
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -900,7 +1030,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -913,9 +1043,13 @@
         "x-sdk-interface": "accounts.listAccounts"
       },
       "post": {
+        "x-action": "createAccount",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -950,9 +1084,13 @@
     },
     "/admin/accounts/addpendinguser": {
       "post": {
+        "x-action": "addPendingUser",
+        "x-entityId": {
+          "pathName": "body.email"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -999,16 +1137,18 @@
         "x-sdk-interface": "accounts.addPendingUserWithoutAccount"
       }
     },
-    "/admin/accounts/{id}": {
+    "/admin/accounts/{accountId}": {
       "delete": {
+        "x-action": "deleteAccount",
+        "x-entityId": "params.accountId",
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "$ref": "#/components/parameters/accountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1022,12 +1162,12 @@
       "get": {
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "$ref": "#/components/parameters/accountId"
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1041,6 +1181,11 @@
     },
     "/admin/accounts/{id}/update": {
       "post": {
+        "x-action": "updateAccount",
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "body.accountDetails.name"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -1048,7 +1193,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1060,12 +1205,18 @@
           "content": {
             "application/json": {
               "schema": {
+                "type": "object",
                 "properties": {
-                  "settings": {
-                    "type": "object"
+                  "accountDetails": {
+                    "type": "object",
+                    "properties": {
+                      "integrations": {
+                        "type": "object",
+                        "x-secure": true
+                      }
+                    }
                   }
-                },
-                "type": "object"
+                }
               }
             }
           }
@@ -1074,11 +1225,51 @@
         "x-sdk-interface": "accounts.updateAccount"
       }
     },
+    "/admin/accounts/{id}/rename": {
+      "post": {
+        "x-action": "renameAccount",
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "body.name"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "accounts"
+        ],
+        "operationId": "accounts-update-account-by-admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "integrations": {
+                    "type": "object",
+                    "x-secure": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Rename account",
+        "x-sdk-interface": "accounts.renameAccountByAdmin"
+      }
+    },
     "/admin/runtime-environments": {
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1091,32 +1282,39 @@
             "name": "limit",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Limit"
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Offset"
           },
           {
             "in": "query",
             "name": "accountIds",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Account ids"
           }
         ],
         "summary": "List",
         "x-sdk-interface": "onPrem.runtimeEnvs.list"
       }
     },
-    "/admin/runtime-environments/account/default/{account}/{name}": {
+    "/admin/runtime-environments/account/default/{account}/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "setDefaultRuntimeEnvByAdminToAccount",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1130,26 +1328,86 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Account"
           },
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           }
         ],
         "summary": "Set default for account",
         "x-sdk-interface": "onPrem.runtimeEnvs.account.setDefault"
       }
     },
+    "/admin/runtime-environments/account/modify/{runtimeEnvironmentName}": {
+      "put": {
+        "x-action": "addRuntimeEnvToAccountByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.account"
+        ],
+        "operationId": "onPrem-runtimeEnvs-account-modify",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Add to account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.modify"
+      },
+      "delete": {
+        "x-action": "removeRuntimeEnvFromAccountByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.account"
+        ],
+        "operationId": "onPrem-runtimeEnvs-account-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Delete for account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.delete"
+      }
+    },
     "/admin/runtime-environments/account/{account}": {
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1163,39 +1421,47 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Account"
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Limit"
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Offset"
           },
           {
             "in": "query",
             "name": "accountIds",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Account ids"
           }
         ],
         "summary": "Get by account",
         "x-sdk-interface": "onPrem.runtimeEnvs.account.list"
       }
     },
-    "/admin/runtime-environments/default/{plan}/{name}": {
+    "/admin/runtime-environments/default/{plan}/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "setDefaultRuntimeEnvByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1209,26 +1475,32 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Plan"
           },
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           }
         ],
         "summary": "Set default",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.setDefault"
       }
     },
-    "/admin/runtime-environments/{name}": {
+    "/admin/runtime-environments/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "upsertRuntimeEnvByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1238,7 +1510,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
+            "description": "Runtime environment name",
             "schema": {
               "type": "string"
             },
@@ -1247,6 +1520,7 @@
           {
             "in": "query",
             "name": "extend",
+            "description": "Extend or not",
             "schema": {
               "type": "string"
             }
@@ -1254,27 +1528,26 @@
           {
             "in": "query",
             "name": "description",
+            "description": "Description",
             "schema": {
               "type": "string"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Update sys re",
         "x-sdk-interface": "onPrem.runtimeEnvs.system.update"
       },
       "delete": {
+        "x-action": "deleteRuntimeEnvByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1284,18 +1557,20 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "force",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Force"
           }
         ],
         "summary": "Delete sys re",
@@ -1304,7 +1579,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1314,50 +1589,60 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "version",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Version"
           },
           {
             "in": "query",
             "name": "extend",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Extend"
           },
           {
             "in": "query",
             "name": "history",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "History"
           },
           {
             "in": "query",
             "name": "successors",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Successors"
           }
         ],
         "summary": "Get sys re",
         "x-sdk-interface": "onPrem.runtimeEnvs.system.get"
       }
     },
-    "/admin/runtime-environments/{plan}/{name}": {
+    "/admin/runtime-environments/{plan}/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "upsertRuntimeEnvByAdmin",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1371,47 +1656,49 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Plan"
           },
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "extend",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Extend"
           },
           {
             "in": "query",
             "name": "description",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Description"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Update",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.update"
       },
       "delete": {
+        "x-action": "deleteRuntimeEnvByAdmin",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1425,22 +1712,25 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Plan"
           },
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "force",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Force"
           }
         ],
         "summary": "Delete",
@@ -1449,7 +1739,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1463,54 +1753,945 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Plan"
           },
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "version",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Version"
           },
           {
             "in": "query",
             "name": "extend",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Extend"
           },
           {
             "in": "query",
             "name": "history",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "History"
           },
           {
             "in": "query",
             "name": "successors",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Successors"
           }
         ],
         "summary": "Get",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.get"
       }
     },
-    "/auth/key": {
+    "/admin/user/{userName}": {
+      "delete": {
+        "x-action": "deleteUser",
+        "x-entityId": {
+          "pathName": "params.userName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userName",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "User name"
+          }
+        ],
+        "summary": "Delete",
+        "x-sdk-interface": "user.delete"
+      }
+    },
+    "/admin/user/adminRole": {
+      "post": {
+        "x-action": "changeAdminRole",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.userName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-change-admin-role",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Change role",
+        "x-sdk-interface": "user.changeRole"
+      }
+    },
+    "/admin/user/account": {
+      "post": {
+        "x-action": "changeUserAccount",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.userName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-change-account",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/json"
+                    },
+                    "x-secure": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Change account",
+        "x-sdk-interface": "user.changeAccount"
+      }
+    },
+    "/admin/user/localProvider": {
+      "delete": {
+        "x-action": "deleteLocalProvider",
+        "x-entityId": {
+          "pathName": "query.userName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-delete-local-provider",
+        "summary": "Delete local provider",
+        "x-sdk-interface": "user.deleteLocalProvider"
+      },
+      "post": {
+        "x-action": "updateLocalProviderPassword",
+        "x-entityId": {
+          "pathName": "request.body.userName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-update-local-provider",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "x-secure": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update local provider",
+        "x-sdk-interface": "user.updateLocalProvider"
+      }
+    },
+    "/admin/user/{userId}/activate": {
+      "post": {
+        "x-action": "activateUser",
+        "x-entityId": "params.userId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "operationId": "user-activate-user",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Activate user",
+        "x-sdk-interface": "user.activate.user"
+      }
+    },
+    "/admin/idp": {
+      "post": {
+        "x-action": "createIDP",
+        "x-entityId": {
+          "pathName": "body.clientName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "idp"
+        ],
+        "operationId": "idp-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": {
+                  "body": [
+                    "clientName",
+                    "clientType"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create IDP",
+        "x-sdk-interface": "idp.create"
+      },
+      "put": {
+        "x-action": "updateIDP",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.clientName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "idp"
+        ],
+        "operationId": "idp-update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": {
+                  "body": [
+                    "clientName",
+                    "clientType"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update IDP",
+        "x-sdk-interface": "idp.update"
+      }
+    },
+    "/admin/idp/addAccount": {
+      "post": {
+        "x-action": "addAccountToIDP",
+        "x-entityId": "body.IDPConfigId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "idp"
+        ],
+        "operationId": "idp-add-account",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add to account",
+        "x-sdk-interface": "idp.add-account"
+      }
+    },
+    "/admin/idp/{id}": {
+      "delete": {
+        "x-action": "deleteIDP",
+        "x-entityId": "params.id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "idp"
+        ],
+        "operationId": "idp-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "idp id"
+          }
+        ],
+        "summary": "Delete",
+        "x-sdk-interface": "idp.delete"
+      }
+    },
+    "/admin/analytic/addAccount": {
+      "put": {
+        "x-action": "addAccountToAnalytic",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "analytic"
+        ],
+        "operationId": "analytic-add-account",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": {
+                  "body": [
+                    "name"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Add account",
+        "x-sdk-interface": "analytic.add.account"
+      }
+    },
+    "/admin/customers": {
+      "post": {
+        "x-action": "createCustomer",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-create",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Create",
+        "x-sdk-interface": "customers.create"
+      }
+    },
+    "/admin/customers/{customerId}/{accountId}/assignAccountToCustomer": {
+      "post": {
+        "x-action": "assignAccountToCustomer",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-assign-account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Assign account",
+        "x-sdk-interface": "customers.assignAccount"
+      }
+    },
+    "/admin/customers/{customerId}/updateCustomerLimits": {
+      "put": {
+        "x-action": "updateCustomerLimits",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-update-limits",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Update limits",
+        "x-sdk-interface": "customers.updateLimits"
+      }
+    },
+    "/admin/customers/{customerId}/{accountId}/detachAccountFromCustomer": {
+      "post": {
+        "x-action": "detachAccountFromCustomer",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-detach-account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Detach account",
+        "x-sdk-interface": "customers.detachAccount"
+      }
+    },
+    "/admin/customers/{customerId}/{userId}/addCustomerAdmin": {
+      "post": {
+        "x-action": "addCustomerAdmin",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-add-admin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add admit",
+        "x-sdk-interface": "customers.addAdmin"
+      }
+    },
+    "/admin/customers/{customerId}/{userId}/removeCustomerAdmin": {
+      "post": {
+        "x-action": "removeCustomerAdmin",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-remove-admin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Remove admin",
+        "x-sdk-interface": "customers.removeAdmin"
+      }
+    },
+    "/admin/payments/{account_id}/REGroup/{REGroup}": {
+      "post": {
+        "x-action": "changeREGroup",
+        "x-entityId": "params.account_id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "payments"
+        ],
+        "operationId": "payments-change-reg-group",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "REGroup",
+            "schema": {
+              "type": "string"
+            },
+            "description": "REGroup",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": {
+                  "body": []
+                }
+              }
+            }
+          }
+        },
+        "summary": "Change REG group",
+        "x-sdk-interface": "payments.changeREGGroup"
+      }
+    },
+    "/admin/payments/{account_id}/REGroup": {
+      "delete": {
+        "x-action": "deleteREGroup",
+        "x-entityId": "params.account_id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "payments"
+        ],
+        "operationId": "payments-delete-reg-group",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account name",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "x-allowed": {
+                  "body": []
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete REG group",
+        "x-sdk-interface": "payments.deleteREGGroup"
+      }
+    },
+    "/annotations": {
+      "delete": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "n": {
+                      "example": 2,
+                      "type": "integer"
+                    },
+                    "ok": {
+                      "example": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Result of deleting"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "annotations"
+        ],
+        "operationId": "annotations-delete",
+        "summary": "Delete annotations",
+        "parameters": [
+          {
+            "description": "id of annotation",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Entity id",
+            "in": "query",
+            "name": "entityId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Entity type",
+            "in": "query",
+            "name": "entityType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "key of annotation",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-sdk-interface": "annotations.delete"
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "__v": {
+                        "type": "number"
+                      },
+                      "_id": {
+                        "type": "string"
+                      },
+                      "accountId": {
+                        "type": "string"
+                      },
+                      "entityId": {
+                        "type": "string"
+                      },
+                      "entityType": {
+                        "type": "string"
+                      },
+                      "key": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Array of Annotations objects"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "annotations"
+        ],
+        "operationId": "annotations-list",
+        "summary": "List",
+        "parameters": [
+          {
+            "description": "id of annotation",
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Entity id",
+            "in": "query",
+            "name": "entityId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Entity type",
+            "in": "query",
+            "name": "entityType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "key of annotation",
+            "in": "query",
+            "name": "key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-sdk-interface": "annotations.list"
+      },
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "__v": {
+                      "type": "number"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "accountId": {
+                      "type": "string"
+                    },
+                    "entityId": {
+                      "type": "string"
+                    },
+                    "entityType": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Annotation object"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "Error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Error"
+          }
+        },
+        "tags": [
+          "annotations"
+        ],
+        "operationId": "annotations-create",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/create_annotationOptions"
+        },
+        "summary": "Create",
+        "parameters": [],
+        "x-sdk-interface": "annotations.create"
+      }
+    },
+    "/auth/key": {
+      "post": {
+        "x-action": "createApiKey",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1523,24 +2704,20 @@
             "name": "subjectType",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Subject type"
           },
           {
             "in": "query",
             "name": "subjectReference",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Subject reference"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Generate",
         "x-sdk-interface": "tokens.generate"
@@ -1548,9 +2725,11 @@
     },
     "/auth/key/{id}": {
       "delete": {
+        "x-action": "deleteApiKey",
+        "x-entityId": "params.id",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1564,7 +2743,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Id"
           }
         ],
         "summary": "Delete",
@@ -1575,7 +2755,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1587,26 +2767,6 @@
         "x-sdk-interface": "tokens.list"
       }
     },
-    "/builds/{id}": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/id"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ok"
-          }
-        },
-        "tags": [
-          "builds"
-        ],
-        "operationId": "workflows-get",
-        "summary": "Get",
-        "x-sdk-interface": "workflows.get"
-      }
-    },
     "/workflow": {
       "get": {
         "operationId": "workflows-list",
@@ -1616,35 +2776,40 @@
             "in": "query",
             "schema": {
               "type": "integer"
-            }
+            },
+            "description": "Limit"
           },
           {
             "name": "page",
             "in": "query",
             "schema": {
               "type": "integer"
-            }
+            },
+            "description": "Page"
           },
           {
             "name": "status",
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Status"
           },
           {
             "name": "trigger",
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Trigger"
           },
           {
             "name": "pipeline",
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Pipeline"
           },
           {
             "name": "revision",
@@ -1661,6 +2826,67 @@
               "type": "string"
             },
             "description": "branch name"
+          },
+          {
+            "name": "pipelineTriggerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Pipeline trigger id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "builds"
+        ],
+        "summary": "List",
+        "x-sdk-interface": "workflows.list"
+      }
+    },
+    "/builds/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "name",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "builds"
+        ],
+        "operationId": "workflows-get",
+        "summary": "Get",
+        "x-sdk-interface": "workflows.get"
+      },
+      "post": {
+        "x-action": "runPipeline",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "name",
+            "required": true
           }
         ],
         "responses": {
@@ -1671,12 +2897,48 @@
         "tags": [
           "builds"
         ],
-        "summary": "List",
-        "x-sdk-interface": "workflows.list"
+        "operationId": "workflows-run-pipeline",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body": [
+                    "branch",
+                    "serviceName"
+                  ]
+                },
+                "properties": {
+                  "branch": {
+                    "type": "string"
+                  },
+                  "buildFlags": {
+                    "properties": {
+                      "nocache": {
+                        "default": false,
+                        "description": "use docker cache",
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "sha": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Build by service",
+        "x-sdk-interface": "workflows.runPipeline"
       }
     },
     "/builds/{buildId}/update": {
       "post": {
+        "x-action": "updateBuild",
+        "x-entityId": "params.buildId",
         "parameters": [
           {
             "$ref": "#/components/parameters/buildId"
@@ -1684,7 +2946,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1695,6 +2957,12 @@
           "content": {
             "application/json": {
               "schema": {
+                "x-allowed": {
+                  "body": [
+                    "pullRequest.createOnSuccess",
+                    "pullRequest.mergeOnSuccess"
+                  ]
+                },
                 "properties": {
                   "pullRequest": {
                     "properties": {
@@ -1721,7 +2989,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1746,7 +3014,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1788,7 +3056,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1800,11 +3068,71 @@
         "x-sdk-interface": "clusters.list"
       }
     },
-    "/clusters/{provider}/cluster/{id}": {
-      "delete": {
+    "/clusters/revoke/{provider}": {
+      "post": {
         "responses": {
           "200": {
             "description": "ok"
+          }
+        },
+        "tags": [
+          "clusters"
+        ],
+        "operationId": "clusters-revoke",
+        "parameters": [
+          {
+            "description": "id of provider",
+            "in": "path",
+            "name": "provider",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "List",
+        "x-sdk-interface": "clusters.revoke",
+        "x-action": "deleteCloudIntegration",
+        "x-entityId": "params.provider"
+      }
+    },
+    "/clusters/{clusterId}/tags": {
+      "put": {
+        "x-action": "updateTags",
+        "x-entityId": "params.clusterId",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "clusters"
+        ],
+        "parameters": [
+          {
+            "name": "clusterId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "cluster id"
+          }
+        ],
+        "summary": "Put",
+        "x-sdk-interface": "clusters.tags.update",
+        "operationId": "clusters-tags-update"
+      }
+    },
+    "/clusters/{provider}/cluster/{clusterId}": {
+      "delete": {
+        "x-action": "deleteCluster",
+        "x-entityId": {
+          "pathName": "params.provider"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1818,15 +3146,17 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Provider"
           },
           {
-            "name": "id",
+            "name": "clusterId",
             "in": "path",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Id"
           }
         ],
         "summary": "Delete",
@@ -1837,7 +3167,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1849,9 +3179,13 @@
         "x-sdk-interface": "compositions.list"
       },
       "post": {
+        "x-action": "createComposition",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1862,16 +3196,19 @@
           "content": {
             "application/json": {
               "schema": {
+                "x-allowed": {
+                  "body": [
+                    "name"
+                  ]
+                },
                 "properties": {
                   "isAdvanced": {
-                    "default": false,
                     "type": "boolean"
                   },
                   "name": {
                     "type": "string"
                   },
                   "vars": {
-                    "default": [],
                     "items": {
                       "type": "string"
                     },
@@ -1892,13 +3229,15 @@
         "x-sdk-interface": "compositions.create"
       }
     },
-    "/compositions/{id}/run": {
+    "/compositions/{identifier}/run": {
       "post": {
+        "x-action": "runComposition",
+        "x-entityId": "params.identifier",
         "parameters": [
           {
             "description": "id or name of a composition",
             "in": "path",
-            "name": "id",
+            "name": "identifier",
             "required": true,
             "schema": {
               "type": "string"
@@ -1907,7 +3246,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1918,9 +3257,11 @@
           "content": {
             "application/json": {
               "schema": {
+                "x-allowed": {
+                  "body": []
+                },
                 "properties": {
                   "vars": {
-                    "default": [],
                     "items": {
                       "type": "string"
                     },
@@ -1938,6 +3279,8 @@
     },
     "/compositions/{id}": {
       "delete": {
+        "x-action": "deleteComposition",
+        "x-entityId": "params.id",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -1945,7 +3288,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1969,7 +3312,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1980,6 +3323,11 @@
         "x-sdk-interface": "compositions.get"
       },
       "put": {
+        "x-action": "updateComposition",
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "bony.name"
+        },
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -1987,7 +3335,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -1998,16 +3346,23 @@
           "content": {
             "application/json": {
               "schema": {
+                "x-allowed": {
+                  "body": [
+                    "account",
+                    "created",
+                    "createdBy",
+                    "name",
+                    "_id"
+                  ]
+                },
                 "properties": {
                   "isAdvanced": {
-                    "default": false,
                     "type": "boolean"
                   },
                   "name": {
                     "type": "string"
                   },
                   "vars": {
-                    "default": [],
                     "items": {
                       "type": "string"
                     },
@@ -2030,7 +3385,7 @@
       "patch": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2044,17 +3399,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Id"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Patch",
         "x-sdk-interface": "compositions.patch"
@@ -2062,6 +3412,8 @@
     },
     "/compositions/{id}/duplicate": {
       "post": {
+        "x-action": "duplicateComposition",
+        "x-entityId": "params.id",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -2069,7 +3421,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2084,7 +3436,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2097,25 +3449,30 @@
             "name": "type",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Type"
           },
           {
             "in": "query",
             "name": "decrypt",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Decrypt"
           }
         ],
         "summary": "List",
         "x-sdk-interface": "contexts.list"
-      }
-    },
-    "/contexts/": {
+      },
       "post": {
+        "x-action": "createContext",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.metadata.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2128,14 +3485,26 @@
             "name": "skipValidation",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Skip validation"
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "spec": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "x-secure": true
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -2146,9 +3515,13 @@
     },
     "/contexts/{name}": {
       "delete": {
+        "x-action": "deleteContext",
+        "x-entityIdPath": {
+          "pathName": "params.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2162,16 +3535,19 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "summary": "Delete",
         "x-sdk-interface": "contexts.delete"
       },
       "put": {
+        "x-action": "updateContext",
+        "x-entityIdPath": "params.name",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2185,14 +3561,26 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "spec": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "x-secure": true
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -2201,9 +3589,16 @@
         "x-sdk-interface": "contexts.replace"
       },
       "patch": {
+        "x-action": "updateContext",
+        "x-entityId": {
+          "pathId": "params.name",
+          "handlerId": "decodeContextName",
+          "pathName": "params.name",
+          "handlerName": "decodeContextName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2217,14 +3612,26 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "spec": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "x-secure": true
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -2235,7 +3642,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2249,25 +3656,228 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           },
           {
             "in": "query",
             "name": "decrypt",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Decrypt"
           }
         ],
         "summary": "Get",
         "x-sdk-interface": "contexts.get"
       }
     },
+    "/contexts/{name}/default": {
+      "patch": {
+        "x-action": "updateContext",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "contexts"
+        ],
+        "operationId": "contexts-default-patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Name"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "spec": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "x-secure": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Patch",
+        "x-sdk-interface": "contexts.default.patch"
+      }
+    },
+    "/customers/{customerId}/createAccount": {
+      "post": {
+        "x-action": "addNewAccount",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-add-new-account",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add new account",
+        "x-sdk-interface": "customers.addNewAccount"
+      }
+    },
+    "/customers/{customerId}/{accountId}/updateAccountLimits": {
+      "post": {
+        "x-action": "updateAccountLimits",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-update-accounts-limits",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Update account limits",
+        "x-sdk-interface": "customers.updateAccountLimits"
+      }
+    },
+    "/customers/{customerId}/{userId}/addCustomerAdmin": {
+      "post": {
+        "x-action": "addCustomerAdmin",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-add-customer-admin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "User ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add customer admin",
+        "x-sdk-interface": "customers.addCustomerAdmin"
+      }
+    },
+    "/customers/{customerId}/{userId}/removeCustomerAdmin": {
+      "post": {
+        "x-action": "removeCustomerAdmin",
+        "x-entityId": "params.customerId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customers"
+        ],
+        "operationId": "customers-remove-customer-admin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer id",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "User id",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Remove customer admin",
+        "x-sdk-interface": "customers.removeCustomerAdmin"
+      }
+    },
     "/environments": {
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2283,7 +3893,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2299,7 +3909,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2313,7 +3923,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Id"
           }
         ],
         "summary": "Get",
@@ -2329,7 +3940,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2340,18 +3951,9 @@
         "x-sdk-interface": "envs.pause"
       }
     },
-    "/environments/{id}/rename/{newName}": {
+    "/environments/{envId}/rename/{newName}": {
       "get": {
         "parameters": [
-          {
-            "description": "The ID of the environment to rename",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "description": "The new name to assign to the environment",
             "in": "path",
@@ -2360,11 +3962,20 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "path",
+            "name": "envId",
+            "schema": {
+              "type": "object"
+            },
+            "description": "envId",
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2373,6 +3984,47 @@
         "operationId": "envs-rename",
         "summary": "Rename",
         "x-sdk-interface": "envs.rename"
+      },
+      "post": {
+        "x-action": "renameRuntimeEnv",
+        "x-entityId": {
+          "pathId": "params.envId",
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "environments"
+        ],
+        "operationId": "environments-rename-runtime-env",
+        "parameters": [
+          {
+            "description": "The new name to assign to the environment",
+            "in": "path",
+            "name": "newName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "envId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Runtime environment ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Rename runtime environment",
+        "x-sdk-interface": "environments.renameRuntimeEnv"
       }
     },
     "/environments/{id}/start": {
@@ -2384,7 +4036,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2404,7 +4056,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2424,7 +4076,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2444,7 +4096,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2464,7 +4116,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2490,7 +4142,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -2499,10 +4151,172 @@
         "operationId": "features-account",
         "summary": "Account",
         "x-sdk-interface": "features.account"
+      },
+      "post": {
+        "x-action": "addFeature",
+        "x-entityId": {
+          "pathName": "body.feature"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "features"
+        ],
+        "operationId": "features-add",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add feature",
+        "x-sdk-interface": "features.add"
+      }
+    },
+    "/form-metadata/create": {
+      "post": {
+        "x-action": "createFormMetadata",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "form-metadata"
+        ],
+        "operationId": "form-metadata-create",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Create form metadata",
+        "x-sdk-interface": "formMetadata.create"
+      }
+    },
+    "/form-metadata/{name}/update": {
+      "put": {
+        "x-action": "updateFormMetadata",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "form-metadata"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "metadata name"
+          }
+        ],
+        "operationId": "form-metadata-update",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Update form metadata",
+        "x-sdk-interface": "formMetadata.update"
+      }
+    },
+    "/form-metadata/{name}": {
+      "delete": {
+        "x-action": "deleteFormMetadata",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "form-metadata"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "metadata name"
+          }
+        ],
+        "operationId": "form-metadata-delete",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Delete form metadata",
+        "x-sdk-interface": "formMetadata.delete"
+      }
+    },
+    "/form-metadata/activate/{groupId}/{name}": {
+      "patch": {
+        "x-action": "setActiveFormMetadata",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "form-metadata"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "groupId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "metadata group name"
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "metadata name"
+          }
+        ],
+        "operationId": "form-metadata-set-active",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Set active form metadata",
+        "x-sdk-interface": "formMetadata.setActive"
       }
     },
     "/helm/boards": {
       "delete": {
+        "x-action": "deleteAllBoards",
         "responses": {
           "200": {
             "content": {
@@ -2616,6 +4430,10 @@
         "x-sdk-interface": "helm.boards.list"
       },
       "post": {
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "x-action": "helmBoardCreated",
         "responses": {
           "200": {
             "content": {
@@ -2759,6 +4577,10 @@
     },
     "/helm/boards/sections": {
       "post": {
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "x-action": "helmSectionCreted",
         "responses": {
           "200": {
             "content": {
@@ -2836,7 +4658,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "OK"
+            "$ref": "#/components/responses/json"
           },
           "500": {
             "content": {
@@ -2885,6 +4707,8 @@
     },
     "/helm/boards/sections/{id}": {
       "delete": {
+        "x-entityId": "body.id",
+        "x-action": "helmSectionDeleted",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -3120,6 +4944,11 @@
         "x-sdk-interface": "helm.sections.patch"
       },
       "put": {
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "body.name"
+        },
+        "x-action": "helmSectionChanged",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -3418,6 +5247,8 @@
     },
     "/helm/boards/{id}": {
       "delete": {
+        "x-entityId": "params.id",
+        "x-action": "helmBoardDeleted",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -3637,6 +5468,11 @@
         "x-sdk-interface": "helm.boards.patch"
       },
       "put": {
+        "x-entityId": {
+          "pathId": "params.id",
+          "pathName": "body.name"
+        },
+        "x-action": "helmBoardEdited",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -3726,7 +5562,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3735,13 +5571,7 @@
         "operationId": "helm-repos-create",
         "parameters": [],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Create",
         "x-sdk-interface": "helm.repos.create"
@@ -3749,7 +5579,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3762,7 +5592,8 @@
             "name": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Query"
           }
         ],
         "summary": "List",
@@ -3773,7 +5604,7 @@
       "delete": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3787,7 +5618,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "summary": "Delete",
@@ -3796,7 +5628,7 @@
       "put": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3810,17 +5642,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Update",
         "x-sdk-interface": "helm.repos.update"
@@ -3828,7 +5655,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3842,7 +5669,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "summary": "Get",
@@ -3853,7 +5681,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3866,17 +5694,12 @@
             "name": "public",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Public"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Create",
         "x-sdk-interface": "triggers.events.create"
@@ -3884,7 +5707,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3897,28 +5720,32 @@
             "name": "type",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Type"
           },
           {
             "in": "query",
             "name": "kind",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Kind"
           },
           {
             "in": "query",
             "name": "filter",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Filter"
           },
           {
             "in": "query",
             "name": "public",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Public"
           }
         ],
         "summary": "List",
@@ -3929,7 +5756,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3943,7 +5770,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Event"
           }
         ],
         "summary": "Get",
@@ -3954,7 +5782,7 @@
       "delete": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -3968,7 +5796,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Event"
           },
           {
             "in": "path",
@@ -3976,7 +5805,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Context"
           }
         ],
         "summary": "Delete",
@@ -3987,7 +5817,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4003,7 +5833,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4017,7 +5847,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Event"
           }
         ],
         "summary": "Get event triggers",
@@ -4028,7 +5859,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4042,7 +5873,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Pipeline"
           }
         ],
         "summary": "Get pipeline triggers",
@@ -4051,9 +5883,11 @@
     },
     "/hermes/triggers/{event}/{pipeline}": {
       "post": {
+        "x-action": "triggerCreated",
+        "x-entityId": "params.pipeline",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4067,7 +5901,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Event"
           },
           {
             "in": "path",
@@ -4075,25 +5910,22 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Pipeline"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Create",
         "x-sdk-interface": "triggers.create"
       },
       "delete": {
+        "x-action": "triggerDeleted",
+        "x-entityId": "params.pipeline",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4107,7 +5939,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Event"
           },
           {
             "in": "path",
@@ -4115,7 +5948,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Pipeline"
           }
         ],
         "summary": "Delete",
@@ -4126,7 +5960,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4142,7 +5976,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4156,7 +5990,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Type"
           },
           {
             "in": "path",
@@ -4164,7 +5999,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Kind"
           }
         ],
         "summary": "Get",
@@ -4175,7 +6011,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4191,7 +6027,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4204,63 +6040,72 @@
             "name": "limit",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Limit"
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Offset"
           },
           {
             "in": "query",
             "name": "metadata",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Metadata"
           },
           {
             "in": "query",
             "name": "tag",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Tag"
           },
           {
             "in": "query",
             "name": "type",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Type"
           },
           {
             "in": "query",
             "name": "branch",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Branch"
           },
           {
             "in": "query",
             "name": "imageDisplayNameRegex",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Image display name regex"
           },
           {
             "in": "query",
             "name": "select",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Select"
           },
           {
             "in": "query",
             "name": "sha",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Sha"
           }
         ],
         "summary": "List",
@@ -4272,7 +6117,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4282,6 +6127,37 @@
         "summary": "Add from external source",
         "parameters": [],
         "x-sdk-interface": "images.addFromExternalSource"
+      }
+    },
+    "/images/{imageId}/promote": {
+      "post": {
+        "x-entityId": {
+          "pathId": "params.imageId",
+          "pathName": "body.imageName"
+        },
+        "x-action": "imagePromoted",
+        "x-sdk-interface": "images.promote",
+        "operationId": "images-promote",
+        "summary": "Promote an image",
+        "parameters": [
+          {
+            "description": "id of the Image",
+            "in": "path",
+            "name": "imageId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "images"
+        ]
       }
     },
     "/images/{id}": {
@@ -4299,7 +6175,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4325,7 +6201,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4336,13 +6212,15 @@
         "x-sdk-interface": "images.getTags"
       }
     },
-    "/images/{id}/tag/{tag}": {
+    "/images/{imageId}/tag/{tagName}": {
       "post": {
+        "x-action": "imageTagAdded",
+        "x-entityId": "params.imageId",
         "parameters": [
           {
             "description": "image ObjectId",
             "in": "path",
-            "name": "id",
+            "name": "imageId",
             "required": true,
             "schema": {
               "type": "string"
@@ -4351,7 +6229,7 @@
           {
             "description": "tag",
             "in": "path",
-            "name": "tag",
+            "name": "tagName",
             "required": true,
             "schema": {
               "type": "string"
@@ -4360,7 +6238,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4371,29 +6249,31 @@
         "x-sdk-interface": "images.tag"
       },
       "delete": {
+        "x-action": "imageTagDeleted",
+        "x-entityId": "params.imageId",
         "parameters": [
           {
-            "description": "image ObjectId",
+            "description": "tag ObjectId",
             "in": "path",
-            "name": "id",
+            "name": "tagName",
             "required": true,
             "schema": {
               "type": "string"
             }
           },
           {
-            "description": "tag ObjectId",
             "in": "path",
-            "name": "tag",
-            "required": true,
+            "name": "imageId",
             "schema": {
-              "type": "string"
-            }
+              "type": "object"
+            },
+            "description": "imageId",
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4419,7 +6299,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4443,7 +6323,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4505,7 +6385,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4516,11 +6396,307 @@
         "x-sdk-interface": "images.deleteMetadata"
       }
     },
-    "/kubernetes/releases/{releaseName}/delete": {
+    "/idp/account": {
       "post": {
+        "x-action": "createAccountIdp",
+        "x-entityId": {
+          "pathName": "body.displayName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "account"
+        ],
+        "operationId": "account-create-idp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body":  [
+                    "clientName",
+                    "clientType",
+                    "displayName",
+                    "accounts",
+                    "customerId"
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Create account IDP",
+        "x-sdk-interface": "account.createIdp"
+      },
+      "put": {
+        "x-action": "updateAccountIdp",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.displayName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "account"
+        ],
+        "operationId": "account-update-idp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body": [
+                    "_id",
+                    "clientName",
+                    "clientType",
+                    "displayName",
+                    "accounts",
+                    "customerId"
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Update IDP",
+        "x-sdk-interface": "account.updateIdp"
+      },
+      "delete": {
+        "x-action": "deleteAccountIdp",
+        "x-entityId": {
+          "pathId": "body.id",
+          "pathName": "body.displayName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "account"
+        ],
+        "operationId": "account-delete-idp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body": [
+                    "_id",
+                    "clientName",
+                    "clientType",
+                    "displayName",
+                    "accounts",
+                    "customerId"
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Delete IDP",
+        "x-sdk-interface": "account.deleteIdp"
+      }
+    },
+    "/idp/customer/{customerId}": {
+      "post": {
+        "x-action": "createCustomerIdp",
+        "x-entityId": {
+          "pathName": "body.displayName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customer"
+        ],
+        "operationId": "customer-create-idp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body": [
+                    "clientName",
+                    "clientType",
+                    "displayName",
+                    "accounts",
+                    "customerId"
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Create IDP",
+        "x-sdk-interface": "customer.createIdp"
+      },
+      "put": {
+        "x-action": "updateCustomerIdp",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.displayName"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customer"
+        ],
+        "operationId": "customer-update-idp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "x-allowed": {
+                  "body": [
+                    "_id",
+                    "clientName",
+                    "clientType",
+                    "displayName",
+                    "accounts",
+                    "customerId"
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Update IDP",
+        "x-sdk-interface": "customer.updateIdp"
+      },
+      "delete": {
+        "x-action": "deleteCustomerIdp",
+        "x-entityId": "body.id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customer"
+        ],
+        "operationId": "customer-delete-idp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "summary": "Delete IDP",
+        "x-sdk-interface": "customer.deleteIdp"
+      }
+    },
+    "/idp/customer/{customerId}/addAccounts": {
+      "post": {
+        "x-action": "addAccountToCustomerIdp",
+        "x-entityId": "body.ssoConfigId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customer"
+        ],
+        "operationId": "customer-add-account-to-idp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/json"
+        },
+        "summary": "Add account to IDP",
+        "x-sdk-interface": "customer.AddAccountToIdp"
+      }
+    },
+    "/idp/customer/{customerId}/deleteAccounts": {
+      "delete": {
+        "x-action": "removeAccountFromCustomerIdp",
+        "x-entityId": "body.ssoConfigId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "customer"
+        ],
+        "operationId": "customer-remove-account-from-idp",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Customer ID",
+            "required": true
+          }
+        ],
+        "summary": "Remove account from customer idp",
+        "x-sdk-interface": "customer.removeAccountFromIdp"
+      }
+    },
+    "/kubernetes/releases/{releaseName}/delete": {
+      "post": {
+        "x-entityId": {
+          "pathName": "params.releaseName"
+        },
+        "x-action": "helmReleaseDeleted",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4534,7 +6710,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Release name"
           },
           {
             "in": "query",
@@ -4542,7 +6719,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Selector"
           },
           {
             "in": "query",
@@ -4550,17 +6728,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Tiller namespace"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Delete",
         "x-sdk-interface": "helm.releases.delete"
@@ -4570,7 +6743,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4584,24 +6757,20 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Release name"
           },
           {
             "in": "query",
             "name": "selector",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Selector"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Test",
         "x-sdk-interface": "helm.releases.test"
@@ -4611,7 +6780,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4625,7 +6794,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Namespace"
           },
           {
             "in": "query",
@@ -4633,17 +6803,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Selector"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Generate image pull secret",
         "x-sdk-interface": "kubernetes.generateImagePullSecret"
@@ -4651,9 +6816,13 @@
     },
     "/kubernetes/chart/install": {
       "post": {
+        "x-entityId": {
+          "pathName": "body.releaseName"
+        },
+        "x-action": "helmReleaseInstalled",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4667,7 +6836,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Selector"
           },
           {
             "in": "query",
@@ -4675,17 +6845,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Tiller namespace"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Install",
         "x-sdk-interface": "helm.charts.install"
@@ -4695,7 +6860,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4708,7 +6873,8 @@
             "name": "selector",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Selector"
           },
           {
             "in": "query",
@@ -4716,17 +6882,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Tiller namespace"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Promote",
         "x-sdk-interface": "helm.charts.promote"
@@ -4736,7 +6897,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4747,9 +6908,11 @@
           {
             "in": "path",
             "name": "repo",
+            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Repo"
           }
         ],
         "summary": "Get charts by repo",
@@ -4760,7 +6923,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4776,7 +6939,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4790,7 +6953,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4840,7 +7003,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4856,7 +7019,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4868,28 +7031,32 @@
             "in": "query",
             "schema": {
               "type": "integer"
-            }
+            },
+            "description": "Offset"
           },
           {
             "name": "id",
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Id"
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Limit"
           },
           {
             "in": "query",
             "name": "labels",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Labels"
           },
           {
             "in": "query",
@@ -4905,9 +7072,13 @@
         "x-sdk-interface": "pipelines.list"
       },
       "post": {
+        "x-entityId": {
+          "pathName": "body.metadata.name"
+        },
+        "x-action": "pipelineCreated",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4915,13 +7086,7 @@
         ],
         "operationId": "pipelines-create",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Create",
         "parameters": [],
@@ -4932,15 +7097,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok",
-            "headers": {
-              "Location": {
-                "schema": {
-                  "type": "string"
-                },
-                "description": "Endpoint to query the build status"
-              }
-            }
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4954,17 +7111,12 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Run",
         "x-sdk-interface": "pipelines.run"
@@ -4974,7 +7126,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -4983,13 +7135,7 @@
         "operationId": "pipelines-validate-yaml",
         "parameters": [],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Validate yaml",
         "x-sdk-interface": "pipelines.validateYaml"
@@ -4997,6 +7143,10 @@
     },
     "/pipelines/{name}": {
       "delete": {
+        "x-entityId": {
+          "pathId": "params.name"
+        },
+        "x-action": "pipelineDeleted",
         "parameters": [
           {
             "description": "Name of pipeline",
@@ -5010,7 +7160,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5036,12 +7186,13 @@
             "name": "decryptVariables",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Decrypt variables"
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5052,6 +7203,11 @@
         "x-sdk-interface": "pipelines.get"
       },
       "put": {
+        "x-entityId": {
+          "pathId": "params.name",
+          "pathName": "body.metadata.name"
+        },
+        "x-action": "updatePipeline",
         "parameters": [
           {
             "description": "Name of pipeline",
@@ -5067,14 +7223,86 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "spec": {
+                    "type": "object",
+                    "properties": {
+                      "variables": {
+                        "type": "array",
+                        "x-secure": true,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "ok"
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "spec": {
+                      "type": "object",
+                      "properties": {
+                        "variables": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "key": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -5211,10 +7439,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "x-allowed": [
-                  "projectName",
-                  "tags"
-                ]
+                "x-allowed": {
+                  "body": [
+                    "projectName",
+                    "tags"
+                  ]
+                }
               }
             }
           }
@@ -5236,7 +7466,7 @@
       "delete": {
         "x-action": "deleteProject",
         "x-entityId": {
-          "pathName": "params.id"
+          "pathId": "params.id"
         },
         "x-sdk-interface": "projects.delete",
         "operationId": "projects-delete",
@@ -5336,7 +7566,7 @@
         ],
         "responses": {
           "200": {
-            "description": "progress structure"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5356,7 +7586,7 @@
         ],
         "responses": {
           "200": {
-            "description": "progress structure"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5367,6 +7597,8 @@
         "x-sdk-interface": "progress.get"
       },
       "delete": {
+        "x-action": "buildTerminated",
+        "x-entityId": "params.id",
         "parameters": [
           {
             "$ref": "#/components/parameters/id"
@@ -5374,7 +7606,7 @@
         ],
         "responses": {
           "200": {
-            "description": "progress structure"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5385,17 +7617,185 @@
         "x-sdk-interface": "progress.terminate"
       }
     },
-    "/registry/auth/token": {
+    "/providers/github/hook/{id}": {
       "post": {
+        "x-action": "receiveWebhook",
+        "x-middlewares": ["enrichHeaders"],
+        "x-entityId": {
+          "pathId": "params.id",
+          "handlerName": "webhooks.githubName"
+        },
+        "x-allowed": {
+          "headers": [
+            "x-github-event",
+            "x-github-delivery"
+          ]
+        },
+        "x-sdk-interface": "providers.sendGithubWebhook",
+        "operationId": "providers-send-github-webhook",
+        "summary": "Send github webhook",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/providers/gitlab/hook/{id}": {
+      "post": {
+        "x-action": "receiveWebhook",
+        "x-middlewares": ["enrichHeaders"],
+        "x-entityId": {
+          "pathId": "params.id",
+          "handlerName": "webhooks.gitlabName"
+        },
+        "x-allowed": {
+          "headers": [
+            "x-gitlab-event",
+            "x-gitlab-token"
+          ]
+        },
+        "x-sdk-interface": "providers.sendGitlabWebhook",
+        "operationId": "providers-send-gitlab-webhook",
+        "summary": "Send gitlab webhook",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/providers/bitbucket/hook/{id}": {
+      "post": {
+        "x-action": "receiveWebhook",
+        "x-middlewares": ["enrichHeaders"],
+        "x-entityId": {
+          "pathId": "params.id",
+          "handlerName": "webhooks.bitbucketName"
+        },
+        "x-allowed": {
+          "headers": [
+            "x-hook-uuid",
+            "x-event-key",
+            "x-event-time",
+            "x-request-uuid",
+            "x-attempt-number"
+          ]
+        },
+        "x-sdk-interface": "providers.sendBitbucketbWebhook",
+        "operationId": "providers-send-bitbucket-webhook",
+        "summary": "Send bitbucket webhook",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/providers/bitbucket_server/hook/{id}": {
+      "post": {
+        "x-action": "receiveWebhook",
+        "x-middlewares": ["enrichHeaders"],
+        "x-entityId": {
+          "pathId": "params.id",
+          "handlerName": "webhooks.bitbucketServerName"
+        },
+        "x-allowed": {
+          "headers": [
+            "x-event-key",
+            "x-request-id"
+          ]
+        },
+        "x-sdk-interface": "providers.sendBitbucketServerbWebhook",
+        "operationId": "providers-send-bitbucket-server-webhook",
+        "summary": "Send bitbucket server webhook",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/providers/azure-devops/hook/{id}": {
+      "post": {
+        "x-action": "receiveWebhook",
+        "x-middlewares": ["enrichHeaders"],
+        "x-entityId": {
+          "pathId": "params.id",
+          "handlerName": "webhooks.azureDevopsName"
+        },
+        "x-allowed": {
+          "headers": [
+            "request-id",
+            "x-vss-subscriptionid",
+            "x-vss-activityid"
+          ]
+        },
+        "x-sdk-interface": "providers.sendAzureDevopsbWebhook",
+        "operationId": "providers-send-azure-devops-webhook",
+        "summary": "Send azure devops webhook",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/registry/auth/token": {
+      "post": {
+        "x-action": "crateCFCRToken",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
           "registries"
         ],
-        "operationId": "codefresh-registry-generate-cfcr-token",
+        "operationId": "registries-generate-cfcr-token",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5417,11 +7817,33 @@
         "x-sdk-interface": "registries.generateCfcrToken"
       }
     },
+    "/registry/auth/token/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "x-action": "deleteCRCRToken",
+        "x-entityId": "params.id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "registries"
+        ],
+        "summary": "Generate cfcr token",
+        "x-sdk-interface": "registries.deleteCfcrToken",
+        "operationId": "registries-delete-cfcr-token"
+      }
+    },
     "/repos": {
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5434,7 +7856,8 @@
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Context"
           }
         ],
         "summary": "List git repos (github, bitbucket, etc)",
@@ -5445,7 +7868,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5457,9 +7880,13 @@
         "x-sdk-interface": "registries.list"
       },
       "post": {
+        "x-action": "createRegistry",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5476,7 +7903,8 @@
                     "type": "string"
                   },
                   "password": {
-                    "type": "string"
+                    "type": "string",
+                    "x-secure": true
                   },
                   "domain": {
                     "type": "string"
@@ -5486,6 +7914,10 @@
                   },
                   "behindFirewall": {
                     "type": "string"
+                  },
+                  "secretAccessKey": {
+                    "type": "string",
+                    "x-secure": true
                   }
                 },
                 "required": [
@@ -5505,11 +7937,13 @@
         "x-sdk-interface": "registries.create"
       }
     },
-    "/registries/{id}": {
+    "/registries/{registryId}": {
       "delete": {
+        "x-action": "deleteRegistry",
+        "x-entityId": "params.registryId",
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5518,18 +7952,108 @@
         "operationId": "registries-delete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "description": "id of an object",
+            "in": "path",
+            "name": "registryId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "summary": "Delete",
         "x-sdk-interface": "registries.delete"
+      },
+      "patch": {
+        "x-action": "updateRegistry",
+        "x-entityId": {
+          "pathId": "params.registryId",
+          "pathName": "body.name"
+        },
+        "operationId": "registries-patch",
+        "tags": [
+          "registries"
+        ],
+        "summary": "Patch",
+        "x-sdk-interface": "registries.patch",
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "registryId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "password": {
+                    "type": "string",
+                    "x-secure": true
+                  },
+                  "secretAccessKey": {
+                    "type": "string",
+                    "x-secure": true
+                  }
+                },
+                "required": [
+                  "username",
+                  "password",
+                  "domain",
+                  "name"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "description": "Description of the token",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        }
+      }
+    },
+    "/registries/{registryId}/default": {
+      "patch": {
+        "x-action": "setDefaultRegistry",
+        "x-entityId": "params.registryId",
+        "operationId": "registries-default-patch",
+        "summary": "Patch default",
+        "x-sdk-interface": "registries.setDefault",
+        "tags": [
+          "registries"
+        ],
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "registryId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        }
       }
     },
     "/registries/test": {
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5579,7 +8103,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5592,7 +8116,8 @@
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Context"
           },
           {
             "in": "query",
@@ -5600,7 +8125,8 @@
             "schema": {
               "type": "string"
             },
-            "allowEmptyValue": true
+            "allowEmptyValue": true,
+            "description": "Thin"
           }
         ],
         "summary": "List",
@@ -5619,7 +8145,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5634,7 +8160,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5648,7 +8174,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Owner"
           },
           {
             "in": "path",
@@ -5656,14 +8183,16 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Repo"
           },
           {
             "in": "query",
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Context"
           }
         ],
         "summary": "Get git repo",
@@ -5674,7 +8203,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5687,25 +8216,32 @@
             "name": "limit",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Limit"
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Offset"
           }
         ],
         "summary": "List",
         "x-sdk-interface": "runtimeEnvs.list"
       }
     },
-    "/runtime-environments/default/{name}": {
+    "/runtime-environments/default/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "upsertRuntimeEnv",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5715,22 +8251,28 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           }
         ],
         "summary": "Set default",
         "x-sdk-interface": "runtimeEnvs.setDefault"
       }
     },
-    "/runtime-environments/{name}": {
+    "/runtime-environments/{runtimeEnvironmentName}": {
       "put": {
+        "x-action": "upsertRuntimeEnv",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5740,43 +8282,44 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "extend",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Extend"
           },
           {
             "in": "query",
             "name": "description",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Description"
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Update",
         "x-sdk-interface": "runtimeEnvs.update"
       },
       "delete": {
+        "x-action": "deleteRuntimeEnv",
+        "x-entityId": {
+          "pathName": "params.runtimeEnvironmentName"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5786,18 +8329,20 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "force",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Force"
           }
         ],
         "summary": "Delete",
@@ -5806,7 +8351,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5816,32 +8361,36 @@
         "parameters": [
           {
             "in": "path",
-            "name": "name",
+            "name": "runtimeEnvironmentName",
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Runtime environment name"
           },
           {
             "in": "query",
             "name": "version",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Version"
           },
           {
             "in": "query",
             "name": "extend",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Extend"
           },
           {
             "in": "query",
             "name": "history",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "History"
           }
         ],
         "summary": "Get",
@@ -5852,7 +8401,7 @@
       "post": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5917,7 +8466,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5967,7 +8516,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -5981,23 +8530,29 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           },
           {
             "in": "query",
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Context"
           }
         ],
         "summary": "Get",
         "x-sdk-interface": "repos.get"
       },
       "delete": {
+        "x-action": "serviceDeleted",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6011,14 +8566,16 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           },
           {
             "in": "query",
             "name": "context",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Context"
           }
         ],
         "summary": "Delete",
@@ -6027,9 +8584,13 @@
     },
     "/team": {
       "post": {
+        "x-action": "teamCreated",
+        "x-entityId": {
+          "pathName": "body.name"
+        },
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6071,7 +8632,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6083,11 +8644,39 @@
         "x-sdk-interface": "teams.list"
       }
     },
+    "/team/{teamId}": {
+      "delete": {
+        "x-action": "teamDeleted",
+        "x-entityId": "params.teamId",
+        "x-sdk-interface": "teams.delete",
+        "operationId": "teams-delete",
+        "summary": "Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "teamId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "team id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "teams"
+        ]
+      }
+    },
     "/team/group/synchronize/name/{name}/type/{type}": {
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6101,7 +8690,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Name"
           },
           {
             "in": "path",
@@ -6109,14 +8699,16 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "Type"
           },
           {
             "in": "query",
             "name": "access_token",
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "Access token"
           }
         ],
         "summary": "Synchronize client with group",
@@ -6125,6 +8717,8 @@
     },
     "/team/{teamId}/{userId}/assignUserToTeam": {
       "put": {
+        "x-action": "assignUserToTeam",
+        "x-entityId": "params.teamId",
         "parameters": [
           {
             "description": "The id of the team",
@@ -6139,6 +8733,37 @@
             "description": "The user id for assign",
             "in": "path",
             "name": "userId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "teams"
+        ],
+        "operationId": "teams-add-user",
+        "summary": "Add user",
+        "x-sdk-interface": "teams.addUser"
+      }
+    },
+    "/team/{teamId}/renameTeam": {
+      "put": {
+        "x-action": "renameTeam",
+        "x-entityId": {
+          "pathId": "params.teamId",
+          "pathName": "body.name"
+        },
+        "parameters": [
+          {
+            "description": "The id of the team",
+            "in": "path",
+            "name": "teamId",
             "required": true,
             "schema": {
               "type": "string"
@@ -6153,13 +8778,15 @@
         "tags": [
           "teams"
         ],
-        "operationId": "teams-add-user",
-        "summary": "Add user",
-        "x-sdk-interface": "teams.addUser"
+        "operationId": "teams-rename",
+        "summary": "Rename team",
+        "x-sdk-interface": "teams.rename"
       }
     },
     "/team/{teamId}/{userId}/deleteUserFromTeam": {
       "put": {
+        "x-action": "deleteUserFromTeam",
+        "x-entityId": "params.teamId",
         "parameters": [
           {
             "description": "The id of the team",
@@ -6182,7 +8809,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6197,7 +8824,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6211,7 +8838,8 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": true,
+            "description": "User id"
           }
         ],
         "summary": "List by user",
@@ -6222,7 +8850,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "user structure"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6232,13 +8860,90 @@
         "summary": "Get",
         "parameters": [],
         "x-sdk-interface": "users.get"
+      },
+      "post": {
+        "x-action": "updateUser",
+        "x-entityId": {
+          "pathId": "body._id",
+          "pathName": "body.name"
+        },
+        "operationId": "users-create",
+        "x-sdk-interface": "users.create",
+        "summary": "Create",
+        "tags": [
+          "users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account": {
+                    "type": "object",
+                    "x-secure": true
+                  },
+                  "activeAccount": {
+                    "type": "object",
+                    "x-secure": true
+                  },
+                  "logins": {
+                    "type": "object",
+                    "x-secure": true
+                  },
+                  "key": {
+                    "type": "object",
+                    "x-secure": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        }
+      }
+    },
+    "/user/onboarding-status/user": {
+      "post": {
+        "x-action": "createOnboardingStatusUser",
+        "operationId": "users-onboarding-status-create",
+        "x-sdk-interface": "users.onboardingStatus.create",
+        "summary": "Create onboarding status",
+        "tags": [
+          "users"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        }
+      }
+    },
+    "/user/onboarding-status/account": {
+      "post": {
+        "x-action": "createOnboardingStatusAccount",
+        "operationId": "users-onboarding-status-account",
+        "x-sdk-interface": "users.onboardingStatus.account",
+        "summary": "Onboarding status account",
+        "tags": [
+          "users"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        }
       }
     },
     "/user/context": {
       "get": {
         "responses": {
           "200": {
-            "description": "response"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6265,7 +8970,7 @@
         ],
         "responses": {
           "200": {
-            "description": "user structure"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6273,13 +8978,7 @@
         ],
         "operationId": "users-change-account",
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
+          "$ref": "#/components/requestBodies/json"
         },
         "summary": "Change account",
         "x-sdk-interface": "users.changeAccount"
@@ -6290,7 +8989,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "token"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6305,7 +9004,7 @@
       "get": {
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/json"
           }
         },
         "tags": [
@@ -6323,6 +9022,7 @@
       "accountName": {
         "in": "path",
         "name": "accountName",
+        "description": "Account name",
         "required": true,
         "schema": {
           "type": "string"
@@ -6331,6 +9031,7 @@
       "boardId": {
         "in": "query",
         "name": "boardId",
+        "description": "Board id",
         "required": true,
         "schema": {
           "type": "string"
@@ -6367,6 +9068,15 @@
         "description": "id of an object",
         "in": "path",
         "name": "id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "accountId": {
+        "description": "accountId of an object",
+        "in": "path",
+        "name": "accountId",
         "required": true,
         "schema": {
           "type": "string"
@@ -6410,6 +9120,12 @@
       }
     },
     "schemas": {
+      "requestBody": {
+        "type": "object"
+      },
+      "json": {
+        "type": "object"
+      },
       "abac": {
         "properties": {
           "teams": {
@@ -6437,6 +9153,15 @@
       }
     },
     "requestBodies": {
+      "json": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/requestBody"
+            }
+          }
+        }
+      },
       "create_boardOptions": {
         "content": {
           "application/json": {
@@ -6496,6 +9221,30 @@
           }
         }
       },
+      "create_annotationOptions": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "entityId": {
+                  "type": "string"
+                },
+                "entityType": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "required": true
+      },
       "abac": {
         "content": {
           "application/json": {
@@ -6527,6 +9276,18 @@
             }
           }
         }
+      }
+    },
+    "responses": {
+      "json": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/requestBody"
+            }
+          }
+        },
+        "description": "json"
       }
     },
     "securitySchemes": {
