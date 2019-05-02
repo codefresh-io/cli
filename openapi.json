@@ -1661,6 +1661,14 @@
               "type": "string"
             },
             "description": "branch name"
+          },
+          {
+            "name": "pipelineTriggerId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Pipeline trigger id"
           }
         ],
         "responses": {
