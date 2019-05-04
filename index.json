@@ -210,6 +210,13 @@
 	"content": " Description Create a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\nCommand codefresh create context git bitbucket \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --behind-firewall   Set to true to mark this context with behind firewall flag   --help   Print help information   --app-password -a  Application password generated in bitbucket. required   --username -u  username that has permissions to use application password. required    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/annotations/get/",
+	"title": "get",
+	"tags": [],
+	"description": "",
+	"content": " Description Get annotations.\nCommand codefresh get annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nArguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    Examples Get all annotations for entity codefresh get annotation image 2dfacdaad466\nGet specified annotations codefresh get annotation image 2dfacdaad466 coverage tests_passed\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/",
 	"title": "github",
 	"tags": [],
@@ -378,6 +385,13 @@
 	"content": " Description Show logs of a build.\nCommand codefresh logs \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information   --f   Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID\nGet all previous logs of build ID and attach to future logs codefresh logs -f ID\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/annotations/create/",
+	"title": "create",
+	"tags": [],
+	"description": "",
+	"content": " Description Annotate a resource with labels.\nCommand codefresh create annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; \u0026lt;labels...\u0026gt;\nArguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%\nAnnotate entity with multiple labels codefresh create annotation image 2dfacdaad466 coverage=75% tests_passed=true\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/installation/docker/",
 	"title": "Docker Image",
 	"tags": [],
@@ -537,6 +551,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Test a helm release.\nCommand codefresh test-release \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup  false delete test pods upon completion (default false)    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/annotations/delete/",
+	"title": "delete",
+	"tags": [],
+	"description": "",
+	"content": " Description Delete annotations.\nCommand codefresh delete annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nArguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete specified annotations codefresh delete annotation image 2dfacdaad466 coverage tests_passed\nDelete all annotations of entity codefresh delete annotation image 2dfacdaad466\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/authentication/",
@@ -761,6 +782,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Apply changes to a context.\nUse apply to patch an existing context.\nCommand codefresh patch context\nAliases codefresh patch ctx context\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Apply changes to a context codefresh patch context -f ./context.yml\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/annotations/",
+	"title": "Annotations",
+	"tags": [],
+	"description": "",
+	"content": " get codefresh get annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nGet annotations.\ncreate codefresh create annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; \u0026lt;labels...\u0026gt;\nAnnotate a resource with labels.\ndelete codefresh delete annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nDelete annotations.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/board/",

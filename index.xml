@@ -384,6 +384,17 @@ Possible values:
     </item>
     
     <item>
+      <title>get</title>
+      <link>https://codefresh-io.github.io/cli/annotations/get/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/annotations/get/</guid>
+      <description>Description Get annotations.
+Command codefresh get annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
+    </item>
+    
+    <item>
       <title>github</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -679,6 +690,17 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
     </item>
     
     <item>
+      <title>create</title>
+      <link>https://codefresh-io.github.io/cli/annotations/create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/annotations/create/</guid>
+      <description>Description Annotate a resource with labels.
+Command codefresh create annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; &amp;lt;labels...&amp;gt;
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
+    </item>
+    
+    <item>
       <title>Docker Image</title>
       <link>https://codefresh-io.github.io/cli/installation/docker/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
@@ -940,6 +962,17 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
       <description> Description Test a helm release.
 Command codefresh test-release &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup  false delete test pods upon completion (default false)    </description>
+    </item>
+    
+    <item>
+      <title>delete</title>
+      <link>https://codefresh-io.github.io/cli/annotations/delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/annotations/delete/</guid>
+      <description>Description Delete annotations.
+Command codefresh delete annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete specified annotations codefresh delete annotation image 2dfacdaad466 coverage tests_passed</description>
     </item>
     
     <item>
