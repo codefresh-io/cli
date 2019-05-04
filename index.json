@@ -942,7 +942,7 @@
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": " Delete Helm Release codefresh delete-release \u0026lt;name\u0026gt;\nDelete a helm release from a kubernetes cluster.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nTest Helm Release codefresh test-release \u0026lt;name\u0026gt;\nTest a helm release.\n"
+	"content": " Delete Helm Release codefresh delete-release \u0026lt;name\u0026gt;\nDelete a helm release from a kubernetes cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release \u0026lt;name\u0026gt;\nTest a helm release.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/cli-config/profiles/",
