@@ -6588,6 +6588,33 @@
         "summary": "Get server version",
         "x-sdk-interface": "version.getServerVersion"
       }
+    },
+    "/workflow/{buildId}/pending-approval/approve": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "workflow",
+          "build",
+          "approve"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "buildId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "workflow-approve",
+        "summary": "Approve a pending-approval workflow",
+        "x-sdk-interface": "workflow.approve"
+      }
     }
   },
   "components": {
