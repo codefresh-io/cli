@@ -391,7 +391,7 @@ Possible values:
       <guid>https://codefresh-io.github.io/cli/annotations/get/</guid>
       <description>Description Get annotations.
 Command codefresh get annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
-Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels to filter by    Options    Option Alias Default Description     --help   Print help information    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
     </item>
     
     <item>
@@ -697,7 +697,7 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
       <guid>https://codefresh-io.github.io/cli/annotations/create/</guid>
       <description>Description Annotate a resource with labels.
 Command codefresh create annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; &amp;lt;labels...&amp;gt;
-Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels. required    Options    Option Alias Default Description     --help   Print help information    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
     </item>
     
     <item>
@@ -972,7 +972,7 @@ Arguments    Option Alias Default Description     name   Release name. required 
       <guid>https://codefresh-io.github.io/cli/annotations/delete/</guid>
       <description>Description Delete annotations.
 Command codefresh delete annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
-Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete specified annotations codefresh delete annotation image 2dfacdaad466 coverage tests_passed</description>
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels to delete    Options    Option Alias Default Description     --help   Print help information    Examples Delete specified annotations codefresh delete annotation image 2dfacdaad466 coverage tests_passed</description>
     </item>
     
     <item>
