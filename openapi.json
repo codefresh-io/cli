@@ -6615,6 +6615,33 @@
         "summary": "Approve a pending-approval workflow",
         "x-sdk-interface": "workflow.approve"
       }
+    },
+    "/workflow/{buildId}/pending-approval/deny": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "workflow",
+          "build",
+          "deny"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "buildId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "workflow-deny",
+        "summary": "Deny a pending-approval workflow",
+        "x-sdk-interface": "workflow.deny"
+      }
     }
   },
   "components": {

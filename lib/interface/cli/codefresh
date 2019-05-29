@@ -22,12 +22,3 @@ if (process.argv.includes('--get-yargs-completions')) {
         process.exit(1);
     });
 }
-
-
-
-// YARIK'S:
-// yargs
-// .command('validate', yargs => yargs.option('filename', {describe; }), agrv => console.log(argv.filename))
-// .parse()
-
-// ./codefresh validate --filename ./some/path/name.json ->
