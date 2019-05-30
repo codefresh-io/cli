@@ -326,6 +326,20 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/builds/approve/" class="dd-item">
+        <div>
+          <a href="/cli/builds/approve/">
+            Approve
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/builds/deny/" class="dd-item">
+        <div>
+          <a href="/cli/builds/deny/">
+            Deny
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/" class="dd-item haschildren
@@ -1191,6 +1205,8 @@
 <li><a href="#restart-build-restart-build"><a href="restart-build">Restart Build</a></a></li>
 <li><a href="#terminate-build-terminate-build"><a href="terminate-build">Terminate Build</a></a></li>
 <li><a href="#wait-for-build-condition-wait-for-build-condition"><a href="wait-for-build-condition">Wait For Build Condition</a></a></li>
+<li><a href="#approve-approve"><a href="approve">Approve</a></a></li>
+<li><a href="#deny-deny"><a href="deny">Deny</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1250,6 +1266,22 @@
 <p>Wait until a condition will be met on a build.</p>
 
 <p>Wait command is useful in case there is a need to wait for a desired status on a specific set of builds.</p>
+
+<h3 id="approve-approve"><a href="approve">Approve</a></h3>
+
+<p><code>codefresh approve &lt;buildId&gt;</code></p>
+
+<p>Approve a pending-approval workflow.</p>
+
+<p>approve &lt;$BUILD_ID&gt;.</p>
+
+<h3 id="deny-deny"><a href="deny">Deny</a></h3>
+
+<p><code>codefresh deny &lt;buildId&gt;</code></p>
+
+<p>Deny a pending-approval workflow.</p>
+
+<p>deny &lt;$BUILD_ID&gt;.</p>
 
 
 

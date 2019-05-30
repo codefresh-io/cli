@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Delete tokens :: Codefresh CLI Documentation</title>
+<title>Deny :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/tokens/delete-tokens/">
+  <body data-url="/cli/builds/deny/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -284,10 +284,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/builds/" class="dd-item haschildren
+    <li data-nav-id="/cli/builds/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/builds/">Builds</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/builds/">Builds</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/builds/get-build/" class="dd-item">
@@ -332,7 +333,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/builds/deny/" class="dd-item">
+      <li data-nav-id="/cli/builds/deny/" class="dd-item active">
         <div>
           <a href="/cli/builds/deny/">
             Deny
@@ -840,11 +841,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/tokens/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/tokens/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/tokens/">Tokens</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/tokens/">Tokens</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/tokens/create-tokens/" class="dd-item">
@@ -861,7 +861,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/tokens/delete-tokens/" class="dd-item active">
+      <li data-nav-id="/cli/tokens/delete-tokens/" class="dd-item">
         <div>
           <a href="/cli/tokens/delete-tokens/">
             Delete tokens
@@ -1186,7 +1186,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/tokens/'>Tokens</a> > Delete tokens
+ <a href='/cli/'></a> > <a href='/cli/builds/'>Builds</a> > Deny
 
  
 
@@ -1206,17 +1206,9 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
+<li><a href="#command">Command</a></li>
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#delete-one-token">Delete one token</a></li>
-<li><a href="#delete-many-tokens">Delete many tokens</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1230,7 +1222,7 @@
 
 <div id="body-inner">
   
-    <h1>Delete tokens</h1>
+    <h1>Deny</h1>
   
 
 
@@ -1242,17 +1234,13 @@
 
 <h3 id="description">Description</h3>
 
-<p>Revoke Codefresh token.</p>
+<p>Deny a pending-approval workflow.</p>
 
-<p>Provide one or many token ids to delete. Ids can be retrieved with &ldquo;get&rdquo; command.</p>
+<p>deny &lt;$BUILD_ID&gt;.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh delete tokens [ids..]</code></p>
-
-<h4 id="aliases">Aliases</h4>
-
-<p><code>codefresh delete token [ids..]</code></p>
+<p><code>codefresh deny &lt;buildId&gt;</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -1268,10 +1256,10 @@
 
 <tbody>
 <tr>
-<td>ids</td>
+<td>buildId</td>
 <td></td>
 <td></td>
-<td>token names or ids. <code>required</code></td>
+<td>Build&rsquo;s id. <code>required</code></td>
 </tr>
 </tbody>
 </table>
@@ -1297,16 +1285,6 @@
 </tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="delete-one-token">Delete one token</h4>
-
-<p><code>codefresh delete token [token_id]</code></p>
-
-<h4 id="delete-many-tokens">Delete many tokens</h4>
-
-<p><code>codefresh delete tokens [token_id_1] [token_id_2]</code></p>
 
 
     

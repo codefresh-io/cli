@@ -1268,6 +1268,18 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Approve</title>
+      <link>https://codefresh-io.github.io/cli/builds/approve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/builds/approve/</guid>
+      <description> Description Approve a pending-approval workflow.
+approve &amp;lt;$BUILD_ID&amp;gt;.
+Command codefresh approve &amp;lt;buildId&amp;gt;
+Arguments    Option Alias Default Description     buildId   Build&amp;rsquo;s id. required    Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
       <title>Create Cluster</title>
       <link>https://codefresh-io.github.io/cli/clusters/create-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1290,6 +1302,18 @@ Command codefresh create runtime-environments [cluster]
 Aliases codefresh create re [cluster]
 codefresh create runtime-environment [cluster]
 Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
+      <title>Deny</title>
+      <link>https://codefresh-io.github.io/cli/builds/deny/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/builds/deny/</guid>
+      <description> Description Deny a pending-approval workflow.
+deny &amp;lt;$BUILD_ID&amp;gt;.
+Command codefresh deny &amp;lt;buildId&amp;gt;
+Arguments    Option Alias Default Description     buildId   Build&amp;rsquo;s id. required    Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>

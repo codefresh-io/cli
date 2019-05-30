@@ -468,6 +468,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/builds/approve/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/board/</loc>
   </url>
   
@@ -489,6 +493,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/builds/deny/</loc>
   </url>
   
   <url>
