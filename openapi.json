@@ -6613,7 +6613,7 @@
         ],
         "operationId": "workflow-approve",
         "summary": "Approve a pending-approval workflow",
-        "x-sdk-interface": "workflow.approve"
+        "x-sdk-interface": "workflows.approve"
       }
     },
     "/workflow/{buildId}/pending-approval/deny": {
@@ -6640,7 +6640,7 @@
         ],
         "operationId": "workflow-deny",
         "summary": "Deny a pending-approval workflow",
-        "x-sdk-interface": "workflow.deny"
+        "x-sdk-interface": "workflows.deny"
       }
     }
   },
