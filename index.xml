@@ -345,6 +345,7 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/triggers/get-triggers/</guid>
       <description>Description Get triggers, optionally filtered by pipeline or event.
+Only cron/registry triggers are supported (for git triggers use codefresh get pip &amp;lt;pip-name&amp;gt; -o json).
 Command codefresh get triggers
 Aliases codefresh get trigger triggers
 codefresh get t triggers
