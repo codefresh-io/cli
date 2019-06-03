@@ -1506,6 +1506,27 @@
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.get"
       }
     },
+
+    "/pipelines/analyze": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-analyze",
+        "parameters": [],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/pipelines_analyze"
+        },
+        "summary": "Analyze pipeline",
+        "x-sdk-interface": "pipelines.analyze"
+      }
+    },
+
     "/annotations": {
       "delete": {
         "responses": {
@@ -6856,6 +6877,27 @@
                   "type": "string"
                 },
                 "value": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        },
+        "required": true
+      },
+      "pipelines_analyze": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "repo": {
+                  "type": "object"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "source": {
                   "type": "string"
                 }
               },
