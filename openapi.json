@@ -5354,6 +5354,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "description": "should skip trigger validation",
+            "in": "query",
+            "name": "skipTriggerValidation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "allows to omit revision validation - will use revision of existing pipeline",
+            "in": "query",
+            "name": "disableRevisionCheck",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
