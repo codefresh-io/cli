@@ -1269,6 +1269,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Analyze</title>
+      <link>https://codefresh-io.github.io/cli/analyzer/analyze/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/analyzer/analyze/</guid>
+      <description>Description Analyze your repo.
+Command codefresh analyze &amp;lt;repoOwner&amp;gt; &amp;lt;repoName&amp;gt; [context]
+Arguments    Option Alias Default Description     repoOwner   Repository owner. required   repoName   Repository name. required   context   Your git context that you can get from integrations -&amp;gt; git , if empty - using personal context    Options    Option Alias Default Description     --help   Print help information    Examples Analyze repo codefresh analyze petlove bee github</description>
+    </item>
+    
+    <item>
       <title>Approve</title>
       <link>https://codefresh-io.github.io/cli/builds/approve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

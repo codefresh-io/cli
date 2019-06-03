@@ -784,6 +784,20 @@
 	"content": " Description Apply changes to a context.\nUse apply to patch an existing context.\nCommand codefresh patch context\nAliases codefresh patch ctx context\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Apply changes to a context codefresh patch context -f ./context.yml\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/analyzer/analyze/",
+	"title": "Analyze",
+	"tags": [],
+	"description": "",
+	"content": " Description Analyze your repo.\nCommand codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nArguments    Option Alias Default Description     repoOwner   Repository owner. required   repoName   Repository name. required   context   Your git context that you can get from integrations -\u0026gt; git , if empty - using personal context    Options    Option Alias Default Description     --help   Print help information    Examples Analyze repo codefresh analyze petlove bee github\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/analyzer/",
+	"title": "Analyzer",
+	"tags": [],
+	"description": "",
+	"content": " Analyze codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nAnalyze your repo.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/annotations/",
 	"title": "Annotations",
 	"tags": [],

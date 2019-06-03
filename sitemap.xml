@@ -464,6 +464,14 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/analyzer/analyze/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/analyzer/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/annotations/</loc>
   </url>
   
