@@ -22,4 +22,3 @@ if (process.argv.includes('--get-yargs-completions')) {
         process.exit(1);
     });
 }
-
