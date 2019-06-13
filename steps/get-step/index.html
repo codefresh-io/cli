@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Analyze :: Codefresh CLI Documentation</title>
+<title>Get Step :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/analyzer/analyze/">
+  <body data-url="/cli/steps/get-step/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -600,14 +600,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/analyzer/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/analyzer/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/analyzer/">Analyzer</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/analyzer/">Analyzer</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/analyzer/analyze/" class="dd-item active">
+      <li data-nav-id="/cli/analyzer/analyze/" class="dd-item">
         <div>
           <a href="/cli/analyzer/analyze/">
             Analyze
@@ -856,13 +855,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/steps/" class="dd-item haschildren
+    <li data-nav-id="/cli/steps/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/steps/">Steps</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/steps/">Steps</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/steps/get-step/" class="dd-item">
+      <li data-nav-id="/cli/steps/get-step/" class="dd-item active">
         <div>
           <a href="/cli/steps/get-step/">
             Get Step
@@ -1223,7 +1223,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/analyzer/'>Analyzer</a> > Analyze
+ <a href='/cli/'></a> > <a href='/cli/steps/'>Steps</a> > Get Step
 
  
 
@@ -1243,13 +1243,13 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#aliases">Aliases</a></li>
+</ul></li>
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#analyze-repo">Analyze repo</a></li>
-</ul></li>
+<li><a href="#output-options">Output Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1263,7 +1263,7 @@
 
 <div id="body-inner">
   
-    <h1>Analyze</h1>
+    <h1>Get Step</h1>
   
 
 
@@ -1275,11 +1275,15 @@
 
 <h3 id="description">Description</h3>
 
-<p>Analyze your repo.</p>
+<p>Get a specific step or an array of steps.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh analyze &lt;repoOwner&gt; &lt;repoName&gt; [context]</code></p>
+<p><code>codefresh get steps [id..]</code></p>
+
+<h4 id="aliases">Aliases</h4>
+
+<p><code>codefresh get step [id..]</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -1295,24 +1299,10 @@
 
 <tbody>
 <tr>
-<td>repoOwner</td>
+<td>id</td>
 <td></td>
 <td></td>
-<td>Repository owner. <code>required</code></td>
-</tr>
-
-<tr>
-<td>repoName</td>
-<td></td>
-<td></td>
-<td>Repository name. <code>required</code></td>
-</tr>
-
-<tr>
-<td>context</td>
-<td></td>
-<td></td>
-<td>Your git context that you can get from integrations -&gt; git , if empty - using personal context</td>
+<td>Step name/id</td>
 </tr>
 </tbody>
 </table>
@@ -1336,14 +1326,93 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--name</td>
+<td></td>
+<td></td>
+<td>Filter steps by name</td>
+</tr>
+
+<tr>
+<td>--label</td>
+<td>-l</td>
+<td></td>
+<td>Filter by a label</td>
+</tr>
+
+<tr>
+<td>--limit</td>
+<td></td>
+<td>25</td>
+<td>Limit amount of returned results</td>
+</tr>
+
+<tr>
+<td>--page</td>
+<td></td>
+<td>1</td>
+<td>Paginated page</td>
+</tr>
 </tbody>
 </table>
 
-<h3 id="examples">Examples</h3>
+<h3 id="output-options">Output Options</h3>
 
-<h4 id="analyze-repo">Analyze repo</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p><code>codefresh analyze petlove bee github</code></p>
+<tbody>
+<tr>
+<td>--select-columns</td>
+<td>--sc</td>
+<td></td>
+<td>Columns to select for table output</td>
+</tr>
+
+<tr>
+<td>--output</td>
+<td>-o</td>
+<td></td>
+<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
+</tr>
+
+<tr>
+<td>--date-format</td>
+<td>--df</td>
+<td></td>
+<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
+</tr>
+
+<tr>
+<td>--pretty</td>
+<td></td>
+<td></td>
+<td>Use colors and signs for output</td>
+</tr>
+
+<tr>
+<td>--watch</td>
+<td>-w</td>
+<td></td>
+<td>Watching updates to a particular resource</td>
+</tr>
+
+<tr>
+<td>--watch-interval</td>
+<td></td>
+<td>3</td>
+<td>Interval time at watching mode (in seconds)</td>
+</tr>
+</tbody>
+</table>
 
 
     

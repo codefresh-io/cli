@@ -103,6 +103,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/steps/get-step/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/teams/get-teams/</loc>
   </url>
   
@@ -293,6 +297,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/steps/delete-step/</loc>
   </url>
   
   <url>
@@ -549,6 +557,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/cli-config/show-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/steps/</loc>
   </url>
   
   <url>

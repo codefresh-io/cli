@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Analyze :: Codefresh CLI Documentation</title>
+<title>Steps :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/analyzer/analyze/">
+  <body data-url="/cli/steps/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -600,14 +600,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/analyzer/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/analyzer/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/analyzer/">Analyzer</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/analyzer/">Analyzer</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/analyzer/analyze/" class="dd-item active">
+      <li data-nav-id="/cli/analyzer/analyze/" class="dd-item">
         <div>
           <a href="/cli/analyzer/analyze/">
             Analyze
@@ -856,10 +855,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/steps/" class="dd-item haschildren
+    <li data-nav-id="/cli/steps/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/steps/">Steps</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/steps/">Steps</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/steps/get-step/" class="dd-item">
@@ -1220,12 +1220,7 @@
 
 
 
-
-
-
- <a href='/cli/'></a> > <a href='/cli/analyzer/'>Analyzer</a> > Analyze
-
- 
+ <a href='/cli/'></a> > Steps
 
  
 
@@ -1242,14 +1237,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#analyze-repo">Analyze repo</a></li>
-</ul></li>
+<li><a href="#get-step-get-step"><a href="get-step">Get Step</a></a></li>
+<li><a href="#delete-step-delete-step"><a href="delete-step">Delete Step</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1263,7 +1252,7 @@
 
 <div id="body-inner">
   
-    <h1>Analyze</h1>
+    <h1>Steps</h1>
   
 
 
@@ -1271,79 +1260,21 @@
     
     
     
-    
 
-<h3 id="description">Description</h3>
 
-<p>Analyze your repo.</p>
 
-<h3 id="command">Command</h3>
+<h3 id="get-step-get-step"><a href="get-step">Get Step</a></h3>
 
-<p><code>codefresh analyze &lt;repoOwner&gt; &lt;repoName&gt; [context]</code></p>
+<p><code>codefresh get steps [id..]</code></p>
 
-<h3 id="arguments">Arguments</h3>
+<p>Get a specific step or an array of steps.</p>
 
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<h3 id="delete-step-delete-step"><a href="delete-step">Delete Step</a></h3>
 
-<tbody>
-<tr>
-<td>repoOwner</td>
-<td></td>
-<td></td>
-<td>Repository owner. <code>required</code></td>
-</tr>
+<p><code>codefresh delete step [name]</code></p>
 
-<tr>
-<td>repoName</td>
-<td></td>
-<td></td>
-<td>Repository name. <code>required</code></td>
-</tr>
+<p>Delete a step.</p>
 
-<tr>
-<td>context</td>
-<td></td>
-<td></td>
-<td>Your git context that you can get from integrations -&gt; git , if empty - using personal context</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="options">Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="analyze-repo">Analyze repo</h4>
-
-<p><code>codefresh analyze petlove bee github</code></p>
 
 
     
