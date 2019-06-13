@@ -5394,6 +5394,372 @@
         "x-sdk-interface": "pipelines.replace"
       }
     },
+
+    "/steps": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Limit"
+          },
+          {
+            "in": "query",
+            "name": "labels",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Labels"
+          }
+        ],
+        "operationId": "steps-list",
+        "summary": "List",
+        "x-sdk-interface": "steps.list",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getAllAccountSteps"
+        }
+      },
+      "post": {
+        "x-entityId": {
+          "pathName": "body.metadata.name"
+        },
+        "x-action": "stepCreated",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Create",
+        "parameters": [],
+        "x-sdk-interface": "steps.create",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.createStep"
+        }
+      }
+    },
+    "/steps/labels": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-get-labels",
+        "parameters": [],
+        "summary": "Get all labels",
+        "x-sdk-interface": "steps.getLabels",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getLabels"
+        }
+      }
+    },
+    "/steps/labels/{label}": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-get-label-values",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "label",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "label"
+          }
+
+        ],
+        "summary": "Get label values",
+        "x-sdk-interface": "steps.getLabelValues",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getLabelValues"
+        }
+      }
+    },
+    "/steps/names": {
+      "get": {
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Limit"
+          },
+          {
+            "in": "query",
+            "name": "labels",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Labels"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-get-names",
+        "summary": "Get all step names",
+        "x-sdk-interface": "steps.getNames",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getAllAccountStepsNames"
+        }
+      }
+    },
+    "/steps/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Name of step",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-get",
+        "summary": "Get step",
+        "x-sdk-interface": "steps.get",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getStepByNameOrId"
+        }
+      },
+      "put": {
+        "x-entityId": {
+          "pathId": "params.name",
+          "pathName": "body.metadata.name"
+        },
+        "x-action": "updateStep",
+        "parameters": [
+          {
+            "description": "Name of step",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "spec": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-replace",
+        "summary": "Replace",
+        "x-sdk-interface": "steps.replace",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.replaceStepByName"
+        }
+      },
+      "delete": {
+        "x-entityId": {
+          "pathId": "params.name"
+        },
+        "x-action": "stepDeleted",
+        "parameters": [
+          {
+            "description": "Name of step",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/json"
+          }
+        },
+        "tags": [
+          "steps"
+        ],
+        "operationId": "steps-delete",
+        "summary": "Delete",
+        "x-sdk-interface": "steps.delete",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "preMiddleware": [
+            "auth.isAuthenticated"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.deleteStepByName"
+        }
+      }
+    },
+
     "/projects": {
       "post": {
         "x-action": "createProject",
