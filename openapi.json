@@ -5407,6 +5407,47 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id or name"
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by a specific category"
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by a specific tag"
+          },
+          {
+            "in": "query",
+            "name": "isPublic",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter only public steps"
+          },
+          {
+            "in": "query",
+            "name": "graduation_stage",
+            "schema": {
+              "type": "string",
+              "enum": ["graduated", "incubating"]
+            },
+            "description": "Filter by graduation stage"
+          },
+          {
             "name": "offset",
             "in": "query",
             "schema": {
@@ -5415,28 +5456,12 @@
             "description": "Offset"
           },
           {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Id"
-          },
-          {
             "in": "query",
             "name": "limit",
             "schema": {
               "type": "string"
             },
             "description": "Limit"
-          },
-          {
-            "in": "query",
-            "name": "labels",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Labels"
           }
         ],
         "operationId": "steps-list",
