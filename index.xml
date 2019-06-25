@@ -308,7 +308,7 @@ Arguments    Option Alias Default Description     id   Section by id    Options 
       <description>Description Get a specific step or an array of steps.
 Command codefresh get steps [id..]
 Aliases codefresh get step [id..]
-Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter steps by name   --label -l  Filter by a label   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format</description>
+Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage</description>
     </item>
     
     <item>
