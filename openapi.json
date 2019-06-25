@@ -5407,6 +5407,63 @@
         ],
         "parameters": [
           {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id or name"
+          },
+          {
+            "in": "query",
+            "name": "official",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter only official steps"
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by a specific category"
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by a specific tag"
+          },
+          {
+            "in": "query",
+            "name": "public",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter only public steps"
+          },
+          {
+            "in": "query",
+            "name": "private",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter only private steps"
+          },
+          {
+            "in": "query",
+            "name": "stage",
+            "schema": {
+              "type": "string",
+              "enum": ["graduated", "incubating"]
+            },
+            "description": "Filter by stage"
+          },
+          {
             "name": "offset",
             "in": "query",
             "schema": {
@@ -5415,28 +5472,12 @@
             "description": "Offset"
           },
           {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Id"
-          },
-          {
             "in": "query",
             "name": "limit",
             "schema": {
               "type": "string"
             },
             "description": "Limit"
-          },
-          {
-            "in": "query",
-            "name": "labels",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Labels"
           }
         ],
         "operationId": "steps-list",
