@@ -306,8 +306,8 @@ Arguments    Option Alias Default Description     id   Section by id    Options 
       
       <guid>https://codefresh-io.github.io/cli/steps/get-step/</guid>
       <description>Description Get a specific step or an array of steps.
-Command codefresh get steps [id..]
-Aliases codefresh get step [id..]
+Command codefresh get step-types [id..]
+Aliases codefresh get step-type [id..]
 Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage</description>
     </item>
     
@@ -503,7 +503,7 @@ Update to a specific version: yarn global upgrade codefresh@{VERSION}</descripti
       <description> Description Create a resource from a file, directory or url
 Supported resources: &amp;lsquo;context&amp;rsquo;
 &amp;lsquo;pipeline&amp;rdquo;
-&amp;lsquo;step&amp;rsquo;.
+&amp;lsquo;step-type&amp;rsquo;.
 Command codefresh create
 Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
@@ -886,14 +886,14 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
-      <title>Delete Step</title>
-      <link>https://codefresh-io.github.io/cli/steps/delete-step/</link>
+      <title>Delete Step-type</title>
+      <link>https://codefresh-io.github.io/cli/step-types/delete-step-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/steps/delete-step/</guid>
-      <description> Description Delete a step.
-Command codefresh delete step [name]
-Arguments    Option Alias Default Description     name   Step name    Options    Option Alias Default Description     --help   Print help information    </description>
+      <guid>https://codefresh-io.github.io/cli/step-types/delete-step-type/</guid>
+      <description> Description Delete a step-type.
+Command codefresh delete step-type [name]
+Arguments    Option Alias Default Description     name   Step-type name    Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
@@ -1249,7 +1249,7 @@ Arguments    Option Alias Default Description     id   Docker image id   names  
       <description> Description Replace a resource from a file, directory or url
 Supported resources: &amp;lsquo;Context&amp;rsquo;
 &amp;lsquo;Pipeline&amp;rdquo;
-&amp;lsquo;Step&amp;rsquo;.
+&amp;lsquo;Step-type&amp;rsquo;.
 Command codefresh replace
 Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --skip-trigger-validation   Set to true to skip validation (for pipeline replace)    </description>
     </item>

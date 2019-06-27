@@ -172,7 +172,7 @@
 	"title": "Get Step",
 	"tags": [],
 	"description": "",
-	"content": " Description Get a specific step or an array of steps.\nCommand codefresh get steps [id..]\nAliases codefresh get step [id..]\nArguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage\nPossible values:\n- graduated\n- incubating   --official   Filter only official steps   --public   Filter only public steps   --private   Filter only private steps   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
+	"content": " Description Get a specific step or an array of steps.\nCommand codefresh get step-types [id..]\nAliases codefresh get step-type [id..]\nArguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage\nPossible values:\n- graduated\n- incubating   --official   Filter only official steps   --public   Filter only public steps   --private   Filter only private steps   --limit  25 Limit amount of returned results   --page  1 Paginated page    Output Options    Option Alias Default Description     --select-columns --sc  Columns to select for table output   --output -o  Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df  Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty   Use colors and signs for output   --watch -w  Watching updates to a particular resource   --watch-interval  3 Interval time at watching mode (in seconds)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/get-teams/",
@@ -270,7 +270,7 @@
 	"title": "Create",
 	"tags": [],
 	"description": "",
-	"content": " Description Create a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rdquo;\n\u0026lsquo;step\u0026rsquo;.\nCommand codefresh create\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
+	"content": " Description Create a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rdquo;\n\u0026lsquo;step-type\u0026rsquo;.\nCommand codefresh create\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/create-composition/",
@@ -504,11 +504,11 @@
 	"content": " Description Delete a runtime-environment.\nCommand codefresh delete runtime-environments name\nAliases codefresh delete re name\ncodefresh delete runtime-environment name\nOptions    Option Alias Default Description     --help   Print help information    "
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/steps/delete-step/",
-	"title": "Delete Step",
+	"uri": "https://codefresh-io.github.io/cli/step-types/delete-step-type/",
+	"title": "Delete Step-type",
 	"tags": [],
 	"description": "",
-	"content": " Description Delete a step.\nCommand codefresh delete step [name]\nArguments    Option Alias Default Description     name   Step name    Options    Option Alias Default Description     --help   Print help information    "
+	"content": " Description Delete a step-type.\nCommand codefresh delete step-type [name]\nArguments    Option Alias Default Description     name   Step-type name    Options    Option Alias Default Description     --help   Print help information    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/triggers/delete-trigger-event/",
@@ -585,7 +585,7 @@
 	"title": "Operate On Resources",
 	"tags": [],
 	"description": "",
-	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rdquo;\n\u0026lsquo;step\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step\u0026rsquo;.\nDiff codefresh diff\nShow diff between two resources\nSupported resources: runtime-environments.\n"
+	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;pipeline\u0026rdquo;\n\u0026lsquo;step-type\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step-type\u0026rsquo;.\nDiff codefresh diff\nShow diff between two resources\nSupported resources: runtime-environments.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/installation/download/",
@@ -767,7 +767,7 @@
 	"title": "Replace",
 	"tags": [],
 	"description": "",
-	"content": " Description Replace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step\u0026rsquo;.\nCommand codefresh replace\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --skip-trigger-validation   Set to true to skip validation (for pipeline replace)    "
+	"content": " Description Replace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step-type\u0026rsquo;.\nCommand codefresh replace\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource   --skip-trigger-validation   Set to true to skip validation (for pipeline replace)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/compositions/replace-composition/",
@@ -952,11 +952,18 @@
 	"content": " Description Codefresh CLI configuration. Uses profiles\nCLI configuration is used for user-specific properties, for example pretty-print.\nCommand codefresh cli-config\nOptions    Option Alias Default Description     --help   Print help information   --output -o  Output format    Examples Print configuration for current profile codefresh cli-config\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/step-types/",
+	"title": "Step-types",
+	"tags": [],
+	"description": "",
+	"content": " Delete Step-type codefresh delete step-type [name]\nDelete a step-type.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/steps/",
 	"title": "Steps",
 	"tags": [],
 	"description": "",
-	"content": " Get Step codefresh get steps [id..]\nGet a specific step or an array of steps.\nDelete Step codefresh delete step [name]\nDelete a step.\n"
+	"content": " Get Step codefresh get step-types [id..]\nGet a specific step or an array of steps.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/teams/synchronize-teams/",

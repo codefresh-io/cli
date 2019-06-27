@@ -300,7 +300,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/steps/delete-step/</loc>
+    <loc>https://codefresh-io.github.io/cli/step-types/delete-step-type/</loc>
   </url>
   
   <url>
@@ -557,6 +557,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/cli-config/show-config/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/step-types/</loc>
   </url>
   
   <url>

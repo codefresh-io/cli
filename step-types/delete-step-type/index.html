@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Teams :: Codefresh CLI Documentation</title>
+<title>Delete Step-type :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/teams/get-teams/">
+  <body data-url="/cli/step-types/delete-step-type/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -855,13 +855,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/step-types/" class="dd-item haschildren
+    <li data-nav-id="/cli/step-types/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/step-types/">Step-types</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/step-types/">Step-types</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/step-types/delete-step-type/" class="dd-item">
+      <li data-nav-id="/cli/step-types/delete-step-type/" class="dd-item active">
         <div>
           <a href="/cli/step-types/delete-step-type/">
             Delete Step-type
@@ -1095,14 +1096,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/teams/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/teams/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/teams/">Teams</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/teams/">Teams</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/teams/get-teams/" class="dd-item active">
+      <li data-nav-id="/cli/teams/get-teams/" class="dd-item">
         <div>
           <a href="/cli/teams/get-teams/">
             Get Teams
@@ -1231,7 +1231,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/teams/'>Teams</a> > Get Teams
+ <a href='/cli/'></a> > <a href='/cli/step-types/'>Step-types</a> > Delete Step-type
 
  
 
@@ -1251,16 +1251,9 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-all-teams-for-current-account">Get all teams for current account</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1274,7 +1267,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Teams</h1>
+    <h1>Delete Step-type</h1>
   
 
 
@@ -1286,17 +1279,33 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get an array of all current user teams.</p>
+<p>Delete a step-type.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get teams</code></p>
+<p><code>codefresh delete step-type [name]</code></p>
 
-<h4 id="aliases">Aliases</h4>
+<h3 id="arguments">Arguments</h3>
 
-<p><code>codefresh get team teams</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p><code>codefresh get tm teams</code></p>
+<tbody>
+<tr>
+<td>name</td>
+<td></td>
+<td></td>
+<td>Step-type name</td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -1319,69 +1328,6 @@
 </tr>
 </tbody>
 </table>
-
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--select-columns</td>
-<td>--sc</td>
-<td></td>
-<td>Columns to select for table output</td>
-</tr>
-
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
-</tr>
-
-<tr>
-<td>--date-format</td>
-<td>--df</td>
-<td></td>
-<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
-</tr>
-
-<tr>
-<td>--pretty</td>
-<td></td>
-<td></td>
-<td>Use colors and signs for output</td>
-</tr>
-
-<tr>
-<td>--watch</td>
-<td>-w</td>
-<td></td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>--watch-interval</td>
-<td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="get-all-teams-for-current-account">Get all teams for current account</h4>
-
-<p><code>codefresh get teams</code></p>
 
 
     
