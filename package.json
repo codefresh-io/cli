@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.28.0",
+  "version": "0.28.1",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -78,7 +78,7 @@
     "eslint-plugin-jest": "^22.4.1",
     "hugo-cli": "^0.5.4",
     "jest": "^23.6.0",
-    "pkg": "^4.3.5"
+    "pkg": "4.3.8"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cli/issues"
