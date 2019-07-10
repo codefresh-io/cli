@@ -5,19 +5,19 @@ steps:
 
   install_dependencies:
     title: 'Installing testing dependencies'
-    image: codefresh/node-tester-image:8.8.0
+    image: node:${{RUNTIME_VERSION}}
     commands:
         - yarn install --frozen-lockfile
 
   eslint:
     title: 'Running linting logic'
-    image: codefresh/node-tester-image:8.8.0
+    image: node:${{RUNTIME_VERSION}}
     commands:
         - yarn eslint
 
   unit-tests:
     title: 'Running unit tests'
-    image: codefresh/node-tester-image:8.8.0
+    image: node:${{RUNTIME_VERSION}}
     commands:
         - yarn test
 
