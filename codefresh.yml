@@ -4,7 +4,6 @@ version: "1.0"
 steps:
 
   prepare_environment_variabels:
-    stage: prepare
     title: 'Prepare environment variables'
     image: codefresh/cli
     commands:
