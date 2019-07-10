@@ -802,14 +802,14 @@
 	"title": "Analyze",
 	"tags": [],
 	"description": "",
-	"content": " Description Analyze your repo.\nCommand codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nArguments    Option Alias Default Description     repoOwner   Repository owner. required   repoName   Repository name. required   context   Your git context that you can get from integrations -\u0026gt; git , if empty - using personal context    Options    Option Alias Default Description     --help   Print help information    Examples Analyze repo codefresh analyze petlove bee github\n"
+	"content": " Description Analyzes your git repository and creates a proposed Cofefresh pipeline that clones the source code and builds/packages it.\nCommand codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nArguments    Option Alias Default Description     repoOwner   Repository owner. required   repoName   Repository name. required   context   Your git context that you can get from integrations -\u0026gt; git , if empty - using personal context    Options    Option Alias Default Description     --help   Print help information    Examples Analyze repo codefresh analyze elasticio petstore-component-nodejs github\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/analyzer/",
 	"title": "Analyzer",
 	"tags": [],
 	"description": "",
-	"content": " Analyze codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nAnalyze your repo.\n"
+	"content": " Analyze codefresh analyze \u0026lt;repoOwner\u0026gt; \u0026lt;repoName\u0026gt; [context]\nAnalyzes your git repository and creates a proposed Cofefresh pipeline that clones the source code and builds/packages it.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/annotations/",
