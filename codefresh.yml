@@ -13,7 +13,7 @@ steps:
     title: 'Print runtime env version'
     image: codefresh/cli
     commands:
-    - ${{RUNTIME_VERSTION}}
+    - echo ${{RUNTIME_VERSTION}}
 
   install_dependencies:
     title: 'Installing testing dependencies'
