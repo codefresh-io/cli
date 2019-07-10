@@ -66,7 +66,6 @@
     "requestretry": "^3.1.0",
     "rimraf": "^2.6.2",
     "semver": "^5.6.0",
-    "tty-table": "^2.5.5",
     "uuid": "^3.1.0",
     "yargs": "^10.0.3",
     "yargs-parser": "^13.0.0"
@@ -88,7 +87,7 @@
   "author": "Codefresh",
   "license": "ISC",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=8.0.0"
   },
   "jest": {
     "testEnvironment": "node",
