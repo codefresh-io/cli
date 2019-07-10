@@ -3,7 +3,7 @@ FROM golang:alpine as go
 RUN apk add --update ca-certificates git
 RUN go get github.com/github/hub
 
-FROM node:10.15.3-alpine
+FROM node:10.13.0-alpine
 
 RUN apk add --update ca-certificates git curl jq py-pip bash && pip install yq
 COPY --from=go /go/bin/hub /usr/local/bin/hub

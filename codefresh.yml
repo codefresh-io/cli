@@ -3,27 +3,21 @@ version: "1.0"
 
 steps:
 
-  prepare_environment_variabels:
-    title: 'Prepare environment variables'
-    image: codefresh/cli
-    commands:
-      - cf_export RUNTIME_VERSION=$(jq -r ".engines.node" package.json)
-
   install_dependencies:
     title: 'Installing testing dependencies'
-    image: node:${{RUNTIME_VERSION}}
+    image: node:10.13.0
     commands:
         - yarn install --frozen-lockfile
 
   eslint:
     title: 'Running linting logic'
-    image: node:${{RUNTIME_VERSION}}
+    image: node:10.13.0
     commands:
         - yarn eslint
 
   unit-tests:
     title: 'Running unit tests'
-    image: node:${{RUNTIME_VERSION}}
+    image: node:10.13.0
     commands:
         - yarn test
 
