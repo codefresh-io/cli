@@ -3,6 +3,13 @@ version: "1.0"
 
 steps:
 
+  prepare_environment_variabels:
+    stage: prepare
+    title: 'Prepare environment variables'
+    image: codefresh/cli
+    commands:
+      - cf_export RUNTIME_VERSION=$(jq -r ".engines.node" package.json)
+
   install_dependencies:
     title: 'Installing testing dependencies'
     image: node:${{RUNTIME_VERSION}}
