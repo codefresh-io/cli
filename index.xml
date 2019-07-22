@@ -1077,6 +1077,19 @@ Arguments    Option Alias Default Description     id name      Options    Option
     </item>
     
     <item>
+      <title>Patch token</title>
+      <link>https://codefresh-io.github.io/cli/tokens/patch-token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/tokens/patch-token/</guid>
+      <description>Description Patch Codefresh token.
+Update token name or scopes using token id. Id can be retrieved using &amp;ldquo;get&amp;rdquo; command.
+Command codefresh patch tokens &amp;lt;id&amp;gt;
+Aliases codefresh patch token &amp;lt;id&amp;gt;
+Arguments    Option Alias Default Description     id   token id. required    Options    Option Alias Default Description     --help   Print help information   --name   token name or ids   --scope -s  token names or ids    Examples Update token name codefresh patch token [token_id] --name new-name</description>
+    </item>
+    
+    <item>
       <title>Set Active Context</title>
       <link>https://codefresh-io.github.io/cli/authentication/set-active-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

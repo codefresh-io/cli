@@ -374,6 +374,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/tokens/patch-token/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/pipelines/</loc>
   </url>
   

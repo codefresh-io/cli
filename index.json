@@ -53,7 +53,7 @@
 	"title": "Create tokens",
 	"tags": [],
 	"description": "",
-	"content": " Description Generate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nCommand codefresh create token [name]\nArguments    Option Alias Default Description     name   token name. required    Options    Option Alias Default Description     --help   Print help information   --subject   Name of the token subject   --type  user Type of the subject\nPossible values:\n- runtime-environment\n- user    Examples Create token with default type codefresh create token some-token\nCreate token from runtime environment codefresh create token some-token --subject my-k8s-cluster/namespace --type runtime-environment\n"
+	"content": " Description Generate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nCommand codefresh create token [name]\nArguments    Option Alias Default Description     name   token name. required    Options    Option Alias Default Description     --help   Print help information   --subject   Name of the token subject   --type  user Type of the subject\nPossible values:\n- runtime-environment\n- user   --scope -s  user scopes    Examples Create token with default type codefresh create token some-token\nCreate token from runtime environment codefresh create token some-token --subject my-k8s-cluster/namespace --type runtime-environment\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/",
@@ -630,6 +630,13 @@
 	"content": " Description Patch a project.\nCommand codefresh patch project [id|name]\nArguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information   --newName -n  New name   --tag -t  Project tags   --variable -v  Project variables   --encrypted -e  Variable names to encrypt    Examples Replace project name and tags. Specifying project by ID codefresh patch project ID --new-name NEW_NAME --tag test\nReplace project variables. Specifying project by NAME codefresh patch project NAME -v test=test\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/tokens/patch-token/",
+	"title": "Patch token",
+	"tags": [],
+	"description": "",
+	"content": " Description Patch Codefresh token.\nUpdate token name or scopes using token id. Id can be retrieved using \u0026ldquo;get\u0026rdquo; command.\nCommand codefresh patch tokens \u0026lt;id\u0026gt;\nAliases codefresh patch token \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   token id. required    Options    Option Alias Default Description     --help   Print help information   --name   token name or ids   --scope -s  token names or ids    Examples Update token name codefresh patch token [token_id] --name new-name\nSet token scopes to \u0026ldquo;pipeline\u0026rdquo;, \u0026ldquo;project\u0026rdquo; codefresh patch token [token_id] -s pipeline -s project\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/pipelines/",
 	"title": "Pipelines",
 	"tags": [],
@@ -977,7 +984,7 @@
 	"title": "Tokens",
 	"tags": [],
 	"description": "",
-	"content": " Create tokens codefresh create token [name]\nGenerate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nGet tokens codefresh get tokens [names|ids..]\nGet Codefresh tokens.\nProvide names/ids to filter results by them.\nDelete tokens codefresh delete tokens [ids..]\nRevoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\n"
+	"content": " Create tokens codefresh create token [name]\nGenerate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nGet tokens codefresh get tokens [names|ids..]\nGet Codefresh tokens.\nProvide names/ids to filter results by them.\nPatch token codefresh patch tokens \u0026lt;id\u0026gt;\nPatch Codefresh token.\nUpdate token name or scopes using token id. Id can be retrieved using \u0026ldquo;get\u0026rdquo; command.\nDelete tokens codefresh delete tokens [ids..]\nRevoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",
