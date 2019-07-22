@@ -1854,6 +1854,38 @@
         ],
         "summary": "Delete",
         "x-sdk-interface": "tokens.delete"
+      },
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "tokens"
+        ],
+        "operationId": "tokens-patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Patch",
+        "x-sdk-interface": "tokens.patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
       }
     },
     "/auth/keys": {
