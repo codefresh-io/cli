@@ -1,4 +1,4 @@
-# Codefresh-cli
+# Codefresh-cli 
 Build: [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/codefresh-inc/codefresh-io%2Fcli%2Fbuild?type=cf-2)]( https://g.codefresh.io/public/accounts/codefresh-inc/pipelines/codefresh-io/cli/build)
 Release: [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/codefresh-inc/codefresh-io%2Fcli%2Frelease?type=cf-2)]( https://g.codefresh.io/public/accounts/codefresh-inc/pipelines/codefresh-io/cli/release)
 
