@@ -977,7 +977,7 @@
 	"title": "Synchronize Teams",
 	"tags": [],
 	"description": "",
-	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nArguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
+	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nArguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/tokens/",
