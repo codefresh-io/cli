@@ -6802,6 +6802,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "disableNotifications",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": false,
+            "description": "Disable send notifications"
           }
         ],
         "summary": "Synchronize client with group",
