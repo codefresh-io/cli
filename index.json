@@ -795,7 +795,7 @@
 	"title": "Triggers",
 	"tags": [],
 	"description": "",
-	"content": " Create Pipeline Trigger codefresh create trigger [event-uri] [pipeline]\nCreate trigger: link pipeline to trigger-event.\nGet Triggers codefresh get triggers\nGet triggers, optionally filtered by pipeline or event.\nOnly cron/registry triggers are supported (for git triggers use codefresh get pip \u0026lt;pip-name\u0026gt; -o json).\nGet Trigger Event codefresh get trigger-events [event-uri]\nGet trigger-event.\nGet Trigger Types codefresh get trigger-types\nGet a list of available trigger-types.\nDelete Pipeline Trigger codefresh delete trigger [event-uri] [pipeline]\nDelete trigger: unlink pipeline from trigger-event.\nCreate Trigger Event codefresh create trigger-event\nCreate new trigger-event.\nDelete Trigger Event codefresh delete trigger-event [event-uri]\nDelete trigger-event.\n"
+	"content": " Create Pipeline Trigger codefresh create trigger [event-uri] [pipeline]\nCreate trigger: link pipeline to trigger-event.\nGet Triggers codefresh get triggers\nGet triggers, optionally filtered by pipeline or event.\nOnly cron/registry triggers are supported (for git triggers use codefresh get pip \u0026lt;pip-name\u0026gt; -o json).\nGet Trigger Types codefresh get trigger-types\nGet a list of available trigger-types.\nGet Trigger Event codefresh get trigger-events [event-uri]\nGet trigger-event.\nDelete Pipeline Trigger codefresh delete trigger [event-uri] [pipeline]\nDelete trigger: unlink pipeline from trigger-event.\nCreate Trigger Event codefresh create trigger-event\nCreate new trigger-event.\nDelete Trigger Event codefresh delete trigger-event [event-uri]\nDelete trigger-event.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/update-context/",
@@ -977,7 +977,7 @@
 	"title": "Synchronize Teams",
 	"tags": [],
 	"description": "",
-	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nArguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Github Personal Access Token that overrides the default one (Optional and only valid for Github)    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
+	"content": " Description Synchronize team with group.\nCommand codefresh synchronize teams [client-name]\nAliases codefresh synchronize team [client-name]\ncodefresh synchronize tm [client-name]\nArguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Disable email notifications for users    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/tokens/",
