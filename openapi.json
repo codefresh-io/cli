@@ -5769,6 +5769,47 @@
         }
       }
     },
+    "/step-types/{name}/versions": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Name of step",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "step-types"
+        ],
+        "operationId": "steps-get-version",
+        "summary": "Get Versions",
+        "x-sdk-interface": "steps.getStepVersions",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticatedOrAnonymous"
+            ],
+            "acl": {
+              "resource": "step-type"
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "steps.getStepVersions"
+        }
+      }
+    },
 
     "/projects": {
       "post": {
