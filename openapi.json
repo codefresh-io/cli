@@ -2588,6 +2588,31 @@
         "x-sdk-interface": "contexts.get"
       }
     },
+    "/contexts/{name}/prepare": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "contexts"
+        ],
+        "operationId": "contexts-prepare",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Name"
+          }],
+        "summary": "Get",
+        "x-sdk-interface": "contexts.prepare"
+      }
+    },
     "/environments": {
       "get": {
         "responses": {
