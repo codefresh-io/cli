@@ -5320,6 +5320,48 @@
         "x-sdk-interface": "pipelines.run"
       }
     },
+    "/pipelines/debug/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "headers": {
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Endpoint to query the build status"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-debug",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Debug",
+        "x-sdk-interface": "pipelines.debug"
+      }
+    },
     "/pipelines/yaml/validator": {
       "post": {
         "responses": {
