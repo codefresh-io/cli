@@ -4,7 +4,6 @@ version: '1.0'
 steps:
 
   main_clone:
-    stage: prepare
     title: 'Cloning main repository...'
     type: git-clone
     repo: codefresh-io/cli
