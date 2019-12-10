@@ -54,3 +54,4 @@ Options:
 ## Documentation
 For more information please visit the official <a href="http://cli.codefresh.io" target="_blank">CLI documentation</a> site.
 
+
