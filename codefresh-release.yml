@@ -3,6 +3,13 @@ version: '1.0'
 
 steps:
 
+  main_clone:
+    title: 'Cloning main repository...'
+    type: git-clone
+    repo: codefresh-io/cli
+    revision: ${{CF_BRANCH}}
+    git: cf_github
+
   fail_if_not_master:
     title: "Validate running on master branch"
     image: codefresh/build-cli
