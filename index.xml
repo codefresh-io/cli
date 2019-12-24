@@ -502,8 +502,9 @@ Update to a specific version: yarn global upgrade codefresh@{VERSION}</descripti
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/create/</guid>
       <description> Description Create a resource from a file, directory or url
 Supported resources: &amp;lsquo;context&amp;rsquo;
-&amp;lsquo;pipeline&amp;rdquo;
-&amp;lsquo;step-type&amp;rsquo;.
+&amp;lsquo;step-type&amp;rsquo;
+&amp;lsquo;project&amp;rsquo;
+&amp;lsquo;pipeline&amp;rsquo;.
 Command codefresh create
 Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
     </item>
