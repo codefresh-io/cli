@@ -564,7 +564,7 @@
 	"title": "Test Helm Release",
 	"tags": [],
 	"description": "",
-	"content": " Description Test a helm release.\nCommand codefresh test-release \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup  false delete test pods upon completion (default false)    "
+	"content": " Description Test a helm release.\nCommand codefresh test-release \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup   delete test pods upon completion (default false)    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/annotations/delete/",
