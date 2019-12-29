@@ -94,8 +94,5 @@
     "setupFiles": [
       "./test-setup.js"
     ]
-  },
-  "yargs": {
-    "boolean-negation": false
   }
 }
