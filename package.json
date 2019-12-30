@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.39.5",
+  "version": "0.40.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -67,7 +67,7 @@
     "rimraf": "^2.6.2",
     "semver": "^5.6.0",
     "uuid": "^3.1.0",
-    "yargs": "^10.0.3",
+    "yargs": "^15.0.2",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
@@ -94,9 +94,6 @@
     "setupFiles": [
       "./test-setup.js"
     ]
-  },
-  "yargs": {
-    "boolean-negation": false
   }
 }
 
