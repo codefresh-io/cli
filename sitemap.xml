@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/agents/get-agents/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/boards/get-board/</loc>
   </url>
   
@@ -165,6 +169,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/agents/create-agent/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/compositions/create-composition/</loc>
   </url>
   
@@ -257,6 +265,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/agemts/delete-agent/</loc>
   </url>
   
   <url>
@@ -370,6 +382,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/agents/patch-agent/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/projects/patch-project/</loc>
   </url>
   
@@ -473,6 +489,14 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/update-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/agemts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/agents/</loc>
   </url>
   
   <url>
