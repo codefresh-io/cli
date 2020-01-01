@@ -7180,7 +7180,232 @@
         "summary": "Deny a pending-approval workflow",
         "x-sdk-interface": "workflows.deny"
       }
-    }
+    },
+    "/agents": {
+      "post": {
+        "x-action": "createAgent",
+        "x-audit": {
+          "name": {
+            "path": "body.name",
+            "source": "req",
+            "required": true
+          },
+          "id": {
+            "path": "_id",
+            "source": "res"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "runtimes": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Agent data",
+          "required": true
+        },
+        "summary": "Agent",
+        "parameters": [],
+        "x-sdk-interface": "agents.create"
+      },
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "agent name"
+          }
+        ],
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "agent.getAgents"
+      },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agents-byName",
+        "summary": "List",
+        "x-sdk-interface": "agents.list"
+      }
+    },
+    "/agents/name/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent name"
+          }
+        ],
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "agents.getByName"
+      },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-byName",
+        "summary": "List",
+        "x-sdk-interface": "agents.getByName"
+      }
+    },
+    "/agent/{agentId}": {
+      "put": {
+        "x-entityId": "params.agentId",
+        "x-action": "updateAgent",
+        "parameters": [
+          {
+            "description": "Id of the agent",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "runtimes": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+            }
+          }
+        }
+      },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agents-replace",
+        "summary": "Replace",
+        "x-sdk-interface": "agents.replace"
+  },
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agentId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-list",
+        "summary": "Get",
+        "x-sdk-interface": "agents.get"
+      },
+      "delete": {
+        "x-action": "deleteAgent",
+        "x-entityId": "params.agentId",
+        "x-sdk-interface": "agents.delete",
+        "operationId": "agent-delete",
+        "summary": "Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agentId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "agents"
+        ]
+      }
+  }
   },
   "components": {
     "parameters": {
