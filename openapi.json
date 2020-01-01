@@ -7382,7 +7382,7 @@
       "delete": {
         "x-action": "deleteAgent",
         "x-entityId": "params.agentId",
-        "x-sdk-interface": "agent.delete",
+        "x-sdk-interface": "agents.delete",
         "operationId": "agent-delete",
         "summary": "Delete",
         "parameters": [
