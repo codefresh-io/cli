@@ -14,9 +14,9 @@ ARG JQ_VERSION=1.6
 ARG YQ_VERSION=2.4.1
 
 RUN wget -O /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
-    wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 && \
     chmod +x /usr/local/bin/*
 
+RUN apk add py-pip && pip install yq
 WORKDIR /cf-cli
 
 COPY package.json /cf-cli
