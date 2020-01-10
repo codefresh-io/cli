@@ -600,21 +600,6 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/agemts/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/cli/agemts/">Agemts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/cli/agemts/delete-agent/" class="dd-item">
-        <div>
-          <a href="/cli/agemts/delete-agent/">
-            Delete Agent
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
     <li data-nav-id="/cli/agents/" class="dd-item parent active haschildren
         ">
       <div>
@@ -633,6 +618,13 @@
         <div>
           <a href="/cli/agents/create-agent/">
             Create Agent
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/agents/delete-agent/" class="dd-item">
+        <div>
+          <a href="/cli/agents/delete-agent/">
+            Delete Agent
           </a>
         </div>
     </li>
@@ -1298,6 +1290,7 @@
 <ul>
 <li><a href="#get-agents-get-agents"><a href="get-agents">Get Agents</a></a></li>
 <li><a href="#create-agent-create-agent"><a href="create-agent">Create Agent</a></a></li>
+<li><a href="#delete-agent-delete-agent"><a href="delete-agent">Delete Agent</a></a></li>
 <li><a href="#patch-agent-patch-agent"><a href="patch-agent">Patch Agent</a></a></li>
 </ul></li>
 </ul></li>
@@ -1336,6 +1329,12 @@
 <p>Create an agent.</p>
 
 <p>Create an agent used to behind firewall integration.</p>
+
+<h3 id="delete-agent-delete-agent"><a href="delete-agent">Delete Agent</a></h3>
+
+<p><code>codefresh delete agent &lt;id|name&gt;</code></p>
+
+<p>Delete an agent.</p>
 
 <h3 id="patch-agent-patch-agent"><a href="patch-agent">Patch Agent</a></h3>
 

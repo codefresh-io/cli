@@ -794,10 +794,10 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Delete Agent</title>
-      <link>https://codefresh-io.github.io/cli/agemts/delete-agent/</link>
+      <link>https://codefresh-io.github.io/cli/agents/delete-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/agemts/delete-agent/</guid>
+      <guid>https://codefresh-io.github.io/cli/agents/delete-agent/</guid>
       <description>Description Delete an agent.
 Command codefresh delete agent &amp;lt;id|name&amp;gt;
 Arguments    Option Alias Default Description     id name      Options    Option Alias Default Description     --help   Print help information    Examples Delete agent by name. codefresh delete agent NAME

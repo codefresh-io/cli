@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Add user :: Codefresh CLI Documentation</title>
+<title>Delete Agent :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/teams/add-user/">
+  <body data-url="/cli/agents/delete-agent/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -600,10 +600,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/agents/" class="dd-item haschildren
+    <li data-nav-id="/cli/agents/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/agents/">Agents</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/agents/">Agents</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/agents/get-agents/" class="dd-item">
@@ -620,7 +621,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/agents/delete-agent/" class="dd-item">
+      <li data-nav-id="/cli/agents/delete-agent/" class="dd-item active">
         <div>
           <a href="/cli/agents/delete-agent/">
             Delete Agent
@@ -1138,11 +1139,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/teams/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/teams/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/teams/">Teams</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/teams/">Teams</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/teams/get-teams/" class="dd-item">
@@ -1166,7 +1166,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/teams/add-user/" class="dd-item active">
+      <li data-nav-id="/cli/teams/add-user/" class="dd-item">
         <div>
           <a href="/cli/teams/add-user/">
             Add user
@@ -1274,7 +1274,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/teams/'>Teams</a> > Add user
+ <a href='/cli/'></a> > <a href='/cli/agents/'>Agents</a> > Delete Agent
 
  
 
@@ -1294,14 +1294,13 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#assign-user-to-team">Assign user to team</a></li>
+<li><a href="#delete-agent-by-name">Delete agent by name.</a></li>
+<li><a href="#delete-agent-by-id">Delete agent by Id.</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1316,7 +1315,7 @@
 
 <div id="body-inner">
   
-    <h1>Add user</h1>
+    <h1>Delete Agent</h1>
   
 
 
@@ -1328,19 +1327,33 @@
 
 <h3 id="description">Description</h3>
 
-<p>Assign user to a team.</p>
-
-<p>Use patch command and pass user id and team id  to assign user to a team.</p>
+<p>Delete an agent.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh patch teams</code></p>
+<p><code>codefresh delete agent &lt;id|name&gt;</code></p>
 
-<h4 id="aliases">Aliases</h4>
+<h3 id="arguments">Arguments</h3>
 
-<p><code>codefresh patch team teams</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p><code>codefresh patch tm teams</code></p>
+<tbody>
+<tr>
+<td>id</td>
+<td>name</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <h3 id="options">Options</h3>
 
@@ -1361,28 +1374,18 @@
 <td></td>
 <td>Print help information</td>
 </tr>
-
-<tr>
-<td>--team-id</td>
-<td>-t</td>
-<td></td>
-<td>Id team in which to add a user. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--user-id</td>
-<td>-u</td>
-<td></td>
-<td>Id of a user to add him in team. <code>required</code></td>
-</tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="assign-user-to-team">Assign user to team</h4>
+<h4 id="delete-agent-by-name">Delete agent by name.</h4>
 
-<p><code>codefresh patch tm -u [userID] -t [teamID]</code></p>
+<p><code>codefresh delete agent NAME</code></p>
+
+<h4 id="delete-agent-by-id">Delete agent by Id.</h4>
+
+<p><code>codefresh delete agent ID</code></p>
 
 
     

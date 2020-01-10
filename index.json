@@ -448,7 +448,7 @@
 	"content": " Description Delete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nCommand codefresh delete\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/agemts/delete-agent/",
+	"uri": "https://codefresh-io.github.io/cli/agents/delete-agent/",
 	"title": "Delete Agent",
 	"tags": [],
 	"description": "",
@@ -833,18 +833,11 @@
 	"content": " Description Apply changes to a context.\nUse apply to patch an existing context.\nCommand codefresh patch context\nAliases codefresh patch ctx context\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    Examples Apply changes to a context codefresh patch context -f ./context.yml\n"
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/agemts/",
-	"title": "Agemts",
-	"tags": [],
-	"description": "",
-	"content": " Delete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\n"
-},
-{
 	"uri": "https://codefresh-io.github.io/cli/agents/",
 	"title": "Agents",
 	"tags": [],
 	"description": "",
-	"content": " Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\n"
+	"content": " Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nDelete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/analyzer/analyze/",

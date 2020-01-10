@@ -268,7 +268,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/agemts/delete-agent/</loc>
+    <loc>https://codefresh-io.github.io/cli/agents/delete-agent/</loc>
   </url>
   
   <url>
@@ -489,10 +489,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/update-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/agemts/</loc>
   </url>
   
   <url>
