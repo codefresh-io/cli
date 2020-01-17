@@ -5304,7 +5304,7 @@
             "schema": {
               "type": "string"
             },
-            "required": true
+            "required": false
           }
         ],
         "requestBody": {
