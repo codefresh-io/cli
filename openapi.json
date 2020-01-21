@@ -5307,7 +5307,7 @@
             }
           }
         },
-        "summary": "Run",
+        "summary": "Run yaml",
         "x-sdk-interface": "pipelines.runYaml"
       }
     },
