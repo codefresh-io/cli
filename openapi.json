@@ -5278,6 +5278,39 @@
         "x-sdk-interface": "pipelines.create"
       }
     },
+    "/pipelines/run": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "headers": {
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Endpoint to query the build status"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-run-yaml",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Run yaml",
+        "x-sdk-interface": "pipelines.runYaml"
+      }
+    },
     "/pipelines/run/{name}": {
       "post": {
         "responses": {
