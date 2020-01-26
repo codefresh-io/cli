@@ -1886,6 +1886,32 @@
             }
           }
         }
+      },
+      "get": {
+        "x-action": "getTokenById",
+        "x-entityId": "params.id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "tokens"
+        ],
+        "operationId": "tokens-get-by-id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Id"
+          }
+        ],
+        "summary": "Get",
+        "x-sdk-interface": "tokens.getById"
       }
     },
     "/auth/keys": {
