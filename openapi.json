@@ -7207,6 +7207,72 @@
         "x-sdk-interface": "workflows.deny"
       }
     },
+    "/custom_clusters/register": {
+      "post": {
+        "x-action": "registerCluster",
+        "x-audit": {
+          "name": {
+            "path": "body.name",
+            "source": "req",
+            "required": true
+          },
+          "id": {
+            "path": "_id",
+            "source": "res"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "cluster-register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  },
+                  "storageClassName": {
+                    "type": "string"
+                  },
+                  "runnerType": {
+                    "type":"string"
+                  },
+                  "dockerDaemonParams": {
+                    "type":"string"
+                  },
+                  "nodeSelector": {
+                    "type":"string"
+                  },
+                  "annotations": {
+                    "type":"string"
+                  },
+                  "clusterName": {
+                    "type":"string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Cluster data",
+          "required": true
+        },
+        "summary": "Cluster",
+        "parameters": [],
+        "x-sdk-interface": "cluster.create"
+      }
+      
+    },
     "/agents": {
       "post": {
         "x-action": "createAgent",
@@ -7379,7 +7445,7 @@
         ],
         "operationId": "agents-replace",
         "summary": "Replace",
-        "x-sdk-interface": "agents.replace"
+        "x-sdk-interface": "agents.update"
   },
       "get": {
         "parameters": [
