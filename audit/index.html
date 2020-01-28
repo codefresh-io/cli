@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Install or Upgrade Helm Chart :: Codefresh CLI Documentation</title>
+<title>Audit :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/predefined-pipelines/install-or-upgrade-helm-chart/">
+  <body data-url="/cli/audit/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -680,10 +680,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/audit/" class="dd-item haschildren
+    <li data-nav-id="/cli/audit/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/audit/">Audit</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/audit/">Audit</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/audit/download/" class="dd-item">
@@ -1059,11 +1060,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/predefined-pipelines/delete-helm-release/" class="dd-item">
@@ -1073,7 +1073,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/predefined-pipelines/install-or-upgrade-helm-chart/" class="dd-item active">
+      <li data-nav-id="/cli/predefined-pipelines/install-or-upgrade-helm-chart/" class="dd-item">
         <div>
           <a href="/cli/predefined-pipelines/install-or-upgrade-helm-chart/">
             Install or Upgrade Helm Chart
@@ -1286,12 +1286,7 @@
 
 
 
-
-
-
- <a href='/cli/'></a> > <a href='/cli/predefined-pipelines/'>Predefined Pipelines</a> > Install or Upgrade Helm Chart
-
- 
+ <a href='/cli/'></a> > Audit
 
  
 
@@ -1308,15 +1303,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#install-chart-from-public-helm-repo">Install chart from public helm repo</a></li>
-<li><a href="#get-all-helm-repos">Get all helm repos</a></li>
-<li><a href="#install-chart-saved-repo">Install chart saved repo</a></li>
-</ul></li>
+<li><a href="#download-download"><a href="download">Download</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1330,7 +1317,7 @@
 
 <div id="body-inner">
   
-    <h1>Install or Upgrade Helm Chart</h1>
+    <h1>Audit</h1>
   
 
 
@@ -1338,121 +1325,15 @@
     
     
     
-    
 
-<h3 id="description">Description</h3>
 
-<p>Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.</p>
 
-<h3 id="command">Command</h3>
+<h3 id="download-download"><a href="download">Download</a></h3>
 
-<p><code>codefresh install-chart</code></p>
+<p><code>codefresh download audit</code></p>
 
-<h3 id="options">Options</h3>
+<p>Download audit.</p>
 
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--cluster</td>
-<td>-c</td>
-<td></td>
-<td>Install on cluster. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--namespace</td>
-<td>--ns</td>
-<td>default</td>
-<td>Install on namespace</td>
-</tr>
-
-<tr>
-<td>--tiller-namespace</td>
-<td>--tn</td>
-<td>kube-system</td>
-<td>Where tiller has been installed</td>
-</tr>
-
-<tr>
-<td>--repository</td>
-<td>-r</td>
-<td>kubeapps</td>
-<td>Helm repository (absolute url or name of context with type helm-repository). <code>required</code></td>
-</tr>
-
-<tr>
-<td>--name</td>
-<td>-n</td>
-<td></td>
-<td>Name of the chart in the repository. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--version</td>
-<td>-v</td>
-<td></td>
-<td>Version of the chart in the repository. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--context</td>
-<td></td>
-<td></td>
-<td>Contexts (yaml</td>
-</tr>
-
-<tr>
-<td>--set</td>
-<td></td>
-<td></td>
-<td>set of KEY=VALUE to be passed to the install</td>
-</tr>
-
-<tr>
-<td>--detach</td>
-<td>-d</td>
-<td></td>
-<td>Run pipeline and print build ID</td>
-</tr>
-
-<tr>
-<td>--release-name</td>
-<td></td>
-<td></td>
-<td>The name to set to the release</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="install-chart-from-public-helm-repo">Install chart from public helm repo</h4>
-
-<p><code>codefresh install-chart --name mongodb</code></p>
-
-<h4 id="get-all-helm-repos">Get all helm repos</h4>
-
-<p><code>codefresh get ctx --type helm-repository</code></p>
-
-<h4 id="install-chart-saved-repo">Install chart saved repo</h4>
-
-<p><code>codefresh install-chart --name mongodb  --repository my-help-repository</code></p>
 
 
     

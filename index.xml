@@ -1278,6 +1278,17 @@ Arguments    Option Alias Default Description     id   Docker image id   names  
     </item>
     
     <item>
+      <title>Download</title>
+      <link>https://codefresh-io.github.io/cli/audit/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/audit/download/</guid>
+      <description>Description Download audit.
+Command codefresh download audit
+Options    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt</description>
+    </item>
+    
+    <item>
       <title>Image Pull Secret</title>
       <link>https://codefresh-io.github.io/cli/more/image-pull-secret/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
