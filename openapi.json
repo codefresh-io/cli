@@ -5699,6 +5699,14 @@
           },
           {
             "in": "query",
+            "name": "freeText",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by name, description or tags"
+          },
+          {
+            "in": "query",
             "name": "public",
             "schema": {
               "type": "string"
