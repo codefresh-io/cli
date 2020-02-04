@@ -320,7 +320,7 @@ Arguments    Option Alias Default Description     id   Section by id    Options 
       <description>Description Get a specific step or an array of steps.
 Command codefresh get step-types [id..]
 Aliases codefresh get step-type [id..]
-Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage</description>
+Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Default Description     --help   Print help information   --name   Filter by name pattern   --free-text --text  Filter by multiple criteria: name, description, tags   --tag -t  Filter by a tag   --category -c  Filter by category   --stage   Filter by stage</description>
     </item>
     
     <item>
