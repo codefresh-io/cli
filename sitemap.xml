@@ -147,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/standard/</loc>
   </url>
   
@@ -577,6 +581,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/</loc>
   </url>
   
   <url>

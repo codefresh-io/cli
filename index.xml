@@ -454,6 +454,21 @@ Possible values:
     </item>
     
     <item>
+      <title>kubernetes</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</guid>
+      <description>Description Create a secret-store Kubernetes context.
+Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.
+Command codefresh create context secret-store kubernetes &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context
+Possible values:
+- AccountAdmins
+- AllUsersInAccount   --help   Print help information   --cluster   Name of the Kubernetes clsuter as it saved in Codefresh.</description>
+    </item>
+    
+    <item>
       <title>standard</title>
       <link>https://codefresh-io.github.io/cli/registries/registries/standard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

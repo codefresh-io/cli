@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Update Context :: Codefresh CLI Documentation</title>
+<title>Secret-Store :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/contexts/update-context/">
+  <body data-url="/cli/contexts/create-context/create-secret-store-context/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -362,17 +362,18 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/update-context/" class="dd-item active">
+      <li data-nav-id="/cli/contexts/update-context/" class="dd-item">
         <div>
           <a href="/cli/contexts/update-context/">
             Update Context
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/">Create Context</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
@@ -461,10 +462,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
@@ -1304,7 +1306,12 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > Update Context
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/create-context/'>Create Context</a> > Secret-Store
+
+ 
 
  
 
@@ -1323,16 +1330,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#apply-changes-to-a-context">Apply changes to a context</a></li>
-</ul></li>
+<li><a href="#kubernetes-kubernetes"><a href="kubernetes">kubernetes</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1346,7 +1344,7 @@
 
 <div id="body-inner">
   
-    <h1>Update Context</h1>
+    <h1>Secret-Store</h1>
   
 
 
@@ -1354,56 +1352,17 @@
     
     
     
-    
 
-<h3 id="description">Description</h3>
 
-<p>Apply changes to a context.</p>
 
-<p>Use apply to patch an existing context.</p>
+<h3 id="kubernetes-kubernetes"><a href="kubernetes">kubernetes</a></h3>
 
-<h3 id="command">Command</h3>
+<p><code>codefresh create context secret-store kubernetes &lt;name&gt;</code></p>
 
-<p><code>codefresh patch context</code></p>
+<p>Create a secret-store Kubernetes context.</p>
 
-<h4 id="aliases">Aliases</h4>
+<p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
 
-<p><code>codefresh patch ctx context</code></p>
-
-<h3 id="options">Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--filename</td>
-<td>-f</td>
-<td></td>
-<td>Filename or directory of spec files use to create the resource</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="apply-changes-to-a-context">Apply changes to a context</h4>
-
-<p><code>codefresh patch context -f ./context.yml</code></p>
 
 
     
