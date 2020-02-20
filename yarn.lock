@@ -1186,10 +1186,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codefresh-sdk@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.4.5.tgz#3b890c995b9ba0aba3d2385019b25e53a87dfeb4"
-  integrity sha512-byICtPLJP11T0a1wUv+MOYTZaMyvZDaod3zBbPBGlSa1UYngICHagD5CmFTky5s575JaaNNVllQSoRozDE32vw==
+codefresh-sdk@1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.4.6.tgz#1a1df08475b98e2de4430c952b37bed00d4bc46b"
+  integrity sha512-RHCUO2qjFRfXSWF0CJ9W+ekyxUPTGh1p65i/6RxrhNX7wVJmEwCMplYnAWAwqS2o8xOsVleWrZQr6k+1e0hvOA==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.12"
