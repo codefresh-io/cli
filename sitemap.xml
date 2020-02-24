@@ -382,6 +382,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/install-resources/install/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/patch/</loc>
   </url>
   
@@ -407,6 +411,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/builds/terminate-build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</loc>
   </url>
   
   <url>
@@ -520,6 +528,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/audit/</loc>
   </url>
   
@@ -572,6 +584,18 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/agents/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/install-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/</loc>
   </url>
   
@@ -613,6 +637,18 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/tokens/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/agents/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/uninstall-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</loc>
   </url>
   
   <url>

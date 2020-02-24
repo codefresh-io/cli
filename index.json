@@ -644,6 +644,13 @@
 	"content": " Description Revoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\nCommand codefresh delete tokens [ids..]\nAliases codefresh delete token [ids..]\nArguments    Option Alias Default Description     ids   token names or ids. required    Options    Option Alias Default Description     --help   Print help information    Examples Delete one token codefresh delete token [token_id]\nDelete many tokens codefresh delete tokens [token_id_1] [token_id_2]\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/install-resources/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": " Description Install a resource\nInstall operation will install codefresh components on kubernetes cluster.\nCommand codefresh install\nOptions    Option Alias Default Description     --help   Print help information    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/patch/",
 	"title": "Patch",
 	"tags": [],
@@ -691,6 +698,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Terminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nCommand codefresh terminate \u0026lt;id\u0026gt;\nArguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information    Examples Terminate build ID codefresh terminate ID\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/uninstall-resources/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": " Description Uninstall a resource\nUninstall operation will uninstall codefresh components on kubernetes cluster.\nCommand codefresh uninstall\nOptions    Option Alias Default Description     --help   Print help information    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/board/update-board/",
@@ -788,7 +802,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-02-14_10-05-03.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-02-24_12-42-00.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -851,7 +865,7 @@
 	"title": "Agents",
 	"tags": [],
 	"description": "",
-	"content": " Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nDelete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\n"
+	"content": " Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nDelete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\nInstall codefresh install agent\nInstall and create an agent on kubernetes cluster.\nUninstall codefresh uninstall agent\nUninstall an agent on kubernetes cluster.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/analyzer/analyze/",
@@ -880,6 +894,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Approve a pending-approval workflow.\napprove \u0026lt;$BUILD_ID\u0026gt;.\nCommand codefresh approve \u0026lt;buildId\u0026gt;\nArguments    Option Alias Default Description     buildId   Build\u0026rsquo;s id. required    Options    Option Alias Default Description     --help   Print help information    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/",
+	"title": "Attach Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": " Description Attach a runtime to agent.\nattach runtime.\nCommand codefresh attach runtime\nOptions    Option Alias Default Description     --help   Print help information   --runtime-name   Runtime\u0026rsquo;s name   --agent-name   Agent\u0026rsquo;s name   --agent-id   Agent\u0026rsquo;s ID   --runtime-kube-context-name   Runtime kubernetes context   --runtime-kube-namespace   Runtime\u0026rsquo;s namespace   --runtime-kube-config-path   Path to kubeconfig file for runtime (default is $HOME/.kube/config)   --agent-kube-context-name   Agent kubernetes context   --agent-kube-namespace   Agent\u0026rsquo;s namespace   --agent-kube-config-path   Path to kubeconfig file for the agent (default is $HOME/.kube/config)   --restart-agent   restart agent afte install - default false   --verbose   Print logs    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/audit/",
@@ -973,6 +994,27 @@
 	"content": " From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\n\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\n\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/agents/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": " Description Install and create an agent on kubernetes cluster.\nCommand codefresh install agent\nOptions    Option Alias Default Description     --help   Print help information   --name   Agent\u0026rsquo;s name to be created if token is not provided   --token   Agent\u0026rsquo;s token   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --in-cluster   Set flag if venona is been installed from inside a cluster   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --tolerations   The kubernetes tolerations as path to a JSON file to be used by venona resources (default is no tolerations) (string)   --venona-version   Version of venona to install (default is the latest)   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --skip-version-check   Do not compare current Venona\u0026rsquo;s version with latest   --install-runtime   Install and attach runtime on the same namespace as the agent (default is false)   --verbose   Print logs    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/install-resources/",
+	"title": "Install Resources",
+	"tags": [],
+	"description": "",
+	"content": " Install codefresh install\nInstall a resource\nInstall operation will install codefresh components on kubernetes cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/",
+	"title": "Install Runtime-Environment",
+	"tags": [],
+	"description": "",
+	"content": " Description Install and create a runtime on kubernetes cluster.\nCommand codefresh install runtime\nOptions    Option Alias Default Description     --help   Print help information   --token   Agent\u0026rsquo;s token   --agent-name   Agent\u0026rsquo;s name   --storage-class-name   Set a name of your custom storage class, note: this will not install volume provisioning components   --runtime-kube-context-name   Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --in-cluster   Set flag if venona is been installed from inside a cluster   --runtime-kube-namespace   Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --build-annotations   The kubernetes metadata.annotations as \u0026ldquo;key=value\u0026rdquo; to be used by venona build resources (default is no node selector)   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --attach-runtime   if set to true, auto attach runtime to agent (need to provide \u0026hellip;.)   --agent-kube-namespace   Agent\u0026rsquo;s namespace   --agent-kube-config-path   Path to kubeconfig file for the agent (default is $HOME/.kube/config)   --agent-kube-context-name   Agent kubernetes context (on attach)   --agent-kube-namespace   Agent\u0026rsquo;s namespace (on attach)   --agent-kube-config-path   Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)   --verbose   Print logs    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/registries/registries/",
 	"title": "Registries",
 	"tags": [],
@@ -991,7 +1033,7 @@
 	"title": "Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nApply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
+	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nApply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nAttach Runtime-Environments codefresh attach runtime\nAttach a runtime to agent.\nattach runtime.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nInstall Runtime-Environment codefresh install runtime\nInstall and create a runtime on kubernetes cluster.\nUninstall Runtime-Environment codefresh uninstall runtime\nUninstall a runtime on kubernetes cluster.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/",
@@ -1048,6 +1090,27 @@
 	"tags": [],
 	"description": "",
 	"content": " Create tokens codefresh create token [name]\nGenerate Codefresh token.\nCreate default token or provide --type and --subject. See options for more details.\nGet tokens codefresh get tokens [names|ids..]\nGet Codefresh tokens.\nProvide names/ids to filter results by them.\nPatch token codefresh patch tokens \u0026lt;id\u0026gt;\nPatch Codefresh token.\nUpdate token name or scopes using token id. Id can be retrieved using \u0026ldquo;get\u0026rdquo; command.\nDelete tokens codefresh delete tokens [ids..]\nRevoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/agents/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": " Description Uninstall an agent on kubernetes cluster.\nCommand codefresh uninstall agent\nOptions    Option Alias Default Description     --help   Print help information   --name   Agent\u0026rsquo;s name to be uninstalled   --kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --verbose   Print logs    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/uninstall-resources/",
+	"title": "Uninstall Resources",
+	"tags": [],
+	"description": "",
+	"content": " Uninstall codefresh uninstall\nUninstall a resource\nUninstall operation will uninstall codefresh components on kubernetes cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/",
+	"title": "Uninstall Runtime-Environment",
+	"tags": [],
+	"description": "",
+	"content": " Description Uninstall a runtime on kubernetes cluster.\nCommand codefresh uninstall runtime\nOptions    Option Alias Default Description     --help   Print help information   --agent-name   Agent\u0026rsquo;s name to be uninstalled   --agent-id   Agent\u0026rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --agent-kube-context-name   Agent kubernetes context   --agent-kube-namespace   Agent\u0026rsquo;s namespace   --agent-kube-config-path   Path to kubeconfig file for the agent (default is $HOME/.kube/config)   --verbose   Print logs    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",

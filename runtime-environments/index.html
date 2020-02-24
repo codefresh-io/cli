@@ -649,6 +649,20 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/agents/install/" class="dd-item">
+        <div>
+          <a href="/cli/agents/install/">
+            Install
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/agents/uninstall/" class="dd-item">
+        <div>
+          <a href="/cli/agents/uninstall/">
+            Uninstall
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/analyzer/" class="dd-item haschildren
@@ -805,33 +819,27 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/cli/install-resources/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/install-resources/">Install Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/install-resources/install/" class="dd-item">
+        <div>
+          <a href="/cli/install-resources/install/">
+            Install
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/cli/repository/" class="dd-item haschildren
         ">
       <div>
       <a href="/cli/repository/">Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/repository/add-repository/" class="dd-item">
-        <div>
-          <a href="/cli/repository/add-repository/">
-            Add Repository
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/repository/get-repositories/" class="dd-item">
-        <div>
-          <a href="/cli/repository/get-repositories/">
-            Get Repositories
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/repository/delete-repository/" class="dd-item">
-        <div>
-          <a href="/cli/repository/delete-repository/">
-            Delete Repository
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/runtime-environments/" class="dd-item parent active haschildren
@@ -862,6 +870,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/runtime-environments/attach-runtime-environments/" class="dd-item">
+        <div>
+          <a href="/cli/runtime-environments/attach-runtime-environments/">
+            Attach Runtime-Environments
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/cli/runtime-environments/create-runtime-environments/" class="dd-item">
         <div>
           <a href="/cli/runtime-environments/create-runtime-environments/">
@@ -873,6 +888,20 @@
         <div>
           <a href="/cli/runtime-environments/diff-runtime-environments/">
             Diff Runtime-Environments
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/runtime-environments/install-runtime-environment/" class="dd-item">
+        <div>
+          <a href="/cli/runtime-environments/install-runtime-environment/">
+            Install Runtime-Environment
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/runtime-environments/uninstall-runtime-environment/" class="dd-item">
+        <div>
+          <a href="/cli/runtime-environments/uninstall-runtime-environment/">
+            Uninstall Runtime-Environment
           </a>
         </div>
     </li>
@@ -983,6 +1012,21 @@
         <div>
           <a href="/cli/tokens/patch-token/">
             Patch token
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/uninstall-resources/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/uninstall-resources/">Uninstall Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/uninstall-resources/uninstall/" class="dd-item">
+        <div>
+          <a href="/cli/uninstall-resources/uninstall/">
+            Uninstall
           </a>
         </div>
     </li>
@@ -1321,8 +1365,11 @@
 <li><a href="#get-runtime-environments-get-runtime-environments"><a href="get-runtime-environments">Get Runtime-Environments</a></a></li>
 <li><a href="#delete-runtime-environments-delete-runtime-environments"><a href="delete-runtime-environments">Delete Runtime-Environments</a></a></li>
 <li><a href="#apply-runtime-environments-apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></a></li>
+<li><a href="#attach-runtime-environments-attach-runtime-environments"><a href="attach-runtime-environments">Attach Runtime-Environments</a></a></li>
 <li><a href="#create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></a></li>
 <li><a href="#diff-runtime-environments-diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></a></li>
+<li><a href="#install-runtime-environment-install-runtime-environment"><a href="install-runtime-environment">Install Runtime-Environment</a></a></li>
+<li><a href="#uninstall-runtime-environment-uninstall-runtime-environment"><a href="uninstall-runtime-environment">Uninstall Runtime-Environment</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1367,6 +1414,14 @@
 
 <p>Use apply to patch an existing context.</p>
 
+<h3 id="attach-runtime-environments-attach-runtime-environments"><a href="attach-runtime-environments">Attach Runtime-Environments</a></h3>
+
+<p><code>codefresh attach runtime</code></p>
+
+<p>Attach a runtime to agent.</p>
+
+<p>attach runtime.</p>
+
 <h3 id="create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></h3>
 
 <p><code>codefresh create runtime-environments [cluster]</code></p>
@@ -1378,6 +1433,18 @@
 <p><code>codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]</code></p>
 
 <p>Show diff between two runtime environments configuration.</p>
+
+<h3 id="install-runtime-environment-install-runtime-environment"><a href="install-runtime-environment">Install Runtime-Environment</a></h3>
+
+<p><code>codefresh install runtime</code></p>
+
+<p>Install and create a runtime on kubernetes cluster.</p>
+
+<h3 id="uninstall-runtime-environment-uninstall-runtime-environment"><a href="uninstall-runtime-environment">Uninstall Runtime-Environment</a></h3>
+
+<p><code>codefresh uninstall runtime</code></p>
+
+<p>Uninstall a runtime on kubernetes cluster.</p>
 
 
 

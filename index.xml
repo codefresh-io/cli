@@ -1106,6 +1106,18 @@ Arguments    Option Alias Default Description     ids   token names or ids. requ
     </item>
     
     <item>
+      <title>Install</title>
+      <link>https://codefresh-io.github.io/cli/install-resources/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/install-resources/install/</guid>
+      <description> Description Install a resource
+Install operation will install codefresh components on kubernetes cluster.
+Command codefresh install
+Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
       <title>Patch</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/patch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1175,6 +1187,18 @@ This command will return once the request has been received from the server.
 The termination process can take time according to the pipeline definition.
 Command codefresh terminate &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Default Description     --help   Print help information    Examples Terminate build ID codefresh terminate ID</description>
+    </item>
+    
+    <item>
+      <title>Uninstall</title>
+      <link>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</guid>
+      <description> Description Uninstall a resource
+Uninstall operation will uninstall codefresh components on kubernetes cluster.
+Command codefresh uninstall
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
@@ -1405,6 +1429,18 @@ Arguments    Option Alias Default Description     buildId   Build&amp;rsquo;s id
     </item>
     
     <item>
+      <title>Attach Runtime-Environments</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</guid>
+      <description>Description Attach a runtime to agent.
+attach runtime.
+Command codefresh attach runtime
+Options    Option Alias Default Description     --help   Print help information   --runtime-name   Runtime&amp;rsquo;s name   --agent-name   Agent&amp;rsquo;s name   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Runtime kubernetes context   --runtime-kube-namespace   Runtime&amp;rsquo;s namespace   --runtime-kube-config-path   Path to kubeconfig file for runtime (default is $HOME/.</description>
+    </item>
+    
+    <item>
       <title>Create Cluster</title>
       <link>https://codefresh-io.github.io/cli/clusters/create-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1467,6 +1503,28 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Install</title>
+      <link>https://codefresh-io.github.io/cli/agents/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/agents/install/</guid>
+      <description>Description Install and create an agent on kubernetes cluster.
+Command codefresh install agent
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be created if token is not provided   --token   Agent&amp;rsquo;s token   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --in-cluster   Set flag if venona is been installed from inside a cluster   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --tolerations   The kubernetes tolerations as path to a JSON file to be used by venona resources (default is no tolerations) (string)   --venona-version   Version of venona to install (default is the latest)   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Install Runtime-Environment</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</guid>
+      <description>Description Install and create a runtime on kubernetes cluster.
+Command codefresh install runtime
+Options    Option Alias Default Description     --help   Print help information   --token   Agent&amp;rsquo;s token   --agent-name   Agent&amp;rsquo;s name   --storage-class-name   Set a name of your custom storage class, note: this will not install volume provisioning components   --runtime-kube-context-name   Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --in-cluster   Set flag if venona is been installed from inside a cluster   --runtime-kube-namespace   Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --build-annotations   The kubernetes metadata.</description>
+    </item>
+    
+    <item>
       <title>Show Config</title>
       <link>https://codefresh-io.github.io/cli/cli-config/show-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1489,6 +1547,28 @@ Command codefresh synchronize teams [client-name]
 Aliases codefresh synchronize team [client-name]
 codefresh synchronize tm [client-name]
 Arguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Disable email notifications for users    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]</description>
+    </item>
+    
+    <item>
+      <title>Uninstall</title>
+      <link>https://codefresh-io.github.io/cli/agents/uninstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/agents/uninstall/</guid>
+      <description>Description Uninstall an agent on kubernetes cluster.
+Command codefresh uninstall agent
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be uninstalled   --kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Uninstall Runtime-Environment</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</guid>
+      <description>Description Uninstall a runtime on kubernetes cluster.
+Command codefresh uninstall runtime
+Options    Option Alias Default Description     --help   Print help information   --agent-name   Agent&amp;rsquo;s name to be uninstalled   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
