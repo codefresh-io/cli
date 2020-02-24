@@ -285,6 +285,133 @@
     }
   ],
   "paths": {
+    "/audit/download": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "audit",
+          "download"
+        ],
+        "operationId": "audit-download",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by user name"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by codefresh user id"
+          },
+          {
+            "name": "entity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api entity, example: pipeline, account"
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api entity id, this value different for each action, example: email, user id"
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account"
+          },
+          {
+            "name": "rs_status",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by response status code"
+          },
+          {
+            "name": "showTriggers",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "returns only actions related to receiving triggers"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by searching substring in request body or query or params or headers or url"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by date, value is number of milliseconds since 1970"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by date, value is number of milliseconds since 1970"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["id", "createdAt", "updatedAt"]
+            },
+            "description": "name of sorting field, values: id, createdAt, updatedAt"
+          },
+          {
+            "name": "sortType",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["ASK", "DESK"]
+            },
+            "description": "sorting type, values: ASK, DESK"
+          }
+        ],
+        "summary": "Download",
+        "x-sdk-interface": "audit.download",
+        "x-endpoint": {
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "audit.download"
+        }
+      }
+    },
     "/abac": {
       "get": {
         "responses": {
@@ -5304,6 +5431,39 @@
         "x-sdk-interface": "pipelines.create"
       }
     },
+    "/pipelines/run": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "headers": {
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Endpoint to query the build status"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-run-yaml",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Run yaml",
+        "x-sdk-interface": "pipelines.runYaml"
+      }
+    },
     "/pipelines/run/{name}": {
       "post": {
         "responses": {
@@ -5562,6 +5722,14 @@
               "type": "string"
             },
             "description": "Filter by a specific tag"
+          },
+          {
+            "in": "query",
+            "name": "freeText",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by name, description or tags"
           },
           {
             "in": "query",
