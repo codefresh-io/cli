@@ -38,7 +38,7 @@
     "cf-errors": "^0.1.12",
     "chalk": "^1.1.3",
     "cli-progress": "^1.6.1",
-    "codefresh-sdk": "1.4.1",
+    "codefresh-sdk": "git+https://github.com/codefresh-io/js-sdk.git#86921616095dcc79ad11961aa4a9d9d802961f7c",
     "colors": "^1.1.2",
     "columnify": "^1.5.4",
     "compare-versions": "^3.4.0",
