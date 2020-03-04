@@ -242,6 +242,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/builds/show-build-logs/</loc>
   </url>
   

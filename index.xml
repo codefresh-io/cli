@@ -734,6 +734,17 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
     </item>
     
     <item>
+      <title>Set version of Helm</title>
+      <link>https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/</guid>
+      <description>Description Set version of Helm used for specified cluster.
+Command codefresh set-helm-version &amp;lt;cluster&amp;gt; &amp;lt;version&amp;gt;
+Arguments    Option Alias Default Description     cluster   Cluster name on integrations page. required   version   Major part of helm version (2    Options    Option Alias Default Description     --help   Print help information    Examples Use helm2 codefresh set-helm-version cluster 2</description>
+    </item>
+    
+    <item>
       <title>Show Build Logs</title>
       <link>https://codefresh-io.github.io/cli/builds/show-build-logs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
