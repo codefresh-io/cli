@@ -1186,9 +1186,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-"codefresh-sdk@git+https://github.com/codefresh-io/js-sdk.git#4b43f67f1f43b2c673fcc3df10a801982b5def6f":
-  version "1.5.0"
-  resolved "git+https://github.com/codefresh-io/js-sdk.git#4b43f67f1f43b2c673fcc3df10a801982b5def6f"
+codefresh-sdk@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.4.0.tgz#61262d61bbf6b9c3c4b9cb44036bad7fe6605904"
+  integrity sha512-8zDXZ5x9zan5p7NrDI8i7iaUp6DTjaHfZ17VDQfF8xmTiQHaHioL+p0NRop+YM77pPs75CxwXii4rTcvC7ddqg==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.12"
