@@ -2278,6 +2278,47 @@
         "x-sdk-interface": "clusters.list"
       }
     },
+    "/clusters/{clusterId}/helm-version": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "clusterId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "helm3": {
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Helm version",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "clusters"
+        ],
+        "operationId": "helm-version",
+        "summary": "Set helm version",
+        "x-sdk-interface": "clusters.helmVersion.update"
+      }
+    },
     "/clusters/{provider}/cluster/{id}": {
       "delete": {
         "responses": {
