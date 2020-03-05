@@ -734,14 +734,14 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
     </item>
     
     <item>
-      <title>Set version of Helm</title>
-      <link>https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/</link>
+      <title>Set Helm config</title>
+      <link>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/</guid>
-      <description>Description Set version of Helm used for specified cluster.
-Command codefresh set-helm-version &amp;lt;cluster&amp;gt; &amp;lt;version&amp;gt;
-Arguments    Option Alias Default Description     cluster   Cluster name on integrations page. required   version   Major part of helm version (2    Options    Option Alias Default Description     --help   Print help information    Examples Use helm2 codefresh set-helm-version cluster 2</description>
+      <guid>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</guid>
+      <description>Description Set Helm config.
+Command codefresh set-helm-config &amp;lt;cluster&amp;gt;
+Arguments    Option Alias Default Description     cluster   Cluster name on integrations page. required    Options    Option Alias Default Description     --help   Print help information   --version -v  Major part of helm version (helm2   --test-release-pipeline -t  Pipeline for testing release   --rollback-pipeline -r  Pipeline for rollback   --delete-release-pipeline -d  Pipeline for deleting release   --tiller-namespace   Tiller namespace for helm2   --release-namespaces   List of namespaces for using    Examples Helm2 config codefresh set-helm-config cluster -v 2 -t pip1 -r pip2 -d pip3 --tiller-namespace kube-system</description>
     </item>
     
     <item>

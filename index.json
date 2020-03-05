@@ -406,11 +406,11 @@
 	"content": " Description Create a secret context.\nCommand codefresh create context secret \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list    Examples Create a secret. codefresh create context secret my-secret -v key1=valu1 -v key2=value2\n"
 },
 {
-	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/set-version-of-helm/",
-	"title": "Set version of Helm",
+	"uri": "https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/",
+	"title": "Set Helm config",
 	"tags": [],
 	"description": "",
-	"content": " Description Set version of Helm used for specified cluster.\nCommand codefresh set-helm-version \u0026lt;cluster\u0026gt; \u0026lt;version\u0026gt;\nArguments    Option Alias Default Description     cluster   Cluster name on integrations page. required   version   Major part of helm version (2    Options    Option Alias Default Description     --help   Print help information    Examples Use helm2 codefresh set-helm-version cluster 2\nUse helm3 codefresh set-helm-version cluster 3\n"
+	"content": " Description Set Helm config.\nCommand codefresh set-helm-config \u0026lt;cluster\u0026gt;\nArguments    Option Alias Default Description     cluster   Cluster name on integrations page. required    Options    Option Alias Default Description     --help   Print help information   --version -v  Major part of helm version (helm2   --test-release-pipeline -t  Pipeline for testing release   --rollback-pipeline -r  Pipeline for rollback   --delete-release-pipeline -d  Pipeline for deleting release   --tiller-namespace   Tiller namespace for helm2   --release-namespaces   List of namespaces for using    Examples Helm2 config codefresh set-helm-config cluster -v 2 -t pip1 -r pip2 -d pip3 --tiller-namespace kube-system\nHelm3 config codefresh set-helm-config cluster -v 3 -t pip1 -r pip2 -d pip3 --release-namespaces ns1 --release-namespaces ns2\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/builds/show-build-logs/",
@@ -809,7 +809,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-03-04_15-53-18.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-03-05_13-35-21.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -1166,7 +1166,7 @@
 	"title": "Predefined Pipelines",
 	"tags": [],
 	"description": "",
-	"content": " Delete Helm Release codefresh delete-release \u0026lt;name\u0026gt;\nDelete a helm release from a kubernetes cluster.\nSet version of Helm codefresh set-helm-version \u0026lt;cluster\u0026gt; \u0026lt;version\u0026gt;\nSet version of Helm used for specified cluster.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release \u0026lt;name\u0026gt;\nTest a helm release.\n"
+	"content": " Delete Helm Release codefresh delete-release \u0026lt;name\u0026gt;\nDelete a helm release from a kubernetes cluster.\nSet Helm config codefresh set-helm-config \u0026lt;cluster\u0026gt;\nSet Helm config.\nInstall or Upgrade Helm Chart codefresh install-chart\nInstall or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.\nPromote Helm Release codefresh helm-promotion\nPromote a Helm release in another environment.\nTest Helm Release codefresh test-release \u0026lt;name\u0026gt;\nTest a helm release.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/cli-config/profiles/",

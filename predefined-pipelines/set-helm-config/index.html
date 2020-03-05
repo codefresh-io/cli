@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Delete section :: Codefresh CLI Documentation</title>
+<title>Set Helm config :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/section/delete-section/">
+  <body data-url="/cli/predefined-pipelines/set-helm-config/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -927,14 +927,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/section/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/section/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/section/">Section</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/section/">Section</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/section/delete-section/" class="dd-item active">
+      <li data-nav-id="/cli/section/delete-section/" class="dd-item">
         <div>
           <a href="/cli/section/delete-section/">
             Delete section
@@ -1140,10 +1139,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item haschildren
+    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/predefined-pipelines/delete-helm-release/" class="dd-item">
@@ -1167,7 +1167,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/predefined-pipelines/set-helm-config/" class="dd-item">
+      <li data-nav-id="/cli/predefined-pipelines/set-helm-config/" class="dd-item active">
         <div>
           <a href="/cli/predefined-pipelines/set-helm-config/">
             Set Helm config
@@ -1376,7 +1376,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/section/'>Section</a> > Delete section
+ <a href='/cli/'></a> > <a href='/cli/predefined-pipelines/'>Predefined Pipelines</a> > Set Helm config
 
  
 
@@ -1401,8 +1401,8 @@
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#delete-section-by-board-name-and-section-name">Delete section by board name and section name.</a></li>
-<li><a href="#delete-section-by-id">Delete section by id.</a></li>
+<li><a href="#helm2-config">Helm2 config</a></li>
+<li><a href="#helm3-config">Helm3 config</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1417,7 +1417,7 @@
 
 <div id="body-inner">
   
-    <h1>Delete section</h1>
+    <h1>Set Helm config</h1>
   
 
 
@@ -1429,11 +1429,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Delete a section.</p>
+<p>Set Helm config.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh delete section [id]</code></p>
+<p><code>codefresh set-helm-config &lt;cluster&gt;</code></p>
 
 <h3 id="arguments">Arguments</h3>
 
@@ -1449,10 +1449,10 @@
 
 <tbody>
 <tr>
-<td>id</td>
+<td>cluster</td>
 <td></td>
 <td></td>
-<td>section id</td>
+<td>Cluster name on integrations page. <code>required</code></td>
 </tr>
 </tbody>
 </table>
@@ -1478,37 +1478,58 @@
 </tr>
 
 <tr>
-<td>--boardId</td>
+<td>--version</td>
+<td>-v</td>
 <td></td>
-<td></td>
-<td>board Id</td>
+<td>Major part of helm version (helm2</td>
 </tr>
 
 <tr>
-<td>--boardName</td>
+<td>--test-release-pipeline</td>
+<td>-t</td>
 <td></td>
-<td></td>
-<td>board name</td>
+<td>Pipeline for testing release</td>
 </tr>
 
 <tr>
-<td>--name</td>
+<td>--rollback-pipeline</td>
+<td>-r</td>
+<td></td>
+<td>Pipeline for rollback</td>
+</tr>
+
+<tr>
+<td>--delete-release-pipeline</td>
+<td>-d</td>
+<td></td>
+<td>Pipeline for deleting release</td>
+</tr>
+
+<tr>
+<td>--tiller-namespace</td>
 <td></td>
 <td></td>
-<td>section name</td>
+<td>Tiller namespace for helm2</td>
+</tr>
+
+<tr>
+<td>--release-namespaces</td>
+<td></td>
+<td></td>
+<td>List of namespaces for using</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="delete-section-by-board-name-and-section-name">Delete section by board name and section name.</h4>
+<h4 id="helm2-config">Helm2 config</h4>
 
-<p><code>codefresh delete section --board-name BOARD --name NAME</code></p>
+<p><code>codefresh set-helm-config cluster -v 2 -t pip1 -r pip2 -d pip3 --tiller-namespace kube-system</code></p>
 
-<h4 id="delete-section-by-id">Delete section by id.</h4>
+<h4 id="helm3-config">Helm3 config</h4>
 
-<p><code>codefresh delete section SECTION_ID</code></p>
+<p><code>codefresh set-helm-config cluster -v 3 -t pip1 -r pip2 -d pip3 --release-namespaces ns1 --release-namespaces ns2</code></p>
 
 
     
