@@ -2278,34 +2278,8 @@
         "x-sdk-interface": "clusters.list"
       }
     },
-    "/clusters/{clusterId}/helm-version": {
+    "/helm/cluster-config/{selector}": {
       "post": {
-        "parameters": [
-          {
-            "in": "path",
-            "name": "clusterId",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "helm3": {
-                    "type": "boolean"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          },
-          "description": "Helm version",
-          "required": true
-        },
         "responses": {
           "200": {
             "description": "ok"
@@ -2314,9 +2288,67 @@
         "tags": [
           "clusters"
         ],
-        "operationId": "helm-version",
-        "summary": "Set helm version",
-        "x-sdk-interface": "clusters.helmVersion.update"
+        "operationId": "helm-cluster-config-store",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Store cluster config",
+        "x-sdk-interface": "helm.cluster-config.store",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "cluster"
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "helm.storeClusterConfig"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "helmVersion": {
+                    "type": "string"
+                  },
+                  "deleteReleasePipeline": {
+                    "type": "string"
+                  },
+                  "testReleasePipeline": {
+                    "type": "string"
+                  },
+                  "rollbackPipeline": {
+                    "type": "string"
+                  },
+                  "tillerNamespace": {
+                    "type": "string"
+                  },
+                  "releaseNamespaces": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/clusters/{provider}/cluster/{id}": {
@@ -5472,6 +5504,79 @@
         "x-sdk-interface": "pipelines.create"
       }
     },
+    "/pipelines/names": {
+      "get": {
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Limit"
+          },
+          {
+            "in": "query",
+            "name": "labels",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Labels"
+          },
+          {
+            "in": "query",
+            "name": "projectId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "project id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-get-names",
+        "summary": "Get",
+        "x-sdk-interface": "pipelines.getNames",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "pipeline",
+              "abac": true
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "pipelines.getAllAccountPipelinesNames"
+        }
+      }
+    },
     "/pipelines/run": {
       "post": {
         "responses": {
@@ -7480,7 +7585,7 @@
         "parameters": [],
         "x-sdk-interface": "cluster.create"
       }
-      
+
     },
     "/agents": {
       "post": {
