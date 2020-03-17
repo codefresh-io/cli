@@ -4837,6 +4837,13 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "imageRepo",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "summary": "List",
