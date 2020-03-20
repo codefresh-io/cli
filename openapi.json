@@ -285,6 +285,133 @@
     }
   ],
   "paths": {
+    "/audit/download": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "audit",
+          "download"
+        ],
+        "operationId": "audit-download",
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by user name"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by codefresh user id"
+          },
+          {
+            "name": "entity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api entity, example: pipeline, account"
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api entity id, this value different for each action, example: email, user id"
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account"
+          },
+          {
+            "name": "rs_status",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by response status code"
+          },
+          {
+            "name": "showTriggers",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "returns only actions related to receiving triggers"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "filter by searching substring in request body or query or params or headers or url"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by date, value is number of milliseconds since 1970"
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "filter by date, value is number of milliseconds since 1970"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["id", "createdAt", "updatedAt"]
+            },
+            "description": "name of sorting field, values: id, createdAt, updatedAt"
+          },
+          {
+            "name": "sortType",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["ASK", "DESK"]
+            },
+            "description": "sorting type, values: ASK, DESK"
+          }
+        ],
+        "summary": "Download",
+        "x-sdk-interface": "audit.download",
+        "x-endpoint": {
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "audit.download"
+        }
+      }
+    },
     "/abac": {
       "get": {
         "responses": {
@@ -1911,6 +2038,32 @@
             }
           }
         }
+      },
+      "get": {
+        "x-action": "getTokenById",
+        "x-entityId": "params.id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "tokens"
+        ],
+        "operationId": "tokens-get-by-id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Id"
+          }
+        ],
+        "summary": "Get",
+        "x-sdk-interface": "tokens.getById"
       }
     },
     "/auth/keys": {
@@ -2148,6 +2301,79 @@
         "parameters": [],
         "summary": "List",
         "x-sdk-interface": "clusters.list"
+      }
+    },
+    "/helm/cluster-config/{selector}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "clusters"
+        ],
+        "operationId": "helm-cluster-config-store",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Store cluster config",
+        "x-sdk-interface": "helm.cluster-config.store",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "cluster"
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "helm.storeClusterConfig"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "helmVersion": {
+                    "type": "string"
+                  },
+                  "deleteReleasePipeline": {
+                    "type": "string"
+                  },
+                  "testReleasePipeline": {
+                    "type": "string"
+                  },
+                  "rollbackPipeline": {
+                    "type": "string"
+                  },
+                  "tillerNamespace": {
+                    "type": "string"
+                  },
+                  "releaseNamespaces": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
       }
     },
     "/clusters/{provider}/cluster/{id}": {
@@ -4924,8 +5150,7 @@
             "name": "tillerNamespace",
             "schema": {
               "type": "string"
-            },
-            "required": true
+            }
           }
         ],
         "requestBody": {
@@ -5377,6 +5602,112 @@
         "x-sdk-interface": "pipelines.create"
       }
     },
+    "/pipelines/names": {
+      "get": {
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Limit"
+          },
+          {
+            "in": "query",
+            "name": "labels",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Labels"
+          },
+          {
+            "in": "query",
+            "name": "projectId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "project id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-get-names",
+        "summary": "Get",
+        "x-sdk-interface": "pipelines.getNames",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "pipeline",
+              "abac": true
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "pipelines.getAllAccountPipelinesNames"
+        }
+      }
+    },
+    "/pipelines/run": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "headers": {
+              "Location": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Endpoint to query the build status"
+              }
+            }
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-run-yaml",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Run yaml",
+        "x-sdk-interface": "pipelines.runYaml"
+      }
+    },
     "/pipelines/run/{name}": {
       "post": {
         "responses": {
@@ -5635,6 +5966,14 @@
               "type": "string"
             },
             "description": "Filter by a specific tag"
+          },
+          {
+            "in": "query",
+            "name": "freeText",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by name, description or tags"
           },
           {
             "in": "query",
@@ -7188,7 +7527,15 @@
     },
     "/user/firebaseAuth": {
       "get": {
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "progressId",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "token"
@@ -7271,7 +7618,298 @@
         "summary": "Deny a pending-approval workflow",
         "x-sdk-interface": "workflows.deny"
       }
-    }
+    },
+    "/custom_clusters/register": {
+      "post": {
+        "x-action": "registerCluster",
+        "x-audit": {
+          "name": {
+            "path": "body.name",
+            "source": "req",
+            "required": true
+          },
+          "id": {
+            "path": "_id",
+            "source": "res"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "cluster-register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  },
+                  "storageClassName": {
+                    "type": "string"
+                  },
+                  "runnerType": {
+                    "type":"string"
+                  },
+                  "dockerDaemonParams": {
+                    "type":"string"
+                  },
+                  "nodeSelector": {
+                    "type":"string"
+                  },
+                  "annotations": {
+                    "type":"string"
+                  },
+                  "clusterName": {
+                    "type":"string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Cluster data",
+          "required": true
+        },
+        "summary": "Cluster",
+        "parameters": [],
+        "x-sdk-interface": "cluster.create"
+      }
+
+    },
+    "/agents": {
+      "post": {
+        "x-action": "createAgent",
+        "x-audit": {
+          "name": {
+            "path": "body.name",
+            "source": "req",
+            "required": true
+          },
+          "id": {
+            "path": "_id",
+            "source": "res"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "runtimes": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "Agent data",
+          "required": true
+        },
+        "summary": "Agent",
+        "parameters": [],
+        "x-sdk-interface": "agents.create"
+      },
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "description": "agent name"
+          }
+        ],
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "agent.getAgents"
+      },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agents-byName",
+        "summary": "List",
+        "x-sdk-interface": "agents.list"
+      }
+    },
+    "/agents/name/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent name"
+          }
+        ],
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "agents.getByName"
+      },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-byName",
+        "summary": "List",
+        "x-sdk-interface": "agents.getByName"
+      }
+    },
+    "/agent/{agentId}": {
+      "put": {
+        "x-entityId": "params.agentId",
+        "x-action": "updateAgent",
+        "parameters": [
+          {
+            "description": "Id of the agent",
+            "in": "path",
+            "name": "agentId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "runtimes": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+            }
+          }
+        }
+      },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agents-replace",
+        "summary": "Replace",
+        "x-sdk-interface": "agents.update"
+  },
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agentId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "agents"
+        ],
+        "operationId": "agent-list",
+        "summary": "Get",
+        "x-sdk-interface": "agents.get"
+      },
+      "delete": {
+        "x-action": "deleteAgent",
+        "x-entityId": "params.agentId",
+        "x-sdk-interface": "agents.delete",
+        "operationId": "agent-delete",
+        "summary": "Delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "agentId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "agent id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "agents"
+        ]
+      }
+  }
   },
   "components": {
     "parameters": {
