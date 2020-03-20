@@ -91,7 +91,7 @@ Arguments    Option Alias Default Description     name   token name. required   
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</guid>
       <description>Description Delete a helm release from a kubernetes cluster.
 Command codefresh delete-release &amp;lt;name&amp;gt;
-Options    Option Alias Default Description     --help   Print help information   --cluster -c  Run on cluster. required   --timeout -t 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --purge -p  remove the release from the store and make its name free for later use (default true)   --detach -d  Run pipeline and print build ID   --no-hooks --nh  prevent hooks from running during deletion   --tiller-namespace -n kube-system prevent hooks from running during deletion    Examples Delete release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh delete-release my-release --cluster my-cluster</description>
+Options    Option Alias Default Description     --help   Print help information   --cluster -c  Run on cluster. required   --timeout -t 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --purge -p  remove the release from the store and make its name free for later use (default true)   --detach -d  Run pipeline and print build ID   --no-hooks --nh  prevent hooks from running during deletion   --tiller-namespace -n kube-system namespace where is tiller running ( helm 2 only )   --namespace --ns default namespace where is chart located ( helm 3 )    Examples Delete release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh delete-release my-release --cluster my-cluster</description>
     </item>
     
     <item>
@@ -389,6 +389,17 @@ When you&amp;rsquo;re ready to share your charts, the preferred way to do so is 
 Read more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.
 Command codefresh create context helm-repository http &amp;lt;name&amp;gt;
 Options    Option Alias Default Description     --help   Print help information   --url   Url to the web server.</description>
+    </item>
+    
+    <item>
+      <title>Rollback Helm Release</title>
+      <link>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</guid>
+      <description>Description Rollback a helm release from a kubernetes cluster.
+Command codefresh rollback-release &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     --help   Print help information   --cluster -c  Run on cluster. required   --revision -t  revision number. required   --tiller-namespace -n kube-system prevent hooks from running during deletion   --namespace --ns default prevent hooks from running during deletion   --detach -d  Run pipeline and print build ID    Examples rollback release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh rollback my-release --cluster my-cluster --revision 1</description>
     </item>
     
     <item>
@@ -1050,7 +1061,7 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</guid>
       <description> Description Test a helm release.
 Command codefresh test-release &amp;lt;name&amp;gt;
-Arguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup   delete test pods upon completion (default false)    </description>
+Arguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Default Description     --help   Print help information   --cluster   Run on cluster. required   --tiller-namespace -n kube-system namespace where is tiller running ( helm 2 only )   --namespace --ns default namespace where is chart located ( helm 3 )   --timeout  300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d  Run pipeline and print build ID   --cleanup   delete test pods upon completion (default false)    </description>
     </item>
     
     <item>

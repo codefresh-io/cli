@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Annotate Image :: Codefresh CLI Documentation</title>
+<title>Rollback Helm Release :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/images/annotate-image/">
+  <body data-url="/cli/predefined-pipelines/rollback-helm-release/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -522,11 +522,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/images/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/images/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/images/">Images</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/images/">Images</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/images/get-image/" class="dd-item">
@@ -536,7 +535,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/images/annotate-image/" class="dd-item active">
+      <li data-nav-id="/cli/images/annotate-image/" class="dd-item">
         <div>
           <a href="/cli/images/annotate-image/">
             Annotate Image
@@ -1140,10 +1139,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item haschildren
+    <li data-nav-id="/cli/predefined-pipelines/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/predefined-pipelines/">Predefined Pipelines</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/predefined-pipelines/delete-helm-release/" class="dd-item">
@@ -1153,7 +1153,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/predefined-pipelines/rollback-helm-release/" class="dd-item">
+      <li data-nav-id="/cli/predefined-pipelines/rollback-helm-release/" class="dd-item active">
         <div>
           <a href="/cli/predefined-pipelines/rollback-helm-release/">
             Rollback Helm Release
@@ -1383,7 +1383,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/images/'>Images</a> > Annotate Image
+ <a href='/cli/'></a> > <a href='/cli/predefined-pipelines/'>Predefined Pipelines</a> > Rollback Helm Release
 
  
 
@@ -1403,16 +1403,11 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#arguments">Arguments</a></li>
+<li><a href="#command">Command</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#annotate-an-image-with-a-single-label">Annotate an image with a single label</a></li>
-<li><a href="#annotate-an-image-with-multiple-labels">Annotate an image with multiple labels</a></li>
+<li><a href="#rollback-release-my-release-from-cluster-my-cluster">rollback release &ldquo;my-release&rdquo; from cluster &ldquo;my-cluster&rdquo;</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1427,7 +1422,7 @@
 
 <div id="body-inner">
   
-    <h1>Annotate Image</h1>
+    <h1>Rollback Helm Release</h1>
   
 
 
@@ -1439,39 +1434,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Annotate an image.</p>
-
-<p>Annotating an image gives the ability to add extra context on your already existing images.</p>
+<p>Rollback a helm release from a kubernetes cluster.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh annotate image &lt;id&gt;</code></p>
-
-<h4 id="aliases">Aliases</h4>
-
-<p><code>codefresh annotate img &lt;id&gt;</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>Docker image full name or id</td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh rollback-release &lt;name&gt;</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1494,23 +1461,47 @@
 </tr>
 
 <tr>
-<td>--label</td>
-<td>-l</td>
+<td>--cluster</td>
+<td>-c</td>
 <td></td>
-<td>annotations to add to the image</td>
+<td>Run on cluster. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--revision</td>
+<td>-t</td>
+<td></td>
+<td>revision number. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--tiller-namespace</td>
+<td>-n</td>
+<td>kube-system</td>
+<td>prevent hooks from running during deletion</td>
+</tr>
+
+<tr>
+<td>--namespace</td>
+<td>--ns</td>
+<td>default</td>
+<td>prevent hooks from running during deletion</td>
+</tr>
+
+<tr>
+<td>--detach</td>
+<td>-d</td>
+<td></td>
+<td>Run pipeline and print build ID</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="annotate-an-image-with-a-single-label">Annotate an image with a single label</h4>
+<h4 id="rollback-release-my-release-from-cluster-my-cluster">rollback release &ldquo;my-release&rdquo; from cluster &ldquo;my-cluster&rdquo;</h4>
 
-<p><code>codefresh annotate image 2dfacdaad466 -l coverage=75%</code></p>
-
-<h4 id="annotate-an-image-with-multiple-labels">Annotate an image with multiple labels</h4>
-
-<p><code>codefresh annotate image 2dfacdaad466 -l coverage=75% -l tests_passed=true</code></p>
+<p><code>codefresh rollback my-release --cluster my-cluster --revision 1</code></p>
 
 
     

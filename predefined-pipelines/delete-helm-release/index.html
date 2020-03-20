@@ -1153,6 +1153,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/predefined-pipelines/rollback-helm-release/" class="dd-item">
+        <div>
+          <a href="/cli/predefined-pipelines/rollback-helm-release/">
+            Rollback Helm Release
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/cli/predefined-pipelines/install-or-upgrade-helm-chart/" class="dd-item">
         <div>
           <a href="/cli/predefined-pipelines/install-or-upgrade-helm-chart/">
@@ -1492,7 +1499,14 @@
 <td>--tiller-namespace</td>
 <td>-n</td>
 <td>kube-system</td>
-<td>prevent hooks from running during deletion</td>
+<td>namespace where is tiller running ( helm 2 only )</td>
+</tr>
+
+<tr>
+<td>--namespace</td>
+<td>--ns</td>
+<td>default</td>
+<td>namespace where is chart located ( helm 3 )</td>
 </tr>
 </tbody>
 </table>
