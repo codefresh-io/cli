@@ -1633,7 +1633,6 @@
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.get"
       }
     },
-
     "/pipelines/analyze": {
       "post": {
         "responses": {
@@ -1651,6 +1650,32 @@
         },
         "summary": "Analyze pipeline",
         "x-sdk-interface": "pipelines.analyze"
+      }
+    },
+    "/helm/cluster-config/{selector}": {
+      "get": {
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "helm.cluster-config"
+        ],
+        "operationId": "helm-cluster-config-get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "selector",
+            "description": "Cluster selector",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Get cluster config",
+        "x-sdk-interface": "helm.cluster-config.get"
       }
     },
 
@@ -5125,8 +5150,7 @@
             "name": "tillerNamespace",
             "schema": {
               "type": "string"
-            },
-            "required": true
+            }
           }
         ],
         "requestBody": {
@@ -5140,6 +5164,73 @@
         },
         "summary": "Delete",
         "x-sdk-interface": "helm.releases.delete"
+      }
+    },
+    "/kubernetes/rollback/{release}/{revision}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "id of pipeline with rollback",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "kubernetes"
+        ],
+        "operationId": "kubernetes-rollback-release",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "release",
+            "schema": {
+              "type": "string"
+            },
+            "description": "release",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "revision",
+            "schema": {
+              "type": "string"
+            },
+            "description": "revision",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Selector"
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Tiller namespace"
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Json"
+        },
+        "summary": "Rollback",
+        "x-sdk-interface": "kubernetes.rollback"
       }
     },
     "/kubernetes/releases/{releaseName}/test": {
@@ -5165,6 +5256,13 @@
           {
             "in": "query",
             "name": "selector",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
             "schema": {
               "type": "string"
             }
