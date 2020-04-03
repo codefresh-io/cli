@@ -4971,6 +4971,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "description": "registry",
+            "in": "query",
+            "name": "registry",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5001,6 +5010,15 @@
             "in": "path",
             "name": "tag",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "registry",
+            "in": "query",
+            "name": "registry",
+            "required": false,
             "schema": {
               "type": "string"
             }
