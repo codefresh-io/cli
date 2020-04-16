@@ -39,7 +39,6 @@ steps:
     type: push
     candidate: ${{build_step}}
     tag: ${{CF_SHORT_REVISION}}
-    registry: "CFCR"
 
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
