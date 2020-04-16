@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Environment :: Codefresh CLI Documentation</title>
+<title>kubernetes-Runtime :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/environments/get-environment/">
+  <body data-url="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -341,10 +341,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/">Contexts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/">Contexts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/get-context/" class="dd-item">
@@ -368,10 +369,11 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/">Create Context</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
@@ -460,10 +462,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
@@ -473,7 +476,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/" class="dd-item active">
         <div>
           <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/">
             kubernetes-Runtime
@@ -804,14 +807,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/environments/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/environments/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/environments/">Environments</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/environments/">Environments</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/environments/get-environment/" class="dd-item active">
+      <li data-nav-id="/cli/environments/get-environment/" class="dd-item">
         <div>
           <a href="/cli/environments/get-environment/">
             Get Environment
@@ -1390,7 +1392,17 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/environments/'>Environments</a> > Get Environment
+
+
+
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/create-context/'>Create Context</a> > <a href='/cli/contexts/create-context/create-secret-store-context/'>Secret-Store</a> > kubernetes-Runtime
+
+ 
+
+ 
 
  
 
@@ -1410,18 +1422,8 @@
 <li>
 <ul>
 <li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#arguments">Arguments</a></li>
+<li><a href="#command">Command</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-environment-id">Get environment ID</a></li>
-<li><a href="#get-all-environments">Get all environments</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1435,7 +1437,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Environment</h1>
+    <h1>kubernetes-Runtime</h1>
   
 
 
@@ -1447,41 +1449,13 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get a specific environment or an array of environments.</p>
+<p>Create a secret-store Kubernetes-Runtime context.</p>
 
-<p>Passing [id] argument will cause a retrieval of a specific environment.<br> In case of not passing [id] argument, a list will be returned.</p>
+<p>Create a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get environments [id..]</code></p>
-
-<h4 id="aliases">Aliases</h4>
-
-<p><code>codefresh get env [id..]</code></p>
-
-<p><code>codefresh get environment [id..]</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>environment id or name</td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh create context secret-store kubernetes-runtime &lt;name&gt;</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1497,80 +1471,41 @@
 
 <tbody>
 <tr>
+<td>--sharing-policy</td>
+<td></td>
+<td>AccountAdmins</td>
+<td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
+</tr>
+
+<tr>
 <td>--help</td>
 <td></td>
 <td></td>
 <td>Print help information</td>
 </tr>
-</tbody>
-</table>
 
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
 <tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--select-columns</td>
-<td>--sc</td>
+<td>--runtimes</td>
 <td></td>
-<td>Columns to select for table output</td>
+<td>*</td>
+<td>Names of the runtime-environment to be used as secret store</td>
 </tr>
 
 <tr>
-<td>--output</td>
-<td>-o</td>
+<td>--resource-type</td>
 <td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
+<td></td>
+<td>Type of the resource in Kubernetes. <code>required</code><br><br>Possible values:<br> - secret<br> - configmap</td>
 </tr>
 
 <tr>
-<td>--date-format</td>
-<td>--df</td>
-<td></td>
-<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
-</tr>
-
-<tr>
-<td>--pretty</td>
+<td>--resource-name</td>
 <td></td>
 <td></td>
-<td>Use colors and signs for output</td>
-</tr>
-
-<tr>
-<td>--watch</td>
-<td>-w</td>
-<td></td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>--watch-interval</td>
-<td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
+<td>Name of the resource in Kubernetes. <code>required</code></td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="get-environment-id">Get environment ID</h4>
-
-<p><code>codefresh get environment ID</code></p>
-
-<h4 id="get-all-environments">Get all environments</h4>
-
-<p><code>codefresh get environments</code></p>
 
 
     

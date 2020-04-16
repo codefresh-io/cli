@@ -480,6 +480,21 @@ Possible values:
     </item>
     
     <item>
+      <title>kubernetes-Runtime</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/</guid>
+      <description>Description Create a secret-store Kubernetes-Runtime context.
+Create a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.
+Command codefresh create context secret-store kubernetes-runtime &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context
+Possible values:
+- AccountAdmins
+- AllUsersInAccount   --help   Print help information   --runtimes  * Names of the runtime-environment to be used as secret store   --resource-type   Type of the resource in Kubernetes.</description>
+    </item>
+    
+    <item>
       <title>standard</title>
       <link>https://codefresh-io.github.io/cli/registries/registries/standard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
