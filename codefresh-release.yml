@@ -32,7 +32,7 @@ steps:
   push_to_registry_version:
     title: "Update dockerhub image version tag"
     type: push
-    candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+    candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
     image_name: codefresh/cli
     tag: ${{PACKAGE_VERSION}}
     registry: dockerhub
@@ -40,7 +40,7 @@ steps:
   push_to_registry_latest:
     title: "Update dockerhub image latest tag"
     type: push
-    candidate: r.cfcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+    candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
     image_name: codefresh/cli
     tag: latest
     registry: dockerhub
