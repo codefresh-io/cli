@@ -1605,7 +1605,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</guid>
       <description>Description Uninstall a runtime on kubernetes cluster.
 Command codefresh uninstall runtime
-Options    Option Alias Default Description     --help   Print help information   --agent-name   Agent&amp;rsquo;s name to be uninstalled   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+Options    Option Alias Default Description     --help   Print help information   --agent-name   Agent&amp;rsquo;s name to be uninstalled   --name   Runtime&amp;rsquo;s name to be uninstalled   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
