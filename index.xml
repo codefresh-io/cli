@@ -491,7 +491,7 @@ Command codefresh create context secret-store kubernetes-runtime &amp;lt;name&am
 Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context
 Possible values:
 - AccountAdmins
-- AllUsersInAccount   --help   Print help information   --runtimes  * Names of the runtime-environment to be used as secret store   --resource-type   Type of the resource in Kubernetes.</description>
+- AllUsersInAccount   --help   Print help information   --runtimes --runtime * Names of the runtime-environment to be used as secret store   --resource-type   Type of the resource in Kubernetes.</description>
     </item>
     
     <item>
