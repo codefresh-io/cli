@@ -972,7 +972,7 @@ Arguments    Option Alias Default Description     name_id   Repository &amp;ldqu
 Command codefresh delete runtime-environments name
 Aliases codefresh delete re name
 codefresh delete runtime-environment name
-Options    Option Alias Default Description     --help   Print help information    </description>
+Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Default Description     --help   Print help information   --force   Delete runtime environment in force mode    </description>
     </item>
     
     <item>
