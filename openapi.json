@@ -2082,7 +2082,7 @@
         "x-sdk-interface": "tokens.list"
       }
     },
-    "/builds/{id}": {
+    "/builds/{buildId}": {
       "get": {
         "parameters": [
           {
