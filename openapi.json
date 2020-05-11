@@ -2114,22 +2114,7 @@
         ],
         "operationId": "workflows-get-build",
         "summary": "Get",
-        "x-sdk-interface": "workflows.getBuild",
-        "x-endpoint": {
-          "isEndpoint": false,
-          "auth": {
-            "middleware": [
-              "auth.isAuthenticatedOrAnonymous"
-            ],
-            "acl": {
-              "resource": "build"
-            }
-          },
-          "postMiddleware": [
-            "global.iseMiddleware"
-          ],
-          "handler": "build.getBuildById"
-        }
+        "x-sdk-interface": "workflows.getBuild"
       }
     },
     "/workflow": {
