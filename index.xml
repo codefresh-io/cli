@@ -1574,6 +1574,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Install</title>
+      <link>https://codefresh-io.github.io/cli/monitor/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/monitor/install/</guid>
+      <description> Description Install and create an cluster resources monitor on kubernetes cluster.
+Command codefresh install monitor
+Options    Option Alias Default Description     --help   Print help information   --cluster-id   Cluster id - freestyle name   --token   Codefresh user token   --kube-context-name   Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --in-cluster   Set flag if monitor is been installed from inside a cluster   --kube-namespace   Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE]   --verbose   Print logs    </description>
+    </item>
+    
+    <item>
       <title>Install Runtime-Environment</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1618,6 +1629,17 @@ Arguments    Option Alias Default Description     client-name n  Client name. re
       <description>Description Uninstall an agent on kubernetes cluster.
 Command codefresh uninstall agent
 Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be uninstalled   --kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Uninstall</title>
+      <link>https://codefresh-io.github.io/cli/monitor/uninstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/monitor/uninstall/</guid>
+      <description>Description Uninstall an monitor on kubernetes cluster.
+Command codefresh uninstall monitor
+Options    Option Alias Default Description     --help   Print help information   --kube-context-name   Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>

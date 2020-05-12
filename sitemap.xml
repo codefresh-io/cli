@@ -608,11 +608,19 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/monitor/install/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/install-resources/</loc>
   </url>
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/monitor/</loc>
   </url>
   
   <url>
@@ -669,6 +677,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/agents/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/monitor/uninstall/</loc>
   </url>
   
   <url>
