@@ -1222,7 +1222,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codefresh-sdk@^1.7.1:
+codefresh-sdk@^1.8.0:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.8.1.tgz#6b10e2724e319dbafa365994efb3609fd95e6321"
   integrity sha512-vQKmGCFvrV48UU087zoeoRgyD21qeoUbwwM4H+x3CAj0uYIc/oXF7+W8ukF2lvh0RiDU7V2r00ykznGhFdck6g==
