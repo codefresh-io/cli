@@ -16,8 +16,8 @@ if (process.argv.includes('--get-yargs-completions')) {
     const completionInterface = require('./completion');
     completionInterface().argv; // eslint-disable-line
 } else {
-    const commandLineInterface = require('./commad-line-interface');
-    commandLineInterface().catch((err) => {
+    const { startCommandLine } = require('./commad-line-interface');
+    startCommandLine().catch((err) => {
         Output.printError(err);
         process.exit(1);
     });
