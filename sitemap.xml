@@ -418,6 +418,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner-resources/runner/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/authentication/set-active-context/</loc>
   </url>
   
@@ -596,6 +600,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner/init/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/agents/install/</loc>
   </url>
   
@@ -613,6 +621,14 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/repository/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runner-resources/</loc>
   </url>
   
   <url>

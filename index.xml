@@ -1203,6 +1203,18 @@ Arguments    Option Alias Default Description     id   token id. required    Opt
     </item>
     
     <item>
+      <title>Runner</title>
+      <link>https://codefresh-io.github.io/cli/runner-resources/runner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runner-resources/runner/</guid>
+      <description> Description Manage and install runner resources
+Manage codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
+Command codefresh runner
+Options    Option Alias Default Description     --help   Print help information    </description>
+    </item>
+    
+    <item>
       <title>Set Active Context</title>
       <link>https://codefresh-io.github.io/cli/authentication/set-active-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1537,6 +1549,17 @@ Command codefresh diff runtime-environments [first-re-name] [first-re-version] [
 Aliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]
 codefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]
 Options    Option Alias Default Description     --help   Print help information   --first-name   First runtime environment name   --first-version   First runtime environment version   --second-name   Second runtime environment name   --second-version   Second runtime environment version    </description>
+    </item>
+    
+    <item>
+      <title>Init</title>
+      <link>https://codefresh-io.github.io/cli/runner/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runner/init/</guid>
+      <description>Description Install codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
+Command codefresh runner init
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be created if token is not provided   --token   Registration&amp;rsquo;s token   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --in-cluster   Set flag if venona is been installed from inside a cluster   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --tolerations   The kubernetes tolerations as path to a JSON file to be used by venona resources (default is no tolerations) (string)   --venona-version   Version of venona to install (default is the latest)   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
