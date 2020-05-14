@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Deny :: Codefresh CLI Documentation</title>
+<title>Delete :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/builds/deny/">
+  <body data-url="/cli/runner/delete/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -284,11 +284,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/builds/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/builds/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/builds/">Builds</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/builds/">Builds</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/builds/get-build/" class="dd-item">
@@ -333,7 +332,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/builds/deny/" class="dd-item active">
+      <li data-nav-id="/cli/builds/deny/" class="dd-item">
         <div>
           <a href="/cli/builds/deny/">
             Deny
@@ -893,13 +892,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runner/" class="dd-item haschildren
+    <li data-nav-id="/cli/runner/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/runner/">Runner</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runner/">Runner</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/runner/delete/" class="dd-item">
+      <li data-nav-id="/cli/runner/delete/" class="dd-item active">
         <div>
           <a href="/cli/runner/delete/">
             Delete
@@ -1449,7 +1449,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/builds/'>Builds</a> > Deny
+ <a href='/cli/'></a> > <a href='/cli/runner/'>Runner</a> > Delete
 
  
 
@@ -1470,7 +1470,6 @@
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
@@ -1485,7 +1484,7 @@
 
 <div id="body-inner">
   
-    <h1>Deny</h1>
+    <h1>Delete</h1>
   
 
 
@@ -1497,35 +1496,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Deny a pending-approval workflow.</p>
-
-<p>deny &lt;$BUILD_ID&gt;.</p>
+<p>Deletes codefresh runner solution&rsquo;s components on kubernetes cluster.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh deny &lt;buildId&gt;</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>buildId</td>
-<td></td>
-<td></td>
-<td>Build&rsquo;s id. <code>required</code></td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh runner delete</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1545,6 +1520,48 @@
 <td></td>
 <td></td>
 <td>Print help information</td>
+</tr>
+
+<tr>
+<td>--name</td>
+<td></td>
+<td></td>
+<td>Agent&rsquo;s name to be deleted</td>
+</tr>
+
+<tr>
+<td>--url</td>
+<td></td>
+<td><a href="https://g.codefresh.io">https://g.codefresh.io</a></td>
+<td>Codefresh system custom url</td>
+</tr>
+
+<tr>
+<td>--kube-context-name</td>
+<td></td>
+<td></td>
+<td>Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+</tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
+</tr>
+
+<tr>
+<td>--kube-config-path</td>
+<td></td>
+<td></td>
+<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+</tr>
+
+<tr>
+<td>--verbose</td>
+<td></td>
+<td></td>
+<td>Print logs</td>
 </tr>
 </tbody>
 </table>

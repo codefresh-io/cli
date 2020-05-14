@@ -1515,6 +1515,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Delete</title>
+      <link>https://codefresh-io.github.io/cli/runner/delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runner/delete/</guid>
+      <description>Description Deletes codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
+Command codefresh runner delete
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be deleted   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
       <title>Deny</title>
       <link>https://codefresh-io.github.io/cli/builds/deny/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

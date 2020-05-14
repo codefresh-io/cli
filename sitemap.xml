@@ -576,6 +576,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner/delete/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/builds/deny/</loc>
   </url>
   
