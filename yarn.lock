@@ -1243,9 +1243,9 @@ code-point-at@^1.0.0:
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
 codefresh-sdk@^1.8.0:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.8.2.tgz#73231c7505e0124acf0f958787a053c952a08c56"
-  integrity sha512-naP5EOCV5MGFY9pCHrsns5VSzogIockylANkegLdQls6dgZk16VhSgs92q1o0Lb/Gf5ypzLmRCYD36gNNk2EpA==
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.8.3.tgz#462a053ee197bfd6d4793a8a9bb8a97f5ccd2426"
+  integrity sha512-SJOlFZigo/AiaAP1B1g1T96eoXEm8Q93/pVJnv8AVRSyrzHNmIP/BTu/WTzplFjEVv5hfLLt7563wUzgTucDvg==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.12"
