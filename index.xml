@@ -1579,9 +1579,9 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/monitor/install/</guid>
-      <description> Description Install and create an cluster resources monitor on kubernetes cluster.
+      <description>Description Install and create an cluster resources monitor on kubernetes cluster.
 Command codefresh install monitor
-Options    Option Alias Default Description     --help   Print help information   --cluster-id   Cluster id - freestyle name   --token   Codefresh user token   --kube-context-name   Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --in-cluster   Set flag if monitor is been installed from inside a cluster   --kube-namespace   Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE]   --verbose   Print logs    </description>
+Options    Option Alias Default Description     --help   Print help information   --cluster-id   Cluster id - freestyle name   --token   Codefresh user token   --kube-context-name   Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --url   Codefresh url, by default https://g.</description>
     </item>
     
     <item>
