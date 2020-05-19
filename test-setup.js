@@ -21,7 +21,7 @@ global.verifyResponsesReturned = async (responses) => {
  * */
 global.configureSdk = async () => {
     if (!SDK_CONFIGURED) {
-        SDK_CONFIGURED = true;
+       // SDK_CONFIGURED = true;
         sdk.configure(await Config.load({
             url: 'http://not.needed',
             apiKey: 'not-needed',
