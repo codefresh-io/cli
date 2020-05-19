@@ -6,7 +6,7 @@
   "preferGlobal": true,
   "scripts": {
     "generate-completion": "node ./lib/interface/cli/completion/generate",
-    "test": "DEBUG=codefresh* jest .spec.js --coverage",
+    "test": "jest .spec.js --coverage",
     "eslint": "eslint lib1logic/**",
     "ci-publish": "ci-publish",
     "pkg": "pkg . -t node10-alpine-x64,node10-macos-x64,node10-linux-x64,node10-win-x64 --out-path ./dist",
