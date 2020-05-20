@@ -20,12 +20,10 @@ global.verifyResponsesReturned = async (responses) => {
  * downloads spec one time for all tests
  * */
 global.configureSdk = async () => {
-    if (!SDK_CONFIGURED) {
-        SDK_CONFIGURED = true;
-        sdk.configure(await Config.load({
-            url: 'http://not.needed',
-            apiKey: 'not-needed',
-            spec: { json: openapi },
-        }));
-    }
+    Object.keys(sdk).forEach(key => delete sdk[key]);
+    sdk.configure(await Config.load({
+        url: 'http://not.needed',
+        apiKey: 'not-needed',
+        spec: { json: openapi },
+    }));
 };
