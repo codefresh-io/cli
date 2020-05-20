@@ -2082,24 +2082,39 @@
         "x-sdk-interface": "tokens.list"
       }
     },
-    "/builds/{id}": {
+    "/builds/{buildId}": {
       "get": {
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "name": "buildId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "buildId",
+            "required": true
+          },
+          {
+            "name": "noAccount",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "noAccount",
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/Json"
           }
         },
         "tags": [
           "builds"
         ],
-        "operationId": "workflows-get",
+        "operationId": "workflows-get-build",
         "summary": "Get",
-        "x-sdk-interface": "workflows.get"
+        "x-sdk-interface": "workflows.getBuild"
       }
     },
     "/workflow": {
@@ -6533,6 +6548,13 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "in": "query",
+            "name": "tags",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
