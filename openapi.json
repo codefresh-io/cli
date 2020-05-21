@@ -7724,6 +7724,9 @@
                   },
                   "clusterName": {
                     "type":"string"
+                  },
+                  "runtimeEnvironmentName": {
+                    "type":"string"
                   }
                 },
                 "type": "object"
