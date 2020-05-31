@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>YARN :: Codefresh CLI Documentation</title>
+<title>Info :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -23,12 +23,12 @@
     display:none !important;
   }
 </style>
-<meta name="description" content="asd">
+<meta name="description" content="">
 
 
     
   </head>
-  <body data-url="/cli/installation/yarn/">
+  <body data-url="/cli/runner/info/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -68,11 +68,10 @@
       <a href="/cli/getting-started/">Getting Started</a>
       </div>
     </li>
-    <li data-nav-id="/cli/installation/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/installation/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/installation/">Installation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/installation/">Installation</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/installation/npm/" class="dd-item">
@@ -82,7 +81,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/installation/yarn/" class="dd-item active">
+      <li data-nav-id="/cli/installation/yarn/" class="dd-item">
         <div>
           <a href="/cli/installation/yarn/">
             YARN
@@ -893,13 +892,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runner/" class="dd-item haschildren
+    <li data-nav-id="/cli/runner/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/runner/">Runner</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runner/">Runner</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/runner/info/" class="dd-item">
+      <li data-nav-id="/cli/runner/info/" class="dd-item active">
         <div>
           <a href="/cli/runner/info/">
             Info
@@ -1463,7 +1463,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/installation/'>Installation</a> > YARN
+ <a href='/cli/'></a> > <a href='/cli/runner/'>Runner</a> > Info
 
  
 
@@ -1476,7 +1476,19 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#options">Options</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -1486,7 +1498,7 @@
 
 <div id="body-inner">
   
-    <h1>YARN</h1>
+    <h1>Info</h1>
   
 
 
@@ -1494,25 +1506,37 @@
     
     
     
-    <div class="alert 
-alert-warning"
- 
-role="alert">the CLI requires node version 8.0.0 or higher</div>
+    
 
+<h3 id="description">Description</h3>
 
-<p>Codefresh&rsquo;s CLI is available for installation using YARN.</p>
+<p>Get info on your runner installations.</p>
 
-<p>Install:
-<code>yarn global add codefresh</code></p>
+<h3 id="command">Command</h3>
 
-<p>Install a specific version:
-<code>yarn global add codefresh@{VERSION}</code></p>
+<p><code>codefresh runner info</code></p>
 
-<p>Update to latest version:
-<code>yarn global upgrade codefresh</code></p>
+<h3 id="options">Options</h3>
 
-<p>Update to a specific version:
-<code>yarn global upgrade codefresh@{VERSION}</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>--help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
+</tbody>
+</table>
 
 
     

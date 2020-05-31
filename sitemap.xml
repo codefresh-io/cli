@@ -394,6 +394,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner/info/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/install-resources/install/</loc>
   </url>
   
