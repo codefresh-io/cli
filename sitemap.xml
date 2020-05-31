@@ -696,6 +696,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner/upgrade/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</loc>
   </url>
   

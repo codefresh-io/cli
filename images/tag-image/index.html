@@ -913,6 +913,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/runner/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/runner/upgrade/">
+            Upgrade
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/runner-resources/" class="dd-item haschildren
@@ -1474,7 +1481,8 @@
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#tag-image-2dfacdaad466-with-a-new-tag-1-0-0">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo;</a></li>
+<li><a href="#tag-image-2dfacdaad466-with-a-new-tag-1-0-0-on-default-registry">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on default registry</a></li>
+<li><a href="#tag-image-2dfacdaad466-with-a-new-tag-1-0-0-on-dockerhub">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on dockerhub</a></li>
 <li><a href="#tag-image-2dfacdaad466-with-multiple-tags-1-0-0-and-my-tag">Tag image &lsquo;2dfacdaad466&rsquo; with multiple tags: &lsquo;1.0.0&rsquo; and &lsquo;my-tag&rsquo;</a></li>
 </ul></li>
 </ul></li>
@@ -1504,7 +1512,7 @@
 
 <p>Add an image tag.</p>
 
-<p>Tagging an image will result in the creation of a new Docker Image tag.</p>
+<p>Tagging an image will result in the creation of a new Docker Image tag. If registry not specified - default is used.</p>
 
 <h3 id="command">Command</h3>
 
@@ -1558,14 +1566,25 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--registry</td>
+<td>-r</td>
+<td></td>
+<td>Registry integration name</td>
+</tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="tag-image-2dfacdaad466-with-a-new-tag-1-0-0">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo;</h4>
+<h4 id="tag-image-2dfacdaad466-with-a-new-tag-1-0-0-on-default-registry">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on default registry</h4>
 
 <p><code>codefresh tag 2dfacdaad466 1.0.0</code></p>
+
+<h4 id="tag-image-2dfacdaad466-with-a-new-tag-1-0-0-on-dockerhub">Tag image &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on dockerhub</h4>
+
+<p><code>codefresh tag 2dfacdaad466 1.0.0 --registry dockerhub</code></p>
 
 <h4 id="tag-image-2dfacdaad466-with-multiple-tags-1-0-0-and-my-tag">Tag image &lsquo;2dfacdaad466&rsquo; with multiple tags: &lsquo;1.0.0&rsquo; and &lsquo;my-tag&rsquo;</h4>
 

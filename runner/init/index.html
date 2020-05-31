@@ -913,6 +913,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/runner/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/runner/upgrade/">
+            Upgrade
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/runner-resources/" class="dd-item haschildren
@@ -1558,13 +1565,6 @@
 </tr>
 
 <tr>
-<td>--dry-run</td>
-<td></td>
-<td></td>
-<td>Set to true to simulate installation</td>
-</tr>
-
-<tr>
 <td>--yes</td>
 <td>-y</td>
 <td></td>
@@ -1586,24 +1586,10 @@
 </tr>
 
 <tr>
-<td>--in-cluster</td>
-<td></td>
-<td></td>
-<td>Set flag if venona is been installed from inside a cluster</td>
-</tr>
-
-<tr>
 <td>--kube-namespace</td>
 <td></td>
 <td></td>
 <td>Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
-</tr>
-
-<tr>
-<td>--kubernetes-runner-type</td>
-<td></td>
-<td></td>
-<td>Set the runner type to kubernetes (alpha feature)</td>
 </tr>
 
 <tr>
@@ -1614,10 +1600,10 @@
 </tr>
 
 <tr>
-<td>--venona-version</td>
+<td>--storage-class-name</td>
 <td></td>
 <td></td>
-<td>Version of venona to install (default is the latest)</td>
+<td>Set a name of your custom storage class</td>
 </tr>
 
 <tr>
@@ -1628,10 +1614,17 @@
 </tr>
 
 <tr>
-<td>--skip-version-check</td>
+<td>--set-value</td>
 <td></td>
 <td></td>
-<td>Do not compare current Venona&rsquo;s version with latest</td>
+<td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
+</tr>
+
+<tr>
+<td>--set-file</td>
+<td></td>
+<td></td>
+<td>Set values for templates from file, example: --set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
 </tr>
 
 <tr>

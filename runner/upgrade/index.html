@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>get :: Codefresh CLI Documentation</title>
+<title>Upgrade :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/annotations/get/">
+  <body data-url="/cli/runner/upgrade/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -687,14 +687,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/annotations/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/annotations/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/annotations/">Annotations</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/annotations/">Annotations</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/annotations/get/" class="dd-item active">
+      <li data-nav-id="/cli/annotations/get/" class="dd-item">
         <div>
           <a href="/cli/annotations/get/">
             get
@@ -893,10 +892,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runner/" class="dd-item haschildren
+    <li data-nav-id="/cli/runner/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/runner/">Runner</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runner/">Runner</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/runner/delete/" class="dd-item">
@@ -913,7 +913,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/runner/upgrade/" class="dd-item">
+      <li data-nav-id="/cli/runner/upgrade/" class="dd-item active">
         <div>
           <a href="/cli/runner/upgrade/">
             Upgrade
@@ -1456,7 +1456,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/annotations/'>Annotations</a> > get
+ <a href='/cli/'></a> > <a href='/cli/runner/'>Runner</a> > Upgrade
 
  
 
@@ -1477,14 +1477,7 @@
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-all-annotations-for-entity">Get all annotations for entity</a></li>
-<li><a href="#get-specified-annotations">Get specified annotations</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1498,7 +1491,7 @@
 
 <div id="body-inner">
   
-    <h1>get</h1>
+    <h1>Upgrade</h1>
   
 
 
@@ -1510,47 +1503,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get annotations.</p>
+<p>Upgrades codefresh runner solution&rsquo;s components.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh get annotation &lt;entity-type&gt; &lt;entity-id&gt; [labels...]</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>entity-type</td>
-<td></td>
-<td></td>
-<td>Type of resource for annotation. <code>required</code></td>
-</tr>
-
-<tr>
-<td>entity-id</td>
-<td></td>
-<td></td>
-<td>Id of resource for annotation. <code>required</code></td>
-</tr>
-
-<tr>
-<td>labels</td>
-<td></td>
-<td></td>
-<td>Labels to filter by</td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh runner upgrade</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1571,75 +1528,57 @@
 <td></td>
 <td>Print help information</td>
 </tr>
-</tbody>
-</table>
 
-<h3 id="output-options">Output Options</h3>
-
-<table>
-<thead>
 <tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--select-columns</td>
-<td>--sc</td>
+<td>--agent-name</td>
 <td></td>
-<td>Columns to select for table output</td>
+<td></td>
+<td>The name of the agent to be upgraded or created</td>
 </tr>
 
 <tr>
-<td>--output</td>
-<td>-o</td>
+<td>--runtime-name</td>
 <td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
+<td></td>
+<td>The name of the runtime to be upgraded</td>
 </tr>
 
 <tr>
-<td>--date-format</td>
-<td>--df</td>
+<td>--url</td>
 <td></td>
-<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
+<td><a href="https://g.codefresh.io">https://g.codefresh.io</a></td>
+<td>Codefresh system custom url</td>
 </tr>
 
 <tr>
-<td>--pretty</td>
+<td>--kube-context-name</td>
 <td></td>
 <td></td>
-<td>Use colors and signs for output</td>
+<td>Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed</td>
 </tr>
 
 <tr>
-<td>--watch</td>
-<td>-w</td>
+<td>--kube-namespace</td>
 <td></td>
-<td>Watching updates to a particular resource</td>
+<td></td>
+<td>Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed</td>
 </tr>
 
 <tr>
-<td>--watch-interval</td>
+<td>--kube-config-path</td>
 <td></td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
+<td></td>
+<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+</tr>
+
+<tr>
+<td>--verbose</td>
+<td></td>
+<td></td>
+<td>Print logs</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="get-all-annotations-for-entity">Get all annotations for entity</h4>
-
-<p><code>codefresh get annotation image 2dfacdaad466</code></p>
-
-<h4 id="get-specified-annotations">Get specified annotations</h4>
-
-<p><code>codefresh get annotation image 2dfacdaad466 coverage tests_passed</code></p>
 
 
     

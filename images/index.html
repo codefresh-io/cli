@@ -913,6 +913,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/runner/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/runner/upgrade/">
+            Upgrade
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/runner-resources/" class="dd-item haschildren
@@ -1513,13 +1520,15 @@
 
 <p>Add an image tag.</p>
 
-<p>Tagging an image will result in the creation of a new Docker Image tag.</p>
+<p>Tagging an image will result in the creation of a new Docker Image tag. If registry not specified - default is used.</p>
 
 <h3 id="untag-image-untag-image"><a href="untag-image">Untag Image</a></h3>
 
 <p><code>codefresh untag &lt;id&gt; [tags..]</code></p>
 
 <p>Untag an image.</p>
+
+<p>Untagging an image will result in the removal of tag. If registry not specified - default is used.</p>
 
 
 

@@ -913,6 +913,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/runner/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/runner/upgrade/">
+            Upgrade
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/runner-resources/" class="dd-item haschildren
@@ -1474,7 +1481,8 @@
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#remove-tag-1-0-0-from-image-2dfacdaad466">Remove tag &lsquo;1.0.0&rsquo; from image &lsquo;2dfacdaad466&rsquo;</a></li>
+<li><a href="#remove-tag-1-0-0-from-image-2dfacdaad466-on-default-registry">Remove tag &lsquo;1.0.0&rsquo; from image &lsquo;2dfacdaad466&rsquo; on default registry</a></li>
+<li><a href="#remove-tag-2dfacdaad466-with-a-new-tag-1-0-0-on-dockerhub">Remove tag &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on dockerhub</a></li>
 <li><a href="#remove-tags-1-0-0-and-my-tag-from-image-2dfacdaad466">Remove tags &lsquo;1.0.0&rsquo; and &lsquo;my-tag&rsquo; from image&rsquo;2dfacdaad466&rsquo;</a></li>
 </ul></li>
 </ul></li>
@@ -1503,6 +1511,8 @@
 <h3 id="description">Description</h3>
 
 <p>Untag an image.</p>
+
+<p>Untagging an image will result in the removal of tag. If registry not specified - default is used.</p>
 
 <h3 id="command">Command</h3>
 
@@ -1556,14 +1566,25 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--registry</td>
+<td>-r</td>
+<td></td>
+<td>Registry integration name</td>
+</tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="remove-tag-1-0-0-from-image-2dfacdaad466">Remove tag &lsquo;1.0.0&rsquo; from image &lsquo;2dfacdaad466&rsquo;</h4>
+<h4 id="remove-tag-1-0-0-from-image-2dfacdaad466-on-default-registry">Remove tag &lsquo;1.0.0&rsquo; from image &lsquo;2dfacdaad466&rsquo; on default registry</h4>
 
 <p><code>codefresh untag 2dfacdaad466 1.0.0</code></p>
+
+<h4 id="remove-tag-2dfacdaad466-with-a-new-tag-1-0-0-on-dockerhub">Remove tag &lsquo;2dfacdaad466&rsquo; with a new tag: &lsquo;1.0.0&rsquo; on dockerhub</h4>
+
+<p><code>codefresh untag 2dfacdaad466 1.0.0 --registry dockerhub</code></p>
 
 <h4 id="remove-tags-1-0-0-and-my-tag-from-image-2dfacdaad466">Remove tags &lsquo;1.0.0&rsquo; and &lsquo;my-tag&rsquo; from image&rsquo;2dfacdaad466&rsquo;</h4>
 

@@ -1360,9 +1360,9 @@ Install # tap Codefresh homebrew repo brew tap codefresh-io/cli # install Codefr
       
       <guid>https://codefresh-io.github.io/cli/images/tag-image/</guid>
       <description>Description Add an image tag.
-Tagging an image will result in the creation of a new Docker Image tag.
+Tagging an image will result in the creation of a new Docker Image tag. If registry not specified - default is used.
 Command codefresh tag &amp;lt;id&amp;gt; [tags..]
-Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Default Description     --help   Print help information    Examples Tag image &amp;lsquo;2dfacdaad466&amp;rsquo; with a new tag: &amp;lsquo;1.</description>
+Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Default Description     --help   Print help information   --registry -r  Registry integration name    Examples Tag image &amp;lsquo;2dfacdaad466&amp;rsquo; with a new tag: &amp;lsquo;1.</description>
     </item>
     
     <item>
@@ -1397,8 +1397,9 @@ More information about image pull secret can be found here: https://kubernetes.<
       
       <guid>https://codefresh-io.github.io/cli/images/untag-image/</guid>
       <description>Description Untag an image.
+Untagging an image will result in the removal of tag. If registry not specified - default is used.
 Command codefresh untag &amp;lt;id&amp;gt; [tags..]
-Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Default Description     --help   Print help information    Examples Remove tag &amp;lsquo;1.0.0&amp;rsquo; from image &amp;lsquo;2dfacdaad466&amp;rsquo; codefresh untag 2dfacdaad466 1.0.0</description>
+Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Default Description     --help   Print help information   --registry -r  Registry integration name    Examples Remove tag &amp;lsquo;1.</description>
     </item>
     
     <item>
@@ -1522,7 +1523,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/runner/delete/</guid>
       <description>Description Deletes codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
 Command codefresh runner delete
-Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be deleted   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be deleted   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed   --kube-namespace   Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
@@ -1570,7 +1571,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/runner/init/</guid>
       <description>Description Install Codefresh Runner solution&amp;rsquo;s components on kubernetes cluster.
 Command codefresh runner init
-Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be created if token is not provided   --token   Registration&amp;rsquo;s token   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by venona build resources (default is no node selector) (string)   --dry-run   Set to true to simulate installation   --yes -y  Use installation defaults (don&amp;rsquo;t ask any questions)   --set-default-runtime   Set this as the default runtime environment for your Codefresh account   --exec-demo-pipeline   Run a demo pipeline after the installation completes   --in-cluster   Set flag if venona is been installed from inside a cluster   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --kubernetes-runner-type   Set the runner type to kubernetes (alpha feature)   --tolerations   The kubernetes tolerations as path to a JSON file to be used by venona resources (default is no tolerations) (string)   --venona-version   Version of venona to install (default is the latest)   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be created if token is not provided   --token   Registration&amp;rsquo;s token   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector   The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by venona build resources (default is no node selector) (string)   --yes -y  Use installation defaults (don&amp;rsquo;t ask any questions)   --set-default-runtime   Set this as the default runtime environment for your Codefresh account   --exec-demo-pipeline   Run a demo pipeline after the installation completes   --kube-namespace   Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]   --tolerations   The kubernetes tolerations as path to a JSON file to be used by venona resources (default is no tolerations) (string)   --storage-class-name   Set a name of your custom storage class   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
@@ -1662,6 +1663,17 @@ Options    Option Alias Default Description     --help   Print help information 
       <description>Description Uninstall a runtime on kubernetes cluster.
 Command codefresh uninstall runtime
 Options    Option Alias Default Description     --help   Print help information   --agent-name   Agent&amp;rsquo;s name to be uninstalled   --name   Runtime&amp;rsquo;s name to be uninstalled   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Upgrade</title>
+      <link>https://codefresh-io.github.io/cli/runner/upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runner/upgrade/</guid>
+      <description>Description Upgrades codefresh runner solution&amp;rsquo;s components.
+Command codefresh runner upgrade
+Options    Option Alias Default Description     --help   Print help information   --agent-name   The name of the agent to be upgraded or created   --runtime-name   The name of the runtime to be upgraded   --url  https://g.codefresh.io Codefresh system custom url   --kube-context-name   Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed   --kube-namespace   Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
     </item>
     
     <item>
