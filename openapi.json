@@ -2082,24 +2082,39 @@
         "x-sdk-interface": "tokens.list"
       }
     },
-    "/builds/{id}": {
+    "/builds/{buildId}": {
       "get": {
         "parameters": [
           {
-            "$ref": "#/components/parameters/id"
+            "name": "buildId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "description": "buildId",
+            "required": true
+          },
+          {
+            "name": "noAccount",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "noAccount",
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": "ok"
+            "$ref": "#/components/responses/Json"
           }
         },
         "tags": [
           "builds"
         ],
-        "operationId": "workflows-get",
+        "operationId": "workflows-get-build",
         "summary": "Get",
-        "x-sdk-interface": "workflows.get"
+        "x-sdk-interface": "workflows.getBuild"
       }
     },
     "/workflow": {
@@ -4971,6 +4986,15 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "description": "registry",
+            "in": "query",
+            "name": "registry",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5001,6 +5025,15 @@
             "in": "path",
             "name": "tag",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "registry",
+            "in": "query",
+            "name": "registry",
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -7691,6 +7724,9 @@
                   },
                   "clusterName": {
                     "type":"string"
+                  },
+                  "runtimeEnvironmentName": {
+                    "type":"string"
                   }
                 },
                 "type": "object"
@@ -7930,7 +7966,102 @@
           "agents"
         ]
       }
-  }
+    },
+    "/runner-installation": {
+      "post": {
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "runner-installation.createNewInstallationProgress"
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "runner-installation"
+        ],
+        "operationId": "runner-installation-create",
+        "summary": "Create new runner installation progress",
+        "x-sdk-interface": "runner-installation.createNewInstallationProgress",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Json"
+        }
+      }
+    },
+    "/runner-installation/{id}": {
+      "get": {
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "runner-installation.getInstallationProgress"
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "runner-installation"
+        ],
+        "operationId": "runner-installation-get",
+        "summary": "Get new session of runner installation progress",
+        "x-sdk-interface": "runner-installation.getInstallationProgress"
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ]
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "handler": "runner-installation.reportInstallationProgressEvent"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "runner-installation"
+        ],
+        "operationId": "runner-installation-update",
+        "summary": "Update runner-installation progress",
+        "x-sdk-interface": "runner-installation.reportInstallationProgressEvent",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/Json"
+        }
+      }
+    }
   },
   "components": {
     "parameters": {
@@ -8186,6 +8317,15 @@
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      "Json": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/requestBody"
             }
           }
         }
