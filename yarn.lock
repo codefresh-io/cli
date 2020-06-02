@@ -1242,10 +1242,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codefresh-sdk@^1.9.4:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.9.4.tgz#b35a98992849b82b36d7f24e8391202d956a6a5f"
-  integrity sha512-FxNe4ONxut26hDLexw/F5TYgnABykhC4TYoI1EyXamaU+OxTk7HrqVgw1vaY2z7PirlQJ/gR/xAqcz3HbMqfew==
+codefresh-sdk@^1.9.5:
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.9.5.tgz#d744b58d9e63b0acd4f35fdf68cd6457b807de98"
+  integrity sha512-jl6QJ0MeqtcWc1wRrqKb0P80+ENXJ4iz6ZvkDZmD0Jp89lW0LQ8j3BuBW8TaswV/PZhbMOH48UkeTz6ky2lggA==
   dependencies:
     bluebird "^3.5.3"
     cf-errors "^0.1.12"
@@ -1253,6 +1253,7 @@ codefresh-sdk@^1.9.4:
     debug "^4.1.1"
     decompress "^4.2.0"
     decompress-targz "^4.1.1"
+    decompress-unzip "^4.0.1"
     firebase "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5"
     fs-extra "^7.0.1"
     js-yaml "^3.13.1"
