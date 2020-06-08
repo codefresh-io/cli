@@ -408,33 +408,34 @@
       <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
+      <li data-nav-id="/cli/registries/get-registries/" class="dd-item">
         <div>
-          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
-            bitbucket
+          <a href="/cli/registries/get-registries/">
+            Get Registries
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
+      <li data-nav-id="/cli/registries/delete-registry/" class="dd-item">
         <div>
-          <a href="/cli/contexts/create-context/create-git-context/github/">
-            github
+          <a href="/cli/registries/delete-registry/">
+            Delete Registry
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
+    <li data-nav-id="/cli/registries/registries/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/registries/registries/">Registries</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/registries/registries/standard/" class="dd-item">
         <div>
-          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
-            gitlab
+          <a href="/cli/registries/registries/standard/">
+            standard
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/stash/">
-            stash
-          </a>
-        </div>
+        </ul>
     </li>
         </ul>
     </li>
@@ -1569,6 +1570,13 @@
 <td></td>
 <td></td>
 <td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by venona build resources (default is no node selector) (string)</td>
+</tr>
+
+<tr>
+<td>--build-node-selector</td>
+<td></td>
+<td></td>
+<td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by the codefresh build resources (default is no node selector)</td>
 </tr>
 
 <tr>
