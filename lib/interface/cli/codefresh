@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 const Output = require('../../output/Output');
+const SegfaultHandler = require('segfault-handler');
+
+SegfaultHandler.registerHandler('cf_crash.log');
 
 process.on('uncaughtException', (err) => {
     Output.printError(err);
