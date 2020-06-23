@@ -91,7 +91,7 @@
   "author": "Codefresh",
   "license": "ISC",
   "engines": {
-    "node": "10.x"
+    "node": ">=8.0.0"
   },
   "jest": {
     "testEnvironment": "node",
