@@ -742,6 +742,13 @@
 	"content": " Description Uninstall a resource\nUninstall operation will uninstall codefresh components on kubernetes cluster.\nCommand codefresh uninstall\nOptions    Option Alias Default Description     --help   Print help information    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/componenets/update/",
+	"title": "Update",
+	"tags": [],
+	"description": "",
+	"content": " Description Update Codefresh CLI components.\nCommand codefresh components update\nOptions    Option Alias Default Description     --help   Print help information   --location   Override dowload folder location    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/board/update-board/",
 	"title": "Update Board",
 	"tags": [],
@@ -768,6 +775,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a yaml context.\nCommand codefresh create context yaml \u0026lt;name\u0026gt;\nArguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/codefresh-cli-components/components/",
+	"title": "components",
+	"tags": [],
+	"description": "",
+	"content": " Description Codefresh CLI components\nCommand codefresh components\nOptions    Option Alias Default Description     --help   Print help information    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/projects/",
@@ -837,7 +851,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-06-22_15-50-15.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-06-23_15-05-44.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -966,6 +980,20 @@
 	"content": " Get Clusters codefresh get clusters\nGet an array of clusters.\nDelete Cluster codefresh delete cluster \u0026lt;name\u0026gt;\nDelete a cluster.\nCreate Cluster codefresh create clusters [name]\nCreate a cluster.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/codefresh-cli-components/",
+	"title": "Codefresh CLI components",
+	"tags": [],
+	"description": "",
+	"content": " components codefresh components\nCodefresh CLI components\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/componenets/",
+	"title": "Componenets",
+	"tags": [],
+	"description": "",
+	"content": " Update codefresh components update\nUpdate Codefresh CLI components.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/clusters/create-cluster/",
 	"title": "Create Cluster",
 	"tags": [],
@@ -1026,7 +1054,7 @@
 	"title": "Git",
 	"tags": [],
 	"description": "",
-	"content": " bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\n"
+	"content": " bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",

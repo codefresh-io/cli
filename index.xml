@@ -1262,6 +1262,17 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
+      <title>Update</title>
+      <link>https://codefresh-io.github.io/cli/componenets/update/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/componenets/update/</guid>
+      <description> Description Update Codefresh CLI components.
+Command codefresh components update
+Options    Option Alias Default Description     --help   Print help information   --location   Override dowload folder location    </description>
+    </item>
+    
+    <item>
       <title>Update Board</title>
       <link>https://codefresh-io.github.io/cli/board/update-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1303,6 +1314,17 @@ Arguments    Option Alias Default Description     id   Id of existing section   
       <description> Description Create a yaml context.
 Command codefresh create context yaml &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Default Description     --help   Print help information   --variable -v  Variables list    </description>
+    </item>
+    
+    <item>
+      <title>components</title>
+      <link>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</guid>
+      <description> Description Codefresh CLI components
+Command codefresh components
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>

@@ -438,6 +438,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/componenets/update/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/board/update-board/</loc>
   </url>
   
@@ -451,6 +455,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</loc>
   </url>
   
   <url>
@@ -565,6 +573,14 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/codefresh-cli-components/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/componenets/</loc>
   </url>
   
   <url>
