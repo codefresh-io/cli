@@ -39,4 +39,5 @@ RUN apk del yarn
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
+RUN codefresh components update --location components
 ENTRYPOINT ["codefresh"]
