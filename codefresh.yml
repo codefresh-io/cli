@@ -34,18 +34,17 @@ steps:
     image-name: codefresh/cli
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
-  push_to_dockerhub:
-    title: "Pushing image tagged with revision to registry"
+  push_step:
+    stage: 'push'
     type: push
+    tag: '${{CF_SHORT_REVISION}}'
     candidate: ${{build_step}}
-    tag: ${{CF_SHORT_REVISION}}
-    registry: dockerhub
-
-  push_to_registry_revision:
-    title: "Pushing image tagged with revision to registry"
-    type: push
-    candidate: ${{build_step}}
-    tag: ${{CF_SHORT_REVISION}}
+    scale:
+      push_to_dockerhub:
+        registry: dockerhub
+        title: "push to dockerhub" 
+      push_to_gcr:
+        title: "push to gcr" 
 
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
