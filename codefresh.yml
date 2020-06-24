@@ -34,6 +34,13 @@ steps:
     image-name: codefresh/cli
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
+  push_to_dockerhub:
+    title: "Pushing image tagged with revision to registry"
+    type: push
+    candidate: ${{build_step}}
+    tag: ${{CF_SHORT_REVISION}}
+    registry: dockerhub
+
   push_to_registry_revision:
     title: "Pushing image tagged with revision to registry"
     type: push
