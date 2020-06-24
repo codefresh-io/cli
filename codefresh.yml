@@ -35,7 +35,6 @@ steps:
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
   push_step:
-    stage: 'push'
     type: push
     tag: '${{CF_SHORT_REVISION}}'
     candidate: ${{build_step}}
