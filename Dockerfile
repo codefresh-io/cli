@@ -27,7 +27,7 @@ WORKDIR /cf-cli
 
 COPY package.json /cf-cli
 COPY yarn.lock /cf-cli
-COPY check-version.js /cf-cli
+COPY run-check-version.js /cf-cli
 
 RUN yarn install --prod --frozen-lockfile && \
     yarn cache clean
