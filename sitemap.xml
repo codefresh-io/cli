@@ -47,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/workflow-data/get/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/agents/get-agents/</loc>
   </url>
   
@@ -178,6 +182,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/create/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/workflow-data/create/</loc>
   </url>
   
   <url>
@@ -725,6 +733,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/validation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/workflow-data/</loc>
   </url>
   
   <url>
