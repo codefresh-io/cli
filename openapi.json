@@ -2193,6 +2193,128 @@
         "x-sdk-interface": "workflows.list"
       }
     },
+    "/workflow/{workflowId}/data": {
+      "post": {
+        "operationId": "push-workflow-data",
+        "parameters": [
+          {
+            "description": "id of a workflowId object",
+            "in": "path",
+            "name": "workflowId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "json"
+          }
+        },
+        "tags": [
+          "Builds"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "summary": "Push New Workflow Data",
+        "x-sdk-interface": "workflows.pushWorkflowData"
+      },
+      "get": {
+        "operationId": "get-workflow-data",
+        "parameters": [
+          {
+            "description": "id of a workflowId object",
+            "in": "path",
+            "name": "workflowId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "json"
+          }
+        },
+        "tags": [
+          "Builds"
+        ],
+        "summary": "Get Workflow Data",
+        "x-sdk-interface": "workflows.getWorkflowData"
+      }
+    },
+    "/workflow/{workflowId}/data/{id}": {
+      "get": {
+        "operationId": "get-workflow-data-item",
+        "parameters": [
+          {
+            "description": "id of a workflowId object",
+            "in": "path",
+            "name": "workflowId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "decrypt",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "json"
+          }
+        },
+        "tags": [
+          "Builds"
+        ],
+        "summary": "Get Workflow Data Item",
+        "x-sdk-interface": "workflows.getWorkflowDataItem"
+      }
+    },
     "/builds/{buildId}/update": {
       "post": {
         "parameters": [
