@@ -408,31 +408,10 @@
       <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
+      <li data-nav-id="/cli/more/image-pull-secret/" class="dd-item">
         <div>
-          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
-            bitbucket
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/github/">
-            github
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
-            gitlab
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-git-context/stash/">
-            stash
+          <a href="/cli/more/image-pull-secret/">
+            Image Pull Secret
           </a>
         </div>
     </li>
@@ -1613,14 +1592,14 @@
 <td>--kube-context-name</td>
 <td></td>
 <td></td>
-<td>Name of the Kubernetes context on which venona should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+<td>Name of the Kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
 </tr>
 
 <tr>
 <td>--kube-node-selector</td>
 <td></td>
 <td></td>
-<td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by venona build resources (default is no node selector) (string)</td>
+<td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
 </tr>
 
 <tr>
@@ -1669,14 +1648,14 @@
 <td>--kube-namespace</td>
 <td></td>
 <td></td>
-<td>Name of the namespace on which venona should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
+<td>Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
 </tr>
 
 <tr>
 <td>--tolerations</td>
 <td></td>
 <td></td>
-<td>The Kubernetes tolerations as path to a  JSON file to be used by venona resources (default is no tolerations) (string)</td>
+<td>The Kubernetes tolerations as path to a  JSON file prefixed with @ to be used by runner resources (default is no tolerations) (string)</td>
 </tr>
 
 <tr>
@@ -1712,6 +1691,13 @@
 <td></td>
 <td></td>
 <td>Print logs</td>
+</tr>
+
+<tr>
+<td>--env-vars</td>
+<td></td>
+<td></td>
+<td>Addiontal env vars to be used in agent&rsquo;s pod</td>
 </tr>
 </tbody>
 </table>
