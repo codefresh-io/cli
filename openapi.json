@@ -1652,33 +1652,6 @@
         "x-sdk-interface": "pipelines.analyze"
       }
     },
-    "/helm/cluster-config/{selector}": {
-      "get": {
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/Json"
-          }
-        },
-        "tags": [
-          "helm.cluster-config"
-        ],
-        "operationId": "helm-cluster-config-get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "selector",
-            "description": "Cluster selector",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "summary": "Get cluster config",
-        "x-sdk-interface": "helm.cluster-config.get"
-      }
-    },
-
     "/annotations": {
       "delete": {
         "responses": {
@@ -5741,6 +5714,14 @@
               "type": "string"
             },
             "description": "project id"
+          },
+          {
+            "in": "query",
+            "name": "isTemplate",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "templates"
           }
         ],
         "operationId": "pipelines-list",
@@ -5769,6 +5750,173 @@
         "summary": "Create",
         "parameters": [],
         "x-sdk-interface": "pipelines.create"
+      }
+    },
+    "/pipelines/clone/{id}": {
+      "post": {
+        "x-audit": {
+          "name": {
+            "path": "body.metadata.name",
+            "source": "req"
+          },
+          "id": {
+            "path": "metadata.id",
+            "source": "res"
+          }
+        },
+        "x-action": "clonePipeline",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pipeline"
+                }
+              }
+            },
+            "description": "clone pipeline"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-clone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "project": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "isTemplate": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "description": "identifier of the pipeline",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Clone",
+        "x-sdk-interface": "pipelines.clone",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "pipeline",
+              "abac": true
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "utility": {
+            "bodyParser": {
+              "limit": "5mb"
+            }
+          },
+          "handler": "pipelines.clonePipeline"
+        }
+      }
+    },
+    "/pipelines/template/{id}": {
+      "post": {
+        "x-audit": {
+          "name": {
+            "path": "body.metadata.name",
+            "source": "req"
+          },
+          "id": {
+            "path": "metadata.id",
+            "source": "res"
+          }
+        },
+        "x-action": "SetPipelineAsTemplate",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pipeline"
+                }
+              }
+            },
+            "description": "Set pipeline as template"
+          }
+        },
+        "tags": [
+          "pipelines"
+        ],
+        "operationId": "pipelines-set-as-template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "isTemplate": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "description": "Name of pipeline",
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "summary": "Set pipeline as template",
+        "x-sdk-interface": "pipelines.setAsTemplate",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated"
+            ],
+            "acl": {
+              "resource": "pipeline",
+              "abac": true
+            }
+          },
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "utility": {
+            "bodyParser": {
+              "limit": "5mb"
+            }
+          },
+          "handler": "pipelines.setPipelineAsTemplate"
+        }
       }
     },
     "/pipelines/names": {
