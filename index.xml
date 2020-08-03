@@ -1645,6 +1645,17 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Install</title>
+      <link>https://codefresh-io.github.io/cli/argo/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/argo/install/</guid>
+      <description>Description Install argo agent.
+Command codefresh install argo
+Options    Option Alias Default Description     --help   Print help information   --token   Codefresh user token   --kube-context-name   Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --url   Codefresh url, by default https://g.codefresh.io   --kube-namespace   Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE]   --argo-host   Argocd host, exaple is https://argohost.</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
       <link>https://codefresh-io.github.io/cli/monitor/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

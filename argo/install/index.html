@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Get Activated Context :: Codefresh CLI Documentation</title>
+<title>Install :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/authentication/get-activated-context/">
+  <body data-url="/cli/argo/install/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -126,11 +126,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/authentication/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/authentication/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/authentication/">Authentication</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/authentication/">Authentication</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/authentication/get-contexts/" class="dd-item">
@@ -147,7 +146,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/authentication/get-activated-context/" class="dd-item active">
+      <li data-nav-id="/cli/authentication/get-activated-context/" class="dd-item">
         <div>
           <a href="/cli/authentication/get-activated-context/">
             Get Activated Context
@@ -717,13 +716,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/argo/" class="dd-item haschildren
+    <li data-nav-id="/cli/argo/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/argo/">Argo</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/argo/">Argo</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/argo/install/" class="dd-item">
+      <li data-nav-id="/cli/argo/install/" class="dd-item active">
         <div>
           <a href="/cli/argo/install/">
             Install
@@ -1530,7 +1530,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/authentication/'>Authentication</a> > Get Activated Context
+ <a href='/cli/'></a> > <a href='/cli/argo/'>Argo</a> > Install
 
  
 
@@ -1552,10 +1552,6 @@
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#show-active-authentication-context">Show active authentication context</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1569,7 +1565,7 @@
 
 <div id="body-inner">
   
-    <h1>Get Activated Context</h1>
+    <h1>Install</h1>
   
 
 
@@ -1581,11 +1577,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get the current activated authentication context.</p>
+<p>Install argo agent.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh auth current-context</code></p>
+<p><code>codefresh install argo</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1601,26 +1597,62 @@
 
 <tbody>
 <tr>
-<td>--cfconfig</td>
-<td></td>
-<td></td>
-<td>Custom path for authentication contexts config file (default: &lsquo;/root/.cfconfig&rsquo;)</td>
-</tr>
-
-<tr>
 <td>--help</td>
 <td></td>
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--token</td>
+<td></td>
+<td></td>
+<td>Codefresh user token</td>
+</tr>
+
+<tr>
+<td>--kube-context-name</td>
+<td></td>
+<td></td>
+<td>Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+</tr>
+
+<tr>
+<td>--url</td>
+<td></td>
+<td></td>
+<td>Codefresh url, by default <a href="https://g.codefresh.io">https://g.codefresh.io</a></td>
+</tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
+</tr>
+
+<tr>
+<td>--argo-host</td>
+<td></td>
+<td></td>
+<td>Argocd host, exaple is <a href="https://argohost.com">https://argohost.com</a></td>
+</tr>
+
+<tr>
+<td>--argo-username</td>
+<td></td>
+<td></td>
+<td>Argocd admin username</td>
+</tr>
+
+<tr>
+<td>--argo-password</td>
+<td></td>
+<td></td>
+<td>Argocd admin password</td>
+</tr>
 </tbody>
 </table>
-
-<h3 id="examples">Examples</h3>
-
-<h4 id="show-active-authentication-context">Show active authentication context</h4>
-
-<p><code>codefresh auth current-context</code></p>
 
 
     

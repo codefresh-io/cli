@@ -564,6 +564,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/argo/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</loc>
   </url>
   
@@ -637,6 +641,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/agents/install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/argo/install/</loc>
   </url>
   
   <url>
