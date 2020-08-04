@@ -865,7 +865,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-08-03_14-42-30.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-08-04_13-46-05.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -963,7 +963,7 @@
 	"title": "Argo",
 	"tags": [],
 	"description": "",
-	"content": " Install codefresh install argo\nInstall argo agent.\n"
+	"content": " Install codefresh install argo\nInstall argo agent.\nUninstall codefresh uninstall argo\nUninstall argo agent.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/",
@@ -1230,6 +1230,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Uninstall an agent on kubernetes cluster.\nCommand codefresh uninstall agent\nOptions    Option Alias Default Description     --help   Print help information   --name   Agent\u0026rsquo;s name to be uninstalled   --kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --verbose   Print logs    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/argo/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": " Description Uninstall argo agent.\nCommand codefresh uninstall argo\nOptions    Option Alias Default Description     --help   Print help information   --kube-context-name   Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE]    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/monitor/uninstall/",

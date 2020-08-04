@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Diff :: Codefresh CLI Documentation</title>
+<title>Uninstall :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/operate-on-resources/diff/">
+  <body data-url="/cli/argo/uninstall/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -162,11 +162,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/operate-on-resources/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/operate-on-resources/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/operate-on-resources/">Operate On Resources</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/operate-on-resources/">Operate On Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/operate-on-resources/get/" class="dd-item">
@@ -204,7 +203,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/operate-on-resources/diff/" class="dd-item active">
+      <li data-nav-id="/cli/operate-on-resources/diff/" class="dd-item">
         <div>
           <a href="/cli/operate-on-resources/diff/">
             Diff
@@ -717,10 +716,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/argo/" class="dd-item haschildren
+    <li data-nav-id="/cli/argo/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/argo/">Argo</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/argo/">Argo</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/argo/install/" class="dd-item">
@@ -730,7 +730,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/argo/uninstall/" class="dd-item">
+      <li data-nav-id="/cli/argo/uninstall/" class="dd-item active">
         <div>
           <a href="/cli/argo/uninstall/">
             Uninstall
@@ -1537,7 +1537,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/operate-on-resources/'>Operate On Resources</a> > Diff
+ <a href='/cli/'></a> > <a href='/cli/argo/'>Argo</a> > Uninstall
 
  
 
@@ -1572,7 +1572,7 @@
 
 <div id="body-inner">
   
-    <h1>Diff</h1>
+    <h1>Uninstall</h1>
   
 
 
@@ -1584,13 +1584,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Show diff between two resources</p>
-
-<p>Supported resources: runtime-environments.</p>
+<p>Uninstall argo agent.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh diff</code></p>
+<p><code>codefresh uninstall argo</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1613,10 +1611,17 @@
 </tr>
 
 <tr>
-<td>--filename</td>
-<td>-f</td>
+<td>--kube-context-name</td>
 <td></td>
-<td>Filename or directory of spec files use to create the resource</td>
+<td></td>
+<td>Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+</tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE]</td>
 </tr>
 </tbody>
 </table>

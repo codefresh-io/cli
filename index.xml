@@ -1714,6 +1714,17 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Uninstall</title>
+      <link>https://codefresh-io.github.io/cli/argo/uninstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/argo/uninstall/</guid>
+      <description> Description Uninstall argo agent.
+Command codefresh uninstall argo
+Options    Option Alias Default Description     --help   Print help information   --kube-context-name   Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE]    </description>
+    </item>
+    
+    <item>
+      <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/monitor/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

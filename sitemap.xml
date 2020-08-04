@@ -720,6 +720,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/argo/uninstall/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/monitor/uninstall/</loc>
   </url>
   
