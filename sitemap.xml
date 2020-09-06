@@ -664,6 +664,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/argo/patch/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/</loc>
   </url>
   

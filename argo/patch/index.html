@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Approve :: Codefresh CLI Documentation</title>
+<title>Patch :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/builds/approve/">
+  <body data-url="/cli/argo/patch/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -284,11 +284,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/builds/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/builds/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/builds/">Builds</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/builds/">Builds</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/builds/get-build/" class="dd-item">
@@ -326,7 +325,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/builds/approve/" class="dd-item active">
+      <li data-nav-id="/cli/builds/approve/" class="dd-item">
         <div>
           <a href="/cli/builds/approve/">
             Approve
@@ -717,10 +716,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/argo/" class="dd-item haschildren
+    <li data-nav-id="/cli/argo/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/argo/">Argo</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/argo/">Argo</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/argo/install/" class="dd-item">
@@ -730,7 +730,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/argo/patch/" class="dd-item">
+      <li data-nav-id="/cli/argo/patch/" class="dd-item active">
         <div>
           <a href="/cli/argo/patch/">
             Patch
@@ -907,20 +907,6 @@
       <a href="/cli/monitor/">Monitor</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/monitor/install/" class="dd-item">
-        <div>
-          <a href="/cli/monitor/install/">
-            Install
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/monitor/uninstall/" class="dd-item">
-        <div>
-          <a href="/cli/monitor/uninstall/">
-            Uninstall
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/repository/" class="dd-item haschildren
@@ -1544,7 +1530,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/builds/'>Builds</a> > Approve
+ <a href='/cli/'></a> > <a href='/cli/argo/'>Argo</a> > Patch
 
  
 
@@ -1565,8 +1551,11 @@
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#update-argocd-agent">Update argocd-agent</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1580,7 +1569,7 @@
 
 <div id="body-inner">
   
-    <h1>Approve</h1>
+    <h1>Patch</h1>
   
 
 
@@ -1592,35 +1581,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Approve a pending-approval workflow.</p>
-
-<p>approve &lt;$BUILD_ID&gt;.</p>
+<p>Patch argo agent.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh approve &lt;buildId&gt;</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>buildId</td>
-<td></td>
-<td></td>
-<td>Build&rsquo;s id. <code>required</code></td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh patch argocd-agent</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1643,6 +1608,12 @@
 </tr>
 </tbody>
 </table>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="update-argocd-agent">Update argocd-agent</h4>
+
+<p><code>codefresh patch argocd-agent</code></p>
 
 
     
