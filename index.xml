@@ -1651,7 +1651,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/argo/install/</guid>
       <description> Description Install argo agent.
 Command codefresh install argocd-agent
-Options    Option Alias Default Description     --help   Print help information    </description>
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
     <item>
@@ -1684,7 +1684,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/argo/patch/</guid>
       <description>Description Patch argo agent.
 Command codefresh patch argocd-agent
-Options    Option Alias Default Description     --help   Print help information    Examples Update argocd-agent codefresh patch argocd-agent</description>
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update argocd-agent codefresh patch argocd-agent</description>
     </item>
     
     <item>
@@ -1731,7 +1731,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/argo/uninstall/</guid>
       <description> Description Uninstall argo agent.
 Command codefresh uninstall argocd-agent
-Options    Option Alias Default Description     --help   Print help information    </description>
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
     <item>
