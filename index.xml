@@ -1649,9 +1649,9 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/argo/install/</guid>
-      <description>Description Install argo agent.
+      <description> Description Install argo agent.
 Command codefresh install argocd-agent
-Options    Option Alias Default Description     --help   Print help information   --token   Codefresh user token   --kube-context-name   Name of the kubernetes context on which argocd-agent should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --url   Codefresh url, by default https://g.codefresh.io   --kube-namespace   Name of the namespace on which argocd-agent should be installed [$CF_ARG_KUBE_NAMESPACE]   --argo-host   Argocd host, exaple is https://argohost.</description>
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
@@ -1731,7 +1731,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/argo/uninstall/</guid>
       <description> Description Uninstall argo agent.
 Command codefresh uninstall argocd-agent
-Options    Option Alias Default Description     --help   Print help information   --kube-context-name   Name of the kubernetes context on which argocd-agent should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which argocd-agent should be uninstalled [$CF_ARG_KUBE_NAMESPACE]    </description>
+Options    Option Alias Default Description     --help   Print help information    </description>
     </item>
     
     <item>
