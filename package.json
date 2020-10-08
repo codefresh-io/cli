@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.72.9",
+  "version": "0.73.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
