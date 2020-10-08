@@ -564,10 +564,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/argo/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</loc>
   </url>
   
@@ -632,6 +628,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/gitops/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/</loc>
   </url>
   
@@ -644,7 +644,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/argo/install/</loc>
+    <loc>https://codefresh-io.github.io/cli/gitops/install/</loc>
   </url>
   
   <url>
@@ -664,7 +664,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/argo/patch/</loc>
+    <loc>https://codefresh-io.github.io/cli/gitops/patch/</loc>
   </url>
   
   <url>
@@ -724,7 +724,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/argo/uninstall/</loc>
+    <loc>https://codefresh-io.github.io/cli/gitops/uninstall/</loc>
   </url>
   
   <url>

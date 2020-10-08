@@ -1645,12 +1645,12 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Install</title>
-      <link>https://codefresh-io.github.io/cli/argo/install/</link>
+      <link>https://codefresh-io.github.io/cli/gitops/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/argo/install/</guid>
-      <description> Description Install argo agent.
-Command codefresh install argocd-agent
+      <guid>https://codefresh-io.github.io/cli/gitops/install/</guid>
+      <description> Description Install gitops agent.
+Command codefresh install gitops
 Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
@@ -1678,13 +1678,13 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Patch</title>
-      <link>https://codefresh-io.github.io/cli/argo/patch/</link>
+      <link>https://codefresh-io.github.io/cli/gitops/patch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/argo/patch/</guid>
-      <description>Description Patch argo agent.
-Command codefresh patch argocd-agent
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update argocd-agent codefresh patch argocd-agent</description>
+      <guid>https://codefresh-io.github.io/cli/gitops/patch/</guid>
+      <description>Description Patch gitops agent.
+Command codefresh patch gitops
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops codefresh patch gitops</description>
     </item>
     
     <item>
@@ -1725,12 +1725,12 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Uninstall</title>
-      <link>https://codefresh-io.github.io/cli/argo/uninstall/</link>
+      <link>https://codefresh-io.github.io/cli/gitops/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/argo/uninstall/</guid>
-      <description> Description Uninstall argo agent.
-Command codefresh uninstall argocd-agent
+      <guid>https://codefresh-io.github.io/cli/gitops/uninstall/</guid>
+      <description> Description Uninstall gitops agent.
+Command codefresh uninstall gitops
 Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
