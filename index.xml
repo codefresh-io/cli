@@ -1649,8 +1649,8 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/gitops/install/</guid>
-      <description> Description Install gitops agent.
-Command codefresh install gitops
+      <description> Description Install argocd agent.
+Command codefresh install argocd-agent
 Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
@@ -1682,9 +1682,9 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/gitops/patch/</guid>
-      <description>Description Patch gitops agent.
-Command codefresh patch gitops
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops codefresh patch gitops</description>
+      <description>Description Patch argocd agent.
+Command codefresh patch argocd-agent
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update argocd-agent codefresh patch argocd-agent</description>
     </item>
     
     <item>
@@ -1729,8 +1729,8 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/gitops/uninstall/</guid>
-      <description> Description Uninstall gitops agent.
-Command codefresh uninstall gitops
+      <description> Description Uninstall argocd agent.
+Command codefresh uninstall argocd-agent
 Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
