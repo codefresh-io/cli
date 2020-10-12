@@ -1645,6 +1645,17 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Install</title>
+      <link>https://codefresh-io.github.io/cli/app-proxy/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/app-proxy/install/</guid>
+      <description>Description Install the App-Proxy component on your Kubernetes cluster.
+Command codefresh install app-proxy
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path  /root/.kube/config Path to kubeconfig file [$KUBECONFIG]   --kube-context-name   Name of the kubernetes context on which the app-proxy should be installed (default: ) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which app-proxy should be installed (default: codefresh) [$CF_ARG_KUBE_NAMESPACE]   --runtime-environment   The Codefresh runtime-environment that this app-proxy will be associated with   --docker-registry  docker.</description>
+    </item>
+    
+    <item>
+      <title>Install</title>
       <link>https://codefresh-io.github.io/cli/gitops/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1721,6 +1732,17 @@ Arguments    Option Alias Default Description     client-name n  Client name. re
       <description>Description Uninstall an agent on kubernetes cluster.
 Command codefresh uninstall agent
 Options    Option Alias Default Description     --help   Print help information   --name   Agent&amp;rsquo;s name to be uninstalled   --kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Uninstall</title>
+      <link>https://codefresh-io.github.io/cli/app-proxy/uninstall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/app-proxy/uninstall/</guid>
+      <description>Description Deletes the App-Proxy component from your Kubernetes cluster.
+Command codefresh uninstall app-proxy
+Options    Option Alias Default Description     --help   Print help information   --kube-context-name   Name of the kubernetes context from which the App-Proxy and Runtime should be removed   --kube-namespace   Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed   --kube-config-path  /root/.</description>
     </item>
     
     <item>

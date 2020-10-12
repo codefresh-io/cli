@@ -560,6 +560,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/builds/approve/</loc>
   </url>
   
@@ -644,6 +648,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/install/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/gitops/install/</loc>
   </url>
   
@@ -721,6 +729,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/agents/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/uninstall/</loc>
   </url>
   
   <url>
