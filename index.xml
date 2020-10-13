@@ -1331,6 +1331,19 @@ Arguments    Option Alias Default Description     id   Id of existing section   
     </item>
     
     <item>
+      <title>Upgrade</title>
+      <link>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</guid>
+      <description> Description Upgrade a resource from a file, directory or url
+Upgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.
+Supported resources: &amp;lsquo;Context&amp;rsquo;.
+Command codefresh upgrade
+Options    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    </description>
+    </item>
+    
+    <item>
       <title>Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1688,17 +1701,6 @@ Options    Option Alias Default Description     --help   Print help information 
     </item>
     
     <item>
-      <title>Patch</title>
-      <link>https://codefresh-io.github.io/cli/gitops/patch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/gitops/patch/</guid>
-      <description>Description Patch gitops agent.
-Command codefresh patch gitops
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh patch gitops</description>
-    </item>
-    
-    <item>
       <title>Show Config</title>
       <link>https://codefresh-io.github.io/cli/cli-config/show-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1776,6 +1778,17 @@ Options    Option Alias Default Description     --help   Print help information 
       <description>Description Uninstall a runtime on kubernetes cluster.
 Command codefresh uninstall runtime
 Options    Option Alias Default Description     --help   Print help information   --agent-name   Agent&amp;rsquo;s name to be uninstalled   --name   Runtime&amp;rsquo;s name to be uninstalled   --agent-id   Agent&amp;rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.</description>
+    </item>
+    
+    <item>
+      <title>Upgrade</title>
+      <link>https://codefresh-io.github.io/cli/gitops/upgrade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/gitops/upgrade/</guid>
+      <description>Description Upgrade gitops agent.
+Command codefresh upgrade gitops
+Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh upgrade gitops</description>
     </item>
     
     <item>

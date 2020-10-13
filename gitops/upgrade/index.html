@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Download :: Codefresh CLI Documentation</title>
+<title>Upgrade :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/audit/download/">
+  <body data-url="/cli/gitops/upgrade/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -745,14 +745,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/audit/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/audit/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/audit/">Audit</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/audit/">Audit</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/audit/download/" class="dd-item active">
+      <li data-nav-id="/cli/audit/download/" class="dd-item">
         <div>
           <a href="/cli/audit/download/">
             Download
@@ -886,10 +885,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/gitops/" class="dd-item haschildren
+    <li data-nav-id="/cli/gitops/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/gitops/">Gitops</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/gitops/">Gitops</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/gitops/install/" class="dd-item">
@@ -906,7 +906,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/gitops/upgrade/" class="dd-item">
+      <li data-nav-id="/cli/gitops/upgrade/" class="dd-item active">
         <div>
           <a href="/cli/gitops/upgrade/">
             Upgrade
@@ -1573,7 +1573,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/audit/'>Audit</a> > Download
+ <a href='/cli/'></a> > <a href='/cli/gitops/'>Gitops</a> > Upgrade
 
  
 
@@ -1597,8 +1597,7 @@
 <li><a href="#options">Options</a></li>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#undefined">undefined</a></li>
-<li><a href="#undefined-1">undefined</a></li>
+<li><a href="#update-gitops-agent">Update gitops agent</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1613,7 +1612,7 @@
 
 <div id="body-inner">
   
-    <h1>Download</h1>
+    <h1>Upgrade</h1>
   
 
 
@@ -1625,11 +1624,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Download audit.</p>
+<p>Upgrade gitops agent.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh download audit</code></p>
+<p><code>codefresh upgrade gitops</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1652,107 +1651,19 @@
 </tr>
 
 <tr>
-<td>--userName</td>
+<td>--kube-config-path</td>
 <td></td>
 <td></td>
-<td>filter by user name</td>
-</tr>
-
-<tr>
-<td>--userId</td>
-<td></td>
-<td></td>
-<td>filter by codefresh user id</td>
-</tr>
-
-<tr>
-<td>--entity</td>
-<td></td>
-<td></td>
-<td>filter by api entity, example: pipeline, account</td>
-</tr>
-
-<tr>
-<td>--entityId</td>
-<td></td>
-<td></td>
-<td>filter by api entity id, this value different for each action, example: email, user id</td>
-</tr>
-
-<tr>
-<td>--action</td>
-<td></td>
-<td></td>
-<td>filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account</td>
-</tr>
-
-<tr>
-<td>--rs_status</td>
-<td></td>
-<td></td>
-<td>filter by response status code</td>
-</tr>
-
-<tr>
-<td>--showTriggers</td>
-<td></td>
-<td></td>
-<td>returns only actions related to receiving triggers</td>
-</tr>
-
-<tr>
-<td>--search</td>
-<td></td>
-<td></td>
-<td>filter by searching substring in request body or query or params or headers or url</td>
-</tr>
-
-<tr>
-<td>--from</td>
-<td></td>
-<td></td>
-<td>filter by date, value is number of milliseconds since 1970</td>
-</tr>
-
-<tr>
-<td>--to</td>
-<td></td>
-<td></td>
-<td>filter by date, value is number of milliseconds since 1970</td>
-</tr>
-
-<tr>
-<td>--sortField</td>
-<td></td>
-<td></td>
-<td>name of sorting field, values: id, createdAt, updatedAt<br><br>Possible values:<br> - id<br> - createdAt<br> - updatedAt</td>
-</tr>
-
-<tr>
-<td>--sortType</td>
-<td></td>
-<td></td>
-<td>sorting type, values: ASK, DESK<br><br>Possible values:<br> - ASK<br> - DESK</td>
-</tr>
-
-<tr>
-<td>--file</td>
-<td></td>
-<td>/codefresh/volume/cli/codefresh_audit_2020-10-13_07-24-27.csv</td>
-<td>The name of the file and the directory in which the audit will be saved</td>
+<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
 </tr>
 </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="undefined">undefined</h4>
+<h4 id="update-gitops-agent">Update gitops agent</h4>
 
-<p><code>codefresh download audit --file /var/www/audit.csv</code></p>
-
-<h4 id="undefined-1">undefined</h4>
-
-<p><code>--entity account --rs_status 200 --sortType DESK --sortField createdAt</code></p>
+<p><code>codefresh upgrade gitops</code></p>
 
 
     

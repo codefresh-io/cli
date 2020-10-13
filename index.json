@@ -648,7 +648,7 @@
 	"title": "Operate On Resources",
 	"tags": [],
 	"description": "",
-	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;step-type\u0026rsquo;\n\u0026lsquo;project\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;\n\u0026lsquo;annotation\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step-type\u0026rsquo;.\nDiff codefresh diff\nShow diff between two resources\nSupported resources: runtime-environments.\n"
+	"content": " The CLI supports the ability to work with spec files when working with resources.\nThe supported formats are yaml and json. Check each specific resource spec for its documentation\nGet codefresh get\nGet a resource from a file, directory or url\nSupported resources:.\nCreate codefresh create\nCreate a resource from a file, directory or url\nSupported resources: \u0026lsquo;context\u0026rsquo;\n\u0026lsquo;step-type\u0026rsquo;\n\u0026lsquo;project\u0026rsquo;\n\u0026lsquo;pipeline\u0026rsquo;\n\u0026lsquo;annotation\u0026rsquo;.\nDelete codefresh delete\nDelete a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rsquo;.\nPatch codefresh patch\nPatch a resource from a file, directory or url\nPatch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nUpgrade codefresh upgrade\nUpgrade a resource from a file, directory or url\nUpgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nReplace codefresh replace\nReplace a resource from a file, directory or url\nSupported resources: \u0026lsquo;Context\u0026rsquo;\n\u0026lsquo;Pipeline\u0026rdquo;\n\u0026lsquo;Step-type\u0026rsquo;.\nDiff codefresh diff\nShow diff between two resources\nSupported resources: runtime-environments.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/installation/download/",
@@ -784,6 +784,13 @@
 	"content": " Description Update a section.\nCommand codefresh patch section [id]\nArguments    Option Alias Default Description     id   Id of existing section    Options    Option Alias Default Description     --help   Print help information   --boardId   Id of existing board   --boardName   Name of existing board   --name   Name of existing section   --newName   New name   --cluster   Name of linked cluster   --color   New color   --index   New index    Examples Update name and filter of section. Specifying section by ID codefresh patch section ID --new-name NEW_NAME --filter /app-*/gi\nUpdate name and filter of section. Specifying section by NAME codefresh patch section --name OLD_NAME --new-name NEW_NAME --filter /app-*/gi\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/upgrade/",
+	"title": "Upgrade",
+	"tags": [],
+	"description": "",
+	"content": " Description Upgrade a resource from a file, directory or url\nUpgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.\nSupported resources: \u0026lsquo;Context\u0026rsquo;.\nCommand codefresh upgrade\nOptions    Option Alias Default Description     --help   Print help information   --filename -f  Filename or directory of spec files use to create the resource    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/",
 	"title": "Yaml",
 	"tags": [],
@@ -865,7 +872,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-10-12_15-19-06.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-10-13_07-24-27.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -1082,7 +1089,7 @@
 	"title": "Gitops",
 	"tags": [],
 	"description": "",
-	"content": " Install codefresh install gitops\nInstall gitops agent.\nPatch codefresh patch gitops\nPatch gitops agent.\nUninstall codefresh uninstall gitops\nUninstall gitops agent.\n"
+	"content": " Install codefresh install gitops\nInstall gitops agent.\nUninstall codefresh uninstall gitops\nUninstall gitops agent.\nUpgrade codefresh upgrade gitops\nUpgrade gitops agent.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",
@@ -1146,13 +1153,6 @@
 	"tags": [],
 	"description": "",
 	"content": " Install codefresh install monitor\nInstall and create an cluster resources monitor on kubernetes cluster.\nUninstall codefresh uninstall monitor\nUninstall an monitor on kubernetes cluster.\n"
-},
-{
-	"uri": "https://codefresh-io.github.io/cli/gitops/patch/",
-	"title": "Patch",
-	"tags": [],
-	"description": "",
-	"content": " Description Patch gitops agent.\nCommand codefresh patch gitops\nOptions    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh patch gitops\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/registries/registries/",
@@ -1286,6 +1286,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Uninstall a runtime on kubernetes cluster.\nCommand codefresh uninstall runtime\nOptions    Option Alias Default Description     --help   Print help information   --agent-name   Agent\u0026rsquo;s name to be uninstalled   --name   Runtime\u0026rsquo;s name to be uninstalled   --agent-id   Agent\u0026rsquo;s ID   --runtime-kube-context-name   Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace   Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --agent-kube-context-name   Agent kubernetes context   --agent-kube-namespace   Agent\u0026rsquo;s namespace   --agent-kube-config-path   Path to kubeconfig file for the agent (default is $HOME/.kube/config)   --verbose   Print logs    "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/gitops/upgrade/",
+	"title": "Upgrade",
+	"tags": [],
+	"description": "",
+	"content": " Description Upgrade gitops agent.\nCommand codefresh upgrade gitops\nOptions    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh upgrade gitops\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runner/upgrade/",

@@ -197,6 +197,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="/cli/operate-on-resources/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/operate-on-resources/upgrade/">
+            Upgrade
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/cli/operate-on-resources/replace/" class="dd-item">
         <div>
           <a href="/cli/operate-on-resources/replace/">
@@ -892,17 +899,17 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/gitops/patch/" class="dd-item">
-        <div>
-          <a href="/cli/gitops/patch/">
-            Patch
-          </a>
-        </div>
-    </li>
       <li data-nav-id="/cli/gitops/uninstall/" class="dd-item">
         <div>
           <a href="/cli/gitops/uninstall/">
             Uninstall
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/gitops/upgrade/" class="dd-item">
+        <div>
+          <a href="/cli/gitops/upgrade/">
+            Upgrade
           </a>
         </div>
     </li>
@@ -1584,6 +1591,7 @@
 <li><a href="#create-create"><a href="create">Create</a></a></li>
 <li><a href="#delete-delete"><a href="delete">Delete</a></a></li>
 <li><a href="#patch-patch"><a href="patch">Patch</a></a></li>
+<li><a href="#upgrade-upgrade"><a href="upgrade">Upgrade</a></a></li>
 <li><a href="#replace-replace"><a href="replace">Replace</a></a></li>
 <li><a href="#diff-diff"><a href="diff">Diff</a></a></li>
 </ul></li>
@@ -1645,6 +1653,14 @@ Check each specific resource <code>spec</code> for its documentation</p>
 <p>Patch a resource from a file, directory or url</p>
 
 <p>Patch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.<br><br> Supported resources: <br><li>&lsquo;Context&rsquo;.</p>
+
+<h3 id="upgrade-upgrade"><a href="upgrade">Upgrade</a></h3>
+
+<p><code>codefresh upgrade</code></p>
+
+<p>Upgrade a resource from a file, directory or url</p>
+
+<p>Upgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.<br><br> Supported resources: <br><li>&lsquo;Context&rsquo;.</p>
 
 <h3 id="replace-replace"><a href="replace">Replace</a></h3>
 

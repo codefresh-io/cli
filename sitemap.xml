@@ -462,6 +462,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
   </url>
   
@@ -672,10 +676,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/gitops/patch/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/</loc>
   </url>
   
@@ -749,6 +749,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/gitops/upgrade/</loc>
   </url>
   
   <url>
