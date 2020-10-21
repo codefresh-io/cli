@@ -1674,8 +1674,10 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/gitops/install/</guid>
       <description> Description Install gitops agent.
-Command codefresh install gitops
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
+Command codefresh install gitops &amp;lt;provider&amp;gt;
+Arguments    Option Alias Default Description     provider   Gitops provider. required
+Possible values:
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
     <item>
