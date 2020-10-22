@@ -1,6 +1,10 @@
 {
   "name": "codefresh",
+<<<<<<< HEAD
   "version": "0.73.9",
+=======
+  "version": "0.73.7",
+>>>>>>> parent of 383b5fc8... added --insecure option to runner init, delete and upgrade (#573)
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
