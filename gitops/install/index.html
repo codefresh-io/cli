@@ -1670,13 +1670,89 @@
 </tr>
 
 <tr>
+<td>--git-integration</td>
+<td></td>
+<td></td>
+<td>Name of git integration in Codefresh</td>
+</tr>
+
+<tr>
+<td>--codefresh-integration</td>
+<td></td>
+<td></td>
+<td>Name of argocd integration in Codefresh</td>
+</tr>
+
+<tr>
+<td>--argo-host</td>
+<td></td>
+<td></td>
+<td>Host of argocd installation</td>
+</tr>
+
+<tr>
+<td>--argo-token</td>
+<td></td>
+<td></td>
+<td>Token of argocd installation. Preferred auth method</td>
+</tr>
+
+<tr>
+<td>--argo-username</td>
+<td></td>
+<td></td>
+<td>Username of argocd installation. Should be used with argo-password</td>
+</tr>
+
+<tr>
+<td>--argo-password</td>
+<td></td>
+<td></td>
+<td>Username of argocd installation. Should be used with argo-username</td>
+</tr>
+
+<tr>
+<td>--update</td>
+<td></td>
+<td></td>
+<td>Update argocd integration if exists</td>
+</tr>
+
+<tr>
 <td>--kube-config-path</td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
 </tr>
+
+<tr>
+<td>--kube-context-name</td>
+<td></td>
+<td></td>
+<td>Name of Kubernetes context</td>
+</tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Namespace in Kubernetes cluster</td>
+</tr>
+
+<tr>
+<td>--sync-mode</td>
+<td></td>
+<td></td>
+<td>Synchronization mode</td>
+</tr>
 </tbody>
 </table>
+
+<p>NONE - don&rsquo;t synchronize
+SELECT - select applications for synchronization
+CONTINUE_SYNC - continuous synchronization
+ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC
+--sync-apps |  |  | Applications to be synchronized</p>
 
 
     
