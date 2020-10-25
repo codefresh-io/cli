@@ -1756,8 +1756,10 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/gitops/uninstall/</guid>
       <description> Description Uninstall gitops agent.
-Command codefresh uninstall gitops
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
+Command codefresh uninstall gitops &amp;lt;provider&amp;gt;
+Arguments    Option Alias Default Description     provider   Gitops provider. required
+Possible values:
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
     </item>
     
     <item>
@@ -1789,8 +1791,10 @@ Options    Option Alias Default Description     --help   Print help information 
       
       <guid>https://codefresh-io.github.io/cli/gitops/upgrade/</guid>
       <description>Description Upgrade gitops agent.
-Command codefresh upgrade gitops
-Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh upgrade gitops</description>
+Command codefresh upgrade gitops &amp;lt;provider&amp;gt;
+Arguments    Option Alias Default Description     provider   Gitops provider. required
+Possible values:
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    Examples Update gitops agent codefresh upgrade gitops</description>
     </item>
     
     <item>
