@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Run Pipeline :: Codefresh CLI Documentation</title>
+<title>Upgrade :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/pipelines/run-pipeline/">
+  <body data-url="/cli/app-proxy/upgrade/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -219,11 +219,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/pipelines/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/pipelines/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/pipelines/">Pipelines</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/pipelines/get-pipeline/" class="dd-item">
@@ -240,7 +239,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/pipelines/run-pipeline/" class="dd-item active">
+      <li data-nav-id="/cli/pipelines/run-pipeline/" class="dd-item">
         <div>
           <a href="/cli/pipelines/run-pipeline/">
             Run Pipeline
@@ -724,10 +723,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/app-proxy/" class="dd-item haschildren
+    <li data-nav-id="/cli/app-proxy/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/app-proxy/">App-Proxy</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/app-proxy/">App-Proxy</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/app-proxy/install/" class="dd-item">
@@ -744,7 +744,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/app-proxy/upgrade/" class="dd-item">
+      <li data-nav-id="/cli/app-proxy/upgrade/" class="dd-item active">
         <div>
           <a href="/cli/app-proxy/upgrade/">
             Upgrade
@@ -1580,7 +1580,7 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/pipelines/'>Pipelines</a> > Run Pipeline
+ <a href='/cli/'></a> > <a href='/cli/app-proxy/'>App-Proxy</a> > Upgrade
 
  
 
@@ -1601,22 +1601,7 @@
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
-<li><a href="#variable-file-var-file">variable-file (var-file)</a>
-<ul>
-<li><a href="#variable-yaml-file-with-2-sets-of-variables">Variable yaml file with 2 sets of variables</a></li>
-<li><a href="#variable-json-file-with-2-sets-of-variables">Variable json file with 2 sets of variables</a></li>
-</ul></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#choosing-a-specific-trigger">Choosing a specific trigger</a></li>
-<li><a href="#defining-the-source-control-context-using-a-branch">Defining the source control context using a branch</a></li>
-<li><a href="#defining-the-source-control-context-using-a-commit">Defining the source control context using a commit</a></li>
-<li><a href="#setting-variables-through-the-command">Setting variables through the command</a></li>
-<li><a href="#settings-variables-through-a-yml-file">Settings variables through a yml file</a></li>
-<li><a href="#inject-contexts-to-the-pipeline-execution">Inject contexts to the pipeline execution</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1630,7 +1615,7 @@
 
 <div id="body-inner">
   
-    <h1>Run Pipeline</h1>
+    <h1>Upgrade</h1>
   
 
 
@@ -1642,35 +1627,11 @@
 
 <h3 id="description">Description</h3>
 
-<p>Run a pipeline by id or name and attach the created workflow logs.</p>
-
-<p>Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).</p>
+<p>Upgrades an existing App-Proxy.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh run [name]</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>Pipeline name</td>
-</tr>
-</tbody>
-</table>
+<p><code>codefresh upgrade app-proxy</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1693,215 +1654,48 @@
 </tr>
 
 <tr>
-<td>--trigger</td>
-<td>-t</td>
+<td>--kube-context-name</td>
 <td></td>
-<td>Trigger id or name</td>
+<td></td>
+<td>Name of the kubernetes context on which the app-proxy is installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
 </tr>
 
 <tr>
-<td>--branch</td>
-<td>-b</td>
+<td>--kube-namespace</td>
 <td></td>
-<td>Branch</td>
+<td></td>
+<td>Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed</td>
 </tr>
 
 <tr>
-<td>--memory</td>
+<td>--kube-config-path</td>
 <td></td>
-<td></td>
-<td>Mention machine memory sizes during pipeline run</td>
+<td>/root/.kube/config</td>
+<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
 </tr>
 
 <tr>
-<td>--cpu</td>
+<td>--values</td>
 <td></td>
 <td></td>
-<td>Mention machine cpu sizes during pipeline run</td>
+<td>specify values in a YAML file</td>
 </tr>
 
 <tr>
-<td>--disk</td>
+<td>--set-value</td>
 <td></td>
 <td></td>
-<td>Mention machine disk space sizes during pipeline run</td>
+<td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
 </tr>
 
 <tr>
-<td>--pack-name</td>
+<td>--verbose</td>
 <td></td>
 <td></td>
-<td>Resources size (<code>small</code>, <code>medium</code> or <code>large</code>)<br><br>Possible values:<br> - small<br> - medium<br> - large</td>
-</tr>
-
-<tr>
-<td>--runtime-name</td>
-<td></td>
-<td></td>
-<td>Runtime environment for run pipeline</td>
-</tr>
-
-<tr>
-<td>--sha</td>
-<td>-s</td>
-<td></td>
-<td>Set commit sha</td>
-</tr>
-
-<tr>
-<td>--no-cache</td>
-<td>--nc</td>
-<td></td>
-<td>Ignore cached images</td>
-</tr>
-
-<tr>
-<td>--annotation</td>
-<td>-a</td>
-<td></td>
-<td>Add annotations to created build</td>
-</tr>
-
-<tr>
-<td>--enable-notifications</td>
-<td>--en</td>
-<td></td>
-<td>Report notifications about pipeline execution</td>
-</tr>
-
-<tr>
-<td>--reset-volume</td>
-<td>--rv</td>
-<td></td>
-<td>Reset pipeline cached volume</td>
-</tr>
-
-<tr>
-<td>--variable</td>
-<td>-v</td>
-<td></td>
-<td>Set build variables</td>
-</tr>
-
-<tr>
-<td>--detach</td>
-<td>-d</td>
-<td></td>
-<td>Run pipeline and print build ID</td>
-</tr>
-
-<tr>
-<td>--context</td>
-<td>-c</td>
-<td></td>
-<td>Run pipeline with contexts</td>
-</tr>
-
-<tr>
-<td>--local</td>
-<td></td>
-<td></td>
-<td>Run pipeline on your local docker machine</td>
-</tr>
-
-<tr>
-<td>--local-volume</td>
-<td>--lv</td>
-<td></td>
-<td>Use your file system as volume in local run</td>
-</tr>
-
-<tr>
-<td>--no-cf-cache</td>
-<td>--ncfc</td>
-<td></td>
-<td>Ignore Codefresh cache optimizations</td>
-</tr>
-
-<tr>
-<td>--only</td>
-<td></td>
-<td></td>
-<td>run only specifc steps</td>
-</tr>
-
-<tr>
-<td>--skip</td>
-<td></td>
-<td></td>
-<td>skip specifc steps</td>
-</tr>
-
-<tr>
-<td>--debug</td>
-<td></td>
-<td></td>
-<td>debug mode</td>
-</tr>
-
-<tr>
-<td>--variable-file</td>
-<td>--var-file</td>
-<td></td>
-<td>Set build variables from a file</td>
-</tr>
-
-<tr>
-<td>--yaml</td>
-<td>-y</td>
-<td></td>
-<td>Override codefresh.yaml for this execution</td>
+<td>Print logs</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="variable-file-var-file">variable-file (var-file)</h3>
-
-<p>It is possible to pass build variables using a file. (supported format: json and yaml) <br>
-The variables file structure should be an array. <br>
-The pipeline will be triggered multiple times according to the array length.</p>
-
-<h4 id="variable-yaml-file-with-2-sets-of-variables">Variable yaml file with 2 sets of variables</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- key<span style="color:#111">:</span> value
-  key<span style="color:#ae81ff">2</span><span style="color:#111">:</span> key<span style="color:#ae81ff">1</span>
-- key<span style="color:#111">:</span> value
-  key<span style="color:#ae81ff">2</span><span style="color:#111">:</span> key<span style="color:#ae81ff">2</span></code></pre></div>
-<h4 id="variable-json-file-with-2-sets-of-variables">Variable json file with 2 sets of variables</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#111">[</span>
-  <span style="color:#111">{</span>
-    <span style="color:#f92672">&#34;key&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value&#34;</span><span style="color:#111">,</span>
-    <span style="color:#f92672">&#34;key2&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;key1&#34;</span>
-  <span style="color:#111">},</span>
-  <span style="color:#111">{</span>
-    <span style="color:#f92672">&#34;key&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;value&#34;</span><span style="color:#111">,</span>
-    <span style="color:#f92672">&#34;key2&#34;</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;key2&#34;</span>
-  <span style="color:#111">}</span>
-<span style="color:#111">]</span></code></pre></div>
-<h3 id="examples">Examples</h3>
-
-<h4 id="choosing-a-specific-trigger">Choosing a specific trigger</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME --trigger TRIGGER_ID | TRIGGER_NAME -b=master</code></p>
-
-<h4 id="defining-the-source-control-context-using-a-branch">Defining the source control context using a branch</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master</code></p>
-
-<h4 id="defining-the-source-control-context-using-a-commit">Defining the source control context using a commit</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -s=52b992e783d2f84dd0123c70ac8623b4f0f938d1</code></p>
-
-<h4 id="setting-variables-through-the-command">Setting variables through the command</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master -v key1=value1 -v key2=value2</code></p>
-
-<h4 id="settings-variables-through-a-yml-file">Settings variables through a yml file</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master --var-file ./var_file.yml</code></p>
-
-<h4 id="inject-contexts-to-the-pipeline-execution">Inject contexts to the pipeline execution</h4>
-
-<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master --context context</code></p>
 
 
     

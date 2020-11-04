@@ -752,6 +752,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/upgrade/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/gitops/upgrade/</loc>
   </url>
   
