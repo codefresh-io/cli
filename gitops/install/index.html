@@ -1747,6 +1747,13 @@
 </tr>
 
 <tr>
+<td>--kube-manifest-path</td>
+<td></td>
+<td></td>
+<td>Path to k8s manifest yaml file</td>
+</tr>
+
+<tr>
 <td>--sync-mode</td>
 <td></td>
 <td></td>
@@ -1759,7 +1766,9 @@
 SELECT - select applications for synchronization
 CONTINUE_SYNC - continuous synchronization
 ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC
---sync-apps |  |  | Applications to be synchronized</p>
+--sync-apps |  |  | Applications to be synchronized
+--http-proxy |  |  | http proxy to be used in the runner
+--https-proxy |  |  | https proxy to be used in the runner</p>
 
 
     
