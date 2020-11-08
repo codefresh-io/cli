@@ -451,20 +451,6 @@
       <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/">
-            HTTP
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/">
-            S3
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
@@ -1602,6 +1588,10 @@
 <li><a href="#description">Description</a></li>
 <li><a href="#command">Command</a></li>
 <li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#undefined">undefined</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1769,7 +1759,7 @@
 <td>--values</td>
 <td></td>
 <td></td>
-<td>specify values in a YAML file</td>
+<td>specify values in a YAML file (see example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml</a>)</td>
 </tr>
 
 <tr>
@@ -1818,7 +1808,7 @@
 <td>--env-vars</td>
 <td></td>
 <td></td>
-<td>Addiontal env vars to be used in agent&rsquo;s pod</td>
+<td>Addiontal env vars to be used in all Codefresh components</td>
 </tr>
 
 <tr>
@@ -1850,6 +1840,12 @@
 </tr>
 </tbody>
 </table>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="undefined">undefined</h4>
+
+<p><code>codefresh runner init --values values.yaml (see values file example here: https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml)</code></p>
 
 
     
