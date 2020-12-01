@@ -1686,6 +1686,27 @@
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
 </tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Name of the namespace on which Argo agent should be updated</td>
+</tr>
+
+<tr>
+<td>--kube-context-name</td>
+<td></td>
+<td></td>
+<td>Name of the kubernetes context where Argo agent should be updated (default is current-context)</td>
+</tr>
+
+<tr>
+<td>--in-cluster</td>
+<td></td>
+<td></td>
+<td>Use this option if Argo agent is been updated from inside a cluster</td>
+</tr>
 </tbody>
 </table>
 
@@ -1693,7 +1714,7 @@
 
 <h4 id="update-gitops-agent">Update gitops agent</h4>
 
-<p><code>codefresh upgrade gitops</code></p>
+<p><code>codefresh upgrade gitops argocd-agent</code></p>
 
 
     
