@@ -2179,6 +2179,22 @@
               "type": "string"
             },
             "description": "Pipeline trigger id"
+          },
+          {
+            "name": "paginationReset",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Should pagination session be reseted to first page"
+          },
+          {
+            "name": "paginationDirection",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Direction of the pagination: 'prev' or 'next'"
           }
         ],
         "responses": {
