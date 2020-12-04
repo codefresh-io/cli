@@ -64,6 +64,7 @@
     "mongodb": "^3.0.1",
     "ora": "^3.0.0",
     "prettyjson": "^1.2.1",
+    "promise-retry": "^2.0.1",
     "recursive-readdir": "^2.2.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
