@@ -1677,6 +1677,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh install gitops &amp;lt;provider&amp;gt;
 Arguments    Option Alias Default Description     provider   Gitops provider. required
 Possible values:
+- argocd
 - argocd-agent    Options    Option Alias Default Description     --help   Print help information   --git-integration   Name of git integration in Codefresh   --codefresh-integration   Name of argocd integration in Codefresh   --argo-host   Host of argocd installation   --argo-token   Token of argocd installation.</description>
     </item>
     
