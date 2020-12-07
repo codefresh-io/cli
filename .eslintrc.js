@@ -10,7 +10,8 @@ module.exports = {
             'code': 140,
             'ignoreComments': true
         }],
-        'no-console': 0
+        'no-console': 0,
+        'object-curly-newline': 0,
     },
     'env': {
         'jest': true,
