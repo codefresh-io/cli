@@ -1628,7 +1628,7 @@
 
 <h3 id="description">Description</h3>
 
-<p>Install gitops agent.</p>
+<p>Install gitops.</p>
 
 <h3 id="command">Command</h3>
 
@@ -1651,7 +1651,7 @@
 <td>provider</td>
 <td></td>
 <td></td>
-<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - argocd<br> - argocd-agent</td>
+<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - codefresh<br> - argocd-agent</td>
 </tr>
 </tbody>
 </table>
@@ -1687,7 +1687,7 @@
 <td>--codefresh-integration</td>
 <td></td>
 <td></td>
-<td>Name of argocd integration in Codefresh</td>
+<td>Name of gitops integration in Codefresh</td>
 </tr>
 
 <tr>
@@ -1722,7 +1722,7 @@
 <td>--update</td>
 <td></td>
 <td></td>
-<td>Update argocd integration if exists</td>
+<td>Update gitops integration if exists</td>
 </tr>
 
 <tr>
@@ -1769,8 +1769,8 @@ ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SE
 --sync-apps |  |  | Applications to be synchronized
 --http-proxy |  |  | http proxy to be used in the runner
 --https-proxy |  |  | https proxy to be used in the runner
---install-manifest |  | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | url of argocd install manifest
---set-argo-password |  |  | set password for admin user of new argocd installation</p>
+--install-manifest |  | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | Url of argocd install manifest
+--set-argo-password |  |  | Set password for admin user of new argocd installation</p>
 
 
     
