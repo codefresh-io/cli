@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Environments :: Codefresh CLI Documentation</title>
+<title>Components :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/environments/">
+  <body data-url="/cli/components/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -855,10 +855,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/components/" class="dd-item haschildren
+    <li data-nav-id="/cli/components/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/components/">Components</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/components/">Components</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/components/update/" class="dd-item">
@@ -870,11 +871,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/environments/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/environments/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/environments/">Environments</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/environments/">Environments</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/environments/get-environment/" class="dd-item">
@@ -1577,7 +1577,7 @@
 
 
 
- <a href='/cli/'></a> > Environments
+ <a href='/cli/'></a> > Components
 
  
 
@@ -1594,8 +1594,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#get-environment-get-environment"><a href="get-environment">Get Environment</a></a></li>
-<li><a href="#delete-environment-delete-environment"><a href="delete-environment">Delete Environment</a></a></li>
+<li><a href="#update-update"><a href="update">Update</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1609,7 +1608,7 @@
 
 <div id="body-inner">
   
-    <h1>Environments</h1>
+    <h1>Components</h1>
   
 
 
@@ -1620,19 +1619,11 @@
 
 
 
-<h3 id="get-environment-get-environment"><a href="get-environment">Get Environment</a></h3>
+<h3 id="update-update"><a href="update">Update</a></h3>
 
-<p><code>codefresh get environments [id..]</code></p>
+<p><code>codefresh components update</code></p>
 
-<p>Get a specific environment or an array of environments.</p>
-
-<p>Passing [id] argument will cause a retrieval of a specific environment.<br> In case of not passing [id] argument, a list will be returned.</p>
-
-<h3 id="delete-environment-delete-environment"><a href="delete-environment">Delete Environment</a></h3>
-
-<p><code>codefresh delete environment &lt;id&gt;</code></p>
-
-<p>Delete an environment.</p>
+<p>Update Codefresh CLI components.</p>
 
 
 

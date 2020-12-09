@@ -1288,13 +1288,13 @@ Options    Option Alias Default Description     --help   Print help information 
     
     <item>
       <title>Update</title>
-      <link>https://codefresh-io.github.io/cli/componenets/update/</link>
+      <link>https://codefresh-io.github.io/cli/components/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/componenets/update/</guid>
+      <guid>https://codefresh-io.github.io/cli/components/update/</guid>
       <description> Description Update Codefresh CLI components.
 Command codefresh components update
-Options    Option Alias Default Description     --help   Print help information   --location   Override dowload folder location    </description>
+Options    Option Alias Default Description     --help   Print help information   --location   Override download folder location    </description>
     </item>
     
     <item>
