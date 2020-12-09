@@ -2195,7 +2195,24 @@
               "type": "string"
             },
             "description": "Direction of the pagination: 'prev' or 'next'"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Lower date filter bound"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Upper date filter bound"
           }
+          
         ],
         "responses": {
           "200": {
