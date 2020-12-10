@@ -1628,7 +1628,7 @@
 
 <h3 id="description">Description</h3>
 
-<p>Install gitops.</p>
+<p>Install gitops agent.</p>
 
 <h3 id="command">Command</h3>
 
@@ -1651,7 +1651,7 @@
 <td>provider</td>
 <td></td>
 <td></td>
-<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - codefresh<br> - argocd-agent</td>
+<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - argocd-agent</td>
 </tr>
 </tbody>
 </table>
@@ -1687,7 +1687,7 @@
 <td>--codefresh-integration</td>
 <td></td>
 <td></td>
-<td>Name of gitops integration in Codefresh</td>
+<td>Name of argocd integration in Codefresh</td>
 </tr>
 
 <tr>
@@ -1707,22 +1707,22 @@
 <tr>
 <td>--argo-username</td>
 <td></td>
-<td>admin</td>
-<td>Username of existing argocd installation. Should be used with argo-password</td>
+<td></td>
+<td>Username of argocd installation. Should be used with argo-password</td>
 </tr>
 
 <tr>
 <td>--argo-password</td>
 <td></td>
 <td></td>
-<td>Password of existing argocd installation. Should be used with argo-username</td>
+<td>Username of argocd installation. Should be used with argo-username</td>
 </tr>
 
 <tr>
 <td>--update</td>
 <td></td>
 <td></td>
-<td>Update gitops integration if exists</td>
+<td>Update argocd integration if exists</td>
 </tr>
 
 <tr>
@@ -1768,9 +1768,7 @@ CONTINUE_SYNC - continuous synchronization
 ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC
 --sync-apps |  |  | Applications to be synchronized
 --http-proxy |  |  | http proxy to be used in the runner
---https-proxy |  |  | https proxy to be used in the runner
---install-manifest |  | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | Url of argocd install manifest
---set-argo-password |  |  | Set password for admin user of new argocd installation</p>
+--https-proxy |  |  | https proxy to be used in the runner</p>
 
 
     
