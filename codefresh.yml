@@ -3,6 +3,11 @@ version: "1.0"
 
 steps:
 
+  test:
+    image: docker
+    commands:
+      - sleep 10m
+
   main_clone:
     title: 'Cloning main repository...'
     type: git-clone
