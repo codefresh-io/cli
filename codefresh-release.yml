@@ -29,21 +29,48 @@ steps:
       - "cf_export PACKAGE_VERSION"
 
 # in case the candidate image will not be found the release flow will crash and this means that the build pipelines has failed
-  push_to_registry_version:
-    title: "Update dockerhub image version tag"
+  push_step:
     type: push
-    candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
-    image_name: codefresh/cli
-    tag: ${{PACKAGE_VERSION}}
-    registry: dockerhub
+    title: "Push release image"
+    tags:
+      - ${{PACKAGE_VERSION}}
+      - latest
+    scale:
+      push_to_dockerhub:
+        registry: dockerhub
+        title: "push to dockerhub"
+        candidate: codefresh/cli:${{CF_SHORT_REVISION}}
+      push_to_gcr:
+        title: "push to gcr"
+        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+      push_to_quay:
+        registry: cf-quay
+        title: "push to quay.io"
+        candidate: quay.io/codefresh/codefresh/cli:${{CF_SHORT_REVISION}}
 
-  push_to_registry_latest:
-    title: "Update dockerhub image latest tag"
-    type: push
-    candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
-    image_name: codefresh/cli
-    tag: latest
-    registry: dockerhub
+  create_manifest_list:
+    type: "codefresh-inc/multiarch-manifester"
+    arguments:
+      image_name: codefresh/cli
+      arch_tag_postfixes:
+        arm64: "${{ARM_TAG_POSTFIX}}"
+      registries:
+        - name: 'quay.io'
+          username: '${{QUAY_USERNAME}}'
+          password: '${{QUAY_PASSWORD}}'
+        - name: 'docker.io'
+          username: '${{DOCKERHUB_USERNAME}}'
+          password: '${{DOCKERHUB_PASSWORD}}'
+        - name: 'gcr.io'
+          path_prefix: codefresh-inc
+          username: '${{GCR_CODEFRESH_INC_USERNAME}}'
+          password: '${{GCR_CODEFRESH_INC_PASSWORD}}'
+    scale:
+      master_branch_tags:
+        arguments:
+          tags:
+            - ${{PACKAGE_VERSION}}
+            - latest
 
   generate_comletion:
     title: "Generating commands completion tree"

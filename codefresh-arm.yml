@@ -1,0 +1,54 @@
+version: "1.0"
+steps: 
+  main_clone:
+    title: 'Cloning main repository...'
+    type: git-clone
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    revision: ${{CF_REVISION}}
+    git: ${{GIT_CONTEXT}}
+
+  build_image:
+    title: "Building the image..."
+    type: build
+    working_directory: ${{WORKDIR}}
+    disable_push: true
+    dockerfile: ./Dockerfile
+    image_name: ${{IMAGE_NAME}}
+    tag: ${{CF_SHORT_REVISION}}
+
+  push_dev:
+    type: push
+    candidate: ${{build_image}}
+    title: "Pushing image to registry with revision tag"
+    tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
+    scale:
+      push_quay_dev:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with revision tag"
+      push_dockerhub_dev:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with revision tag"
+      push_gcr_enterprise_dev:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with revision tag"
+
+  push_master:
+    type: push
+    candidate: ${{build_image}}
+    title: "Pushing image with release tag"
+    when:
+      branch:
+        only: [ master ]
+    tags:
+      - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}"
+      - "latest${{ARM_TAG_POSTFIX}}"
+    scale:
+      push_quay_prod:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with release tag"
+      push_dockerhub_prod:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with release tag"
+      push_gcr_enterprise_prod:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with release tag"
