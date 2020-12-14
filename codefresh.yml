@@ -83,8 +83,8 @@ steps:
           password: '${{DOCKERHUB_PASSWORD}}'
         - name: 'gcr.io'
           path_prefix: codefresh-inc
-          username: '${{GCR_USERNAME}}'
-          password: '${{GCR_PASSWORD}}'
+          username: '${{GCR_CODEFRESH_INC_USERNAME}}'
+          password: '${{GCR_CODEFRESH_INC_PASSOWORD}}'
     scale:
       dev_branches_tags:
         when:
