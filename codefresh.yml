@@ -68,11 +68,6 @@ steps:
         registry: cf-quay
         title: "push to quay.io"
 
-  test:
-    image: docker
-    commands:
-      - sleep 10m
-
   create_manifest_list:
     type: "codefresh-inc/multiarch-manifester"
     arguments:
