@@ -30,7 +30,6 @@ steps:
 
   build_images:
     type: parallel
-    stage: build_test
     steps:
 
       build_step:
