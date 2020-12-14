@@ -68,6 +68,11 @@ steps:
         registry: cf-quay
         title: "push to quay.io"
 
+  test:
+    image: alpine
+    commands:
+      - sleep 10m
+
   create_manifest_list:
     type: "codefresh-inc/multiarch-manifester"
     arguments:
