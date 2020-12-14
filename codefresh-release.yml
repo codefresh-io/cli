@@ -32,6 +32,7 @@ steps:
   push_step:
     type: push
     title: "Push release image"
+    image_name: codefresh/cli
     tags:
       - ${{PACKAGE_VERSION}}
       - latest
@@ -46,7 +47,7 @@ steps:
       push_to_quay:
         registry: cf-quay
         title: "push to quay.io"
-        candidate: quay.io/codefresh/codefresh/cli:${{CF_SHORT_REVISION}}
+        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}
 
   create_manifest_list:
     type: "codefresh-inc/multiarch-manifester"
