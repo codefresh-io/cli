@@ -3,11 +3,6 @@ version: "1.0"
 
 steps:
 
-  test:
-    image: docker
-    commands:
-      - sleep 10m
-
   main_clone:
     title: 'Cloning main repository...'
     type: git-clone
@@ -89,7 +84,7 @@ steps:
         - name: 'gcr.io'
           path_prefix: codefresh-inc
           username: '${{GCR_CODEFRESH_INC_USERNAME}}'
-          password: '${{GCR_CODEFRESH_INC_PASSOWORD}}'
+          password: '${{GCR_CODEFRESH_INC_PASSWORD}}'
     scale:
       dev_branches_tags:
         when:
