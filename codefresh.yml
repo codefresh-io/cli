@@ -49,9 +49,9 @@ steps:
             - CF_REVISION=${{CF_REVISION}}
             - CF_BRANCH=${{CF_BRANCH}}
             - CF_BRANCH_TAG_NORMALIZED=${{CF_SHORT_REVISION}}
-            - GIT_CONTEXT=${{GIT_CONTEXT}}
+            - GIT_CONTEXT=cf_github
             - IMAGE_NAME=codefresh/cli
-            - WORKDIR=${{WORKDIR}}
+            - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
             - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
 
   push_step:
