@@ -53,6 +53,7 @@ steps:
             - IMAGE_NAME=codefresh/cli
             - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
             - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
+            - REGISTRY_INTEGRATION_ENTERPRISE=codefresh-inc-gcr
 
   push_step:
     type: push
