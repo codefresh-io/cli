@@ -17,22 +17,25 @@ steps:
     tag: ${{CF_SHORT_REVISION}}
 
   push_dev:
-    title: "Pushing image to registry with revision tag"
     type: push
     candidate: ${{build_image}}
+    title: "Pushing image to registry with revision tag"
     tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
     scale:
       push_quay_dev:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with revision tag"
       push_dockerhub_dev:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with revision tag"
       push_gcr_enterprise_dev:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with revision tag"
 
   push_master:
-    title: "Pushing image with release tag"
     type: push
     candidate: ${{build_image}}
+    title: "Pushing image with release tag"
     when:
       branch:
         only: [ master ]
@@ -42,7 +45,10 @@ steps:
     scale:
       push_quay_prod:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with release tag"
       push_dockerhub_prod:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with release tag"
       push_gcr_enterprise_prod:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with release tag"
