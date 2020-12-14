@@ -28,6 +28,14 @@ steps:
     commands:
         - yarn test
 
+  extract_version:
+    title: "Exporting package.json version"
+    image: codefresh/build-cli
+    commands:
+      - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
+      - "echo Current version: $PACKAGE_VERSION"
+      - "cf_export PACKAGE_VERSION"
+
   build_images:
     type: parallel
     steps:
@@ -54,6 +62,7 @@ steps:
             - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
             - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
             - REGISTRY_INTEGRATION_ENTERPRISE=codefresh-inc-gcr
+            - SERVICE_VERSION=${{PACKAGE_VERSION}}
 
   push_step:
     type: push
@@ -100,8 +109,6 @@ steps:
     fail_fast: false
     image: codefresh/cli
     commands:
-      - 'apk update && apk add jq'
-      - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "git tag $PACKAGE_VERSION && echo Running release pipeline && codefresh run 5a4c94d282ed4d00012b54e8 -b=master --detach"
     when:
