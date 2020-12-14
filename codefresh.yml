@@ -50,6 +50,8 @@ steps:
         type: codefresh-run
         arguments:
           PIPELINE_ID: 'codefresh-io/cli/build-arm'
+          TRIGGER: arm
+          BRANCH: ${{CF_BRANCH}}
           DETACH: false
           VARIABLE:
             - CF_REPO_OWNER=${{CF_REPO_OWNER}}

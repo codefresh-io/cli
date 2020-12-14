@@ -1,4 +1,5 @@
-version: "1.0" steps: 
+version: "1.0"
+steps: 
   main_clone:
     title: 'Cloning main repository...'
     type: git-clone
@@ -16,7 +17,7 @@ version: "1.0" steps:
     tag: ${{CF_SHORT_REVISION}}
 
   push_dev:
-    title: "Pushing image to registry with branch name"
+    title: "Pushing image to registry with revision tag"
     type: push
     candidate: ${{build_image}}
     tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
@@ -29,7 +30,7 @@ version: "1.0" steps:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
 
   push_master:
-    title: "Pushing image to registry"
+    title: "Pushing image with release tag"
     type: push
     candidate: ${{build_image}}
     when:
