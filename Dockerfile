@@ -11,17 +11,12 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # Main
-FROM codefresh/node:10.15.3-alpine3.11
+FROM node:10.23.0-alpine3.11
 
-RUN apk --update add --no-cache ca-certificates git curl bash yarn
+RUN apk --update add --no-cache ca-certificates git curl bash yarn jq=1.6-r0
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
-
-ARG JQ_VERSION=1.6
-
-RUN wget -O /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 && \
-    chmod +x /usr/local/bin/*
 
 WORKDIR /cf-cli
 
