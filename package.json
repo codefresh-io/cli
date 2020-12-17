@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.74.0",
+  "version": "0.74.1",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -17,7 +17,7 @@
     "postinstall": "node run-check-version.js"
   },
   "bin": {
-    "codefresh": "./lib/interface/cli/codefresh"
+    "codefresh": "lib/interface/cli/codefresh"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
