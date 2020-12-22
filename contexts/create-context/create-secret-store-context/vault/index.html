@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Authentication :: Codefresh CLI Documentation</title>
+<title>vault :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/authentication/">
+  <body data-url="/cli/contexts/create-context/create-secret-store-context/vault/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -126,11 +126,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/authentication/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/authentication/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/authentication/">Authentication</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/authentication/">Authentication</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/authentication/get-contexts/" class="dd-item">
@@ -349,10 +348,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/">Contexts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/">Contexts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/get-context/" class="dd-item">
@@ -376,10 +376,11 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/">Create Context</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
@@ -468,10 +469,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
@@ -488,7 +490,7 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/vault/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/vault/" class="dd-item active">
         <div>
           <a href="/cli/contexts/create-context/create-secret-store-context/vault/">
             vault
@@ -1584,7 +1586,22 @@
 
 
 
- <a href='/cli/'></a> > Authentication
+
+
+
+
+
+
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/create-context/'>Create Context</a> > <a href='/cli/contexts/create-context/create-secret-store-context/'>Secret-Store</a> > vault
+
+ 
+
+ 
+
+ 
 
  
 
@@ -1601,10 +1618,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#get-contexts-get-contexts"><a href="get-contexts">Get Contexts</a></a></li>
-<li><a href="#create-context-create-context"><a href="create-context">Create Context</a></a></li>
-<li><a href="#get-activated-context-get-activated-context"><a href="get-activated-context">Get Activated Context</a></a></li>
-<li><a href="#set-active-context-set-active-context"><a href="set-active-context">Set Active Context</a></a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1618,7 +1634,7 @@
 
 <div id="body-inner">
   
-    <h1>Authentication</h1>
+    <h1>vault</h1>
   
 
 
@@ -1626,35 +1642,102 @@
     
     
     
+    
 
+<h3 id="description">Description</h3>
 
+<p>Create a Hashicorp Vault secret-store context.</p>
 
-<h3 id="get-contexts-get-contexts"><a href="get-contexts">Get Contexts</a></h3>
+<p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
 
-<p><code>codefresh auth get-contexts</code></p>
+<h3 id="command">Command</h3>
 
-<p>Get all possible authentication contexts.</p>
+<p><code>codefresh create context secret-store hashicorp-vault &lt;name&gt;</code></p>
 
-<h3 id="create-context-create-context"><a href="create-context">Create Context</a></h3>
+<h3 id="options">Options</h3>
 
-<p><code>codefresh auth create-context [name]</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>Create or update an authentication context.</p>
+<tbody>
+<tr>
+<td>--sharing-policy</td>
+<td></td>
+<td>AccountAdmins</td>
+<td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
+</tr>
 
-<p>Creating authentication contexts enables the ability to work against multiple accounts.</p>
+<tr>
+<td>--help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
 
-<h3 id="get-activated-context-get-activated-context"><a href="get-activated-context">Get Activated Context</a></h3>
+<tr>
+<td>--api-url</td>
+<td>-a</td>
+<td></td>
+<td>URL of the vault server. <code>required</code></td>
+</tr>
 
-<p><code>codefresh auth current-context</code></p>
+<tr>
+<td>--token</td>
+<td>-t</td>
+<td></td>
+<td>Token</td>
+</tr>
 
-<p>Get the current activated authentication context.</p>
+<tr>
+<td>--username</td>
+<td>-u</td>
+<td></td>
+<td>Username</td>
+</tr>
 
-<h3 id="set-active-context-set-active-context"><a href="set-active-context">Set Active Context</a></h3>
+<tr>
+<td>--password</td>
+<td>-p</td>
+<td></td>
+<td>Password</td>
+</tr>
 
-<p><code>codefresh auth use-context &lt;name&gt;</code></p>
+<tr>
+<td>--role-id</td>
+<td>-r</td>
+<td></td>
+<td>Role Id</td>
+</tr>
 
-<p>Set the current active authentication context.</p>
+<tr>
+<td>--secret-id</td>
+<td>-s</td>
+<td></td>
+<td>Secret Id</td>
+</tr>
 
+<tr>
+<td>--login-path</td>
+<td></td>
+<td></td>
+<td>Path for given auth method. Leave out to use the default path for the type.</td>
+</tr>
+
+<tr>
+<td>--behind-firewall</td>
+<td></td>
+<td></td>
+<td>Set to true to mark this context with behind firewall flag</td>
+</tr>
+</tbody>
+</table>
 
 
     

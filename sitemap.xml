@@ -171,6 +171,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/vault/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/secret/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>

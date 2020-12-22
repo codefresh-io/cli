@@ -536,6 +536,21 @@ Possible values:
     </item>
     
     <item>
+      <title>vault</title>
+      <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/vault/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/vault/</guid>
+      <description>Description Create a Hashicorp Vault secret-store context.
+Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.
+Command codefresh create context secret-store hashicorp-vault &amp;lt;name&amp;gt;
+Options    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context
+Possible values:
+- AccountAdmins
+- AllUsersInAccount   --help   Print help information   --api-url -a  URL of the vault server.</description>
+    </item>
+    
+    <item>
       <title>Secret</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/secret/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
@@ -1678,7 +1693,7 @@ Command codefresh install gitops &amp;lt;provider&amp;gt;
 Arguments    Option Alias Default Description     provider   Gitops provider. required
 Possible values:
 - codefresh
-- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --git-integration   Name of git integration in Codefresh   --codefresh-integration   Name of gitops integration in Codefresh   --argo-host   Host of argocd installation   --argo-token   Token of argocd installation.</description>
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --git-integration   Name of git integration in Codefresh   --git-repo-url   Url to manifest repo   --codefresh-integration   Name of gitops integration in Codefresh   --argo-host   Host of argocd installation   --argo-token   Token of argocd installation.</description>
     </item>
     
     <item>
