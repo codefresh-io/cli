@@ -12,6 +12,7 @@ module.exports = {
         }],
         'no-console': 0,
         'object-curly-newline': 0,
+        'no-return-await': 'off',
     },
     'env': {
         'jest': true,
