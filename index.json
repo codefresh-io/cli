@@ -259,6 +259,13 @@
 	"content": " Description Create a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nCommand codefresh create context git gitlab \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --behind-firewall   Set to true to mark this context with behind firewall flag   --help   Print help information   --access-token -t  Access token from to be used to clone repositories. required   --api-url -a https://gitlab.com/api/v4/ URL of the api. required    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/",
+	"title": "hashicorp-vault",
+	"tags": [],
+	"description": "",
+	"content": " Description Create a Hashicorp Vault secret-store context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\nCommand codefresh create context secret-store hashicorp-vault \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --help   Print help information   --behind-firewall   Set to true to mark this context with behind firewall flag   --api-url -a  URL of the vault server. required   --login-path   Path for given auth method. Leave out to use the default path for the type.   --token -t  Token   --username -u  Username   --password -p  Password   --role-id -r  Role Id   --secret-id -s  Secret Id   --gcp-role   GCP Role   --kubernetes-role   Kubernetes Role   --kubernetes-jwt   Kubernetes Role    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/",
 	"title": "kubernetes",
 	"tags": [],
@@ -285,13 +292,6 @@
 	"tags": [],
 	"description": "",
 	"content": " Description Create a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\nCommand codefresh create context git stash \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for git contexts\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --behind-firewall   Set to true to mark this context with behind firewall flag   --help   Print help information   --username -u  Username. required   --password -p  Password. required   --api-url -a  URL of the api. required    "
-},
-{
-	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/vault/",
-	"title": "vault",
-	"tags": [],
-	"description": "",
-	"content": " Description Create a Hashicorp Vault secret-store context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\nCommand codefresh create context secret-store hashicorp-vault \u0026lt;name\u0026gt;\nOptions    Option Alias Default Description     --sharing-policy  AccountAdmins Set the sharing policy for secret-store context\nPossible values:\n- AccountAdmins\n- AllUsersInAccount   --help   Print help information   --api-url -a  URL of the vault server. required   --token -t  Token   --username -u  Username   --password -p  Password   --role-id -r  Role Id   --secret-id -s  Secret Id   --login-path   Path for given auth method. Leave out to use the default path for the type.   --behind-firewall   Set to true to mark this context with behind firewall flag    "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/spec/secret/",
@@ -879,7 +879,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-12-23_15-26-08.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Default Description     --help   Print help information   --userName   filter by user name   --userId   filter by codefresh user id   --entity   filter by api entity, example: pipeline, account   --entityId   filter by api entity id, this value different for each action, example: email, user id   --action   filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status   filter by response status code   --showTriggers   returns only actions related to receiving triggers   --search   filter by searching substring in request body or query or params or headers or url   --from   filter by date, value is number of milliseconds since 1970   --to   filter by date, value is number of milliseconds since 1970   --sortField   name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType   sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  /codefresh/volume/cli/codefresh_audit_2020-12-29_12-24-28.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -1201,7 +1201,7 @@
 	"title": "Secret-Store",
 	"tags": [],
 	"description": "",
-	"content": " vault codefresh create context secret-store hashicorp-vault \u0026lt;name\u0026gt;\nCreate a Hashicorp Vault secret-store context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\nkubernetes-runtime codefresh create context secret-store kubernetes-runtime \u0026lt;name\u0026gt;\nCreate a secret-store Kubernetes-Runtime context.\nCreate a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.\nkubernetes codefresh create context secret-store kubernetes \u0026lt;name\u0026gt;\nCreate a secret-store Kubernetes context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\n"
+	"content": " hashicorp-vault codefresh create context secret-store hashicorp-vault \u0026lt;name\u0026gt;\nCreate a Hashicorp Vault secret-store context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\nkubernetes-runtime codefresh create context secret-store kubernetes-runtime \u0026lt;name\u0026gt;\nCreate a secret-store Kubernetes-Runtime context.\nCreate a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.\nkubernetes codefresh create context secret-store kubernetes \u0026lt;name\u0026gt;\nCreate a secret-store Kubernetes context.\nSecret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/section/",

@@ -155,6 +155,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</loc>
   </url>
   
@@ -168,10 +172,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/vault/</loc>
   </url>
   
   <url>

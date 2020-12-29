@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Info :: Codefresh CLI Documentation</title>
+<title>hashicorp-vault :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/runner/info/">
+  <body data-url="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -348,10 +348,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/">Contexts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/">Contexts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/get-context/" class="dd-item">
@@ -375,10 +376,11 @@
           </a>
         </div>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/">Create Context</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
@@ -467,13 +469,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item">
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item active">
         <div>
           <a href="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/">
             hashicorp-vault
@@ -994,14 +997,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runner/" class="dd-item parent haschildren
+    <li data-nav-id="/cli/runner/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/runner/">Runner</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/runner/">Runner</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/runner/info/" class="dd-item active">
+      <li data-nav-id="/cli/runner/info/" class="dd-item">
         <div>
           <a href="/cli/runner/info/">
             Info
@@ -1587,7 +1589,17 @@
 
 
 
- <a href='/cli/'></a> > <a href='/cli/runner/'>Runner</a> > Info
+
+
+
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/contexts/'>Contexts</a> > <a href='/cli/contexts/create-context/'>Create Context</a> > <a href='/cli/contexts/create-context/create-secret-store-context/'>Secret-Store</a> > hashicorp-vault
+
+ 
+
+ 
 
  
 
@@ -1622,7 +1634,7 @@
 
 <div id="body-inner">
   
-    <h1>Info</h1>
+    <h1>hashicorp-vault</h1>
   
 
 
@@ -1634,11 +1646,13 @@
 
 <h3 id="description">Description</h3>
 
-<p>Get info on your runner installations.</p>
+<p>Create a Hashicorp Vault secret-store context.</p>
+
+<p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
 
 <h3 id="command">Command</h3>
 
-<p><code>codefresh runner info</code></p>
+<p><code>codefresh create context secret-store hashicorp-vault &lt;name&gt;</code></p>
 
 <h3 id="options">Options</h3>
 
@@ -1654,10 +1668,94 @@
 
 <tbody>
 <tr>
+<td>--sharing-policy</td>
+<td></td>
+<td>AccountAdmins</td>
+<td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
+</tr>
+
+<tr>
 <td>--help</td>
 <td></td>
 <td></td>
 <td>Print help information</td>
+</tr>
+
+<tr>
+<td>--behind-firewall</td>
+<td></td>
+<td></td>
+<td>Set to true to mark this context with behind firewall flag</td>
+</tr>
+
+<tr>
+<td>--api-url</td>
+<td>-a</td>
+<td></td>
+<td>URL of the vault server. <code>required</code></td>
+</tr>
+
+<tr>
+<td>--login-path</td>
+<td></td>
+<td></td>
+<td>Path for given auth method. Leave out to use the default path for the type.</td>
+</tr>
+
+<tr>
+<td>--token</td>
+<td>-t</td>
+<td></td>
+<td>Token</td>
+</tr>
+
+<tr>
+<td>--username</td>
+<td>-u</td>
+<td></td>
+<td>Username</td>
+</tr>
+
+<tr>
+<td>--password</td>
+<td>-p</td>
+<td></td>
+<td>Password</td>
+</tr>
+
+<tr>
+<td>--role-id</td>
+<td>-r</td>
+<td></td>
+<td>Role Id</td>
+</tr>
+
+<tr>
+<td>--secret-id</td>
+<td>-s</td>
+<td></td>
+<td>Secret Id</td>
+</tr>
+
+<tr>
+<td>--gcp-role</td>
+<td></td>
+<td></td>
+<td>GCP Role</td>
+</tr>
+
+<tr>
+<td>--kubernetes-role</td>
+<td></td>
+<td></td>
+<td>Kubernetes Role</td>
+</tr>
+
+<tr>
+<td>--kubernetes-jwt</td>
+<td></td>
+<td></td>
+<td>Kubernetes Role</td>
 </tr>
 </tbody>
 </table>
