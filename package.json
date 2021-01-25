@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.73.26",
+  "version": "0.74.7",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -17,7 +17,7 @@
     "postinstall": "node run-check-version.js"
   },
   "bin": {
-    "codefresh": "./lib/interface/cli/codefresh"
+    "codefresh": "lib/interface/cli/codefresh"
   },
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
@@ -37,7 +37,7 @@
     "cf-errors": "^0.1.12",
     "chalk": "^4.1.0",
     "cli-progress": "3.6.0",
-    "codefresh-sdk": "^1.9.14",
+    "codefresh-sdk": "^1.9.15",
     "colors": "^1.1.2",
     "columnify": "^1.5.4",
     "compare-versions": "^3.4.0",
@@ -64,6 +64,7 @@
     "mongodb": "^3.0.1",
     "ora": "^3.0.0",
     "prettyjson": "^1.2.1",
+    "promise-retry": "^2.0.1",
     "recursive-readdir": "^2.2.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
