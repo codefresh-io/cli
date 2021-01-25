@@ -4,7 +4,7 @@ RUN apk --update add ca-certificates git
 RUN go get github.com/github/hub
 
 # python yq binary
-FROM six8/pyinstaller-alpine as yq
+FROM six8/pyinstaller-alpine:alpine-3.6-pyinstaller-v3.4 as yq
 ARG YQ_VERSION=2.10.0
 ENV PATH="/pyinstaller:$PATH"
 RUN pip install yq==${YQ_VERSION}
