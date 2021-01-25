@@ -46,24 +46,24 @@ steps:
         image-name: codefresh/cli
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
-#      run_arm_build:
-#        type: codefresh-run
-#        arguments:
-#          PIPELINE_ID: 'codefresh-io/cli/build-arm'
-#          TRIGGER_ID: codefresh-io/cli
-#          BRANCH: ${{CF_BRANCH}}
-#          DETACH: false
-#          VARIABLE:
-#            - CF_REPO_OWNER=${{CF_REPO_OWNER}}
-#            - CF_REPO_NAME=${{CF_REPO_NAME}}
-#            - CF_REVISION=${{CF_REVISION}}
-#            - CF_BRANCH=${{CF_BRANCH}}
-#            - CF_SHORT_REVISION=${{CF_SHORT_REVISION}}
-#            - GIT_CONTEXT=cf_github
-#            - IMAGE_NAME=codefresh/cli
-#            - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
-#            - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
-#            - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+      run_arm_build:
+        type: codefresh-run
+        arguments:
+          PIPELINE_ID: 'codefresh-io/cli/build-arm'
+          TRIGGER_ID: codefresh-io/cli
+          BRANCH: ${{CF_BRANCH}}
+          DETACH: false
+          VARIABLE:
+            - CF_REPO_OWNER=${{CF_REPO_OWNER}}
+            - CF_REPO_NAME=${{CF_REPO_NAME}}
+            - CF_REVISION=${{CF_REVISION}}
+            - CF_BRANCH=${{CF_BRANCH}}
+            - CF_SHORT_REVISION=${{CF_SHORT_REVISION}}
+            - GIT_CONTEXT=cf_github
+            - IMAGE_NAME=codefresh/cli
+            - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
+            - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
+            - PACKAGE_VERSION=${{PACKAGE_VERSION}}
 
   push_step:
     type: push
