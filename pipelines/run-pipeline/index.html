@@ -1623,6 +1623,7 @@
 <li><a href="#setting-variables-through-the-command">Setting variables through the command</a></li>
 <li><a href="#settings-variables-through-a-yml-file">Settings variables through a yml file</a></li>
 <li><a href="#inject-contexts-to-the-pipeline-execution">Inject contexts to the pipeline execution</a></li>
+<li><a href="#skip-specific-steps">Skip specific steps</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1829,14 +1830,14 @@
 <td>--only</td>
 <td></td>
 <td></td>
-<td>run only specifc steps</td>
+<td>run only specific steps</td>
 </tr>
 
 <tr>
 <td>--skip</td>
 <td></td>
 <td></td>
-<td>skip specifc steps</td>
+<td>skip specific steps</td>
 </tr>
 
 <tr>
@@ -1909,6 +1910,10 @@ The pipeline will be triggered multiple times according to the array length.</p>
 <h4 id="inject-contexts-to-the-pipeline-execution">Inject contexts to the pipeline execution</h4>
 
 <p><code>codefresh run PIPELINE_ID | PIPELINE_NAME -b=master --context context</code></p>
+
+<h4 id="skip-specific-steps">Skip specific steps</h4>
+
+<p><code>codefresh run PIPELINE_ID | PIPELINE_NAME --skip step1 step2 step3</code></p>
 
 
     
