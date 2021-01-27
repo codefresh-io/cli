@@ -82,9 +82,10 @@ steps:
 
   deploy_to_npm:
     title: "Publishing To Npm"
-    image: codefresh/npm-publish:master
-    commands:
-      - NPM_TOKEN=${{NPM_TOKEN}} npm run ci-publish
+    type: npm-publish
+    arguments:
+      NPM_TOKEN: '${{NPM_TOKEN}}'
+      DIR: ./cli
 
   compile_executables:
     title: "Compiling executables"
