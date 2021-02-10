@@ -1658,7 +1658,7 @@
 <td>provider</td>
 <td></td>
 <td></td>
-<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - argocd-agent</td>
+<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - codefresh<br> - argocd-agent</td>
 </tr>
 </tbody>
 </table>
@@ -1688,6 +1688,34 @@
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+</tr>
+
+<tr>
+<td>--kube-context-name</td>
+<td></td>
+<td></td>
+<td>Name of Kubernetes context</td>
+</tr>
+
+<tr>
+<td>--kube-namespace</td>
+<td></td>
+<td></td>
+<td>Namespace in Kubernetes cluster</td>
+</tr>
+
+<tr>
+<td>--install-manifest</td>
+<td></td>
+<td><a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a></td>
+<td>Url of argocd install manifest</td>
+</tr>
+
+<tr>
+<td>--in-cluster</td>
+<td></td>
+<td></td>
+<td>Use this option if Argo agent is been updated from inside a cluster</td>
 </tr>
 </tbody>
 </table>

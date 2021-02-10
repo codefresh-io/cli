@@ -1771,11 +1771,12 @@ Options    Option Alias Default Description     --help   Print help information 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://codefresh-io.github.io/cli/gitops/uninstall/</guid>
-      <description> Description Uninstall gitops agent.
+      <description>Description Uninstall gitops agent.
 Command codefresh uninstall gitops &amp;lt;provider&amp;gt;
 Arguments    Option Alias Default Description     provider   Gitops provider. required
 Possible values:
-- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)    </description>
+- codefresh
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --kube-context-name   Name of Kubernetes context   --kube-namespace   Namespace in Kubernetes cluster   --install-manifest  https://raw.</description>
     </item>
     
     <item>
