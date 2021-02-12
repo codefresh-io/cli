@@ -1822,6 +1822,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh upgrade gitops &amp;lt;provider&amp;gt;
 Arguments    Option Alias Default Description     provider   Gitops provider. required
 Possible values:
+- codefresh
 - argocd-agent    Options    Option Alias Default Description     --help   Print help information   --kube-config-path   Path to kubeconfig file (default is $HOME/.kube/config)   --kube-namespace   Name of the namespace on which Argo agent should be updated   --kube-context-name   Name of the kubernetes context where Argo agent should be updated (default is current-context)   --in-cluster   Use this option if Argo agent is been updated from inside a cluster    Examples Update gitops agent codefresh upgrade gitops argocd-agent</description>
     </item>
     
