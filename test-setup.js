@@ -6,6 +6,7 @@ const openapi = require('./openapi');
 
 jest.mock('./lib/output/Output');
 jest.mock('codefresh-sdk/helpers/whoami');
+jest.mock('request-promise', () => (() => ({ options: { request: {} } })));
 
 let SDK_CONFIGURED;
 
