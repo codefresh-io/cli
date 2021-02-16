@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const Promise = require('bluebird');
 const recursive = Promise.promisify(require('recursive-readdir'));
