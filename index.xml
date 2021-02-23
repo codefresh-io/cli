@@ -1693,7 +1693,7 @@ Command codefresh install gitops &amp;lt;provider&amp;gt;
 Arguments    Option Alias Default Description     provider   Gitops provider. required
 Possible values:
 - codefresh
-- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --git-integration   Name of git integration in Codefresh   --git-repo-url   Url to manifest repo   --codefresh-integration   Name of gitops integration in Codefresh   --argo-host   Host of argocd installation   --argo-token   Token of argocd installation.</description>
+- argocd-agent    Options    Option Alias Default Description     --help   Print help information   --git-integration   Name of git integration in Codefresh   --git-repo-url   Url to manifest repo   --codefresh-integration   Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to avoid hitting the Github rate limits )   --argo-host   Host of argocd installation   --argo-token   Token of argocd installation.</description>
     </item>
     
     <item>
