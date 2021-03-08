@@ -1740,7 +1740,7 @@ Options    Option Alias Default Description     --help   Print help information 
 Command codefresh synchronize teams [client-name]
 Aliases codefresh synchronize team [client-name]
 codefresh synchronize tm [client-name]
-Arguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Disable email notifications for users    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] -tk [accessToken]</description>
+Arguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Default Description     --help   Print help information   --client-type -t  Client type like github, okta, azure. required   --access-token --tk  Github Personal Access Token that overrides the default one (Optional and only valid for Github)   --disable-notifications --no-notify  Disable email notifications for users    Examples Synchronize team with group codefresh synchronize teams [client-name] -t [client-type] --tk [accessToken]</description>
     </item>
     
     <item>
