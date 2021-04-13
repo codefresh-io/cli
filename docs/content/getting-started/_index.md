@@ -14,7 +14,6 @@ Updating the authentication configuration is done via an API-KEY you generate fr
 
 If you already have an API-KEY you can just use it.<br />
 You can generate a new one from the <a href="https://g.codefresh.io/user/settings" target="_blank">user settings</a> page. <br />
-{{% alert theme="warning" %}}You must be an account admin to generate api keys{{% /alert %}}
  
 Once you have an API key, create a new authentication context:<br> `codefresh auth create-context --api-key {API_KEY}`
 
