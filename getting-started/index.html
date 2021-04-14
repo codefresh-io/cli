@@ -409,6 +409,93 @@
           </a>
         </div>
     </li>
+    <li data-nav-id="/cli/contexts/create-context/create-git-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
+            bitbucket
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/github/">
+            github
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
+            gitlab
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/stash/">
+            stash
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/">
+            HTTP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/">
+            S3
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/">
+            hashicorp-vault
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes/">
+            kubernetes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/">
+            kubernetes-Runtime
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/spec/" class="dd-item haschildren
@@ -1554,12 +1641,7 @@
 Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br /></p>
 
 <p>If you already have an API-KEY you can just use it.<br />
-You can generate a new one from the <a href="https://g.codefresh.io/user/settings" target="_blank">user settings</a> page. <br />
-<div class="alert 
-alert-warning"
- 
-role="alert">You must be an account admin to generate api keys</div>
-</p>
+You can generate a new one from the <a href="https://g.codefresh.io/user/settings" target="_blank">user settings</a> page. <br /></p>
 
 <p>Once you have an API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
 
