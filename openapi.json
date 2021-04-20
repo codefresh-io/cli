@@ -383,11 +383,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": [
-                "id",
-                "createdAt",
-                "updatedAt"
-              ]
+              "enum": ["id", "createdAt", "updatedAt"]
             },
             "description": "name of sorting field, values: id, createdAt, updatedAt"
           },
@@ -396,10 +392,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "enum": [
-                "ASK",
-                "DESK"
-              ]
+              "enum": ["ASK", "DESK"]
             },
             "description": "sorting type, values: ASK, DESK"
           }
@@ -474,44 +467,6 @@
         "summary": "Create rule",
         "parameters": [],
         "x-sdk-interface": "abac.rules.create"
-      }
-    },
-    "/custom_clusters/signServerCerts": {
-      "post": {
-        "summary": "Sign certificate",
-        "operationId": "runtime-envs-sign-certificate",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "reqSubjectAltName": {
-                    "type": "string"
-                  },
-                  "csr": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "x-sdk-interface": "runtimeEnvs.signCertificate",
-        "responses": {
-          "200": {
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "byte"
-                }
-              }
-            },
-            "description": "OK"
-          }
-        }
       }
     },
     "/abac/batch": {
@@ -1723,6 +1678,7 @@
         "x-sdk-interface": "helm.cluster-config.get"
       }
     },
+
     "/annotations": {
       "delete": {
         "responses": {
@@ -2256,6 +2212,7 @@
             },
             "description": "Upper date filter bound"
           }
+          
         ],
         "responses": {
           "200": {
@@ -3072,8 +3029,7 @@
             },
             "required": true,
             "description": "Name"
-          }
-        ],
+          }],
         "summary": "Get",
         "x-sdk-interface": "contexts.prepare"
       }
@@ -6169,6 +6125,7 @@
         "x-sdk-interface": "pipelines.replace"
       }
     },
+
     "/step-types": {
       "get": {
         "responses": {
@@ -6241,10 +6198,7 @@
             "name": "stage",
             "schema": {
               "type": "string",
-              "enum": [
-                "graduated",
-                "incubating"
-              ]
+              "enum": ["graduated", "incubating"]
             },
             "description": "Filter by stage"
           },
@@ -6563,6 +6517,7 @@
         }
       }
     },
+
     "/projects": {
       "post": {
         "x-action": "createProject",
@@ -7911,22 +7866,22 @@
                     "type": "string"
                   },
                   "runnerType": {
-                    "type": "string"
+                    "type":"string"
                   },
                   "dockerDaemonParams": {
-                    "type": "string"
+                    "type":"string"
                   },
                   "nodeSelector": {
-                    "type": "string"
+                    "type":"string"
                   },
                   "annotations": {
-                    "type": "string"
+                    "type":"string"
                   },
                   "clusterName": {
-                    "type": "string"
+                    "type":"string"
                   },
                   "runtimeEnvironmentName": {
-                    "type": "string"
+                    "type":"string"
                   }
                 },
                 "type": "object"
@@ -7940,6 +7895,7 @@
         "parameters": [],
         "x-sdk-interface": "cluster.create"
       }
+
     },
     "/agents": {
       "post": {
@@ -8012,7 +7968,7 @@
             "global.iseMiddleware"
           ],
           "handler": "agent.getAgents"
-        },
+      },
         "responses": {
           "200": {
             "$ref": "#/components/responses/Json"
@@ -8050,7 +8006,7 @@
             "global.iseMiddleware"
           ],
           "handler": "agents.getByName"
-        },
+      },
         "responses": {
           "200": {
             "$ref": "#/components/responses/Json"
@@ -8104,17 +8060,17 @@
             "description": "ok",
             "content": {
               "application/json": {
-              }
             }
           }
-        },
+        }
+      },
         "tags": [
           "agents"
         ],
         "operationId": "agents-replace",
         "summary": "Replace",
         "x-sdk-interface": "agents.update"
-      },
+  },
       "get": {
         "parameters": [
           {
