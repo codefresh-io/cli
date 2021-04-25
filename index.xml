@@ -1309,7 +1309,7 @@ Options    Option Alias Default Description     --help   Print help information 
       <guid>https://codefresh-io.github.io/cli/components/update/</guid>
       <description> Description Update Codefresh CLI components.
 Command codefresh components update
-Options    Option Alias Default Description     --help   Print help information   --location   Override download folder location    </description>
+Options    Option Alias Default Description     --help   Print help information   --location   Override download folder location   --bypass-download   Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder    </description>
     </item>
     
     <item>
