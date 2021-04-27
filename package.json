@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.75.13",
+  "version": "0.75.14",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
+    "adm-zip": "^0.5.5",
     "ajv": "^6.6.1",
     "bluebird": "^3.5.1",
     "cf-errors": "^0.1.12",
@@ -61,6 +62,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.19.4",
     "mongodb": "^3.0.1",
+    "node-forge": "^0.10.0",
     "ora": "^3.0.0",
     "prettyjson": "^1.2.1",
     "promise-retry": "^2.0.1",
@@ -76,6 +78,7 @@
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
+    "@types/node-forge": "^0.9.7",
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
