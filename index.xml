@@ -1183,6 +1183,17 @@ Arguments    Option Alias Default Description     ids   token names or ids. requ
     </item>
     
     <item>
+      <title>Execute test pipeline</title>
+      <link>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</guid>
+      <description> Description Executes test pipeline.
+Command codefresh runner execute-test-pipeline
+Options    Option Alias Default Description     --help   Print help information   --runtime-name   Runtime name to execute pipeline on    </description>
+    </item>
+    
+    <item>
       <title>Info</title>
       <link>https://codefresh-io.github.io/cli/runner/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

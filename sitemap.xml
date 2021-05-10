@@ -406,6 +406,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/runner/info/</loc>
   </url>
   

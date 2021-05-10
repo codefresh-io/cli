@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Getting Started :: Codefresh CLI Documentation</title>
+<title>Execute test pipeline :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/getting-started/">
+  <body data-url="/cli/runner/execute-test-pipeline/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -62,7 +62,7 @@
   </div>
 
       <ul class="topics">
-    <li data-nav-id="/cli/getting-started/" class="dd-item parent active
+    <li data-nav-id="/cli/getting-started/" class="dd-item
         ">
       <div>
       <a href="/cli/getting-started/">Getting Started</a>
@@ -994,13 +994,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runner/" class="dd-item haschildren
+    <li data-nav-id="/cli/runner/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/cli/runner/">Runner</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runner/">Runner</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/runner/execute-test-pipeline/" class="dd-item">
+      <li data-nav-id="/cli/runner/execute-test-pipeline/" class="dd-item active">
         <div>
           <a href="/cli/runner/execute-test-pipeline/">
             Execute test pipeline
@@ -1590,7 +1591,12 @@
 
 
 
- <a href='/cli/'></a> > Getting Started
+
+
+
+ <a href='/cli/'></a> > <a href='/cli/runner/'>Runner</a> > Execute test pipeline
+
+ 
 
  
 
@@ -1605,15 +1611,11 @@
 <ul>
 <li>
 <ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#authenticate">Authenticate</a></li>
-<li><a href="#getting-help">Getting Help</a></li>
-<li><a href="#showing-current-version">Showing Current Version</a>
-<ul>
 <li>
 <ul>
-<li><a href="#that-s-it-you-are-good-to-go">That&rsquo;s it, you are good to go!</a></li>
-</ul></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#options">Options</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1627,7 +1629,7 @@
 
 <div id="body-inner">
   
-    <h1>Getting Started</h1>
+    <h1>Execute test pipeline</h1>
   
 
 
@@ -1635,36 +1637,44 @@
     
     
     
+    
 
+<h3 id="description">Description</h3>
 
+<p>Executes test pipeline.</p>
 
-<h2 id="install">Install</h2>
+<h3 id="command">Command</h3>
 
-<p>Install the CLI through one of the possible ways described in the <a href="/cli/installation">Installation</a> page.</p>
+<p><code>codefresh runner execute-test-pipeline</code></p>
 
-<h2 id="authenticate">Authenticate</h2>
+<h3 id="options">Options</h3>
 
-<p>In order to start working with the cli you will need to update the authentication configuration. <br />
-Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br /></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Alias</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
 
-<p>If you already have an API-KEY you can just use it.<br />
-You can generate a new one from the <a href="https://g.codefresh.io/user/settings" target="_blank">user settings</a> page. <br /></p>
+<tbody>
+<tr>
+<td>--help</td>
+<td></td>
+<td></td>
+<td>Print help information</td>
+</tr>
 
-<p>Once you have an API key, create a new authentication context:<br> <code>codefresh auth create-context --api-key {API_KEY}</code></p>
-
-<h2 id="getting-help">Getting Help</h2>
-
-<p>To get help and usage instructions run <code>codefresh [COMMAND]--help</code>.<br />
-A help message will appear in the terminal.<br /></p>
-
-<h2 id="showing-current-version">Showing Current Version</h2>
-
-<p>Run <code>codefresh version</code> to see the current CLI version.</p>
-
-<p><br /></p>
-
-<h4 id="that-s-it-you-are-good-to-go">That&rsquo;s it, you are good to go!</h4>
-
+<tr>
+<td>--runtime-name</td>
+<td></td>
+<td></td>
+<td>Runtime name to execute pipeline on</td>
+</tr>
+</tbody>
+</table>
 
 
     
