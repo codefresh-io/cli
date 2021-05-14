@@ -2212,7 +2212,7 @@
             },
             "description": "Upper date filter bound"
           }
-          
+
         ],
         "responses": {
           "200": {
@@ -5565,6 +5565,144 @@
         },
         "summary": "Install",
         "x-sdk-interface": "helm.charts.install"
+      }
+    },
+    "/kubernetes/chart/promote/helm3": {
+      "post": {
+        "x-entityId": {
+          "pathName": "body.releaseName"
+        },
+        "x-action": "promoteHelm3Release",
+        "responses": {
+          "200": {
+            "description": "Id of running pipeline for promote helm release",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "helm.charts",
+          "kubernetes"
+        ],
+        "operationId": "helm-charts-promote-helm3",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Selector"
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Tiller namespace"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "targetTillerNamespace": {
+                    "type": "string"
+                  },
+                  "targetNamespace": {
+                    "type": "string"
+                  },
+                  "releaseName": {
+                    "type": "string"
+                  },
+                  "targetReleaseName": {
+                    "type": "string"
+                  },
+                  "set": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "targetSelector": {
+                    "type": "string"
+                  },
+                  "revision": {
+                    "type": "string"
+                  },
+                  "pipelineId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Promote",
+        "x-sdk-interface": "helm.charts.promote.new",
+        "x-endpoint": {
+          "isEndpoint": false,
+          "auth": {
+            "middleware": [
+              "auth.isAuthenticated",
+              "kubernetes.resolveClustersFromQuery"
+            ],
+            "acl": {
+              "resource": "cluster",
+              "abac": true,
+              "abacSource": "kubernetes",
+              "action": "update",
+              "identifiersLocation": "body.targetSelector"
+            }
+          },
+          "preMiddleware": [
+            "kubernetes.extendRequestWithKubeManager",
+            "kubernetes.extendRequestWithTillerVersion",
+            "kubernetes.extendRequestWithClusterConfig"
+          ],
+          "postMiddleware": [
+            "global.iseMiddleware"
+          ],
+          "utility": {
+            "bodyParser": {
+              "limit": "5mb"
+            }
+          },
+          "handler": "kubernetes.promoteChartHelm3"
+        }
       }
     },
     "/kubernetes/chart/promote": {
