@@ -5678,6 +5678,7 @@
           "auth": {
             "middleware": [
               "auth.isAuthenticated",
+              "kubernetes.resolveClustersFromBoards",
               "kubernetes.resolveClustersFromQuery"
             ],
             "acl": {
