@@ -5612,6 +5612,15 @@
             },
             "required": false,
             "description": "Tiller namespace"
+          },
+          {
+            "in": "query",
+            "name": "namespace",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Source namespace"
           }
         ],
         "requestBody": {
