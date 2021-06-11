@@ -184,7 +184,7 @@ const createCommandFile = async (nestedCategory,command) => {
     if (docs.options) {
         let optionsString = '';
         _.forEach(docs.options, (options, group) => {
-            optionsString = `### ${group}\n\nOption | Alias | Default | Description\n--------- | --------- | ----------- | -----------\n${options}` + optionsString;
+            optionsString = `### ${group}\n\nOption | Alias | Type | Default | Description\n--------- | --------- | --------- |----------- | -----------\n${options}` + optionsString;
         });
         if (skeletonFileExists) {
             finalFileString = finalFileString.replace('{{OPTIONS}}', optionsString);
