@@ -1665,6 +1665,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1675,6 +1676,7 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
@@ -1682,12 +1684,14 @@
 <td>--kube-context</td>
 <td>--kc</td>
 <td></td>
+<td></td>
 <td>kubectl context name. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--namespace</td>
 <td>--ns</td>
+<td>string</td>
 <td>default</td>
 <td>Kubernetes namespace to use while looking for service account. <code>required</code></td>
 </tr>
@@ -1695,6 +1699,7 @@
 <tr>
 <td>--serviceaccount</td>
 <td>--sa</td>
+<td>string</td>
 <td>default</td>
 <td>Kubernetes serviceaccount credentials to be added to Codefresh. <code>required</code></td>
 </tr>
@@ -1702,7 +1707,8 @@
 <tr>
 <td>--behind-firewall</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Specify if the cluster is set behind a firewall</td>
 </tr>
 </tbody>

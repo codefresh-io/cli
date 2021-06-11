@@ -1677,6 +1677,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1687,12 +1688,14 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--cluster</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>Run on cluster. <code>required</code></td>
 </tr>
@@ -1700,6 +1703,7 @@
 <tr>
 <td>--tiller-namespace</td>
 <td>-n</td>
+<td>string</td>
 <td>kube-system</td>
 <td>namespace where is tiller running ( helm 2 only )</td>
 </tr>
@@ -1707,6 +1711,7 @@
 <tr>
 <td>--namespace</td>
 <td>--ns</td>
+<td>string</td>
 <td>default</td>
 <td>namespace where is chart located ( helm 3 )</td>
 </tr>
@@ -1714,6 +1719,7 @@
 <tr>
 <td>--timeout</td>
 <td></td>
+<td>number</td>
 <td>300</td>
 <td>time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)</td>
 </tr>
@@ -1722,13 +1728,15 @@
 <td>--detach</td>
 <td>-d</td>
 <td></td>
+<td></td>
 <td>Run pipeline and print build ID</td>
 </tr>
 
 <tr>
 <td>--cleanup</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>delete test pods upon completion (default false)</td>
 </tr>
 </tbody>

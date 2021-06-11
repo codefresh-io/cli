@@ -1689,6 +1689,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1698,12 +1699,14 @@
 <tr>
 <td>--skip-trigger-validation</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Set to true to skip validation (for pipeline replace)</td>
 </tr>
 
 <tr>
 <td>--help</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print help information</td>
@@ -1713,6 +1716,7 @@
 <td>--filename</td>
 <td>-f</td>
 <td></td>
+<td></td>
 <td>Filename or directory of spec files use to create the resource</td>
 </tr>
 
@@ -1720,12 +1724,14 @@
 <td>--compose-file</td>
 <td>-c</td>
 <td></td>
+<td></td>
 <td>Path to docker-compose.yaml file to use to create the resource. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--variable</td>
 <td>-v</td>
+<td>array</td>
 <td></td>
 <td>Variables list</td>
 </tr>
@@ -1733,7 +1739,8 @@
 <tr>
 <td>--advanced</td>
 <td>-a</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Advanced composition</td>
 </tr>
 </tbody>

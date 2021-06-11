@@ -1660,6 +1660,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1670,12 +1671,14 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--cluster</td>
 <td>-c</td>
+<td>string</td>
 <td></td>
 <td>Install on cluster. <code>required</code></td>
 </tr>
@@ -1683,6 +1686,7 @@
 <tr>
 <td>--namespace</td>
 <td>--ns</td>
+<td>string</td>
 <td>default</td>
 <td>Install on namespace</td>
 </tr>
@@ -1690,6 +1694,7 @@
 <tr>
 <td>--tiller-namespace</td>
 <td>--tn</td>
+<td>string</td>
 <td>kube-system</td>
 <td>Where tiller has been installed</td>
 </tr>
@@ -1697,6 +1702,7 @@
 <tr>
 <td>--repository</td>
 <td>-r</td>
+<td>string</td>
 <td>kubeapps</td>
 <td>Helm repository (absolute url or name of context with type helm-repository). <code>required</code></td>
 </tr>
@@ -1704,6 +1710,7 @@
 <tr>
 <td>--name</td>
 <td>-n</td>
+<td>string</td>
 <td></td>
 <td>Name of the chart in the repository. <code>required</code></td>
 </tr>
@@ -1711,12 +1718,14 @@
 <tr>
 <td>--version</td>
 <td>-v</td>
+<td>string</td>
 <td></td>
 <td>Version of the chart in the repository. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--context</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Contexts (yaml</td>
@@ -1726,6 +1735,7 @@
 <td>--set</td>
 <td></td>
 <td></td>
+<td></td>
 <td>set of KEY=VALUE to be passed to the install</td>
 </tr>
 
@@ -1733,11 +1743,13 @@
 <td>--detach</td>
 <td>-d</td>
 <td></td>
+<td></td>
 <td>Run pipeline and print build ID</td>
 </tr>
 
 <tr>
 <td>--release-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>The name to set to the release</td>

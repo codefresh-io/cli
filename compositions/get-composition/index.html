@@ -1694,6 +1694,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1702,6 +1703,7 @@
 <tbody>
 <tr>
 <td>--help</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print help information</td>
@@ -1716,6 +1718,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1726,12 +1729,14 @@
 <td>--select-columns</td>
 <td>--sc</td>
 <td></td>
+<td></td>
 <td>Columns to select for table output</td>
 </tr>
 
 <tr>
 <td>--output</td>
 <td>-o</td>
+<td></td>
 <td></td>
 <td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id</td>
 </tr>
@@ -1740,11 +1745,13 @@
 <td>--date-format</td>
 <td>--df</td>
 <td></td>
+<td></td>
 <td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
 </tr>
 
 <tr>
 <td>--pretty</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Use colors and signs for output</td>
@@ -1753,13 +1760,15 @@
 <tr>
 <td>--watch</td>
 <td>-w</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Watching updates to a particular resource</td>
 </tr>
 
 <tr>
 <td>--watch-interval</td>
 <td></td>
+<td>number</td>
 <td>3</td>
 <td>Interval time at watching mode (in seconds)</td>
 </tr>

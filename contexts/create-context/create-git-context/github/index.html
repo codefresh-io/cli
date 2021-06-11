@@ -1668,6 +1668,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1677,6 +1678,7 @@
 <tr>
 <td>--sharing-policy</td>
 <td></td>
+<td>string</td>
 <td>AccountAdmins</td>
 <td>Set the sharing policy for git contexts<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
 </tr>
@@ -1684,12 +1686,14 @@
 <tr>
 <td>--behind-firewall</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Set to true to mark this context with behind firewall flag</td>
 </tr>
 
 <tr>
 <td>--help</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print help information</td>
@@ -1699,12 +1703,14 @@
 <td>--access-token</td>
 <td>-t</td>
 <td></td>
+<td></td>
 <td>Access token from to be used to clone repositories. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--host</td>
 <td>-h</td>
+<td>string</td>
 <td>api.github.com</td>
 <td>Host name of your github (without protocol). <code>required</code></td>
 </tr>
@@ -1712,6 +1718,7 @@
 <tr>
 <td>--api-path-prefix</td>
 <td>-a</td>
+<td>string</td>
 <td>/</td>
 <td>Prefix of the api on the given host. <code>required</code></td>
 </tr>

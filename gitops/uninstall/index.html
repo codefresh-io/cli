@@ -1677,6 +1677,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1687,11 +1688,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
@@ -1701,11 +1704,13 @@
 <td>--kube-context-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Name of Kubernetes context</td>
 </tr>
 
 <tr>
 <td>--kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Namespace in Kubernetes cluster</td>
@@ -1714,6 +1719,7 @@
 <tr>
 <td>--install-manifest</td>
 <td></td>
+<td>string</td>
 <td><a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a></td>
 <td>Url of argocd install manifest</td>
 </tr>
@@ -1721,7 +1727,8 @@
 <tr>
 <td>--in-cluster</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Use this option if gitops provider is been updated from inside a cluster</td>
 </tr>
 </tbody>

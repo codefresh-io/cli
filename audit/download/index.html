@@ -1659,6 +1659,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1669,11 +1670,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--userName</td>
+<td></td>
 <td></td>
 <td></td>
 <td>filter by user name</td>
@@ -1683,11 +1686,13 @@
 <td>--userId</td>
 <td></td>
 <td></td>
+<td></td>
 <td>filter by codefresh user id</td>
 </tr>
 
 <tr>
 <td>--entity</td>
+<td></td>
 <td></td>
 <td></td>
 <td>filter by api entity, example: pipeline, account</td>
@@ -1697,11 +1702,13 @@
 <td>--entityId</td>
 <td></td>
 <td></td>
+<td></td>
 <td>filter by api entity id, this value different for each action, example: email, user id</td>
 </tr>
 
 <tr>
 <td>--action</td>
+<td></td>
 <td></td>
 <td></td>
 <td>filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account</td>
@@ -1711,11 +1718,13 @@
 <td>--rs_status</td>
 <td></td>
 <td></td>
+<td></td>
 <td>filter by response status code</td>
 </tr>
 
 <tr>
 <td>--showTriggers</td>
+<td></td>
 <td></td>
 <td></td>
 <td>returns only actions related to receiving triggers</td>
@@ -1725,11 +1734,13 @@
 <td>--search</td>
 <td></td>
 <td></td>
+<td></td>
 <td>filter by searching substring in request body or query or params or headers or url</td>
 </tr>
 
 <tr>
 <td>--from</td>
+<td></td>
 <td></td>
 <td></td>
 <td>filter by date, value is number of milliseconds since 1970</td>
@@ -1739,11 +1750,13 @@
 <td>--to</td>
 <td></td>
 <td></td>
+<td></td>
 <td>filter by date, value is number of milliseconds since 1970</td>
 </tr>
 
 <tr>
 <td>--sortField</td>
+<td></td>
 <td></td>
 <td></td>
 <td>name of sorting field, values: id, createdAt, updatedAt<br><br>Possible values:<br> - id<br> - createdAt<br> - updatedAt</td>
@@ -1753,13 +1766,15 @@
 <td>--sortType</td>
 <td></td>
 <td></td>
+<td></td>
 <td>sorting type, values: ASK, DESK<br><br>Possible values:<br> - ASK<br> - DESK</td>
 </tr>
 
 <tr>
 <td>--file</td>
 <td></td>
-<td>/codefresh/volume/cli/codefresh_audit_2021-06-03_12-38-06.csv</td>
+<td>string</td>
+<td>/codefresh/volume/cli/codefresh_audit_2021-06-11_12-57-16.csv</td>
 <td>The name of the file and the directory in which the audit will be saved</td>
 </tr>
 </tbody>

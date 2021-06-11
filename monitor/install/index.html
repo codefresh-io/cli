@@ -1654,6 +1654,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1664,11 +1665,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--cluster-id</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Cluster id - freestyle name</td>
@@ -1678,18 +1681,21 @@
 <td>--token</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Codefresh user token</td>
 </tr>
 
 <tr>
 <td>--kube-config-path</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
 </tr>
 
 <tr>
 <td>--kube-context-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
@@ -1699,11 +1705,13 @@
 <td>--url</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Codefresh url, by default <a href="https://g.codefresh.io">https://g.codefresh.io</a></td>
 </tr>
 
 <tr>
 <td>--kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
@@ -1712,12 +1720,14 @@
 <tr>
 <td>--docker-registry</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;</td>
 </tr>
 
 <tr>
 <td>--values</td>
+<td></td>
 <td></td>
 <td></td>
 <td>specify values in a YAML file</td>
@@ -1727,20 +1737,23 @@
 <td>--verbose</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print logs</td>
 </tr>
 
 <tr>
 <td>--dry-run</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>dry run</td>
 </tr>
 
 <tr>
 <td>--bypass-download</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>If the flag is set, then the first attempt (to get the required component) would be by searching for it locally. If the search fails, there will be a download attempt</td>
 </tr>
 </tbody>

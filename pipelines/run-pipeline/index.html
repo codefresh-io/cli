@@ -1694,6 +1694,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1704,12 +1705,14 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--trigger</td>
 <td>-t</td>
+<td></td>
 <td></td>
 <td>Trigger id or name</td>
 </tr>
@@ -1718,11 +1721,13 @@
 <td>--branch</td>
 <td>-b</td>
 <td></td>
+<td></td>
 <td>Branch</td>
 </tr>
 
 <tr>
 <td>--memory</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Mention machine memory sizes during pipeline run</td>
@@ -1732,11 +1737,13 @@
 <td>--cpu</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Mention machine cpu sizes during pipeline run</td>
 </tr>
 
 <tr>
 <td>--disk</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Mention machine disk space sizes during pipeline run</td>
@@ -1746,11 +1753,13 @@
 <td>--pack-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Resources size (<code>small</code>, <code>medium</code> or <code>large</code>)<br><br>Possible values:<br> - small<br> - medium<br> - large</td>
 </tr>
 
 <tr>
 <td>--runtime-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Runtime environment for run pipeline</td>
@@ -1760,19 +1769,22 @@
 <td>--sha</td>
 <td>-s</td>
 <td></td>
+<td></td>
 <td>Set commit sha</td>
 </tr>
 
 <tr>
 <td>--no-cache</td>
 <td>--nc</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Ignore cached images</td>
 </tr>
 
 <tr>
 <td>--annotation</td>
 <td>-a</td>
+<td>array</td>
 <td></td>
 <td>Add annotations to created build</td>
 </tr>
@@ -1780,20 +1792,23 @@
 <tr>
 <td>--enable-notifications</td>
 <td>--en</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Report notifications about pipeline execution</td>
 </tr>
 
 <tr>
 <td>--reset-volume</td>
 <td>--rv</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Reset pipeline cached volume</td>
 </tr>
 
 <tr>
 <td>--variable</td>
 <td>-v</td>
+<td>array</td>
 <td></td>
 <td>Set build variables</td>
 </tr>
@@ -1802,12 +1817,14 @@
 <td>--detach</td>
 <td>-d</td>
 <td></td>
+<td></td>
 <td>Run pipeline and print build ID</td>
 </tr>
 
 <tr>
 <td>--context</td>
 <td>-c</td>
+<td>array</td>
 <td></td>
 <td>Run pipeline with contexts</td>
 </tr>
@@ -1815,7 +1832,8 @@
 <tr>
 <td>--local</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Run pipeline on your local docker machine</td>
 </tr>
 
@@ -1823,18 +1841,21 @@
 <td>--local-volume</td>
 <td>--lv</td>
 <td></td>
+<td></td>
 <td>Use your file system as volume in local run</td>
 </tr>
 
 <tr>
 <td>--no-cf-cache</td>
 <td>--ncfc</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Ignore Codefresh cache optimizations</td>
 </tr>
 
 <tr>
 <td>--only</td>
+<td></td>
 <td></td>
 <td></td>
 <td>run only specific steps</td>
@@ -1844,11 +1865,13 @@
 <td>--skip</td>
 <td></td>
 <td></td>
+<td></td>
 <td>skip specific steps</td>
 </tr>
 
 <tr>
 <td>--debug</td>
+<td></td>
 <td></td>
 <td></td>
 <td>debug mode</td>
@@ -1858,12 +1881,14 @@
 <td>--variable-file</td>
 <td>--var-file</td>
 <td></td>
+<td></td>
 <td>Set build variables from a file</td>
 </tr>
 
 <tr>
 <td>--yaml</td>
 <td>-y</td>
+<td></td>
 <td></td>
 <td>Override codefresh.yaml for this execution</td>
 </tr>

@@ -1668,6 +1668,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1677,6 +1678,7 @@
 <tr>
 <td>--sharing-policy</td>
 <td></td>
+<td>string</td>
 <td>AccountAdmins</td>
 <td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
 </tr>
@@ -1685,19 +1687,22 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--behind-firewall</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Set to true to mark this context with behind firewall flag</td>
 </tr>
 
 <tr>
 <td>--api-url</td>
 <td>-a</td>
+<td>string</td>
 <td></td>
 <td>URL of the vault server. <code>required</code></td>
 </tr>
@@ -1705,6 +1710,7 @@
 <tr>
 <td>--login-path</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>Path for given auth method. Leave out to use the default path for the type.</td>
 </tr>
@@ -1712,6 +1718,7 @@
 <tr>
 <td>--namespace</td>
 <td>-n</td>
+<td>string</td>
 <td></td>
 <td>Namespace is only valid for Vault Enterprise instances</td>
 </tr>
@@ -1719,6 +1726,7 @@
 <tr>
 <td>--token</td>
 <td>-t</td>
+<td>string</td>
 <td></td>
 <td>Token</td>
 </tr>
@@ -1726,6 +1734,7 @@
 <tr>
 <td>--username</td>
 <td>-u</td>
+<td>string</td>
 <td></td>
 <td>Username</td>
 </tr>
@@ -1733,6 +1742,7 @@
 <tr>
 <td>--password</td>
 <td>-p</td>
+<td>string</td>
 <td></td>
 <td>Password</td>
 </tr>
@@ -1740,6 +1750,7 @@
 <tr>
 <td>--role-id</td>
 <td>-r</td>
+<td>string</td>
 <td></td>
 <td>Role Id</td>
 </tr>
@@ -1747,6 +1758,7 @@
 <tr>
 <td>--secret-id</td>
 <td>-s</td>
+<td>string</td>
 <td></td>
 <td>Secret Id</td>
 </tr>
@@ -1754,6 +1766,7 @@
 <tr>
 <td>--gcp-role</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>GCP Role</td>
 </tr>
@@ -1761,6 +1774,7 @@
 <tr>
 <td>--kubernetes-role</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>Kubernetes Role</td>
 </tr>
@@ -1768,6 +1782,7 @@
 <tr>
 <td>--kubernetes-jwt</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>Kubernetes Role</td>
 </tr>

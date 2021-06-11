@@ -1677,6 +1677,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1687,11 +1688,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--git-integration</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of git integration in Codefresh</td>
@@ -1701,11 +1704,13 @@
 <td>--git-repo-url</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Url to manifest repo</td>
 </tr>
 
 <tr>
 <td>--codefresh-integration</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to  avoid hitting the Github rate limits )</td>
@@ -1715,11 +1720,13 @@
 <td>--argo-host</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Host of argocd installation</td>
 </tr>
 
 <tr>
 <td>--argo-token</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Token of argocd installation. Preferred auth method</td>
@@ -1729,11 +1736,13 @@
 <td>--argo-username</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Username of existing argocd installation. Should be used with argo-password</td>
 </tr>
 
 <tr>
 <td>--argo-password</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Password of existing argocd installation. Should be used with argo-username</td>
@@ -1743,11 +1752,13 @@
 <td>--update</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Update gitops integration if exists</td>
 </tr>
 
 <tr>
 <td>--kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
@@ -1757,11 +1768,13 @@
 <td>--kube-context-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Name of Kubernetes context</td>
 </tr>
 
 <tr>
 <td>--kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Namespace in Kubernetes cluster</td>
@@ -1770,7 +1783,8 @@
 <tr>
 <td>--in-cluster</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Use this option if gitops provider is been updated from inside a cluster</td>
 </tr>
 
@@ -1778,11 +1792,13 @@
 <td>--output</td>
 <td>-o</td>
 <td></td>
+<td></td>
 <td>Path to k8s manifest output file, example: -o /home/user/out.yaml</td>
 </tr>
 
 <tr>
 <td>--sync-mode</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Synchronization mode</td>
@@ -1794,14 +1810,14 @@
 SELECT - select applications for synchronization
 CONTINUE_SYNC - continuous synchronization
 ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC
---sync-apps |  |  | Applications to be synchronized
---http-proxy |  |  | http proxy to be used in the runner
---https-proxy |  |  | https proxy to be used in the runner
---install-manifest |  | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | Url of argocd install manifest
---set-argo-password |  |  | Set password for admin user of new argocd installation
---codefresh-host |  | <a href="https://g.codefresh.io/">https://g.codefresh.io/</a> | Codefresh api host
---codefresh-agent-suffix |  |  | Suffix for agent application&rsquo;s resources. Can be used for installing multiple agents in one namespace
---values |  |  | Specify values in a YAML file</p>
+--sync-apps |  |  |  | Applications to be synchronized
+--http-proxy |  |  |  | http proxy to be used in the runner
+--https-proxy |  |  |  | https proxy to be used in the runner
+--install-manifest |  | string | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | Url of argocd install manifest
+--set-argo-password |  |  |  | Set password for admin user of new argocd installation
+--codefresh-host |  | string | <a href="https://g.codefresh.io/">https://g.codefresh.io/</a> | Codefresh api host
+--codefresh-agent-suffix |  |  |  | Suffix for agent application&rsquo;s resources. Can be used for installing multiple agents in one namespace
+--values |  |  |  | Specify values in a YAML file</p>
 
 
     

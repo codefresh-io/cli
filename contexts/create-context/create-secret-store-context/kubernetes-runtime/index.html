@@ -1668,6 +1668,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1677,6 +1678,7 @@
 <tr>
 <td>--sharing-policy</td>
 <td></td>
+<td>string</td>
 <td>AccountAdmins</td>
 <td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
 </tr>
@@ -1685,12 +1687,14 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--runtimes</td>
 <td>--runtime</td>
+<td>array</td>
 <td>*</td>
 <td>Names of the runtime-environment to be used as secret store</td>
 </tr>
@@ -1699,11 +1703,13 @@
 <td>--resource-type</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Type of the resource in Kubernetes. <code>required</code><br><br>Possible values:<br> - secret<br> - configmap</td>
 </tr>
 
 <tr>
 <td>--resource-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the resource in Kubernetes</td>

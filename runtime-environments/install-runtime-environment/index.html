@@ -934,13 +934,6 @@
       <a href="/cli/install-resources/">Install Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/install-resources/install/" class="dd-item">
-        <div>
-          <a href="/cli/install-resources/install/">
-            Install
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/monitor/" class="dd-item haschildren
@@ -1654,6 +1647,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1664,11 +1658,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--token</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Agent&rsquo;s token</td>
@@ -1678,11 +1674,13 @@
 <td>--agent-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Agent&rsquo;s name</td>
 </tr>
 
 <tr>
 <td>--storage-class-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Set a name of your custom storage class, note: this will not install volume provisioning components</td>
@@ -1692,11 +1690,13 @@
 <td>--runtime-kube-context-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
 </tr>
 
 <tr>
 <td>--kube-node-selector</td>
+<td></td>
 <td></td>
 <td></td>
 <td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
@@ -1705,12 +1705,14 @@
 <tr>
 <td>--docker-registry</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;</td>
 </tr>
 
 <tr>
 <td>--set-value</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
@@ -1720,11 +1722,13 @@
 <td>--set-file</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Set values for templates from file, example: --set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
 </tr>
 
 <tr>
 <td>--dry-run</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Set to true to simulate installation</td>
@@ -1734,11 +1738,13 @@
 <td>--in-cluster</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Set flag if runner is been installed from inside a cluster</td>
 </tr>
 
 <tr>
 <td>--runtime-kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
@@ -1748,11 +1754,13 @@
 <td>--build-annotations</td>
 <td></td>
 <td></td>
+<td></td>
 <td>The kubernetes metadata.annotations as &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector)</td>
 </tr>
 
 <tr>
 <td>--runtime-kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
@@ -1762,11 +1770,13 @@
 <td>--attach-runtime</td>
 <td></td>
 <td></td>
+<td></td>
 <td>if set to true, auto attach runtime to agent (need to provide &hellip;.)</td>
 </tr>
 
 <tr>
 <td>--agent-kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file for the agent (default is $HOME/.kube/config)</td>
@@ -1776,11 +1786,13 @@
 <td>--agent-kube-context-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Agent kubernetes context (on attach)</td>
 </tr>
 
 <tr>
 <td>--agent-kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Agent&rsquo;s namespace (on attach)</td>
@@ -1790,11 +1802,13 @@
 <td>--agent-kube-config-path</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)</td>
 </tr>
 
 <tr>
 <td>--cluster-service-account</td>
+<td></td>
 <td></td>
 <td></td>
 <td>service account for cluster default is default</td>
@@ -1804,11 +1818,13 @@
 <td>--make-default-runtime</td>
 <td></td>
 <td></td>
+<td></td>
 <td>should all pipelines run on the this runtime (default is false)</td>
 </tr>
 
 <tr>
 <td>--verbose</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print logs</td>

@@ -1654,6 +1654,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1664,11 +1665,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Agent&rsquo;s name to be created if token is not provided</td>
@@ -1678,11 +1681,13 @@
 <td>--token</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Agent&rsquo;s token</td>
 </tr>
 
 <tr>
 <td>--kube-context-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
@@ -1692,11 +1697,13 @@
 <td>--kube-node-selector</td>
 <td></td>
 <td></td>
+<td></td>
 <td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
 </tr>
 
 <tr>
 <td>--dry-run</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Set to true to simulate installation</td>
@@ -1706,11 +1713,13 @@
 <td>--in-cluster</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Set flag if runner is been installed from inside a cluster</td>
 </tr>
 
 <tr>
 <td>--kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
@@ -1720,11 +1729,13 @@
 <td>--tolerations</td>
 <td></td>
 <td></td>
+<td></td>
 <td>The kubernetes tolerations as path to a  JSON file to be used by runner resources (default is no tolerations) (string)</td>
 </tr>
 
 <tr>
 <td>--kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
@@ -1734,11 +1745,13 @@
 <td>--skip-version-check</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Do not compare current runner&rsquo;s version with latest</td>
 </tr>
 
 <tr>
 <td>--install-runtime</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Install and attach runtime on the same namespace as the agent (default is false)</td>
@@ -1748,11 +1761,13 @@
 <td>--make-default-runtime</td>
 <td></td>
 <td></td>
+<td></td>
 <td>should all pipelines run on the hybrid runtime (default is false)</td>
 </tr>
 
 <tr>
 <td>--storage-class-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Set a name of your custom storage class, note: this will not install volume provisioning components</td>
@@ -1762,11 +1777,13 @@
 <td>--agent-kube-context-name</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Agent kubernetes context (on attach)</td>
 </tr>
 
 <tr>
 <td>--agent-kube-namespace</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Agent&rsquo;s namespace (on attach)</td>
@@ -1775,12 +1792,14 @@
 <tr>
 <td>--docker-registry</td>
 <td></td>
+<td>string</td>
 <td></td>
 <td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;</td>
 </tr>
 
 <tr>
 <td>--verbose</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print logs</td>

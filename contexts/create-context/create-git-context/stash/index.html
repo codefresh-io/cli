@@ -411,6 +411,94 @@
           </a>
         </div>
     </li>
+    <li data-nav-id="/cli/contexts/create-context/create-git-context/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-git-context/">Git</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
+            bitbucket
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/github/">
+            github
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
+            gitlab
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item active">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/stash/">
+            stash
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/">
+            HTTP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/">
+            S3
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/">
+            hashicorp-vault
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes/">
+            kubernetes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/">
+            kubernetes-Runtime
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/spec/" class="dd-item haschildren
@@ -1580,6 +1668,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1589,6 +1678,7 @@
 <tr>
 <td>--sharing-policy</td>
 <td></td>
+<td>string</td>
 <td>AccountAdmins</td>
 <td>Set the sharing policy for git contexts<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
 </tr>
@@ -1596,12 +1686,14 @@
 <tr>
 <td>--behind-firewall</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Set to true to mark this context with behind firewall flag</td>
 </tr>
 
 <tr>
 <td>--help</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Print help information</td>
@@ -1611,6 +1703,7 @@
 <td>--username</td>
 <td>-u</td>
 <td></td>
+<td></td>
 <td>Username. <code>required</code></td>
 </tr>
 
@@ -1618,12 +1711,14 @@
 <td>--password</td>
 <td>-p</td>
 <td></td>
+<td></td>
 <td>Password. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--api-url</td>
 <td>-a</td>
+<td></td>
 <td></td>
 <td>URL of the api. <code>required</code></td>
 </tr>

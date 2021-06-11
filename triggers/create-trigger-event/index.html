@@ -1667,6 +1667,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1677,11 +1678,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--type</td>
+<td></td>
 <td></td>
 <td></td>
 <td>trigger-event type. <code>required</code></td>
@@ -1691,19 +1694,22 @@
 <td>--kind</td>
 <td></td>
 <td></td>
+<td></td>
 <td>trigger-event kind. <code>required</code></td>
 </tr>
 
 <tr>
 <td>--public</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>wether trigger-event is public (system-wide): can be linked to any pipeline in any account</td>
 </tr>
 
 <tr>
 <td>--secret</td>
 <td></td>
+<td>string</td>
 <td>!generate</td>
 <td>trigger-event secret (omit to auto-generate). <code>required</code></td>
 </tr>
@@ -1711,12 +1717,14 @@
 <tr>
 <td>--value</td>
 <td>-v</td>
+<td>array</td>
 <td></td>
 <td>trigger-event specific values pairs (key=value), as required by trigger-type</td>
 </tr>
 
 <tr>
 <td>--context</td>
+<td></td>
 <td></td>
 <td></td>
 <td>context with credentials required to setup event on remote system</td>

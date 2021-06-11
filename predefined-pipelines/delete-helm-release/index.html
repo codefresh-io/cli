@@ -1658,6 +1658,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1668,12 +1669,14 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--cluster</td>
 <td>-c</td>
+<td>string</td>
 <td></td>
 <td>Run on cluster. <code>required</code></td>
 </tr>
@@ -1681,6 +1684,7 @@
 <tr>
 <td>--timeout</td>
 <td>-t</td>
+<td>number</td>
 <td>300</td>
 <td>time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)</td>
 </tr>
@@ -1688,7 +1692,8 @@
 <tr>
 <td>--purge</td>
 <td>-p</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>remove the release from the store and make its name free for later use (default true)</td>
 </tr>
 
@@ -1696,19 +1701,22 @@
 <td>--detach</td>
 <td>-d</td>
 <td></td>
+<td></td>
 <td>Run pipeline and print build ID</td>
 </tr>
 
 <tr>
 <td>--no-hooks</td>
 <td>--nh</td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>prevent hooks from running during deletion</td>
 </tr>
 
 <tr>
 <td>--tiller-namespace</td>
 <td>-n</td>
+<td>string</td>
 <td>kube-system</td>
 <td>namespace where is tiller running ( helm 2 only )</td>
 </tr>
@@ -1716,6 +1724,7 @@
 <tr>
 <td>--namespace</td>
 <td>--ns</td>
+<td>string</td>
 <td>default</td>
 <td>namespace where is chart located ( helm 3 )</td>
 </tr>

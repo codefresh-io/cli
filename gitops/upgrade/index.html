@@ -1681,6 +1681,7 @@
 <tr>
 <th>Option</th>
 <th>Alias</th>
+<th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1691,11 +1692,13 @@
 <td>--help</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Print help information</td>
 </tr>
 
 <tr>
 <td>--kube-config-path</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
@@ -1705,11 +1708,13 @@
 <td>--kube-namespace</td>
 <td></td>
 <td></td>
+<td></td>
 <td>Name of the namespace on which Argo agent should be updated</td>
 </tr>
 
 <tr>
 <td>--kube-context-name</td>
+<td></td>
 <td></td>
 <td></td>
 <td>Name of the kubernetes context where Argo agent should be updated (default is current-context)</td>
@@ -1718,7 +1723,8 @@
 <tr>
 <td>--in-cluster</td>
 <td></td>
-<td></td>
+<td>boolean</td>
+<td>false</td>
 <td>Use this option if gitops provider is been updated from inside a cluster</td>
 </tr>
 </tbody>
