@@ -8,7 +8,7 @@ jest.mock('./lib/output/Output');
 jest.mock('codefresh-sdk/helpers/whoami', () => ({
     getUser: jest.fn().mockResolvedValue(),
     getExecutionContext: jest.fn().mockResolvedValue(),
-    getCurrentAccount: jest.fn(),
+    getCurrentAccount: jest.fn().mockResolvedValue(),
 }));
 jest.mock('request-promise', () => (() => ({ options: { request: {} } })));
 
