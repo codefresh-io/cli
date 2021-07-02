@@ -5,7 +5,11 @@ const { Config } = require('codefresh-sdk');
 const openapi = require('./openapi');
 
 jest.mock('./lib/output/Output');
-jest.mock('codefresh-sdk/helpers/whoami');
+jest.mock('codefresh-sdk/helpers/whoami', () => ({
+    getUser: jest.fn().mockResolvedValue(),
+    getExecutionContext: jest.fn().mockResolvedValue(),
+    getCurrentAccount: jest.fn().mockResolvedValue(),
+}));
 jest.mock('request-promise', () => (() => ({ options: { request: {} } })));
 
 let SDK_CONFIGURED;
