@@ -4,7 +4,9 @@
   "description": "reveal.js multiplex server",
   "homepage": "http://revealjs.com",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": "~4.1.1"
@@ -13,7 +15,9 @@
     "express": "~4.15.5",
     "grunt-cli": "~1.3.0",
     "mustache": "~2.2.1",
-    "socket.io": "~1.7.4"
+    "socket.io": "~2.0.2",
+    "@snyk/protect": "latest"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
