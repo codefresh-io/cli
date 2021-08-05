@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.75.34",
+  "version": "0.75.35",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -32,9 +32,9 @@
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
     "adm-zip": "^0.5.5",
-    "ajv": "^6.6.1",
+    "ajv": "^6.12.3",
     "bluebird": "^3.5.1",
-    "cf-errors": "^0.1.15",
+    "cf-errors": "^0.1.16",
     "chalk": "^4.1.0",
     "cli-progress": "3.6.0",
     "codefresh-sdk": "^1.9.22",
@@ -52,7 +52,7 @@
     "figlet": "^1.4.0",
     "filesize": "^3.5.11",
     "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
-    "flat": "^4.1.0",
+    "flat": "^4.1.1",
     "inquirer": "^7.1.0",
     "js-yaml": "^3.10.0",
     "jsonwebtoken": "^8.1.0",
