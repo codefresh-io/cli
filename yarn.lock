@@ -903,6 +903,13 @@ cf-errors@^0.1.15:
   dependencies:
     lodash "4.17.20"
 
+cf-errors@^0.1.16:
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/cf-errors/-/cf-errors-0.1.16.tgz#03d0b050ac94762552792907b08bd39d1a012116"
+  integrity sha512-ewA6cTS+bVC32NCxIdEu/5HQ8zb09PV1ubdu0t2yPXs51K31gI78+XGEomVjaXdTbZcGBPVIWhFnG6R/U7K4IQ==
+  dependencies:
+    lodash "^4.17.21"
+
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.2, chalk@~2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"

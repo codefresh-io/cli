@@ -34,7 +34,7 @@
     "adm-zip": "^0.5.5",
     "ajv": "^6.6.1",
     "bluebird": "^3.5.1",
-    "cf-errors": "^0.1.15",
+    "cf-errors": "^0.1.16",
     "chalk": "^4.1.0",
     "cli-progress": "3.6.0",
     "codefresh-sdk": "^1.9.22",
