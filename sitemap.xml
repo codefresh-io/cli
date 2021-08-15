@@ -680,7 +680,27 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/logs-category/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/logs/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/monitor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/logs/offload-to-collection/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/logs/offload-to-file/</loc>
   </url>
   
   <url>

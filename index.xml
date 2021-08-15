@@ -1722,6 +1722,39 @@ Options    Option Alias Type Default Description     --help    Print help inform
     </item>
     
     <item>
+      <title>Logs sub category</title>
+      <link>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</guid>
+      <description>Description Manages offline logs.
+Command codefresh offline-logs
+Options    Option Alias Type Default Description     --help    Print help information   --uri  string  Mongodb URI   --db  string  Database name   --collections -c string logs,metadata Source collections names   --cutoffDate --cod string  The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</description>
+    </item>
+    
+    <item>
+      <title>Offload To Collection</title>
+      <link>https://codefresh-io.github.io/cli/logs/offload-to-collection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/logs/offload-to-collection/</guid>
+      <description>Description Archiving logs from one or more source collections to target collections.
+Command codefresh offline-logs offload-to-collection
+Options    Option Alias Type Default Description     --uri  string  Mongodb URI   --db  string  Database name   --collections -c string logs,metadata Source collections names   --cutoffDate --cod string  The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</description>
+    </item>
+    
+    <item>
+      <title>Offload To File</title>
+      <link>https://codefresh-io.github.io/cli/logs/offload-to-file/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/logs/offload-to-file/</guid>
+      <description>Description Archiving logs from one or more source collections to files by chunks of days.
+Command codefresh offline-logs offload-to-file
+Options    Option Alias Type Default Description     --uri  string  Mongodb URI   --db  string  Database name   --collections -c string logs,metadata Source collections names   --cutoffDate --cod string  The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</description>
+    </item>
+    
+    <item>
       <title>Show Config</title>
       <link>https://codefresh-io.github.io/cli/cli-config/show-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
