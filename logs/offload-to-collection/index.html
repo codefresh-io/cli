@@ -1707,7 +1707,7 @@
 <td></td>
 <td>string</td>
 <td></td>
-<td>Mongodb URI</td>
+<td>Mongodb URI. If not provided, will be parsed from environment variables.</td>
 </tr>
 
 <tr>
@@ -1715,23 +1715,7 @@
 <td></td>
 <td>string</td>
 <td></td>
-<td>Database name</td>
-</tr>
-
-<tr>
-<td>--collections</td>
-<td>-c</td>
-<td>string</td>
-<td>logs,metadata</td>
-<td>Source collections names</td>
-</tr>
-
-<tr>
-<td>--cutoffDate</td>
-<td>--cod</td>
-<td>string</td>
-<td></td>
-<td>The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</td>
+<td>Database name. If not provided, will be parsed from environment variables.</td>
 </tr>
 
 <tr>
@@ -1748,6 +1732,14 @@
 <td>string</td>
 <td></td>
 <td>Target database name, if none inserted, db will be defined as target.</td>
+</tr>
+
+<tr>
+<td>--cutoffDate</td>
+<td>--cod</td>
+<td>string</td>
+<td></td>
+<td>The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</td>
 </tr>
 </tbody>
 </table>
