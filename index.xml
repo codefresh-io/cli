@@ -1653,6 +1653,17 @@ Options    Option Alias Type Default Description     --help    Print help inform
     </item>
     
     <item>
+      <title>Ensures one or more offline-logs collections has indexes</title>
+      <link>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</guid>
+      <description>Description Checks whether a collection has indexes and gives the user an option to add them. Adding an index may improve performance of some of the read operations.
+Command codefresh offline-logs ensure-index
+Options    Option Alias Type Default Description     --uri  string  Mongodb URI. If not provided, will be parsed from environment variables.   --db  string  Database name. If not provided, will be parsed from environment variables.</description>
+    </item>
+    
+    <item>
       <title>Init</title>
       <link>https://codefresh-io.github.io/cli/runner/init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

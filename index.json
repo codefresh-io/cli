@@ -886,7 +886,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Type Default Description     --help    Print help information   --userName    filter by user name   --userId    filter by codefresh user id   --entity    filter by api entity, example: pipeline, account   --entityId    filter by api entity id, this value different for each action, example: email, user id   --action    filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status    filter by response status code   --showTriggers    returns only actions related to receiving triggers   --search    filter by searching substring in request body or query or params or headers or url   --from    filter by date, value is number of milliseconds since 1970   --to    filter by date, value is number of milliseconds since 1970   --sortField    name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType    sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  string /codefresh/volume/cli/codefresh_audit_2021-08-17_14-38-20.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Type Default Description     --help    Print help information   --userName    filter by user name   --userId    filter by codefresh user id   --entity    filter by api entity, example: pipeline, account   --entityId    filter by api entity id, this value different for each action, example: email, user id   --action    filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status    filter by response status code   --showTriggers    returns only actions related to receiving triggers   --search    filter by searching substring in request body or query or params or headers or url   --from    filter by date, value is number of milliseconds since 1970   --to    filter by date, value is number of milliseconds since 1970   --sortField    name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType    sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  string /codefresh/volume/cli/codefresh_audit_2021-08-18_14-20-54.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -1085,6 +1085,13 @@
 	"content": " Description Show diff between two runtime environments configuration.\nCommand codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nAliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [second-re-version]\ncodefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nOptions    Option Alias Type Default Description     --help    Print help information   --first-name    First runtime environment name   --first-version    First runtime environment version   --second-name    Second runtime environment name   --second-version    Second runtime environment version    "
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/",
+	"title": "Ensures one or more offline-logs collections has indexes",
+	"tags": [],
+	"description": "",
+	"content": " Description Checks whether a collection has indexes and gives the user an option to add them. Adding an index may improve performance of some of the read operations.\nCommand codefresh offline-logs ensure-index\nOptions    Option Alias Type Default Description     --uri  string  Mongodb URI. If not provided, will be parsed from environment variables.   --db  string  Database name. If not provided, will be parsed from environment variables.   --help    Print help information    Examples undefined codefresh offline-logs ensure-index --uri \u0026quot;mongodb://192.168.99.100:27017\u0026quot; --db logs\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/environments/",
 	"title": "Environments",
 	"tags": [],
@@ -1180,7 +1187,7 @@
 	"title": "Logs sub category",
 	"tags": [],
 	"description": "",
-	"content": " Offload To Collection codefresh offline-logs offload-to-collection\nArchiving logs from one or more source collections to target collections.\nOffload To File codefresh offline-logs offload-to-file\nArchiving logs from one or more source collections to files by chunks of days.\n"
+	"content": " Ensures one or more offline-logs collections has indexes codefresh offline-logs ensure-index\nChecks whether a collection has indexes and gives the user an option to add them. Adding an index may improve performance of some of the read operations.\nOffload To Collection codefresh offline-logs offload-to-collection\nArchiving logs from one or more source collections to target collections.\nOffload To File codefresh offline-logs offload-to-file\nArchiving logs from one or more source collections to files by chunks of days.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/monitor/",

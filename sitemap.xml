@@ -636,6 +636,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/environments/</loc>
   </url>
   
