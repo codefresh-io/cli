@@ -1714,7 +1714,7 @@
 <td></td>
 <td>string</td>
 <td></td>
-<td>Mongodb URI. If not provided, will be parsed from environment variables.</td>
+<td>Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.</td>
 </tr>
 
 <tr>
@@ -1722,7 +1722,7 @@
 <td></td>
 <td>string</td>
 <td></td>
-<td>Database name. If not provided, will be parsed from environment variables.</td>
+<td>Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.</td>
 </tr>
 
 <tr>
@@ -1738,7 +1738,7 @@
 <td>--tdb</td>
 <td>string</td>
 <td></td>
-<td>Target database name, if none inserted, db will be defined as target.</td>
+<td>This option is available only for mongodb version 4.2 and up. for older versions it will be ignored.           Target database name, if none inserted, db will be defined as target.</td>
 </tr>
 
 <tr>
@@ -1755,7 +1755,7 @@
 
 <h4 id="undefined">undefined</h4>
 
-<p><code>codefresh offline-logs offload-to-collection --uri &quot;mongodb://192.168.99.100:27017&quot; --db logs --c logs foo --cod &quot;2021-07-08&quot;</code></p>
+<p><code>codefresh offline-logs offload-to-collection --uri &quot;mongodb://192.168.99.100:27017&quot; --db logs --cod &quot;2021-07-08&quot;</code></p>
 
 
     
