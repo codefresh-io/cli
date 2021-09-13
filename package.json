@@ -63,7 +63,7 @@
     "moment": "^2.19.4",
     "mongodb": "^3.0.1",
     "node-forge": "^0.10.0",
-    "ora": "^3.0.0",
+    "ora": "^6.0.0",
     "prettyjson": "^1.2.1",
     "promise-retry": "^2.0.1",
     "recursive-readdir": "^2.2.1",
