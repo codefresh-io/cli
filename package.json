@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.78.4",
+  "version": "0.78.5",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -37,7 +37,7 @@
     "cf-errors": "^0.1.16",
     "chalk": "^4.1.0",
     "cli-progress": "3.10.0",
-    "codefresh-sdk": "^1.9.22",
+    "codefresh-sdk": "^1.9.24",
     "colors": "1.4.0",
     "columnify": "^1.5.4",
     "compare-versions": "^3.4.0",
