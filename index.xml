@@ -811,7 +811,7 @@ Arguments    Option Alias Default Description     cluster   Cluster name on inte
       <guid>https://codefresh-io.github.io/cli/builds/show-build-logs/</guid>
       <description>Description Show logs of a build.
 Command codefresh logs &amp;lt;id&amp;gt;
-Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --f  boolean false Continue showing build logs until it will finish    Examples Get logs of build ID codefresh logs ID</description>
+Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --f  boolean false Continue showing build logs until it will finish   --no-timestamps  boolean false Don&amp;rsquo;t show timestamps    Examples Get logs of build ID codefresh logs ID</description>
     </item>
     
     <item>
