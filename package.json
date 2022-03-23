@@ -8,7 +8,7 @@
     "generate-completion": "node ./lib/interface/cli/completion/generate",
     "test": "jest .spec.js --coverage",
     "eslint": "eslint --fix lib/logic/**",
-    "pkg": "pkg . -t node10-alpine-x64,node10-macos-x64,node10-linux-x64,node10-win-x64 --out-path ./dist",
+    "pkg": "pkg . -t node12-alpine-x64,node12-macos-x64,node12-linux-x64,node12-win-x64 --out-path ./dist",
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
@@ -25,7 +25,8 @@
   "pkg": {
     "scripts": [
       "lib/**/*.js",
-      "node_modules/codefresh-sdk/lib/**/*.js"
+      "node_modules/codefresh-sdk/lib/**/*.js",
+      "node_modules/kubernetes-client/**/*.js"
     ],
     "assets": "lib/**/*.hbs"
   },
@@ -95,7 +96,7 @@
     "eslint-plugin-jest": "^24.7.0",
     "hugo-cli": "^0.5.4",
     "jest": "^23.6.0",
-    "pkg": "4.3.8"
+    "pkg": "5.5.2"
   },
   "bugs": {
     "url": "https://github.com/codefresh-io/cli/issues"
