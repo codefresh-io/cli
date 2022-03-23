@@ -1,7 +1,7 @@
 # go hub binary
 FROM golang:alpine as go
 RUN apk --update add ca-certificates git
-RUN go get github.com/github/hub
+RUN go install github.com/github/hub@latest
 
 # python yq binary
 FROM six8/pyinstaller-alpine:alpine-3.6-pyinstaller-v3.4 as yq
