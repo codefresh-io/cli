@@ -32,7 +32,7 @@ steps:
           - yarn test
 
       e2e-tests:
-        title: 'Running unit tests'
+        title: 'Running e2e tests'
         image: quay.io/codefresh/node-tester-image:12.21.0
         commands:
           - yarn e2e
