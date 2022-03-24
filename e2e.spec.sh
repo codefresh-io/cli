@@ -1,8 +1,8 @@
+# fail if one of the commands returns non-zero code
 set -e
 set -o pipefail
 
 echo "Using ./lib/interface/cli/codefresh"
-#alias codefresh='./lib/interface/cli/codefresh'
 function codefresh() {
     ./lib/interface/cli/codefresh $@
 }
@@ -10,94 +10,35 @@ function codefresh() {
 codefresh version
 echo
 
-echo "codefresh get agents"
-codefresh get agents > /dev/null
+codefresh get agents > /dev/null &
+#codefresh get annotation  > /dev/null &
+codefresh get boards > /dev/null &
+codefresh get clusters > /dev/null &
+codefresh get compositions > /dev/null &
+codefresh get environments > /dev/null &
+codefresh get images > /dev/null &
+codefresh get pipelines > /dev/null &
+codefresh get projects > /dev/null &
+codefresh get repository > /dev/null &
+codefresh get runtime-environments > /dev/null &
+#codefresh get sections  > /dev/null &
+codefresh get system-runtime-environments > /dev/null &
+codefresh get step-types > /dev/null &
+codefresh get teams > /dev/null &
+codefresh get tokens > /dev/null &
+codefresh get helm-repo > /dev/null &
+codefresh get registry > /dev/null &
+codefresh get triggers > /dev/null &
+codefresh get trigger-events > /dev/null &
+codefresh get trigger-types > /dev/null &
+codefresh get builds > /dev/null &
+codefresh get contexts > /dev/null &
+
+jobs -l
 echo
 
-echo "Skip:codefresh get annotation"
-#codefresh get annotation
-echo
-
-echo "codefresh get boards"
-codefresh get boards > /dev/null
-echo
-
-echo "codefresh get clusters"
-codefresh get clusters > /dev/null
-echo
-
-echo "codefresh get compositions"
-codefresh get compositions > /dev/null
-echo
-
-echo "codefresh get environments"
-codefresh get environments > /dev/null
-echo
-
-echo "codefresh get images"
-codefresh get images > /dev/null
-echo
-
-echo "codefresh get pipelines"
-codefresh get pipelines > /dev/null
-echo
-
-echo "codefresh get projects"
-codefresh get projects > /dev/null
-echo
-
-echo "codefresh get repository"
-codefresh get repository > /dev/null
-echo
-
-echo "codefresh get runtime-environments"
-codefresh get runtime-environments > /dev/null
-echo
-
-echo "Skip: codefresh get sections"
-#codefresh get sections
-echo
-
-echo "codefresh get system-runtime-environments"
-codefresh get system-runtime-environments > /dev/null
-echo
-
-echo "codefresh get step-types"
-codefresh get step-types > /dev/null
-echo
-
-echo "codefresh get teams"
-codefresh get teams > /dev/null
-echo
-
-echo "codefresh get tokens"
-codefresh get tokens > /dev/null
-echo
-
-echo "codefresh get helm-repo"
-codefresh get helm-repo > /dev/null
-echo
-
-echo "codefresh get registry"
-codefresh get registry > /dev/null
-echo
-
-echo "codefresh get triggers"
-codefresh get triggers > /dev/null
-echo
-
-echo "codefresh get trigger-events"
-codefresh get trigger-events > /dev/null
-echo
-
-echo "codefresh get trigger-types"
-codefresh get trigger-types > /dev/null
-echo
-
-echo "codefresh get builds"
-codefresh get builds > /dev/null
-echo
-
-echo "codefresh get contexts"
-codefresh get contexts > /dev/null
-echo
+for job in `jobs -p`
+do
+    echo "Waiting for $job..."
+    wait $job || exit 1
+done
