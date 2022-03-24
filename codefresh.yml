@@ -16,17 +16,26 @@ steps:
     commands:
         - yarn install --frozen-lockfile
 
-  eslint:
-    title: 'Running linting logic'
-    image: quay.io/codefresh/node-tester-image:12.21.0
-    commands:
-        - yarn eslint
+  parallel_tests:
+    type: parallel
+    steps:
+      eslint:
+        title: 'Running linting logic'
+        image: quay.io/codefresh/node-tester-image:12.21.0
+        commands:
+          - yarn eslint
 
-  unit-tests:
-    title: 'Running unit tests'
-    image: quay.io/codefresh/node-tester-image:12.21.0
-    commands:
-        - yarn test
+      unit-tests:
+        title: 'Running unit tests'
+        image: quay.io/codefresh/node-tester-image:12.21.0
+        commands:
+          - yarn test
+
+      e2e-tests:
+        title: 'Running unit tests'
+        image: quay.io/codefresh/node-tester-image:12.21.0
+        commands:
+          - yarn e2e
 
   extract_version:
     title: "Exporting package.json version"
