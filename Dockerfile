@@ -31,7 +31,6 @@ RUN yarn install --prod --frozen-lockfile && \
 COPY . /cf-cli
 
 RUN yarn generate-completion
-RUN apk del yarn
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
