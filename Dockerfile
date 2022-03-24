@@ -13,7 +13,7 @@ RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/
 # Main
 FROM node:12.22.11-alpine3.15
 
-RUN apk --update add --no-cache ca-certificates git curl bash jq=1.6-r0
+RUN apk --update add --no-cache ca-certificates git curl bash jq
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
