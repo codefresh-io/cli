@@ -12,3 +12,4 @@ codefresh.yml
 .coveralls.yml
 examples
 dist
+e2e

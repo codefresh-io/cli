@@ -1,0 +1,1 @@
+codefresh get pipelines
