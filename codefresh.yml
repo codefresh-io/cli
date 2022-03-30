@@ -33,6 +33,10 @@ steps:
           echo "Release already exists ${{PACKAGE_VERSION}}"
           exit 1
         fi
+    when:
+      condition:
+        all:
+          skipVersionCheck: '"${{SKIP_VERSION_CHECK}}" != true'
 
   install_dependencies:
     title: 'Installing testing dependencies'
