@@ -1,5 +1,5 @@
-project=codefresh-io/cli
-pipeline="$project/test-cli-run"
+project=cli-e2e
+pipeline="$project/test-run"
 pipeline_file="$SCRIPT_DIR/data/test-run.pip.yaml"
 
 existing_pipeline=`exists pipeline $pipeline`
@@ -22,3 +22,5 @@ else
 fi
 
 codefresh run $pipeline
+codefresh delete pipeline $pipeline
+codefresh delete project $project
