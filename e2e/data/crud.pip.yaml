@@ -1,8 +1,8 @@
 version: '1.0'
 kind: pipeline
 metadata:
-  name: pipeline/crud
-  project: pipeline
+  name: pipeline-crud/crud
+  project: pipeline-crud
   originalYamlString: |
     version: '1.0'
     steps:
