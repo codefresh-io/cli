@@ -1,9 +1,9 @@
-project='pipeline-crud'
-pipeline="$project/crud"
-pipeline_file="$SCRIPT_DIR/data/crud.pip.yaml"
+project=test-run
+pipeline="$project/test-run"
+pipeline_file="$SCRIPT_DIR/data/test-run.pip.yaml"
 
-existing_project=`exists project $project`
 existing_pipeline=`exists pipeline $pipeline`
+existing_project=`exists project $project`
 
 if [ -z "$existing_project" ]; then
   echo "Project does not exist: $project"
@@ -19,13 +19,8 @@ if [ -z "$existing_pipeline" ]; then
   codefresh create -f $pipeline_file
 else
   echo "Pipeline already exists: $pipeline"
-  codefresh delete pipeline $pipeline
-  codefresh create -f $pipeline_file
 fi
 
-codefresh get pipelines
-codefresh get pipeline $pipeline
-
+codefresh run $pipeline
 codefresh delete pipeline $pipeline
 codefresh delete project $project
-

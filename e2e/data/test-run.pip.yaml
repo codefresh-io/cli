@@ -1,0 +1,23 @@
+version: '1.0'
+kind: pipeline
+metadata:
+  name: test-run/test-run
+  project: test-run
+  originalYamlString: |
+    version: '1.0'
+    steps:
+      test:
+        image: alpine
+        commands:
+          - echo test
+spec:
+  triggers: []
+  stages: []
+  variables: []
+  contexts: []
+  steps:
+    test:
+      image: alpine
+      commands:
+        - echo test
+

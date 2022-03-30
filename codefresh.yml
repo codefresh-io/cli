@@ -10,33 +10,6 @@ steps:
     revision: ${{CF_BRANCH}}
     git: cf_github
 
-  install_dependencies:
-    title: 'Installing testing dependencies'
-    image: quay.io/codefresh/node-tester-image:12.21.0
-    commands:
-        - yarn install --frozen-lockfile
-
-  parallel_tests:
-    type: parallel
-    steps:
-      eslint:
-        title: 'Running linting logic'
-        image: quay.io/codefresh/node-tester-image:12.21.0
-        commands:
-          - yarn eslint
-
-      unit-tests:
-        title: 'Running unit tests'
-        image: quay.io/codefresh/node-tester-image:12.21.0
-        commands:
-          - yarn test
-
-      e2e-tests:
-        title: 'Running e2e tests'
-        image: quay.io/codefresh/node-tester-image:12.21.0
-        commands:
-          - yarn e2e
-
   extract_version:
     title: "Exporting package.json version"
     image: codefresh/build-cli
@@ -44,6 +17,57 @@ steps:
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
+
+  check_version:
+    title: 'Checking if version already exists'
+    image: codefresh/build-cli
+    fail_fast: false
+    commands:
+      - >-
+        RELEASE_ID="$(curl -s https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}} | jq .id)"
+        echo "Release id: $RELEASE_ID"
+
+        if [ -z "$RELEASE_ID" ] || [ "$RELEASE_ID" = 'null' ]; then
+          echo "Version is ok: ${{PACKAGE_VERSION}}"
+        else
+          echo "Release already exists ${{PACKAGE_VERSION}}"
+          exit 1
+        fi
+    when:
+      condition:
+        all:
+          skipVersionCheck: '"${{SKIP_VERSION_CHECK}}" != "true"'
+
+  install_dependencies:
+    title: 'Installing testing dependencies'
+    image: codefresh/build-cli
+    commands:
+      - yarn install --frozen-lockfile
+
+  parallel_tests:
+    type: parallel
+    steps:
+      eslint:
+        title: 'Running linting logic'
+        image: codefresh/build-cli
+        commands:
+          - yarn eslint
+
+      unit_tests:
+        title: 'Running unit tests'
+        image: codefresh/build-cli
+        commands:
+          - yarn test
+
+      e2e_tests:
+        title: 'Running e2e tests'
+        image: codefresh/build-cli
+        commands:
+          - "echo Running e2e on account: ${{CF_ACCOUNT}}"
+          - CF_API_KEY=${{CF_E2E_API_KEY}} yarn e2e
+    when:
+      branch:
+        ignore: [ master ]
 
   build_images:
     type: parallel
@@ -58,7 +82,7 @@ steps:
       run_arm_build:
         type: codefresh-run
         arguments:
-          PIPELINE_ID: 'codefresh-io/cli/build-arm'
+          PIPELINE_ID: codefresh-io/cli/build-arm
           TRIGGER_ID: codefresh-io/cli
           BRANCH: ${{CF_BRANCH}}
           DETACH: false
@@ -114,9 +138,17 @@ steps:
           tags:
             - ${{CF_SHORT_REVISION}}
 
+  fail_on_bad_version:
+    image: codefresh/build-cli
+    commands:
+      - exit 1
+    when:
+      condition:
+        all:
+          versionCheckFailed: steps.check_version.result == 'failure'
+
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
-    fail_fast: false
     type: codefresh-run
     arguments:
       PIPELINE_ID: 'codefresh-io/cli/release'
@@ -127,3 +159,6 @@ steps:
     when:
       branch:
         only: [ master ]
+      condition:
+        all:
+          versionCheckSucceeded: steps.check_version.result != 'failure'

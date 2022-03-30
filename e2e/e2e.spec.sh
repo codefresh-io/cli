@@ -2,20 +2,15 @@
 set -e
 set -o pipefail
 
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-CODEFRESH_PATH="$SCRIPT_DIR/../lib/interface/cli/codefresh"
-
-echo "Using $CODEFRESH_PATH"
-function codefresh() {
-    $CODEFRESH_PATH $@
-}
+export SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+source "$SCRIPT_DIR/helpers.sh"
 
 codefresh version
 echo
 
 for executable in $SCRIPT_DIR/scenarios/*.sh
 do
-  source $executable > "$executable.log" &
+  source $executable > "$executable.log" 2>&1 &
   echo "[$!] Executing: $executable"
 done
 echo

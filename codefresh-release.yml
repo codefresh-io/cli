@@ -1,16 +1,16 @@
 # this pipeline should only be executed on master branch
 version: '1.0'
-
+mode: parallel
+stages:
+  - prepare
+  - docker
+  - build
+  - github
+  - packages
+  - documentation
 steps:
-
-  main_clone:
-    title: 'Cloning main repository...'
-    type: git-clone
-    repo: codefresh-io/cli
-    revision: ${{CF_BRANCH}}
-    git: cf_github
-
   fail_if_not_master:
+    stage: prepare
     title: "Validate running on master branch"
     image: codefresh/build-cli
     commands:
@@ -20,16 +20,60 @@ steps:
       branch:
         ignore: [ master ]
 
+  main_clone:
+    stage: prepare
+    title: 'Cloning main repository...'
+    type: git-clone
+    repo: codefresh-io/cli
+    revision: ${{CF_BRANCH}}
+    git: cf_github
+    when:
+      steps:
+        - name: fail_if_not_master
+          on:
+            - success
+
   extract_version:
+    stage: prepare
     title: "Exporting package.json version"
     image: codefresh/build-cli
     commands:
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
+    when:
+      steps:
+        - name: main_clone
+          on:
+            - success
 
-# in case the candidate image will not be found the release flow will crash and this means that the build pipelines has failed
+  install:
+    stage: prepare
+    title: "Installing dependencies"
+    image: codefresh/build-cli
+    commands:
+      - "yarn install"
+    when:
+      steps:
+        - name: main_clone
+          on:
+            - success
+
+  generate_comletion:
+    stage: prepare
+    title: "Generating commands completion tree"
+    image: codefresh/build-cli
+    commands:
+      - "yarn generate-completion"
+    when:
+      steps:
+        - name: install
+          on:
+            - success
+
+  # in case the candidate image will not be found the release flow will crash and this means that the build pipelines has failed
   push_step:
+    stage: docker
     type: push
     title: "Push release image"
     image_name: codefresh/cli
@@ -48,8 +92,14 @@ steps:
         registry: cf-quay
         title: "push to quay.io"
         candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}
+    when:
+      steps:
+        - name: extract_version
+          on:
+            - success
 
   create_manifest_list:
+    stage: docker
     type: "codefresh-inc/multiarch-manifester"
     arguments:
       image_name: codefresh/cli
@@ -72,27 +122,91 @@ steps:
           tags:
             - ${{PACKAGE_VERSION}}
             - latest
-
-  generate_comletion:
-    title: "Generating commands completion tree"
-    image: codefresh/build-cli
-    commands:
-      - "yarn install"
-      - "yarn generate-completion"
-
-  deploy_to_npm:
-    title: "Publishing To Npm"
-    type: npm-publish
-    arguments:
-      NPM_TOKEN: '${{NPM_TOKEN}}'
-      DIR: ./cli
+    when:
+      steps:
+        - name: push_step
+          on:
+            - success
 
   compile_executables:
+    stage: build
     title: "Compiling executables"
     image: codefresh/build-cli
     commands:
       - "rm -rf dist"
       - "yarn pkg"
+    when:
+      steps:
+        - name: generate_comletion
+          on:
+            - success
+
+  archive_linux:
+    stage: build
+    title: "Archiving linux distribution"
+    image: codefresh/build-cli
+    commands:
+      - "rm -rf ./dist/linux"
+      - "mkdir -p ./dist/linux"
+      - "cp --force README.md LICENSE ./dist/linux"
+      - "cp --force ./dist/codefresh-linux ./dist/linux/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist/linux codefresh"
+      - "gzip -f codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
+    when:
+      steps:
+        - name: compile_executables
+          on:
+            - success
+
+  archive_macos:
+    stage: build
+    title: "Archiving macos distribution"
+    image: codefresh/build-cli
+    commands:
+      - "rm -rf ./dist/macos"
+      - "mkdir -p ./dist/macos"
+      - "cp --force README.md LICENSE ./dist/macos"
+      - "cp --force ./dist/codefresh-macos ./dist/macos/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist/macos codefresh"
+      - "gzip -f codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
+    when:
+      steps:
+        - name: compile_executables
+          on:
+            - success
+
+  archive_win:
+    stage: build
+    title: "Archiving macos distribution"
+    image: codefresh/build-cli
+    commands:
+      - "rm -rf ./dist/win"
+      - "mkdir -p ./dist/win"
+      - "cp --force README.md LICENSE ./dist/win"
+      - "cp --force ./dist/codefresh-win ./dist/win/codefresh.exe"
+      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/win/codefresh.exe "
+    when:
+      steps:
+        - name: compile_executables
+          on:
+            - success
+
+  archive_alpine:
+    stage: build
+    title: "Archiving macos distribution"
+    image: codefresh/build-cli
+    commands:
+      - "rm -rf ./dist/alpine"
+      - "mkdir -p ./dist/alpine"
+      - "cp --force README.md LICENSE ./dist/alpine"
+      - "cp --force ./dist/codefresh-alpine ./dist/alpine/codefresh"
+      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar README.md LICENSE -C ./dist/alpine codefresh"
+      - "gzip -f codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar"
+    when:
+      steps:
+        - name: compile_executables
+          on:
+            - success
 
   create_release:
     title: "Create github release"
@@ -100,6 +214,11 @@ steps:
     fail_fast: false
     commands:
       - 'curl --fail -X POST -d ''{"tag_name":"v${{PACKAGE_VERSION}}","target_commitish":"${{CF_REVISION}}","name":"Codefresh V${{PACKAGE_VERSION}}"}'' -H "Content-Type: application/json" -H "Authorization: token ${{GITHUB_TOKEN}}" https://api.github.com/repos/codefresh-io/cli/releases'
+    when:
+      steps:
+        - name: compile_executables
+          on:
+            - success
 
   get_release:
     title: "Get github release"
@@ -109,36 +228,116 @@ steps:
       - "export GITHUB_RELEASE_ID=$(curl --fail https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}} | jq -r '.id')"
       - "echo Github release id: $GITHUB_RELEASE_ID"
       - "cf_export GITHUB_RELEASE_ID"
+    when:
+      steps:
+        - name: create_release
+          on:
+            - success
 
-  upload_executables:
-    title: "Upload executables to github release"
+  upload_linux:
+    stage: github
+    title: "Upload linux executable to github release"
     image: codefresh/build-cli
     commands:
-# delete all previous .zip/.gz created files and copy readme and license to ./dist
-      - "rm -rf *.gz"
-      - "rm -rf *.zip"
-      - "cp README.md LICENSE ./dist --force"
-# upload linux-x64 asset
-      - "mv ./dist/codefresh-linux ./dist/codefresh"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar README.md LICENSE -C ./dist ./codefresh "
-      - "gzip codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar"
+    # upload linux-x64 asset
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-linux-x64.tar.gz'
-# upload macos-x64 asset
-      - "mv ./dist/codefresh-macos ./dist/codefresh"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar README.md LICENSE -C ./dist ./codefresh "
-      - "gzip codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar"
+    when:
+      steps:
+        - name: get_release
+          on:
+            - success
+        - name: archive_linux
+          on:
+            - success
+
+  upload_macos:
+    stage: github
+    title: "Upload macos executable to github release"
+    image: codefresh/build-cli
+    commands:
+      # upload macos-x64 asset
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-macos-x64.tar.gz'
-# upload win-x64 asset
-      - "mv ./dist/codefresh-win.exe ./dist/codefresh.exe"
-      - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/codefresh.exe "
+    when:
+      steps:
+        - name: get_release
+          on:
+            - success
+        - name: archive_macos
+          on:
+            - success
+
+  upload_win:
+    stage: github
+    title: "Upload win executable to github release"
+    image: codefresh/build-cli
+    commands:
+      # upload win-x64 asset
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-win-x64.zip https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-win-x64.zip'
-# upload alpine-x64 asset
-      - "mv ./dist/codefresh-alpine ./dist/codefresh"
-      - "tar -cf codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar README.md LICENSE -C ./dist ./codefresh "
-      - "gzip codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar"
+    when:
+      steps:
+        - name: get_release
+          on:
+            - success
+        - name: archive_win
+          on:
+            - success
+
+  upload_alpine:
+    stage: github
+    title: "Upload alpine executable to github release"
+    image: codefresh/build-cli
+    commands:
+      # upload alpine-x64 asset
       - 'curl --fail -X POST -H "Content-Type:application/octet-stream" -H "Authorization: token ${{GITHUB_TOKEN}}"  --data-binary @codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar.gz https://uploads.github.com/repos/codefresh-io/cli/releases/${{GITHUB_RELEASE_ID}}/assets?name=codefresh-v${{PACKAGE_VERSION}}-alpine-x64.tar.gz'
+    when:
+      steps:
+        - name: get_release
+          on:
+            - success
+        - name: archive_alpine
+          on:
+            - success
+
+  deploy_to_npm:
+    stage: packages
+    title: "Publishing To Npm"
+    type: npm-publish
+    arguments:
+      NPM_TOKEN: '${{NPM_TOKEN}}'
+      DIR: ./cli
+    when:
+      steps:
+        - name: generate_comletion
+          on:
+            - success
+
+
+  update_brew_formula:
+    stage: packages
+    title: "Updating homebrew formula"
+    image: codefresh/build-cli
+    commands:
+      - VERSION=v${{PACKAGE_VERSION}}
+      - cp --force codefresh-$VERSION-macos-x64.tar.gz $VERSION.tar.gz
+      - echo "compute SHA256 ..."
+      - SHA256="$(shasum -a 256 ./$VERSION.tar.gz | awk '{print $1}')"
+      - echo "generate file from template ..."
+      - sed -e "s/{{ VERSION }}/$VERSION/g" -e "s/{{ SHA256 }}/$SHA256/g" ./brew/template.rb > codefresh.rb
+      - echo "Updating file in GitHub"
+      - |
+        curl -v -i -X PUT -H 'Authorization: token '${{GITHUB_TOKEN}}'' -d "{ \
+          \"message\": \"update formula version $VERSION\", \
+          \"content\": \"$(openssl base64 -A -in codefresh.rb)\", \
+          \"sha\": $(curl -X GET https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb | jq .sha) \
+          }" https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb
+    when:
+      steps:
+        - name: archive_macos
+          on:
+            - success
 
   update_documentation:
+    stage: documentation
     title: "Update documentation http://cli.codefresh.io"
     image: docker:18.01
     commands:
@@ -152,22 +351,27 @@ steps:
       - 'git config --global user.email "auto-ci@codefresh.io" && git config --global user.name "Automated CI"'
       - 'cd public && git add --all && git commit -m "Publish new documentation for version ${{PACKAGE_VERSION}}" && git push https://${{GITHUB_TOKEN}}@github.com/codefresh-io/cli.git'
     environment:
-        - HUGO_VERSION=0.32.0
-
-  update_brew_formula:
-    title: "Updating homebrew formula"
-    image: codefresh/build-cli
-    commands:
-      - VERSION=v${{PACKAGE_VERSION}}
-      - curl -L https://github.com/codefresh-io/cli/releases/download/$VERSION/codefresh-$VERSION-macos-x64.tar.gz > $VERSION.tar.gz
-      - echo "compute SHA256 ..."
-      - SHA256="$(shasum -a 256 ./$VERSION.tar.gz | awk '{print $1}')"
-      - echo "generate file from template ..."
-      - sed -e "s/{{ VERSION }}/$VERSION/g" -e "s/{{ SHA256 }}/$SHA256/g" ./brew/template.rb > codefresh.rb
-      - echo "Updating file in GitHub"
-      - |
-        curl -v -i -X PUT -H 'Authorization: token '${{GITHUB_TOKEN}}'' -d "{ \
-          \"message\": \"update formula version $VERSION\", \
-          \"content\": \"$(openssl base64 -A -in codefresh.rb)\", \
-          \"sha\": $(curl -X GET https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb | jq .sha) \
-          }" https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb
+      - HUGO_VERSION=0.32.0
+    when:
+      steps:
+        - name: upload_linux
+          on:
+            - success
+        - name: upload_macos
+          on:
+            - success
+        - name: upload_win
+          on:
+            - success
+        - name: upload_alpine
+          on:
+            - success
+        - name: update_brew_formula
+          on:
+            - success
+        - name: deploy_to_npm
+          on:
+            - success
+        - name: create_manifest_list
+          on:
+            - success
