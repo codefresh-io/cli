@@ -209,6 +209,7 @@ steps:
             - success
 
   create_release:
+    stage: github
     title: "Create github release"
     image: codefresh/build-cli
     fail_fast: false
@@ -221,6 +222,7 @@ steps:
             - success
 
   get_release:
+    stage: github
     title: "Get github release"
     image: codefresh/build-cli
     commands:
