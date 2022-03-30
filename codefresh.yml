@@ -116,7 +116,6 @@ steps:
 
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
-    fail_fast: false
     type: codefresh-run
     arguments:
       PIPELINE_ID: 'codefresh-io/cli/release'
