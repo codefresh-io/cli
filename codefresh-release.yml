@@ -14,11 +14,11 @@ steps:
     title: "Validate running on master branch"
     image: codefresh/build-cli
     commands:
-      - 'echo This pipeline should be run only on master'
-      - 'exit 1'
-    when:
-      branch:
-        ignore: [ master ]
+      - >-
+        if [ "${{CF_BRANCH}}" != "master" ]; then
+          echo This pipeline should be run only on master
+          exit 1
+        fi
 
   main_clone:
     stage: prepare
