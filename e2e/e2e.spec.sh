@@ -10,7 +10,7 @@ echo
 
 for executable in $SCRIPT_DIR/scenarios/*.sh
 do
-  source $executable 2>&1 > "$executable.log" &
+  source $executable > "$executable.log" 2>&1 &
   echo "[$!] Executing: $executable"
 done
 echo
