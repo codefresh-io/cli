@@ -1,8 +1,8 @@
 version: '1.0'
 kind: pipeline
 metadata:
-  name: cli-e2e-pipeline-crud/crud
-  project: cli-e2e-pipeline-crud
+  name: pipeline/crud
+  project: pipeline
   originalYamlString: |
     version: '1.0'
     steps:

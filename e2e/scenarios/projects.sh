@@ -1,4 +1,4 @@
-project=cli-e2e-project-crud
+project=project
 
 existing_project=`exists project $project`
 

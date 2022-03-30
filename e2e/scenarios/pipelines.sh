@@ -1,4 +1,4 @@
-project=cli-e2e-pipeline-crud
+project=pipeline
 pipeline="$project/crud"
 pipeline_file="$SCRIPT_DIR/data/crud.pip.yaml"
 

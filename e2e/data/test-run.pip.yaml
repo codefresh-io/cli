@@ -1,8 +1,8 @@
 version: '1.0'
 kind: pipeline
 metadata:
-  name: cli-e2e/test-run
-  project: cli-e2e
+  name: test-run/test-run
+  project: test-run
   originalYamlString: |
     version: '1.0'
     steps:

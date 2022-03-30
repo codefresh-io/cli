@@ -1,4 +1,4 @@
-project=cli-e2e
+project=test-run
 pipeline="$project/test-run"
 pipeline_file="$SCRIPT_DIR/data/test-run.pip.yaml"
 
