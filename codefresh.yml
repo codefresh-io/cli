@@ -64,8 +64,7 @@ steps:
         image: codefresh/build-cli
         commands:
           - "echo Running e2e on account: ${{CF_ACCOUNT}}"
-          - export CF_API_KEY=${{CF_API_KEY}}
-          - yarn e2e
+          - CF_API_KEY=${{CF_E2E_API_KEY}} yarn e2e
     when:
       branch:
         ignore: [ master ]
