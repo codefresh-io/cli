@@ -1,4 +1,4 @@
-project=project
+project='project-crud'
 
 existing_project=`exists project $project`
 

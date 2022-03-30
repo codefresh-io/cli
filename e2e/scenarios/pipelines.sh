@@ -1,4 +1,4 @@
-project=pipeline
+project='pipeline-crud'
 pipeline="$project/crud"
 pipeline_file="$SCRIPT_DIR/data/crud.pip.yaml"
 
