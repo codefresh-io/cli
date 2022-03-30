@@ -63,6 +63,7 @@ steps:
         title: 'Running e2e tests'
         image: codefresh/build-cli
         commands:
+          - export CF_API_KEY=${{CF_API_KEY}}
           - yarn e2e
     when:
       branch:
