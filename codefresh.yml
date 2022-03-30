@@ -36,7 +36,7 @@ steps:
     when:
       condition:
         all:
-          skipVersionCheck: '"${{SKIP_VERSION_CHECK}}" != true'
+          skipVersionCheck: '"${{SKIP_VERSION_CHECK}}" != "true"'
 
   install_dependencies:
     title: 'Installing testing dependencies'
