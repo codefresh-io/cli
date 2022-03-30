@@ -60,6 +60,9 @@ steps:
         image: codefresh/build-cli
         commands:
           - yarn e2e
+    when:
+      branch:
+        ignore: [ master ]
 
   build_images:
     type: parallel
