@@ -20,7 +20,7 @@ steps:
 
   check_version:
     title: 'Checking if version already exists'
-    image: quay.io/codefresh/node-tester-image:12.21.0
+    image: codefresh/build-cli
     fail_fast: false
     commands:
       - 'export PACKAGE_VERSION=${{PACKAGE_VERSION}}'
