@@ -23,8 +23,8 @@ steps:
     image: codefresh/build-cli
     fail_fast: false
     commands:
-      - 'export PACKAGE_VERSION=${{PACKAGE_VERSION}}'
       - >-
+        export PACKAGE_VERSION=${{PACKAGE_VERSION}}
         RELEASE_ID="$(curl -s https://api.github.com/repos/codefresh-io/cli/releases/tags/v${PACKAGE_VERSION} | jq .id)"
         echo "Release id: $RELEASE_ID"
 
@@ -131,6 +131,15 @@ steps:
           tags:
             - ${{CF_SHORT_REVISION}}
 
+  fail_on_bad_version:
+    image: codefresh/build-cli
+    commands:
+      - exit 1
+    when:
+      condition:
+        all:
+          versionCheckFailed: steps.check_version.result == 'failure'
+
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
     type: codefresh-run
@@ -143,3 +152,6 @@ steps:
     when:
       branch:
         only: [ master ]
+      condition:
+        all:
+          versionCheckSucceeded: steps.check_version.result != 'failure'
