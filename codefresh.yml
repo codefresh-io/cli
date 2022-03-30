@@ -83,7 +83,7 @@ steps:
       run_arm_build:
         type: codefresh-run
         arguments:
-          PIPELINE_ID: 'codefresh-io/cli/build-arm'
+          PIPELINE_ID: codefresh-io/cli/build-arm
           TRIGGER_ID: codefresh-io/cli
           BRANCH: ${{CF_BRANCH}}
           DETACH: false
