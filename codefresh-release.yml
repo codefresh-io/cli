@@ -177,13 +177,13 @@ steps:
 
   archive_win:
     stage: build
-    title: "Archiving macos distribution"
+    title: "Archiving win distribution"
     image: codefresh/build-cli
     commands:
       - "rm -rf ./dist/win"
       - "mkdir -p ./dist/win"
       - "cp --force README.md LICENSE ./dist/win"
-      - "cp --force ./dist/codefresh-win ./dist/win/codefresh.exe"
+      - "cp --force ./dist/codefresh-win.exe ./dist/win/codefresh.exe"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/win/codefresh.exe "
     when:
       steps:
