@@ -36,7 +36,7 @@ steps:
 
   install_dependencies:
     title: 'Installing testing dependencies'
-    image: quay.io/codefresh/node-tester-image:12.21.0
+    image: codefresh/build-cli
     commands:
       - yarn install --frozen-lockfile
 
