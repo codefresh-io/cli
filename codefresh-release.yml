@@ -14,11 +14,11 @@ steps:
     title: "Validate running on master branch"
     image: codefresh/build-cli
     commands:
-      - 'echo This pipeline should be run only on master'
-      - 'exit 1'
-    when:
-      branch:
-        ignore: [ master ]
+      - >-
+        if [ "${{CF_BRANCH}}" != "master" ]; then
+          echo This pipeline should be run only on master
+          exit 1
+        fi
 
   main_clone:
     stage: prepare
@@ -177,13 +177,13 @@ steps:
 
   archive_win:
     stage: build
-    title: "Archiving macos distribution"
+    title: "Archiving win distribution"
     image: codefresh/build-cli
     commands:
       - "rm -rf ./dist/win"
       - "mkdir -p ./dist/win"
       - "cp --force README.md LICENSE ./dist/win"
-      - "cp --force ./dist/codefresh-win ./dist/win/codefresh.exe"
+      - "cp --force ./dist/codefresh-win.exe ./dist/win/codefresh.exe"
       - "zip codefresh-v${{PACKAGE_VERSION}}-win-x64.zip README.md LICENSE -j ./dist/win/codefresh.exe "
     when:
       steps:
@@ -209,6 +209,7 @@ steps:
             - success
 
   create_release:
+    stage: github
     title: "Create github release"
     image: codefresh/build-cli
     fail_fast: false
@@ -221,6 +222,7 @@ steps:
             - success
 
   get_release:
+    stage: github
     title: "Get github release"
     image: codefresh/build-cli
     commands:
@@ -233,6 +235,7 @@ steps:
         - name: create_release
           on:
             - success
+            - failure
 
   upload_linux:
     stage: github
