@@ -24,14 +24,13 @@ steps:
     fail_fast: false
     commands:
       - >-
-        export PACKAGE_VERSION=${{PACKAGE_VERSION}}
-        RELEASE_ID="$(curl -s https://api.github.com/repos/codefresh-io/cli/releases/tags/v${PACKAGE_VERSION} | jq .id)"
+        RELEASE_ID="$(curl -s https://api.github.com/repos/codefresh-io/cli/releases/tags/v${{PACKAGE_VERSION}} | jq .id)"
         echo "Release id: $RELEASE_ID"
 
         if [ -z "$RELEASE_ID" ] || [ "$RELEASE_ID" = 'null' ]; then
-          echo "Version is ok: ${PACKAGE_VERSION}"
+          echo "Version is ok: ${{PACKAGE_VERSION}}"
         else
-          echo "Release already exists ${PACKAGE_VERSION}"
+          echo "Release already exists ${{PACKAGE_VERSION}}"
           exit 1
         fi
 
@@ -46,19 +45,19 @@ steps:
     steps:
       eslint:
         title: 'Running linting logic'
-        image: quay.io/codefresh/node-tester-image:12.21.0
+        image: codefresh/build-cli
         commands:
           - yarn eslint
 
-      unit-tests:
+      unit_tests:
         title: 'Running unit tests'
-        image: quay.io/codefresh/node-tester-image:12.21.0
+        image: codefresh/build-cli
         commands:
           - yarn test
 
-      e2e-tests:
+      e2e_tests:
         title: 'Running e2e tests'
-        image: quay.io/codefresh/node-tester-image:12.21.0
+        image: codefresh/build-cli
         commands:
           - yarn e2e
 
