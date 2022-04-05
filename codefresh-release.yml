@@ -321,7 +321,7 @@ steps:
     image: codefresh/build-cli
     commands:
       - VERSION=v${{PACKAGE_VERSION}}
-      - cp --force codefresh-$VERSION-macos-x64.tar.gz $VERSION.tar.gz
+      - curl -L https://github.com/codefresh-io/cli/releases/download/$VERSION/codefresh-$VERSION-macos-x64.tar.gz > $VERSION.tar.gz
       - echo "compute SHA256 ..."
       - SHA256="$(shasum -a 256 ./$VERSION.tar.gz | awk '{print $1}')"
       - echo "generate file from template ..."
@@ -335,7 +335,7 @@ steps:
           }" https://api.github.com/repos/codefresh-io/homebrew-cli/contents/Formula/codefresh.rb
     when:
       steps:
-        - name: archive_macos
+        - name: upload_macos
           on:
             - success
 
