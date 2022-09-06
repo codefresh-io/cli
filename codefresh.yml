@@ -59,12 +59,15 @@ steps:
         commands:
           - yarn test
 
-      e2e_tests:
-        title: 'Running e2e tests'
-        image: codefresh/build-cli
-        commands:
-          - "echo Running e2e on account: ${{CF_ACCOUNT}}"
-          - CF_API_KEY=${{CF_E2E_API_KEY}} yarn e2e
+      # Disabled e2e tests because of flakyness
+      # need to fix flakyness before enabling again.
+      #
+      # e2e_tests:
+      #   title: 'Running e2e tests'
+      #   image: codefresh/build-cli
+      #   commands:
+      #     - "echo Running e2e on account: ${{CF_ACCOUNT}}"
+      #     - CF_API_KEY=${{CF_E2E_API_KEY}} yarn e2e
     when:
       branch:
         ignore: [ master ]
