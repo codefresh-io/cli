@@ -13,7 +13,8 @@ RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/
 # Main
 FROM node:12.22.12-bullseye-slim
 
-RUN apk --update add --no-cache ca-certificates git curl bash jq
+RUN apt update
+RUN apt -y install ca-certificates git curl bash jq
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
