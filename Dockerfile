@@ -11,7 +11,7 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # Main
-FROM node:12.22.12-bullseye-slim
+FROM node:16.18.1-bullseye-slim
 
 RUN apt update
 RUN apt -y install ca-certificates git curl bash jq
