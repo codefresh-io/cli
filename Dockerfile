@@ -11,10 +11,10 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # Main
-FROM node:16.18.1-bullseye-slim
+FROM node:18.12.1-bullseye-slim
 
 RUN apt update
-RUN apt -y install ca-certificates git curl bash jq
+RUN apt -y install ca-certificates git curl bash jq busybox && ln -s /bin/busybox /usr/bin/[[
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
