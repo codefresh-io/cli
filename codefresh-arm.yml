@@ -31,7 +31,7 @@ steps:
 
   push_dev_alpine:
     type: push
-    candidate: ${{build_image}}
+    candidate: ${{build_image_alpine}}
     title: "Pushing alpine image to registry with revision tag"
     tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
     scale:
@@ -63,7 +63,7 @@ steps:
 
   push_master_alpine:
     type: push
-    candidate: ${{build_image}}
+    candidate: ${{build_image_alpine}}
     title: "Pushing alpine image with release tag"
     when:
       branch:
