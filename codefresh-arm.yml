@@ -28,7 +28,7 @@ steps:
   push_dev:
     type: push
     candidate: ${{build_image}}
-    title: "Pushing image to registry with revision tag"
+    title: "Pushing alpine image to registry with revision tag"
     tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
     scale:
       push_quay_dev:
@@ -44,8 +44,8 @@ steps:
   push_dev_debian:
     type: push
     candidate: ${{build_image_debian}}
-    title: "Pushing image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}${{DEBIAN_TAG_POSTFIX}}
+    title: "Pushing debian image to registry with revision tag"
+    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
     scale:
       push_quay_dev_debian:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -60,7 +60,7 @@ steps:
   push_master:
     type: push
     candidate: ${{build_image}}
-    title: "Pushing image with release tag"
+    title: "Pushing alpine image with release tag"
     when:
       branch:
         only: [ master ]
@@ -86,8 +86,8 @@ steps:
       branch:
         only: [ master ]
     tags:
-      - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}${{DEBIAN_TAG_POSTFIX}}"
-      - "latest${{ARM_TAG_POSTFIX}}${{DEBIAN_TAG_POSTFIX}}"
+      - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
+      - "latest${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
     scale:
       push_quay_prod_debian:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
