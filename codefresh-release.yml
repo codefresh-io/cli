@@ -73,56 +73,60 @@ steps:
 
   # in case the candidate image will not be found the release flow will crash and this means that the build pipelines has failed
   push_step:
-    stage: docker
-    type: push
-    title: "Push alpine release image"
-    image_name: codefresh/cli
-    tags:
-      - ${{PACKAGE_VERSION}}
-      - latest
-    scale:
-      push_to_dockerhub:
-        registry: dockerhub
-        title: "push to dockerhub"
-        candidate: codefresh/cli:${{CF_SHORT_REVISION}}
-      push_to_gcr:
-        title: "push to gcr"
-        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
-      push_to_quay:
-        registry: cf-quay
-        title: "push to quay.io"
-        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}
-    when:
-      steps:
-        - name: extract_version
-          on:
-            - success
+    type: parallel
+    steps:
 
-  push_step_debian:
-    stage: docker
-    type: push
-    title: "Push debian release image"
-    image_name: codefresh/cli
-    tags:
-      - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}
-      - latest${{DEBIAN_TAG_POSTFIX}}
-    scale:
-      push_to_dockerhub:
-        registry: dockerhub
-        title: "push to dockerhub"
-        candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
-      push_to_gcr:
-        title: "push to gcr"
-        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
-      push_to_quay:
-        registry: cf-quay
-        title: "push to quay.io"
-        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
-    when:
-      steps:
-        - name: extract_version
-          on:
-            - success
+      push_step_alpine:
+        stage: docker
+        type: push
+        title: "Push alpine release image"
+        image_name: codefresh/cli
+        tags:
+          - ${{PACKAGE_VERSION}}
+          - latest
+        scale:
+          push_to_dockerhub:
+            registry: dockerhub
+            title: "push to dockerhub"
+            candidate: codefresh/cli:${{CF_SHORT_REVISION}}
+          push_to_gcr:
+            title: "push to gcr"
+            candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}
+          push_to_quay:
+            registry: cf-quay
+            title: "push to quay.io"
+            candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}
+        when:
+          steps:
+            - name: extract_version
+              on:
+                - success
+
+      push_step_debian:
+        stage: docker
+        type: push
+        title: "Push debian release image"
+        image_name: codefresh/cli
+        tags:
+          - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}
+          - latest${{DEBIAN_TAG_POSTFIX}}
+        scale:
+          push_to_dockerhub:
+            registry: dockerhub
+            title: "push to dockerhub"
+            candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+          push_to_gcr:
+            title: "push to gcr"
+            candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+          push_to_quay:
+            registry: cf-quay
+            title: "push to quay.io"
+            candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+        when:
+          steps:
+            - name: extract_version
+              on:
+                - success
 
   create_manifest_list:
     stage: docker
@@ -143,7 +147,7 @@ steps:
           username: '${{GCR_CODEFRESH_INC_USERNAME}}'
           password: '${{GCR_CODEFRESH_INC_PASSWORD}}'
     scale:
-      master_branch_tags:
+      master_branch_tags_alpine:
         arguments:
           tags:
             - ${{PACKAGE_VERSION}}
