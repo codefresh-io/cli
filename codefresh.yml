@@ -82,6 +82,12 @@ steps:
         image-name: codefresh/cli
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
+      build_step_debian:
+        type: build
+        dockerfile: Dockerfile-debian
+        image-name: codefresh/cli
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
+
       run_arm_build:
         type: codefresh-run
         arguments:
@@ -99,12 +105,27 @@ steps:
             - IMAGE_NAME=codefresh/cli
             - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
             - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
+            - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
             - PACKAGE_VERSION=${{PACKAGE_VERSION}}
 
   push_step:
     type: push
     tag: '${{CF_SHORT_REVISION}}'
     candidate: ${{build_step}}
+    scale:
+      push_to_dockerhub:
+        registry: dockerhub
+        title: "push to dockerhub"
+      push_to_gcr:
+        title: "push to gcr"
+      push_to_quay:
+        registry: cf-quay
+        title: "push to quay.io"
+
+  push_step_debian:
+    type: push
+    tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}'
+    candidate: ${{build_step_debian}}
     scale:
       push_to_dockerhub:
         registry: dockerhub
@@ -140,6 +161,13 @@ steps:
         arguments:
           tags:
             - ${{CF_SHORT_REVISION}}
+      dev_branches_tags_debian:
+        when:
+          branch:
+            ignore: [ master ]
+        arguments:
+          tags:
+            - ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
 
   fail_on_bad_version:
     image: codefresh/build-cli
@@ -159,6 +187,8 @@ steps:
       BRANCH: master
       VARIABLE:
         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+        - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
+        - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
     when:
       branch:
         only: [ master ]

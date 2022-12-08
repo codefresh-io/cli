@@ -75,7 +75,7 @@ steps:
   push_step:
     stage: docker
     type: push
-    title: "Push release image"
+    title: "Push alpine release image"
     image_name: codefresh/cli
     tags:
       - ${{PACKAGE_VERSION}}
@@ -92,6 +92,32 @@ steps:
         registry: cf-quay
         title: "push to quay.io"
         candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}
+    when:
+      steps:
+        - name: extract_version
+          on:
+            - success
+
+  push_step_debian:
+    stage: docker
+    type: push
+    title: "Push debian release image"
+    image_name: codefresh/cli
+    tags:
+      - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}
+      - latest${{DEBIAN_TAG_POSTFIX}}
+    scale:
+      push_to_dockerhub:
+        registry: dockerhub
+        title: "push to dockerhub"
+        candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+      push_to_gcr:
+        title: "push to gcr"
+        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+      push_to_quay:
+        registry: cf-quay
+        title: "push to quay.io"
+        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
     when:
       steps:
         - name: extract_version
@@ -122,6 +148,11 @@ steps:
           tags:
             - ${{PACKAGE_VERSION}}
             - latest
+      master_branch_tags_debian:
+        arguments:
+          tags:
+            - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}
+            - latest${{DEBIAN_TAG_POSTFIX}}
     when:
       steps:
         - name: push_step
