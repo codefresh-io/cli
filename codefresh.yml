@@ -111,7 +111,7 @@ steps:
   push_step_alpine:
     type: push
     tag: '${{CF_SHORT_REVISION}}'
-    candidate: ${{build_step}}
+    candidate: ${{build_step_alpine}}
     scale:
       push_to_dockerhub:
         registry: dockerhub
