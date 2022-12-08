@@ -127,12 +127,12 @@ steps:
     tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}'
     candidate: ${{build_step_debian}}
     scale:
-      push_to_dockerhub:
+      push_to_dockerhub_debian:
         registry: dockerhub
         title: "push to dockerhub"
-      push_to_gcr:
+      push_to_gcr_debian:
         title: "push to gcr"
-      push_to_quay:
+      push_to_quay_debian:
         registry: cf-quay
         title: "push to quay.io"
 
