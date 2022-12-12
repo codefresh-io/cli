@@ -150,14 +150,25 @@ steps:
         all:
           versionCheckFailed: steps.check_version.result == 'failure'
 
+#   execute_release_pipeline:
+#     title: "Execute release pipeline in case version was changed"
+#     type: codefresh-run
+#     arguments:
+#       PIPELINE_ID: 'codefresh-io/cli/release'
+#       DETACH: true
+#       VARIABLE:
+#         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+#     when:
+#       branch:
+#         only: [ master ]
+#       condition:
+#         all:
+#           versionCheckSucceeded: steps.check_version.result != 'failure'
   execute_release_pipeline:
+    image: codefresh/cli:0.81.0
     title: "Execute release pipeline in case version was changed"
-    type: codefresh-run
-    arguments:
-      PIPELINE_ID: 'codefresh-io/cli/release'
-      DETACH: true
-      VARIABLE:
-        - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+    commands:
+    - codefresh run "codefresh-io/cli/release" -d -b master --variable PACKAGE_VERSION=0.81.2
     when:
       branch:
         only: [ master ]
