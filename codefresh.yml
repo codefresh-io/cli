@@ -156,7 +156,6 @@ steps:
     arguments:
       PIPELINE_ID: 'codefresh-io/cli/release'
       DETACH: true
-      BRANCH: master
       VARIABLE:
         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
     when:
