@@ -36,4 +36,5 @@ RUN yarn generate-completion
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
 RUN codefresh components update --location components
+
 ENTRYPOINT ["codefresh"]
