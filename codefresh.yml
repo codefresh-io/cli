@@ -187,8 +187,6 @@ steps:
       BRANCH: master
       VARIABLE:
         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
-        - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
-        - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
     when:
       branch:
         only: [ master ]
