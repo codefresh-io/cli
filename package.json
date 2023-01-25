@@ -40,8 +40,7 @@
     "ansi-regex": "^5.0.1",
     "y18n": "^4.0.1",
     "shelljs": "^0.8.5",
-    "qs":"~6.5.3",
-    "fast-json-patch": "^3.1.1"
+    "qs": "~6.5.3"
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
