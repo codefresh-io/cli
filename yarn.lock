@@ -1177,10 +1177,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codefresh-sdk@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.11.0.tgz#5b3b1c01a3f0e33f060ab4b313e4e27c4308b02c"
-  integrity sha512-TuF22j9o/vg6gTZvqIA0J1Ca2jiRa8qsvYsCmk4hV1ZDnSqUAomPLlCpiL2qxdouy/Cja54y0HUoRowsqGvU4A==
+codefresh-sdk@^1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/codefresh-sdk/-/codefresh-sdk-1.11.1.tgz#a4305e059da88b79378158bcda12f81ad463af1f"
+  integrity sha512-N23GarhBEjnFg7xDcHI3p7xsjnPP6ScyrE/bw2V8BumKznTN7dsQ/yY7cHbMdFkPKvz3XahD/qV6GU7EFiYEaA==
   dependencies:
     "@codefresh-io/cf-receiver" "0.0.1-alpha19"
     bluebird "^3.7.2"
