@@ -52,7 +52,7 @@
     "cli-progress": "3.10.0",
     "codefresh-sdk": "^1.11.1",
     "colors": "1.4.0",
-    "columnify": "^1.5.4",
+    "columnify": "^1.6.0",
     "compare-versions": "^3.4.0",
     "copy-dir": "^0.3.0",
     "debug": "^3.1.0",
