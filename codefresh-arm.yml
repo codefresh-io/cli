@@ -101,13 +101,13 @@ steps:
     title: "Pushing rootless alpine image to registry with revision tag"
     tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     scale:
-      push_quay_dev:
+      push_quay_dev_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
         title: "Pushing image to quay.io registry with revision tag"
-      push_dockerhub_dev:
+      push_dockerhub_dev_rootless:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
         title: "Pushing image to dockerhub registry with revision tag"
-      push_gcr_enterprise_dev:
+      push_gcr_enterprise_dev_rootless:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with revision tag"
     when:
@@ -122,13 +122,13 @@ steps:
     title: "Pushing rootless debian image to registry with revision tag"
     tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     scale:
-      push_quay_dev_debian:
+      push_quay_dev_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
         title: "Pushing image to quay.io registry with revision tag"
-      push_dockerhub_dev_debian:
+      push_dockerhub_dev_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
         title: "Pushing image to dockerhub registry with revision tag"
-      push_gcr_enterprise_dev_debian:
+      push_gcr_enterprise_dev_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with revision tag"
     when:
@@ -202,13 +202,13 @@ steps:
       - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
       - "latest${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
     scale:
-      push_quay_prod:
+      push_quay_prod_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
         title: "Pushing alpine image to quay.io registry with release tag"
-      push_dockerhub_prod:
+      push_dockerhub_prod_rootless:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
         title: "Pushing image to dockerhub registry with release tag"
-      push_gcr_enterprise_prod:
+      push_gcr_enterprise_prod_rootless:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with release tag"
 
@@ -227,12 +227,12 @@ steps:
       - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
       - "latest${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
     scale:
-      push_quay_prod_debian:
+      push_quay_prod_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
         title: "Pushing image to quay.io registry with release tag"
-      push_dockerhub_prod_debian:
+      push_dockerhub_prod_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
         title: "Pushing image to dockerhub registry with release tag"
-      push_gcr_enterprise_prod_debian:
+      push_gcr_enterprise_prod_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with release tag"

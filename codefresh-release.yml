@@ -134,14 +134,14 @@ steps:
       - ${{PACKAGE_VERSION}}${{ROOTLESS_TAG_POSTFIX}}
       - latest${{ROOTLESS_TAG_POSTFIX}}
     scale:
-      push_to_dockerhub_alpine:
+      push_to_dockerhub_alpine_rootless:
         registry: dockerhub
         title: "push to dockerhub"
         candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
-      push_to_gcr_alpine:
+      push_to_gcr_alpine_rootless:
         title: "push to gcr"
         candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
-      push_to_quay_alpine:
+      push_to_quay_alpine_rootless:
         registry: cf-quay
         title: "push to quay.io"
         candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
@@ -160,14 +160,14 @@ steps:
       - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
       - latest${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     scale:
-      push_to_dockerhub_debian:
+      push_to_dockerhub_debian_rootless:
         registry: dockerhub
         title: "push to dockerhub"
         candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
-      push_to_gcr_debian:
+      push_to_gcr_debian_rootless:
         title: "push to gcr"
         candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
-      push_to_quay_debian:
+      push_to_quay_debian_rootless:
         registry: cf-quay
         title: "push to quay.io"
         candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
