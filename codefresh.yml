@@ -1,9 +1,17 @@
 # this pipeline should not be run on version tag releases (it may cause a non correct sha to override version tagged image in dockerhub)
 version: "1.0"
 mode: parallel
+stages:
+  - prepare
+  - test
+  - build
+  - push
+  - docker
+  - final
 steps:
 
   main_clone:
+    stage: prepare
     title: 'Cloning main repository...'
     type: git-clone
     repo: codefresh-io/cli
@@ -11,6 +19,7 @@ steps:
     git: cf_github
 
   extract_version:
+    stage: prepare
     title: "Exporting package.json version"
     image: codefresh/build-cli
     commands:
@@ -24,6 +33,7 @@ steps:
             - success
 
   check_version:
+    stage: prepare
     title: 'Checking if version already exists'
     image: codefresh/build-cli
     fail_fast: false
@@ -48,6 +58,7 @@ steps:
             - success
 
   install_dependencies:
+    stage: test
     title: 'Installing testing dependencies'
     image: codefresh/build-cli
     commands:
@@ -59,6 +70,7 @@ steps:
             - success
 
   parallel_tests:
+    stage: test
     type: parallel
     steps:
       eslint:
@@ -91,6 +103,7 @@ steps:
             - success
 
   build_images:
+    stage: build
     type: parallel
     steps:
 
@@ -117,34 +130,41 @@ steps:
         dockerfile: Dockerfile-debian-rootless
         image-name: codefresh/cli
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
-
-      run_arm_build:
-        type: codefresh-run
-        arguments:
-          PIPELINE_ID: codefresh-io/cli/build-arm
-          TRIGGER_ID: codefresh-io/cli
-          BRANCH: ${{CF_BRANCH}}
-          DETACH: false
-          VARIABLE:
-            - CF_REPO_OWNER=${{CF_REPO_OWNER}}
-            - CF_REPO_NAME=${{CF_REPO_NAME}}
-            - CF_REVISION=${{CF_REVISION}}
-            - CF_BRANCH=${{CF_BRANCH}}
-            - CF_SHORT_REVISION=${{CF_SHORT_REVISION}}
-            - GIT_CONTEXT=cf_github
-            - IMAGE_NAME=codefresh/cli
-            - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
-            - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
-            - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
-            - ROOTLESS_TAG_POSTFIX="${{ROOTLESS_TAG_POSTFIX}}"
-            - PACKAGE_VERSION=${{PACKAGE_VERSION}}
     when:
       steps:
-        - name: install_dependencies
+        - name: extract_version
+          on:
+            - success
+
+  run_arm_build:
+    stage: build
+    type: codefresh-run
+    arguments:
+      PIPELINE_ID: codefresh-io/cli/build-arm
+      TRIGGER_ID: codefresh-io/cli
+      BRANCH: ${{CF_BRANCH}}
+      DETACH: false
+      VARIABLE:
+        - CF_REPO_OWNER=${{CF_REPO_OWNER}}
+        - CF_REPO_NAME=${{CF_REPO_NAME}}
+        - CF_REVISION=${{CF_REVISION}}
+        - CF_BRANCH=${{CF_BRANCH}}
+        - CF_SHORT_REVISION=${{CF_SHORT_REVISION}}
+        - GIT_CONTEXT=cf_github
+        - IMAGE_NAME=codefresh/cli
+        - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
+        - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
+        - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
+        - ROOTLESS_TAG_POSTFIX="${{ROOTLESS_TAG_POSTFIX}}"
+        - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+    when:
+      steps:
+        - name: extract_version
           on:
             - success
 
   push_step_alpine:
+    stage: push
     type: push
     tag: '${{CF_SHORT_REVISION}}'
     candidate: ${{build_step_alpine}}
@@ -164,6 +184,7 @@ steps:
             - success
 
   push_step_debian:
+    stage: push
     type: push
     tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}'
     candidate: ${{build_step_debian}}
@@ -183,6 +204,7 @@ steps:
             - success
 
   push_step_alpine_rootless:
+    stage: push
     type: push
     tag: '${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}'
     candidate: ${{build_step_alpine_rootless}}
@@ -202,6 +224,7 @@ steps:
             - success
 
   push_step_debian_rootless:
+    stage: push
     type: push
     tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}'
     candidate: ${{build_step_debian_rootless}}
@@ -221,6 +244,7 @@ steps:
             - success
 
   create_manifest_list:
+    stage: docker
     type: "codefresh-inc/multiarch-manifester"
     arguments:
       image_name: codefresh/cli
@@ -280,8 +304,12 @@ steps:
         - name: push_step_debian_rootless
           on:
             - success
+        - name: run_arm_build
+          on:
+            - success
 
   fail_on_bad_version:
+    stage: final
     image: codefresh/build-cli
     commands:
       - exit 1
@@ -295,6 +323,7 @@ steps:
             - success
 
   execute_release_pipeline:
+    stage: final
     title: "Execute release pipeline in case version was changed"
     type: codefresh-run
     arguments:

@@ -1,7 +1,13 @@
 version: "1.0"
 mode: parallel
+stages:
+  - prepare
+  - build
+  - push-dev
+  - push-master
 steps:
   main_clone:
+    stage: prepare
     title: 'Cloning main repository...'
     type: git-clone
     repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
@@ -9,6 +15,7 @@ steps:
     git: ${{GIT_CONTEXT}}
 
   build_image:
+    stage: build
     type: parallel
     steps:
 
@@ -54,6 +61,7 @@ steps:
             - success
 
   push_dev_alpine:
+    stage: push-dev
     type: push
     candidate: ${{build_image_alpine}}
     title: "Pushing alpine image to registry with revision tag"
@@ -75,6 +83,7 @@ steps:
             - success
 
   push_dev_debian:
+    stage: push-dev
     type: push
     candidate: ${{build_image_debian}}
     title: "Pushing debian image to registry with revision tag"
@@ -96,6 +105,7 @@ steps:
             - success
 
   push_dev_alpine_rootless:
+    stage: push-dev
     type: push
     candidate: ${{build_image_alpine_rootless}}
     title: "Pushing rootless alpine image to registry with revision tag"
@@ -117,6 +127,7 @@ steps:
             - success
 
   push_dev_debian_rootless:
+    stage: push-dev
     type: push
     candidate: ${{build_image_debian_rootless}}
     title: "Pushing rootless debian image to registry with revision tag"
@@ -138,6 +149,7 @@ steps:
             - success
 
   push_master_alpine:
+    stage: push-master
     type: push
     candidate: ${{build_image_alpine}}
     title: "Pushing alpine image with release tag"
@@ -163,6 +175,7 @@ steps:
         title: "Pushing image to gcr.io registry with release tag"
 
   push_master_debian:
+    stage: push-master
     type: push
     candidate: ${{build_image_debian}}
     title: "Pushing debian image with release tag"
@@ -188,6 +201,7 @@ steps:
         title: "Pushing image to gcr.io registry with release tag"
 
   push_master_alpine_rootless:
+    stage: push-master
     type: push
     candidate: ${{build_image_alpine_rootless}}
     title: "Pushing rootless alpine image with release tag"
@@ -213,6 +227,7 @@ steps:
         title: "Pushing image to gcr.io registry with release tag"
 
   push_master_debian_rootless:
+    stage: push-master
     type: push
     candidate: ${{build_image_debian_rootless}}
     title: "Pushing rootless debian image with release tag"
