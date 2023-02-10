@@ -109,7 +109,7 @@ steps:
     type: push
     candidate: ${{build_image_alpine_rootless}}
     title: "Pushing rootless alpine image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    tag: ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
     scale:
       push_quay_dev_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -131,7 +131,7 @@ steps:
     type: push
     candidate: ${{build_image_debian_rootless}}
     title: "Pushing rootless debian image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
     scale:
       push_quay_dev_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -213,8 +213,8 @@ steps:
           on:
             - success
     tags:
-      - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
-      - "latest${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
+      - "${{PACKAGE_VERSION}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
+      - "latest${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
     scale:
       push_quay_prod_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -239,8 +239,8 @@ steps:
           on:
             - success
     tags:
-      - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
-      - "latest${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
+      - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
+      - "latest${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
     scale:
       push_quay_prod_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
