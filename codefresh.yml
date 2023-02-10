@@ -1,6 +1,6 @@
 # this pipeline should not be run on version tag releases (it may cause a non correct sha to override version tagged image in dockerhub)
 version: "1.0"
-
+mode: parallel
 steps:
 
   main_clone:
@@ -17,6 +17,11 @@ steps:
       - 'export PACKAGE_VERSION=$(jq -r ".version" package.json)'
       - "echo Current version: $PACKAGE_VERSION"
       - "cf_export PACKAGE_VERSION"
+    when:
+      steps:
+        - name: main_clone
+          on:
+            - success
 
   check_version:
     title: 'Checking if version already exists'
@@ -37,12 +42,21 @@ steps:
       condition:
         all:
           skipVersionCheck: '"${{SKIP_VERSION_CHECK}}" != "true"'
+      steps:
+        - name: extract_version
+          on:
+            - success
 
   install_dependencies:
     title: 'Installing testing dependencies'
     image: codefresh/build-cli
     commands:
       - yarn install --frozen-lockfile
+    when:
+      steps:
+        - name: extract_version
+          on:
+            - success
 
   parallel_tests:
     type: parallel
@@ -71,6 +85,10 @@ steps:
     when:
       branch:
         ignore: [ master ]
+      steps:
+        - name: install_dependencies
+          on:
+            - success
 
   build_images:
     type: parallel
@@ -87,6 +105,18 @@ steps:
         dockerfile: Dockerfile-debian
         image-name: codefresh/cli
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
+
+      build_step_alpine_rootless:
+        type: build
+        dockerfile: Dockerfile-rootless
+        image-name: codefresh/cli
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}
+
+      build_step_debian_rootless:
+        type: build
+        dockerfile: Dockerfile-debian-rootless
+        image-name: codefresh/cli
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
 
       run_arm_build:
         type: codefresh-run
@@ -106,7 +136,13 @@ steps:
             - WORKDIR=${{CF_VOLUME_PATH}}/${{CF_REPO_NAME}}
             - ARM_TAG_POSTFIX="${{ARM_TAG_POSTFIX}}"
             - DEBIAN_TAG_POSTFIX="${{DEBIAN_TAG_POSTFIX}}"
+            - ROOTLESS_TAG_POSTFIX="${{ROOTLESS_TAG_POSTFIX}}"
             - PACKAGE_VERSION=${{PACKAGE_VERSION}}
+    when:
+      steps:
+        - name: install_dependencies
+          on:
+            - success
 
   push_step_alpine:
     type: push
@@ -121,6 +157,11 @@ steps:
       push_to_quay:
         registry: cf-quay
         title: "push to quay.io"
+    when:
+      steps:
+        - name: build_images
+          on:
+            - success
 
   push_step_debian:
     type: push
@@ -135,6 +176,49 @@ steps:
       push_to_quay_debian:
         registry: cf-quay
         title: "push to quay.io"
+    when:
+      steps:
+        - name: build_images
+          on:
+            - success
+
+  push_step_alpine_rootless:
+    type: push
+    tag: '${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}'
+    candidate: ${{build_step_alpine_rootless}}
+    scale:
+      push_to_dockerhub:
+        registry: dockerhub
+        title: "push to dockerhub"
+      push_to_gcr:
+        title: "push to gcr"
+      push_to_quay:
+        registry: cf-quay
+        title: "push to quay.io"
+    when:
+      steps:
+        - name: build_images
+          on:
+            - success
+
+  push_step_debian_rootless:
+    type: push
+    tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}'
+    candidate: ${{build_step_debian_rootless}}
+    scale:
+      push_to_dockerhub_debian:
+        registry: dockerhub
+        title: "push to dockerhub"
+      push_to_gcr_debian:
+        title: "push to gcr"
+      push_to_quay_debian:
+        registry: cf-quay
+        title: "push to quay.io"
+    when:
+      steps:
+        - name: build_images
+          on:
+            - success
 
   create_manifest_list:
     type: "codefresh-inc/multiarch-manifester"
@@ -168,6 +252,34 @@ steps:
         arguments:
           tags:
             - ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+      dev_branches_tags_rootless:
+        when:
+          branch:
+            ignore: [ master ]
+        arguments:
+          tags:
+            - ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+      dev_branches_tags_debian_rootless:
+        when:
+          branch:
+            ignore: [ master ]
+        arguments:
+          tags:
+            - ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    when:
+      steps:
+        - name: push_step_alpine
+          on:
+            - success
+        - name: push_step_debian
+          on:
+            - success
+        - name: push_step_alpine_rootless
+          on:
+            - success
+        - name: push_step_debian_rootless
+          on:
+            - success
 
   fail_on_bad_version:
     image: codefresh/build-cli
@@ -177,6 +289,10 @@ steps:
       condition:
         all:
           versionCheckFailed: steps.check_version.result == 'failure'
+      steps:
+        - name: create_manifest_list
+          on:
+            - success
 
   execute_release_pipeline:
     title: "Execute release pipeline in case version was changed"
@@ -193,3 +309,7 @@ steps:
       condition:
         all:
           versionCheckSucceeded: steps.check_version.result != 'failure'
+      steps:
+        - name: create_manifest_list
+          on:
+            - success

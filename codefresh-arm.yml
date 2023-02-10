@@ -1,4 +1,5 @@
 version: "1.0"
+mode: parallel
 steps:
   main_clone:
     title: 'Cloning main repository...'
@@ -29,6 +30,29 @@ steps:
         image_name: ${{IMAGE_NAME}}
         tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
 
+      build_image_alpine_rootless:
+        title: "Building the alpine image..."
+        type: build
+        working_directory: ${{WORKDIR}}
+        disable_push: true
+        dockerfile: ./Dockerfile-rootless
+        image_name: ${{IMAGE_NAME}}
+        tag: ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+
+      build_image_debian_rootless:
+        title: "Building the debian image..."
+        type: build
+        working_directory: ${{WORKDIR}}
+        disable_push: true
+        dockerfile: ./Dockerfile-debian-rootless
+        image_name: ${{IMAGE_NAME}}
+        tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    when:
+      steps:
+        - name: main_clone
+          on:
+            - success
+
   push_dev_alpine:
     type: push
     candidate: ${{build_image_alpine}}
@@ -44,6 +68,11 @@ steps:
       push_gcr_enterprise_dev:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with revision tag"
+    when:
+      steps:
+        - name: build_image
+          on:
+            - success
 
   push_dev_debian:
     type: push
@@ -60,6 +89,53 @@ steps:
       push_gcr_enterprise_dev_debian:
         registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
         title: "Pushing image to gcr.io registry with revision tag"
+    when:
+      steps:
+        - name: build_image
+          on:
+            - success
+
+  push_dev_alpine_rootless:
+    type: push
+    candidate: ${{build_image_alpine_rootless}}
+    title: "Pushing rootless alpine image to registry with revision tag"
+    tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    scale:
+      push_quay_dev:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with revision tag"
+      push_dockerhub_dev:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with revision tag"
+      push_gcr_enterprise_dev:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with revision tag"
+    when:
+      steps:
+        - name: build_image
+          on:
+            - success
+
+  push_dev_debian_rootless:
+    type: push
+    candidate: ${{build_image_debian_rootless}}
+    title: "Pushing rootless debian image to registry with revision tag"
+    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    scale:
+      push_quay_dev_debian:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with revision tag"
+      push_dockerhub_dev_debian:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with revision tag"
+      push_gcr_enterprise_dev_debian:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with revision tag"
+    when:
+      steps:
+        - name: build_image
+          on:
+            - success
 
   push_master_alpine:
     type: push
@@ -68,6 +144,10 @@ steps:
     when:
       branch:
         only: [ master ]
+      steps:
+        - name: build_image
+          on:
+            - success
     tags:
       - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}"
       - "latest${{ARM_TAG_POSTFIX}}"
@@ -89,9 +169,63 @@ steps:
     when:
       branch:
         only: [ master ]
+      steps:
+        - name: build_image
+          on:
+            - success
     tags:
       - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
       - "latest${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}"
+    scale:
+      push_quay_prod_debian:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing image to quay.io registry with release tag"
+      push_dockerhub_prod_debian:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with release tag"
+      push_gcr_enterprise_prod_debian:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with release tag"
+
+  push_master_alpine_rootless:
+    type: push
+    candidate: ${{build_image_alpine_rootless}}
+    title: "Pushing rootless alpine image with release tag"
+    when:
+      branch:
+        only: [ master ]
+      steps:
+        - name: build_image
+          on:
+            - success
+    tags:
+      - "${{PACKAGE_VERSION}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
+      - "latest${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
+    scale:
+      push_quay_prod:
+        registry: "${{REGISTRY_INTEGRATION_QUAY}}"
+        title: "Pushing alpine image to quay.io registry with release tag"
+      push_dockerhub_prod:
+        registry: "${{REGISTRY_INTEGRATION_DOCKERHUB}}"
+        title: "Pushing image to dockerhub registry with release tag"
+      push_gcr_enterprise_prod:
+        registry: "${{REGISTRY_INTEGRATION_ENTERPRISE}}"
+        title: "Pushing image to gcr.io registry with release tag"
+
+  push_master_debian_rootless:
+    type: push
+    candidate: ${{build_image_debian_rootless}}
+    title: "Pushing rootless debian image with release tag"
+    when:
+      branch:
+        only: [ master ]
+      steps:
+        - name: build_image
+          on:
+            - success
+    tags:
+      - "${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
+      - "latest${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}"
     scale:
       push_quay_prod_debian:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"

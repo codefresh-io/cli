@@ -124,6 +124,59 @@ steps:
           on:
             - success
 
+  # in case the candidate image will not be found the release flow will crash and this means that the build pipelines has failed
+  push_step_alpine_rootless:
+    stage: docker
+    type: push
+    title: "Push alpine release image"
+    image_name: codefresh/cli
+    tags:
+      - ${{PACKAGE_VERSION}}${{ROOTLESS_TAG_POSTFIX}}
+      - latest${{ROOTLESS_TAG_POSTFIX}}
+    scale:
+      push_to_dockerhub_alpine:
+        registry: dockerhub
+        title: "push to dockerhub"
+        candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+      push_to_gcr_alpine:
+        title: "push to gcr"
+        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+      push_to_quay_alpine:
+        registry: cf-quay
+        title: "push to quay.io"
+        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+    when:
+      steps:
+        - name: extract_version
+          on:
+            - success
+
+  push_step_debian_rootless:
+    stage: docker
+    type: push
+    title: "Push debian release image"
+    image_name: codefresh/cli
+    tags:
+      - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+      - latest${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    scale:
+      push_to_dockerhub_debian:
+        registry: dockerhub
+        title: "push to dockerhub"
+        candidate: codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+      push_to_gcr_debian:
+        title: "push to gcr"
+        candidate: gcr.io/codefresh-inc/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+      push_to_quay_debian:
+        registry: cf-quay
+        title: "push to quay.io"
+        candidate: quay.io/codefresh/cli:${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+    when:
+      steps:
+        - name: extract_version
+          on:
+            - success
+
   create_manifest_list:
     stage: docker
     type: "codefresh-inc/multiarch-manifester"
@@ -153,12 +206,28 @@ steps:
           tags:
             - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}
             - latest${{DEBIAN_TAG_POSTFIX}}
+      master_branch_tags_alpine_rootless:
+        arguments:
+          tags:
+            - ${{PACKAGE_VERSION}}${{ROOTLESS_TAG_POSTFIX}}
+            - latest${{ROOTLESS_TAG_POSTFIX}}
+      master_branch_tags_debian_rootless:
+        arguments:
+          tags:
+            - ${{PACKAGE_VERSION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+            - latest${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     when:
       steps:
         - name: push_step_alpine
           on:
             - success
         - name: push_step_debian
+          on:
+            - success
+        - name: push_step_alpine_rootless
+          on:
+            - success
+        - name: push_step_debian_rootless
           on:
             - success
 
