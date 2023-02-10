@@ -35,15 +35,4 @@ RUN yarn generate-completion
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
 RUN codefresh components update --location components
-
-# we keep /root as home directory because cli by default looks for $HOME/.cfconfig
-# and we do not want to break user automation if he used to bind his .cfconfig
-# to the /root/.cfconfig
-RUN adduser -D -h /root -s /bin/sh cfu \
-   && chown -R $(id -g cfu) /root /cf-cli \
-   && chgrp -R $(id -g cfu) /root /cf-cli \
-   && chmod -R g+rwX /root
-
-USER cfu
-
 ENTRYPOINT ["codefresh"]
