@@ -11,7 +11,7 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # Main
-FROM node:18.14.1-alpine3.15
+FROM node:18.14.1-alpine3.17
 
 RUN apk --update add --no-cache ca-certificates git curl bash jq
 
