@@ -1,0 +1,12 @@
+{
+  "build1": {
+    "help6": "85858",
+    "should_be_encrepted": "0000",
+    "help7": {
+      "val": "test",
+      "encrypted": true
+    }
+  }
+}
+
+
