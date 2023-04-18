@@ -35,4 +35,26 @@ The pipeline will be triggered multiple times according to the array length.
 ]
 ```
 
+#### Variable yaml file with 1 sets of variables and encrypted variables
+```yaml
+- key:
+    val: value
+    encrypted: true
+  key2: key1
+
+```
+
+#### Variable json file with 1 sets of variables and encrypted variables 
+```json
+[
+  {
+    "key": {
+      "val": "value",
+      "encrypted": true
+    },
+    "key2": "key1"
+  }
+]
+```
+
 {{EXAMPLES}}
