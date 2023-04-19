@@ -3,7 +3,7 @@
     "help6": "85858",
     "should_be_encrepted": "0000",
     "help7": {
-      "val": "test",
+      "value": "test",
       "encrypted": true
     }
   }

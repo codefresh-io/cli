@@ -1,5 +1,5 @@
 build1:
   VAR1: 'VAL1'
   VAR2:
-    val: VAL2
+    value: VAL2
     encrypted: true
