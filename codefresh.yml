@@ -348,7 +348,6 @@ steps:
     title: "build documentation http://cli.codefresh.io"
     image: codefresh/build-cli
     commands:
-      - "npm install"
       - "echo Building public docs"
       - "npm run build-public-docs"
     environment:
