@@ -342,3 +342,17 @@ steps:
         - name: create_manifest_list
           on:
             - success
+
+  build_documentation:
+    stage: test
+    title: "build documentation http://cli.codefresh.io"
+    image: docker:18.01
+    commands:
+      - "apk update && apk add git nodejs"
+      - "npm install"
+      - "echo cleaning previous public dir and recreating worktree"
+      - "rm -rf public && git worktree prune &&   git worktree add -B gh-pages public origin/gh-pages"
+      - "echo Building public docs"
+      - "npm run build-public-docs"
+    environment:
+      - HUGO_VERSION=0.32.0
