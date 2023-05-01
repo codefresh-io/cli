@@ -328,7 +328,7 @@ steps:
     type: codefresh-run
     arguments:
       PIPELINE_ID: 'codefresh-io/cli/release'
-      DETACH: true
+      TRIGGER_ID: codefresh-io/cli_1
       BRANCH: master
       VARIABLE:
         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
