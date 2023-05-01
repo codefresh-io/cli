@@ -1,0 +1,17 @@
+name: Feature Request
+description: Submit a feature request
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: feature
+    attributes:
+      label: What would you like to be added?
+      description: If applicable, add a mock CLI invocation for the new feature.
+      value: "The following feature would be great!"
+    validations:
+      required: true
