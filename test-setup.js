@@ -3,7 +3,6 @@ const request = require('requestretry');
 const sdk = require('./lib/logic/sdk');
 const { Config } = require('codefresh-sdk');
 const openapi = require('./openapi');
-const api = require('./lib/interface/cli/helpers/api');
 
 jest.mock('./lib/output/Output');
 jest.mock('codefresh-sdk/helpers/whoami', () => ({
@@ -12,7 +11,6 @@ jest.mock('codefresh-sdk/helpers/whoami', () => ({
     getCurrentAccount: jest.fn().mockResolvedValue(),
 }));
 jest.mock('request-promise', () => (() => ({ options: { request: {} } })));
-api.getApiVersion = jest.fn(() => null);
 
 let SDK_CONFIGURED;
 
