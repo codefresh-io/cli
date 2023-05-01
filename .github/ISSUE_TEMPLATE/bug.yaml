@@ -23,8 +23,8 @@ body:
     validations:
       required: true
   - type: textarea
-    id: logs
+    id: info
     attributes:
-      label: Relevant Terraform Configuration
+      label: Additional Information
       description: Please copy and paste any additional information we can use to reproduce the bug.
-      render: hcl
+      render: shell
