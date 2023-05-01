@@ -348,10 +348,7 @@ steps:
     title: "build documentation http://cli.codefresh.io"
     image: docker:18.01
     commands:
-      - "apk update && apk add git nodejs"
       - "npm install"
-      - "echo cleaning previous public dir and recreating worktree"
-      - "rm -rf public && git worktree prune &&   git worktree add -B gh-pages public origin/gh-pages"
       - "echo Building public docs"
       - "npm run build-public-docs"
     environment:
