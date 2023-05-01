@@ -869,6 +869,13 @@
       <a href="/cli/components/">Components</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/components/download/" class="dd-item">
+        <div>
+          <a href="/cli/components/download/">
+            Download
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/cli/components/update/" class="dd-item">
         <div>
           <a href="/cli/components/update/">
@@ -1665,6 +1672,7 @@
 <ul>
 <li><a href="#annotate-entity-with-a-single-label">Annotate entity with a single label</a></li>
 <li><a href="#annotate-entity-with-multiple-labels">Annotate entity with multiple labels</a></li>
+<li><a href="#annotate-entity-with-multiple-labels-and-display-selection">Annotate entity with multiple labels and display selection</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1754,6 +1762,14 @@
 <td></td>
 <td>Print help information</td>
 </tr>
+
+<tr>
+<td>--display</td>
+<td></td>
+<td>string</td>
+<td></td>
+<td>annotation to display on build</td>
+</tr>
 </tbody>
 </table>
 
@@ -1766,6 +1782,10 @@
 <h4 id="annotate-entity-with-multiple-labels">Annotate entity with multiple labels</h4>
 
 <p><code>codefresh create annotation image 2dfacdaad466 coverage=75% tests_passed=true</code></p>
+
+<h4 id="annotate-entity-with-multiple-labels-and-display-selection">Annotate entity with multiple labels and display selection</h4>
+
+<p><code>codefresh create annotation image 2dfacdaad466 coverage=75% tests_passed=true --display coverage</code></p>
 
 
     

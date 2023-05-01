@@ -822,7 +822,7 @@ Arguments    Option Alias Default Description     id   Build id    Options    Op
       <guid>https://codefresh-io.github.io/cli/annotations/create/</guid>
       <description>Description Annotate a resource with labels.
 Command codefresh create annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; &amp;lt;labels...&amp;gt;
-Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
+Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels. required    Options    Option Alias Type Default Description     --help    Print help information   --display  string  annotation to display on build    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
     </item>
     
     <item>
@@ -1172,6 +1172,17 @@ Provide one or many token ids to delete. Ids can be retrieved with &amp;ldquo;ge
 Command codefresh delete tokens [ids..]
 Aliases codefresh delete token [ids..]
 Arguments    Option Alias Default Description     ids   token names or ids. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete one token codefresh delete token [token_id]</description>
+    </item>
+    
+    <item>
+      <title>Download</title>
+      <link>https://codefresh-io.github.io/cli/components/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/components/download/</guid>
+      <description> Description Download Codefresh CLI components.
+Command codefresh components download
+Options    Option Alias Type Default Description     --help    Print help information   --location    Override download folder location. Default: ~/.Codefresh   --components    Components. List of [stevedore, venona, argocd-agent, codefresh]    </description>
     </item>
     
     <item>

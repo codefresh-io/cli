@@ -381,6 +381,121 @@
       <a href="/cli/contexts/create-context/">Create Context</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-config-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-config-context/">
+            Config
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-context/">
+            Secret
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-yaml-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-yaml-context/">
+            Secret Yaml
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-yaml-context/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-yaml-context/">
+            Yaml
+          </a>
+        </div>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-git-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-git-context/">Git</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/bitbucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/bitbucket/">
+            bitbucket
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/github/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/github/">
+            github
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/gitlab/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/gitlab/">
+            gitlab
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-git-context/stash/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-git-context/stash/">
+            stash
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/">
+            HTTP
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/">
+            S3
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/">
+            hashicorp-vault
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes/">
+            kubernetes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/" class="dd-item">
+        <div>
+          <a href="/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/">
+            kubernetes-Runtime
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/contexts/spec/" class="dd-item haschildren
@@ -753,6 +868,13 @@
       <a href="/cli/components/">Components</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/components/download/" class="dd-item">
+        <div>
+          <a href="/cli/components/download/">
+            Download
+          </a>
+        </div>
+    </li>
       <li data-nav-id="/cli/components/update/" class="dd-item">
         <div>
           <a href="/cli/components/update/">
@@ -1644,6 +1766,14 @@
 <td></td>
 <td></td>
 <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+</tr>
+
+<tr>
+<td>--keep-cluster-integration</td>
+<td></td>
+<td></td>
+<td></td>
+<td>If true, will not delete dangling cluster integrations from Codefresh</td>
 </tr>
 
 <tr>
