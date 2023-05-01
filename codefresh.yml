@@ -346,10 +346,15 @@ steps:
   build_documentation:
     stage: test
     title: "build documentation http://cli.codefresh.io"
-    image: docker:18.01
+    image: codefresh/build-cli
     commands:
       - "npm install"
       - "echo Building public docs"
       - "npm run build-public-docs"
     environment:
       - HUGO_VERSION=0.32.0
+    when:
+      steps:
+        - name: install_dependencies
+          on:
+            - success
