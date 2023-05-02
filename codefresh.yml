@@ -328,7 +328,7 @@ steps:
     type: codefresh-run
     arguments:
       PIPELINE_ID: 'codefresh-io/cli/release'
-      TRIGGER_ID: codefresh-io/cli_1
+      DETACH: true
       BRANCH: master
       VARIABLE:
         - PACKAGE_VERSION=${{PACKAGE_VERSION}}
@@ -340,20 +340,5 @@ steps:
           versionCheckSucceeded: steps.check_version.result != 'failure'
       steps:
         - name: create_manifest_list
-          on:
-            - success
-
-  build_documentation:
-    stage: test
-    title: "build documentation http://cli.codefresh.io"
-    image: codefresh/build-cli
-    commands:
-      - "echo Building public docs"
-      - "npm run build-public-docs"
-    environment:
-      - HUGO_VERSION=0.32.0
-    when:
-      steps:
-        - name: install_dependencies
           on:
             - success
