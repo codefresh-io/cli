@@ -343,6 +343,20 @@ steps:
           on:
             - success
 
+  execute_e2e_pipeline:
+    stage: final
+    title: "Execute E2E pipeline for image of this commit"
+    type: codefresh-run
+    arguments:
+      PIPELINE_ID: 'cli-v1-e2e/root'
+      VARIABLE:
+        - CLI_VERSION=${{CF_SHORT_REVISION}}
+    when:
+      steps:
+        - name: push_step_alpine
+          on:
+            - success
+
   build_documentation:
     stage: test
     title: "build documentation http://cli.codefresh.io"
