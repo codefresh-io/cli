@@ -349,7 +349,7 @@ steps:
     image: codefresh/build-cli
     commands:
       - "echo Building public docs"
-      - "npm run build-public-docs"
+      - "yarn run build-public-docs"
     environment:
       - HUGO_VERSION=0.32.0
     when:

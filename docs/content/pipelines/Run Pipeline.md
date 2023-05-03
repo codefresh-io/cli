@@ -34,7 +34,7 @@ The pipeline will be triggered multiple times according to the array length.
   }
 ]
 ```
-### Use encrypted variables in Codefresh build runs; supported from CLI version: 0.83.1
+### Use encrypted variables in Codefresh build runs; supported from CLI version: 0.84.0
 #### Variable yaml file with single variable set with encrypted variables
 ```yaml
 - key:
