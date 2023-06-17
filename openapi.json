@@ -7436,6 +7436,31 @@
         "x-sdk-interface": "runtimeEnvs.get"
       }
     },
+    "/runtime-environments/{name}/images": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "tags": [
+          "runtimeEnvs"
+        ],
+        "operationId": "runtime-envs-get-images",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Get images",
+        "x-sdk-interface": "runtimeEnvs.getImages"
+      }
+    },
     "/runtime/testit": {
       "post": {
         "responses": {
