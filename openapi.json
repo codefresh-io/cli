@@ -7436,7 +7436,7 @@
         "x-sdk-interface": "runtimeEnvs.get"
       }
     },
-    "/runtime-environments/{name}/images": {
+    "/runtime-environments/{name}/base-images": {
       "get": {
         "responses": {
           "200": {
@@ -7462,7 +7462,7 @@
         "tags": [
           "runtimeEnvs"
         ],
-        "operationId": "runtime-envs-get-images",
+        "operationId": "runtime-envs-get-base-images",
         "parameters": [
           {
             "in": "path",
@@ -7474,7 +7474,7 @@
           }
         ],
         "summary": "Get images",
-        "x-sdk-interface": "runtimeEnvs.getImages"
+        "x-sdk-interface": "runtimeEnvs.getBaseImages"
       }
     },
     "/runtime/testit": {
