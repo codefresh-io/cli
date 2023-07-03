@@ -168,6 +168,13 @@
 	"content": " Description Get an array of accounts registries.\nCommand codefresh get registry\nOptions    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df   Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty    Use colors and signs for output   --watch -w boolean false Watching updates to a particular resource   --watch-interval  number 3 Interval time at watching mode (in seconds)    Examples Get all registries connected to the account codefresh get registry\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/",
+	"title": "Get Runtime-Environment-Base-Images",
+	"tags": [],
+	"description": "",
+	"content": " Description Get a runtime environment base images list that required by this runtime.\nCommand codefresh get runtime-environment-base-images [name]\nAliases codefresh get re-base-images [name]\nArguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format\nPossible values:\n- json\n- yaml\n- wide\n- name\n- id   --date-format --df   Provide predefined or custom date format. Predefined options: [\u0026ldquo;default\u0026rdquo;, \u0026ldquo;date\u0026rdquo;, \u0026ldquo;datetime\u0026rdquo;, \u0026ldquo;date-diff\u0026rdquo;]   --pretty    Use colors and signs for output   --watch -w boolean false Watching updates to a particular resource   --watch-interval  number 3 Interval time at watching mode (in seconds)    "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/",
 	"title": "Get Runtime-Environments",
 	"tags": [],
@@ -893,7 +900,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Type Default Description     --help    Print help information   --userName    filter by user name   --userId    filter by codefresh user id   --entity    filter by api entity, example: pipeline, account   --entityId    filter by api entity id, this value different for each action, example: email, user id   --action    filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status    filter by response status code   --showTriggers    returns only actions related to receiving triggers   --search    filter by searching substring in request body or query or params or headers or url   --from    filter by date, value is number of milliseconds since 1970   --to    filter by date, value is number of milliseconds since 1970   --sortField    name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType    sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  string /codefresh/volume/cli/codefresh_audit_2023-05-24_09-08-33.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": " Description Download audit.\nCommand codefresh download audit\nOptions    Option Alias Type Default Description     --help    Print help information   --userName    filter by user name   --userId    filter by codefresh user id   --entity    filter by api entity, example: pipeline, account   --entityId    filter by api entity id, this value different for each action, example: email, user id   --action    filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status    filter by response status code   --showTriggers    returns only actions related to receiving triggers   --search    filter by searching substring in request body or query or params or headers or url   --from    filter by date, value is number of milliseconds since 1970   --to    filter by date, value is number of milliseconds since 1970   --sortField    name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt   --sortType    sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK   --file  string /codefresh/volume/cli/codefresh_audit_2023-07-03_14-02-01.csv The name of the file and the directory in which the audit will be saved    Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -1251,6 +1258,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nApply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nAttach Runtime-Environments codefresh attach runtime\nAttach a runtime to agent.\nattach runtime.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nInstall Runtime-Environment codefresh install runtime\nInstall and create a runtime on kubernetes cluster.\nUninstall Runtime-Environment codefresh uninstall runtime\nUninstall a runtime on kubernetes cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments-base-images/",
+	"title": "Runtime-Environments-Base-Images",
+	"tags": [],
+	"description": "",
+	"content": " Get Runtime-Environment-Base-Images codefresh get runtime-environment-base-images [name]\nGet a runtime environment base images list that required by this runtime.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/",

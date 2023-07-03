@@ -296,6 +296,18 @@ Possible values:
     </item>
     
     <item>
+      <title>Get Runtime-Environment-Base-Images</title>
+      <link>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</guid>
+      <description>Description Get a runtime environment base images list that required by this runtime.
+Command codefresh get runtime-environment-base-images [name]
+Aliases codefresh get re-base-images [name]
+Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
+    </item>
+    
+    <item>
       <title>Get Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

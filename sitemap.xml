@@ -103,6 +103,10 @@
   </url>
   
   <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</loc>
+  </url>
+  
+  <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</loc>
   </url>
   
@@ -729,6 +733,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-base-images/</loc>
   </url>
   
   <url>

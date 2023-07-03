@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.32" />
 
-<title>Teams :: Codefresh CLI Documentation</title>
+<title>Runtime-Environments-Base-Images :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
 <link href="/cli/css/nucleus.css" rel="stylesheet">
 <link href="/cli/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/cli/teams/">
+  <body data-url="/cli/runtime-environments-base-images/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -1167,10 +1167,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runtime-environments-base-images/" class="dd-item haschildren
+    <li data-nav-id="/cli/runtime-environments-base-images/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/cli/runtime-environments-base-images/">Runtime-Environments-Base-Images</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/cli/runtime-environments-base-images/">Runtime-Environments-Base-Images</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/runtime-environments-base-images/get-runtime-environment-base-images/" class="dd-item">
@@ -1524,11 +1525,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/teams/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/teams/" class="dd-item haschildren
         ">
       <div>
-      <a href="/cli/teams/">Teams</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/teams/">Teams</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/teams/get-teams/" class="dd-item">
@@ -1657,7 +1657,7 @@
 
 
 
- <a href='/cli/'></a> > Teams
+ <a href='/cli/'></a> > Runtime-Environments-Base-Images
 
  
 
@@ -1674,11 +1674,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#get-teams-get-teams"><a href="get-teams">Get Teams</a></a></li>
-<li><a href="#create-team-create-team"><a href="create-team">Create team</a></a></li>
-<li><a href="#remove-user-remove-user"><a href="remove-user">Remove user</a></a></li>
-<li><a href="#add-user-add-user"><a href="add-user">Add user</a></a></li>
-<li><a href="#synchronize-teams-synchronize-teams"><a href="synchronize-teams">Synchronize Teams</a></a></li>
+<li><a href="#get-runtime-environment-base-images-get-runtime-environment-base-images"><a href="get-runtime-environment-base-images">Get Runtime-Environment-Base-Images</a></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1692,7 +1688,7 @@
 
 <div id="body-inner">
   
-    <h1>Teams</h1>
+    <h1>Runtime-Environments-Base-Images</h1>
   
 
 
@@ -1703,41 +1699,11 @@
 
 
 
-<h3 id="get-teams-get-teams"><a href="get-teams">Get Teams</a></h3>
+<h3 id="get-runtime-environment-base-images-get-runtime-environment-base-images"><a href="get-runtime-environment-base-images">Get Runtime-Environment-Base-Images</a></h3>
 
-<p><code>codefresh get teams</code></p>
+<p><code>codefresh get runtime-environment-base-images [name]</code></p>
 
-<p>Get an array of all current user teams.</p>
-
-<h3 id="create-team-create-team"><a href="create-team">Create team</a></h3>
-
-<p><code>codefresh create teams &lt;name&gt;</code></p>
-
-<p>Create a team.</p>
-
-<p>You can create a new team specifying only name of team or specify path to json file for include extended options<br> Possible fields in file:<br> name - team name (specifying name in file will rewrite name specified as command argument) <br> users - array of users id for that team <br> tags - array of tag names.</p>
-
-<h3 id="remove-user-remove-user"><a href="remove-user">Remove user</a></h3>
-
-<p><code>codefresh delete teams</code></p>
-
-<p>Remove user from team.</p>
-
-<p>Pass user id and team id to remove user from team.</p>
-
-<h3 id="add-user-add-user"><a href="add-user">Add user</a></h3>
-
-<p><code>codefresh patch teams</code></p>
-
-<p>Assign user to a team.</p>
-
-<p>Use patch command and pass user id and team id  to assign user to a team.</p>
-
-<h3 id="synchronize-teams-synchronize-teams"><a href="synchronize-teams">Synchronize Teams</a></h3>
-
-<p><code>codefresh synchronize teams [client-name]</code></p>
-
-<p>Synchronize team with group.</p>
+<p>Get a runtime environment base images list that required by this runtime.</p>
 
 
 
