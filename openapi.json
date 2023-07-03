@@ -7436,6 +7436,47 @@
         "x-sdk-interface": "runtimeEnvs.get"
       }
     },
+    "/runtime-environments/{name}/base-images": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          },
+          "404": {
+            "description": "Runtime Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/Json"
+                },
+                "example": {
+                  "status": 404,
+                  "code": "101",
+                  "name": "NOT_FOUND_ERROR",
+                  "message": "Runtime Environment: \"runtimeEnvironmentName\" not found"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "runtimeEnvs"
+        ],
+        "operationId": "runtime-envs-get-base-images",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "summary": "Get images",
+        "x-sdk-interface": "runtimeEnvs.getBaseImages"
+      }
+    },
     "/runtime/testit": {
       "post": {
         "responses": {
