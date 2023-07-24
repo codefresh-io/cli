@@ -1,5 +1,0 @@
-## What
-
-## Why
-
-## Notes
