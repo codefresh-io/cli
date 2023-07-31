@@ -40,6 +40,6 @@ RUN codefresh components update --location components
 RUN chgrp -R 0 /cf-cli && \
     chmod -R g+rwX /cf-cli
 
-USER 1001
+USER node
 
 ENTRYPOINT ["codefresh"]
