@@ -37,6 +37,10 @@ RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
 RUN codefresh components update --location components
 
+# Support Arbitrary User IDs
+RUN chgrp -R 0 /cf-cli && \
+    chmod -R g+rwX /cf-cli
+
 USER 1001
 
 ENTRYPOINT ["codefresh"]
