@@ -10,21 +10,29 @@ ENV PATH="/pyinstaller:$PATH"
 RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
+# kubectl binary
+FROM bitnami/kubectl:1.27.4 as kubectl
+
 # Main
 FROM node:18.17.1-bullseye-slim
 
-RUN apt update
-RUN apt -y install ca-certificates git curl bash jq busybox && ln -s /bin/busybox /usr/bin/[[
+RUN apt update \
+    && apt -y install \
+    bash \
+    busybox \
+    ca-certificates \
+    curl \
+    git \
+    jq \
+    && ln -s /bin/busybox /usr/bin/[[
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
+COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 
 WORKDIR /cf-cli
 
-COPY package.json /cf-cli
-COPY yarn.lock /cf-cli
-COPY check-version.js /cf-cli
-COPY run-check-version.js /cf-cli
+COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 
 RUN yarn install --prod --frozen-lockfile && \
     yarn cache clean
@@ -38,7 +46,7 @@ RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
 
 # we keep /root as home directory because cli by default looks for $HOME/.cfconfig
-# and we do not want to break user automation if he used to bind his .cfconfig
+# and we do not want to break user automation if they used to bind their .cfconfig
 # to the /root/.cfconfig
 RUN useradd -m -d /root -s /bin/sh cfu \
    && chown -R $(id -g cfu) /root /cf-cli \
