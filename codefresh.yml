@@ -111,24 +111,28 @@ steps:
         type: build
         dockerfile: Dockerfile
         image-name: codefresh/cli
+        disable_push: true
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
       build_step_debian:
         type: build
         dockerfile: Dockerfile-debian
         image-name: codefresh/cli
+        disable_push: true
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
 
       build_step_alpine_rootless:
         type: build
         dockerfile: Dockerfile-rootless
         image-name: codefresh/cli
+        disable_push: true
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}
 
       build_step_debian_rootless:
         type: build
         dockerfile: Dockerfile-debian-rootless
         image-name: codefresh/cli
+        disable_push: true
         tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     when:
       steps:
@@ -166,7 +170,9 @@ steps:
   push_step_alpine:
     stage: push
     type: push
-    tag: '${{CF_SHORT_REVISION}}'
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}
     candidate: ${{build_step_alpine}}
     scale:
       push_to_dockerhub:
@@ -186,7 +192,9 @@ steps:
   push_step_debian:
     stage: push
     type: push
-    tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}'
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     candidate: ${{build_step_debian}}
     scale:
       push_to_dockerhub_debian:
@@ -206,7 +214,9 @@ steps:
   push_step_alpine_rootless:
     stage: push
     type: push
-    tag: '${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}'
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     candidate: ${{build_step_alpine_rootless}}
     scale:
       push_to_dockerhub_rootless:
@@ -226,7 +236,9 @@ steps:
   push_step_debian_rootless:
     stage: push
     type: push
-    tag: '${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}'
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     candidate: ${{build_step_debian_rootless}}
     scale:
       push_to_dockerhub_debian_rootless:
@@ -268,28 +280,28 @@ steps:
             ignore: [ master ]
         arguments:
           tags:
-            - ${{CF_SHORT_REVISION}}
+            - ${{CF_BRANCH_TAG_NORMALIZED}}
       dev_branches_tags_debian:
         when:
           branch:
             ignore: [ master ]
         arguments:
           tags:
-            - ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+            - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
       dev_branches_tags_rootless:
         when:
           branch:
             ignore: [ master ]
         arguments:
           tags:
-            - ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+            - ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}
       dev_branches_tags_debian_rootless:
         when:
           branch:
             ignore: [ master ]
         arguments:
           tags:
-            - ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+            - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     when:
       steps:
         - name: push_step_alpine
@@ -350,7 +362,7 @@ steps:
     arguments:
       PIPELINE_ID: 'cli-v1-e2e/root'
       VARIABLE:
-        - CLI_VERSION=${{CF_SHORT_REVISION}}
+        - CLI_VERSION=${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}
     when:
       steps:
         - name: push_step_alpine

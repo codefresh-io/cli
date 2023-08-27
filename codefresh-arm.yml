@@ -26,7 +26,7 @@ steps:
         disable_push: true
         dockerfile: ./Dockerfile
         image_name: ${{IMAGE_NAME}}
-        tag: ${{CF_SHORT_REVISION}}
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}
 
       build_image_debian:
         title: "Building the debian image..."
@@ -35,7 +35,7 @@ steps:
         disable_push: true
         dockerfile: ./Dockerfile-debian
         image_name: ${{IMAGE_NAME}}
-        tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}
 
       build_image_alpine_rootless:
         title: "Building the alpine image..."
@@ -44,7 +44,7 @@ steps:
         disable_push: true
         dockerfile: ./Dockerfile-rootless
         image_name: ${{IMAGE_NAME}}
-        tag: ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}
 
       build_image_debian_rootless:
         title: "Building the debian image..."
@@ -53,7 +53,7 @@ steps:
         disable_push: true
         dockerfile: ./Dockerfile-debian-rootless
         image_name: ${{IMAGE_NAME}}
-        tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
+        tag: ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}
     when:
       steps:
         - name: main_clone
@@ -65,7 +65,9 @@ steps:
     type: push
     candidate: ${{build_image_alpine}}
     title: "Pushing alpine image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{ARM_TAG_POSTFIX}}
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ARM_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ARM_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     scale:
       push_quay_dev:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -87,7 +89,9 @@ steps:
     type: push
     candidate: ${{build_image_debian}}
     title: "Pushing debian image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+    tags:
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     scale:
       push_quay_dev_debian:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -109,7 +113,9 @@ steps:
     type: push
     candidate: ${{build_image_alpine_rootless}}
     title: "Pushing rootless alpine image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+    tags: 
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     scale:
       push_quay_dev_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
@@ -131,7 +137,9 @@ steps:
     type: push
     candidate: ${{build_image_debian_rootless}}
     title: "Pushing rootless debian image to registry with revision tag"
-    tag: ${{CF_SHORT_REVISION}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+    tags: 
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}
+      - ${{CF_BRANCH_TAG_NORMALIZED}}${{DEBIAN_TAG_POSTFIX}}${{ROOTLESS_TAG_POSTFIX}}${{ARM_TAG_POSTFIX}}-${{CF_SHORT_REVISION}}
     scale:
       push_quay_dev_debian_rootless:
         registry: "${{REGISTRY_INTEGRATION_QUAY}}"
