@@ -5,7 +5,7 @@ RUN go install github.com/github/hub@latest
 
 # python yq binary
 FROM six8/pyinstaller-alpine:alpine-3.6-pyinstaller-v3.4 as yq
-ARG YQ_VERSION=2.10.0
+ARG YQ_VERSION=4.35.1
 ENV PATH="/pyinstaller:$PATH"
 RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
