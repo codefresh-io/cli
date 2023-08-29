@@ -3,13 +3,6 @@ FROM golang:alpine as go
 RUN apk --update add ca-certificates git
 RUN go install github.com/github/hub@latest
 
-# python yq binary
-FROM six8/pyinstaller-alpine:alpine-3.6-pyinstaller-v3.4 as yq
-ARG YQ_VERSION=3.2.2
-ENV PATH="/pyinstaller:$PATH"
-RUN pip install yq==${YQ_VERSION}
-RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
-
 # kubectl binary
 FROM bitnami/kubectl:1.27.4 as kubectl
 
@@ -21,10 +14,10 @@ RUN apk --update add --no-cache \
     ca-certificates \
     curl \
     git \
-    jq
+    jq \
+    yq
 
 COPY --from=go /go/bin/hub /usr/local/bin/hub
-COPY --from=yq /tmp/yq /usr/local/bin/yq
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 
 WORKDIR /cf-cli
