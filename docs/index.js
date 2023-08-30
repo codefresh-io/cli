@@ -16,21 +16,21 @@ const ALLOW_BETA_COMMANDS = process.env.ALLOW_BETA_COMMANDS;
 const categoriesOrder = {
     completion: 30,
     authentication: 31,
-    'operate on resources' : 32,
-    pipelines : 40,
-    'pipelines v2 (beta)' : 42,
-    projects : 45,
+    'operate on resources': 32,
+    pipelines: 40,
+    'pipelines v2 (beta)': 42,
+    projects: 45,
     builds: 50,
-    contexts : 70 ,
-    images : 80 ,
-    triggers : 90,
-    environments : 100 ,
-    compositions : 110 ,
-    'helm repos' : 111 ,
+    contexts: 70,
+    images: 80,
+    triggers: 90,
+    environments: 100,
+    compositions: 110,
+    'helm repos': 111,
     'predefined pipelines': 120,
     'cli config': 121,
     teams: 130,
-    more : 150,
+    more: 150,
 };
 
 
@@ -115,7 +115,7 @@ const getWeight = async (command) => {
     }
 };
 
-const createCommandFile = async (nestedCategory,command) => {
+const createCommandFile = async (nestedCategory, command) => {
     const docs = command.prepareDocs();
     const dir = path.resolve(baseDir, `${(nestedCategory || 'undefined').toLowerCase()}`);
 
@@ -216,7 +216,7 @@ const createCategoryFile = async (content, category) => {
  * updates the category main file with a specific command
  * possible extensions are: HEADER, COMMANDS
  */
-const updateCategoryFileArray = async (nestedCategory,command, existingContent) => {
+const updateCategoryFileArray = async (nestedCategory, command, existingContent) => {
     const docs = command.prepareDocs();
     const { category } = docs;
     const finalCategoryArr = existingContent || {};
@@ -253,7 +253,7 @@ const updateCategoryFileArray = async (nestedCategory,command, existingContent) 
     finalCategoryArr.category = category;
     newCmd.weight = await getWeight(command);
     newCmd.content = commandString;
-    if (!finalCategoryArr.commands){
+    if (!finalCategoryArr.commands) {
         finalCategoryArr.commands = [];
 
     }
@@ -318,16 +318,16 @@ const createAutomatedDocs = async () => {
 
         // document only in case category field exists and there are no sub commands under it
         const docs = command.prepareDocs();
-        const {category} = docs;
+        const { category } = docs;
         if (!category || await hasSubCommands(command)) {
             continue;
         }
 
         nestedCategories[category] = await getNestedCategories(command);
         const nestedCategory = nestedCategories[category];
-        categories[category] = await updateCategoryFileArray(nestedCategory,command, categories[category]);
+        categories[category] = await updateCategoryFileArray(nestedCategory, command, categories[category]);
         await upsertCategoryFolder(nestedCategory);
-        await createCommandFile(nestedCategory,command);
+        await createCommandFile(nestedCategory, command);
     }
 
     let categoriesFinalContent = {};
@@ -356,7 +356,7 @@ const createDownloadPage = async () => {
             links.push(asset.browser_download_url);
         }));
         const commandFilePath = path.resolve(baseDir, './installation/download.md');
-        const finalContent=
+        const finalContent =
             '+++\n' +
             'title = "Download"\n' +
             'description = "asd"\n' +
@@ -372,6 +372,7 @@ const createDownloadPage = async () => {
             '    <li><a href=' + links[1] + ' target="_blank">Linux-x64</a></li>\n' +
             '    <li><a href=' + links[2] + ' target="_blank">Macos-x64</a></li>\n' +
             '    <li><a href=' + links[3] + ' target="_blank">Windows-x64</a></li>\n' +
+            '    <li><a href=' + links[4] + ' target="_blank">Alpine-arm64</a></li>\n' +
             '</ul> \n' +
             '\n' +
             'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +

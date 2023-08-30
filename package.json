@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.85.1",
+  "version": "0.86.0",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -9,7 +9,7 @@
     "test": "jest .spec.js --coverage",
     "e2e": "bash e2e/e2e.spec.sh",
     "eslint": "eslint --fix lib/logic/**",
-    "pkg": "pkg . -t node16-alpine-x64,node16-macos-x64,node16-linux-x64,node16-win-x64 --out-path ./dist",
+    "pkg": "pkg . -t node16-alpine-x64,node16-macos-x64,node16-linux-x64,node16-win-x64,node16-linux-arm64 --out-path ./dist",
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
