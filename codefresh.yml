@@ -1,0 +1,40 @@
+# More examples of Codefresh YAML can be found at
+# https://codefresh.io/docs/docs/yaml-examples/examples/
+
+version: "1.0"
+# Stages can help you organize your steps in stages
+stages:
+  - "clone"
+  - "build"
+  - "test"
+
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "https://github.com/codefresh-io/cli/"
+    # Clone the master branch. Or, use ${{CF_BRANCH}} to get branch name from trigger
+    # Learn more at https://codefresh.io/docs/docs/codefresh-yaml/variables/
+    revision: "master"
+    stage: "clone"
+
+  build:
+    title: "Building Docker image"
+    type: "build"
+    image_name: "codefresh-io/cli"
+    working_directory: "${{clone}}"
+    # Set 'latest' tag on the image. Or, use built-in variables
+    # like ${{CF_BRANCH_TAG_NORMALIZED}} to use the current branch name/tag.
+    tag: "latest"
+    dockerfile: "Dockerfile"
+    stage: "build"
+
+  test:
+    title: "Running test"
+    type: "freestyle" # Run any command
+    image: "ubuntu:latest" # The image in which command will be executed
+    working_directory: "${{clone}}" # Running command where code cloned
+    commands:
+      - "ls"
+    stage: "test"
+
