@@ -1036,7 +1036,19 @@
         "description": "get all the accounts in the system",
         "operationId": "accounts-list-accounts",
         "summary": "List accounts",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
         "x-sdk-interface": "accounts.listAccounts"
       },
       "post": {
@@ -1316,6 +1328,82 @@
         ],
         "summary": "Get by account",
         "x-sdk-interface": "onPrem.runtimeEnvs.account.list"
+      }
+    },
+    "/admin/runtime-environments/account/modify/{name}": {
+      "put": {
+        "x-action": "addRuntimeEnvToAccountByAdmin",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.account"
+        ],
+        "operationId": "onPrem-runtimeEnvs-account-modify",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Add to account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.modify"
+      },
+      "delete": {
+        "x-action": "removeRuntimeEnvFromAccountByAdmin",
+        "x-entityId": {
+          "pathName": "params.name"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Json"
+          }
+        },
+        "tags": [
+          "onPrem.runtimeEnvs.account"
+        ],
+        "operationId": "onPrem-runtimeEnvs-account-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Delete for account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.delete"
       }
     },
     "/admin/runtime-environments/default/{plan}/{name}": {
@@ -8408,6 +8496,18 @@
     }
   },
   "components": {
+    "responses": {
+      "Json": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Json"
+            }
+          }
+        },
+        "description": "json"
+      }
+    },
     "parameters": {
       "accountName": {
         "in": "path",
@@ -8523,6 +8623,9 @@
             }
           }
         }
+      },
+      "Json": {
+        "type": "object"
       }
     },
     "requestBodies": {
@@ -8669,7 +8772,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/requestBody"
+              "$ref": "#/components/schemas/Json"
             }
           }
         }
