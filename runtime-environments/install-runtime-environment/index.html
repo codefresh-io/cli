@@ -1736,6 +1736,14 @@
 </tr>
 
 <tr>
+<td>--runtime-name</td>
+<td></td>
+<td></td>
+<td></td>
+<td>The name of the runtime to install</td>
+</tr>
+
+<tr>
 <td>--token</td>
 <td></td>
 <td></td>
@@ -1757,22 +1765,6 @@
 <td></td>
 <td></td>
 <td>Set a name of your custom storage class, note: this will not install volume provisioning components</td>
-</tr>
-
-<tr>
-<td>--runtime-kube-context-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
-</tr>
-
-<tr>
-<td>--kube-node-selector</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
 </tr>
 
 <tr>
@@ -1816,6 +1808,30 @@
 </tr>
 
 <tr>
+<td>--kube-node-selector</td>
+<td></td>
+<td></td>
+<td></td>
+<td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
+</tr>
+
+<tr>
+<td>--runtime-kube-config-path</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+</tr>
+
+<tr>
+<td>--runtime-kube-context-name</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+</tr>
+
+<tr>
 <td>--runtime-kube-namespace</td>
 <td></td>
 <td></td>
@@ -1832,14 +1848,6 @@
 </tr>
 
 <tr>
-<td>--runtime-kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
-</tr>
-
-<tr>
 <td>--attach-runtime</td>
 <td></td>
 <td></td>
@@ -1852,7 +1860,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>Path to kubeconfig file for the agent (default is $HOME/.kube/config)</td>
+<td>Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)</td>
 </tr>
 
 <tr>
@@ -1872,14 +1880,6 @@
 </tr>
 
 <tr>
-<td>--agent-kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)</td>
-</tr>
-
-<tr>
 <td>--cluster-service-account</td>
 <td></td>
 <td></td>
@@ -1896,11 +1896,27 @@
 </tr>
 
 <tr>
+<td>--skip-re-creation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>If set to true, will skip runtime creation in the platform</td>
+</tr>
+
+<tr>
 <td>--skip-cluster-creation</td>
 <td></td>
 <td></td>
 <td></td>
 <td>If set to true, will skip cluster integration creation for this runtime</td>
+</tr>
+
+<tr>
+<td>--platform-only</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Set to true to create runtime on the platform side only</td>
 </tr>
 
 <tr>

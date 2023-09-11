@@ -1824,6 +1824,54 @@
 </tr>
 
 <tr>
+<td>--runtime-name</td>
+<td></td>
+<td></td>
+<td></td>
+<td>The name of the runtime to install</td>
+</tr>
+
+<tr>
+<td>--build-node-selector</td>
+<td></td>
+<td></td>
+<td></td>
+<td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
+</tr>
+
+<tr>
+<td>--skip-re-creation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>If set to true, will skip runtime creation in the platform</td>
+</tr>
+
+<tr>
+<td>--set-value</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
+</tr>
+
+<tr>
+<td>--set-file</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Set values for templates from file, example: --set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
+</tr>
+
+<tr>
+<td>--skip-cluster-creation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>If set to true, will skip cluster integration creation for this runtime</td>
+</tr>
+
+<tr>
 <td>--make-default-runtime</td>
 <td></td>
 <td></td>
@@ -1861,6 +1909,14 @@
 <td>string</td>
 <td></td>
 <td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;</td>
+</tr>
+
+<tr>
+<td>--platform-only</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Set to true to create runtime on the platform side only</td>
 </tr>
 
 <tr>

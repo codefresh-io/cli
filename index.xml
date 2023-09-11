@@ -7,39 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
-
+    
 	<atom:link href="https://codefresh-io.github.io/cli/index.xml" rel="self" type="application/rss+xml" />
-
-
+    
+    
     <item>
       <title>Create Pipeline Trigger</title>
       <link>https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/</guid>
       <description>Description Create trigger: link pipeline to trigger-event.
 Command codefresh create trigger [event-uri] [pipeline]
 Aliases codefresh create t [event-uri] [pipeline]
 Arguments    Option Alias Default Description     event-uri   trigger-event URI   pipeline   pipeline to be triggered by the trigger-event    Options    Option Alias Type Default Description     --help    Print help information   --filter  array  trigger filter name=condition pairs    Examples Create trigger by linking 5a43&amp;hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
     </item>
-
+    
     <item>
       <title>Config</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/config/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/spec/config/</guid>
       <description> Config context stores a set of keys and values.
 Type .spec.type should be config.
 Data .spec.data should be an array of keys and values.
 Examples config with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-config-context&amp;#34; spec: type: &amp;#34;config&amp;#34; data: dbUrl: &amp;#34;db-url&amp;#34; sysUrl: &amp;#34;sys-url&amp;#34;</description>
     </item>
-
+    
     <item>
       <title>NPM</title>
       <link>https://codefresh-io.github.io/cli/installation/npm/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/installation/npm/</guid>
       <description>the CLI requires node version 8.0.0 or higher Codefresh&amp;rsquo;s CLI is available for installation through NPM registry.
 Install: npm install -g codefresh
@@ -47,58 +47,58 @@ Install a specific version: npm install -g codefresh@{VERSION}
 Update to latest version: npm install -g codefresh
 Update to a specific version: npm install -g codefresh@${VERSION}</description>
     </item>
-
+    
     <item>
       <title>Add Repository</title>
       <link>https://codefresh-io.github.io/cli/repository/add-repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/repository/add-repository/</guid>
       <description>Description Add a repository from git context to codefresh.
 Command codefresh add repository [fullname]
 Aliases codefresh add repo [fullname]
 Arguments    Option Alias Default Description     fullname   Full name of repo (template: &amp;ldquo;owner/repo&amp;rdquo;). required    Options    Option Alias Type Default Description     --help    Print help information   --context -c   Name of the git context to use, if not passed the default will be used    Examples Add repo &amp;ldquo;some-repo&amp;rdquo; of &amp;ldquo;codefresh-io&amp;rdquo; owner from default git context codefresh add repo codefresh-io/some-repo</description>
     </item>
-
+    
     <item>
       <title>Config</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</guid>
       <description>Description Create a config context.
 Command codefresh create context config &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Type Default Description     --help    Print help information   --variable -v array  Variables list    Examples Create a config. codefresh create context config my-config -v key1=valu1 -v key2=value2</description>
     </item>
-
+    
     <item>
       <title>Create tokens</title>
       <link>https://codefresh-io.github.io/cli/tokens/create-tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/tokens/create-tokens/</guid>
       <description>Description Generate Codefresh token.
 Create default token or provide --type and --subject. See options for more details.
 Command codefresh create token [name]
 Arguments    Option Alias Default Description     name   token name. required    Options    Option Alias Type Default Description     --help    Print help information   --subject    Name of the token subject   --type  string user Type of the subject</description>
     </item>
-
+    
     <item>
       <title>Delete Helm Release</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</guid>
       <description>Description Delete a helm release from a kubernetes cluster.
 Command codefresh delete-release &amp;lt;name&amp;gt;
 Options    Option Alias Type Default Description     --help    Print help information   --cluster -c string  Run on cluster. required   --timeout -t number 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --purge -p boolean false remove the release from the store and make its name free for later use (default true)   --detach -d   Run pipeline and print build ID   --no-hooks --nh boolean false prevent hooks from running during deletion   --tiller-namespace -n string kube-system namespace where is tiller running ( helm 2 only )   --namespace --ns string default namespace where is chart located ( helm 3 )    Examples Delete release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh delete-release my-release --cluster my-cluster</description>
     </item>
-
+    
     <item>
       <title>Get</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/get/</guid>
       <description>Description Get a resource from a file, directory or url
 Supported resources:.
@@ -111,12 +111,12 @@ Possible values:
 - name
 - id   --date-format --df   Provide predefined or custom date format.</description>
     </item>
-
+    
     <item>
       <title>Get</title>
       <link>https://codefresh-io.github.io/cli/workflow-data/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/workflow-data/get/</guid>
       <description>Description Get Workflow Data Item.
 Passing [id] argument will cause a retrieval of a specific Workflow-Data-Item.
@@ -124,36 +124,36 @@ Command codefresh get workflow-data-item [id..]
 Aliases codefresh get wdi [id..]
 Arguments    Option Alias Default Description     id   Workflow-Data-Item ID    Options    Option Alias Type Default Description     --help    Print help information   --workflow --wf   Workflow ID that the Workflow-Data-Item belongs to.</description>
     </item>
-
+    
     <item>
       <title>Get Agents</title>
       <link>https://codefresh-io.github.io/cli/agents/get-agents/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/get-agents/</guid>
       <description>Description Get a specific agent or an array of agents.
 Command codefresh get agents [id|name]
 Aliases codefresh get agent [id|name]
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information   --name -n   Agent name to filter by    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Board</title>
       <link>https://codefresh-io.github.io/cli/boards/get-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/boards/get-board/</guid>
       <description>Description Get a specific board or an array of boards.
 Command codefresh get boards [id..]
 Aliases codefresh get board [id..]
 Options    Option Alias Type Default Description     --help    Print help information   --id    Board by id   --name    Board by name    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Build</title>
       <link>https://codefresh-io.github.io/cli/builds/get-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/get-build/</guid>
       <description>Description Get a specific build or an array of builds.
 Passing [id] argument will cause a retrieval of a specific build.
@@ -162,24 +162,24 @@ Command codefresh get builds [id..]
 Aliases codefresh get build [id..]
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --limit -l number 25 Limit amount of returned results   --page -p number 1 Paginated page   --status -s array  Filter results by statuses</description>
     </item>
-
+    
     <item>
       <title>Get Clusters</title>
       <link>https://codefresh-io.github.io/cli/clusters/get-clusters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/clusters/get-clusters/</guid>
       <description>Description Get an array of clusters.
 Command codefresh get clusters
 Aliases codefresh get cluster clusters
 Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/get-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/compositions/get-composition/</guid>
       <description>Description Get a specific composition or an array of compositions.
 Passing [id|name] argument will cause a retrieval of a specific composition.
@@ -189,12 +189,12 @@ Aliases codefresh get com [id|name..]
 codefresh get composition [id|name..]
 Arguments    Option Alias Default Description     id   composition id or name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Context</title>
       <link>https://codefresh-io.github.io/cli/contexts/get-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/get-context/</guid>
       <description>Description Get a specific context or an array of contexts.
 Passing [name] argument will cause a retrieval of a specific context.
@@ -204,23 +204,23 @@ Aliases codefresh get ctx [name..]
 codefresh get context [name..]
 Arguments    Option Alias Default Description     name   context name    Options    Option Alias Type Default Description     --help    Print help information   --type    Context type</description>
     </item>
-
+    
     <item>
       <title>Get Contexts</title>
       <link>https://codefresh-io.github.io/cli/authentication/get-contexts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/authentication/get-contexts/</guid>
       <description>Description Get all possible authentication contexts.
 Command codefresh auth get-contexts
 Options    Option Alias Type Default Description     --cfconfig    Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help    Print help information    Examples List all existing authentication contexts codefresh auth get-contexts</description>
     </item>
-
+    
     <item>
       <title>Get Environment</title>
       <link>https://codefresh-io.github.io/cli/environments/get-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/environments/get-environment/</guid>
       <description>Description Get a specific environment or an array of environments.
 Passing [id] argument will cause a retrieval of a specific environment.
@@ -230,23 +230,23 @@ Aliases codefresh get env [id..]
 codefresh get environment [id..]
 Arguments    Option Alias Default Description     id   environment id or name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Helm Repo</title>
       <link>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</guid>
       <description>Description Get a specific helm-repo or an array of helm-repos.
 Command codefresh get helm-repo [name..]
 Arguments    Option Alias Default Description     name   Helm repo name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Image</title>
       <link>https://codefresh-io.github.io/cli/images/get-image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/images/get-image/</guid>
       <description>Description Get a specific image or an array of images.
 Passing [id] argument will cause a retrieval of a specific image.
@@ -256,12 +256,12 @@ Aliases codefresh get img [id..]
 codefresh get image [id..]
 Arguments    Option Alias Default Description     id   Docker Image id    Options    Option Alias Type Default Description     --help    Print help information   --limit  number 25 Limit amount of returned results   --all -a boolean false Return images from all possible registries (by default only r.</description>
     </item>
-
+    
     <item>
       <title>Get Pipeline</title>
       <link>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</guid>
       <description>Description Get a specific pipeline or an array of pipelines.
 Command codefresh get pipelines [id..]
@@ -269,24 +269,24 @@ Aliases codefresh get pip [id..]
 codefresh get pipeline [id..]
 Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Type Default Description     --help    Print help information   --decrypt-variables -d   Will decrypt encrypted variables   --name    Filter pipelines by name   --project-id    Filter pipelines by project id   --project    Filter pipelines by project name   --label -l array  Filter by a label   --limit    Limit amount of returned results [default: 25]   --all    Remove default limit of returned result   --page  number 1 Paginated page    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Projects</title>
       <link>https://codefresh-io.github.io/cli/projects/get-projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/projects/get-projects/</guid>
       <description>Description Get a specific project or an array of projects.
 Command codefresh get projects [id|name]
 Aliases codefresh get project [id|name]
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information   --name -n   Project name to filter by   --tag -t   Project tags array to filter by   --limit  number 25 Limit amount of returned results   --page  number 1 Paginated page    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Registries</title>
       <link>https://codefresh-io.github.io/cli/registries/get-registries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/registries/get-registries/</guid>
       <description>Description Get an array of accounts registries.
 Command codefresh get registry
@@ -294,24 +294,24 @@ Options    Option Alias Type Default Description     --help    Print help inform
 Possible values:
 - json</description>
     </item>
-
+    
     <item>
       <title>Get Runtime-Environment-Base-Images</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</guid>
       <description>Description Get a runtime environment base images list that required by this runtime.
 Command codefresh get runtime-environment-base-images [name]
 Aliases codefresh get re-base-images [name]
 Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</guid>
       <description>Description Get a runtime environments configuration.
 Command codefresh get runtime-environments [name]
@@ -319,36 +319,36 @@ Aliases codefresh get re [name]
 codefresh get runtime-environment [name]
 Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Type Default Description     --help    Print help information   --version    Runtime environments version   --history  boolean false Return all the history of the specific runtime environments   --limit  number 25 Limit amount of returned results   --page  number 1 Paginated page   --extend  boolean false Return an extend runtime environment    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Section</title>
       <link>https://codefresh-io.github.io/cli/sections/get-section/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/sections/get-section/</guid>
       <description>Description Get a specific section or an array of sections.
 Command codefresh get sections [id]
 Aliases codefresh get section [id]
 Arguments    Option Alias Default Description     id   Section by id    Options    Option Alias Type Default Description     --help    Print help information   --board-id    Board id   --board-name    Board name   --name    Section by name    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Step</title>
       <link>https://codefresh-io.github.io/cli/steps/get-step/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/steps/get-step/</guid>
       <description>Description Get a specific step or an array of steps.
 Command codefresh get step-types [id..]
 Aliases codefresh get step-type [id..]
 Arguments    Option Alias Default Description     id   Step name/id    Options    Option Alias Type Default Description     --help    Print help information   --name    Filter by name pattern   --free-text --text   Filter by multiple criteria: name, description, tags   --tag -t array  Filter by a tag   --category -c array  Filter by category   --stage    Filter by stage</description>
     </item>
-
+    
     <item>
       <title>Get Teams</title>
       <link>https://codefresh-io.github.io/cli/teams/get-teams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/teams/get-teams/</guid>
       <description>Description Get an array of all current user teams.
 Command codefresh get teams
@@ -356,12 +356,12 @@ Aliases codefresh get team teams
 codefresh get tm teams
 Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</guid>
       <description>Description Get trigger-event.
 Command codefresh get trigger-events [event-uri]
@@ -369,12 +369,12 @@ Aliases codefresh get trigger-event [event-uri]
 codefresh get te [event-uri]
 Arguments    Option Alias Default Description     event-uri   trigger-event URI)    Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type   --kind    trigger-event kind   --filter    trigger-event URI filter (regex)   --public  boolean true get public trigger-event(s)    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Trigger Types</title>
       <link>https://codefresh-io.github.io/cli/triggers/get-trigger-types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/get-trigger-types/</guid>
       <description>Description Get a list of available trigger-types.
 Command codefresh get trigger-types
@@ -382,12 +382,12 @@ Aliases codefresh get trigger-type trigger-types
 codefresh get tt trigger-types
 Options    Option Alias Type Default Description     --help    Print help information   --type    filter by a specific trigger type (e.g. registry, cron)   --kind    filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get Triggers</title>
       <link>https://codefresh-io.github.io/cli/triggers/get-triggers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/get-triggers/</guid>
       <description>Description Get triggers, optionally filtered by pipeline or event.
 Only cron/registry triggers are supported (for git triggers use codefresh get pip &amp;lt;pip-name&amp;gt; -o json).
@@ -396,12 +396,12 @@ Aliases codefresh get trigger triggers
 codefresh get t triggers
 Options    Option Alias Type Default Description     --help    Print help information   --pipeline -p   pipeline id   --event-uri -e   event URI    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>HTTP</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</guid>
       <description>Description Create a helm-repository context from HTTP server.
 
@@ -411,23 +411,23 @@ Read more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.
 Command codefresh create context helm-repository http &amp;lt;name&amp;gt;
 Options    Option Alias Type Default Description     --help    Print help information   --url    Url to the web server.</description>
     </item>
-
+    
     <item>
       <title>Rollback Helm Release</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</guid>
       <description>Description Rollback a helm release from a kubernetes cluster.
 Command codefresh rollback-release &amp;lt;name&amp;gt;
 Options    Option Alias Type Default Description     --help    Print help information   --cluster -c string  Run on cluster. required   --revision -t number  revision number. required   --tiller-namespace -n string kube-system prevent hooks from running during deletion   --namespace --ns string default prevent hooks from running during deletion   --detach -d   Run pipeline and print build ID    Examples rollback release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh rollback my-release --cluster my-cluster --revision 1</description>
     </item>
-
+    
     <item>
       <title>bitbucket</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</guid>
       <description>Description Create a bitbucket context.
 Git context are used to clone repositories during pipeline execution.
@@ -438,23 +438,23 @@ Options    Option Alias Type Default Description     --sharing-policy  string Ac
 Possible values:
 - AccountAdmins</description>
     </item>
-
+    
     <item>
       <title>get</title>
       <link>https://codefresh-io.github.io/cli/annotations/get/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/annotations/get/</guid>
       <description>Description Get annotations.
 Command codefresh get annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
 Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels to filter by    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>github</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</guid>
       <description>Description Create a github context.
 Git context are used to clone repositories during pipeline execution.
@@ -465,12 +465,12 @@ Options    Option Alias Type Default Description     --sharing-policy  string Ac
 Possible values:
 - AccountAdmins</description>
     </item>
-
+    
     <item>
       <title>gitlab</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</guid>
       <description>Description Create a gitlab context.
 Git context are used to clone repositories during pipeline execution.
@@ -481,12 +481,12 @@ Options    Option Alias Type Default Description     --sharing-policy  string Ac
 Possible values:
 - AccountAdmins</description>
     </item>
-
+    
     <item>
       <title>hashicorp-vault</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/</guid>
       <description>Description Create a Hashicorp Vault secret-store context.
 Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.
@@ -496,12 +496,12 @@ Possible values:
 - AccountAdmins
 - AllUsersInAccount   --help    Print help information   --behind-firewall  boolean false Set to true to mark this context with behind firewall flag   --api-url -a string  URL of the vault server.</description>
     </item>
-
+    
     <item>
       <title>kubernetes</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</guid>
       <description>Description Create a secret-store Kubernetes context.
 Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.
@@ -511,12 +511,12 @@ Possible values:
 - AccountAdmins
 - AllUsersInAccount   --help    Print help information   --cluster    Name of the Kubernetes clsuter as it saved in Codefresh.</description>
     </item>
-
+    
     <item>
       <title>kubernetes-Runtime</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/</guid>
       <description>Description Create a secret-store Kubernetes-Runtime context.
 Create a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.
@@ -526,23 +526,23 @@ Possible values:
 - AccountAdmins
 - AllUsersInAccount   --help    Print help information   --runtimes --runtime array * Names of the runtime-environment to be used as secret store   --resource-type    Type of the resource in Kubernetes.</description>
     </item>
-
+    
     <item>
       <title>standard</title>
       <link>https://codefresh-io.github.io/cli/registries/registries/standard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/registries/registries/standard/</guid>
       <description>Description Integrate a standard container registry into Codefresh.
 Command codefresh create registry standard &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Registry name    Options    Option Alias Type Default Description     --help    Print help information   --username    Username to access the docker registry. required   --password    Password to access the docker registry.</description>
     </item>
-
+    
     <item>
       <title>stash</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</guid>
       <description>Description Create a stash context.
 Git context are used to clone repositories during pipeline execution.
@@ -554,24 +554,24 @@ Possible values:
 - AccountAdmins
 - AllUsersInAccount   --behind-firewall  boolean false Set to true to mark this context with behind firewall flag   --help    Print help information   --username -u   Username.</description>
     </item>
-
+    
     <item>
       <title>Secret</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/secret/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/spec/secret/</guid>
       <description> Secret context stores a set of keys and values encrypted.
 Type .spec.type should be secret.
 Data .spec.data should be an array of keys and values.
 Examples secret with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-secret-context&amp;#34; spec: type: &amp;#34;secret&amp;#34; data: dbPassword: &amp;#34;secret-db-password&amp;#34; adminPassword: &amp;#34;secret-admin-password&amp;#34;</description>
     </item>
-
+    
     <item>
       <title>YARN</title>
       <link>https://codefresh-io.github.io/cli/installation/yarn/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/installation/yarn/</guid>
       <description>the CLI requires node version 8.0.0 or higher Codefresh&amp;rsquo;s CLI is available for installation using YARN.
 Install: yarn global add codefresh
@@ -579,12 +579,12 @@ Install a specific version: yarn global add codefresh@{VERSION}
 Update to latest version: yarn global upgrade codefresh
 Update to a specific version: yarn global upgrade codefresh@{VERSION}</description>
     </item>
-
+    
     <item>
       <title>Create</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/create/</guid>
       <description> Description Create a resource from a file, directory or url
 Supported resources: &amp;lsquo;context&amp;rsquo;
@@ -595,120 +595,120 @@ Supported resources: &amp;lsquo;context&amp;rsquo;
 Command codefresh create
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    </description>
     </item>
-
+    
     <item>
       <title>Create</title>
       <link>https://codefresh-io.github.io/cli/workflow-data/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/workflow-data/create/</guid>
       <description>Description Create New Workflow Data Item.
 Command codefresh create workflow-data-item
 Aliases codefresh create wdi workflow-data-item
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource   --workflow --wf   Workflow ID that the Workflow-Data-Item belongs to. required    Examples Create new Workflow-Data-Iten that belongs to WORKFLOW_ID with content from &amp;ldquo;.</description>
     </item>
-
+    
     <item>
       <title>Create Agent</title>
       <link>https://codefresh-io.github.io/cli/agents/create-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/create-agent/</guid>
       <description>Description Create an agent.
 Create an agent used to behind firewall integration.
 Command codefresh create agent &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of agent    Options    Option Alias Type Default Description     --help    Print help information   --runtimes -r array  Agent runtimes    Examples Create an agent codefresh create agent NAME</description>
     </item>
-
+    
     <item>
       <title>Create Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/create-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/compositions/create-composition/</guid>
       <description>Description Create a composition.
 Command codefresh create composition &amp;lt;name&amp;gt;
 Aliases codefresh create com &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of composition    Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource   --compose-file -c   Path to docker-compose.</description>
     </item>
-
+    
     <item>
       <title>Create Context</title>
       <link>https://codefresh-io.github.io/cli/authentication/create-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/authentication/create-context/</guid>
       <description>Description Create or update an authentication context.
 Creating authentication contexts enables the ability to work against multiple accounts.
 Command codefresh auth create-context [name]
 Arguments    Option Alias Default Description     name  default Context name    Options    Option Alias Type Default Description     --cfconfig    Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help    Print help information   --url  string https://g.</description>
     </item>
-
+    
     <item>
       <title>Create Helm Repo</title>
       <link>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</guid>
       <description>Description Create a Codefresh managed helm repo.
 ATM it is only possible to create a helm repository against Codefresh managed helm registry.
 Command codefresh create helm-repo [name]
 Arguments    Option Alias Default Description     name   Name of repo. required    Options    Option Alias Type Default Description     --help    Print help information   --public -p boolean false Mark the helm repo as public    Examples Create a private helm repo managed by Codefresh.</description>
     </item>
-
+    
     <item>
       <title>Create Project</title>
       <link>https://codefresh-io.github.io/cli/projects/create-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/projects/create-project/</guid>
       <description>Description Create a project.
 Create a project specifying name unique for account.
 Command codefresh create project &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of project    Options    Option Alias Type Default Description     --help    Print help information   --tag -t array  Project tags   --variable -v array  Project variables   --encrypted -e array  Variable names to encrypt    Examples Create a project codefresh create project NAME</description>
     </item>
-
+    
     <item>
       <title>Create Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</guid>
       <description>Description Create new trigger-event.
 Command codefresh create trigger-event
 Aliases codefresh create te trigger-event
 Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type. required   --kind    trigger-event kind. required   --public  boolean false wether trigger-event is public (system-wide): can be linked to any pipeline in any account   --secret  string !</description>
     </item>
-
+    
     <item>
       <title>Create board</title>
       <link>https://codefresh-io.github.io/cli/boards/create-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/boards/create-board/</guid>
       <description>Description Create a board.
 You can create a board specifying name unique for account.
 Command codefresh create board &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of board    Options    Option Alias Type Default Description     --help    Print help information   --filter    Filter for clusters&amp;rsquo; names    Examples Creating a board codefresh create board NAME</description>
     </item>
-
+    
     <item>
       <title>Create section</title>
       <link>https://codefresh-io.github.io/cli/sections/create-section/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/sections/create-section/</guid>
       <description>Description Create a section.
 You can create a section specifying name unique for account.
 Command codefresh create section &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of section. required    Options    Option Alias Type Default Description     --help    Print help information   --board-id    Id of board where section is creating   --board-name    Name of board where section is creating   --cluster    Name of linked cluster   --color  string #CCAA00 Color of section   --index  string 1 Index of section    Examples Creating a section with board name codefresh create section NAME --board-name BOARD_NAME --cluster CLUSTER_NAME</description>
     </item>
-
+    
     <item>
       <title>Create team</title>
       <link>https://codefresh-io.github.io/cli/teams/create-team/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/teams/create-team/</guid>
       <description>Description Create a team.
 You can create a new team specifying only name of team or specify path to json file for include extended options
@@ -717,36 +717,36 @@ name - team name (specifying name in file will rewrite name specified as command
 Command codefresh create teams &amp;lt;name&amp;gt;
 Aliases codefresh create team &amp;lt;name&amp;gt;</description>
     </item>
-
+    
     <item>
       <title>Delete Pipeline Trigger</title>
       <link>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</guid>
       <description>Description Delete trigger: unlink pipeline from trigger-event.
 Command codefresh delete trigger [event-uri] [pipeline]
 Aliases codefresh delete t [event-uri] [pipeline]
 Arguments    Option Alias Default Description     event-uri   trigger-event URI (as defined by trigger type[/kind]). required   pipeline   pipeline ID. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete trigger by unlinking 5a43&amp;hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
     </item>
-
+    
     <item>
       <title>Get Repositories</title>
       <link>https://codefresh-io.github.io/cli/repository/get-repositories/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/repository/get-repositories/</guid>
       <description>Description You can either get codefresh repos (previously added) or any repo from your git context (using option &amp;ldquo;--available&amp;rdquo; and &amp;ldquo;--context&amp;rdquo;).
 Command codefresh get repository [names..]
 Aliases codefresh get repo [names..]
 Arguments    Option Alias Default Description     names   Names for filtering repos    Options    Option Alias Type Default Description     --help    Print help information   --available -a   Get all available git repos from provided or default git context   --limit -l number 25 Maximum displayed repos number   --context -c   Name of the git context to use, if not passed the default will be used    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Get tokens</title>
       <link>https://codefresh-io.github.io/cli/tokens/get-tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/tokens/get-tokens/</guid>
       <description>Description Get Codefresh tokens.
 Provide names/ids to filter results by them.
@@ -754,34 +754,34 @@ Command codefresh get tokens [names|ids..]
 Aliases codefresh get token [names|ids..]
 Arguments    Option Alias Default Description     names   Token names or ids    Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
-
+    
     <item>
       <title>Install or Upgrade Helm Chart</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</guid>
       <description>Description Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.
 Command codefresh install-chart
 Options    Option Alias Type Default Description     --help    Print help information   --cluster -c string  Install on cluster. required   --namespace --ns string default Install on namespace   --tiller-namespace --tn string kube-system Where tiller has been installed   --repository -r string kubeapps Helm repository (absolute url or name of context with type helm-repository).</description>
     </item>
-
+    
     <item>
       <title>Promote Helm Release</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</guid>
       <description>Description Promote a Helm release in another environment.
 Command codefresh helm-promotion
 Options    Option Alias Type Default Description     --help    Print help information   --board -b string  Board for promotion. required   --source -s string  Source column. required   --target -t string  Target column. required   --namespace -n string default Promote to namespace   --source-tiller-namespace --stn string kube-system Where tiller has been installed in source cluster   --target-tiller-namespace --ttn string kube-system Where tiller has been installed in target cluster   --source-release --sr   The name of source release.</description>
     </item>
-
+    
     <item>
       <title>S3</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</guid>
       <description>Description Create a helm-repository context from s3 bucket.
 
@@ -792,79 +792,79 @@ You can override them using flags aws-access-key-id aws-secret-access-key aws-de
 Command codefresh create context helm-repository s3 &amp;lt;name&amp;gt;
 Options    Option Alias Type Default Description     --help    Print help information   --aws-access-key-id    Amazon access key id [default: AWS_ACCESS_KEY_ID env]   --aws-secret-access-key    Amazon access secret key with permissions to the bucket [default: AWS_SECRET_ACCESS_KEY env]   --aws-default-region    Amazon default region [default: AWS_DEFAULT_REGION env]   --bucket    Name of the bucket.</description>
     </item>
-
+    
     <item>
       <title>Secret</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-context/</guid>
       <description>Description Create a secret context.
 Command codefresh create context secret &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Type Default Description     --help    Print help information   --variable -v array  Variables list    Examples Create a secret. codefresh create context secret my-secret -v key1=valu1 -v key2=value2</description>
     </item>
-
+    
     <item>
       <title>Set Helm config</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</guid>
       <description>Description Set Helm config.
 Command codefresh set-helm-config &amp;lt;cluster&amp;gt;
 Arguments    Option Alias Default Description     cluster   Cluster name on integrations page. required    Options    Option Alias Type Default Description     --help    Print help information   --version -v   Major part of helm version (helm2   --test-release-pipeline -t   Pipeline for testing release   --rollback-pipeline -r   Pipeline for rollback   --delete-release-pipeline -d   Pipeline for deleting release   --tiller-namespace    Tiller namespace for helm2   --release-namespaces    List of namespaces for using    Examples Helm2 config codefresh set-helm-config cluster -v 2 -t pip1 -r pip2 -d pip3 --tiller-namespace kube-system</description>
     </item>
-
+    
     <item>
       <title>Show Build Logs</title>
       <link>https://codefresh-io.github.io/cli/builds/show-build-logs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/show-build-logs/</guid>
       <description>Description Show logs of a build.
 Command codefresh logs &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --f  boolean false Continue showing build logs until it will finish   --no-timestamps  boolean false Don&amp;rsquo;t show timestamps    Examples Get logs of build ID codefresh logs ID</description>
     </item>
-
+    
     <item>
       <title>create</title>
       <link>https://codefresh-io.github.io/cli/annotations/create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/annotations/create/</guid>
       <description>Description Annotate a resource with labels.
 Command codefresh create annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; &amp;lt;labels...&amp;gt;
 Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels. required    Options    Option Alias Type Default Description     --help    Print help information   --display  string  annotation to display on build    Examples Annotate entity with a single label codefresh create annotation image 2dfacdaad466 coverage=75%</description>
     </item>
-
+    
     <item>
       <title>Docker Image</title>
       <link>https://codefresh-io.github.io/cli/installation/docker/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/installation/docker/</guid>
       <description>You can run the CLI using our official docker image which is published to Dockerhub
 Pull the latest version: docker pull codefresh/cli
 Pull a specific version: docker pull codefresh/cli:${VERSION}</description>
     </item>
-
+    
     <item>
       <title>Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/yaml/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/spec/yaml/</guid>
       <description> Yaml context stores an yaml file.
 Type .spec.type should be yaml.
 Data .spec.data should be an array of keys and values.
 Examples yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-yaml-context&amp;#34; spec: type: &amp;#34;yaml&amp;#34; data: serviceType: &amp;#34;LoadBalancer&amp;#34; image: &amp;#34;mongo&amp;#34;</description>
     </item>
-
+    
     <item>
       <title>Codefresh Completion</title>
       <link>https://codefresh-io.github.io/cli/completion/codefresh-completion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/completion/codefresh-completion/</guid>
       <description>Description Generate codefresh completion. See details on usage
 Prints completion script with specified or default path to executable and command alias.
@@ -875,12 +875,12 @@ Possible values:
 - bash
 - zsh    Options    Option Alias Type Default Description     --help    Print help information   --executable -e   Name or path to your codefresh executable (default same as alias)   --alias -a string codefresh Alias used for calling codefresh executable    Examples Print bash completion script codefresh completion</description>
     </item>
-
+    
     <item>
       <title>Delete</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/delete/</guid>
       <description> Description Delete a resource from a file, directory or url
 Supported resources: &amp;lsquo;Context&amp;rsquo;
@@ -888,130 +888,130 @@ Supported resources: &amp;lsquo;Context&amp;rsquo;
 Command codefresh delete
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    </description>
     </item>
-
+    
     <item>
       <title>Delete Agent</title>
       <link>https://codefresh-io.github.io/cli/agents/delete-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/delete-agent/</guid>
       <description>Description Delete an agent.
 Command codefresh delete agent &amp;lt;id|name&amp;gt;
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information    Examples Delete agent by name. codefresh delete agent NAME
 Delete agent by Id. codefresh delete agent ID</description>
     </item>
-
+    
     <item>
       <title>Delete Cluster</title>
       <link>https://codefresh-io.github.io/cli/clusters/delete-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/clusters/delete-cluster/</guid>
       <description>Description Delete a cluster.
 Command codefresh delete cluster &amp;lt;name&amp;gt;
 Aliases codefresh delete clusters &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Cluster name. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete cluster NAME codefresh delete cluster NAME</description>
     </item>
-
+    
     <item>
       <title>Delete Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/delete-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/compositions/delete-composition/</guid>
       <description>Description Delete a composition.
 Command codefresh delete composition &amp;lt;name&amp;gt;
 Aliases codefresh delete com &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Composition name    Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    Examples Delete a composition codefresh delete composition NAME</description>
     </item>
-
+    
     <item>
       <title>Delete Context</title>
       <link>https://codefresh-io.github.io/cli/contexts/delete-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/delete-context/</guid>
       <description>Description Delete a context.
 Command codefresh delete context [name]
 Aliases codefresh delete ctx [name]
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    Examples Delete context NAME codefresh delete context NAME</description>
     </item>
-
+    
     <item>
       <title>Delete Environment</title>
       <link>https://codefresh-io.github.io/cli/environments/delete-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/environments/delete-environment/</guid>
       <description>Description Delete an environment.
 Command codefresh delete environment &amp;lt;id&amp;gt;
 Aliases codefresh delete env &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Environment id    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete environment ID codefresh delete environment ID</description>
     </item>
-
+    
     <item>
       <title>Delete Helm Repo</title>
       <link>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</guid>
       <description>Description Delete a helm repo.
 Command codefresh delete helm-repo [name]
 Arguments    Option Alias Default Description     name   Helm repo name. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete a helm repo. codefresh delete helm-repo my-repo</description>
     </item>
-
+    
     <item>
       <title>Delete Pipeline</title>
       <link>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</guid>
       <description> Description Delete a pipeline.
 Command codefresh delete pipeline [name]
 Aliases codefresh delete pip [name]
 Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Delete Project</title>
       <link>https://codefresh-io.github.io/cli/projects/delete-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/projects/delete-project/</guid>
       <description>Description Delete a project.
 Command codefresh delete project &amp;lt;id|name&amp;gt;
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information    Examples Delete project by name. codefresh delete project NAME
 Delete project by Id. codefresh delete project ID</description>
     </item>
-
+    
     <item>
       <title>Delete Registry</title>
       <link>https://codefresh-io.github.io/cli/registries/delete-registry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/registries/delete-registry/</guid>
       <description> Description Delete registry from Codefresh.
 Command codefresh delete registry &amp;lt;ID&amp;gt;
 Arguments    Option Alias Default Description     ID   ID of a registry to delete    Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Delete Repository</title>
       <link>https://codefresh-io.github.io/cli/repository/delete-repository/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/repository/delete-repository/</guid>
       <description>Description Remove repository by name_id (&amp;ldquo;name_id&amp;rdquo; can be retrieved with &amp;ldquo;get&amp;rdquo; command, typically &amp;ldquo;repo_owner/repo_name&amp;rdquo;)
 Command codefresh delete repository [name_id]
 Aliases codefresh delete repo [name_id]
 Arguments    Option Alias Default Description     name_id   Repository &amp;ldquo;name_id&amp;rdquo; (can be retrieved with &amp;ldquo;get&amp;rdquo; command, typically &amp;ldquo;repo_owner/repo_name&amp;rdquo;). required    Options    Option Alias Type Default Description     --help    Print help information   --context -c   Name of the git context to use, if not passed the default will be used    Examples Delete codefresh repo with name_id &amp;ldquo;codefresh-io/some-repo&amp;rdquo; codefresh delete repo codefresh-io/some-repo</description>
     </item>
-
+    
     <item>
       <title>Delete Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</guid>
       <description> Description Delete a runtime-environment.
 Command codefresh delete runtime-environments name
@@ -1019,68 +1019,68 @@ Aliases codefresh delete re name
 codefresh delete runtime-environment name
 Arguments    Option Alias Default Description     name   Runtime environment name    Options    Option Alias Type Default Description     --help    Print help information   --force  boolean false Delete runtime environment in force mode    </description>
     </item>
-
+    
     <item>
       <title>Delete Step-type</title>
       <link>https://codefresh-io.github.io/cli/step-types/delete-step-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/step-types/delete-step-type/</guid>
       <description> Description Delete a step-type.
 Command codefresh delete step-type [name]
 Arguments    Option Alias Default Description     name   Step-type name    Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Delete Trigger Event</title>
       <link>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</guid>
       <description>Description Delete trigger-event.
 Command codefresh delete trigger-event [event-uri]
 Aliases codefresh delete te [event-uri]
 Arguments    Option Alias Default Description     event-uri   trigger-event URI    Options    Option Alias Type Default Description     --help    Print help information   --context    context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push</description>
     </item>
-
+    
     <item>
       <title>Delete board</title>
       <link>https://codefresh-io.github.io/cli/board/delete-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/board/delete-board/</guid>
       <description>Description Delete a board.
 Command codefresh delete board [id]
 Arguments    Option Alias Default Description     id   board id   name   board name    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete board by name. codefresh delete board --name NAME</description>
     </item>
-
+    
     <item>
       <title>Delete section</title>
       <link>https://codefresh-io.github.io/cli/section/delete-section/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/section/delete-section/</guid>
       <description>Description Delete a section.
 Command codefresh delete section [id]
 Arguments    Option Alias Default Description     id   section id    Options    Option Alias Type Default Description     --help    Print help information   --boardId    board Id   --boardName    board name   --name    section name    Examples Delete section by board name and section name.</description>
     </item>
-
+    
     <item>
       <title>Get Activated Context</title>
       <link>https://codefresh-io.github.io/cli/authentication/get-activated-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/authentication/get-activated-context/</guid>
       <description>Description Get the current activated authentication context.
 Command codefresh auth current-context
 Options    Option Alias Type Default Description     --cfconfig    Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help    Print help information    Examples Show active authentication context codefresh auth current-context</description>
     </item>
-
+    
     <item>
       <title>Remove user</title>
       <link>https://codefresh-io.github.io/cli/teams/remove-user/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/teams/remove-user/</guid>
       <description>Description Remove user from team.
 Pass user id and team id to remove user from team.
@@ -1089,81 +1089,81 @@ Aliases codefresh delete team teams
 codefresh delete tm teams
 Options    Option Alias Type Default Description     --help    Print help information   --team-id -t   Id team in which to remove a user. required   --user-id -u   Id of a user to remove him in team.</description>
     </item>
-
+    
     <item>
       <title>Restart Build</title>
       <link>https://codefresh-io.github.io/cli/builds/restart-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/restart-build/</guid>
       <description>Description Restart a build by its id.
 Command codefresh restart &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --detach -d   Run build and print workflow ID    Examples Restart build ID and attach the created new build codefresh restart ID</description>
     </item>
-
+    
     <item>
       <title>Secret Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-yaml-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-yaml-context/</guid>
       <description> Description Create a secret-yaml context.
 Command codefresh create context secret-yaml &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Type Default Description     --help    Print help information   --variable -v array  Variables list    </description>
     </item>
-
+    
     <item>
       <title>Test Helm Release</title>
       <link>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</guid>
       <description> Description Test a helm release.
 Command codefresh test-release &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Type Default Description     --help    Print help information   --cluster  string  Run on cluster. required   --tiller-namespace -n string kube-system namespace where is tiller running ( helm 2 only )   --namespace --ns string default namespace where is chart located ( helm 3 )   --timeout  number 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d   Run pipeline and print build ID   --cleanup  boolean false delete test pods upon completion (default false)    </description>
     </item>
-
+    
     <item>
       <title>delete</title>
       <link>https://codefresh-io.github.io/cli/annotations/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/annotations/delete/</guid>
       <description>Description Delete annotations.
 Command codefresh delete annotation &amp;lt;entity-type&amp;gt; &amp;lt;entity-id&amp;gt; [labels...]
 Arguments    Option Alias Default Description     entity-type   Type of resource for annotation. required   entity-id   Id of resource for annotation. required   labels   Labels to delete    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete specified annotations codefresh delete annotation image 2dfacdaad466 coverage tests_passed</description>
     </item>
-
+    
     <item>
       <title>Download</title>
       <link>https://codefresh-io.github.io/cli/installation/download/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/installation/download/</guid>
       <description>Navigate to Official Releases and download the binary that matches your operating system.
-We currently support the following OS:  Alpine-x64 Linux-x64 Macos-x64 Windows-x64
+We currently support the following OS:  Alpine-x64 Linux-x64 Macos-x64 Windows-x64 Alpine-arm64 
 After downloading the binary, untar or unzip it and your are good to go.
 You can also add the binary to your system PATH environment variable so you can use it easily.
 If your operating system is missing please feel free to open us an issue in our Github repository.</description>
     </item>
-
+    
     <item>
       <title>Secret Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/</guid>
       <description> Secret-Yaml context stores an yaml file encrypted.
 Type .spec.type should be secret-yaml.
 Data .spec.data should be an array of keys and values.
 Examples secret-yaml with two keys apiVersion: &amp;#34;v1&amp;#34; kind: &amp;#34;context&amp;#34; owner: &amp;#34;account&amp;#34; metadata: name: &amp;#34;my-secret-yaml-context&amp;#34; spec: type: &amp;#34;secret-yaml&amp;#34; data: serviceType: &amp;#34;LoadBalancer&amp;#34; image: &amp;#34;mongo&amp;#34; type: - &amp;#34;encrypted&amp;#34;</description>
     </item>
-
+    
     <item>
       <title>Add user</title>
       <link>https://codefresh-io.github.io/cli/teams/add-user/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/teams/add-user/</guid>
       <description>Description Assign user to a team.
 Use patch command and pass user id and team id to assign user to a team.
@@ -1172,12 +1172,12 @@ Aliases codefresh patch team teams
 codefresh patch tm teams
 Options    Option Alias Type Default Description     --help    Print help information   --team-id -t   Id team in which to add a user. required   --user-id -u   Id of a user to add him in team.</description>
     </item>
-
+    
     <item>
       <title>Delete tokens</title>
       <link>https://codefresh-io.github.io/cli/tokens/delete-tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/tokens/delete-tokens/</guid>
       <description>Description Revoke Codefresh token.
 Provide one or many token ids to delete. Ids can be retrieved with &amp;ldquo;get&amp;rdquo; command.
@@ -1185,57 +1185,57 @@ Command codefresh delete tokens [ids..]
 Aliases codefresh delete token [ids..]
 Arguments    Option Alias Default Description     ids   token names or ids. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete one token codefresh delete token [token_id]</description>
     </item>
-
+    
     <item>
       <title>Download</title>
       <link>https://codefresh-io.github.io/cli/components/download/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/components/download/</guid>
       <description> Description Download Codefresh CLI components.
 Command codefresh components download
 Options    Option Alias Type Default Description     --help    Print help information   --location    Override download folder location. Default: ~/.Codefresh   --components    Components. List of [stevedore, venona, argocd-agent, codefresh]    </description>
     </item>
-
+    
     <item>
       <title>Execute test pipeline</title>
       <link>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</guid>
       <description> Description Executes test pipeline.
 Command codefresh runner execute-test-pipeline
 Options    Option Alias Type Default Description     --help    Print help information   --runtime-name    Runtime name to execute pipeline on    </description>
     </item>
-
+    
     <item>
       <title>Info</title>
       <link>https://codefresh-io.github.io/cli/runner/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner/info/</guid>
       <description> Description Get info on your runner installations.
 Command codefresh runner info
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Install</title>
       <link>https://codefresh-io.github.io/cli/install-resources/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/install-resources/install/</guid>
       <description> Description Install a resource
 Install operation will install codefresh components on kubernetes cluster.
 Command codefresh install
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Patch</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/patch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/patch/</guid>
       <description> Description Patch a resource from a file, directory or url
 Patch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.
@@ -1243,34 +1243,34 @@ Supported resources: &amp;lsquo;Context&amp;rsquo;.
 Command codefresh patch
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    </description>
     </item>
-
+    
     <item>
       <title>Patch Agent</title>
       <link>https://codefresh-io.github.io/cli/agents/patch-agent/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/patch-agent/</guid>
       <description>Description Patch an agent.
 Command codefresh patch agent [id|name]
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information   --newName -n   New name   --runtimes --re   Agent runtimes    Examples Replace agent name.</description>
     </item>
-
+    
     <item>
       <title>Patch Project</title>
       <link>https://codefresh-io.github.io/cli/projects/patch-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/projects/patch-project/</guid>
       <description>Description Patch a project.
 Command codefresh patch project [id|name]
 Arguments    Option Alias Default Description     id name      Options    Option Alias Type Default Description     --help    Print help information   --newName -n   New name   --tag -t   Project tags   --variable -v   Project variables   --encrypted -e   Variable names to encrypt    Examples Replace project name and tags.</description>
     </item>
-
+    
     <item>
       <title>Patch token</title>
       <link>https://codefresh-io.github.io/cli/tokens/patch-token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/tokens/patch-token/</guid>
       <description>Description Patch Codefresh token.
 Update token name or scopes using token id. Id can be retrieved using &amp;ldquo;get&amp;rdquo; command.
@@ -1278,35 +1278,35 @@ Command codefresh patch tokens &amp;lt;id&amp;gt;
 Aliases codefresh patch token &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   token id. required    Options    Option Alias Type Default Description     --help    Print help information   --name    token name or ids   --scope -s   token names or ids    Examples Update token name codefresh patch token [token_id] --name new-name</description>
     </item>
-
+    
     <item>
       <title>Runner</title>
       <link>https://codefresh-io.github.io/cli/runner-resources/runner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner-resources/runner/</guid>
       <description> Description Manage and install runner resources
 Manage codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
 Command codefresh runner
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Set Active Context</title>
       <link>https://codefresh-io.github.io/cli/authentication/set-active-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/authentication/set-active-context/</guid>
       <description>Description Set the current active authentication context.
 Command codefresh auth use-context &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   a context-name that exists in cfconfig file    Options    Option Alias Type Default Description     --cfconfig    Custom path for authentication contexts config file (default: &amp;lsquo;/root/.cfconfig&amp;rsquo;)   --help    Print help information    Examples Set active authentication context to NAME codefresh auth use-context NAME</description>
     </item>
-
+    
     <item>
       <title>Terminate Build</title>
       <link>https://codefresh-io.github.io/cli/builds/terminate-build/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/terminate-build/</guid>
       <description>Description Terminate a build by its id.
 This command will return once the request has been received from the server.
@@ -1314,68 +1314,68 @@ The termination process can take time according to the pipeline definition.
 Command codefresh terminate &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information    Examples Terminate build ID codefresh terminate ID</description>
     </item>
-
+    
     <item>
       <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</guid>
       <description> Description Uninstall a resource
 Uninstall operation will uninstall codefresh components on kubernetes cluster.
 Command codefresh uninstall
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Update</title>
       <link>https://codefresh-io.github.io/cli/components/update/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/components/update/</guid>
       <description> Description Update Codefresh CLI components.
 Command codefresh components update
 Options    Option Alias Type Default Description     --help    Print help information   --location    Override download folder location   --bypass-download  boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder    </description>
     </item>
-
+    
     <item>
       <title>Update Board</title>
       <link>https://codefresh-io.github.io/cli/board/update-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/board/update-board/</guid>
       <description>Description Update a board.
 Command codefresh patch board [id]
 Arguments    Option Alias Default Description     id   Id of existing board    Options    Option Alias Type Default Description     --help    Print help information   --name    Name of existing board   --newName    New name   --filter    New filter    Examples Update name and filter of board.</description>
     </item>
-
+    
     <item>
       <title>Update Helm Repo</title>
       <link>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</guid>
       <description>Description Update a helm repo.
 Command codefresh patch helm-repo [name]
 Arguments    Option Alias Default Description     name   Old repo name. required    Options    Option Alias Type Default Description     --help    Print help information   --public -p boolean false Mark the helm repo as public   --newName -n string  New repo name    Examples Update helm repo to be public codefresh patch helm-repo my-repo -p</description>
     </item>
-
+    
     <item>
       <title>Update Section</title>
       <link>https://codefresh-io.github.io/cli/section/update-section/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/section/update-section/</guid>
       <description>Description Update a section.
 Command codefresh patch section [id]
 Arguments    Option Alias Default Description     id   Id of existing section    Options    Option Alias Type Default Description     --help    Print help information   --boardId    Id of existing board   --boardName    Name of existing board   --name    Name of existing section   --newName    New name   --cluster    Name of linked cluster   --color    New color   --index    New index    Examples Update name and filter of section.</description>
     </item>
-
+    
     <item>
       <title>Upgrade</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</guid>
       <description> Description Upgrade a resource from a file, directory or url
 Upgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.
@@ -1383,46 +1383,46 @@ Supported resources: &amp;lsquo;Context&amp;rsquo;.
 Command codefresh upgrade
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    </description>
     </item>
-
+    
     <item>
       <title>Yaml</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</guid>
       <description> Description Create a yaml context.
 Command codefresh create context yaml &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Name of context    Options    Option Alias Type Default Description     --help    Print help information   --variable -v array  Variables list    </description>
     </item>
-
+    
     <item>
       <title>components</title>
       <link>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</guid>
       <description> Description Codefresh CLI components
 Command codefresh components
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Helm Repository</title>
       <link>https://codefresh-io.github.io/cli/contexts/spec/helm-repository/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/spec/helm-repository/</guid>
       <description> Helm-Repository context stores an integration with a helm repository.
 Type .spec.type should be helm-repository.
 Data .spec.data should be an array of keys and values.
 Examples </description>
     </item>
-
+    
     <item>
       <title>Annotate Image</title>
       <link>https://codefresh-io.github.io/cli/images/annotate-image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/images/annotate-image/</guid>
       <description>Description Annotate an image.
 Annotating an image gives the ability to add extra context on your already existing images.
@@ -1430,69 +1430,69 @@ Command codefresh annotate image &amp;lt;id&amp;gt;
 Aliases codefresh annotate img &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Docker image full name or id    Options    Option Alias Type Default Description     --help    Print help information   --label -l array  annotations to add to the image    Examples Annotate an image with a single label codefresh annotate image 2dfacdaad466 -l coverage=75%</description>
     </item>
-
+    
     <item>
       <title>Run Pipeline</title>
       <link>https://codefresh-io.github.io/cli/pipelines/run-pipeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/pipelines/run-pipeline/</guid>
       <description>Description Run a pipeline by id or name and attach the created workflow logs.
 Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).
 Command codefresh run [name]
 Arguments    Option Alias Default Description     name   Pipeline name    Options    Option Alias Type Default Description     --help    Print help information   --trigger -t   Trigger id or name   --branch -b   Branch   --memory    Mention machine memory sizes during pipeline run   --cpu    Mention machine cpu sizes during pipeline run   --disk    Mention machine disk space sizes during pipeline run   --pack-name    Resources size (small, medium or large)</description>
     </item>
-
+    
     <item>
       <title>Wait For Build Condition</title>
       <link>https://codefresh-io.github.io/cli/builds/wait-for-build-condition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/wait-for-build-condition/</guid>
       <description>Description Wait until a condition will be met on a build.
 Wait command is useful in case there is a need to wait for a desired status on a specific set of builds.
 Command codefresh wait &amp;lt;id..&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --status -s string success Build status.</description>
     </item>
-
+    
     <item>
       <title>HOMEBREW</title>
       <link>https://codefresh-io.github.io/cli/installation/homebrew/</link>
       <pubDate>Tue, 30 Jan 2018 12:00:00 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/installation/homebrew/</guid>
       <description> Install Codefresh CLI on macOS with Homebrew.
 Install # tap Codefresh homebrew repo brew tap codefresh-io/cli # install Codefresh CLI brew install codefresh Update to the latest version brew upgrade codefresh Uninstall brew uninstall codefresh</description>
     </item>
-
+    
     <item>
       <title>Tag Image</title>
       <link>https://codefresh-io.github.io/cli/images/tag-image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/images/tag-image/</guid>
       <description>Description Add an image tag.
 Tagging an image will result in the creation of a new Docker Image tag. If registry not specified - default is used.
 Command codefresh tag &amp;lt;id&amp;gt; [tags..]
 Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Type Default Description     --help    Print help information   --registry -r   Registry integration name    Examples Tag image &amp;lsquo;2dfacdaad466&amp;rsquo; with a new tag: &amp;lsquo;1.</description>
     </item>
-
+    
     <item>
       <title>Download</title>
       <link>https://codefresh-io.github.io/cli/audit/download/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/audit/download/</guid>
       <description>Description Download audit.
 Command codefresh download audit
 Options    Option Alias Type Default Description     --help    Print help information   --userName    filter by user name   --userId    filter by codefresh user id   --entity    filter by api entity, example: pipeline, account   --entityId    filter by api entity id, this value different for each action, example: email, user id   --action    filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account   --rs_status    filter by response status code   --showTriggers    returns only actions related to receiving triggers   --search    filter by searching substring in request body or query or params or headers or url   --from    filter by date, value is number of milliseconds since 1970   --to    filter by date, value is number of milliseconds since 1970   --sortField    name of sorting field, values: id, createdAt, updatedAt</description>
     </item>
-
+    
     <item>
       <title>Image Pull Secret</title>
       <link>https://codefresh-io.github.io/cli/more/image-pull-secret/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/more/image-pull-secret/</guid>
       <description>Description Generate image pull secret on Kubernetes cluster from integrated Docker registry.
 
@@ -1501,24 +1501,24 @@ After this secret been created you can use them in pod template that lives in th
 You can generate this secret from any integrated Docker registry on your account.
 More information about image pull secret can be found here: https://kubernetes.</description>
     </item>
-
+    
     <item>
       <title>Untag Image</title>
       <link>https://codefresh-io.github.io/cli/images/untag-image/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/images/untag-image/</guid>
       <description>Description Untag an image.
 Untagging an image will result in the removal of tag. If registry not specified - default is used.
 Command codefresh untag &amp;lt;id&amp;gt; [tags..]
 Arguments    Option Alias Default Description     id   Docker image id   names   Tag names    Options    Option Alias Type Default Description     --help    Print help information   --registry -r   Registry integration name    Examples Remove tag &amp;lsquo;1.</description>
     </item>
-
+    
     <item>
       <title>Replace</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/replace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/replace/</guid>
       <description> Description Replace a resource from a file, directory or url
 Supported resources: &amp;lsquo;Context&amp;rsquo;
@@ -1527,24 +1527,24 @@ Supported resources: &amp;lsquo;Context&amp;rsquo;
 Command codefresh replace
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource   --skip-trigger-validation  boolean false Set to true to skip validation (for pipeline replace)    </description>
     </item>
-
+    
     <item>
       <title>Replace Composition</title>
       <link>https://codefresh-io.github.io/cli/compositions/replace-composition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/compositions/replace-composition/</guid>
       <description>Description Replace a composition resource.
 Command codefresh replace composition [name]
 Aliases codefresh replace com [name]
 Arguments    Option Alias Default Description     name   Name of composition    Options    Option Alias Type Default Description     --skip-trigger-validation  boolean false Set to true to skip validation (for pipeline replace)   --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource   --compose-file -c   Path to docker-compose.</description>
     </item>
-
+    
     <item>
       <title>Apply Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/apply-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/apply-runtime-environments/</guid>
       <description>Description apply changes to runtime-environments resource.
 Use apply to patch an existing context.
@@ -1553,12 +1553,12 @@ Aliases codefresh patch re [name]
 codefresh patch runtime-environment [name]
 Arguments    Option Alias Default Description     name   Runtime environments name    Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource   --default    Set the chosen runtime environment as default   --extends  array  Set the runtime environments you want to extends from   --namespace --ns   Set the desire namespace   --cluster -c   Set the desire cluster   --description -d   Description of the new runtime environment    Examples Apply changes to a runtime-environment codefresh patch runtime-environments -f .</description>
     </item>
-
+    
     <item>
       <title>Update Context</title>
       <link>https://codefresh-io.github.io/cli/contexts/update-context/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/contexts/update-context/</guid>
       <description>Description Apply changes to a context.
 Use apply to patch an existing context.
@@ -1566,59 +1566,59 @@ Command codefresh patch context
 Aliases codefresh patch ctx context
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    Examples Apply changes to a context codefresh patch context -f .</description>
     </item>
-
+    
     <item>
       <title>Analyze</title>
       <link>https://codefresh-io.github.io/cli/analyzer/analyze/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/analyzer/analyze/</guid>
       <description>Description Analyzes your git repository and creates a proposed Codefresh pipeline that clones the source code and builds/packages it.
 Command codefresh analyze &amp;lt;repoOwner&amp;gt; &amp;lt;repoName&amp;gt; [context]
 Arguments    Option Alias Default Description     repoOwner   Repository owner. required   repoName   Repository name. required   context   Your git context that you can get from integrations -&amp;gt; git , if empty - using personal context    Options    Option Alias Type Default Description     --help    Print help information    Examples Analyze repo codefresh analyze elasticio petstore-component-nodejs github</description>
     </item>
-
+    
     <item>
       <title>Approve</title>
       <link>https://codefresh-io.github.io/cli/builds/approve/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/approve/</guid>
       <description> Description Approve a pending-approval workflow.
 approve &amp;lt;$BUILD_ID&amp;gt;.
 Command codefresh approve &amp;lt;buildId&amp;gt;
 Arguments    Option Alias Default Description     buildId   Build&amp;rsquo;s id. required    Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Attach Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</guid>
       <description>Description Attach a runtime to agent.
 attach runtime.
 Command codefresh attach runtime
 Options    Option Alias Type Default Description     --help    Print help information   --runtime-name    Runtime&amp;rsquo;s name   --agent-name    Agent&amp;rsquo;s name   --agent-id    Agent&amp;rsquo;s ID   --runtime-kube-context-name    Runtime kubernetes context   --runtime-kube-namespace    Runtime&amp;rsquo;s namespace   --runtime-kube-config-path    Path to kubeconfig file for runtime (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Create Cluster</title>
       <link>https://codefresh-io.github.io/cli/clusters/create-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/clusters/create-cluster/</guid>
       <description>Description Create a cluster.
 Command codefresh create clusters [name]
 Aliases codefresh create cluster [name]
 Options    Option Alias Type Default Description     --help    Print help information   --kube-context --kc   kubectl context name. required   --namespace --ns string default Kubernetes namespace to use while looking for service account. required   --serviceaccount --sa string default Kubernetes serviceaccount credentials to be added to Codefresh.</description>
     </item>
-
+    
     <item>
       <title>Create Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</guid>
       <description> Description Create a runtime environment.
 Command codefresh create runtime-environments [cluster]
@@ -1626,47 +1626,47 @@ Aliases codefresh create re [cluster]
 codefresh create runtime-environment [cluster]
 Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Delete</title>
       <link>https://codefresh-io.github.io/cli/runner/delete/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner/delete/</guid>
       <description>Description Deletes codefresh runner solution&amp;rsquo;s components on kubernetes cluster.
 Command codefresh runner delete
 Options    Option Alias Type Default Description     --help    Print help information   --name    Agent&amp;rsquo;s name to be deleted   --url    Codefresh system custom url   --force -f   Run the delete operation without asking to confirm (use with caution!</description>
     </item>
-
+    
     <item>
       <title>Deny</title>
       <link>https://codefresh-io.github.io/cli/builds/deny/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/builds/deny/</guid>
       <description> Description Deny a pending-approval workflow.
 deny &amp;lt;$BUILD_ID&amp;gt;.
 Command codefresh deny &amp;lt;buildId&amp;gt;
 Arguments    Option Alias Default Description     buildId   Build&amp;rsquo;s id. required    Options    Option Alias Type Default Description     --help    Print help information    </description>
     </item>
-
+    
     <item>
       <title>Diff</title>
       <link>https://codefresh-io.github.io/cli/operate-on-resources/diff/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/operate-on-resources/diff/</guid>
       <description> Description Show diff between two resources
 Supported resources: runtime-environments.
 Command codefresh diff
 Options    Option Alias Type Default Description     --help    Print help information   --filename -f   Filename or directory of spec files use to create the resource    </description>
     </item>
-
+    
     <item>
       <title>Diff Runtime-Environments</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/diff-runtime-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/diff-runtime-environments/</guid>
       <description> Description Show diff between two runtime environments configuration.
 Command codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]
@@ -1674,56 +1674,56 @@ Aliases codefresh diff re [first-re-name] [first-re-version] [second-re-name] [s
 codefresh diff runtime-environment [first-re-name] [first-re-version] [second-re-name] [second-re-version]
 Options    Option Alias Type Default Description     --help    Print help information   --first-name    First runtime environment name   --first-version    First runtime environment version   --second-name    Second runtime environment name   --second-version    Second runtime environment version    </description>
     </item>
-
+    
     <item>
       <title>Ensures one or more offline-logs collections has indexes</title>
       <link>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</guid>
       <description>Description Checks whether a collection has indexes and gives the user an option to add them. Adding an index may improve performance of some of the read operations.
 Command codefresh offline-logs ensure-index
 Options    Option Alias Type Default Description     --uri  string  Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.   --db  string  Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.</description>
     </item>
-
+    
     <item>
       <title>Init</title>
       <link>https://codefresh-io.github.io/cli/runner/init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner/init/</guid>
       <description>Description Install Codefresh Runner solution&amp;rsquo;s components on Kubernetes cluster.
 Command codefresh runner init
 Options    Option Alias Type Default Description     --help    Print help information   --name    Agent&amp;rsquo;s name to be created if token is not provided   --token    Registration&amp;rsquo;s token   --url    Codefresh system custom url   --generate-helm-values-file  string  Path to the new generated helm values file   --kube-context-name    Name of the Kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector    The Kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by runner build resources (default is no node selector) (string)   --build-node-selector    The Kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by the Codefresh build resources (default is no node selector)   --yes -y boolean false Use installation defaults (don&amp;rsquo;t ask any questions)   --skip-cluster-test  boolean false Do not test given kubeconfig context to have all the required permission   --skip-cluster-integration  boolean false Do not create a cluster integration in Codefresh   --set-default-runtime  boolean false Set this as the default runtime environment for your Codefresh account   --exec-demo-pipeline  boolean false Run a demo pipeline after the installation completes   --install-monitor  boolean true Install a monitoring component that will help provide valueable data about your cluster to Codefresh   --kube-namespace    Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]   --tolerations    The Kubernetes tolerations as path to a JSON file prefixed with @ to be used by runner resources (default is no tolerations) (string)   --storage-class-name    Set a name of your custom storage class   --docker-registry  string quay.</description>
     </item>
-
+    
     <item>
       <title>Install</title>
       <link>https://codefresh-io.github.io/cli/agents/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/install/</guid>
       <description>Description Install and create an agent on kubernetes cluster.
 Command codefresh install agent
 Options    Option Alias Type Default Description     --help    Print help information   --name    Agent&amp;rsquo;s name to be created if token is not provided   --token    Agent&amp;rsquo;s token   --kube-context-name    Name of the kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector    The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by runner build resources (default is no node selector) (string)   --dry-run    Set to true to simulate installation   --in-cluster    Set flag if runner is been installed from inside a cluster   --kube-namespace    Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]   --tolerations    The kubernetes tolerations as path to a JSON file to be used by runner resources (default is no tolerations) (string)   --kube-config-path    Path to kubeconfig file (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Install</title>
       <link>https://codefresh-io.github.io/cli/app-proxy/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/app-proxy/install/</guid>
       <description>Description Installs the App-Proxy component on your Kubernetes cluster.
 Command codefresh install app-proxy
 Options    Option Alias Type Default Description     --help    Print help information   --kube-config-path  string /root/.kube/config Path to kubeconfig file [$KUBECONFIG]   --kube-context-name    Name of the kubernetes context on which the app-proxy should be installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace  string  Name of the namespace on which app-proxy should be installed (default: codefresh) [$CF_ARG_KUBE_NAMESPACE]   --runtime-environment  string  The Codefresh runtime-environment that this app-proxy will be associated with   --docker-registry  string docker.</description>
     </item>
-
+    
     <item>
       <title>Install</title>
       <link>https://codefresh-io.github.io/cli/gitops/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/gitops/install/</guid>
       <description>Description Install gitops.
 Command codefresh install gitops &amp;lt;provider&amp;gt;
@@ -1732,79 +1732,79 @@ Possible values:
 - codefresh
 - argocd-agent    Options    Option Alias Type Default Description     --help    Print help information   --git-integration    Name of git integration in Codefresh   --git-repo-url    Url to manifest repo   --codefresh-integration    Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to avoid hitting the Github rate limits )   --argo-host    Host of argocd installation   --argo-token    Token of argocd installation.</description>
     </item>
-
+    
     <item>
       <title>Install</title>
       <link>https://codefresh-io.github.io/cli/monitor/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/monitor/install/</guid>
       <description>Description Install and create an cluster resources monitor on kubernetes cluster.
 Command codefresh install monitor
 Options    Option Alias Type Default Description     --help    Print help information   --cluster-id    Cluster id - freestyle name   --token    Codefresh user token   --kube-config-path  string  Path to kubeconfig file (default is $HOME/.kube/config)   --kube-context-name    Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME]   --url    Codefresh url, by default https://g.</description>
     </item>
-
+    
     <item>
       <title>Install Runtime-Environment</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</guid>
       <description>Description Install and create a runtime on kubernetes cluster.
 Command codefresh install runtime
-Options    Option Alias Type Default Description     --help    Print help information   --token    Agent&amp;rsquo;s token   --agent-name    Agent&amp;rsquo;s name   --storage-class-name    Set a name of your custom storage class, note: this will not install volume provisioning components   --runtime-kube-context-name    Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-node-selector    The kubernetes node selector &amp;ldquo;key=value&amp;rdquo; to be used by runner build resources (default is no node selector) (string)   --docker-registry  string  The prefix for the container registry that will be used for pulling the required components images.</description>
+Options    Option Alias Type Default Description     --help    Print help information   --runtime-name    The name of the runtime to install   --token    Agent&amp;rsquo;s token   --agent-name    Agent&amp;rsquo;s name   --storage-class-name    Set a name of your custom storage class, note: this will not install volume provisioning components   --docker-registry  string  The prefix for the container registry that will be used for pulling the required components images.</description>
     </item>
-
+    
     <item>
       <title>Logs sub category</title>
       <link>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</guid>
       <description> Description Manages offline logs.
 Command codefresh offline-logs
 Options    Option Alias Type Default Description     --help    Print help information   --uri  string  Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.   --db  string  Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.    </description>
     </item>
-
+    
     <item>
       <title>Offload To Collection</title>
       <link>https://codefresh-io.github.io/cli/logs/offload-to-collection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/logs/offload-to-collection/</guid>
       <description>Description Archiving logs from one or more source collections to target collections.
 Command codefresh offline-logs offload-to-collection
 Options    Option Alias Type Default Description     --uri  string  Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.   --db  string  Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.   --help    Print help information   --targetDB --tdb string  This option is available only for mongodb version 4.</description>
     </item>
-
+    
     <item>
       <title>Offload To File</title>
       <link>https://codefresh-io.github.io/cli/logs/offload-to-file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/logs/offload-to-file/</guid>
       <description>Description Archiving logs from one or more source collections to files by chunks of days.
 Command codefresh offline-logs offload-to-file
 Options    Option Alias Type Default Description     --uri  string  Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.   --db  string  Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.   --help    Print help information   --chunkDuration --chdur number 1 Chunk size in days, each chunk will be archived into a different file.</description>
     </item>
-
+    
     <item>
       <title>Show Config</title>
       <link>https://codefresh-io.github.io/cli/cli-config/show-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/cli-config/show-config/</guid>
       <description>Description Codefresh CLI configuration. Uses profiles
 CLI configuration is used for user-specific properties, for example pretty-print.
 Command codefresh cli-config
 Options    Option Alias Type Default Description     --help    Print help information   --output -o   Output format    Examples Print configuration for current profile codefresh cli-config</description>
     </item>
-
+    
     <item>
       <title>Synchronize Teams</title>
       <link>https://codefresh-io.github.io/cli/teams/synchronize-teams/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/teams/synchronize-teams/</guid>
       <description>Description Synchronize team with group.
 Command codefresh synchronize teams [client-name]
@@ -1812,34 +1812,34 @@ Aliases codefresh synchronize team [client-name]
 codefresh synchronize tm [client-name]
 Arguments    Option Alias Default Description     client-name n  Client name. required    Options    Option Alias Type Default Description     --help    Print help information   --client-type -t   Client type like github, okta, azure.</description>
     </item>
-
+    
     <item>
       <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/agents/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/agents/uninstall/</guid>
       <description>Description Uninstall an agent on kubernetes cluster.
 Command codefresh uninstall agent
 Options    Option Alias Type Default Description     --help    Print help information   --name    Agent&amp;rsquo;s name to be uninstalled   --kube-context-name    Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace    Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path    Path to kubeconfig file (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/app-proxy/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/app-proxy/uninstall/</guid>
       <description>Description Deletes the App-Proxy component from your Kubernetes cluster.
 Command codefresh uninstall app-proxy
 Options    Option Alias Type Default Description     --help    Print help information   --kube-context-name    Name of the kubernetes context on which the app-proxy is installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace    Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed   --kube-config-path  string /root/.</description>
     </item>
-
+    
     <item>
       <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/gitops/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/gitops/uninstall/</guid>
       <description>Description Uninstall gitops agent.
 Command codefresh uninstall gitops &amp;lt;provider&amp;gt;
@@ -1848,45 +1848,45 @@ Possible values:
 - codefresh
 - argocd-agent    Options    Option Alias Type Default Description     --help    Print help information   --kube-config-path    Path to kubeconfig file (default is $HOME/.kube/config)   --kube-context-name    Name of Kubernetes context   --kube-namespace    Namespace in Kubernetes cluster   --install-manifest  string https://raw.</description>
     </item>
-
+    
     <item>
       <title>Uninstall</title>
       <link>https://codefresh-io.github.io/cli/monitor/uninstall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/monitor/uninstall/</guid>
       <description>Description Uninstall an monitor on kubernetes cluster.
 Command codefresh uninstall monitor
 Options    Option Alias Type Default Description     --help    Print help information   --kube-context-name    Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace    Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --kube-config-path    Path to kubeconfig file (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Uninstall Runtime-Environment</title>
       <link>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</guid>
       <description>Description Uninstall a runtime on kubernetes cluster.
 Command codefresh uninstall runtime
 Options    Option Alias Type Default Description     --help    Print help information   --agent-name    Agent&amp;rsquo;s name to be uninstalled   --name    Runtime&amp;rsquo;s name to be uninstalled   --agent-id    Agent&amp;rsquo;s ID   --runtime-kube-context-name    Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME]   --runtime-kube-namespace    Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE]   --runtime-kube-config-path    Path to kubeconfig file (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Upgrade</title>
       <link>https://codefresh-io.github.io/cli/app-proxy/upgrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/app-proxy/upgrade/</guid>
       <description>Description Upgrades an existing App-Proxy.
 Command codefresh upgrade app-proxy
 Options    Option Alias Type Default Description     --help    Print help information   --kube-context-name    Name of the kubernetes context on which the app-proxy is installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME]   --kube-namespace    Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed   --kube-config-path  string /root/.</description>
     </item>
-
+    
     <item>
       <title>Upgrade</title>
       <link>https://codefresh-io.github.io/cli/gitops/upgrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/gitops/upgrade/</guid>
       <description>Description Upgrade gitops agent.
 Command codefresh upgrade gitops &amp;lt;provider&amp;gt;
@@ -1895,105 +1895,105 @@ Possible values:
 - codefresh
 - argocd-agent    Options    Option Alias Type Default Description     --help    Print help information   --kube-config-path    Path to kubeconfig file (default is $HOME/.kube/config)   --kube-namespace    Name of the namespace on which Argo agent should be updated   --kube-context-name    Name of the kubernetes context where Argo agent should be updated (default is current-context)   --in-cluster  boolean false Use this option if gitops provider is been updated from inside a cluster    Examples Update gitops agent codefresh upgrade gitops argocd-agent</description>
     </item>
-
+    
     <item>
       <title>Upgrade</title>
       <link>https://codefresh-io.github.io/cli/runner/upgrade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/runner/upgrade/</guid>
       <description>Description Upgrades codefresh runner solution&amp;rsquo;s components.
 Command codefresh runner upgrade
 Options    Option Alias Type Default Description     --help    Print help information   --agent-name    The name of the agent to be upgraded or created   --runtime-name    The name of the runtime to be upgraded   --url  string https://g.codefresh.io Codefresh system custom url   --kube-context-name    Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed   --kube-namespace    Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed   --kube-config-path    Path to kubeconfig file (default is $HOME/.</description>
     </item>
-
+    
     <item>
       <title>Validate pipeline yaml</title>
       <link>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</guid>
       <description> Description Validate codefresh pipeline yaml config files
 Validate one or many pipeline yaml files or attach validator to one and validate on changes.
 Command codefresh validate [filenames..]
 Arguments    Option Alias Default Description     filenames   Paths to yaml files. required    Options    Option Alias Type Default Description     --help    Print help information   --attach -a   Attach validator to the file and validate on change    </description>
     </item>
-
+    
     <item>
       <title>Get Config Properties</title>
       <link>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</guid>
       <description>Description For current profile get all properties containing provided &amp;ldquo;name&amp;rdquo;
 Used when you may need to know some exact properties values.
 Command codefresh cli-config get [name]
 Arguments    Option Alias Default Description     name   Property name    Options    Option Alias Type Default Description     --output -o   Output format   --help    Print help information    Examples Print available property names codefresh cli-config get</description>
     </item>
-
+    
     <item>
       <title>Set Config Property</title>
       <link>https://codefresh-io.github.io/cli/cli-config/set-config-property/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/cli-config/set-config-property/</guid>
       <description>Description For current profile set an available property
 Command codefresh cli-config set [name] [value]
 Arguments    Option Alias Default Description     name   Property name   value   Property value    Options    Option Alias Type Default Description     --output -o   Output format   --help    Print help information    Examples Print available property names codefresh cli-config set</description>
     </item>
-
+    
     <item>
       <title>Profiles</title>
       <link>https://codefresh-io.github.io/cli/cli-config/profiles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/cli-config/profiles/</guid>
       <description>Description Change cli-config profile
 Using profiles gives an ability to switch fast between the different configuration sets.
 Command codefresh cli-config profile [name]
 Arguments    Option Alias Default Description     name   Profile name    Options    Option Alias Type Default Description     --output -o   Output format   --help    Print help information    Examples Use or create profile with name &amp;ldquo;myProfile&amp;rdquo; codefresh cli-config profile myProfile</description>
     </item>
-
+    
     <item>
       <title>Describe Config Properties</title>
       <link>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</guid>
       <description>Description Show help for properties. Used when you may need to know some properties types, defaults, description etc.
 Used when you may need to know some properties types, defaults, description etc.
 Command codefresh cli-config help [name]
 Arguments    Option Alias Default Description     name   Property name    Options    Option Alias Type Default Description     --output -o   Output format   --help    Print help information    Examples Print help for all properties codefresh cli-config help</description>
     </item>
-
+    
     <item>
       <title>header</title>
       <link>https://codefresh-io.github.io/cli/_header/</link>
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/_header/</guid>
       <description>Codefresh CLI</description>
     </item>
-
+    
     <item>
       <title>External Resources</title>
       <link>https://codefresh-io.github.io/cli/external-resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/external-resources/</guid>
       <description> https://codefresh.io/blog/introducing-codefresh-cli/ by Dan Garfield </description>
     </item>
-
+    
     <item>
       <title>Spec</title>
       <link>https://codefresh-io.github.io/cli/pipelines/spec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-
+      
       <guid>https://codefresh-io.github.io/cli/pipelines/spec/</guid>
       <description>A Pipeline needs .version, .kind, and .metadata fields.
 A Pipeline also needs a .spec section.
 Examples Basic Pipeline with implicit clone step (will checkout connected repo automatically) version: &amp;#39;1.0&amp;#39; kind: pipeline metadata: name: codefresh-io/cli/default-pipeline labels: tags: [] deprecate: applicationPort: &amp;#39;8080&amp;#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: &amp;#39;3000&amp;#39; - key: SECRET value: &amp;#39;secret-value&amp;#39; encrypted: true steps: test_step_1: image: alpine working_directory: &amp;#39;${{clone_step}}&amp;#39; commands: - echo ls - echo &amp;#34;hello world&amp;#34; - echo &amp;#34;plain value $PORT&amp;#34; - echo &amp;#34;encrypted value $PAPA&amp;#34; - echo &amp;#34;value from context $COOKIE&amp;#34; build: type: build working_directory: &amp;#39;${{clone_step}}&amp;#39; dockerfile: .</description>
     </item>
-
+    
   </channel>
 </rss>
