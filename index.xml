@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Create Pipeline Trigger</title>
-      <link>https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/</link>
+      <title>[Deprecated] Create Pipeline Trigger</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-create-pipeline-trigger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/</guid>
-      <description>Description Create trigger: link pipeline to trigger-event.
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-create-pipeline-trigger/</guid>
+      <description>Description [Deprecated] Create trigger: link pipeline to trigger-event. Deprecated - please use pipeline spec to manager cron trigger.
 Command codefresh create trigger [event-uri] [pipeline]
 Aliases codefresh create t [event-uri] [pipeline]
 Arguments    Option Alias Default Description     event-uri   trigger-event URI   pipeline   pipeline to be triggered by the trigger-event    Options    Option Alias Type Default Description     --help    Print help information   --filter  array  trigger filter name=condition pairs    Examples Create trigger by linking 5a43&amp;hellip; pipeline to the DockerHub codefresh/fortune push event codefresh create trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
@@ -358,46 +358,6 @@ Options    Option Alias Type Default Description     --help    Print help inform
     </item>
     
     <item>
-      <title>Get Trigger Event</title>
-      <link>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</guid>
-      <description>Description Get trigger-event.
-Command codefresh get trigger-events [event-uri]
-Aliases codefresh get trigger-event [event-uri]
-codefresh get te [event-uri]
-Arguments    Option Alias Default Description     event-uri   trigger-event URI)    Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type   --kind    trigger-event kind   --filter    trigger-event URI filter (regex)   --public  boolean true get public trigger-event(s)    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
-    </item>
-    
-    <item>
-      <title>Get Trigger Types</title>
-      <link>https://codefresh-io.github.io/cli/triggers/get-trigger-types/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/get-trigger-types/</guid>
-      <description>Description Get a list of available trigger-types.
-Command codefresh get trigger-types
-Aliases codefresh get trigger-type trigger-types
-codefresh get tt trigger-types
-Options    Option Alias Type Default Description     --help    Print help information   --type    filter by a specific trigger type (e.g. registry, cron)   --kind    filter by a specific trigger kind (e.g. dockerhub, cfcr, gcr, acr); only some trigger-types may have kinds    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
-    </item>
-    
-    <item>
-      <title>Get Triggers</title>
-      <link>https://codefresh-io.github.io/cli/triggers/get-triggers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/get-triggers/</guid>
-      <description>Description Get triggers, optionally filtered by pipeline or event.
-Only cron/registry triggers are supported (for git triggers use codefresh get pip &amp;lt;pip-name&amp;gt; -o json).
-Command codefresh get triggers
-Aliases codefresh get trigger triggers
-codefresh get t triggers
-Options    Option Alias Type Default Description     --help    Print help information   --pipeline -p   pipeline id   --event-uri -e   event URI    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
-    </item>
-    
-    <item>
       <title>HTTP</title>
       <link>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -421,6 +381,46 @@ Options    Option Alias Type Default Description     --help    Print help inform
       <description>Description Rollback a helm release from a kubernetes cluster.
 Command codefresh rollback-release &amp;lt;name&amp;gt;
 Options    Option Alias Type Default Description     --help    Print help information   --cluster -c string  Run on cluster. required   --revision -t number  revision number. required   --tiller-namespace -n string kube-system prevent hooks from running during deletion   --namespace --ns string default prevent hooks from running during deletion   --detach -d   Run pipeline and print build ID    Examples rollback release &amp;ldquo;my-release&amp;rdquo; from cluster &amp;ldquo;my-cluster&amp;rdquo; codefresh rollback my-release --cluster my-cluster --revision 1</description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Get Trigger Event</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-event/</guid>
+      <description>Description [Deprecated] Get trigger-event. Deprecated - please use pipeline spec to manager cron trigger.
+Command codefresh get trigger-events [event-uri]
+Aliases codefresh get trigger-event [event-uri]
+codefresh get te [event-uri]
+Arguments    Option Alias Default Description     event-uri   trigger-event URI)    Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type   --kind    trigger-event kind   --filter    trigger-event URI filter (regex)   --public  boolean true get public trigger-event(s)    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Get Trigger Types</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-types/</guid>
+      <description>Description [Deprecated] Get a list of available trigger-types. Deprecated - please use pipeline spec to manager cron trigger.
+Command codefresh get trigger-types
+Aliases codefresh get trigger-type trigger-types
+codefresh get tt trigger-types
+Options    Option Alias Type Default Description     --help    Print help information   --type    filter by a specific trigger type (e.g. registry, cron)   --kind    filter by a specific trigger kind (e.</description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Get Triggers</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-get-triggers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-get-triggers/</guid>
+      <description>Description [Deprecated] Get triggers, optionally filtered by pipeline or event. Deprecated - please use pipeline spec to manager cron triggers.
+Only cron/registry triggers are supported (for git triggers use codefresh get pip &amp;lt;pip-name&amp;gt; -o json).
+Command codefresh get triggers
+Aliases codefresh get trigger triggers
+codefresh get t triggers
+Options    Option Alias Type Default Description     --help    Print help information   --pipeline -p   pipeline id   --event-uri -e   event URI    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
     </item>
     
     <item>
@@ -669,18 +669,6 @@ Arguments    Option Alias Default Description     name   Name of project    Opti
     </item>
     
     <item>
-      <title>Create Trigger Event</title>
-      <link>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</guid>
-      <description>Description Create new trigger-event.
-Command codefresh create trigger-event
-Aliases codefresh create te trigger-event
-Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type. required   --kind    trigger-event kind. required   --public  boolean false wether trigger-event is public (system-wide): can be linked to any pipeline in any account   --secret  string !</description>
-    </item>
-    
-    <item>
       <title>Create board</title>
       <link>https://codefresh-io.github.io/cli/boards/create-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -716,18 +704,6 @@ Possible fields in file:
 name - team name (specifying name in file will rewrite name specified as command argument) users - array of users id for that team tags - array of tag names.
 Command codefresh create teams &amp;lt;name&amp;gt;
 Aliases codefresh create team &amp;lt;name&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>Delete Pipeline Trigger</title>
-      <link>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</guid>
-      <description>Description Delete trigger: unlink pipeline from trigger-event.
-Command codefresh delete trigger [event-uri] [pipeline]
-Aliases codefresh delete t [event-uri] [pipeline]
-Arguments    Option Alias Default Description     event-uri   trigger-event URI (as defined by trigger type[/kind]). required   pipeline   pipeline ID. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete trigger by unlinking 5a43&amp;hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
     </item>
     
     <item>
@@ -824,6 +800,30 @@ Arguments    Option Alias Default Description     cluster   Cluster name on inte
       <description>Description Show logs of a build.
 Command codefresh logs &amp;lt;id&amp;gt;
 Arguments    Option Alias Default Description     id   Build id    Options    Option Alias Type Default Description     --help    Print help information   --f  boolean false Continue showing build logs until it will finish   --no-timestamps  boolean false Don&amp;rsquo;t show timestamps    Examples Get logs of build ID codefresh logs ID</description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Create Trigger Event</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-create-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-create-trigger-event/</guid>
+      <description>Description [Deprecated] Create new trigger-event. Deprecated - please use pipeline spec to manager cron trigger.
+Command codefresh create trigger-event
+Aliases codefresh create te trigger-event
+Options    Option Alias Type Default Description     --help    Print help information   --type    trigger-event type. required   --kind    trigger-event kind. required   --public  boolean false wether trigger-event is public (system-wide): can be linked to any pipeline in any account   --secret  string !</description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/</guid>
+      <description>Description Delete trigger: unlink pipeline from trigger-event.
+Command codefresh delete trigger [event-uri] [pipeline]
+Aliases codefresh delete t [event-uri] [pipeline]
+Arguments    Option Alias Default Description     event-uri   trigger-event URI (as defined by trigger type[/kind]). required   pipeline   pipeline ID. required    Options    Option Alias Type Default Description     --help    Print help information    Examples Delete trigger by unlinking 5a43&amp;hellip; pipeline from the DockerHub codefresh/fortune push event codefresh delete trigger registry:dockerhub:codefresh:fortune:push 5a439664af73ad0001f3ece0</description>
     </item>
     
     <item>
@@ -1032,18 +1032,6 @@ Arguments    Option Alias Default Description     name   Step-type name    Optio
     </item>
     
     <item>
-      <title>Delete Trigger Event</title>
-      <link>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</guid>
-      <description>Description Delete trigger-event.
-Command codefresh delete trigger-event [event-uri]
-Aliases codefresh delete te [event-uri]
-Arguments    Option Alias Default Description     event-uri   trigger-event URI    Options    Option Alias Type Default Description     --help    Print help information   --context    context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push</description>
-    </item>
-    
-    <item>
       <title>Delete board</title>
       <link>https://codefresh-io.github.io/cli/board/delete-board/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1121,6 +1109,18 @@ Arguments    Option Alias Default Description     name   Name of context    Opti
       <description> Description Test a helm release.
 Command codefresh test-release &amp;lt;name&amp;gt;
 Arguments    Option Alias Default Description     name   Release name. required    Options    Option Alias Type Default Description     --help    Print help information   --cluster  string  Run on cluster. required   --tiller-namespace -n string kube-system namespace where is tiller running ( helm 2 only )   --namespace --ns string default namespace where is chart located ( helm 3 )   --timeout  number 300 time in seconds to wait for any individual kubernetes operation (like Jobs for hooks) (default 300)   --detach -d   Run pipeline and print build ID   --cleanup  boolean false delete test pods upon completion (default false)    </description>
+    </item>
+    
+    <item>
+      <title>[Deprecated] Delete Trigger Event</title>
+      <link>https://codefresh-io.github.io/cli/triggers/deprecated-delete-trigger-event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://codefresh-io.github.io/cli/triggers/deprecated-delete-trigger-event/</guid>
+      <description>Description [Deprecated] Delete trigger-event. Deprecated - please use pipeline spec to manager cron trigger.
+Command codefresh delete trigger-event [event-uri]
+Aliases codefresh delete te [event-uri]
+Arguments    Option Alias Default Description     event-uri   trigger-event URI    Options    Option Alias Type Default Description     --help    Print help information   --context    context with credentials required to setup event on remote system    Examples Delete registry/dockerhub trigger-event codefresh delete trigger-event --context dockerhub registry:dockerhub:codefresh:fortune:push</description>
     </item>
     
     <item>
@@ -1992,7 +1992,8 @@ Arguments    Option Alias Default Description     name   Property name    Option
       <guid>https://codefresh-io.github.io/cli/pipelines/spec/</guid>
       <description>A Pipeline needs .version, .kind, and .metadata fields.
 A Pipeline also needs a .spec section.
-Examples Basic Pipeline with implicit clone step (will checkout connected repo automatically) version: &amp;#39;1.0&amp;#39; kind: pipeline metadata: name: codefresh-io/cli/default-pipeline labels: tags: [] deprecate: applicationPort: &amp;#39;8080&amp;#39; repoPipeline: true spec: triggers: - type: git repo: codefresh-io/cli events: - push.heads pullRequestAllowForkEvents: false commentRegex: /.*/gi branchRegex: /.*/gi branchRegexInput: regex provider: github contexts: [] variables: - key: PORT value: &amp;#39;3000&amp;#39; - key: SECRET value: &amp;#39;secret-value&amp;#39; encrypted: true steps: test_step_1: image: alpine working_directory: &amp;#39;${{clone_step}}&amp;#39; commands: - echo ls - echo &amp;#34;hello world&amp;#34; - echo &amp;#34;plain value $PORT&amp;#34; - echo &amp;#34;encrypted value $PAPA&amp;#34; - echo &amp;#34;value from context $COOKIE&amp;#34; build: type: build working_directory: &amp;#39;${{clone_step}}&amp;#39; dockerfile: .</description>
+Examples Use create/replace/delete commands to manage your pipeline
+# create pipeline codefresh create -f pipeline.yaml # get created/modified pipeline spec codefresh get pipeline &amp;lt;name&amp;gt; -o yaml &amp;gt; pipeline.yaml # update pipeline with modified pipeline spec codefresh replace -f pipeline.yaml # delete pipeline using spec file codefresh delete -f pipeline.yaml See the examples of pipeline spec below to manage your pipelines.</description>
     </item>
     
   </channel>

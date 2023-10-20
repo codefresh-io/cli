@@ -586,52 +586,52 @@
       <a href="/cli/triggers/">Triggers</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/triggers/create-pipeline-trigger/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-create-pipeline-trigger/" class="dd-item">
         <div>
-          <a href="/cli/triggers/create-pipeline-trigger/">
-            Create Pipeline Trigger
+          <a href="/cli/triggers/deprecated-create-pipeline-trigger/">
+            [Deprecated] Create Pipeline Trigger
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-trigger-event/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-get-trigger-event/" class="dd-item">
         <div>
-          <a href="/cli/triggers/get-trigger-event/">
-            Get Trigger Event
+          <a href="/cli/triggers/deprecated-get-trigger-event/">
+            [Deprecated] Get Trigger Event
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-trigger-types/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-get-trigger-types/" class="dd-item">
         <div>
-          <a href="/cli/triggers/get-trigger-types/">
-            Get Trigger Types
+          <a href="/cli/triggers/deprecated-get-trigger-types/">
+            [Deprecated] Get Trigger Types
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/get-triggers/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-get-triggers/" class="dd-item">
         <div>
-          <a href="/cli/triggers/get-triggers/">
-            Get Triggers
+          <a href="/cli/triggers/deprecated-get-triggers/">
+            [Deprecated] Get Triggers
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/create-trigger-event/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-create-trigger-event/" class="dd-item">
         <div>
-          <a href="/cli/triggers/create-trigger-event/">
-            Create Trigger Event
+          <a href="/cli/triggers/deprecated-create-trigger-event/">
+            [Deprecated] Create Trigger Event
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/delete-pipeline-trigger/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/" class="dd-item">
         <div>
-          <a href="/cli/triggers/delete-pipeline-trigger/">
-            Delete Pipeline Trigger
+          <a href="/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/">
+            [Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/triggers/delete-trigger-event/" class="dd-item">
+      <li data-nav-id="/cli/triggers/deprecated-delete-trigger-event/" class="dd-item">
         <div>
-          <a href="/cli/triggers/delete-trigger-event/">
-            Delete Trigger Event
+          <a href="/cli/triggers/deprecated-delete-trigger-event/">
+            [Deprecated] Delete Trigger Event
           </a>
         </div>
     </li>
@@ -1681,8 +1681,12 @@
 <ul>
 <li><a href="#examples">Examples</a>
 <ul>
-<li><a href="#basic-pipeline-with-implicit-clone-step-will-checkout-connected-repo-automatically">Basic Pipeline with implicit clone step (will checkout connected repo automatically)</a></li>
-<li><a href="#basic-pipeline-with-explicit-clone-step">Basic Pipeline with explicit clone step</a></li>
+<li><a href="#basic-pipeline-with-cron-triggers-in-spec">Basic pipeline with cron triggers in spec</a></li>
+<li><a href="#basic-pipeline-with-cron-triggers-with-variables">Basic pipeline with cron triggers with variables</a></li>
+<li><a href="#basic-pipeline-with-cron-triggers-with-run-options">Basic pipeline with cron triggers with run options</a></li>
+<li><a href="#pipeline-started-by-cron-trigger-but-simulating-the-git-trigger">Pipeline started by cron trigger but simulating the git trigger</a></li>
+<li><a href="#disable-cron-trigger-in-pipeline"><strong>Disable</strong> cron trigger in pipeline</a></li>
+<li><a href="#basic-pipeline-with-clone-step-and-git-trigger">Basic Pipeline with clone step and git trigger</a></li>
 <li><a href="#pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</a></li>
 <li><a href="#pipeline-with-a-remote-spec-template-from-a-public-git-url">Pipeline with a remote spec template from a public git URL</a></li>
 </ul></li>
@@ -1715,73 +1719,143 @@
 
 <h3 id="examples">Examples</h3>
 
-<h4 id="basic-pipeline-with-implicit-clone-step-will-checkout-connected-repo-automatically">Basic Pipeline with implicit clone step (will checkout connected repo automatically)</h4>
+<p>Use create/replace/delete commands to manage your pipeline</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># create pipeline
+</span><span style="color:#75715e"></span>codefresh create -f pipeline.yaml
+
+<span style="color:#75715e"># get created/modified pipeline spec
+</span><span style="color:#75715e"></span>codefresh get pipeline &lt;name&gt; -o yaml &gt; pipeline.yaml
+
+<span style="color:#75715e"># update pipeline with modified pipeline spec
+</span><span style="color:#75715e"></span>codefresh replace -f pipeline.yaml
+
+<span style="color:#75715e"># delete pipeline using spec file
+</span><span style="color:#75715e"></span>codefresh delete -f pipeline.yaml</code></pre></div>
+<p>See the examples of pipeline spec below to manage your pipelines.</p>
+
+<h4 id="basic-pipeline-with-cron-triggers-in-spec">Basic pipeline with cron triggers in spec</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 kind<span style="color:#111">:</span> pipeline
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> codefresh-io/cli/default-pipeline
-  labels<span style="color:#111">:</span>
-    tags<span style="color:#111">:</span> <span style="color:#111">[]</span>
-  deprecate<span style="color:#111">:</span>
-    applicationPort<span style="color:#111">:</span> <span style="color:#d88200">&#39;8080&#39;</span>
-    repoPipeline<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  name<span style="color:#111">:</span> cron
 spec<span style="color:#111">:</span>
-  triggers<span style="color:#111">:</span>
-    - type<span style="color:#111">:</span> git
-      repo<span style="color:#111">:</span> codefresh-io/cli
-      events<span style="color:#111">:</span>
-        - push.heads
-      pullRequestAllowForkEvents<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-      commentRegex<span style="color:#111">:</span> /.*/gi
-      branchRegex<span style="color:#111">:</span> /.*/gi
-      branchRegexInput<span style="color:#111">:</span> regex
-      provider<span style="color:#111">:</span> github
-  contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
-  variables<span style="color:#111">:</span>
-    - key<span style="color:#111">:</span> PORT
-      value<span style="color:#111">:</span> <span style="color:#d88200">&#39;3000&#39;</span>
-    - key<span style="color:#111">:</span> SECRET
-      value<span style="color:#111">:</span> <span style="color:#d88200">&#39;secret-value&#39;</span>
-      encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  cronTriggers<span style="color:#111">:</span>
+    - name<span style="color:#111">:</span> every minute
+      type<span style="color:#111">:</span> cron
+      message<span style="color:#111">:</span> every minute
+      expression<span style="color:#111">:</span> <span style="color:#ae81ff">0</span>/<span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">1</span>/<span style="color:#ae81ff">1</span> * *
   steps<span style="color:#111">:</span>
-    test_step_<span style="color:#ae81ff">1</span><span style="color:#111">:</span>
+    test<span style="color:#111">:</span>
       image<span style="color:#111">:</span> alpine
-      working_directory<span style="color:#111">:</span> <span style="color:#d88200">&#39;${{clone_step}}&#39;</span>
       commands<span style="color:#111">:</span>
-        - echo ls
-        - echo <span style="color:#d88200">&#34;hello world&#34;</span>
-        - echo <span style="color:#d88200">&#34;plain value $PORT&#34;</span>
-        - echo <span style="color:#d88200">&#34;encrypted value $PAPA&#34;</span>
-        - echo <span style="color:#d88200">&#34;value from context $COOKIE&#34;</span>
-    build<span style="color:#111">:</span>
-      type<span style="color:#111">:</span> build
-      working_directory<span style="color:#111">:</span> <span style="color:#d88200">&#39;${{clone_step}}&#39;</span>
-      dockerfile<span style="color:#111">:</span> ./Dockerfile
-      image_name<span style="color:#111">:</span> my-custom-docker-image
-      tag<span style="color:#111">:</span> foo
-  stages<span style="color:#111">:</span> <span style="color:#111">[]</span></code></pre></div>
-<h4 id="basic-pipeline-with-explicit-clone-step">Basic Pipeline with explicit clone step</h4>
+        - echo test</code></pre></div>
+<h4 id="basic-pipeline-with-cron-triggers-with-variables">Basic pipeline with cron triggers with variables</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 kind<span style="color:#111">:</span> pipeline
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> codefresh-io/cli/basic-pipeline
-  labels<span style="color:#111">:</span>
-    tags<span style="color:#111">:</span> <span style="color:#111">[]</span>
-  deprecate<span style="color:#111">:</span>
-    applicationPort<span style="color:#111">:</span> <span style="color:#d88200">&#39;8080&#39;</span>
-    repoPipeline<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  name<span style="color:#111">:</span> cron
+spec<span style="color:#111">:</span>
+  cronTriggers<span style="color:#111">:</span>
+    - name<span style="color:#111">:</span> every minute
+      type<span style="color:#111">:</span> cron
+      message<span style="color:#111">:</span> every minute
+      expression<span style="color:#111">:</span> <span style="color:#ae81ff">0</span>/<span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">1</span>/<span style="color:#ae81ff">1</span> * *
+      variables<span style="color:#111">:</span>
+        - key<span style="color:#111">:</span> TEST_VAR
+          value<span style="color:#111">:</span> <span style="color:#d88200">&#39;my-test&#39;</span>
+  steps<span style="color:#111">:</span>
+    test<span style="color:#111">:</span>
+      image<span style="color:#111">:</span> alpine
+      commands<span style="color:#111">:</span>
+        - echo ${{TEST_VARIABLE}}</code></pre></div>
+<h4 id="basic-pipeline-with-cron-triggers-with-run-options">Basic pipeline with cron triggers with run options</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+kind<span style="color:#111">:</span> pipeline
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> cron
+spec<span style="color:#111">:</span>
+  cronTriggers<span style="color:#111">:</span>
+    - name<span style="color:#111">:</span> every minute
+      type<span style="color:#111">:</span> cron
+      message<span style="color:#111">:</span> every minute
+      expression<span style="color:#111">:</span> <span style="color:#ae81ff">0</span>/<span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">1</span>/<span style="color:#ae81ff">1</span> * *
+      options<span style="color:#111">:</span>
+        resetVolume<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  steps<span style="color:#111">:</span>
+    test<span style="color:#111">:</span>
+      image<span style="color:#111">:</span> alpine
+      commands<span style="color:#111">:</span>
+        - echo test &gt;<span style="color:#d88200">&gt; test.txt
+</span><span style="color:#d88200">        - cat test.txt</span></code></pre></div>
+<h4 id="pipeline-started-by-cron-trigger-but-simulating-the-git-trigger">Pipeline started by cron trigger but simulating the git trigger</h4>
+
+<p>Note that <code>spec.triggers.0.id</code> and <code>spec.cronTriggers.gitTriggerId</code>
+should be the same value and a valid ObjectId.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+kind<span style="color:#111">:</span> pipeline
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> cron
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> git
-      repo<span style="color:#111">:</span> codefresh-io/cli
+      name<span style="color:#111">:</span> test
+      repo<span style="color:#111">:</span> repo-owner/repo-name
       events<span style="color:#111">:</span>
         - push.heads
       pullRequestAllowForkEvents<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
       commentRegex<span style="color:#111">:</span> /.*/gi
       branchRegex<span style="color:#111">:</span> /.*/gi
       branchRegexInput<span style="color:#111">:</span> regex
-      provider<span style="color:#111">:</span> github
-  contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
+      provider<span style="color:#111">:</span> git-context-name
+      id<span style="color:#111">:</span> 65329431edb87250ff128acc
+
+  cronTriggers<span style="color:#111">:</span>
+    - name<span style="color:#111">:</span> every minute
+      type<span style="color:#111">:</span> cron
+      message<span style="color:#111">:</span> every minute
+      expression<span style="color:#111">:</span> <span style="color:#ae81ff">0</span>/<span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">1</span>/<span style="color:#ae81ff">1</span> * *
+      gitTriggerId<span style="color:#111">:</span> 65329431edb87250ff128acc
+      branch<span style="color:#111">:</span> master
+
+  steps<span style="color:#111">:</span>
+    test<span style="color:#111">:</span>
+      image<span style="color:#111">:</span> alpine
+      commands<span style="color:#111">:</span>
+        - echo ${{CF_BRANCH}}</code></pre></div>
+<h4 id="disable-cron-trigger-in-pipeline"><strong>Disable</strong> cron trigger in pipeline</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+kind<span style="color:#111">:</span> pipeline
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> cron
+spec<span style="color:#111">:</span>
+  cronTriggers<span style="color:#111">:</span>
+    - name<span style="color:#111">:</span> every minute
+      type<span style="color:#111">:</span> cron
+      message<span style="color:#111">:</span> every minute
+      expression<span style="color:#111">:</span> <span style="color:#ae81ff">0</span>/<span style="color:#ae81ff">1</span> * <span style="color:#ae81ff">1</span>/<span style="color:#ae81ff">1</span> * *
+      disabled<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  steps<span style="color:#111">:</span>
+    test<span style="color:#111">:</span>
+      image<span style="color:#111">:</span> alpine
+      commands<span style="color:#111">:</span>
+        - echo test</code></pre></div>
+<h4 id="basic-pipeline-with-clone-step-and-git-trigger">Basic Pipeline with clone step and git trigger</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+kind<span style="color:#111">:</span> pipeline
+metadata<span style="color:#111">:</span>
+  name<span style="color:#111">:</span> basic-pipeline
+spec<span style="color:#111">:</span>
+  triggers<span style="color:#111">:</span>
+    - type<span style="color:#111">:</span> git
+      name<span style="color:#111">:</span> test
+      repo<span style="color:#111">:</span> repo-owner/repo-name
+      events<span style="color:#111">:</span>
+        - push.heads
+      pullRequestAllowForkEvents<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+      commentRegex<span style="color:#111">:</span> /.*/gi
+      branchRegex<span style="color:#111">:</span> /.*/gi
+      branchRegexInput<span style="color:#111">:</span> regex
+      provider<span style="color:#111">:</span> git-context-name
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> PORT
       value<span style="color:#111">:</span> <span style="color:#d88200">&#39;3000&#39;</span>
@@ -1808,30 +1882,24 @@ spec<span style="color:#111">:</span>
       working_directory<span style="color:#111">:</span> <span style="color:#d88200">&#39;${{clone_step}}&#39;</span>
       dockerfile<span style="color:#111">:</span> ./Dockerfile
       image_name<span style="color:#111">:</span> my-custom-docker-image
-      tag<span style="color:#111">:</span> bla
-  stages<span style="color:#111">:</span> <span style="color:#111">[]</span></code></pre></div>
+      tag<span style="color:#111">:</span> bla</code></pre></div>
 <h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 kind<span style="color:#111">:</span> pipeline
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> codefresh-io/cli/from-repo
-  isPublic<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-  labels<span style="color:#111">:</span>
-    tags<span style="color:#111">:</span> <span style="color:#111">[]</span>
-  deprecate<span style="color:#111">:</span>
-    applicationPort<span style="color:#111">:</span> <span style="color:#d88200">&#39;8080&#39;</span>
-    repoPipeline<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+  name<span style="color:#111">:</span> basic-pipeline
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> git
-      repo<span style="color:#111">:</span> codefresh-io/cli
+      name<span style="color:#111">:</span> test
+      repo<span style="color:#111">:</span> repo-owner/repo-name
       events<span style="color:#111">:</span>
         - push.heads
       pullRequestAllowForkEvents<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
       commentRegex<span style="color:#111">:</span> /.*/gi
       branchRegex<span style="color:#111">:</span> /.*/gi
       branchRegexInput<span style="color:#111">:</span> regex
-      provider<span style="color:#111">:</span> github
+      provider<span style="color:#111">:</span> git-context-name
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> PORT
@@ -1844,32 +1912,24 @@ spec<span style="color:#111">:</span>
     context<span style="color:#111">:</span> git-context-name <span style="color:#75715e"># if not specified will use the default git-context</span>
     repo<span style="color:#111">:</span> codefresh-io/cli
     path<span style="color:#111">:</span> codefresh.yml
-    revision<span style="color:#111">:</span> master <span style="color:#75715e"># can be a branch or commit. if not specified will use CF_BRANCH variable value</span>
-  steps<span style="color:#111">:</span> {}
-  stages<span style="color:#111">:</span> <span style="color:#111">[]</span></code></pre></div>
+    revision<span style="color:#111">:</span> master <span style="color:#75715e"># can be a branch or commit. if not specified will use CF_BRANCH variable value</span></code></pre></div>
 <h4 id="pipeline-with-a-remote-spec-template-from-a-public-git-url">Pipeline with a remote spec template from a public git URL</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version<span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 kind<span style="color:#111">:</span> pipeline
 metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> codefresh-io/cli/from-external
-  isPublic<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
-  labels<span style="color:#111">:</span>
-    tags<span style="color:#111">:</span> <span style="color:#111">[]</span>
-  deprecate<span style="color:#111">:</span>
-    applicationPort<span style="color:#111">:</span> <span style="color:#d88200">&#39;8080&#39;</span>
-    repoPipeline<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
-  project<span style="color:#111">:</span> codefresh-io/cli
+  name<span style="color:#111">:</span> basic-pipeline
 spec<span style="color:#111">:</span>
   triggers<span style="color:#111">:</span>
     - type<span style="color:#111">:</span> git
-      repo<span style="color:#111">:</span> codefresh-io/cli
+      name<span style="color:#111">:</span> test
+      repo<span style="color:#111">:</span> repo-owner/repo-name
       events<span style="color:#111">:</span>
         - push.heads
       pullRequestAllowForkEvents<span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
       commentRegex<span style="color:#111">:</span> /.*/gi
       branchRegex<span style="color:#111">:</span> /.*/gi
       branchRegexInput<span style="color:#111">:</span> regex
-      provider<span style="color:#111">:</span> github
+      provider<span style="color:#111">:</span> git-context-name
   contexts<span style="color:#111">:</span> <span style="color:#111">[]</span>
   variables<span style="color:#111">:</span>
     - key<span style="color:#111">:</span> PORT
@@ -1879,9 +1939,7 @@ spec<span style="color:#111">:</span>
       encrypted<span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
   specTemplate<span style="color:#111">:</span>
     location<span style="color:#111">:</span> url
-    url<span style="color:#111">:</span> <span style="color:#d88200">&#39;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml&#39;</span>
-  steps<span style="color:#111">:</span> {}
-  stages<span style="color:#111">:</span> <span style="color:#111">[]</span></code></pre></div>
+    url<span style="color:#111">:</span> <span style="color:#d88200">&#39;https://raw.githubusercontent.com/codefresh-io/cli/master/codefresh.yml&#39;</span></code></pre></div>
 
     
     

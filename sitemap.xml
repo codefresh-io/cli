@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/create-pipeline-trigger/</loc>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-create-pipeline-trigger/</loc>
   </url>
   
   <url>
@@ -123,23 +123,23 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/get-trigger-event/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/get-trigger-types/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/get-triggers/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</loc>
   </url>
   
   <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-triggers/</loc>
   </url>
   
   <url>
@@ -217,10 +217,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/create-trigger-event/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/boards/create-board/</loc>
   </url>
   
@@ -230,10 +226,6 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/teams/create-team/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/delete-pipeline-trigger/</loc>
   </url>
   
   <url>
@@ -271,6 +263,14 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/builds/show-build-logs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-create-trigger-event/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/</loc>
   </url>
   
   <url>
@@ -348,10 +348,6 @@
   </url>
   
   <url>
-    <loc>https://codefresh-io.github.io/cli/triggers/delete-trigger-event/</loc>
-  </url>
-  
-  <url>
     <loc>https://codefresh-io.github.io/cli/board/delete-board/</loc>
   </url>
   
@@ -377,6 +373,10 @@
   
   <url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</loc>
+  </url>
+  
+  <url>
+    <loc>https://codefresh-io.github.io/cli/triggers/deprecated-delete-trigger-event/</loc>
   </url>
   
   <url>
