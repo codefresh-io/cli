@@ -17,6 +17,8 @@ You can generate a new one from the <a href="https://g.codefresh.io/user/setting
  
 Once you have an API key, create a new authentication context:<br> `codefresh auth create-context --api-key {API_KEY}`
 
+Please note, if you have an environment variable called 'CF_API_KEY', the API key in this environment variable will take precedence over the context configured for the CLI. <br />
+
 ## Getting Help
 To get help and usage instructions run `codefresh [COMMAND]--help`.<br />
 A help message will appear in the terminal.<br />
