@@ -1687,6 +1687,11 @@
 <li><a href="#arguments">Arguments</a></li>
 <li><a href="#options">Options</a></li>
 <li><a href="#output-options">Output Options</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#get-specific-pipeline-by-it-name">Get specific pipeline by it name</a></li>
+<li><a href="#get-list-of-pipelines-by-tag-name">Get list of pipelines by tag name</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1803,9 +1808,9 @@
 <tr>
 <td>--label</td>
 <td>-l</td>
-<td>array</td>
 <td></td>
-<td>Filter by a label</td>
+<td></td>
+<td>Filter by a label - i.e tags=tag1,tag2</td>
 </tr>
 
 <tr>
@@ -1897,6 +1902,16 @@
 </tr>
 </tbody>
 </table>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="get-specific-pipeline-by-it-name">Get specific pipeline by it name</h4>
+
+<p><code>codefresh get pipeline --name PIPELINE_NAME</code></p>
+
+<h4 id="get-list-of-pipelines-by-tag-name">Get list of pipelines by tag name</h4>
+
+<p><code>codefresh get pip --label tags=tag1,tag2</code></p>
 
 
     

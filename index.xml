@@ -267,7 +267,7 @@ Arguments    Option Alias Default Description     id   Docker Image id    Option
 Command codefresh get pipelines [id..]
 Aliases codefresh get pip [id..]
 codefresh get pipeline [id..]
-Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Type Default Description     --help    Print help information   --decrypt-variables -d   Will decrypt encrypted variables   --name    Filter pipelines by name   --project-id    Filter pipelines by project id   --project    Filter pipelines by project name   --label -l array  Filter by a label   --limit    Limit amount of returned results [default: 25]   --all    Remove default limit of returned result   --page  number 1 Paginated page    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format</description>
+Arguments    Option Alias Default Description     id   Pipeline name/id    Options    Option Alias Type Default Description     --help    Print help information   --decrypt-variables -d   Will decrypt encrypted variables   --name    Filter pipelines by name   --project-id    Filter pipelines by project id   --project    Filter pipelines by project name   --label -l   Filter by a label - i.</description>
     </item>
     
     <item>
