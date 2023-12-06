@@ -57,7 +57,7 @@
     "columnify": "^1.6.0",
     "compare-versions": "^3.4.0",
     "copy-dir": "^0.3.0",
-    "debug": "^3.1.0",
+    "debug": "^3.2.7",
     "diff": "^3.5.0",
     "dockerode": "^2.5.7",
     "draftlog": "^1.0.12",
