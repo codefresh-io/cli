@@ -368,10 +368,10 @@ const createDownloadPage = async () => {
             'and download the binary that matches your operating system.<br>\n' +
             'We currently support the following OS: <br>\n' +
             '<ul>\n' +
-            '    <li><a href=' + links[0] + ' target="_blank">Alpine-x64</a></li>\n' +
-            '    <li><a href=' + links[1] + ' target="_blank">Alpine-arm64</a></li>\n' +
-            '    <li><a href=' + links[2] + ' target="_blank">Linux-x64</a></li>\n' +
-            '    <li><a href=' + links[3] + ' target="_blank">Linux-arm64</a></li>\n' +
+            '    <li><a href=' + links[0] + ' target="_blank">Alpine-arm64</a></li>\n' +
+            '    <li><a href=' + links[1] + ' target="_blank">Alpine-x64</a></li>\n' +
+            '    <li><a href=' + links[2] + ' target="_blank">Linux-arm64</a></li>\n' +
+            '    <li><a href=' + links[3] + ' target="_blank">Linux-x64</a></li>\n' +
             '    <li><a href=' + links[4] + ' target="_blank">Macos-x64</a></li>\n' +
             '    <li><a href=' + links[5] + ' target="_blank">Windows-x64</a></li>\n' +
             '</ul> \n' +
