@@ -353,7 +353,7 @@ const createDownloadPage = async () => {
         // response example https://docs.github.com/en/rest/releases/releases#get-the-latest-release
         const { assets = [] } = await rp(RequestOptions);
 
-        const getDownloadUrlFromAssets = (nameRegex) => assets.find((a) => a.name.match(nameRegex)).browser_download_url;
+        const getDownloadUrlFromAssets = (nameRegex) => assets.find((a) => a.name.match(nameRegex))?.browser_download_url;
         const downloadLinks = [
             {
                 label: 'Alpine-x64',
