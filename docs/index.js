@@ -342,7 +342,6 @@ const createAutomatedDocs = async () => {
 };
 
 const createDownloadPage = async () => {
-    let links = [];
     const RequestOptions = {
         url: 'https://api.github.com/repos/codefresh-io/cli/releases/latest',
         headers: {
@@ -351,10 +350,36 @@ const createDownloadPage = async () => {
         json: true,
     };
     try {
-        const res = await rp(RequestOptions);
-        _.forEach(res.assets, ((asset) => {
-            links.push(asset.browser_download_url);
-        }));
+        // response example https://docs.github.com/en/rest/releases/releases#get-the-latest-release
+        const { assets = [] } = await rp(RequestOptions);
+
+        const getDownloadUrlFromAssets = (nameRegex) => assets.find(a => a.name.match(nameRegex)).browser_download_url;
+        const downloadLinks = [
+            {
+                label: 'Alpine-x64',
+                downloadUrl: getDownloadUrlFromAssets(/alpine-x64/),
+            },
+            {
+                label: 'Linux-x64',
+                downloadUrl: getDownloadUrlFromAssets(/linux-x64/),
+            },
+            {
+                label: 'Macos-x64',
+                downloadUrl: getDownloadUrlFromAssets(/macos-x64/),
+            },
+            {
+                label: 'Windows-x64'  ,
+                downloadUrl: getDownloadUrlFromAssets(/win-x64/),
+            },
+            {
+                label: 'Alpine-arm64'  ,
+                downloadUrl: getDownloadUrlFromAssets(/alpine-arm64/),
+            },
+            {
+                label: 'Linux-arm64',
+                downloadUrl: getDownloadUrlFromAssets(/linux-arm64/),
+            },
+        ]
         const commandFilePath = path.resolve(baseDir, './installation/download.md');
         const finalContent =
             '+++\n' +
@@ -368,12 +393,7 @@ const createDownloadPage = async () => {
             'and download the binary that matches your operating system.<br>\n' +
             'We currently support the following OS: <br>\n' +
             '<ul>\n' +
-            '    <li><a href=' + links[0] + ' target="_blank">Alpine-arm64</a></li>\n' +
-            '    <li><a href=' + links[1] + ' target="_blank">Alpine-x64</a></li>\n' +
-            '    <li><a href=' + links[2] + ' target="_blank">Linux-arm64</a></li>\n' +
-            '    <li><a href=' + links[3] + ' target="_blank">Linux-x64</a></li>\n' +
-            '    <li><a href=' + links[4] + ' target="_blank">Macos-x64</a></li>\n' +
-            '    <li><a href=' + links[5] + ' target="_blank">Windows-x64</a></li>\n' +
+                downloadLinks.map(({ label, downloadUrl }) => `    <li><a href=' + ${downloadUrl} + ' target="_blank">${label}</a></li>`).join('\n') +
             '</ul> \n' +
             '\n' +
             'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +
