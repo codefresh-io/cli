@@ -353,7 +353,7 @@ const createDownloadPage = async () => {
         // response example https://docs.github.com/en/rest/releases/releases#get-the-latest-release
         const { assets = [] } = await rp(RequestOptions);
 
-        const getDownloadUrlFromAssets = (nameRegex) => assets.find(a => a.name.match(nameRegex)).browser_download_url;
+        const getDownloadUrlFromAssets = (nameRegex) => assets.find((a) => a.name.match(nameRegex)).browser_download_url;
         const downloadLinks = [
             {
                 label: 'Alpine-x64',
@@ -368,18 +368,18 @@ const createDownloadPage = async () => {
                 downloadUrl: getDownloadUrlFromAssets(/macos-x64/),
             },
             {
-                label: 'Windows-x64'  ,
+                label: 'Windows-x64',
                 downloadUrl: getDownloadUrlFromAssets(/win-x64/),
             },
             {
-                label: 'Alpine-arm64'  ,
+                label: 'Alpine-arm64',
                 downloadUrl: getDownloadUrlFromAssets(/alpine-arm64/),
             },
             {
                 label: 'Linux-arm64',
                 downloadUrl: getDownloadUrlFromAssets(/linux-arm64/),
             },
-        ]
+        ];
 
         const commandFilePath = path.resolve(baseDir, './installation/download.md');
         const finalContent =
@@ -394,7 +394,8 @@ const createDownloadPage = async () => {
             'and download the binary that matches your operating system.<br>\n' +
             'We currently support the following OS: <br>\n' +
             '<ul>\n' +
-                downloadLinks.map(({ label, downloadUrl }) => `    <li><a href=' + ${downloadUrl} + ' target="_blank">${label}</a></li>`).join('\n') +
+                downloadLinks.map(({ label, downloadUrl }) =>
+                    `    <li><a href=' + ${downloadUrl} + ' target="_blank">${label}</a></li>`).join('\n') +
             '</ul> \n' +
             '\n' +
             'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +
