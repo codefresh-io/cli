@@ -394,7 +394,7 @@ const createDownloadPage = async () => {
             'and download the binary that matches your operating system.<br>\n' +
             'We currently support the following OS: <br>\n' +
             '<ul>\n' +
-                downloadLinks.map(({ label, downloadUrl }) =>
+                downloadLinks.map(({ label, downloadUrl = 'https://github.com/codefresh-io/cli/releases' }) =>
                     `    <li><a href='${downloadUrl}' target="_blank">${label}</a></li>`).join('\n') +
             '</ul> \n' +
             '\n' +
