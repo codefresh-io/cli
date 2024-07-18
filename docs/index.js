@@ -395,7 +395,7 @@ const createDownloadPage = async () => {
             'We currently support the following OS: <br>\n' +
             '<ul>\n' +
                 downloadLinks.map(({ label, downloadUrl }) =>
-                    `    <li><a href=' + ${downloadUrl} + ' target="_blank">${label}</a></li>`).join('\n') +
+                    `    <li><a href='${downloadUrl}' target="_blank">${label}</a></li>`).join('\n') +
             '</ul> \n' +
             '\n' +
             'After downloading the binary, untar or unzip it and your are good to go.<br>\n' +
