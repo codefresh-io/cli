@@ -380,6 +380,7 @@ const createDownloadPage = async () => {
                 downloadUrl: getDownloadUrlFromAssets(/linux-arm64/),
             },
         ]
+
         const commandFilePath = path.resolve(baseDir, './installation/download.md');
         const finalContent =
             '+++\n' +
