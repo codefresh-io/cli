@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
-    "adm-zip": "^0.5.5",
+    "adm-zip": "^0.5.10",
     "ajv": "^6.12.6",
     "bluebird": "^3.5.1",
     "cf-errors": "^0.1.16",
