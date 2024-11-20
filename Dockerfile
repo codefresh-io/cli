@@ -20,8 +20,7 @@ RUN apk --update add --no-cache \
     ca-certificates \
     curl \
     git \
-    jq \
-    && npm uninstall -g npm
+    jq
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
