@@ -11,10 +11,10 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # kubectl binary
-FROM bitnami/kubectl:1.30.6 as kubectl
+FROM bitnami/kubectl:1.27.4 as kubectl
 
 # Main
-FROM node:22.11.0-bullseye-slim
+FROM node:18.17.1-bullseye-slim
 
 RUN apt update \
     && apt -y install \
