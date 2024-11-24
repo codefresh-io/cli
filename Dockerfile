@@ -33,4 +33,6 @@ RUN yarn generate-completion
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
 
+# Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
+ENV NODE_NO_WARNINGS=1
 ENTRYPOINT ["codefresh"]

@@ -15,7 +15,6 @@ FROM bitnami/kubectl:1.30.6 as kubectl
 
 # Main
 FROM node:22.11.0-bullseye-slim
-
 RUN apt update \
     && apt -y install \
     bash \
@@ -25,26 +24,17 @@ RUN apt update \
     git \
     jq \
     && ln -s /bin/busybox /usr/bin/[[
-
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
-
 WORKDIR /cf-cli
-
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
-
 RUN yarn install --prod --frozen-lockfile && \
     yarn cache clean
-
 COPY . /cf-cli
-
 RUN yarn generate-completion
-
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
-
 RUN codefresh components update --location components
-
 # we keep /root as home directory because cli by default looks for $HOME/.cfconfig
 # and we do not want to break user automation if they used to bind their .cfconfig
 # to the /root/.cfconfig
@@ -53,6 +43,7 @@ RUN useradd -m -d /root -s /bin/sh cfu \
    && chgrp -R $(id -g cfu) /root /cf-cli \
    && chmod -R g+rwX /root
 
+# Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
+ENV NODE_NO_WARNINGS=1
 USER cfu
-
 ENTRYPOINT ["codefresh"]
