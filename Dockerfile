@@ -21,6 +21,7 @@ RUN apk --update add --no-cache \
     curl \
     git \
     jq
+RUN npm upgrade -g npm
 COPY --from=go /go/bin/hub /usr/local/bin/hub
 COPY --from=yq /tmp/yq /usr/local/bin/yq
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
