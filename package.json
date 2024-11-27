@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.88.3",
+  "version": "0.88.4",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -19,6 +19,13 @@
   "bin": {
     "codefresh": "lib/interface/cli/codefresh"
   },
+  "files": [
+    "brew",
+    "lib",
+    "check-version.js",
+    "openapi.json",
+    "run-check-version.js"
+  ],
   "repository": "git+https://github.com/codefresh-io/cli.git",
   "keywords": [
     "command line"
