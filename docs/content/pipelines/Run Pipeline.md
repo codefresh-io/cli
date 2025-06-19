@@ -15,22 +15,22 @@ The pipeline will be triggered multiple times according to the array length.
 
 #### Variable yaml file with 2 sets of variables
 ```yaml
-- key: value
-  key2: key1
-- key: value
-  key2: key2
+- variable1: value1
+  variable2: value2
+- variable3: value3
+  variable4: value4
 ```
 
 #### Variable json file with 2 sets of variables
 ```json
 [
   {
-    "key": "value",
-    "key2": "key1"
+    "variable1": "value1",
+    "variable2": "value2"
   },
   {
-    "key": "value",
-    "key2": "key2"
+    "variable3": "value3",
+    "variable4": "value4"
   }
 ]
 ```
