@@ -36,4 +36,4 @@ RUN codefresh components update --location components
 
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
 ENV NODE_NO_WARNINGS=1
-# ENTRYPOINT ["codefresh"]
+ENTRYPOINT ["codefresh"]
