@@ -14,7 +14,7 @@ RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/
 FROM bitnami/kubectl:1.33.1 as kubectl
 
 # Main
-FROM node:22.16.0-alpine3.20
+FROM node:22.16.0-alpine3.22
 RUN apk --update add --no-cache \
     bash \
     ca-certificates \
