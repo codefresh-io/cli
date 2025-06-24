@@ -11,10 +11,10 @@ RUN pip install yq==${YQ_VERSION}
 RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
 
 # kubectl binary
-FROM bitnami/kubectl:1.30.6 AS kubectl
+FROM bitnami/kubectl:1.33.1 AS kubectl
 
 # Main
-FROM node:22.11.0-alpine3.20
+FROM node:22.16.0-alpine3.22
 RUN apk --update add --no-cache \
     bash \
     ca-certificates \
