@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "0.89.2",
+  "version": "0.89.3",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -43,7 +43,8 @@
     "ansi-regex": "^5.0.1",
     "kubernetes-client/@kubernetes/client-node": ">=0.22.2",
     "tough-cookie": "^4.1.3",
-    "openid-client": "^4.9.0"
+    "openid-client": "^4.9.0",
+    "**/request/form-data": "^2.5.5"
   },
   "dependencies": {
     "@codefresh-io/docker-reference": "^0.0.5",
