@@ -1,5 +1,5 @@
 # go hub binary
-FROM golang:alpine AS go
+FROM golang:1.24-alpine3.21 AS go
 RUN apk --update add ca-certificates git
 RUN go install github.com/github/hub@latest
 
