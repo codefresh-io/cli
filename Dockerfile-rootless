@@ -1,6 +1,6 @@
 # go hub binary
 FROM golang:alpine as go
-RUN apk --update add ca-certificates git
+RUN apk --update add --no-scripts ca-certificates git
 RUN go install github.com/github/hub@latest
 
 # python yq binary
