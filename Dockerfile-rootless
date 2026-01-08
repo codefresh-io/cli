@@ -1,20 +1,9 @@
 # go hub binary
 FROM golang:alpine as go
 RUN apk --update add --no-scripts ca-certificates git
-RUN go install github.com/github/hub@latest
-
-# python yq binary
-FROM six8/pyinstaller-alpine:alpine-3.6-pyinstaller-v3.4 as yq
-ARG YQ_VERSION=2.10.0
-ENV PATH="/pyinstaller:$PATH"
-RUN pip install yq==${YQ_VERSION}
-RUN pyinstaller --noconfirm --onefile --log-level DEBUG --clean --distpath /tmp/ $(which yq)
-
-# kubectl binary
-FROM bitnamilegacy/kubectl:1.33.1 as kubectl
 
 # Main
-FROM node:22.21.0-alpine3.22
+FROM node:24.12.0-alpine3.22
 RUN apk --update add --no-cache \
     bash \
     ca-certificates \
@@ -22,9 +11,8 @@ RUN apk --update add --no-cache \
     git \
     jq
 RUN npm upgrade -g npm
-COPY --from=go /go/bin/hub /usr/local/bin/hub
-COPY --from=yq /tmp/yq /usr/local/bin/yq
-COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
+COPY --from=mikefarah/yq:4.50.1 /usr/bin/yq /usr/local/bin/yq
+COPY --from=quay.io/codefresh/kubectl:1.35.0 /usr/local/bin/kubectl /usr/local/bin/
 WORKDIR /cf-cli
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 RUN yarn install --prod --frozen-lockfile && \
