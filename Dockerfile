@@ -12,7 +12,7 @@ RUN apk --update add --no-cache \
     jq
 RUN npm upgrade -g npm
 COPY --from=mikefarah/yq:4.50.1 /usr/bin/yq /usr/local/bin/yq
-COPY --from=quay.io/codefresh/kubectl:1.35.0 /usr/local/bin/kubectl /usr/local/bin/
+ADD https://dl.k8s.io/release/v1.35.0/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
 WORKDIR /cf-cli
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 RUN yarn install --prod --frozen-lockfile && \
