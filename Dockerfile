@@ -1,8 +1,3 @@
-# go hub binary
-FROM golang:alpine AS go
-RUN apk --update add --no-scripts ca-certificates git
-
-# Main
 FROM node:24.12.0-alpine3.23
 ARG TARGETPLATFORM
 RUN apk --update add --no-cache \
