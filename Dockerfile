@@ -1,4 +1,4 @@
-FROM node:24.12.0-alpine3.23
+FROM node:24.13.0-alpine3.23
 ARG TARGETPLATFORM
 RUN apk --update add --no-cache \
     bash \
