@@ -1,6 +1,6 @@
 {
   "name": "codefresh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Codefresh command line utility",
   "main": "index.js",
   "preferGlobal": true,
@@ -72,7 +72,7 @@
     "js-yaml": "^3.10.0",
     "kefir": "^3.8.1",
     "kubernetes-client": "^9.0.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "mkdirp": "^0.5.1",
     "moment": "^2.29.4",
     "mongodb": "^4.17.2",
