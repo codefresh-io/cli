@@ -109,7 +109,9 @@ Possible values:
 - yaml
 - wide
 - name
-- id   --date-format --df   Provide predefined or custom date format.</description>
+- id
+- jsonArray
+- yamlArray   --date-format --df   Provide predefined or custom date format.</description>
     </item>
     
     <item>
