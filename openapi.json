@@ -3128,7 +3128,16 @@
             },
             "required": true,
             "description": "Name"
-          }],
+          },
+          {
+            "in": "query",
+            "name": "force",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Force refreshing of the token"
+          }
+        ],
         "summary": "Get",
         "x-sdk-interface": "contexts.prepare"
       }
