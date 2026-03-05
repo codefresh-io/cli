@@ -3131,11 +3131,11 @@
           },
           {
             "in": "query",
-            "name": "force",
+            "name": "forceRefresh",
             "schema": {
-              "type": "string"
+              "type": "boolean"
             },
-            "description": "Force refreshing of the token"
+            "description": "Refresh the token even if the current token is still valid"
           }
         ],
         "summary": "Get",
