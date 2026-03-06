@@ -3128,7 +3128,16 @@
             },
             "required": true,
             "description": "Name"
-          }],
+          },
+          {
+            "in": "query",
+            "name": "forceRefresh",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Refresh the token even if the current token is still valid"
+          }
+        ],
         "summary": "Get",
         "x-sdk-interface": "contexts.prepare"
       }
