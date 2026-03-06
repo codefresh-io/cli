@@ -1588,6 +1588,21 @@
           </a>
         </div>
     </li>
+    <li data-nav-id="/cli/registries/registries/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cli/registries/registries/">Registries</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cli/registries/registries/standard/" class="dd-item">
+        <div>
+          <a href="/cli/registries/registries/standard/">
+            standard
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
 
@@ -1675,6 +1690,7 @@
 <li><a href="#examples">Examples</a>
 <ul>
 <li><a href="#get-context-name">Get context NAME</a></li>
+<li><a href="#get-context-by-name-and-active-token-if-it-s-expired">Get context by NAME and active token if it&rsquo;s expired</a></li>
 <li><a href="#get-all-contexts">Get all contexts</a></li>
 <li><a href="#get-all-contexts-with-credentials-decrypted">Get all contexts with credentials decrypted</a></li>
 <li><a href="#get-all-secret-contexts">Get all secret contexts</a></li>
@@ -1769,7 +1785,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>Context type<br><br>Possible values:<br> - config<br> - git.bitbucket-server<br> - git.bitbucket<br> - git.github<br> - git.gitlab<br> - git.stash<br> - helm-repository<br> - secret-yaml<br> - secret<br> - storage.gc<br> - storage.s3<br> - yaml<br> - secret-store.kubernetes<br> - secret-store.kubernetes-runtime</td>
+<td>Context type<br><br>Possible values:<br> - config<br> - git.bitbucket-server<br> - git.bitbucket<br> - git.github<br> - git.github-app<br> - git.codefresh-github-app<br> - git.gitlab<br> - git.stash<br> - helm-repository<br> - secret-yaml<br> - secret<br> - storage.gc<br> - storage.s3<br> - yaml<br> - secret-store.kubernetes<br> - secret-store.kubernetes-runtime</td>
 </tr>
 
 <tr>
@@ -1785,7 +1801,15 @@
 <td></td>
 <td></td>
 <td></td>
-<td>Activate tokens in case its invalid</td>
+<td>Activate tokens in case its invalid. It&rsquo;s supported only for types: <code>git.codefresh-github-app</code>, <code>git.github-app</code> and <code>git.bitbucket</code> (OAuth2)</td>
+</tr>
+
+<tr>
+<td>--force-prepare</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Refresh the token even if the current token is still valid. Unlike <code>--prepare</code>, which only refreshes expired tokens, this flag forces a token refresh unconditionally. It&rsquo;s supported only for <code>git.bitbucket</code> (OAuth2)</td>
 </tr>
 </tbody>
 </table>
@@ -1859,6 +1883,10 @@
 <h4 id="get-context-name">Get context NAME</h4>
 
 <p><code>codefresh get context NAME</code></p>
+
+<h4 id="get-context-by-name-and-active-token-if-it-s-expired">Get context by NAME and active token if it&rsquo;s expired</h4>
+
+<p><code>codefresh get context NAME --prepare</code></p>
 
 <h4 id="get-all-contexts">Get all contexts</h4>
 
