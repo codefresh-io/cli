@@ -5,10 +5,6 @@
 		<meta charset="utf-8">
 
 		<title>reveal.js - Test PDF exports</title>
-
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/print/pdf.css">
-		<link rel="stylesheet" href="qunit-1.12.0.css">
 	</head>
 
 	<body style="overflow: auto;">
@@ -22,7 +18,7 @@
 
 				<section>
 					<h1>1</h1>
-					<img data-src="fake-url.png">
+					<img data-src="">
 				</section>
 
 				<section>
@@ -73,11 +69,29 @@
 
 		</div>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.js"></script>
-		<script src="qunit-1.12.0.js"></script>
+		<script type="module">
+			import 'reveal.css';
+			import 'qunit/qunit/qunit.css';
+			import QUnit from 'qunit';
+			import Reveal from 'reveal.js';
 
-		<script src="test-pdf.js"></script>
+			QUnit.config.testTimeout = 30000;
+			QUnit.config.autostart = false;
+
+			Reveal.initialize({ pdf: true }).then( function() {
+
+				QUnit.start();
+
+				// Only one test for now, we're mainly ensuring that there
+				// are no execution errors when running PDF mode
+
+				QUnit.test( 'Reveal.isReady', function( assert ) {
+					assert.strictEqual( Reveal.isReady(), true, 'returns true' );
+				});
+
+			} );
+
+		</script>
 
 	</body>
 </html>
