@@ -1,0 +1,61 @@
+<iframe id="slideFrame" src="{{"none.html" | relURL }}" style="width:{{with .Get "width"}}{{.}}{{else}}100%{{end}};height:{{with .Get "height"}}{{.}}{{else}}30em{{end}}; border:0px"></iframe>
+
+<div id="slideContent">
+	<link rel="stylesheet" href="{{"revealjs/dist/reveal.css"|relURL}}">
+	<link rel="stylesheet" href="{{"revealjs/dist/theme/"|relURL}}{{with .Get "theme"}}{{.|safeHTML}}{{else}}league{{end}}.css" id="theme">
+	<link rel="stylesheet" href="{{"revealjs/dist/plugin/highlight/zenburn.css"|relURL}}">
+
+	<div class="reveal">
+	<div class="slides">
+	<section data-markdown
+	         data-separator="^---"
+			 data-separator-vertical="^___"
+			 data-separator-notes="^Note:"
+			 data-charset="utf8">
+		{{ .Inner | safeHTML}}
+	</section>
+	</div>
+	</div>
+
+	<script src="{{"/revealjs/dist/reveal.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/markdown.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/highlight.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/zoom.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/notes.js"|relURL}}"></script>
+	<script>
+	function initSlides() {
+		Reveal.initialize({
+		      	embedded : true,
+
+		        controls : {{with .Get "controls"}}{{.|safeHTML}}{{else}}false{{end}}, 
+ 				center: {{with .Get "center"}}{{.|safeHTML}}{{else}}true{{end}} ,		
+		        history: {{with .Get "history"}}{{.|safeHTML}}{{else}}false{{end}} ,
+		        progress: {{with .Get "progress"}}{{.|safeHTML}}{{else}}false{{end}} ,
+		        transition: {{with .Get "transition"}}{{.}}{{else}}"concave"{{end}},
+
+		        // Plugins for Reveal.js 6.0
+		        plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, RevealNotes ]
+		      });
+	}
+	</script>
+</div>
+<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
+
+<script type="text/javascript">
+var toto = document.getElementById('slideContent').innerHTML
+document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
+document.getElementById('slideContent').remove();
+document.addEventListener("DOMContentLoaded",function(){
+	  setTimeout(function () {
+      document.getElementById('slideFrame').contentWindow.initSlides() ;
+    }, 2000);
+});
+
+
+function slideFullScreen() {
+	document.open();
+	document.write(toto);
+	document.close();
+	initSlides()
+}
+</script>
