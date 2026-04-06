@@ -1,0 +1,35 @@
+"docs/content/operate on resources/_index.md"
+  ff64a6bec28fc992 6-9
+docs/content/_index.md
+  ff64a6bec28fc992 11-12,14-17
+docs/content/installation/_index.md
+  ff64a6bec28fc992 7,9,11
+"docs/content/pipelines/Run Pipeline.md"
+  ff64a6bec28fc992 12-15
+docs/content/getting-started/_index.md
+  ff64a6bec28fc992 12,14-21,25,27
+docs/content/installation/docker.md
+  ff64a6bec28fc992 8
+docs/content/contexts/spec/_index.md
+  ff64a6bec28fc992 10,12-14,17-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "0fb9b3aa6878a6eee4aa088ba68fd56a806c84b8",
+  "prompts": {
+    "ff64a6bec28fc992": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8bbab833-898a-4941-baf6-492c1ca57300",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "vitaliichyrka",
+      "messages": [],
+      "total_additions": 44,
+      "total_deletions": 35,
+      "accepted_lines": 43,
+      "overriden_lines": 0
+    }
+  }
+}
