@@ -7,19 +7,20 @@ A Context needs `.apiVersion`, `.kind`, and `.metadata` fields.
 A Context also needs a `.spec` section.
 
 ### Owner
-A context can be either attached to a user or to an account.<br>
-`.owner` can be either `account` or `user`. <br>
-The default is `account`. <br>
+A context can be either attached to a user or to an account.
+
+`.owner` can be either `account` or `user`.
+
+The default is `account`.
 
 ### Type
-`.spec.type` should be one of the following:  <br>
-<ul>
-    <li>[config](config) </li> 
-    <li>[secret](secret) </li> 
-    <li>[yaml](yaml) </li> 
-    <li>[secret-yaml](secret-yaml) </li> 
-    <li>[helm-repository](helm-repository) </li> 
-</ul>
+`.spec.type` should be one of the following:
+
+- [config](config)
+- [secret](secret)
+- [yaml](yaml)
+- [secret-yaml](secret-yaml)
+- [helm-repository](helm-repository)
 
 ### Data
 `.spec.data` should be different according to the type of the context

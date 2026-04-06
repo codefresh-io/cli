@@ -9,20 +9,24 @@ weight = 10
 Install the CLI through one of the possible ways described in the [Installation](/cli/installation) page.
 
 ## Authenticate
-In order to start working with the cli you will need to update the authentication configuration. <br />
-Updating the authentication configuration is done via an API-KEY you generate from Codefresh. <br />
+In order to start working with the cli you will need to update the authentication configuration.
 
-If you already have an API-KEY you can just use it.<br />
-You can generate a new one from the <a href="https://g.codefresh.io/user/settings" target="_blank">user settings</a> page. <br />
- 
-Once you have an API key, create a new authentication context:<br> `codefresh auth create-context --api-key {API_KEY}`
+Updating the authentication configuration is done via an API-KEY you generate from Codefresh.
+
+If you already have an API-KEY you can just use it.
+
+You can generate a new one from the [user settings](https://g.codefresh.io/user/settings) page.
+
+Once you have an API key, create a new authentication context:
+
+`codefresh auth create-context --api-key {API_KEY}`
 
 ## Getting Help
-To get help and usage instructions run `codefresh [COMMAND]--help`.<br />
-A help message will appear in the terminal.<br />
+To get help and usage instructions run `codefresh [COMMAND]--help`.
+
+A help message will appear in the terminal.
 
 ## Showing Current Version
 Run `codefresh version` to see the current CLI version.
 
-<br />
 #### That's it, you are good to go!

@@ -4,10 +4,10 @@ description = ""
 weight = 20
 +++
 
-Codefresh CLI is developed and built with node.js. <br />
+Codefresh CLI is developed and built with node.js.
 
-In case you have node.js installed on your machine you can use [NPM](/cli/installation/npm) or [YARN](/cli/installation/yarn) to install it.<br>
+In case you have node.js installed on your machine you can use [NPM](/cli/installation/npm) or [YARN](/cli/installation/yarn) to install it.
 
-If you don't have node.js installed you can install the CLI by [Downloading](/cli/installation/download) it directly.<br />
+If you don't have node.js installed you can install the CLI by [Downloading](/cli/installation/download) it directly.
 
 It is also possible to run the CLI using a [Docker image](/cli/installation/docker).

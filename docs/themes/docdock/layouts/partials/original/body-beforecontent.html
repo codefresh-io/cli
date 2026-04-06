@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
 		<script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
 		<script type="text/javascript">
-        {{ if .Site.IsMultiLingual }}
+        {{ if hugo.IsMultilingual }}
             var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
         {{ else }}
             var baseurl = "{{.Site.BaseURL}}";
@@ -120,7 +120,7 @@
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}
+{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.RelPermalink .page.Parent.Title .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
 {{else}}
  {{.value|safeHTML}}

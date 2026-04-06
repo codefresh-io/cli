@@ -1,9 +1,9 @@
 <iframe id="slideFrame" src="{{"none.html" | relURL }}" style="width:{{with .Get "width"}}{{.}}{{else}}100%{{end}};height:{{with .Get "height"}}{{.}}{{else}}30em{{end}}; border:0px"></iframe>
 
 <div id="slideContent">
-	<link rel="stylesheet" href="{{"revealjs/css/reveal.css"|relURL}}">
-	<link rel="stylesheet" href="{{"revealjs/css/theme/"|relURL}}{{with .Get "theme"}}{{.|safeHTML}}{{else}}league{{end}}.css" id="theme">
-	<link rel="stylesheet" href="{{"revealjs/lib/css/zenburn.css"|relURL}}">
+	<link rel="stylesheet" href="{{"revealjs/dist/reveal.css"|relURL}}">
+	<link rel="stylesheet" href="{{"revealjs/dist/theme/"|relURL}}{{with .Get "theme"}}{{.|safeHTML}}{{else}}league{{end}}.css" id="theme">
+	<link rel="stylesheet" href="{{"revealjs/dist/plugin/highlight/zenburn.css"|relURL}}">
 
 	<div class="reveal">
 	<div class="slides">
@@ -17,8 +17,11 @@
 	</div>
 	</div>
 
-	<script async src="{{"/revealjs/lib/js/head.min.js"|relURL}}"></script>
-	<script async src="{{"/revealjs/js/reveal.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/reveal.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/markdown.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/highlight.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/zoom.js"|relURL}}"></script>
+	<script src="{{"/revealjs/dist/plugin/notes.js"|relURL}}"></script>
 	<script>
 	function initSlides() {
 		Reveal.initialize({
@@ -30,16 +33,8 @@
 		        progress: {{with .Get "progress"}}{{.|safeHTML}}{{else}}false{{end}} ,
 		        transition: {{with .Get "transition"}}{{.}}{{else}}"concave"{{end}},
 
-		        // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-		        // Optional libraries used to extend on reveal.js
-		        dependencies: [
-		          { src: '{{"revealjs/lib/js/classList.js"|relURL}}"', condition: function() { return !document.body.classList; } },
-		          { src: '{{"revealjs/plugin/markdown/marked.js"|relURL}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '{{"revealjs/plugin/markdown/markdown.js"|relURL}}', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '{{"revealjs/plugin/highlight/highlight.js"|relURL}}', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		          { src: '{{"revealjs/plugin/zoom-js/zoom.js"|relURL}}', async: true, condition: function() { return !!document.body.classList; } },
-		          { src: '{{"revealjs/plugin/notes/notes.js"|relURL}}', async: true, condition: function() { return !!document.body.classList; } }
-		        ]
+		        // Plugins for Reveal.js 6.0
+		        plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, RevealNotes ]
 		      });
 	}
 	</script>

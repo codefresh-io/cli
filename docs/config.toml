@@ -21,6 +21,11 @@ highlightClientSide = false # set true to use highlight.pack.js instead of the d
 [blackfriday]
   smartDashes = false
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 

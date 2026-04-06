@@ -8,7 +8,7 @@ RUN apk --update add --no-cache \
     jq
 RUN npm upgrade -g npm
 COPY --from=mikefarah/yq:4.52.4 /usr/bin/yq /usr/local/bin/yq
-ADD --chmod=775 https://dl.k8s.io/release/v1.35.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
+ADD --chmod=775 https://dl.k8s.io/release/v1.35.3/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
 WORKDIR /cf-cli
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 RUN yarn install --prod --frozen-lockfile && \
