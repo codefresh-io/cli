@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Sections :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1188,13 +1188,26 @@
       <a href="/cli/section/">Section</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/cli/section/delete-section/" class="dd-item">
+        <div>
+          <a href="/cli/section/delete-section/">
+            Delete section
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/section/update-section/" class="dd-item">
+        <div>
+          <a href="/cli/section/update-section/">
+            Update Section
+          </a>
+        </div>
+    </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/sections/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/sections/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/sections/">Sections</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/sections/">Sections</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/sections/get-section/" class="dd-item">
@@ -1655,16 +1668,14 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-section-get-section"><a href="get-section">Get Section</a></a></li>
-<li><a href="#create-section-create-section"><a href="create-section">Create section</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-section">Get Section</a></li>
+        <li><a href="#create-section">Create section</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1684,20 +1695,12 @@
     
     
 
-
-
-<h3 id="get-section-get-section"><a href="get-section">Get Section</a></h3>
-
+<h3 id="get-section"><a href="get-section">Get Section</a></h3>
 <p><code>codefresh get sections [id]</code></p>
-
 <p>Get a specific section or an array of sections.</p>
-
-<h3 id="create-section-create-section"><a href="create-section">Create section</a></h3>
-
+<h3 id="create-section"><a href="create-section">Create section</a></h3>
 <p><code>codefresh create section &lt;name&gt;</code></p>
-
 <p>Create a section.</p>
-
 <p>You can create a section specifying name unique for account.</p>
 
 

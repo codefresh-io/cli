@@ -1,895 +1,457 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://codefresh-io.github.io/cli/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-create-pipeline-trigger/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/config/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/getting-started/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/installation/npm/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/repository/add-repository/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/tokens/create-tokens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/get/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/workflow-data/get/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/agents/get-agents/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/boards/get-board/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/builds/get-build/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/clusters/get-clusters/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/compositions/get-composition/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/get-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/authentication/get-contexts/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/environments/get-environment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/images/get-image/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/projects/get-projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/registries/get-registries/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/sections/get-section/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/steps/get-step/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/teams/get-teams/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-event/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-trigger-types/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-get-triggers/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/repository/add-repository/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/bitbucket/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-config-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/tokens/create-tokens/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/delete-helm-release/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/annotations/get/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/get/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/workflow-data/get/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/get-agents/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/boards/get-board/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/builds/get-build/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/clusters/get-clusters/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/compositions/get-composition/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/get-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/authentication/get-contexts/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/environments/get-environment/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/get-helm-repo/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/images/get-image/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/pipelines/get-pipeline/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/projects/get-projects/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/registries/get-registries/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments-base-images/get-runtime-environment-base-images/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/get-runtime-environments/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/sections/get-section/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/steps/get-step/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/teams/get-teams/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/github/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/gitlab/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/kubernetes-runtime/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/rollback-helm-release/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/standard/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/stash/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/installation/</loc>
+    <lastmod>2018-01-30T12:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/secret/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/installation/yarn/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/create/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/workflow-data/create/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/agents/create-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/compositions/create-composition/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/authentication/create-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/projects/create-project/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/boards/create-board/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/sections/create-section/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/teams/create-team/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/repository/get-repositories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/tokens/get-tokens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/installation/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/builds/show-build-logs/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-create-trigger-event/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/annotations/create/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/create/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/workflow-data/create/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/create-agent/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/boards/create-board/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/compositions/create-composition/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/authentication/create-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/create-helm-repo/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/projects/create-project/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/sections/create-section/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/teams/create-team/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/repository/get-repositories/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/tokens/get-tokens/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/install-or-upgrade-helm-chart/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/promote-helm-release/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/set-helm-config/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/builds/show-build-logs/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/installation/docker/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/yaml/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/completion/codefresh-completion/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/completion/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/delete/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/agents/delete-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/clusters/delete-cluster/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/compositions/delete-composition/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/delete-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/environments/delete-environment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/projects/delete-project/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/registries/delete-registry/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/repository/delete-repository/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/step-types/delete-step-type/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/board/delete-board/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/section/delete-section/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/authentication/get-activated-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/teams/remove-user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/builds/restart-build/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-yaml-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/deprecated-delete-trigger-event/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/completion/codefresh-completion/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/completion/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/annotations/delete/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/delete/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/delete-agent/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/board/delete-board/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/clusters/delete-cluster/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/compositions/delete-composition/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/delete-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/environments/delete-environment/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/delete-helm-repo/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/pipelines/delete-pipeline/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/projects/delete-project/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/registries/delete-registry/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/repository/delete-repository/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/delete-runtime-environments/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/section/delete-section/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/step-types/delete-step-type/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/authentication/get-activated-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/teams/remove-user/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/builds/restart-build/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-yaml-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/predefined-pipelines/test-helm-release/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/authentication/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/installation/download/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/secret-yaml/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/teams/add-user/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/tokens/delete-tokens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/components/download/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runner/info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/install-resources/install/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/patch/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/agents/patch-agent/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/projects/patch-project/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/tokens/patch-token/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/pipelines/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/runner-resources/runner/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/authentication/set-active-context/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/builds/terminate-build/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/components/update/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/board/update-board/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/section/update-section/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/codefresh-cli-components/components/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/tokens/delete-tokens/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/components/download/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner/execute-test-pipeline/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner/info/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/install-resources/install/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/patch/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/patch-agent/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/projects/patch-project/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/tokens/patch-token/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/pipelines/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner-resources/runner/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/authentication/set-active-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/builds/terminate-build/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/components/update/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/board/update-board/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/helm-repos/update-helm-repo/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/section/update-section/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/operate-on-resources/upgrade/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-yaml-context/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/projects/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/helm-repository/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/images/annotate-image/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/pipelines/run-pipeline/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/wait-for-build-condition/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/installation/homebrew/</loc>
     <lastmod>2018-01-30T12:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/images/tag-image/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/audit/download/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/more/image-pull-secret/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/images/untag-image/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/images/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/replace/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/compositions/replace-composition/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/apply-runtime-environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/triggers/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/update-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/agents/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/analyzer/analyze/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/analyzer/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/annotations/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/app-proxy/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/approve/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/audit/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/board/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/boards/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/clusters/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/codefresh-cli-components/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/components/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/clusters/create-cluster/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runner/delete/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/deny/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/diff/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/diff-runtime-environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/gitops/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runner/init/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/agents/install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/app-proxy/install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/gitops/install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/monitor/install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/install-resources/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs-category/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/monitor/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/offload-to-collection/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/offload-to-file/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/registries/registries/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/repository/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runner/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runner-resources/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments-base-images/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-secret-store-context/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/section/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/sections/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/show-config/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/step-types/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/steps/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/tokens/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/agents/uninstall/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/app-proxy/uninstall/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/gitops/uninstall/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/monitor/uninstall/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/uninstall-resources/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/app-proxy/upgrade/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/gitops/upgrade/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/runner/upgrade/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/validation/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/workflow-data/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/compositions/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/get-config-properties/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/set-config-property/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/helm-repos/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/predefined-pipelines/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/profiles/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/cli-config/describe-config-properties/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/more/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/teams/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/_header/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/external-resources/</loc>
-  </url>
-  
-  <url>
-    <loc>https://codefresh-io.github.io/cli/registries/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/spec/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/categories/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/external-resources/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/registries/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/pipelines/spec/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/tags/</loc>
-    <priority>0</priority>
   </url>
-  
 </urlset>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Repository :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1016,11 +1016,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/repository/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/repository/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/repository/">Repository</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/repository/">Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/repository/add-repository/" class="dd-item">
@@ -1669,17 +1668,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#add-repository-add-repository"><a href="add-repository">Add Repository</a></a></li>
-<li><a href="#get-repositories-get-repositories"><a href="get-repositories">Get Repositories</a></a></li>
-<li><a href="#delete-repository-delete-repository"><a href="delete-repository">Delete Repository</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#add-repository">Add Repository</a></li>
+        <li><a href="#get-repositories">Get Repositories</a></li>
+        <li><a href="#delete-repository">Delete Repository</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1699,24 +1696,14 @@
     
     
 
-
-
-<h3 id="add-repository-add-repository"><a href="add-repository">Add Repository</a></h3>
-
+<h3 id="add-repository"><a href="add-repository">Add Repository</a></h3>
 <p><code>codefresh add repository [fullname]</code></p>
-
 <p>Add a repository from git context to codefresh.</p>
-
-<h3 id="get-repositories-get-repositories"><a href="get-repositories">Get Repositories</a></h3>
-
+<h3 id="get-repositories"><a href="get-repositories">Get Repositories</a></h3>
 <p><code>codefresh get repository [names..]</code></p>
-
-<p>You can either get codefresh repos (previously added) or any repo from your git context (using option &ldquo;--available&rdquo; and &ldquo;--context&rdquo;).</p>
-
-<h3 id="delete-repository-delete-repository"><a href="delete-repository">Delete Repository</a></h3>
-
+<p>You can either get codefresh repos (previously added) or any repo from your git context (using option &ldquo;&ndash;available&rdquo; and &ldquo;&ndash;context&rdquo;).</p>
+<h3 id="delete-repository"><a href="delete-repository">Delete Repository</a></h3>
 <p><code>codefresh delete repository [name_id]</code></p>
-
 <p>Remove repository by name_id (&ldquo;name_id&rdquo; can be retrieved with &ldquo;get&rdquo; command, typically &ldquo;repo_owner/repo_name&rdquo;)</p>
 
 

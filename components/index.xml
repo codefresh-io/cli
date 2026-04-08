@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on Codefresh CLI Documentation</title>
+    <link>https://codefresh-io.github.io/cli/components/</link>
+    <description>Recent content in Components on Codefresh CLI Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://codefresh-io.github.io/cli/components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Download</title>
+      <link>https://codefresh-io.github.io/cli/components/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://codefresh-io.github.io/cli/components/download/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Download Codefresh CLI components.&lt;/p&gt;&#xA;&lt;h3 id=&#34;command&#34;&gt;Command&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh components download&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;help&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Print help information&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;location&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Override download folder location. Default: ~/.Codefresh&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;components&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Components. List of [stevedore, venona, argocd-agent, codefresh]&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+    <item>
+      <title>Update</title>
+      <link>https://codefresh-io.github.io/cli/components/update/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://codefresh-io.github.io/cli/components/update/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Update Codefresh CLI components.&lt;/p&gt;&#xA;&lt;h3 id=&#34;command&#34;&gt;Command&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh components update&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;help&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Print help information&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;location&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Override download folder location&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;bypass-download&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;boolean&lt;/td&gt;&#xA;          &lt;td&gt;false&lt;/td&gt;&#xA;          &lt;td&gt;Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>

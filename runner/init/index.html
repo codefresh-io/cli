@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Init :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,21 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#see-values-file-example-here-https-github-com-codefresh-io-venona-blob-release-1-0-venonactl-example-values-example-yaml">See values file example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml)">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml)</a></a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1707,300 +1702,257 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Install Codefresh Runner solution&rsquo;s components on Kubernetes cluster.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh runner init</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Agent&rsquo;s name to be created if token is not provided</td>
-</tr>
-
-<tr>
-<td>--token</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Registration&rsquo;s token</td>
-</tr>
-
-<tr>
-<td>--url</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Codefresh system custom url</td>
-</tr>
-
-<tr>
-<td>--generate-helm-values-file</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>Path to the new generated helm values file</td>
-</tr>
-
-<tr>
-<td>--kube-context-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the Kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
-</tr>
-
-<tr>
-<td>--kube-node-selector</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
-</tr>
-
-<tr>
-<td>--build-node-selector</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by the Codefresh build resources (default is no node selector)</td>
-</tr>
-
-<tr>
-<td>--yes</td>
-<td>-y</td>
-<td>boolean</td>
-<td>false</td>
-<td>Use installation defaults (don&rsquo;t ask any questions)</td>
-</tr>
-
-<tr>
-<td>--skip-cluster-test</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Do not test given kubeconfig context to have all the required permission</td>
-</tr>
-
-<tr>
-<td>--skip-cluster-integration</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Do not create a cluster integration in Codefresh</td>
-</tr>
-
-<tr>
-<td>--set-default-runtime</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Set this as the default runtime environment for your Codefresh account</td>
-</tr>
-
-<tr>
-<td>--exec-demo-pipeline</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Run a demo pipeline after the installation completes</td>
-</tr>
-
-<tr>
-<td>--install-monitor</td>
-<td></td>
-<td>boolean</td>
-<td>true</td>
-<td>Install a monitoring component that will help provide valueable data about your cluster to Codefresh</td>
-</tr>
-
-<tr>
-<td>--kube-namespace</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
-</tr>
-
-<tr>
-<td>--tolerations</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The Kubernetes tolerations as path to a JSON file prefixed with @ to be used by runner resources (default is no tolerations) (string)</td>
-</tr>
-
-<tr>
-<td>--storage-class-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set a name of your custom storage class</td>
-</tr>
-
-<tr>
-<td>--docker-registry</td>
-<td></td>
-<td>string</td>
-<td>quay.io</td>
-<td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;  default is quay.io</td>
-</tr>
-
-<tr>
-<td>--kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
-</tr>
-
-<tr>
-<td>--values</td>
-<td></td>
-<td></td>
-<td></td>
-<td>specify values in a YAML file (see example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml</a>)</td>
-</tr>
-
-<tr>
-<td>--set-value</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
-</tr>
-
-<tr>
-<td>--set-file</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set values for templates from file, example: --set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
-</tr>
-
-<tr>
-<td>--http-proxy</td>
-<td></td>
-<td></td>
-<td></td>
-<td>http proxy to be used in the runner</td>
-</tr>
-
-<tr>
-<td>--https-proxy</td>
-<td></td>
-<td></td>
-<td></td>
-<td>https proxy to be used in the runner</td>
-</tr>
-
-<tr>
-<td>--no-proxy</td>
-<td></td>
-<td></td>
-<td></td>
-<td>no_proxy to be used in the runner</td>
-</tr>
-
-<tr>
-<td>--verbose</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print logs</td>
-</tr>
-
-<tr>
-<td>--env-vars</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Addiontal env vars to be used in all Codefresh components</td>
-</tr>
-
-<tr>
-<td>--app-proxy</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>install app proxy component (default false)</td>
-</tr>
-
-<tr>
-<td>--app-proxy-host</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>the hostname that will be used by the app-proxy ingress</td>
-</tr>
-
-<tr>
-<td>--app-proxy-ingress-class</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>the ingress class that will be used by the app-proxy ingress</td>
-</tr>
-
-<tr>
-<td>--docker-daemon-access</td>
-<td></td>
-<td>boolean</td>
-<td>true</td>
-<td>docker daemon access (default true)</td>
-</tr>
-
-<tr>
-<td>--dry-run</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Will save all of the manifests to be deployed on the cluster to: ./manifests/</td>
-</tr>
-
-<tr>
-<td>--bypass-download</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent&rsquo;s name to be created if token is not provided</td>
+      </tr>
+      <tr>
+          <td>&ndash;token</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Registration&rsquo;s token</td>
+      </tr>
+      <tr>
+          <td>&ndash;url</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Codefresh system custom url</td>
+      </tr>
+      <tr>
+          <td>&ndash;generate-helm-values-file</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>Path to the new generated helm values file</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-context-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the Kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-node-selector</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
+      </tr>
+      <tr>
+          <td>&ndash;build-node-selector</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The Kubernetes node selector &ldquo;key=value&rdquo; to be used by the Codefresh build resources (default is no node selector)</td>
+      </tr>
+      <tr>
+          <td>&ndash;yes</td>
+          <td>-y</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Use installation defaults (don&rsquo;t ask any questions)</td>
+      </tr>
+      <tr>
+          <td>&ndash;skip-cluster-test</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Do not test given kubeconfig context to have all the required permission</td>
+      </tr>
+      <tr>
+          <td>&ndash;skip-cluster-integration</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Do not create a cluster integration in Codefresh</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-default-runtime</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Set this as the default runtime environment for your Codefresh account</td>
+      </tr>
+      <tr>
+          <td>&ndash;exec-demo-pipeline</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Run a demo pipeline after the installation completes</td>
+      </tr>
+      <tr>
+          <td>&ndash;install-monitor</td>
+          <td></td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>Install a monitoring component that will help provide valueable data about your cluster to Codefresh</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-namespace</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
+      </tr>
+      <tr>
+          <td>&ndash;tolerations</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The Kubernetes tolerations as path to a JSON file prefixed with @ to be used by runner resources (default is no tolerations) (string)</td>
+      </tr>
+      <tr>
+          <td>&ndash;storage-class-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set a name of your custom storage class</td>
+      </tr>
+      <tr>
+          <td>&ndash;docker-registry</td>
+          <td></td>
+          <td>string</td>
+          <td>quay.io</td>
+          <td>The prefix for the container registry that will be used for pulling the required components images. Example: &ndash;docker-registry=&ldquo;docker.io&rdquo;  default is quay.io</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-config-path</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+      </tr>
+      <tr>
+          <td>&ndash;values</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>specify values in a YAML file (see example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml</a>)</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-value</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set values for templates, example: &ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-file</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set values for templates from file, example: &ndash;set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
+      </tr>
+      <tr>
+          <td>&ndash;http-proxy</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>http proxy to be used in the runner</td>
+      </tr>
+      <tr>
+          <td>&ndash;https-proxy</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>https proxy to be used in the runner</td>
+      </tr>
+      <tr>
+          <td>&ndash;no-proxy</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>no_proxy to be used in the runner</td>
+      </tr>
+      <tr>
+          <td>&ndash;verbose</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print logs</td>
+      </tr>
+      <tr>
+          <td>&ndash;env-vars</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Addiontal env vars to be used in all Codefresh components</td>
+      </tr>
+      <tr>
+          <td>&ndash;app-proxy</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>install app proxy component (default false)</td>
+      </tr>
+      <tr>
+          <td>&ndash;app-proxy-host</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>the hostname that will be used by the app-proxy ingress</td>
+      </tr>
+      <tr>
+          <td>&ndash;app-proxy-ingress-class</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>the ingress class that will be used by the app-proxy ingress</td>
+      </tr>
+      <tr>
+          <td>&ndash;docker-daemon-access</td>
+          <td></td>
+          <td>boolean</td>
+          <td>true</td>
+          <td>docker daemon access (default true)</td>
+      </tr>
+      <tr>
+          <td>&ndash;dry-run</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Will save all of the manifests to be deployed on the cluster to: ./manifests/</td>
+      </tr>
+      <tr>
+          <td>&ndash;bypass-download</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
-<h4 id="see-values-file-example-here-https-github-com-codefresh-io-venona-blob-release-1-0-venonactl-example-values-example-yaml">See values file example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml)">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml)</a></h4>
-
+<h4 id="see-values-file-example-here-">See values file example here: <a href="https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml">https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml</a>)</h4>
 <p><code>codefresh runner init --values values.yaml</code></p>
 
 

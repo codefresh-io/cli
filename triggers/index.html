@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Triggers :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -579,11 +579,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/triggers/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/triggers/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/triggers/">Triggers</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/triggers/">Triggers</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/triggers/deprecated-create-pipeline-trigger/" class="dd-item">
@@ -1263,34 +1262,6 @@
       <a href="/cli/tokens/">Tokens</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/tokens/create-tokens/" class="dd-item">
-        <div>
-          <a href="/cli/tokens/create-tokens/">
-            Create tokens
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/tokens/get-tokens/" class="dd-item">
-        <div>
-          <a href="/cli/tokens/get-tokens/">
-            Get tokens
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/tokens/delete-tokens/" class="dd-item">
-        <div>
-          <a href="/cli/tokens/delete-tokens/">
-            Delete tokens
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/tokens/patch-token/" class="dd-item">
-        <div>
-          <a href="/cli/tokens/patch-token/">
-            Patch token
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/uninstall-resources/" class="dd-item haschildren
@@ -1669,21 +1640,19 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#deprecated-create-pipeline-trigger-deprecated-create-pipeline-trigger"><a href="[deprecated]-create-pipeline-trigger">[Deprecated] Create Pipeline Trigger</a></a></li>
-<li><a href="#deprecated-get-triggers-deprecated-get-triggers"><a href="[deprecated]-get-triggers">[Deprecated] Get Triggers</a></a></li>
-<li><a href="#deprecated-get-trigger-event-deprecated-get-trigger-event"><a href="[deprecated]-get-trigger-event">[Deprecated] Get Trigger Event</a></a></li>
-<li><a href="#deprecated-get-trigger-types-deprecated-get-trigger-types"><a href="[deprecated]-get-trigger-types">[Deprecated] Get Trigger Types</a></a></li>
-<li><a href="#deprecated-delete-pipeline-trigger-deprecated-please-use-pipeline-spec-to-manager-cron-trigger-deprecated-delete-pipeline-trigger-deprecated-please-use-pipeline-spec-to-manager-cron-trigger"><a href="[deprecated]-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></a></li>
-<li><a href="#deprecated-create-trigger-event-deprecated-create-trigger-event"><a href="[deprecated]-create-trigger-event">[Deprecated] Create Trigger Event</a></a></li>
-<li><a href="#deprecated-delete-trigger-event-deprecated-delete-trigger-event"><a href="[deprecated]-delete-trigger-event">[Deprecated] Delete Trigger Event</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading">[Deprecated] Create Pipeline Trigger</a></li>
+        <li><a href="#heading-1">[Deprecated] Get Triggers</a></li>
+        <li><a href="#heading-2">[Deprecated] Get Trigger Event</a></li>
+        <li><a href="#heading-3">[Deprecated] Get Trigger Types</a></li>
+        <li><a href="#heading-4">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></li>
+        <li><a href="#heading-5">[Deprecated] Create Trigger Event</a></li>
+        <li><a href="#heading-6">[Deprecated] Delete Trigger Event</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1703,50 +1672,27 @@
     
     
 
-
-
-<h3 id="deprecated-create-pipeline-trigger-deprecated-create-pipeline-trigger"><a href="[deprecated]-create-pipeline-trigger">[Deprecated] Create Pipeline Trigger</a></h3>
-
+<h3 id="heading"><a href="%5Bdeprecated%5D-create-pipeline-trigger">[Deprecated] Create Pipeline Trigger</a></h3>
 <p><code>codefresh create trigger [event-uri] [pipeline]</code></p>
-
 <p>[Deprecated] Create trigger: link pipeline to <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
-
-<h3 id="deprecated-get-triggers-deprecated-get-triggers"><a href="[deprecated]-get-triggers">[Deprecated] Get Triggers</a></h3>
-
+<h3 id="heading-1"><a href="%5Bdeprecated%5D-get-triggers">[Deprecated] Get Triggers</a></h3>
 <p><code>codefresh get triggers</code></p>
-
 <p>[Deprecated] Get triggers, optionally filtered by pipeline or event. Deprecated - please use pipeline spec to manager cron triggers.</p>
-
 <p>Only cron/registry triggers are supported (for git triggers use <code>codefresh get pip &lt;pip-name&gt; -o json</code>).</p>
-
-<h3 id="deprecated-get-trigger-event-deprecated-get-trigger-event"><a href="[deprecated]-get-trigger-event">[Deprecated] Get Trigger Event</a></h3>
-
+<h3 id="heading-2"><a href="%5Bdeprecated%5D-get-trigger-event">[Deprecated] Get Trigger Event</a></h3>
 <p><code>codefresh get trigger-events [event-uri]</code></p>
-
 <p>[Deprecated] Get <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
-
-<h3 id="deprecated-get-trigger-types-deprecated-get-trigger-types"><a href="[deprecated]-get-trigger-types">[Deprecated] Get Trigger Types</a></h3>
-
+<h3 id="heading-3"><a href="%5Bdeprecated%5D-get-trigger-types">[Deprecated] Get Trigger Types</a></h3>
 <p><code>codefresh get trigger-types</code></p>
-
 <p>[Deprecated] Get a list of available trigger-types. Deprecated - please use pipeline spec to manager cron trigger.</p>
-
-<h3 id="deprecated-delete-pipeline-trigger-deprecated-please-use-pipeline-spec-to-manager-cron-trigger-deprecated-delete-pipeline-trigger-deprecated-please-use-pipeline-spec-to-manager-cron-trigger"><a href="[deprecated]-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></h3>
-
+<h3 id="heading-4"><a href="%5Bdeprecated%5D-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></h3>
 <p><code>codefresh delete trigger [event-uri] [pipeline]</code></p>
-
 <p>Delete trigger: unlink pipeline from <code>trigger-event</code>.</p>
-
-<h3 id="deprecated-create-trigger-event-deprecated-create-trigger-event"><a href="[deprecated]-create-trigger-event">[Deprecated] Create Trigger Event</a></h3>
-
+<h3 id="heading-5"><a href="%5Bdeprecated%5D-create-trigger-event">[Deprecated] Create Trigger Event</a></h3>
 <p><code>codefresh create trigger-event</code></p>
-
 <p>[Deprecated] Create new <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
-
-<h3 id="deprecated-delete-trigger-event-deprecated-delete-trigger-event"><a href="[deprecated]-delete-trigger-event">[Deprecated] Delete Trigger Event</a></h3>
-
+<h3 id="heading-6"><a href="%5Bdeprecated%5D-delete-trigger-event">[Deprecated] Delete Trigger Event</a></h3>
 <p><code>codefresh delete trigger-event [event-uri]</code></p>
-
 <p>[Deprecated] Delete <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
 
 

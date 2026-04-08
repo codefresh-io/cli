@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Secret Yaml :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -506,41 +506,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/contexts/spec/config/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/spec/config/">
-            Config
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/spec/secret/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/spec/secret/">
-            Secret
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/spec/yaml/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/spec/yaml/">
-            Yaml
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/spec/secret-yaml/" class="dd-item active">
-        <div>
-          <a href="/cli/contexts/spec/secret-yaml/">
-            Secret Yaml
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/contexts/spec/helm-repository/" class="dd-item">
-        <div>
-          <a href="/cli/contexts/spec/helm-repository/">
-            Helm Repository
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
         </ul>
@@ -1680,20 +1645,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#type">Type</a></li>
-<li><a href="#data">Data</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#secret-yaml-with-two-keys">secret-yaml with two keys</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1712,33 +1672,26 @@
     
     
     
-    
-
-<p>Secret-Yaml context stores an yaml file encrypted.</p>
-
+    <p>Secret-Yaml context stores an yaml file encrypted.</p>
 <h3 id="type">Type</h3>
-
 <p><code>.spec.type</code> should be <code>secret-yaml</code>.</p>
-
 <h3 id="data">Data</h3>
-
 <p><code>.spec.data</code> should be an array of keys and values.</p>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="secret-yaml-with-two-keys">secret-yaml with two keys</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion<span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
-kind<span style="color:#111">:</span> <span style="color:#d88200">&#34;context&#34;</span>
-owner<span style="color:#111">:</span> <span style="color:#d88200">&#34;account&#34;</span>
-metadata<span style="color:#111">:</span>
-  name<span style="color:#111">:</span> <span style="color:#d88200">&#34;my-secret-yaml-context&#34;</span>
-spec<span style="color:#111">:</span>
-  type<span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-yaml&#34;</span>
-  data<span style="color:#111">:</span>
-    serviceType<span style="color:#111">:</span> <span style="color:#d88200">&#34;LoadBalancer&#34;</span>
-    image<span style="color:#111">:</span> <span style="color:#d88200">&#34;mongo&#34;</span>
-    type<span style="color:#111">:</span> 
-      - <span style="color:#d88200">&#34;encrypted&#34;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;v1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;context&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">owner</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;account&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;my-secret-yaml-context&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;secret-yaml&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">data</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">serviceType</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;LoadBalancer&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;mongo&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span><span style="color:#111">:</span> 
+</span></span><span style="display:flex;"><span>      - <span style="color:#d88200">&#34;encrypted&#34;</span>
+</span></span></code></pre></div>
 
     
     

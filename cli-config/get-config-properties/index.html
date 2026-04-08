@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Get Config Properties :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,24 +1674,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#print-available-property-names">Print available property names</a></li>
-<li><a href="#print-properties-containing-output-word">Print properties, containing &ldquo;output&rdquo; word</a></li>
-<li><a href="#print-properties-containing-output-pretty-path">Print properties, containing &ldquo;output.pretty&rdquo; path</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1710,84 +1703,64 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>For current profile get all properties containing provided &ldquo;name&rdquo;</p>
-
 <p>Used when you may need to know some exact properties values.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh cli-config get [name]</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>Property name</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>name</td>
+          <td></td>
+          <td></td>
+          <td>Property name</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td></td>
-<td>Output format</td>
-</tr>
-
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Output format</td>
+      </tr>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="print-available-property-names">Print available property names</h4>
-
 <p><code>codefresh cli-config get</code></p>
-
 <h4 id="print-properties-containing-output-word">Print properties, containing &ldquo;output&rdquo; word</h4>
-
 <p><code>codefresh cli-config get output</code></p>
-
-<h4 id="print-properties-containing-output-pretty-path">Print properties, containing &ldquo;output.pretty&rdquo; path</h4>
-
+<h4 id="print-properties-containing-outputpretty-path">Print properties, containing &ldquo;output.pretty&rdquo; path</h4>
 <p><code>codefresh cli-config get output.pretty</code></p>
 
 

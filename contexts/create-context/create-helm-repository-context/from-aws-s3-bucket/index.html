@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>S3 :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1686,17 +1686,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1715,72 +1713,59 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Create a helm-repository context from s3 bucket.</p>
-
 <p><br>    Helm repository can be stored in AWS S3 bucket.<br>    Codefresh will integrate with the bucket in the following order<br>    If environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.<br>    You can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh create context helm-repository s3 &lt;name&gt;</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--aws-access-key-id</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Amazon access key id [default: AWS_ACCESS_KEY_ID env]</td>
-</tr>
-
-<tr>
-<td>--aws-secret-access-key</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Amazon access secret key with permissions to the bucket [default: AWS_SECRET_ACCESS_KEY env]</td>
-</tr>
-
-<tr>
-<td>--aws-default-region</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Amazon default region [default: AWS_DEFAULT_REGION env]</td>
-</tr>
-
-<tr>
-<td>--bucket</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the bucket. <code>required</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;aws-access-key-id</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Amazon access key id [default: AWS_ACCESS_KEY_ID env]</td>
+      </tr>
+      <tr>
+          <td>&ndash;aws-secret-access-key</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Amazon access secret key with permissions to the bucket [default: AWS_SECRET_ACCESS_KEY env]</td>
+      </tr>
+      <tr>
+          <td>&ndash;aws-default-region</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Amazon default region [default: AWS_DEFAULT_REGION env]</td>
+      </tr>
+      <tr>
+          <td>&ndash;bucket</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the bucket. <code>required</code></td>
+      </tr>
+  </tbody>
 </table>
 
 

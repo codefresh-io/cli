@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Annotate Image :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,27 +1674,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#annotate-an-image-with-a-single-label">Annotate an image with a single label</a></li>
-<li><a href="#annotate-an-image-with-multiple-labels">Annotate an image with multiple labels</a></li>
-<li><a href="#annotate-an-image-by-name-with-multiple-labels">Annotate an image by name with multiple labels</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1713,88 +1703,66 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Annotate an image.</p>
-
 <p>Annotating an image gives the ability to add extra context on your already existing images.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh annotate image &lt;id&gt;</code></p>
-
 <h4 id="aliases">Aliases</h4>
-
 <p><code>codefresh annotate img &lt;id&gt;</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>Docker image full name or id</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>id</td>
+          <td></td>
+          <td></td>
+          <td>Docker image full name or id</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--label</td>
-<td>-l</td>
-<td>array</td>
-<td></td>
-<td>annotations to add to the image</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;label</td>
+          <td>-l</td>
+          <td>array</td>
+          <td></td>
+          <td>annotations to add to the image</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="annotate-an-image-with-a-single-label">Annotate an image with a single label</h4>
-
 <p><code>codefresh annotate image 2dfacdaad466 -l coverage=75%</code></p>
-
 <h4 id="annotate-an-image-with-multiple-labels">Annotate an image with multiple labels</h4>
-
 <p><code>codefresh annotate image 2dfacdaad466 -l coverage=75% -l tests_passed=true</code></p>
-
 <h4 id="annotate-an-image-by-name-with-multiple-labels">Annotate an image by name with multiple labels</h4>
-
 <p><code>codefresh annotate image codefresh/cli:latest -l coverage=75% -l tests_passed=true</code></p>
 
 

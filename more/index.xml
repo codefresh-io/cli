@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>More... on Codefresh CLI Documentation</title>
+    <link>https://codefresh-io.github.io/cli/more/</link>
+    <description>Recent content in More... on Codefresh CLI Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://codefresh-io.github.io/cli/more/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Pull Secret</title>
+      <link>https://codefresh-io.github.io/cli/more/image-pull-secret/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://codefresh-io.github.io/cli/more/image-pull-secret/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Generate image pull secret on Kubernetes cluster from integrated Docker registry.&lt;/p&gt;&#xA;&lt;p&gt;&lt;br&gt;    For Kuberentes cluster to pull an image from your private registry it needs special secret typed as &lt;code&gt;kubernetes.io/dockercfg&lt;/code&gt;.&lt;br&gt;    After this secret been created you can use them in pod template that lives in the same namespace.&lt;br&gt;    You can generate this secret from any integrated Docker registry on your account.&lt;br&gt;    More information about image pull secret can be found here: &lt;a href=&#34;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&#34;&gt;https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

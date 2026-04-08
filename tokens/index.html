@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Tokens :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1256,11 +1256,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/tokens/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/tokens/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/tokens/">Tokens</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/tokens/">Tokens</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/tokens/create-tokens/" class="dd-item">
@@ -1669,18 +1668,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#create-tokens-create-tokens"><a href="create-tokens">Create tokens</a></a></li>
-<li><a href="#get-tokens-get-tokens"><a href="get-tokens">Get tokens</a></a></li>
-<li><a href="#patch-token-patch-token"><a href="patch-token">Patch token</a></a></li>
-<li><a href="#delete-tokens-delete-tokens"><a href="delete-tokens">Delete tokens</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#create-tokens">Create tokens</a></li>
+        <li><a href="#get-tokens">Get tokens</a></li>
+        <li><a href="#patch-token">Patch token</a></li>
+        <li><a href="#delete-tokens">Delete tokens</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1700,38 +1697,21 @@
     
     
 
-
-
-<h3 id="create-tokens-create-tokens"><a href="create-tokens">Create tokens</a></h3>
-
+<h3 id="create-tokens"><a href="create-tokens">Create tokens</a></h3>
 <p><code>codefresh create token [name]</code></p>
-
 <p>Generate Codefresh token.</p>
-
-<p>Create default token or provide --type and --subject. See options for more details.</p>
-
-<h3 id="get-tokens-get-tokens"><a href="get-tokens">Get tokens</a></h3>
-
+<p>Create default token or provide &ndash;type and &ndash;subject. See options for more details.</p>
+<h3 id="get-tokens"><a href="get-tokens">Get tokens</a></h3>
 <p><code>codefresh get tokens [names|ids..]</code></p>
-
 <p>Get Codefresh tokens.</p>
-
 <p>Provide names/ids to filter results by them.</p>
-
-<h3 id="patch-token-patch-token"><a href="patch-token">Patch token</a></h3>
-
+<h3 id="patch-token"><a href="patch-token">Patch token</a></h3>
 <p><code>codefresh patch tokens &lt;id&gt;</code></p>
-
 <p>Patch Codefresh token.</p>
-
 <p>Update token name or scopes using token id. Id can be retrieved using &ldquo;get&rdquo; command.</p>
-
-<h3 id="delete-tokens-delete-tokens"><a href="delete-tokens">Delete tokens</a></h3>
-
+<h3 id="delete-tokens"><a href="delete-tokens">Delete tokens</a></h3>
 <p><code>codefresh delete tokens [ids..]</code></p>
-
 <p>Revoke Codefresh token.</p>
-
 <p>Provide one or many token ids to delete. Ids can be retrieved with &ldquo;get&rdquo; command.</p>
 
 

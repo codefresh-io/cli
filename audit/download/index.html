@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Download :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,22 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#undefined">undefined</a></li>
-<li><a href="#undefined-1">undefined</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1708,152 +1702,126 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Download audit.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh download audit</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--userName</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by user name</td>
-</tr>
-
-<tr>
-<td>--userId</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by codefresh user id</td>
-</tr>
-
-<tr>
-<td>--entity</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by api entity, example: pipeline, account</td>
-</tr>
-
-<tr>
-<td>--entityId</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by api entity id, this value different for each action, example: email, user id</td>
-</tr>
-
-<tr>
-<td>--action</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account</td>
-</tr>
-
-<tr>
-<td>--rs_status</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by response status code</td>
-</tr>
-
-<tr>
-<td>--showTriggers</td>
-<td></td>
-<td></td>
-<td></td>
-<td>returns only actions related to receiving triggers</td>
-</tr>
-
-<tr>
-<td>--search</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by searching substring in request body or query or params or headers or url</td>
-</tr>
-
-<tr>
-<td>--from</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by date, value is number of milliseconds since 1970</td>
-</tr>
-
-<tr>
-<td>--to</td>
-<td></td>
-<td></td>
-<td></td>
-<td>filter by date, value is number of milliseconds since 1970</td>
-</tr>
-
-<tr>
-<td>--sortField</td>
-<td></td>
-<td></td>
-<td></td>
-<td>name of sorting field, values: id, createdAt, updatedAt<br><br>Possible values:<br> - id<br> - createdAt<br> - updatedAt</td>
-</tr>
-
-<tr>
-<td>--sortType</td>
-<td></td>
-<td></td>
-<td></td>
-<td>sorting type, values: ASK, DESK<br><br>Possible values:<br> - ASK<br> - DESK</td>
-</tr>
-
-<tr>
-<td>--file</td>
-<td></td>
-<td>string</td>
-<td>/codefresh/volume/cli/codefresh_audit_2026-03-09_05-10-38.csv</td>
-<td>The name of the file and the directory in which the audit will be saved</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;userName</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by user name</td>
+      </tr>
+      <tr>
+          <td>&ndash;userId</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by codefresh user id</td>
+      </tr>
+      <tr>
+          <td>&ndash;entity</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by api entity, example: pipeline, account</td>
+      </tr>
+      <tr>
+          <td>&ndash;entityId</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by api entity id, this value different for each action, example: email, user id</td>
+      </tr>
+      <tr>
+          <td>&ndash;action</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account</td>
+      </tr>
+      <tr>
+          <td>&ndash;rs_status</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by response status code</td>
+      </tr>
+      <tr>
+          <td>&ndash;showTriggers</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>returns only actions related to receiving triggers</td>
+      </tr>
+      <tr>
+          <td>&ndash;search</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by searching substring in request body or query or params or headers or url</td>
+      </tr>
+      <tr>
+          <td>&ndash;from</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by date, value is number of milliseconds since 1970</td>
+      </tr>
+      <tr>
+          <td>&ndash;to</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>filter by date, value is number of milliseconds since 1970</td>
+      </tr>
+      <tr>
+          <td>&ndash;sortField</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>name of sorting field, values: id, createdAt, updatedAt<br><br>Possible values:<br> - id<br> - createdAt<br> - updatedAt</td>
+      </tr>
+      <tr>
+          <td>&ndash;sortType</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>sorting type, values: ASK, DESK<br><br>Possible values:<br> - ASK<br> - DESK</td>
+      </tr>
+      <tr>
+          <td>&ndash;file</td>
+          <td></td>
+          <td>string</td>
+          <td>/codefresh/volume/cli/codefresh_audit_2026-04-08_08-59-21.csv</td>
+          <td>The name of the file and the directory in which the audit will be saved</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="undefined">undefined</h4>
-
 <p><code>codefresh download audit --file /var/www/audit.csv</code></p>
-
 <h4 id="undefined-1">undefined</h4>
-
 <p><code>--entity account --rs_status 200 --sortType DESK --sortField createdAt</code></p>
 
 

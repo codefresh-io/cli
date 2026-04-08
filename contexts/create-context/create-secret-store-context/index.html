@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Secret-Store :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -469,11 +469,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-secret-store-context/">Secret-Store</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-secret-store-context/hashicorp-vault/" class="dd-item">
@@ -1681,17 +1680,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#kubernetes-runtime-kubernetes-runtime"><a href="kubernetes-runtime">kubernetes-runtime</a></a></li>
-<li><a href="#hashicorp-vault-hashicorp-vault"><a href="hashicorp-vault">hashicorp-vault</a></a></li>
-<li><a href="#kubernetes-kubernetes"><a href="kubernetes">kubernetes</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kubernetes-runtime">kubernetes-runtime</a></li>
+        <li><a href="#kubernetes">kubernetes</a></li>
+        <li><a href="#hashicorp-vault">hashicorp-vault</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1711,30 +1708,17 @@
     
     
 
-
-
-<h3 id="kubernetes-runtime-kubernetes-runtime"><a href="kubernetes-runtime">kubernetes-runtime</a></h3>
-
+<h3 id="kubernetes-runtime"><a href="kubernetes-runtime">kubernetes-runtime</a></h3>
 <p><code>codefresh create context secret-store kubernetes-runtime &lt;name&gt;</code></p>
-
 <p>Create a secret-store Kubernetes-Runtime context.</p>
-
 <p>Create a secret store to use hybrid runtime to access K8S secret/configmap and use it as secret store.</p>
-
-<h3 id="hashicorp-vault-hashicorp-vault"><a href="hashicorp-vault">hashicorp-vault</a></h3>
-
-<p><code>codefresh create context secret-store hashicorp-vault &lt;name&gt;</code></p>
-
-<p>Create a Hashicorp Vault secret-store context.</p>
-
-<p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
-
-<h3 id="kubernetes-kubernetes"><a href="kubernetes">kubernetes</a></h3>
-
+<h3 id="kubernetes"><a href="kubernetes">kubernetes</a></h3>
 <p><code>codefresh create context secret-store kubernetes &lt;name&gt;</code></p>
-
 <p>Create a secret-store Kubernetes context.</p>
-
+<p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
+<h3 id="hashicorp-vault"><a href="hashicorp-vault">hashicorp-vault</a></h3>
+<p><code>codefresh create context secret-store hashicorp-vault &lt;name&gt;</code></p>
+<p>Create a Hashicorp Vault secret-store context.</p>
 <p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analyzer on Codefresh CLI Documentation</title>
+    <link>https://codefresh-io.github.io/cli/analyzer/</link>
+    <description>Recent content in Analyzer on Codefresh CLI Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://codefresh-io.github.io/cli/analyzer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyze</title>
+      <link>https://codefresh-io.github.io/cli/analyzer/analyze/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://codefresh-io.github.io/cli/analyzer/analyze/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Analyzes your git repository and creates a proposed Codefresh pipeline that clones the source code and builds/packages it.&lt;/p&gt;&#xA;&lt;h3 id=&#34;command&#34;&gt;Command&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh analyze &amp;lt;repoOwner&amp;gt; &amp;lt;repoName&amp;gt; [context]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;arguments&#34;&gt;Arguments&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;repoOwner&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Repository owner. &lt;code&gt;required&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;repoName&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Repository name. &lt;code&gt;required&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;context&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Your git context that you can get from integrations -&amp;gt; git , if empty - using personal context&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;help&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Print help information&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;&#xA;&lt;h4 id=&#34;analyze-repo&#34;&gt;Analyze repo&lt;/h4&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh analyze elasticio petstore-component-nodejs github&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

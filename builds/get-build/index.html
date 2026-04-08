@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Get Build :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,31 +1674,18 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-build-id">Get build ID</a></li>
-<li><a href="#get-all-builds">Get all builds</a></li>
-<li><a href="#get-all-builds-that-are-executions-of-pipeline-id">Get all builds that are executions of pipeline &ldquo;ID&rdquo;</a></li>
-<li><a href="#get-all-builds-that-are-executions-of-pipelines-that-are-named-name">Get all builds that are executions of pipelines that are named &ldquo;NAME&rdquo;</a></li>
-<li><a href="#get-all-builds-that-their-status-is-error">Get all builds that their status is error</a></li>
-<li><a href="#get-all-builds-within-given-date-range">Get all builds within given date range</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#output-options">Output Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1717,244 +1704,198 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Get a specific build or an array of builds.</p>
-
 <p>Passing [id] argument will cause a retrieval of a specific build.<br> In case of not passing [id] argument, a list will be returned.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh get builds [id..]</code></p>
-
 <h4 id="aliases">Aliases</h4>
-
 <p><code>codefresh get build [id..]</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>Build id</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>id</td>
+          <td></td>
+          <td></td>
+          <td>Build id</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--limit</td>
-<td>-l</td>
-<td>number</td>
-<td>25</td>
-<td>Limit amount of returned results</td>
-</tr>
-
-<tr>
-<td>--page</td>
-<td>-p</td>
-<td>number</td>
-<td>1</td>
-<td>Paginated page</td>
-</tr>
-
-<tr>
-<td>--status</td>
-<td>-s</td>
-<td>array</td>
-<td></td>
-<td>Filter results by statuses<br><br>Possible values:<br> - running<br> - success<br> - error<br> - terminated<br> - terminating<br> - pending-approval<br> - delayed<br> - pending<br> - elected</td>
-</tr>
-
-<tr>
-<td>--trigger</td>
-<td>-t</td>
-<td>array</td>
-<td></td>
-<td>Filter results by triggers<br><br>Possible values:<br> - build<br> - launch-image<br> - launch-composition</td>
-</tr>
-
-<tr>
-<td>--pipeline-id</td>
-<td>--pid</td>
-<td>array</td>
-<td></td>
-<td>Filter results by pipeline id</td>
-</tr>
-
-<tr>
-<td>--pipeline-name</td>
-<td>--pipeline</td>
-<td>array</td>
-<td></td>
-<td>Filter results by pipeline name</td>
-</tr>
-
-<tr>
-<td>--branch</td>
-<td>-b</td>
-<td>array</td>
-<td></td>
-<td>Filter results by branch</td>
-</tr>
-
-<tr>
-<td>--commit-id</td>
-<td>--revision,r,sha</td>
-<td>array</td>
-<td></td>
-<td>Filter results by commit revision sha</td>
-</tr>
-
-<tr>
-<td>--pipeline-trigger-id</td>
-<td></td>
-<td>array</td>
-<td></td>
-<td>Filter results by pipeline trigger id</td>
-</tr>
-
-<tr>
-<td>--from</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Date in format: YYYY-MM-DD. Show builds from the provided date</td>
-</tr>
-
-<tr>
-<td>--to</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Date in format: YYYY-MM-DD. Show builds up to provided date</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;limit</td>
+          <td>-l</td>
+          <td>number</td>
+          <td>25</td>
+          <td>Limit amount of returned results</td>
+      </tr>
+      <tr>
+          <td>&ndash;page</td>
+          <td>-p</td>
+          <td>number</td>
+          <td>1</td>
+          <td>Paginated page</td>
+      </tr>
+      <tr>
+          <td>&ndash;status</td>
+          <td>-s</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by statuses<br><br>Possible values:<br> - running<br> - success<br> - error<br> - terminated<br> - terminating<br> - pending-approval<br> - delayed<br> - pending<br> - elected</td>
+      </tr>
+      <tr>
+          <td>&ndash;trigger</td>
+          <td>-t</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by triggers<br><br>Possible values:<br> - build<br> - launch-image<br> - launch-composition</td>
+      </tr>
+      <tr>
+          <td>&ndash;pipeline-id</td>
+          <td>&ndash;pid</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by pipeline id</td>
+      </tr>
+      <tr>
+          <td>&ndash;pipeline-name</td>
+          <td>&ndash;pipeline</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by pipeline name</td>
+      </tr>
+      <tr>
+          <td>&ndash;branch</td>
+          <td>-b</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by branch</td>
+      </tr>
+      <tr>
+          <td>&ndash;commit-id</td>
+          <td>&ndash;revision,r,sha</td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by commit revision sha</td>
+      </tr>
+      <tr>
+          <td>&ndash;pipeline-trigger-id</td>
+          <td></td>
+          <td>array</td>
+          <td></td>
+          <td>Filter results by pipeline trigger id</td>
+      </tr>
+      <tr>
+          <td>&ndash;from</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Date in format: YYYY-MM-DD. Show builds from the provided date</td>
+      </tr>
+      <tr>
+          <td>&ndash;to</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Date in format: YYYY-MM-DD. Show builds up to provided date</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="output-options">Output Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--select-columns</td>
-<td>--sc</td>
-<td></td>
-<td></td>
-<td>Columns to select for table output</td>
-</tr>
-
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id<br> - jsonArray<br> - yamlArray</td>
-</tr>
-
-<tr>
-<td>--date-format</td>
-<td>--df</td>
-<td></td>
-<td></td>
-<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
-</tr>
-
-<tr>
-<td>--pretty</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Use colors and signs for output</td>
-</tr>
-
-<tr>
-<td>--watch</td>
-<td>-w</td>
-<td>boolean</td>
-<td>false</td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>--watch-interval</td>
-<td></td>
-<td>number</td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;select-columns</td>
+          <td>&ndash;sc</td>
+          <td></td>
+          <td></td>
+          <td>Columns to select for table output</td>
+      </tr>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id<br> - jsonArray<br> - yamlArray</td>
+      </tr>
+      <tr>
+          <td>&ndash;date-format</td>
+          <td>&ndash;df</td>
+          <td></td>
+          <td></td>
+          <td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
+      </tr>
+      <tr>
+          <td>&ndash;pretty</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Use colors and signs for output</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch</td>
+          <td>-w</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Watching updates to a particular resource</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch-interval</td>
+          <td></td>
+          <td>number</td>
+          <td>3</td>
+          <td>Interval time at watching mode (in seconds)</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="get-build-id">Get build ID</h4>
-
 <p><code>codefresh get build ID</code></p>
-
 <h4 id="get-all-builds">Get all builds</h4>
-
 <p><code>codefresh get builds</code></p>
-
 <h4 id="get-all-builds-that-are-executions-of-pipeline-id">Get all builds that are executions of pipeline &ldquo;ID&rdquo;</h4>
-
 <p><code>codefresh get builds --pipeline-id ID</code></p>
-
 <h4 id="get-all-builds-that-are-executions-of-pipelines-that-are-named-name">Get all builds that are executions of pipelines that are named &ldquo;NAME&rdquo;</h4>
-
 <p><code>codefresh get builds --pipeline-name NAME</code></p>
-
 <h4 id="get-all-builds-that-their-status-is-error">Get all builds that their status is error</h4>
-
 <p><code>codefresh get builds --status=error</code></p>
-
 <h4 id="get-all-builds-within-given-date-range">Get all builds within given date range</h4>
-
 <p><code>codefresh get builds --from=2020-01-01 --to=2020-02-01</code></p>
 
 

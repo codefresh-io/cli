@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Install :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,18 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1704,187 +1702,239 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Install gitops.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh install gitops &lt;provider&gt;</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>provider</td>
-<td></td>
-<td></td>
-<td>Gitops provider. <code>required</code><br><br>Possible values:<br> - codefresh<br> - argocd-agent</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>provider</td>
+          <td></td>
+          <td></td>
+          <td>Gitops provider. <code>required</code><br><br>Possible values:<br> - codefresh<br> - argocd-agent</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--git-integration</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of git integration in Codefresh</td>
-</tr>
-
-<tr>
-<td>--git-repo-url</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Url to manifest repo</td>
-</tr>
-
-<tr>
-<td>--codefresh-integration</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to  avoid hitting the Github rate limits )</td>
-</tr>
-
-<tr>
-<td>--argo-host</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Host of argocd installation</td>
-</tr>
-
-<tr>
-<td>--argo-token</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Token of argocd installation. Preferred auth method</td>
-</tr>
-
-<tr>
-<td>--argo-username</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Username of existing argocd installation. Should be used with argo-password</td>
-</tr>
-
-<tr>
-<td>--argo-password</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Password of existing argocd installation. Should be used with argo-username</td>
-</tr>
-
-<tr>
-<td>--update</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Update gitops integration if exists</td>
-</tr>
-
-<tr>
-<td>--kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
-</tr>
-
-<tr>
-<td>--kube-context-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of Kubernetes context</td>
-</tr>
-
-<tr>
-<td>--kube-namespace</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Namespace in Kubernetes cluster</td>
-</tr>
-
-<tr>
-<td>--in-cluster</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Use this option if gitops provider is been updated from inside a cluster</td>
-</tr>
-
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td></td>
-<td>Path to k8s manifest output file, example: -o /home/user/out.yaml</td>
-</tr>
-
-<tr>
-<td>--sync-mode</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Synchronization mode</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;git-integration</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of git integration in Codefresh</td>
+      </tr>
+      <tr>
+          <td>&ndash;git-repo-url</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Url to manifest repo</td>
+      </tr>
+      <tr>
+          <td>&ndash;codefresh-integration</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to  avoid hitting the Github rate limits )</td>
+      </tr>
+      <tr>
+          <td>&ndash;argo-host</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Host of argocd installation</td>
+      </tr>
+      <tr>
+          <td>&ndash;argo-token</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Token of argocd installation. Preferred auth method</td>
+      </tr>
+      <tr>
+          <td>&ndash;argo-username</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Username of existing argocd installation. Should be used with argo-password</td>
+      </tr>
+      <tr>
+          <td>&ndash;argo-password</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Password of existing argocd installation. Should be used with argo-username</td>
+      </tr>
+      <tr>
+          <td>&ndash;update</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Update gitops integration if exists</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-config-path</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-context-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of Kubernetes context</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-namespace</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Namespace in Kubernetes cluster</td>
+      </tr>
+      <tr>
+          <td>&ndash;in-cluster</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Use this option if gitops provider is been updated from inside a cluster</td>
+      </tr>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Path to k8s manifest output file, example: -o /home/user/out.yaml</td>
+      </tr>
+      <tr>
+          <td>&ndash;sync-mode</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Synchronization mode</td>
+      </tr>
+      <tr>
+          <td>NONE - don&rsquo;t synchronize</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SELECT - select applications for synchronization</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>CONTINUE_SYNC - continuous synchronization</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>&ndash;sync-apps</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Applications to be synchronized</td>
+      </tr>
+      <tr>
+          <td>&ndash;http-proxy</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>http proxy to be used in the runner</td>
+      </tr>
+      <tr>
+          <td>&ndash;https-proxy</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>https proxy to be used in the runner</td>
+      </tr>
+      <tr>
+          <td>&ndash;install-manifest</td>
+          <td></td>
+          <td>string</td>
+          <td><a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a></td>
+          <td>Url of argocd install manifest</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-argo-password</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set password for admin user of new argocd installation</td>
+      </tr>
+      <tr>
+          <td>&ndash;codefresh-host</td>
+          <td></td>
+          <td>string</td>
+          <td><a href="https://g.codefresh.io/">https://g.codefresh.io/</a></td>
+          <td>Codefresh api host</td>
+      </tr>
+      <tr>
+          <td>&ndash;codefresh-agent-suffix</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Suffix for agent application&rsquo;s resources. Can be used for installing multiple agents in one namespace</td>
+      </tr>
+      <tr>
+          <td>&ndash;values</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Specify values in a YAML file</td>
+      </tr>
+      <tr>
+          <td>&ndash;bypass-download</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder</td>
+      </tr>
+  </tbody>
 </table>
-
-<p>NONE - don&rsquo;t synchronize
-SELECT - select applications for synchronization
-CONTINUE_SYNC - continuous synchronization
-ONE_TIME_SYNC - synchronize one time<br><br>Possible values:<br> - NONE<br> - SELECT<br> - CONTINUE_SYNC<br> - ONE_TIME_SYNC
---sync-apps |  |  |  | Applications to be synchronized
---http-proxy |  |  |  | http proxy to be used in the runner
---https-proxy |  |  |  | https proxy to be used in the runner
---install-manifest |  | string | <a href="https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml">https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</a> | Url of argocd install manifest
---set-argo-password |  |  |  | Set password for admin user of new argocd installation
---codefresh-host |  | string | <a href="https://g.codefresh.io/">https://g.codefresh.io/</a> | Codefresh api host
---codefresh-agent-suffix |  |  |  | Suffix for agent application&rsquo;s resources. Can be used for installing multiple agents in one namespace
---values |  |  |  | Specify values in a YAML file
---bypass-download |  | boolean | false | Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder</p>
 
 
     

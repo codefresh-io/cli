@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Describe Config Properties :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,23 +1674,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#print-help-for-all-properties">Print help for all properties</a></li>
-<li><a href="#print-help-for-properties-containing-output-word">Print help for properties, containing &ldquo;output&rdquo; word</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1709,80 +1703,62 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Show help for properties. Used when you may need to know some properties types, defaults, description etc.</p>
-
 <p>Used when you may need to know some properties types, defaults, description etc.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh cli-config help [name]</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>name</td>
-<td></td>
-<td></td>
-<td>Property name</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>name</td>
+          <td></td>
+          <td></td>
+          <td>Property name</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td></td>
-<td>Output format</td>
-</tr>
-
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Output format</td>
+      </tr>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="print-help-for-all-properties">Print help for all properties</h4>
-
 <p><code>codefresh cli-config help</code></p>
-
 <h4 id="print-help-for-properties-containing-output-word">Print help for properties, containing &ldquo;output&rdquo; word</h4>
-
 <p><code>codefresh cli-config help output</code></p>
 
 

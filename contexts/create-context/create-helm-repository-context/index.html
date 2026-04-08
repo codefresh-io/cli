@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Helm Repository :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -447,11 +447,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/contexts/create-context/create-helm-repository-context/">Helm Repository</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/create-context/create-helm-repository-context/from-http-web-server/" class="dd-item">
@@ -1681,16 +1680,14 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#from-http-web-server-from-http-web-server"><a href="from-http-web-server">From HTTP web server</a></a></li>
-<li><a href="#from-aws-s3-bucket-from-aws-s3-bucket"><a href="from-aws-s3-bucket">From AWS S3 bucket</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#from-http-web-server">From HTTP web server</a></li>
+        <li><a href="#from-aws-s3-bucket">From AWS S3 bucket</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1710,22 +1707,13 @@
     
     
 
-
-
-<h3 id="from-http-web-server-from-http-web-server"><a href="from-http-web-server">From HTTP web server</a></h3>
-
+<h3 id="from-http-web-server"><a href="from-http-web-server">From HTTP web server</a></h3>
 <p><code>codefresh create context helm-repository http &lt;name&gt;</code></p>
-
 <p>Create a helm-repository context from HTTP server.</p>
-
 <p><br>    A chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.<br>    When you&rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.<br>    Read more: <a href="https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md">https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md</a>.</p>
-
-<h3 id="from-aws-s3-bucket-from-aws-s3-bucket"><a href="from-aws-s3-bucket">From AWS S3 bucket</a></h3>
-
+<h3 id="from-aws-s3-bucket"><a href="from-aws-s3-bucket">From AWS S3 bucket</a></h3>
 <p><code>codefresh create context helm-repository s3 &lt;name&gt;</code></p>
-
 <p>Create a helm-repository context from s3 bucket.</p>
-
 <p><br>    Helm repository can be stored in AWS S3 bucket.<br>    Codefresh will integrate with the bucket in the following order<br>    If environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.<br>    You can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.</p>
 
 

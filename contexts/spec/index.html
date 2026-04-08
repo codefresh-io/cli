@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Spec :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -499,11 +499,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/contexts/spec/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/contexts/spec/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/contexts/spec/">Spec</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/contexts/spec/">Spec</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/contexts/spec/config/" class="dd-item">
@@ -1675,17 +1674,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#owner">Owner</a></li>
-<li><a href="#type">Type</a></li>
-<li><a href="#data">Data</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#owner">Owner</a></li>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#data">Data</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1705,31 +1702,22 @@
     
     
 
-
-
 <p>A Context needs <code>.apiVersion</code>, <code>.kind</code>, and <code>.metadata</code> fields.</p>
-
 <p>A Context also needs a <code>.spec</code> section.</p>
-
 <h3 id="owner">Owner</h3>
-
-<p>A context can be either attached to a user or to an account.<br>
-<code>.owner</code> can be either <code>account</code> or <code>user</code>. <br>
-The default is <code>account</code>. <br></p>
-
+<p>A context can be either attached to a user or to an account.</p>
+<p><code>.owner</code> can be either <code>account</code> or <code>user</code>.</p>
+<p>The default is <code>account</code>.</p>
 <h3 id="type">Type</h3>
-
-<p><code>.spec.type</code> should be one of the following:  <br>
+<p><code>.spec.type</code> should be one of the following:</p>
 <ul>
-    <li><a href="config">config</a> </li>
-    <li><a href="secret">secret</a> </li>
-    <li><a href="yaml">yaml</a> </li>
-    <li><a href="secret-yaml">secret-yaml</a> </li>
-    <li><a href="helm-repository">helm-repository</a> </li>
-</ul></p>
-
+<li><a href="config">config</a></li>
+<li><a href="secret">secret</a></li>
+<li><a href="yaml">yaml</a></li>
+<li><a href="secret-yaml">secret-yaml</a></li>
+<li><a href="helm-repository">helm-repository</a></li>
+</ul>
 <h3 id="data">Data</h3>
-
 <p><code>.spec.data</code> should be different according to the type of the context</p>
 
 

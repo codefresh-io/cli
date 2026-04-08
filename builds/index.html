@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Builds :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -291,11 +291,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/builds/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/builds/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/builds/">Builds</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/builds/">Builds</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/builds/get-build/" class="dd-item">
@@ -1669,21 +1668,19 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-build-get-build"><a href="get-build">Get Build</a></a></li>
-<li><a href="#show-build-logs-show-build-logs"><a href="show-build-logs">Show Build Logs</a></a></li>
-<li><a href="#restart-build-restart-build"><a href="restart-build">Restart Build</a></a></li>
-<li><a href="#terminate-build-terminate-build"><a href="terminate-build">Terminate Build</a></a></li>
-<li><a href="#wait-for-build-condition-wait-for-build-condition"><a href="wait-for-build-condition">Wait For Build Condition</a></a></li>
-<li><a href="#approve-approve"><a href="approve">Approve</a></a></li>
-<li><a href="#deny-deny"><a href="deny">Deny</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-build">Get Build</a></li>
+        <li><a href="#show-build-logs">Show Build Logs</a></li>
+        <li><a href="#restart-build">Restart Build</a></li>
+        <li><a href="#terminate-build">Terminate Build</a></li>
+        <li><a href="#wait-for-build-condition">Wait For Build Condition</a></li>
+        <li><a href="#approve">Approve</a></li>
+        <li><a href="#deny">Deny</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1703,58 +1700,31 @@
     
     
 
-
-
-<h3 id="get-build-get-build"><a href="get-build">Get Build</a></h3>
-
+<h3 id="get-build"><a href="get-build">Get Build</a></h3>
 <p><code>codefresh get builds [id..]</code></p>
-
 <p>Get a specific build or an array of builds.</p>
-
 <p>Passing [id] argument will cause a retrieval of a specific build.<br> In case of not passing [id] argument, a list will be returned.</p>
-
-<h3 id="show-build-logs-show-build-logs"><a href="show-build-logs">Show Build Logs</a></h3>
-
+<h3 id="show-build-logs"><a href="show-build-logs">Show Build Logs</a></h3>
 <p><code>codefresh logs &lt;id&gt;</code></p>
-
 <p>Show logs of a build.</p>
-
-<h3 id="restart-build-restart-build"><a href="restart-build">Restart Build</a></h3>
-
+<h3 id="restart-build"><a href="restart-build">Restart Build</a></h3>
 <p><code>codefresh restart &lt;id&gt;</code></p>
-
 <p>Restart a build by its id.</p>
-
-<h3 id="terminate-build-terminate-build"><a href="terminate-build">Terminate Build</a></h3>
-
+<h3 id="terminate-build"><a href="terminate-build">Terminate Build</a></h3>
 <p><code>codefresh terminate &lt;id&gt;</code></p>
-
 <p>Terminate a build by its id.</p>
-
 <p>This command will return once the request has been received from the server.<br> The termination process can take time according to the pipeline definition.</p>
-
-<h3 id="wait-for-build-condition-wait-for-build-condition"><a href="wait-for-build-condition">Wait For Build Condition</a></h3>
-
+<h3 id="wait-for-build-condition"><a href="wait-for-build-condition">Wait For Build Condition</a></h3>
 <p><code>codefresh wait &lt;id..&gt;</code></p>
-
 <p>Wait until a condition will be met on a build.</p>
-
 <p>Wait command is useful in case there is a need to wait for a desired status on a specific set of builds.</p>
-
-<h3 id="approve-approve"><a href="approve">Approve</a></h3>
-
+<h3 id="approve"><a href="approve">Approve</a></h3>
 <p><code>codefresh approve &lt;buildId&gt;</code></p>
-
 <p>Approve a pending-approval workflow.</p>
-
 <p>approve &lt;$BUILD_ID&gt;.</p>
-
-<h3 id="deny-deny"><a href="deny">Deny</a></h3>
-
+<h3 id="deny"><a href="deny">Deny</a></h3>
 <p><code>codefresh deny &lt;buildId&gt;</code></p>
-
 <p>Deny a pending-approval workflow.</p>
-
 <p>deny &lt;$BUILD_ID&gt;.</p>
 
 

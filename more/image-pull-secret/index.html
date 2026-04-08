@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Image Pull Secret :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,21 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#generate-image-pull-secret">Generate image pull secret</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1707,70 +1702,55 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Generate image pull secret on Kubernetes cluster from integrated Docker registry.</p>
-
 <p><br>    For Kuberentes cluster to pull an image from your private registry it needs special secret typed as <code>kubernetes.io/dockercfg</code>.<br>    After this secret been created you can use them in pod template that lives in the same namespace.<br>    You can generate this secret from any integrated Docker registry on your account.<br>    More information about image pull secret can be found here: <a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a>.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh generate image-pull-secret</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--cluster</td>
-<td></td>
-<td></td>
-<td></td>
-<td>cluster name. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--namespace</td>
-<td></td>
-<td>string</td>
-<td>default</td>
-<td>namespace name</td>
-</tr>
-
-<tr>
-<td>--registry</td>
-<td></td>
-<td></td>
-<td></td>
-<td>name of Docker registry to generate pull secret from. <code>required</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;cluster</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>cluster name. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;namespace</td>
+          <td></td>
+          <td>string</td>
+          <td>default</td>
+          <td>namespace name</td>
+      </tr>
+      <tr>
+          <td>&ndash;registry</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>name of Docker registry to generate pull secret from. <code>required</code></td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="generate-image-pull-secret">Generate image pull secret</h4>
-
 <p><code>codefresh generate image-pull-secret --cluster cluster --registry cfcr</code></p>
 
 

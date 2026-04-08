@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Teams :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1524,11 +1524,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/teams/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/teams/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/teams/">Teams</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/teams/">Teams</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/teams/get-teams/" class="dd-item">
@@ -1669,19 +1668,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-teams-get-teams"><a href="get-teams">Get Teams</a></a></li>
-<li><a href="#create-team-create-team"><a href="create-team">Create team</a></a></li>
-<li><a href="#remove-user-remove-user"><a href="remove-user">Remove user</a></a></li>
-<li><a href="#add-user-add-user"><a href="add-user">Add user</a></a></li>
-<li><a href="#synchronize-teams-synchronize-teams"><a href="synchronize-teams">Synchronize Teams</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-teams">Get Teams</a></li>
+        <li><a href="#create-team">Create team</a></li>
+        <li><a href="#remove-user">Remove user</a></li>
+        <li><a href="#add-user">Add user</a></li>
+        <li><a href="#synchronize-teams">Synchronize Teams</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1701,42 +1698,23 @@
     
     
 
-
-
-<h3 id="get-teams-get-teams"><a href="get-teams">Get Teams</a></h3>
-
+<h3 id="get-teams"><a href="get-teams">Get Teams</a></h3>
 <p><code>codefresh get teams</code></p>
-
 <p>Get an array of all current user teams.</p>
-
-<h3 id="create-team-create-team"><a href="create-team">Create team</a></h3>
-
+<h3 id="create-team"><a href="create-team">Create team</a></h3>
 <p><code>codefresh create teams &lt;name&gt;</code></p>
-
 <p>Create a team.</p>
-
 <p>You can create a new team specifying only name of team or specify path to json file for include extended options<br> Possible fields in file:<br> name - team name (specifying name in file will rewrite name specified as command argument) <br> users - array of users id for that team <br> tags - array of tag names.</p>
-
-<h3 id="remove-user-remove-user"><a href="remove-user">Remove user</a></h3>
-
+<h3 id="remove-user"><a href="remove-user">Remove user</a></h3>
 <p><code>codefresh delete teams</code></p>
-
 <p>Remove user from team.</p>
-
 <p>Pass user id and team id to remove user from team.</p>
-
-<h3 id="add-user-add-user"><a href="add-user">Add user</a></h3>
-
+<h3 id="add-user"><a href="add-user">Add user</a></h3>
 <p><code>codefresh patch teams</code></p>
-
 <p>Assign user to a team.</p>
-
 <p>Use patch command and pass user id and team id  to assign user to a team.</p>
-
-<h3 id="synchronize-teams-synchronize-teams"><a href="synchronize-teams">Synchronize Teams</a></h3>
-
+<h3 id="synchronize-teams"><a href="synchronize-teams">Synchronize Teams</a></h3>
 <p><code>codefresh synchronize teams [client-name]</code></p>
-
 <p>Synchronize team with group.</p>
 
 

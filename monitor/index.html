@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Monitor :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -971,34 +971,40 @@
       <a href="/cli/logs/">Logs sub category</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/" class="dd-item">
+      <li data-nav-id="/cli/projects/get-projects/" class="dd-item">
         <div>
-          <a href="/cli/logs/ensures-one-or-more-offline-logs-collections-has-indexes/">
-            Ensures one or more offline-logs collections has indexes
+          <a href="/cli/projects/get-projects/">
+            Get Projects
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/logs/offload-to-collection/" class="dd-item">
+      <li data-nav-id="/cli/projects/create-project/" class="dd-item">
         <div>
-          <a href="/cli/logs/offload-to-collection/">
-            Offload To Collection
+          <a href="/cli/projects/create-project/">
+            Create Project
           </a>
         </div>
     </li>
-      <li data-nav-id="/cli/logs/offload-to-file/" class="dd-item">
+      <li data-nav-id="/cli/projects/delete-project/" class="dd-item">
         <div>
-          <a href="/cli/logs/offload-to-file/">
-            Offload To File
+          <a href="/cli/projects/delete-project/">
+            Delete Project
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/cli/projects/patch-project/" class="dd-item">
+        <div>
+          <a href="/cli/projects/patch-project/">
+            Patch Project
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/monitor/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/monitor/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/monitor/">Monitor</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/monitor/">Monitor</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/monitor/install/" class="dd-item">
@@ -1669,16 +1675,14 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#install-install"><a href="install">Install</a></a></li>
-<li><a href="#uninstall-uninstall"><a href="uninstall">Uninstall</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#uninstall">Uninstall</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1698,18 +1702,11 @@
     
     
 
-
-
-<h3 id="install-install"><a href="install">Install</a></h3>
-
+<h3 id="install"><a href="install">Install</a></h3>
 <p><code>codefresh install monitor</code></p>
-
 <p>Install and create an cluster resources monitor on kubernetes cluster.</p>
-
-<h3 id="uninstall-uninstall"><a href="uninstall">Uninstall</a></h3>
-
+<h3 id="uninstall"><a href="uninstall">Uninstall</a></h3>
 <p><code>codefresh uninstall monitor</code></p>
-
 <p>Uninstall an monitor on kubernetes cluster.</p>
 
 

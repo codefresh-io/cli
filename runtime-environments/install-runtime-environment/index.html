@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Install Runtime-Environment :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,17 +1674,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1703,230 +1701,198 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Install and create a runtime on kubernetes cluster.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh install runtime</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--runtime-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The name of the runtime to install</td>
-</tr>
-
-<tr>
-<td>--token</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Agent&rsquo;s token</td>
-</tr>
-
-<tr>
-<td>--agent-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Agent&rsquo;s name</td>
-</tr>
-
-<tr>
-<td>--storage-class-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set a name of your custom storage class, note: this will not install volume provisioning components</td>
-</tr>
-
-<tr>
-<td>--docker-registry</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>The prefix for the container registry that will be used for pulling the required components images. Example: --docker-registry=&ldquo;docker.io&rdquo;</td>
-</tr>
-
-<tr>
-<td>--set-value</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set values for templates, example: --set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
-</tr>
-
-<tr>
-<td>--set-file</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set values for templates from file, example: --set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
-</tr>
-
-<tr>
-<td>--dry-run</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set to true to simulate installation</td>
-</tr>
-
-<tr>
-<td>--in-cluster</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set flag if runner is been installed from inside a cluster</td>
-</tr>
-
-<tr>
-<td>--kube-node-selector</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
-</tr>
-
-<tr>
-<td>--runtime-kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
-</tr>
-
-<tr>
-<td>--runtime-kube-context-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
-</tr>
-
-<tr>
-<td>--runtime-kube-namespace</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
-</tr>
-
-<tr>
-<td>--build-annotations</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The kubernetes metadata.annotations as &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector)</td>
-</tr>
-
-<tr>
-<td>--attach-runtime</td>
-<td></td>
-<td></td>
-<td></td>
-<td>if set to true, auto attach runtime to agent (need to provide &hellip;.)</td>
-</tr>
-
-<tr>
-<td>--agent-kube-config-path</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)</td>
-</tr>
-
-<tr>
-<td>--agent-kube-context-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Agent kubernetes context (on attach)</td>
-</tr>
-
-<tr>
-<td>--agent-kube-namespace</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Agent&rsquo;s namespace (on attach)</td>
-</tr>
-
-<tr>
-<td>--cluster-service-account</td>
-<td></td>
-<td></td>
-<td></td>
-<td>service account for cluster default is default</td>
-</tr>
-
-<tr>
-<td>--make-default-runtime</td>
-<td></td>
-<td></td>
-<td></td>
-<td>should all pipelines run on the this runtime (default is false)</td>
-</tr>
-
-<tr>
-<td>--skip-re-creation</td>
-<td></td>
-<td></td>
-<td></td>
-<td>If set to true, will skip runtime creation in the platform</td>
-</tr>
-
-<tr>
-<td>--skip-cluster-creation</td>
-<td></td>
-<td></td>
-<td></td>
-<td>If set to true, will skip cluster integration creation for this runtime</td>
-</tr>
-
-<tr>
-<td>--platform-only</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Set to true to create runtime on the platform side only</td>
-</tr>
-
-<tr>
-<td>--verbose</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print logs</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;runtime-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The name of the runtime to install</td>
+      </tr>
+      <tr>
+          <td>&ndash;token</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent&rsquo;s token</td>
+      </tr>
+      <tr>
+          <td>&ndash;agent-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent&rsquo;s name</td>
+      </tr>
+      <tr>
+          <td>&ndash;storage-class-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set a name of your custom storage class, note: this will not install volume provisioning components</td>
+      </tr>
+      <tr>
+          <td>&ndash;docker-registry</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>The prefix for the container registry that will be used for pulling the required components images. Example: &ndash;docker-registry=&ldquo;docker.io&rdquo;</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-value</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set values for templates, example: &ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes</td>
+      </tr>
+      <tr>
+          <td>&ndash;set-file</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set values for templates from file, example: &ndash;set-file Storage.GoogleServiceAccount=/path/to/service-account.json</td>
+      </tr>
+      <tr>
+          <td>&ndash;dry-run</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set to true to simulate installation</td>
+      </tr>
+      <tr>
+          <td>&ndash;in-cluster</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set flag if runner is been installed from inside a cluster</td>
+      </tr>
+      <tr>
+          <td>&ndash;kube-node-selector</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The kubernetes node selector &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector) (string)</td>
+      </tr>
+      <tr>
+          <td>&ndash;runtime-kube-config-path</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Path to kubeconfig file (default is $HOME/.kube/config)</td>
+      </tr>
+      <tr>
+          <td>&ndash;runtime-kube-context-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME]</td>
+      </tr>
+      <tr>
+          <td>&ndash;runtime-kube-namespace</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE]</td>
+      </tr>
+      <tr>
+          <td>&ndash;build-annotations</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The kubernetes metadata.annotations as &ldquo;key=value&rdquo; to be used by runner build resources (default is no node selector)</td>
+      </tr>
+      <tr>
+          <td>&ndash;attach-runtime</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>if set to true, auto attach runtime to agent (need to provide &hellip;.)</td>
+      </tr>
+      <tr>
+          <td>&ndash;agent-kube-config-path</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach)</td>
+      </tr>
+      <tr>
+          <td>&ndash;agent-kube-context-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent kubernetes context (on attach)</td>
+      </tr>
+      <tr>
+          <td>&ndash;agent-kube-namespace</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Agent&rsquo;s namespace (on attach)</td>
+      </tr>
+      <tr>
+          <td>&ndash;cluster-service-account</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>service account for cluster default is default</td>
+      </tr>
+      <tr>
+          <td>&ndash;make-default-runtime</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>should all pipelines run on the this runtime (default is false)</td>
+      </tr>
+      <tr>
+          <td>&ndash;skip-re-creation</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>If set to true, will skip runtime creation in the platform</td>
+      </tr>
+      <tr>
+          <td>&ndash;skip-cluster-creation</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>If set to true, will skip cluster integration creation for this runtime</td>
+      </tr>
+      <tr>
+          <td>&ndash;platform-only</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Set to true to create runtime on the platform side only</td>
+      </tr>
+      <tr>
+          <td>&ndash;verbose</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print logs</td>
+      </tr>
+  </tbody>
 </table>
 
 

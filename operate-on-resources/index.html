@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Operate On Resources :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -162,11 +162,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/operate-on-resources/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/operate-on-resources/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/operate-on-resources/">Operate On Resources</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/operate-on-resources/">Operate On Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/operate-on-resources/get/" class="dd-item">
@@ -1669,21 +1668,19 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-get"><a href="get">Get</a></a></li>
-<li><a href="#create-create"><a href="create">Create</a></a></li>
-<li><a href="#delete-delete"><a href="delete">Delete</a></a></li>
-<li><a href="#patch-patch"><a href="patch">Patch</a></a></li>
-<li><a href="#upgrade-upgrade"><a href="upgrade">Upgrade</a></a></li>
-<li><a href="#replace-replace"><a href="replace">Replace</a></a></li>
-<li><a href="#diff-diff"><a href="diff">Diff</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get">Get</a></li>
+        <li><a href="#create">Create</a></li>
+        <li><a href="#delete">Delete</a></li>
+        <li><a href="#patch">Patch</a></li>
+        <li><a href="#upgrade">Upgrade</a></li>
+        <li><a href="#replace">Replace</a></li>
+        <li><a href="#diff">Diff</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1703,66 +1700,36 @@
     
     
 
-
-
-<p>The CLI supports the ability to work with <code>spec</code> files when working with resources.<br>
-The supported formats are <code>yaml</code> and <code>json</code>. <br>
-Check each specific resource <code>spec</code> for its documentation</p>
-
-<h3 id="get-get"><a href="get">Get</a></h3>
-
+<p>The CLI supports the ability to work with <code>spec</code> files when working with resources.</p>
+<p>The supported formats are <code>yaml</code> and <code>json</code>.</p>
+<p>Check each specific resource <code>spec</code> for its documentation</p>
+<h3 id="get"><a href="get">Get</a></h3>
 <p><code>codefresh get</code></p>
-
 <p>Get a resource from a file, directory or url</p>
-
 <p>Supported resources:.</p>
-
-<h3 id="create-create"><a href="create">Create</a></h3>
-
+<h3 id="create"><a href="create">Create</a></h3>
 <p><code>codefresh create</code></p>
-
 <p>Create a resource from a file, directory or url</p>
-
 <p>Supported resources: <br><li>&lsquo;context&rsquo;<br><li>&lsquo;step-type&rsquo;<br><li>&lsquo;project&rsquo;<br><li>&lsquo;pipeline&rsquo;<br><li>&lsquo;annotation&rsquo;.</p>
-
-<h3 id="delete-delete"><a href="delete">Delete</a></h3>
-
+<h3 id="delete"><a href="delete">Delete</a></h3>
 <p><code>codefresh delete</code></p>
-
 <p>Delete a resource from a file, directory or url</p>
-
 <p>Supported resources: <br><li>&lsquo;Context&rsquo;<br><li>&lsquo;Pipeline&rsquo;.</p>
-
-<h3 id="patch-patch"><a href="patch">Patch</a></h3>
-
+<h3 id="patch"><a href="patch">Patch</a></h3>
 <p><code>codefresh patch</code></p>
-
 <p>Patch a resource from a file, directory or url</p>
-
 <p>Patch operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.<br><br> Supported resources: <br><li>&lsquo;Context&rsquo;.</p>
-
-<h3 id="upgrade-upgrade"><a href="upgrade">Upgrade</a></h3>
-
+<h3 id="upgrade"><a href="upgrade">Upgrade</a></h3>
 <p><code>codefresh upgrade</code></p>
-
 <p>Upgrade a resource from a file, directory or url</p>
-
 <p>Upgrade operation will apply only passed changes to an existing resource and will throw an error if the resource does not exist.<br><br> Supported resources: <br><li>&lsquo;Context&rsquo;.</p>
-
-<h3 id="replace-replace"><a href="replace">Replace</a></h3>
-
+<h3 id="replace"><a href="replace">Replace</a></h3>
 <p><code>codefresh replace</code></p>
-
 <p>Replace a resource from a file, directory or url</p>
-
-<p>Supported resources: <br><li>&lsquo;Context&rsquo;<br><li>&lsquo;Pipeline&rdquo;<br><li>&lsquo;Step-type&rsquo;.</p>
-
-<h3 id="diff-diff"><a href="diff">Diff</a></h3>
-
+<p>Supported resources: <br><li>&lsquo;Context&rsquo;<br><li>&lsquo;Pipeline&rsquo;&rsquo;<br><li>&lsquo;Step-type&rsquo;.</p>
+<h3 id="diff"><a href="diff">Diff</a></h3>
 <p><code>codefresh diff</code></p>
-
 <p>Show diff between two resources</p>
-
 <p>Supported resources: runtime-environments.</p>
 
 

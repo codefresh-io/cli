@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>kubernetes :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1686,17 +1686,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1715,80 +1713,66 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Create a secret-store Kubernetes context.</p>
-
 <p>Secret-Store context are used during pipeline execution as API to resolve variables that are parse of Codefresh.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh create context secret-store kubernetes &lt;name&gt;</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--sharing-policy</td>
-<td></td>
-<td>string</td>
-<td>AccountAdmins</td>
-<td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
-</tr>
-
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--cluster</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the Kubernetes clsuter as it saved in Codefresh. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--namespace</td>
-<td></td>
-<td>string</td>
-<td>default</td>
-<td>Name of the Kubernetes namespace. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--resource-type</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Type of the resource in Kubernetes. <code>required</code><br><br>Possible values:<br> - secret<br> - configmap</td>
-</tr>
-
-<tr>
-<td>--resource-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of the resource in Kubernetes</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;sharing-policy</td>
+          <td></td>
+          <td>string</td>
+          <td>AccountAdmins</td>
+          <td>Set the sharing policy for secret-store context<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
+      </tr>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;cluster</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the Kubernetes clsuter as it saved in Codefresh. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;namespace</td>
+          <td></td>
+          <td>string</td>
+          <td>default</td>
+          <td>Name of the Kubernetes namespace. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;resource-type</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Type of the resource in Kubernetes. <code>required</code><br><br>Possible values:<br> - secret<br> - configmap</td>
+      </tr>
+      <tr>
+          <td>&ndash;resource-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of the resource in Kubernetes</td>
+      </tr>
+  </tbody>
 </table>
 
 

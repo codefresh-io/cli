@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Get Repositories :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,30 +1674,18 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a>
-<ul>
-<li><a href="#aliases">Aliases</a></li>
-</ul></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#output-options">Output Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#get-all-codefresh-repos">Get all codefresh repos</a></li>
-<li><a href="#get-codefresh-repos-containing-codefresh-io-in-its-name">Get codefresh repos containing &ldquo;codefresh-io&rdquo; in its name</a></li>
-<li><a href="#get-codefresh-repos-containing-some-repo-in-its-name">Get codefresh repos containing &ldquo;some-repo&rdquo; in its name</a></li>
-<li><a href="#get-all-available-repos-from-default-git-context">Get all available repos from default git context</a></li>
-<li><a href="#get-all-available-repos-from-bitbucket-git-context">Get all available repos from &ldquo;bitbucket&rdquo; git context</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#output-options">Output Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1716,174 +1704,139 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
-<p>You can either get codefresh repos (previously added) or any repo from your git context (using option &ldquo;--available&rdquo; and &ldquo;--context&rdquo;).</p>
-
+    <h3 id="description">Description</h3>
+<p>You can either get codefresh repos (previously added) or any repo from your git context (using option &ldquo;&ndash;available&rdquo; and &ldquo;&ndash;context&rdquo;).</p>
 <h3 id="command">Command</h3>
-
 <p><code>codefresh get repository [names..]</code></p>
-
 <h4 id="aliases">Aliases</h4>
-
 <p><code>codefresh get repo [names..]</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>names</td>
-<td></td>
-<td></td>
-<td>Names for filtering repos</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>names</td>
+          <td></td>
+          <td></td>
+          <td>Names for filtering repos</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--available</td>
-<td>-a</td>
-<td></td>
-<td></td>
-<td>Get all available git repos from provided or default git context</td>
-</tr>
-
-<tr>
-<td>--limit</td>
-<td>-l</td>
-<td>number</td>
-<td>25</td>
-<td>Maximum displayed repos number</td>
-</tr>
-
-<tr>
-<td>--context</td>
-<td>-c</td>
-<td></td>
-<td></td>
-<td>Name of the git context to use, if not passed the default will be used</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;available</td>
+          <td>-a</td>
+          <td></td>
+          <td></td>
+          <td>Get all available git repos from provided or default git context</td>
+      </tr>
+      <tr>
+          <td>&ndash;limit</td>
+          <td>-l</td>
+          <td>number</td>
+          <td>25</td>
+          <td>Maximum displayed repos number</td>
+      </tr>
+      <tr>
+          <td>&ndash;context</td>
+          <td>-c</td>
+          <td></td>
+          <td></td>
+          <td>Name of the git context to use, if not passed the default will be used</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="output-options">Output Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--select-columns</td>
-<td>--sc</td>
-<td></td>
-<td></td>
-<td>Columns to select for table output</td>
-</tr>
-
-<tr>
-<td>--output</td>
-<td>-o</td>
-<td></td>
-<td></td>
-<td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id<br> - jsonArray<br> - yamlArray</td>
-</tr>
-
-<tr>
-<td>--date-format</td>
-<td>--df</td>
-<td></td>
-<td></td>
-<td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
-</tr>
-
-<tr>
-<td>--pretty</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Use colors and signs for output</td>
-</tr>
-
-<tr>
-<td>--watch</td>
-<td>-w</td>
-<td>boolean</td>
-<td>false</td>
-<td>Watching updates to a particular resource</td>
-</tr>
-
-<tr>
-<td>--watch-interval</td>
-<td></td>
-<td>number</td>
-<td>3</td>
-<td>Interval time at watching mode (in seconds)</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;select-columns</td>
+          <td>&ndash;sc</td>
+          <td></td>
+          <td></td>
+          <td>Columns to select for table output</td>
+      </tr>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id<br> - jsonArray<br> - yamlArray</td>
+      </tr>
+      <tr>
+          <td>&ndash;date-format</td>
+          <td>&ndash;df</td>
+          <td></td>
+          <td></td>
+          <td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
+      </tr>
+      <tr>
+          <td>&ndash;pretty</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Use colors and signs for output</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch</td>
+          <td>-w</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Watching updates to a particular resource</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch-interval</td>
+          <td></td>
+          <td>number</td>
+          <td>3</td>
+          <td>Interval time at watching mode (in seconds)</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="get-all-codefresh-repos">Get all codefresh repos</h4>
-
 <p><code>codefresh get repo</code></p>
-
 <h4 id="get-codefresh-repos-containing-codefresh-io-in-its-name">Get codefresh repos containing &ldquo;codefresh-io&rdquo; in its name</h4>
-
 <p><code>codefresh get repo codefresh-io</code></p>
-
 <h4 id="get-codefresh-repos-containing-some-repo-in-its-name">Get codefresh repos containing &ldquo;some-repo&rdquo; in its name</h4>
-
 <p><code>codefresh get repo some-repo</code></p>
-
 <h4 id="get-all-available-repos-from-default-git-context">Get all available repos from default git context</h4>
-
 <p><code>codefresh get repo -a</code></p>
-
 <h4 id="get-all-available-repos-from-bitbucket-git-context">Get all available repos from &ldquo;bitbucket&rdquo; git context</h4>
-
 <p><code>codefresh get repo -a -c bitbucket</code></p>
 
 

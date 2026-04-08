@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Agents :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -636,11 +636,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/agents/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/agents/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/agents/">Agents</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/agents/">Agents</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/agents/get-agents/" class="dd-item">
@@ -1669,20 +1668,18 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-agents-get-agents"><a href="get-agents">Get Agents</a></a></li>
-<li><a href="#create-agent-create-agent"><a href="create-agent">Create Agent</a></a></li>
-<li><a href="#delete-agent-delete-agent"><a href="delete-agent">Delete Agent</a></a></li>
-<li><a href="#patch-agent-patch-agent"><a href="patch-agent">Patch Agent</a></a></li>
-<li><a href="#install-install"><a href="install">Install</a></a></li>
-<li><a href="#uninstall-uninstall"><a href="uninstall">Uninstall</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-agents">Get Agents</a></li>
+        <li><a href="#create-agent">Create Agent</a></li>
+        <li><a href="#delete-agent">Delete Agent</a></li>
+        <li><a href="#patch-agent">Patch Agent</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#uninstall">Uninstall</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1702,44 +1699,24 @@
     
     
 
-
-
-<h3 id="get-agents-get-agents"><a href="get-agents">Get Agents</a></h3>
-
+<h3 id="get-agents"><a href="get-agents">Get Agents</a></h3>
 <p><code>codefresh get agents [id|name]</code></p>
-
 <p>Get a specific agent or an array of agents.</p>
-
-<h3 id="create-agent-create-agent"><a href="create-agent">Create Agent</a></h3>
-
+<h3 id="create-agent"><a href="create-agent">Create Agent</a></h3>
 <p><code>codefresh create agent &lt;name&gt;</code></p>
-
 <p>Create an agent.</p>
-
 <p>Create an agent used to behind firewall integration.</p>
-
-<h3 id="delete-agent-delete-agent"><a href="delete-agent">Delete Agent</a></h3>
-
+<h3 id="delete-agent"><a href="delete-agent">Delete Agent</a></h3>
 <p><code>codefresh delete agent &lt;id|name&gt;</code></p>
-
 <p>Delete an agent.</p>
-
-<h3 id="patch-agent-patch-agent"><a href="patch-agent">Patch Agent</a></h3>
-
+<h3 id="patch-agent"><a href="patch-agent">Patch Agent</a></h3>
 <p><code>codefresh patch agent [id|name]</code></p>
-
 <p>Patch an agent.</p>
-
-<h3 id="install-install"><a href="install">Install</a></h3>
-
+<h3 id="install"><a href="install">Install</a></h3>
 <p><code>codefresh install agent</code></p>
-
 <p>Install and create an agent on kubernetes cluster.</p>
-
-<h3 id="uninstall-uninstall"><a href="uninstall">Uninstall</a></h3>
-
+<h3 id="uninstall"><a href="uninstall">Uninstall</a></h3>
 <p><code>codefresh uninstall agent</code></p>
-
 <p>Uninstall an agent on kubernetes cluster.</p>
 
 

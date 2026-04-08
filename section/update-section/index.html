@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Update Section :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1189,20 +1189,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/section/delete-section/" class="dd-item">
-        <div>
-          <a href="/cli/section/delete-section/">
-            Delete section
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/section/update-section/" class="dd-item active">
-        <div>
-          <a href="/cli/section/update-section/">
-            Update Section
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/sections/" class="dd-item haschildren
@@ -1674,23 +1660,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#arguments">Arguments</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#update-name-and-filter-of-section-specifying-section-by-id">Update name and filter of section. Specifying section by ID</a></li>
-<li><a href="#update-name-and-filter-of-section-specifying-section-by-name">Update name and filter of section. Specifying section by NAME</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1709,126 +1689,103 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Update a section.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh patch section [id]</code></p>
-
 <h3 id="arguments">Arguments</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>id</td>
-<td></td>
-<td></td>
-<td>Id of existing section</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>id</td>
+          <td></td>
+          <td></td>
+          <td>Id of existing section</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--boardId</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Id of existing board</td>
-</tr>
-
-<tr>
-<td>--boardName</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of existing board</td>
-</tr>
-
-<tr>
-<td>--name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of existing section</td>
-</tr>
-
-<tr>
-<td>--newName</td>
-<td></td>
-<td></td>
-<td></td>
-<td>New name</td>
-</tr>
-
-<tr>
-<td>--cluster</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Name of linked cluster</td>
-</tr>
-
-<tr>
-<td>--color</td>
-<td></td>
-<td></td>
-<td></td>
-<td>New color</td>
-</tr>
-
-<tr>
-<td>--index</td>
-<td></td>
-<td></td>
-<td></td>
-<td>New index</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;boardId</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Id of existing board</td>
+      </tr>
+      <tr>
+          <td>&ndash;boardName</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of existing board</td>
+      </tr>
+      <tr>
+          <td>&ndash;name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of existing section</td>
+      </tr>
+      <tr>
+          <td>&ndash;newName</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>New name</td>
+      </tr>
+      <tr>
+          <td>&ndash;cluster</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Name of linked cluster</td>
+      </tr>
+      <tr>
+          <td>&ndash;color</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>New color</td>
+      </tr>
+      <tr>
+          <td>&ndash;index</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>New index</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="update-name-and-filter-of-section-specifying-section-by-id">Update name and filter of section. Specifying section by ID</h4>
-
 <p><code>codefresh patch section ID --new-name NEW_NAME --filter /app-*/gi</code></p>
-
 <h4 id="update-name-and-filter-of-section-specifying-section-by-name">Update name and filter of section. Specifying section by NAME</h4>
-
 <p><code>codefresh patch section --name OLD_NAME --new-name NEW_NAME --filter /app-*/gi</code></p>
 
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>More... :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1509,11 +1509,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/more/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/more/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/more/">More...</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/more/">More...</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/more/image-pull-secret/" class="dd-item">
@@ -1669,15 +1668,13 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#image-pull-secret-image-pull-secret"><a href="image-pull-secret">Image Pull Secret</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#image-pull-secret">Image Pull Secret</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1697,14 +1694,9 @@
     
     
 
-
-
-<h3 id="image-pull-secret-image-pull-secret"><a href="image-pull-secret">Image Pull Secret</a></h3>
-
+<h3 id="image-pull-secret"><a href="image-pull-secret">Image Pull Secret</a></h3>
 <p><code>codefresh generate image-pull-secret</code></p>
-
 <p>Generate image pull secret on Kubernetes cluster from integrated Docker registry.</p>
-
 <p><br>    For Kuberentes cluster to pull an image from your private registry it needs special secret typed as <code>kubernetes.io/dockercfg</code>.<br>    After this secret been created you can use them in pod template that lives in the same namespace.<br>    You can generate this secret from any integrated Docker registry on your account.<br>    More information about image pull secret can be found here: <a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a>.</p>
 
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Offload To File :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,21 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#undefined">undefined</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1707,93 +1702,76 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Archiving logs from one or more source collections to files by chunks of days.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh offline-logs offload-to-file</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--uri</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.</td>
-</tr>
-
-<tr>
-<td>--db</td>
-<td></td>
-<td>string</td>
-<td></td>
-<td>Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.</td>
-</tr>
-
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--chunkDuration</td>
-<td>--chdur</td>
-<td>number</td>
-<td>1</td>
-<td>Chunk size in days, each chunk will be archived into a different file.</td>
-</tr>
-
-<tr>
-<td>--cutoffDate</td>
-<td>--cod</td>
-<td>string</td>
-<td></td>
-<td>The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</td>
-</tr>
-
-<tr>
-<td>--path</td>
-<td></td>
-<td>string</td>
-<td>.</td>
-<td>Directory path to which archive files will be saved.</td>
-</tr>
-
-<tr>
-<td>--collections</td>
-<td>-c</td>
-<td>string</td>
-<td>logs,metadata</td>
-<td>Source collections names</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;uri</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>Mongodb URI. If not provided, will be parsed from environment variable RUNTIME_MONGO_URI.</td>
+      </tr>
+      <tr>
+          <td>&ndash;db</td>
+          <td></td>
+          <td>string</td>
+          <td></td>
+          <td>Database name. If not provided, will be parsed from environment variable RUNTIME_MONGO_DB.</td>
+      </tr>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;chunkDuration</td>
+          <td>&ndash;chdur</td>
+          <td>number</td>
+          <td>1</td>
+          <td>Chunk size in days, each chunk will be archived into a different file.</td>
+      </tr>
+      <tr>
+          <td>&ndash;cutoffDate</td>
+          <td>&ndash;cod</td>
+          <td>string</td>
+          <td></td>
+          <td>The date in ISO format (yyyy-MM-dd) from which logs will be archived (going backwards, including logs from that day).</td>
+      </tr>
+      <tr>
+          <td>&ndash;path</td>
+          <td></td>
+          <td>string</td>
+          <td>.</td>
+          <td>Directory path to which archive files will be saved.</td>
+      </tr>
+      <tr>
+          <td>&ndash;collections</td>
+          <td>-c</td>
+          <td>string</td>
+          <td>logs,metadata</td>
+          <td>Source collections names</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="undefined">undefined</h4>
-
-<p><code>codefresh offline-logs offload-to-file --uri &quot;mongodb://192.168.99.100:27017&quot; --db logs --collections archive-logs --cod &quot;2021-07-08&quot; --chdur 3 --path &quot;./&quot;</code></p>
+<p><code>codefresh offline-logs offload-to-file --uri &quot;mongodb://192.168.99.100:27017&quot; --db logs --collections archive-logs --cod &quot;2021-07-08&quot; --chdur 3 --path &quot;./&quot; </code></p>
 
 
     

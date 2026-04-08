@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>bitbucket :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1686,17 +1686,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1715,72 +1713,59 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Create a bitbucket context.</p>
-
-<p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create bitbucket context you need to generate application password from here: <a href="https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords">https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords</a>.</p>
-
+<p>Git context are used to clone repositories during pipeline execution.<br>Learn more about git context here: <a href="https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/">https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/</a>.<br>To create bitbucket context you need to generate application password from here: <a href="https://bitbucket.org/account/user/%7BYOUR-USERNAME%7D/app-passwords">https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords</a>.</p>
 <h3 id="command">Command</h3>
-
 <p><code>codefresh create context git bitbucket &lt;name&gt;</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--sharing-policy</td>
-<td></td>
-<td>string</td>
-<td>AccountAdmins</td>
-<td>Set the sharing policy for git contexts<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
-</tr>
-
-<tr>
-<td>--behind-firewall</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Set to true to mark this context with behind firewall flag</td>
-</tr>
-
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--app-password</td>
-<td>-a</td>
-<td></td>
-<td></td>
-<td>Application password generated in bitbucket. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--username</td>
-<td>-u</td>
-<td></td>
-<td></td>
-<td>username that has permissions to use application password. <code>required</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;sharing-policy</td>
+          <td></td>
+          <td>string</td>
+          <td>AccountAdmins</td>
+          <td>Set the sharing policy for git contexts<br><br>Possible values:<br> - AccountAdmins<br> - AllUsersInAccount</td>
+      </tr>
+      <tr>
+          <td>&ndash;behind-firewall</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Set to true to mark this context with behind firewall flag</td>
+      </tr>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;app-password</td>
+          <td>-a</td>
+          <td></td>
+          <td></td>
+          <td>Application password generated in bitbucket. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;username</td>
+          <td>-u</td>
+          <td></td>
+          <td></td>
+          <td>username that has permissions to use application password. <code>required</code></td>
+      </tr>
+  </tbody>
 </table>
 
 

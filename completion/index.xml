@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Completion on Codefresh CLI Documentation</title>
+    <link>https://codefresh-io.github.io/cli/completion/</link>
+    <description>Recent content in Completion on Codefresh CLI Documentation</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://codefresh-io.github.io/cli/completion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codefresh Completion</title>
+      <link>https://codefresh-io.github.io/cli/completion/codefresh-completion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://codefresh-io.github.io/cli/completion/codefresh-completion/</guid>
+      <description>&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Generate codefresh completion. See details on &lt;a href=&#34;codefresh-completion&#34;&gt;usage&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Prints completion script with specified or default path to executable and command alias.&lt;/p&gt;&#xA;&lt;h3 id=&#34;command&#34;&gt;Command&lt;/h3&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh completion [shell-name]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;aliases&#34;&gt;Aliases&lt;/h4&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh completions [shell-name]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;arguments&#34;&gt;Arguments&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;shellName&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;bash&lt;/td&gt;&#xA;          &lt;td&gt;Name of the shell to generate completion for&lt;br&gt;&lt;br&gt;Possible values:&lt;br&gt; - bash&lt;br&gt; - zsh&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;options&#34;&gt;Options&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Option&lt;/th&gt;&#xA;          &lt;th&gt;Alias&lt;/th&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Default&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;help&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Print help information&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;executable&lt;/td&gt;&#xA;          &lt;td&gt;-e&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Name or path to your codefresh executable (default same as alias)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&amp;ndash;alias&lt;/td&gt;&#xA;          &lt;td&gt;-a&lt;/td&gt;&#xA;          &lt;td&gt;string&lt;/td&gt;&#xA;          &lt;td&gt;codefresh&lt;/td&gt;&#xA;          &lt;td&gt;Alias used for calling codefresh executable&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;&#xA;&lt;h4 id=&#34;print-bash-completion-script&#34;&gt;Print bash completion script&lt;/h4&gt;&#xA;&lt;p&gt;&lt;code&gt;codefresh completion&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

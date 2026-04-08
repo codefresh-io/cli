@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Images :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -543,11 +543,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/images/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/images/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/images/">Images</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/images/">Images</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/images/get-image/" class="dd-item">
@@ -1669,18 +1668,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-image-get-image"><a href="get-image">Get Image</a></a></li>
-<li><a href="#annotate-image-annotate-image"><a href="annotate-image">Annotate Image</a></a></li>
-<li><a href="#tag-image-tag-image"><a href="tag-image">Tag Image</a></a></li>
-<li><a href="#untag-image-untag-image"><a href="untag-image">Untag Image</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-image">Get Image</a></li>
+        <li><a href="#annotate-image">Annotate Image</a></li>
+        <li><a href="#tag-image">Tag Image</a></li>
+        <li><a href="#untag-image">Untag Image</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1700,38 +1697,21 @@
     
     
 
-
-
-<h3 id="get-image-get-image"><a href="get-image">Get Image</a></h3>
-
+<h3 id="get-image"><a href="get-image">Get Image</a></h3>
 <p><code>codefresh get images [id..]</code></p>
-
 <p>Get a specific image or an array of images.</p>
-
 <p>Passing [id] argument will cause a retrieval of a specific image.<br> In case of not passing [id] argument, a list will be returned.</p>
-
-<h3 id="annotate-image-annotate-image"><a href="annotate-image">Annotate Image</a></h3>
-
+<h3 id="annotate-image"><a href="annotate-image">Annotate Image</a></h3>
 <p><code>codefresh annotate image &lt;id&gt;</code></p>
-
 <p>Annotate an image.</p>
-
 <p>Annotating an image gives the ability to add extra context on your already existing images.</p>
-
-<h3 id="tag-image-tag-image"><a href="tag-image">Tag Image</a></h3>
-
+<h3 id="tag-image"><a href="tag-image">Tag Image</a></h3>
 <p><code>codefresh tag &lt;id&gt; [tags..]</code></p>
-
 <p>Add an image tag.</p>
-
 <p>Tagging an image will result in the creation of a new Docker Image tag. If registry not specified - default is used.</p>
-
-<h3 id="untag-image-untag-image"><a href="untag-image">Untag Image</a></h3>
-
+<h3 id="untag-image"><a href="untag-image">Untag Image</a></h3>
 <p><code>codefresh untag &lt;id&gt; [tags..]</code></p>
-
 <p>Untag an image.</p>
-
 <p>Untagging an image will result in the removal of tag. If registry not specified - default is used.</p>
 
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>CLI Config :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1466,11 +1466,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/cli-config/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/cli-config/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/cli-config/">CLI Config</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/cli-config/">CLI Config</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/cli-config/show-config/" class="dd-item">
@@ -1669,19 +1668,17 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#show-config-show-config"><a href="show-config">Show Config</a></a></li>
-<li><a href="#get-config-properties-get-config-properties"><a href="get-config-properties">Get Config Properties</a></a></li>
-<li><a href="#set-config-property-set-config-property"><a href="set-config-property">Set Config Property</a></a></li>
-<li><a href="#profiles-profiles"><a href="profiles">Profiles</a></a></li>
-<li><a href="#describe-config-properties-describe-config-properties"><a href="describe-config-properties">Describe Config Properties</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#show-config">Show Config</a></li>
+        <li><a href="#get-config-properties">Get Config Properties</a></li>
+        <li><a href="#set-config-property">Set Config Property</a></li>
+        <li><a href="#profiles">Profiles</a></li>
+        <li><a href="#describe-config-properties">Describe Config Properties</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1701,44 +1698,24 @@
     
     
 
-
-
-<h3 id="show-config-show-config"><a href="show-config">Show Config</a></h3>
-
+<h3 id="show-config"><a href="show-config">Show Config</a></h3>
 <p><code>codefresh cli-config</code></p>
-
 <p>Codefresh CLI configuration. Uses profiles</p>
-
 <p>CLI configuration is used for user-specific properties, for example pretty-print.</p>
-
-<h3 id="get-config-properties-get-config-properties"><a href="get-config-properties">Get Config Properties</a></h3>
-
+<h3 id="get-config-properties"><a href="get-config-properties">Get Config Properties</a></h3>
 <p><code>codefresh cli-config get [name]</code></p>
-
 <p>For current profile get all properties containing provided &ldquo;name&rdquo;</p>
-
 <p>Used when you may need to know some exact properties values.</p>
-
-<h3 id="set-config-property-set-config-property"><a href="set-config-property">Set Config Property</a></h3>
-
+<h3 id="set-config-property"><a href="set-config-property">Set Config Property</a></h3>
 <p><code>codefresh cli-config set [name] [value]</code></p>
-
 <p>For current profile set an available property</p>
-
-<h3 id="profiles-profiles"><a href="profiles">Profiles</a></h3>
-
+<h3 id="profiles"><a href="profiles">Profiles</a></h3>
 <p><code>codefresh cli-config profile [name]</code></p>
-
 <p>Change cli-config profile</p>
-
 <p>Using profiles gives an ability to switch fast between the different configuration sets.</p>
-
-<h3 id="describe-config-properties-describe-config-properties"><a href="describe-config-properties">Describe Config Properties</a></h3>
-
+<h3 id="describe-config-properties"><a href="describe-config-properties">Describe Config Properties</a></h3>
 <p><code>codefresh cli-config help [name]</code></p>
-
 <p>Show help for properties. Used when you may need to know some properties types, defaults, description etc.</p>
-
 <p>Used when you may need to know some properties types, defaults, description etc.</p>
 
 

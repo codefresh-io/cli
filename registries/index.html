@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Registries :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -261,34 +261,6 @@
       <a href="/cli/projects/">Projects</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/projects/get-projects/" class="dd-item">
-        <div>
-          <a href="/cli/projects/get-projects/">
-            Get Projects
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/projects/create-project/" class="dd-item">
-        <div>
-          <a href="/cli/projects/create-project/">
-            Create Project
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/projects/delete-project/" class="dd-item">
-        <div>
-          <a href="/cli/projects/delete-project/">
-            Delete Project
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/projects/patch-project/" class="dd-item">
-        <div>
-          <a href="/cli/projects/patch-project/">
-            Patch Project
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/builds/" class="dd-item haschildren
@@ -1567,11 +1539,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/registries/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/registries/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/registries/">Registries</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/registries/">Registries</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/registries/get-registries/" class="dd-item">
@@ -1668,7 +1639,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents"></nav>
         </div>
     </div>
     
@@ -1704,11 +1675,90 @@
         <h2 class="post-title"><a href="/cli/registries/get-registries/">Get Registries</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Description Get an array of accounts registries.
-Command codefresh get registry
-Options    Option Alias Type Default Description     --help    Print help information    Output Options    Option Alias Type Default Description     --select-columns --sc   Columns to select for table output   --output -o   Output format
-Possible values:
-- json <a class="read-more" href="/cli/registries/get-registries/">&raquo;</a></p>
+        <p><h3 id="description">Description</h3>
+<p>Get an array of accounts registries.</p>
+<h3 id="command">Command</h3>
+<p><code>codefresh get registry</code></p>
+<h3 id="options">Options</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="output-options">Output Options</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;select-columns</td>
+          <td>&ndash;sc</td>
+          <td></td>
+          <td></td>
+          <td>Columns to select for table output</td>
+      </tr>
+      <tr>
+          <td>&ndash;output</td>
+          <td>-o</td>
+          <td></td>
+          <td></td>
+          <td>Output format<br><br>Possible values:<br> - json<br> - yaml<br> - wide<br> - name<br> - id<br> - jsonArray<br> - yamlArray</td>
+      </tr>
+      <tr>
+          <td>&ndash;date-format</td>
+          <td>&ndash;df</td>
+          <td></td>
+          <td></td>
+          <td>Provide predefined or custom date format. Predefined options: [&ldquo;default&rdquo;, &ldquo;date&rdquo;, &ldquo;datetime&rdquo;, &ldquo;date-diff&rdquo;]</td>
+      </tr>
+      <tr>
+          <td>&ndash;pretty</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Use colors and signs for output</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch</td>
+          <td>-w</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Watching updates to a particular resource</td>
+      </tr>
+      <tr>
+          <td>&ndash;watch-interval</td>
+          <td></td>
+          <td>number</td>
+          <td>3</td>
+          <td>Interval time at watching mode (in seconds)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<h4 id="get-all-registries-connected-to-the-account">Get all registries connected to the account</h4>
+<p><code>codefresh get registry</code></p> <a class="read-more" href="/cli/registries/get-registries/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1725,9 +1775,50 @@ Possible values:
         <h2 class="post-title"><a href="/cli/registries/delete-registry/">Delete Registry</a></h2>
     </header>
     <section class="post-excerpt">
-        <p> Description Delete registry from Codefresh.
-Command codefresh delete registry &lt;ID&gt;
-Arguments    Option Alias Default Description     ID   ID of a registry to delete    Options    Option Alias Type Default Description     --help    Print help information     <a class="read-more" href="/cli/registries/delete-registry/">&raquo;</a></p>
+        <p><h3 id="description">Description</h3>
+<p>Delete registry from Codefresh.</p>
+<h3 id="command">Command</h3>
+<p><code>codefresh delete registry &lt;ID&gt;</code></p>
+<h3 id="arguments">Arguments</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ID</td>
+          <td></td>
+          <td></td>
+          <td>ID of a registry to delete</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="options">Options</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+  </tbody>
+</table> <a class="read-more" href="/cli/registries/delete-registry/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Install or Upgrade Helm Chart :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1674,23 +1674,16 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-<li><a href="#examples">Examples</a>
-<ul>
-<li><a href="#install-chart-from-public-helm-repo">Install chart from public helm repo</a></li>
-<li><a href="#get-all-helm-repos">Get all helm repos</a></li>
-<li><a href="#install-chart-saved-repo">Install chart saved repo</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1709,132 +1702,107 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Install or upgrade a Helm chart Repository flag can be either absolute url or saved repository in Codefresh.</p>
-
 <h3 id="command">Command</h3>
-
 <p><code>codefresh install-chart</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--cluster</td>
-<td>-c</td>
-<td>string</td>
-<td></td>
-<td>Install on cluster. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--namespace</td>
-<td>--ns</td>
-<td>string</td>
-<td>default</td>
-<td>Install on namespace</td>
-</tr>
-
-<tr>
-<td>--tiller-namespace</td>
-<td>--tn</td>
-<td>string</td>
-<td>kube-system</td>
-<td>Where tiller has been installed</td>
-</tr>
-
-<tr>
-<td>--repository</td>
-<td>-r</td>
-<td>string</td>
-<td>kubeapps</td>
-<td>Helm repository (absolute url or name of context with type helm-repository). <code>required</code></td>
-</tr>
-
-<tr>
-<td>--name</td>
-<td>-n</td>
-<td>string</td>
-<td></td>
-<td>Name of the chart in the repository. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--version</td>
-<td>-v</td>
-<td>string</td>
-<td></td>
-<td>Version of the chart in the repository. <code>required</code></td>
-</tr>
-
-<tr>
-<td>--context</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Contexts (yaml</td>
-</tr>
-
-<tr>
-<td>--set</td>
-<td></td>
-<td></td>
-<td></td>
-<td>set of KEY=VALUE to be passed to the install</td>
-</tr>
-
-<tr>
-<td>--detach</td>
-<td>-d</td>
-<td></td>
-<td></td>
-<td>Run pipeline and print build ID</td>
-</tr>
-
-<tr>
-<td>--release-name</td>
-<td></td>
-<td></td>
-<td></td>
-<td>The name to set to the release</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;cluster</td>
+          <td>-c</td>
+          <td>string</td>
+          <td></td>
+          <td>Install on cluster. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;namespace</td>
+          <td>&ndash;ns</td>
+          <td>string</td>
+          <td>default</td>
+          <td>Install on namespace</td>
+      </tr>
+      <tr>
+          <td>&ndash;tiller-namespace</td>
+          <td>&ndash;tn</td>
+          <td>string</td>
+          <td>kube-system</td>
+          <td>Where tiller has been installed</td>
+      </tr>
+      <tr>
+          <td>&ndash;repository</td>
+          <td>-r</td>
+          <td>string</td>
+          <td>kubeapps</td>
+          <td>Helm repository (absolute url or name of context with type helm-repository). <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;name</td>
+          <td>-n</td>
+          <td>string</td>
+          <td></td>
+          <td>Name of the chart in the repository. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;version</td>
+          <td>-v</td>
+          <td>string</td>
+          <td></td>
+          <td>Version of the chart in the repository. <code>required</code></td>
+      </tr>
+      <tr>
+          <td>&ndash;context</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Contexts (yaml</td>
+      </tr>
+      <tr>
+          <td>&ndash;set</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>set of KEY=VALUE to be passed to the install</td>
+      </tr>
+      <tr>
+          <td>&ndash;detach</td>
+          <td>-d</td>
+          <td></td>
+          <td></td>
+          <td>Run pipeline and print build ID</td>
+      </tr>
+      <tr>
+          <td>&ndash;release-name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>The name to set to the release</td>
+      </tr>
+  </tbody>
 </table>
-
 <h3 id="examples">Examples</h3>
-
 <h4 id="install-chart-from-public-helm-repo">Install chart from public helm repo</h4>
-
 <p><code>codefresh install-chart --name mongodb</code></p>
-
 <h4 id="get-all-helm-repos">Get all helm repos</h4>
-
 <p><code>codefresh get ctx --type helm-repository</code></p>
-
 <h4 id="install-chart-saved-repo">Install chart saved repo</h4>
-
 <p><code>codefresh install-chart --name mongodb  --repository my-help-repository</code></p>
 
 

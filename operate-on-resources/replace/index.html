@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Replace :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -169,55 +169,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/cli/operate-on-resources/get/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/get/">
-            Get
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/create/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/create/">
-            Create
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/delete/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/delete/">
-            Delete
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/patch/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/patch/">
-            Patch
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/upgrade/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/upgrade/">
-            Upgrade
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/replace/" class="dd-item active">
-        <div>
-          <a href="/cli/operate-on-resources/replace/">
-            Replace
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="/cli/operate-on-resources/diff/" class="dd-item">
-        <div>
-          <a href="/cli/operate-on-resources/diff/">
-            Diff
-          </a>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/cli/pipelines/" class="dd-item haschildren
@@ -1674,17 +1625,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#command">Command</a></li>
-<li><a href="#options">Options</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#options">Options</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1703,56 +1652,45 @@
     
     
     
-    
-
-<h3 id="description">Description</h3>
-
+    <h3 id="description">Description</h3>
 <p>Replace a resource from a file, directory or url</p>
-
-<p>Supported resources: <br><li>&lsquo;Context&rsquo;<br><li>&lsquo;Pipeline&rdquo;<br><li>&lsquo;Step-type&rsquo;.</p>
-
+<p>Supported resources: <br><li>&lsquo;Context&rsquo;<br><li>&lsquo;Pipeline&rsquo;&rsquo;<br><li>&lsquo;Step-type&rsquo;.</p>
 <h3 id="command">Command</h3>
-
 <p><code>codefresh replace</code></p>
-
 <h3 id="options">Options</h3>
-
 <table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Alias</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>--help</td>
-<td></td>
-<td></td>
-<td></td>
-<td>Print help information</td>
-</tr>
-
-<tr>
-<td>--filename</td>
-<td>-f</td>
-<td></td>
-<td></td>
-<td>Filename or directory of spec files use to create the resource</td>
-</tr>
-
-<tr>
-<td>--skip-trigger-validation</td>
-<td></td>
-<td>boolean</td>
-<td>false</td>
-<td>Set to true to skip validation (for pipeline replace)</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Option</th>
+          <th>Alias</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ndash;help</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Print help information</td>
+      </tr>
+      <tr>
+          <td>&ndash;filename</td>
+          <td>-f</td>
+          <td></td>
+          <td></td>
+          <td>Filename or directory of spec files use to create the resource</td>
+      </tr>
+      <tr>
+          <td>&ndash;skip-trigger-validation</td>
+          <td></td>
+          <td>boolean</td>
+          <td>false</td>
+          <td>Set to true to skip validation (for pipeline replace)</td>
+      </tr>
+  </tbody>
 </table>
 
 

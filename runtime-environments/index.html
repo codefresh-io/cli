@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Runtime-Environments :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -1103,11 +1103,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/runtime-environments/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/runtime-environments/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/runtime-environments/">Runtime-Environments</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/runtime-environments/">Runtime-Environments</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/runtime-environments/get-runtime-environments/" class="dd-item">
@@ -1669,22 +1668,20 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-runtime-environments-get-runtime-environments"><a href="get-runtime-environments">Get Runtime-Environments</a></a></li>
-<li><a href="#delete-runtime-environments-delete-runtime-environments"><a href="delete-runtime-environments">Delete Runtime-Environments</a></a></li>
-<li><a href="#apply-runtime-environments-apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></a></li>
-<li><a href="#attach-runtime-environments-attach-runtime-environments"><a href="attach-runtime-environments">Attach Runtime-Environments</a></a></li>
-<li><a href="#create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></a></li>
-<li><a href="#diff-runtime-environments-diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></a></li>
-<li><a href="#install-runtime-environment-install-runtime-environment"><a href="install-runtime-environment">Install Runtime-Environment</a></a></li>
-<li><a href="#uninstall-runtime-environment-uninstall-runtime-environment"><a href="uninstall-runtime-environment">Uninstall Runtime-Environment</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-runtime-environments">Get Runtime-Environments</a></li>
+        <li><a href="#delete-runtime-environments">Delete Runtime-Environments</a></li>
+        <li><a href="#apply-runtime-environments">Apply Runtime-Environments</a></li>
+        <li><a href="#attach-runtime-environments">Attach Runtime-Environments</a></li>
+        <li><a href="#create-runtime-environments">Create Runtime-Environments</a></li>
+        <li><a href="#diff-runtime-environments">Diff Runtime-Environments</a></li>
+        <li><a href="#install-runtime-environment">Install Runtime-Environment</a></li>
+        <li><a href="#uninstall-runtime-environment">Uninstall Runtime-Environment</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1704,58 +1701,31 @@
     
     
 
-
-
-<h3 id="get-runtime-environments-get-runtime-environments"><a href="get-runtime-environments">Get Runtime-Environments</a></h3>
-
+<h3 id="get-runtime-environments"><a href="get-runtime-environments">Get Runtime-Environments</a></h3>
 <p><code>codefresh get runtime-environments [name]</code></p>
-
 <p>Get a runtime environments configuration.</p>
-
-<h3 id="delete-runtime-environments-delete-runtime-environments"><a href="delete-runtime-environments">Delete Runtime-Environments</a></h3>
-
+<h3 id="delete-runtime-environments"><a href="delete-runtime-environments">Delete Runtime-Environments</a></h3>
 <p><code>codefresh delete runtime-environments name</code></p>
-
 <p>Delete a runtime-environment.</p>
-
-<h3 id="apply-runtime-environments-apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></h3>
-
+<h3 id="apply-runtime-environments"><a href="apply-runtime-environments">Apply Runtime-Environments</a></h3>
 <p><code>codefresh patch runtime-environments [name]</code></p>
-
 <p>apply changes to runtime-environments resource.</p>
-
 <p>Use apply to patch an existing context.</p>
-
-<h3 id="attach-runtime-environments-attach-runtime-environments"><a href="attach-runtime-environments">Attach Runtime-Environments</a></h3>
-
+<h3 id="attach-runtime-environments"><a href="attach-runtime-environments">Attach Runtime-Environments</a></h3>
 <p><code>codefresh attach runtime</code></p>
-
 <p>Attach a runtime to agent.</p>
-
 <p>attach runtime.</p>
-
-<h3 id="create-runtime-environments-create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></h3>
-
+<h3 id="create-runtime-environments"><a href="create-runtime-environments">Create Runtime-Environments</a></h3>
 <p><code>codefresh create runtime-environments [cluster]</code></p>
-
 <p>Create a runtime environment.</p>
-
-<h3 id="diff-runtime-environments-diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></h3>
-
+<h3 id="diff-runtime-environments"><a href="diff-runtime-environments">Diff Runtime-Environments</a></h3>
 <p><code>codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]</code></p>
-
 <p>Show diff between two runtime environments configuration.</p>
-
-<h3 id="install-runtime-environment-install-runtime-environment"><a href="install-runtime-environment">Install Runtime-Environment</a></h3>
-
+<h3 id="install-runtime-environment"><a href="install-runtime-environment">Install Runtime-Environment</a></h3>
 <p><code>codefresh install runtime</code></p>
-
 <p>Install and create a runtime on kubernetes cluster.</p>
-
-<h3 id="uninstall-runtime-environment-uninstall-runtime-environment"><a href="uninstall-runtime-environment">Uninstall Runtime-Environment</a></h3>
-
+<h3 id="uninstall-runtime-environment"><a href="uninstall-runtime-environment">Uninstall Runtime-Environment</a></h3>
 <p><code>codefresh uninstall runtime</code></p>
-
 <p>Uninstall a runtime on kubernetes cluster.</p>
 
 

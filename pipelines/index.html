@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.32" />
+<meta name="generator" content="Hugo 0.159.2">
 
 <title>Pipelines :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="/cli/js/auto-complete.js"></script>
 		<script type="text/javascript">
         
-            var baseurl = "https:\/\/codefresh-io.github.io\/cli";
+            var baseurl = "https:\/\/codefresh-io.github.io\/cli\/";
         
 		</script>
 		<script type="text/javascript" src="/cli/js/search.js"></script>
@@ -219,11 +219,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/cli/pipelines/" class="dd-item parent active haschildren
+    <li data-nav-id="/cli/pipelines/" class="dd-item active haschildren
         ">
       <div>
-      <a href="/cli/pipelines/">Pipelines</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      <a href="/cli/pipelines/">Pipelines</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/cli/pipelines/get-pipeline/" class="dd-item">
@@ -1669,17 +1668,15 @@
     <div class="progress">
         <div class="wrapper">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#get-pipeline-get-pipeline"><a href="get-pipeline">Get Pipeline</a></a></li>
-<li><a href="#delete-pipeline-delete-pipeline"><a href="delete-pipeline">Delete Pipeline</a></a></li>
-<li><a href="#run-pipeline-run-pipeline"><a href="run-pipeline">Run Pipeline</a></a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#get-pipeline">Get Pipeline</a></li>
+        <li><a href="#delete-pipeline">Delete Pipeline</a></li>
+        <li><a href="#run-pipeline">Run Pipeline</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
         </div>
     </div>
@@ -1699,26 +1696,15 @@
     
     
 
-
-
-<h3 id="get-pipeline-get-pipeline"><a href="get-pipeline">Get Pipeline</a></h3>
-
+<h3 id="get-pipeline"><a href="get-pipeline">Get Pipeline</a></h3>
 <p><code>codefresh get pipelines [id..]</code></p>
-
 <p>Get a specific pipeline or an array of pipelines.</p>
-
-<h3 id="delete-pipeline-delete-pipeline"><a href="delete-pipeline">Delete Pipeline</a></h3>
-
+<h3 id="delete-pipeline"><a href="delete-pipeline">Delete Pipeline</a></h3>
 <p><code>codefresh delete pipeline [name]</code></p>
-
 <p>Delete a pipeline.</p>
-
-<h3 id="run-pipeline-run-pipeline"><a href="run-pipeline">Run Pipeline</a></h3>
-
+<h3 id="run-pipeline"><a href="run-pipeline">Run Pipeline</a></h3>
 <p><code>codefresh run [name]</code></p>
-
 <p>Run a pipeline by id or name and attach the created workflow logs.</p>
-
 <p>Returns an exit code according to the workflow finish status (Success: 0, Error: 1, Terminated: 2).</p>
 
 
