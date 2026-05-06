@@ -1,4 +1,4 @@
-FROM node:24.13.0-alpine3.23
+FROM node:24.15.0-alpine3.23
 ARG TARGETPLATFORM
 RUN apk --update add --no-cache \
     bash \
@@ -7,8 +7,8 @@ RUN apk --update add --no-cache \
     git \
     jq
 RUN npm upgrade -g npm
-COPY --from=mikefarah/yq:4.52.4 /usr/bin/yq /usr/local/bin/yq
-ADD --chmod=775 https://dl.k8s.io/release/v1.35.3/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
+COPY --from=mikefarah/yq:4.53.2 /usr/bin/yq /usr/local/bin/yq
+ADD --chmod=775 https://dl.k8s.io/release/v1.36.0/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
 WORKDIR /cf-cli
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 RUN yarn install --prod --frozen-lockfile && \
@@ -16,8 +16,8 @@ RUN yarn install --prod --frozen-lockfile && \
 COPY . /cf-cli
 RUN yarn generate-completion
 
-#purpose of security
-RUN npm -g uninstall npm
+# Purpose of security:
+RUN npm uninstall -g --logs-max=0 corepack npm
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
