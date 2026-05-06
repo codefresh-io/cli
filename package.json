@@ -41,7 +41,7 @@
   "resolutions": {
     "json-schema": "^0.4.0",
     "ansi-regex": "^5.0.1",
-    "kubernetes-client/@kubernetes/client-node": ">=0.22.2",
+    "kubernetes-client/@kubernetes/client-node": "^0.22.2",
     "tough-cookie": "^4.1.3",
     "openid-client": "^4.9.0",
     "**/request/form-data": "^2.5.5",
