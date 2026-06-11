@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_a0bab19abce79f::t_5b23c12c472e28 1-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "a28ebcb6edff65f5470817dc7aba5f5ac1028f63",
+  "prompts": {},
+  "sessions": {
+    "s_a0bab19abce79f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8dc0c1ec-e6d9-4853-8eb1-e54ed8049fee",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
