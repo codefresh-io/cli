@@ -84,6 +84,13 @@ The CLI shells out to several other binaries (Stevedore for cluster integration,
 
 `lib/interface/cli/completion/tree.js` is **generated** by `yarn generate-completion` ([completion/generate](lib/interface/cli/completion/generate)). When `process.argv` includes `--get-yargs-completions`, [codefresh](lib/interface/cli/codefresh) takes a fast path that loads only completion logic — do not add work to the startup path that would break this. The Dockerfile runs `yarn generate-completion` during image build; the file is `.gitignored`.
 
+## Default CLI values
+
+Defaults live in two places — check both when changing or referencing them:
+
+- [lib/interface/cli/defaults.js](lib/interface/cli/defaults.js) — code-level constants exported as `DEFAULTS` (API URL, cfconfig path, pagination limits, watch interval, engine image, `~/.Codefresh` path, debug pattern). Used directly from command builders/handlers.
+- [lib/logic/cli-config/schema.json](lib/logic/cli-config/schema.json) — JSON-Schema for the user-editable profile config at `~/.Codefresh/cli-config/config.yaml`. The `default` field of each property is the fallback applied by [Manager.js](lib/logic/cli-config/Manager.js) (covers `output.pretty`, `output.dateFormat`, `request.timeout`/`maxAttempts`/`retryDelay`, `logs.fallback.*`).
+
 ## Testing conventions
 
 - Unit tests: `*.spec.js`, plain jest.
