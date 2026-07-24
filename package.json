@@ -68,7 +68,7 @@
     "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
     "flat": "^5.0.2",
     "inquirer": "^12.11.1",
-    "js-yaml": "^3.10.0",
+    "js-yaml": "^4.3.0",
     "kefir": "^3.8.1",
     "kubernetes-client": "^9.0.0",
     "lodash": "^4.17.23",
