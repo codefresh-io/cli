@@ -6,7 +6,7 @@
   "preferGlobal": true,
   "scripts": {
     "generate-completion": "node ./lib/interface/cli/completion/generate",
-    "test": "jest .spec.js --coverage",
+    "test": "jest .spec.js --runInBand --ci --color --coverage --silent",
     "e2e": "bash e2e/e2e.spec.sh",
     "eslint": "eslint --fix lib/logic/**",
     "pkg": "npx pkg . -t node20-alpine-x64,node20-alpine-arm64,node20-macos-x64,node20-linux-x64,node20-win-x64,node20-linux-arm64 --out-path ./dist",
