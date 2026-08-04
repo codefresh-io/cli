@@ -1,0 +1,20 @@
+test-setup.js
+  s_33529341206643::t_6740a7aaaeec32 28-29,31-36
+  s_33529341206643::t_e988506a0888a0 30,37-40,44-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "1ef0518085fbb532875db3a9bd8875ddcd88b691",
+  "prompts": {},
+  "sessions": {
+    "s_33529341206643": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f78e440d-b7ac-413a-9439-db7900e7a81b",
+        "model": "claude-sonnet-4-20250514"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
