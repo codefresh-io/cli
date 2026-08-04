@@ -1,0 +1,16 @@
+Dockerfile
+  h_eda8e5529fa171 1,10-11,19-20
+package.json
+  h_eda8e5529fa171 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "0f839cbbf82b82a3352d3dd3492b392b1aae700a",
+  "prompts": {},
+  "humans": {
+    "h_eda8e5529fa171": {
+      "author": "Zhenya Tikhonov"
+    }
+  }
+}
