@@ -25,23 +25,10 @@ global.verifyResponsesReturned = async (responses) => {
  * downloads spec one time for all tests
  * */
 global.configureSdk = async () => {
-    // Clean SDK state more carefully to avoid breaking internal structure
-    const keysToKeep = ['configure']; // Keep the configure method
-    Object.keys(sdk).forEach(key => {
-        if (!keysToKeep.includes(key)) {
-            try {
-                delete sdk[key];
-            } catch (e) {
-                // Some properties might not be configurable
-            }
-        }
-    });
-
-    const config = await Config.load({
+    Object.keys(sdk).forEach(key => delete sdk[key]);
+    sdk.configure(await Config.load({
         url: 'http://not.needed',
         apiKey: 'not-needed',
         spec: { json: openapi },
-    });
-
-    sdk.configure(config);
+    }));
 };
