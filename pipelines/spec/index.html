@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.159.2">
+<meta name="generator" content="Hugo 0.152.2">
 
 <title>Spec :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -1703,7 +1703,7 @@
 <p>A Pipeline also needs a <code>.spec</code> section.</p>
 <h3 id="examples">Examples</h3>
 <p>Use create/replace/delete commands to manage your pipeline</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># create pipeline</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># create pipeline</span>
 </span></span><span style="display:flex;"><span>codefresh create -f pipeline.yaml
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># get created/modified pipeline spec</span>
@@ -1716,7 +1716,7 @@
 </span></span><span style="display:flex;"><span>codefresh delete -f pipeline.yaml
 </span></span></code></pre></div><p>See the examples of pipeline spec below to manage your pipelines.</p>
 <h4 id="basic-pipeline-with-cron-triggers-in-spec">Basic pipeline with cron triggers in spec</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">cron</span>
@@ -1732,7 +1732,7 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo test</span>
 </span></span></code></pre></div><h4 id="basic-pipeline-with-cron-triggers-with-variables">Basic pipeline with cron triggers with variables</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">cron</span>
@@ -1751,7 +1751,7 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo ${{TEST_VARIABLE}}</span>
 </span></span></code></pre></div><h4 id="basic-pipeline-with-cron-triggers-with-run-options">Basic pipeline with cron triggers with run options</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">cron</span>
@@ -1772,7 +1772,7 @@
 </span></span></code></pre></div><h4 id="pipeline-started-by-cron-trigger-but-simulating-the-git-trigger">Pipeline started by cron trigger but simulating the git trigger</h4>
 <p>Note that <code>spec.triggers.0.id</code> and <code>spec.cronTriggers.gitTriggerId</code>
 should be the same value and a valid ObjectId.</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">cron</span>
@@ -1804,7 +1804,7 @@ should be the same value and a valid ObjectId.</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo ${{CF_BRANCH}}</span>
 </span></span></code></pre></div><h4 id="disable-cron-trigger-in-pipeline"><strong>Disable</strong> cron trigger in pipeline</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">cron</span>
@@ -1821,7 +1821,7 @@ should be the same value and a valid ObjectId.</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">commands</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo test</span>
 </span></span></code></pre></div><h4 id="basic-pipeline-with-clone-step-and-git-trigger">Basic Pipeline with clone step and git trigger</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">basic-pipeline</span>
@@ -1865,7 +1865,7 @@ should be the same value and a valid ObjectId.</p>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">image_name</span><span style="color:#111">:</span> <span style="color:#ae81ff">my-custom-docker-image</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">tag</span><span style="color:#111">:</span> <span style="color:#ae81ff">bla</span>
 </span></span></code></pre></div><h4 id="pipeline-with-a-remote-spec-template-brought-from-a-git-repository">Pipeline with a remote spec template brought from a git repository</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">basic-pipeline</span>
@@ -1895,7 +1895,7 @@ should be the same value and a valid ObjectId.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">path</span><span style="color:#111">:</span> <span style="color:#ae81ff">codefresh.yml</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">revision</span><span style="color:#111">:</span> <span style="color:#ae81ff">master</span> <span style="color:#75715e"># can be a branch or commit. if not specified will use CF_BRANCH variable value</span>
 </span></span></code></pre></div><h4 id="pipeline-with-a-remote-spec-template-from-a-public-git-url">Pipeline with a remote spec template from a public git URL</h4>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span><span style="color:#111">:</span> <span style="color:#d88200">&#39;1.0&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span><span style="color:#111">:</span> <span style="color:#ae81ff">pipeline</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span><span style="color:#111">:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span><span style="color:#111">:</span> <span style="color:#ae81ff">basic-pipeline</span>

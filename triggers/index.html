@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="generator" content="Hugo 0.159.2">
+<meta name="generator" content="Hugo 0.152.2">
 
 <title>Triggers :: Codefresh CLI Documentation</title>
 <link rel="shortcut icon" href="/cli/images/favicon.png" type="image/x-icon" />
@@ -1673,8 +1673,8 @@
       <ul>
         <li><a href="#heading">[Deprecated] Create Pipeline Trigger</a></li>
         <li><a href="#heading-1">[Deprecated] Get Triggers</a></li>
-        <li><a href="#heading-2">[Deprecated] Get Trigger Event</a></li>
-        <li><a href="#heading-3">[Deprecated] Get Trigger Types</a></li>
+        <li><a href="#heading-2">[Deprecated] Get Trigger Types</a></li>
+        <li><a href="#heading-3">[Deprecated] Get Trigger Event</a></li>
         <li><a href="#heading-4">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></li>
         <li><a href="#heading-5">[Deprecated] Create Trigger Event</a></li>
         <li><a href="#heading-6">[Deprecated] Delete Trigger Event</a></li>
@@ -1707,12 +1707,12 @@
 <p><code>codefresh get triggers</code></p>
 <p>[Deprecated] Get triggers, optionally filtered by pipeline or event. Deprecated - please use pipeline spec to manager cron triggers.</p>
 <p>Only cron/registry triggers are supported (for git triggers use <code>codefresh get pip &lt;pip-name&gt; -o json</code>).</p>
-<h3 id="heading-2"><a href="%5Bdeprecated%5D-get-trigger-event">[Deprecated] Get Trigger Event</a></h3>
-<p><code>codefresh get trigger-events [event-uri]</code></p>
-<p>[Deprecated] Get <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
-<h3 id="heading-3"><a href="%5Bdeprecated%5D-get-trigger-types">[Deprecated] Get Trigger Types</a></h3>
+<h3 id="heading-2"><a href="%5Bdeprecated%5D-get-trigger-types">[Deprecated] Get Trigger Types</a></h3>
 <p><code>codefresh get trigger-types</code></p>
 <p>[Deprecated] Get a list of available trigger-types. Deprecated - please use pipeline spec to manager cron trigger.</p>
+<h3 id="heading-3"><a href="%5Bdeprecated%5D-get-trigger-event">[Deprecated] Get Trigger Event</a></h3>
+<p><code>codefresh get trigger-events [event-uri]</code></p>
+<p>[Deprecated] Get <code>trigger-event</code>. Deprecated - please use pipeline spec to manager cron trigger.</p>
 <h3 id="heading-4"><a href="%5Bdeprecated%5D-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger">[Deprecated] Delete Pipeline Trigger. Deprecated - please use pipeline spec to manager cron trigger</a></h3>
 <p><code>codefresh delete trigger [event-uri] [pipeline]</code></p>
 <p>Delete trigger: unlink pipeline from <code>trigger-event</code>.</p>
