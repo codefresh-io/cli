@@ -7,8 +7,9 @@ RUN apt update \
     ca-certificates \
     curl \
     git \
-    jq \
-    && ln -s /bin/busybox /usr/bin/[[
+    && ln -s /bin/busybox /usr/bin/[[ \
+    && curl -L "https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-linux-$(dpkg --print-architecture)" -o /usr/local/bin/jq \
+    && chmod +x /usr/local/bin/jq
 RUN npm upgrade -g npm
 COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
 ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
