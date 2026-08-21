@@ -1,19 +1,19 @@
-FROM node:24.18.0-trixie-slim
+FROM octopusdeploy/dhi-node:24-debian13-dev@sha256:1684b453b97f985c384af99f71507adf5727e24e76c6cd8c1a2da949ad8588e0 as build
 ARG TARGETPLATFORM
-RUN apt update \
-    && apt -y install \
-    apt-transport-https \
-    bash \
-    busybox \
-    ca-certificates \
-    curl \
-    git \
-    && ln -s /bin/busybox /usr/bin/[[ \
-    && curl -L "https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-linux-$(dpkg --print-architecture)" -o /usr/local/bin/jq \
-    && chmod +x /usr/local/bin/jq
-RUN npm upgrade -g npm
-COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
-ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
+#RUN apt update \
+#    && apt -y install \
+#    apt-transport-https \
+#    bash \
+#    busybox \
+#    ca-certificates \
+#    curl \
+#    git \
+#    && ln -s /bin/busybox /usr/bin/[[ \
+#    && curl -L "https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-linux-$(dpkg --print-architecture)" -o /usr/local/bin/jq \
+#    && chmod +x /usr/local/bin/jq
+#RUN npm upgrade -g npm
+#COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
+#ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
 WORKDIR /cf-cli
 COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
 RUN yarn install --prod --frozen-lockfile && \
@@ -22,9 +22,15 @@ COPY . /cf-cli
 RUN yarn generate-completion
 
 #purpose of security
-RUN npm -g uninstall npm
+#RUN npm -g uninstall npm
 
+FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:91f550e9c617363429620203161cb44e7270efe125beb7b8b0dbb8b4f448a745 as base
+WORKDIR /cf-cli
+USER root
+COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
+ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
+RUN ln -s /bin/busybox /usr/bin/[[
 RUN codefresh components update --location components
 
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
