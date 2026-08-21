@@ -30,7 +30,7 @@ WORKDIR /cf-cli
 USER root
 COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
 COPY --chmod=755 --from=build /usr/local/bin/kubectl /usr/local/bin/kubectl
-COPY --chown=node:node --chmod=755 . .
+COPY --chown=node:node --chmod=755 /cf-cli /cf-cli
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN ln -s /bin/busybox /usr/bin/[[
 RUN codefresh components update --location components
