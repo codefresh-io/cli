@@ -21,20 +21,18 @@ RUN yarn install --prod --frozen-lockfile && \
     yarn cache clean
 COPY . /cf-cli
 RUN yarn generate-completion
-RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 
 #purpose of security
 #RUN npm -g uninstall npm
 
-FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:b7b0cfb1aa32c94819c267a41aedec1042d76f9d1a3067989d91dd9efba93139 as base
+FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:800314b290fd15c92fea62ec0b3374c84f0edb222a80e37a53ebbd449572ef62 as base
+RUN busybox --install
 COPY --chmod=755 --from=build  /cf-cli /cf-cli
-#COPY --chmod=755 --from=build . /cf-cli
 WORKDIR /cf-cli
 USER root
 COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
-COPY --chmod=755 --from=build /usr/local/bin/kubectl /usr/local/bin/kubectl
-COPY --chmod=755 --from=build /usr/local/bin/codefresh /usr/local/bin/codefresh
-RUN ln -s /bin/busybox /usr/bin/[[
+COPY --chmod=775 --from=octopusdeploy/dhi-kubectl:1.36-debian13 /usr/local/bin/kubectl /usr/local/bin/kubectl
+RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
 
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
