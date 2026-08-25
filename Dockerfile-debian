@@ -1,4 +1,4 @@
-FROM octopusdeploy/dhi-node:24-debian13-dev@sha256:1684b453b97f985c384af99f71507adf5727e24e76c6cd8c1a2da949ad8588e0 as build
+FROM octopusdeploy/dhi-node:24-debian13-dev@sha256:fe091924af637178000e4eb34caec858c935c5264a55ada03088890c7b6a8de2 as build
 ARG TARGETPLATFORM
 #RUN apt update \
 #    && apt -y install \
