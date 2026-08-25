@@ -25,12 +25,11 @@ RUN yarn generate-completion
 #purpose of security
 #RUN npm -g uninstall npm
 
-FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:800314b290fd15c92fea62ec0b3374c84f0edb222a80e37a53ebbd449572ef62 as base
+FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:92241510202a764f988381982b5d953cac7764e06fd94c30813e01a4a782a80a as base
 RUN busybox --install
 COPY --chmod=755 --from=build  /cf-cli /cf-cli
 WORKDIR /cf-cli
 USER root
-COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
 COPY --chmod=775 --from=octopusdeploy/dhi-kubectl:1.36-debian13 /usr/local/bin/kubectl /usr/local/bin/kubectl
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
