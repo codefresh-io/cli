@@ -24,7 +24,7 @@ RUN yarn generate-completion
 #purpose of security
 #RUN npm -g uninstall npm
 
-FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:92241510202a764f988381982b5d953cac7764e06fd94c30813e01a4a782a80a as base
+FROM octopusdeploy/dhi-node:24-debian_cf-cli-node-24-debian-13@sha256:ba88e3250a5efc62df36d95e2305a5811a1b1671f9aa65fcbaeb664bb8c371cd as base
 RUN busybox --install
 COPY --chmod=755 --from=build  /cf-cli /cf-cli
 WORKDIR /cf-cli
