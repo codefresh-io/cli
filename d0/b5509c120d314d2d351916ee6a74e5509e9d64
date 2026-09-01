@@ -1,0 +1,14 @@
+package.json
+  h_86ffe77adf8985 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "d0b5509c120d314d2d351916ee6a74e5509e9d64",
+  "prompts": {},
+  "humans": {
+    "h_86ffe77adf8985": {
+      "author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
