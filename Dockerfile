@@ -1,4 +1,4 @@
-FROM node:24.18.0-alpine3.24
+FROM node:24.20-alpine3.24
 ARG TARGETPLATFORM
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
   && apk --update add --no-cache \
