@@ -1,0 +1,14 @@
+Dockerfile-debian
+  h_9fee6e699064f1 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "0624c985b69643b7e082ae3c32fd708841b6c858",
+  "prompts": {},
+  "humans": {
+    "h_9fee6e699064f1": {
+      "author": "Vadim Kharin <vadim.kharin@codefresh.io>"
+    }
+  }
+}

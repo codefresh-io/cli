@@ -1,0 +1,28 @@
+lib/interface/cli/helpers/validation.js
+  h_e5037b46dfdc11 43
+lib/interface/cli/helpers/general.js
+  h_e5037b46dfdc11 132
+package.json
+  h_e5037b46dfdc11 3
+lib/output/types/yaml.output.js
+  h_e5037b46dfdc11 25,27
+lib/interface/cli/helpers/cli-config.js
+  h_e5037b46dfdc11 7,43
+lib/logic/cli-config/Manager.js
+  h_e5037b46dfdc11 50,54,130
+lib/logic/cli-config/manager.spec.js
+  h_e5037b46dfdc11 49-50,52-53
+lib/logic/entities/Entity.js
+  h_e5037b46dfdc11 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.17",
+  "base_commit_sha": "49949af1873d9e4a109a4d581a4151e1467ac249",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}

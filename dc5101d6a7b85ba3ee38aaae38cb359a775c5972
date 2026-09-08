@@ -1,0 +1,23 @@
+lib/interface/cli/completion/completion.spec.js
+  s_33529341206643::t_bb20b45c59e94f 71
+  s_33529341206643::t_c1c5dadb1e2a80 76-82,85-87,90,92,94-96,98-101,104,107-117,170-182
+  s_33529341206643::t_02a6654dc694e4 89,91,93,97,102-103,105-106,118-169
+  s_33529341206643::t_4f3ae6e2e090e6 75
+  s_33529341206643::t_e61ed7d644578d 73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "dc5101d6a7b85ba3ee38aaae38cb359a775c5972",
+  "prompts": {},
+  "sessions": {
+    "s_33529341206643": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f78e440d-b7ac-413a-9439-db7900e7a81b",
+        "model": "claude-sonnet-4-20250514"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
