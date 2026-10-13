@@ -1,0 +1,16 @@
+package.json
+  h_48b74706cf95a4 3
+yarn.lock
+  h_48b74706cf95a4 6201,6815
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "394692734b776fae410eb33892f2d4eecc601392",
+  "prompts": {},
+  "humans": {
+    "h_48b74706cf95a4": {
+      "author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
