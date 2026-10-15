@@ -219,6 +219,8 @@
   </url><url>
     <loc>https://codefresh-io.github.io/cli/runner/info/</loc>
   </url><url>
+    <loc>https://codefresh-io.github.io/cli/install-resources/install/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/patch/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/agents/patch-agent/</loc>
@@ -234,6 +236,8 @@
     <loc>https://codefresh-io.github.io/cli/authentication/set-active-context/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/terminate-build/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/uninstall-resources/uninstall/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/components/update/</loc>
   </url><url>
@@ -294,7 +298,11 @@
   </url><url>
     <loc>https://codefresh-io.github.io/cli/annotations/</loc>
   </url><url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/approve/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/audit/</loc>
   </url><url>
@@ -312,6 +320,10 @@
   </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/</loc>
   </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner/delete/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/builds/deny/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/operate-on-resources/diff/</loc>
@@ -324,13 +336,31 @@
   </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-git-context/</loc>
   </url><url>
+    <loc>https://codefresh-io.github.io/cli/gitops/</loc>
+  </url><url>
     <loc>https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner/init/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/install/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/install/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/gitops/install/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/monitor/install/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/install-resources/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/logs-category/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/logs-category/archives-old-logs-to-file-or-collection./</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/monitor/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/logs/offload-to-collection/</loc>
   </url><url>
@@ -363,6 +393,24 @@
     <loc>https://codefresh-io.github.io/cli/teams/synchronize-teams/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/tokens/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/agents/uninstall/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/uninstall/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/gitops/uninstall/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/monitor/uninstall/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/uninstall-resources/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/app-proxy/upgrade/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/gitops/upgrade/</loc>
+  </url><url>
+    <loc>https://codefresh-io.github.io/cli/runner/upgrade/</loc>
   </url><url>
     <loc>https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/</loc>
   </url><url>

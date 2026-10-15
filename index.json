@@ -704,7 +704,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": "Description Download Codefresh CLI components.\nCommand codefresh components download\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;location Override download folder location. Default: ~/.Codefresh \u0026ndash;components Components. List of [stevedore, venona] "
+	"content": "Description Download Codefresh CLI components.\nCommand codefresh components download\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;location Override download folder location. Default: ~/.Codefresh \u0026ndash;components Components. List of [stevedore, venona, argocd-agent, codefresh] "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runner/execute-test-pipeline/",
@@ -719,6 +719,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Description Get info on your runner installations.\nCommand codefresh runner info\nOptions Option Alias Type Default Description \u0026ndash;help Print help information "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/install-resources/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Description Install a resource\nInstall operation will install codefresh components on kubernetes cluster.\nCommand codefresh install\nOptions Option Alias Type Default Description \u0026ndash;help Print help information "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/operate-on-resources/patch/",
@@ -775,6 +782,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Description Terminate a build by its id.\nThis command will return once the request has been received from the server.\nThe termination process can take time according to the pipeline definition.\nCommand codefresh terminate \u0026lt;id\u0026gt;\nArguments Option Alias Default Description id Build id Options Option Alias Type Default Description \u0026ndash;help Print help information Examples Terminate build ID codefresh terminate ID\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/uninstall-resources/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": "Description Uninstall a resource\nUninstall operation will uninstall codefresh components on kubernetes cluster.\nCommand codefresh uninstall\nOptions Option Alias Type Default Description \u0026ndash;help Print help information "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/components/update/",
@@ -886,7 +900,7 @@
 	"title": "Download",
 	"tags": [],
 	"description": "",
-	"content": "Description Download audit.\nCommand codefresh download audit\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;userName filter by user name \u0026ndash;userId filter by codefresh user id \u0026ndash;entity filter by api entity, example: pipeline, account \u0026ndash;entityId filter by api entity id, this value different for each action, example: email, user id \u0026ndash;action filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account \u0026ndash;rs_status filter by response status code \u0026ndash;showTriggers returns only actions related to receiving triggers \u0026ndash;search filter by searching substring in request body or query or params or headers or url \u0026ndash;from filter by date, value is number of milliseconds since 1970 \u0026ndash;to filter by date, value is number of milliseconds since 1970 \u0026ndash;sortField name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt \u0026ndash;sortType sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK \u0026ndash;file string /codefresh/volume/cli/codefresh_audit_2026-10-15_11-14-35.csv The name of the file and the directory in which the audit will be saved Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
+	"content": "Description Download audit.\nCommand codefresh download audit\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;userName filter by user name \u0026ndash;userId filter by codefresh user id \u0026ndash;entity filter by api entity, example: pipeline, account \u0026ndash;entityId filter by api entity id, this value different for each action, example: email, user id \u0026ndash;action filter by api action, get possible values on /api/audit/entitiesList, you will see only actions which was happen in your account \u0026ndash;rs_status filter by response status code \u0026ndash;showTriggers returns only actions related to receiving triggers \u0026ndash;search filter by searching substring in request body or query or params or headers or url \u0026ndash;from filter by date, value is number of milliseconds since 1970 \u0026ndash;to filter by date, value is number of milliseconds since 1970 \u0026ndash;sortField name of sorting field, values: id, createdAt, updatedAt\nPossible values:\n- id\n- createdAt\n- updatedAt \u0026ndash;sortType sorting type, values: ASK, DESK\nPossible values:\n- ASK\n- DESK \u0026ndash;file string /codefresh/volume/cli/codefresh_audit_2026-10-15_14-07-42.csv The name of the file and the directory in which the audit will be saved Examples undefined codefresh download audit --file /var/www/audit.csv\nundefined --entity account --rs_status 200 --sortType DESK --sortField createdAt\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/more/image-pull-secret/",
@@ -949,7 +963,7 @@
 	"title": "Agents",
 	"tags": [],
 	"description": "",
-	"content": "Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nDelete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\n"
+	"content": "Get Agents codefresh get agents [id|name]\nGet a specific agent or an array of agents.\nCreate Agent codefresh create agent \u0026lt;name\u0026gt;\nCreate an agent.\nCreate an agent used to behind firewall integration.\nDelete Agent codefresh delete agent \u0026lt;id|name\u0026gt;\nDelete an agent.\nPatch Agent codefresh patch agent [id|name]\nPatch an agent.\nInstall codefresh install agent\nInstall and create an agent on kubernetes cluster.\nUninstall codefresh uninstall agent\nUninstall an agent on kubernetes cluster.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/analyzer/analyze/",
@@ -973,11 +987,25 @@
 	"content": "get codefresh get annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nGet annotations.\ncreate codefresh create annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; \u0026lt;labels...\u0026gt;\nAnnotate a resource with labels.\ndelete codefresh delete annotation \u0026lt;entity-type\u0026gt; \u0026lt;entity-id\u0026gt; [labels...]\nDelete annotations.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/app-proxy/",
+	"title": "App-Proxy",
+	"tags": [],
+	"description": "",
+	"content": "Install codefresh install app-proxy\nInstalls the App-Proxy component on your Kubernetes cluster.\nUninstall codefresh uninstall app-proxy\nDeletes the App-Proxy component from your Kubernetes cluster.\nUpgrade codefresh upgrade app-proxy\nUpgrades an existing App-Proxy.\n"
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/builds/approve/",
 	"title": "Approve",
 	"tags": [],
 	"description": "",
 	"content": "Description Approve a pending-approval workflow.\napprove \u0026lt;$BUILD_ID\u0026gt;.\nCommand codefresh approve \u0026lt;buildId\u0026gt;\nArguments Option Alias Default Description buildId Build\u0026rsquo;s id. required Options Option Alias Type Default Description \u0026ndash;help Print help information "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/attach-runtime-environments/",
+	"title": "Attach Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": "Description Attach a runtime to agent.\nattach runtime.\nCommand codefresh attach runtime\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;runtime-name Runtime\u0026rsquo;s name \u0026ndash;agent-name Agent\u0026rsquo;s name \u0026ndash;agent-id Agent\u0026rsquo;s ID \u0026ndash;runtime-kube-context-name Runtime kubernetes context \u0026ndash;runtime-kube-namespace Runtime\u0026rsquo;s namespace \u0026ndash;runtime-kube-config-path Path to kubeconfig file for runtime (default is $HOME/.kube/config) \u0026ndash;agent-kube-context-name Agent kubernetes context \u0026ndash;agent-kube-namespace Agent\u0026rsquo;s namespace \u0026ndash;agent-kube-service-account The service account to use for the agent pod \u0026ndash;agent-kube-config-path Path to kubeconfig file for the agent (default is $HOME/.kube/config) \u0026ndash;restart-agent restart agent afte install - default false \u0026ndash;platform-only Set to true to attach runtime to agent on the platform side only \u0026ndash;verbose Print logs "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/audit/",
@@ -1036,6 +1064,20 @@
 	"content": "Create Config Context codefresh create context config \u0026lt;name\u0026gt;\nCreate a config context.\nCreate Secret Context codefresh create context secret \u0026lt;name\u0026gt;\nCreate a secret context.\nCreate Secret-Yaml Context codefresh create context secret-yaml \u0026lt;name\u0026gt;\nCreate a secret-yaml context.\nCreate Yaml Context codefresh create context yaml \u0026lt;name\u0026gt;\nCreate a yaml context.\n"
 },
 {
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/create-runtime-environments/",
+	"title": "Create Runtime-Environments",
+	"tags": [],
+	"description": "",
+	"content": "Description Create a runtime environment.\nCommand codefresh create runtime-environments [cluster]\nAliases codefresh create re [cluster]\ncodefresh create runtime-environment [cluster]\nOptions Option Alias Type Default Description \u0026ndash;help Print help information "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runner/delete/",
+	"title": "Delete",
+	"tags": [],
+	"description": "",
+	"content": "Description Deletes codefresh runner solution\u0026rsquo;s components on kubernetes cluster.\nCommand codefresh runner delete\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;name Agent\u0026rsquo;s name to be deleted \u0026ndash;url Codefresh system custom url \u0026ndash;force -f Run the delete operation without asking to confirm (use with caution!) \u0026ndash;kube-context-name Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed \u0026ndash;kube-namespace Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;keep-cluster-integration If true, will not delete dangling cluster integrations from Codefresh \u0026ndash;values specify values in a YAML file \u0026ndash;verbose Print logs "
+},
+{
 	"uri": "https://codefresh-io.github.io/cli/builds/deny/",
 	"title": "Deny",
 	"tags": [],
@@ -1075,7 +1117,14 @@
 	"title": "Git",
 	"tags": [],
 	"description": "",
-	"content": "bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
+	"content": "bitbucket codefresh create context git bitbucket \u0026lt;name\u0026gt;\nCreate a bitbucket context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create bitbucket context you need to generate application password from here: https://bitbucket.org/account/user/{YOUR-USERNAME}/app-passwords.\ngitlab codefresh create context git gitlab \u0026lt;name\u0026gt;\nCreate a gitlab context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create gitlab context you need to generate the token here: https://gitlab.com/profile/personal_access_tokens.\ngithub codefresh create context git github \u0026lt;name\u0026gt;\nCreate a github context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Github context you need to generate the token here: https://github.com/settings/tokens.\nstash codefresh create context git stash \u0026lt;name\u0026gt;\nCreate a stash context.\nGit context are used to clone repositories during pipeline execution.\nLearn more about git context here: https://codefresh.io/docs/docs/codefresh-yaml/steps/git-clone/.\nTo create Stash context you need to provider username and password.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/gitops/",
+	"title": "Gitops",
+	"tags": [],
+	"description": "",
+	"content": "Install codefresh install gitops \u0026lt;provider\u0026gt;\nInstall gitops.\nUninstall codefresh uninstall gitops \u0026lt;provider\u0026gt;\nUninstall gitops agent.\nUpgrade codefresh upgrade gitops \u0026lt;provider\u0026gt;\nUpgrade gitops agent.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/contexts/create-context/create-helm-repository-context/",
@@ -1083,6 +1132,55 @@
 	"tags": [],
 	"description": "",
 	"content": "From HTTP web server codefresh create context helm-repository http \u0026lt;name\u0026gt;\nCreate a helm-repository context from HTTP server.\nA chart repository is an HTTP server that houses an index.yaml file and optionally some packaged charts.\nWhen you\u0026rsquo;re ready to share your charts, the preferred way to do so is by uploading them to a chart repository.\nRead more: https://github.com/kubernetes/helm/blob/master/docs/chart_repository.md.\nFrom AWS S3 bucket codefresh create context helm-repository s3 \u0026lt;name\u0026gt;\nCreate a helm-repository context from s3 bucket.\nHelm repository can be stored in AWS S3 bucket.\nCodefresh will integrate with the bucket in the following order\nIf environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY ,AWS_DEFAULT_REGION are set, will use it to create context.\nYou can override them using flags aws-access-key-id aws-secret-access-key aws-default-region.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runner/init/",
+	"title": "Init",
+	"tags": [],
+	"description": "",
+	"content": "Description Install Codefresh Runner solution\u0026rsquo;s components on Kubernetes cluster.\nCommand codefresh runner init\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;name Agent\u0026rsquo;s name to be created if token is not provided \u0026ndash;token Registration\u0026rsquo;s token \u0026ndash;url Codefresh system custom url \u0026ndash;generate-helm-values-file string Path to the new generated helm values file \u0026ndash;kube-context-name Name of the Kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-node-selector The Kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by runner build resources (default is no node selector) (string) \u0026ndash;build-node-selector The Kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by the Codefresh build resources (default is no node selector) \u0026ndash;yes -y boolean false Use installation defaults (don\u0026rsquo;t ask any questions) \u0026ndash;skip-cluster-test boolean false Do not test given kubeconfig context to have all the required permission \u0026ndash;skip-cluster-integration boolean false Do not create a cluster integration in Codefresh \u0026ndash;set-default-runtime boolean false Set this as the default runtime environment for your Codefresh account \u0026ndash;exec-demo-pipeline boolean false Run a demo pipeline after the installation completes \u0026ndash;install-monitor boolean true Install a monitoring component that will help provide valueable data about your cluster to Codefresh \u0026ndash;kube-namespace Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;tolerations The Kubernetes tolerations as path to a JSON file prefixed with @ to be used by runner resources (default is no tolerations) (string) \u0026ndash;storage-class-name Set a name of your custom storage class \u0026ndash;docker-registry string quay.io The prefix for the container registry that will be used for pulling the required components images. Example: \u0026ndash;docker-registry=\u0026ldquo;docker.io\u0026rdquo; default is quay.io \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;values specify values in a YAML file (see example here: https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml) \u0026ndash;set-value Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;set-file Set values for templates from file, example: \u0026ndash;set-file Storage.GoogleServiceAccount=/path/to/service-account.json \u0026ndash;http-proxy http proxy to be used in the runner \u0026ndash;https-proxy https proxy to be used in the runner \u0026ndash;no-proxy no_proxy to be used in the runner \u0026ndash;verbose Print logs \u0026ndash;env-vars Addiontal env vars to be used in all Codefresh components \u0026ndash;app-proxy boolean false install app proxy component (default false) \u0026ndash;app-proxy-host string the hostname that will be used by the app-proxy ingress \u0026ndash;app-proxy-ingress-class string the ingress class that will be used by the app-proxy ingress \u0026ndash;docker-daemon-access boolean true docker daemon access (default true) \u0026ndash;dry-run boolean false Will save all of the manifests to be deployed on the cluster to: ./manifests/ \u0026ndash;bypass-download boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder Examples See values file example here: https://github.com/codefresh-io/venona/blob/release-1.0/venonactl/example/values-example.yaml) codefresh runner init --values values.yaml\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/agents/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Description Install and create an agent on kubernetes cluster.\nCommand codefresh install agent\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;name Agent\u0026rsquo;s name to be created if token is not provided \u0026ndash;token Agent\u0026rsquo;s token \u0026ndash;kube-context-name Name of the kubernetes context on which runner should be installed [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-node-selector The kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by runner build resources (default is no node selector) (string) \u0026ndash;dry-run Set to true to simulate installation \u0026ndash;in-cluster Set flag if runner is been installed from inside a cluster \u0026ndash;kube-namespace Name of the namespace on which runner should be installed [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;tolerations The kubernetes tolerations as path to a JSON file to be used by runner resources (default is no tolerations) (string) \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;skip-version-check Do not compare current runner\u0026rsquo;s version with latest \u0026ndash;install-runtime Install and attach runtime on the same namespace as the agent (default is false) \u0026ndash;runtime-name The name of the runtime to install \u0026ndash;build-node-selector The kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by runner build resources (default is no node selector) (string) \u0026ndash;skip-re-creation If set to true, will skip runtime creation in the platform \u0026ndash;set-value Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;set-file Set values for templates from file, example: \u0026ndash;set-file Storage.GoogleServiceAccount=/path/to/service-account.json \u0026ndash;skip-cluster-creation If set to true, will skip cluster integration creation for this runtime \u0026ndash;make-default-runtime should all pipelines run on the hybrid runtime (default is false) \u0026ndash;storage-class-name Set a name of your custom storage class, note: this will not install volume provisioning components \u0026ndash;agent-kube-context-name Agent kubernetes context (on attach) \u0026ndash;agent-kube-namespace Agent\u0026rsquo;s namespace (on attach) \u0026ndash;docker-registry string The prefix for the container registry that will be used for pulling the required components images. Example: \u0026ndash;docker-registry=\u0026ldquo;docker.io\u0026rdquo; \u0026ndash;platform-only Set to true to create runtime on the platform side only \u0026ndash;verbose Print logs "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/app-proxy/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Description Installs the App-Proxy component on your Kubernetes cluster.\nCommand codefresh install app-proxy\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-config-path string /root/.kube/config Path to kubeconfig file [$KUBECONFIG] \u0026ndash;kube-context-name Name of the kubernetes context on which the app-proxy should be installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-namespace string Name of the namespace on which app-proxy should be installed (default: codefresh) [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;runtime-environment string The Codefresh runtime-environment that this app-proxy will be associated with \u0026ndash;docker-registry string docker.io The prefix for the container registry that will be used for pulling the app-proxy component image \u0026ndash;values specify values in a YAML file \u0026ndash;set-value array Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;verbose Print logs \u0026ndash;host string the hostname that will be used by the app-proxy ingress \u0026ndash;ingress-class string the ingress class that will be used by the app-proxy ingress \u0026ndash;bypass-download boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/gitops/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Description Install gitops.\nCommand codefresh install gitops \u0026lt;provider\u0026gt;\nArguments Option Alias Default Description provider Gitops provider. required\nPossible values:\n- codefresh\n- argocd-agent Options Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;git-integration Name of git integration in Codefresh \u0026ndash;git-repo-url Url to manifest repo \u0026ndash;codefresh-integration Name of gitops integration in Codefresh ( Please create a dedicated context for the agent to avoid hitting the Github rate limits ) \u0026ndash;argo-host Host of argocd installation \u0026ndash;argo-token Token of argocd installation. Preferred auth method \u0026ndash;argo-username Username of existing argocd installation. Should be used with argo-password \u0026ndash;argo-password Password of existing argocd installation. Should be used with argo-username \u0026ndash;update Update gitops integration if exists \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;kube-context-name Name of Kubernetes context \u0026ndash;kube-namespace Namespace in Kubernetes cluster \u0026ndash;in-cluster boolean false Use this option if gitops provider is been updated from inside a cluster \u0026ndash;output -o Path to k8s manifest output file, example: -o /home/user/out.yaml \u0026ndash;sync-mode Synchronization mode NONE - don\u0026rsquo;t synchronize SELECT - select applications for synchronization CONTINUE_SYNC - continuous synchronization ONE_TIME_SYNC - synchronize one time\nPossible values:\n- NONE\n- SELECT\n- CONTINUE_SYNC\n- ONE_TIME_SYNC \u0026ndash;sync-apps Applications to be synchronized \u0026ndash;http-proxy http proxy to be used in the runner \u0026ndash;https-proxy https proxy to be used in the runner \u0026ndash;install-manifest string https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml Url of argocd install manifest \u0026ndash;set-argo-password Set password for admin user of new argocd installation \u0026ndash;codefresh-host string https://g.codefresh.io/ Codefresh api host \u0026ndash;codefresh-agent-suffix Suffix for agent application\u0026rsquo;s resources. Can be used for installing multiple agents in one namespace \u0026ndash;values Specify values in a YAML file \u0026ndash;bypass-download boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/monitor/install/",
+	"title": "Install",
+	"tags": [],
+	"description": "",
+	"content": "Description Install and create an cluster resources monitor on kubernetes cluster.\nCommand codefresh install monitor\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;cluster-id Cluster id - freestyle name \u0026ndash;token Codefresh user token \u0026ndash;kube-config-path string Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;kube-context-name Name of the kubernetes context on which monitor should be installed [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;url Codefresh url, by default https://g.codefresh.io \u0026ndash;kube-namespace Name of the namespace on which monitor should be installed [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;docker-registry string The prefix for the container registry that will be used for pulling the required components images. Example: \u0026ndash;docker-registry=\u0026ldquo;docker.io\u0026rdquo; \u0026ndash;values specify values in a YAML file \u0026ndash;verbose Print logs \u0026ndash;dry-run boolean false dry run \u0026ndash;bypass-download boolean false If the flag is set, then the first attempt (to get the required component) would be by searching for it locally. If the search fails, there will be a download attempt "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/install-resources/",
+	"title": "Install Resources",
+	"tags": [],
+	"description": "",
+	"content": "Install codefresh install\nInstall a resource\nInstall operation will install codefresh components on kubernetes cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/install-runtime-environment/",
+	"title": "Install Runtime-Environment",
+	"tags": [],
+	"description": "",
+	"content": "Description Install and create a runtime on kubernetes cluster.\nCommand codefresh install runtime\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;runtime-name The name of the runtime to install \u0026ndash;token Agent\u0026rsquo;s token \u0026ndash;agent-name Agent\u0026rsquo;s name \u0026ndash;storage-class-name Set a name of your custom storage class, note: this will not install volume provisioning components \u0026ndash;docker-registry string The prefix for the container registry that will be used for pulling the required components images. Example: \u0026ndash;docker-registry=\u0026ldquo;docker.io\u0026rdquo; \u0026ndash;set-value Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;set-file Set values for templates from file, example: \u0026ndash;set-file Storage.GoogleServiceAccount=/path/to/service-account.json \u0026ndash;dry-run Set to true to simulate installation \u0026ndash;in-cluster Set flag if runner is been installed from inside a cluster \u0026ndash;kube-node-selector The kubernetes node selector \u0026ldquo;key=value\u0026rdquo; to be used by runner build resources (default is no node selector) (string) \u0026ndash;runtime-kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;runtime-kube-context-name Name of the kubernetes context on which the runtime should be installed (default is current-context) [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;runtime-kube-namespace Name of the namespace on which runtime should be installed [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;build-annotations The kubernetes metadata.annotations as \u0026ldquo;key=value\u0026rdquo; to be used by runner build resources (default is no node selector) \u0026ndash;attach-runtime if set to true, auto attach runtime to agent (need to provide \u0026hellip;.) \u0026ndash;agent-kube-config-path Path to kubeconfig file for the agent (default is $HOME/.kube/config) (on attach) \u0026ndash;agent-kube-context-name Agent kubernetes context (on attach) \u0026ndash;agent-kube-namespace Agent\u0026rsquo;s namespace (on attach) \u0026ndash;cluster-service-account service account for cluster default is default \u0026ndash;make-default-runtime should all pipelines run on the this runtime (default is false) \u0026ndash;skip-re-creation If set to true, will skip runtime creation in the platform \u0026ndash;skip-cluster-creation If set to true, will skip cluster integration creation for this runtime \u0026ndash;platform-only Set to true to create runtime on the platform side only \u0026ndash;verbose Print logs "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/logs-category/",
@@ -1104,6 +1202,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Ensures one or more offline-logs collections has indexes codefresh offline-logs ensure-index\nChecks whether a collection has indexes and gives the user an option to add them. Adding an index may improve performance of some of the read operations.\nOffload To Collection codefresh offline-logs offload-to-collection\nArchiving logs from one or more source collections to target collections.\nOffload To File codefresh offline-logs offload-to-file\nArchiving logs from one or more source collections to files by chunks of days.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/monitor/",
+	"title": "Monitor",
+	"tags": [],
+	"description": "",
+	"content": "Install codefresh install monitor\nInstall and create an cluster resources monitor on kubernetes cluster.\nUninstall codefresh uninstall monitor\nUninstall an monitor on kubernetes cluster.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/logs/offload-to-collection/",
@@ -1138,7 +1243,7 @@
 	"title": "Runner",
 	"tags": [],
 	"description": "",
-	"content": "Execute test pipeline codefresh runner execute-test-pipeline\nExecutes test pipeline.\nInfo codefresh runner info\nGet info on your runner installations.\n"
+	"content": "Execute test pipeline codefresh runner execute-test-pipeline\nExecutes test pipeline.\nInfo codefresh runner info\nGet info on your runner installations.\nDelete codefresh runner delete\nDeletes codefresh runner solution\u0026rsquo;s components on kubernetes cluster.\nInit codefresh runner init\nInstall Codefresh Runner solution\u0026rsquo;s components on Kubernetes cluster.\nUpgrade codefresh runner upgrade\nUpgrades codefresh runner solution\u0026rsquo;s components.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runner-resources/",
@@ -1152,7 +1257,7 @@
 	"title": "Runtime-Environments",
 	"tags": [],
 	"description": "",
-	"content": "Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nApply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\n"
+	"content": "Get Runtime-Environments codefresh get runtime-environments [name]\nGet a runtime environments configuration.\nDelete Runtime-Environments codefresh delete runtime-environments name\nDelete a runtime-environment.\nApply Runtime-Environments codefresh patch runtime-environments [name]\napply changes to runtime-environments resource.\nUse apply to patch an existing context.\nAttach Runtime-Environments codefresh attach runtime\nAttach a runtime to agent.\nattach runtime.\nCreate Runtime-Environments codefresh create runtime-environments [cluster]\nCreate a runtime environment.\nDiff Runtime-Environments codefresh diff runtime-environments [first-re-name] [first-re-version] [second-re-name] [second-re-version]\nShow diff between two runtime environments configuration.\nInstall Runtime-Environment codefresh install runtime\nInstall and create a runtime on kubernetes cluster.\nUninstall Runtime-Environment codefresh uninstall runtime\nUninstall a runtime on kubernetes cluster.\n"
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/runtime-environments-base-images/",
@@ -1216,6 +1321,69 @@
 	"tags": [],
 	"description": "",
 	"content": "Create tokens codefresh create token [name]\nGenerate Codefresh token.\nCreate default token or provide \u0026ndash;type and \u0026ndash;subject. See options for more details.\nGet tokens codefresh get tokens [names|ids..]\nGet Codefresh tokens.\nProvide names/ids to filter results by them.\nPatch token codefresh patch tokens \u0026lt;id\u0026gt;\nPatch Codefresh token.\nUpdate token name or scopes using token id. Id can be retrieved using \u0026ldquo;get\u0026rdquo; command.\nDelete tokens codefresh delete tokens [ids..]\nRevoke Codefresh token.\nProvide one or many token ids to delete. Ids can be retrieved with \u0026ldquo;get\u0026rdquo; command.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/agents/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": "Description Uninstall an agent on kubernetes cluster.\nCommand codefresh uninstall agent\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;name Agent\u0026rsquo;s name to be uninstalled \u0026ndash;kube-context-name Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-namespace Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;verbose Print logs "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/app-proxy/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": "Description Deletes the App-Proxy component from your Kubernetes cluster.\nCommand codefresh uninstall app-proxy\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-context-name Name of the kubernetes context on which the app-proxy is installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-namespace Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed \u0026ndash;kube-config-path string /root/.kube/config Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;runtime-environment string The Codefresh runtime-environment that this App-Proxy will be associated with \u0026ndash;force -f Run the delete operation without asking to confirm (use with caution!) \u0026ndash;values specify values in a YAML file \u0026ndash;set-value array Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;verbose Print logs \u0026ndash;bypass-download boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/gitops/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": "Description Uninstall gitops agent.\nCommand codefresh uninstall gitops \u0026lt;provider\u0026gt;\nArguments Option Alias Default Description provider Gitops provider. required\nPossible values:\n- codefresh\n- argocd-agent Options Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;kube-context-name Name of Kubernetes context \u0026ndash;kube-namespace Namespace in Kubernetes cluster \u0026ndash;install-manifest string https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml Url of argocd install manifest \u0026ndash;in-cluster boolean false Use this option if gitops provider is been updated from inside a cluster "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/monitor/uninstall/",
+	"title": "Uninstall",
+	"tags": [],
+	"description": "",
+	"content": "Description Uninstall an monitor on kubernetes cluster.\nCommand codefresh uninstall monitor\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-context-name Name of the kubernetes context on which monitor should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-namespace Name of the namespace on which monitor should be uninstalled [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;verbose Print logs "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/uninstall-resources/",
+	"title": "Uninstall Resources",
+	"tags": [],
+	"description": "",
+	"content": "Uninstall codefresh uninstall\nUninstall a resource\nUninstall operation will uninstall codefresh components on kubernetes cluster.\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runtime-environments/uninstall-runtime-environment/",
+	"title": "Uninstall Runtime-Environment",
+	"tags": [],
+	"description": "",
+	"content": "Description Uninstall a runtime on kubernetes cluster.\nCommand codefresh uninstall runtime\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;agent-name Agent\u0026rsquo;s name to be uninstalled \u0026ndash;name Runtime\u0026rsquo;s name to be uninstalled \u0026ndash;agent-id Agent\u0026rsquo;s ID \u0026ndash;runtime-kube-context-name Name of the kubernetes context on which venona should be uninstalled [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;runtime-kube-namespace Name of the namespace on which venona should be uninstalled [$CF_ARG_KUBE_NAMESPACE] \u0026ndash;runtime-kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;agent-kube-context-name Agent kubernetes context \u0026ndash;agent-kube-namespace Agent\u0026rsquo;s namespace \u0026ndash;agent-kube-config-path Path to kubeconfig file for the agent (default is $HOME/.kube/config) \u0026ndash;verbose Print logs "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/app-proxy/upgrade/",
+	"title": "Upgrade",
+	"tags": [],
+	"description": "",
+	"content": "Description Upgrades an existing App-Proxy.\nCommand codefresh upgrade app-proxy\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-context-name Name of the kubernetes context on which the app-proxy is installed (default: current context) [$CF_ARG_KUBE_CONTEXT_NAME] \u0026ndash;kube-namespace Name of the kubernetes namespace from which the App-Proxy and Runtime should be removed \u0026ndash;kube-config-path string /root/.kube/config Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;values specify values in a YAML file \u0026ndash;set-value array Set values for templates, example: \u0026ndash;set-value LocalVolumesDir=/mnt/disks/ssd0/codefresh-volumes \u0026ndash;verbose Print logs \u0026ndash;bypass-download boolean false Will bypass the attempt to download the installer. Instead, will immediately attempt to use the binary from the components folder "
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/gitops/upgrade/",
+	"title": "Upgrade",
+	"tags": [],
+	"description": "",
+	"content": "Description Upgrade gitops agent.\nCommand codefresh upgrade gitops \u0026lt;provider\u0026gt;\nArguments Option Alias Default Description provider Gitops provider. required\nPossible values:\n- codefresh\n- argocd-agent Options Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;kube-namespace Name of the namespace on which Argo agent should be updated \u0026ndash;kube-context-name Name of the kubernetes context where Argo agent should be updated (default is current-context) \u0026ndash;in-cluster boolean false Use this option if gitops provider is been updated from inside a cluster Examples Update gitops agent codefresh upgrade gitops argocd-agent\n"
+},
+{
+	"uri": "https://codefresh-io.github.io/cli/runner/upgrade/",
+	"title": "Upgrade",
+	"tags": [],
+	"description": "",
+	"content": "Description Upgrades codefresh runner solution\u0026rsquo;s components.\nCommand codefresh runner upgrade\nOptions Option Alias Type Default Description \u0026ndash;help Print help information \u0026ndash;agent-name The name of the agent to be upgraded or created \u0026ndash;runtime-name The name of the runtime to be upgraded \u0026ndash;url string https://g.codefresh.io Codefresh system custom url \u0026ndash;kube-context-name Name of the kubernetes context from which the Codefresh Agent and Runtime should be removed \u0026ndash;kube-namespace Name of the kubernetes namespace from which the Codefresh Agent and Runtime should be removed \u0026ndash;kube-config-path Path to kubeconfig file (default is $HOME/.kube/config) \u0026ndash;install-monitor boolean true Install a monitoring component that will help provide valueable data about your cluster to Codefresh (only useable when running migration) \u0026ndash;verbose Print logs "
 },
 {
 	"uri": "https://codefresh-io.github.io/cli/validation/validate-pipeline-yaml/",
