@@ -1,0 +1,14 @@
+package.json
+  h_9fd7d1a18c4091 12,37-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b51677d5f7fc32a344bac99a562a6340b1b67af",
+  "prompts": {},
+  "humans": {
+    "h_9fd7d1a18c4091": {
+      "author": "Alina <alina.shportiuk@codefresh.io>"
+    }
+  }
+}
