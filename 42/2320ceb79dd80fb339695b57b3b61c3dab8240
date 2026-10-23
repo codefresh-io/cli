@@ -1,0 +1,466 @@
+404.html
+  h_26399253c86380 8
+_header/index.html
+  h_26399253c86380 8
+agents/create-agent/index.html
+  h_26399253c86380 8
+agents/delete-agent/index.html
+  h_26399253c86380 8
+agents/get-agents/index.html
+  h_26399253c86380 8
+agents/index.html
+  h_26399253c86380 8
+agents/install/index.html
+  h_26399253c86380 8
+agents/patch-agent/index.html
+  h_26399253c86380 8
+agents/uninstall/index.html
+  h_26399253c86380 8
+analyzer/analyze/index.html
+  h_26399253c86380 8
+analyzer/index.html
+  h_26399253c86380 8
+annotations/create/index.html
+  h_26399253c86380 8
+annotations/delete/index.html
+  h_26399253c86380 8
+annotations/get/index.html
+  h_26399253c86380 8
+annotations/index.html
+  h_26399253c86380 8
+app-proxy/index.html
+  h_26399253c86380 8
+app-proxy/index.xml
+  h_26399253c86380 15,22,29
+app-proxy/install/index.html
+  h_26399253c86380 8,1731
+app-proxy/uninstall/index.html
+  h_26399253c86380 8,1745
+app-proxy/upgrade/index.html
+  h_26399253c86380 8,1745
+audit/download/index.html
+  h_26399253c86380 8,1816
+audit/index.html
+  h_26399253c86380 8
+audit/index.xml
+  h_26399253c86380 15
+authentication/create-context/index.html
+  h_26399253c86380 8,1747
+authentication/get-activated-context/index.html
+  h_26399253c86380 8,1726
+authentication/get-contexts/index.html
+  h_26399253c86380 8,769-775,1726
+authentication/index.html
+  h_26399253c86380 8
+authentication/index.xml
+  h_26399253c86380 15,22,29,36
+authentication/set-active-context/index.html
+  h_26399253c86380 8,1746
+board/delete-board/index.html
+  h_26399253c86380 8
+board/index.html
+  h_26399253c86380 8
+board/update-board/index.html
+  h_26399253c86380 8
+boards/create-board/index.html
+  h_26399253c86380 8
+boards/get-board/index.html
+  h_26399253c86380 8
+boards/index.html
+  h_26399253c86380 8
+builds/approve/index.html
+  h_26399253c86380 8
+builds/deny/index.html
+  h_26399253c86380 8
+builds/get-build/index.html
+  h_26399253c86380 8,784,786-787
+builds/index.html
+  h_26399253c86380 8
+builds/restart-build/index.html
+  h_26399253c86380 8
+builds/show-build-logs/index.html
+  h_26399253c86380 8
+builds/terminate-build/index.html
+  h_26399253c86380 8
+builds/wait-for-build-condition/index.html
+  h_26399253c86380 8
+categories/index.html
+  h_26399253c86380 8
+cli-config/describe-config-properties/index.html
+  h_26399253c86380 8
+cli-config/get-config-properties/index.html
+  h_26399253c86380 8
+cli-config/index.html
+  h_26399253c86380 8
+cli-config/profiles/index.html
+  h_26399253c86380 8
+cli-config/set-config-property/index.html
+  h_26399253c86380 8
+cli-config/show-config/index.html
+  h_26399253c86380 8
+clusters/create-cluster/index.html
+  h_26399253c86380 8
+clusters/delete-cluster/index.html
+  h_26399253c86380 8
+clusters/get-clusters/index.html
+  h_26399253c86380 8
+clusters/index.html
+  h_26399253c86380 8
+codefresh-cli-components/components/index.html
+  h_26399253c86380 8
+codefresh-cli-components/index.html
+  h_26399253c86380 8
+completion/codefresh-completion/index.html
+  h_26399253c86380 8,836-842
+completion/index.html
+  h_26399253c86380 8
+components/download/index.html
+  h_26399253c86380 8,856-862
+components/index.html
+  h_26399253c86380 8,1675,1701-1703
+components/update/index.html
+  h_26399253c86380 8
+compositions/create-composition/index.html
+  h_26399253c86380 8
+compositions/delete-composition/index.html
+  h_26399253c86380 8
+compositions/get-composition/index.html
+  h_26399253c86380 8,1354,1356-1357,1361,1363-1364,1368,1370-1378
+compositions/index.html
+  h_26399253c86380 8
+compositions/replace-composition/index.html
+  h_26399253c86380 8
+contexts/create-context/create-config-context/index.html
+  h_26399253c86380 8
+contexts/create-context/create-git-context/bitbucket/index.html
+  h_26399253c86380 8
+contexts/create-context/create-git-context/github/index.html
+  h_26399253c86380 8
+contexts/create-context/create-git-context/gitlab/index.html
+  h_26399253c86380 8
+contexts/create-context/create-git-context/index.html
+  h_26399253c86380 8
+contexts/create-context/create-git-context/stash/index.html
+  h_26399253c86380 8
+contexts/create-context/create-helm-repository-context/from-aws-s3-bucket/index.html
+  h_26399253c86380 8
+contexts/create-context/create-helm-repository-context/from-http-web-server/index.html
+  h_26399253c86380 8
+contexts/create-context/create-helm-repository-context/index.html
+  h_26399253c86380 8
+contexts/create-context/create-secret-context/index.html
+  h_26399253c86380 8
+contexts/create-context/create-secret-store-context/hashicorp-vault/index.html
+  h_26399253c86380 8
+contexts/create-context/create-secret-store-context/index.html
+  h_26399253c86380 8
+contexts/create-context/create-secret-store-context/kubernetes-runtime/index.html
+  h_26399253c86380 8,472-564,596-597
+contexts/create-context/create-secret-store-context/kubernetes/index.html
+  h_26399253c86380 8
+contexts/create-context/create-secret-yaml-context/index.html
+  h_26399253c86380 8,478,480-481,485,487-488,492,494-495
+contexts/create-context/create-yaml-context/index.html
+  h_26399253c86380 8
+contexts/create-context/index.html
+  h_26399253c86380 8
+contexts/delete-context/index.html
+  h_26399253c86380 8
+contexts/get-context/index.html
+  h_26399253c86380 8
+contexts/index.html
+  h_26399253c86380 8
+contexts/spec/config/index.html
+  h_26399253c86380 8,1717
+contexts/spec/helm-repository/index.html
+  h_26399253c86380 8
+contexts/spec/index.html
+  h_26399253c86380 8
+contexts/spec/index.xml
+  h_26399253c86380 16,23,30,37
+contexts/spec/secret-yaml/index.html
+  h_26399253c86380 8,1717
+contexts/spec/secret/index.html
+  h_26399253c86380 8,1717
+contexts/spec/yaml/index.html
+  h_26399253c86380 8,1717
+contexts/update-context/index.html
+  h_26399253c86380 8
+environments/delete-environment/index.html
+  h_26399253c86380 8
+environments/get-environment/index.html
+  h_26399253c86380 8
+environments/index.html
+  h_26399253c86380 8
+external-resources/index.html
+  h_26399253c86380 8
+getting-started/index.html
+  h_26399253c86380 8,893-906
+gitops/index.html
+  h_26399253c86380 8,1676,1705-1707
+gitops/install/index.html
+  h_26399253c86380 8
+gitops/uninstall/index.html
+  h_26399253c86380 8
+gitops/upgrade/index.html
+  h_26399253c86380 8
+helm-repos/create-helm-repo/index.html
+  h_26399253c86380 8
+helm-repos/delete-helm-repo/index.html
+  h_26399253c86380 8
+helm-repos/get-helm-repo/index.html
+  h_26399253c86380 8,1390,1392-1393,1397,1399-1400,1404,1406-1414
+helm-repos/index.html
+  h_26399253c86380 8
+helm-repos/update-helm-repo/index.html
+  h_26399253c86380 8
+images/annotate-image/index.html
+  h_26399253c86380 8
+images/get-image/index.html
+  h_26399253c86380 8
+images/index.html
+  h_26399253c86380 8
+images/tag-image/index.html
+  h_26399253c86380 8
+images/untag-image/index.html
+  h_26399253c86380 8
+index.html
+  h_26399253c86380 8
+index.json
+  h_26399253c86380 161,385,623,777,903,952,1050,1127,1155,1337,1372
+index.xml
+  h_26399253c86380 23,156,303,373,471,604,639,646,737,828,842,975,1045,1073,1143
+install-resources/index.html
+  h_26399253c86380 8
+install-resources/install/index.html
+  h_26399253c86380 8
+installation/docker/index.html
+  h_26399253c86380 8
+installation/download/index.html
+  h_26399253c86380 8,1670-1675
+installation/homebrew/index.html
+  h_26399253c86380 8,1702,1707,1709
+installation/index.html
+  h_26399253c86380 8
+installation/index.xml
+  h_26399253c86380 37,44
+installation/npm/index.html
+  h_26399253c86380 8
+installation/yarn/index.html
+  h_26399253c86380 8
+logs-category/archives-old-logs-to-file-or-collection./index.html
+  h_26399253c86380 8
+logs-category/index.html
+  h_26399253c86380 8
+logs/ensures-one-or-more-offline-logs-collections-has-indexes/index.html
+  h_26399253c86380 8
+logs/index.html
+  h_26399253c86380 8
+logs/offload-to-collection/index.html
+  h_26399253c86380 8
+logs/offload-to-file/index.html
+  h_26399253c86380 8
+monitor/index.html
+  h_26399253c86380 8
+monitor/install/index.html
+  h_26399253c86380 8
+monitor/uninstall/index.html
+  h_26399253c86380 8
+more/image-pull-secret/index.html
+  h_26399253c86380 8
+more/index.html
+  h_26399253c86380 8
+operate-on-resources/create/index.html
+  h_26399253c86380 8
+operate-on-resources/delete/index.html
+  h_26399253c86380 8
+operate-on-resources/diff/index.html
+  h_26399253c86380 8
+operate-on-resources/get/index.html
+  h_26399253c86380 8
+operate-on-resources/index.html
+  h_26399253c86380 8,1518-1524
+operate-on-resources/patch/index.html
+  h_26399253c86380 8
+operate-on-resources/replace/index.html
+  h_26399253c86380 8
+operate-on-resources/upgrade/index.html
+  h_26399253c86380 8,1519,1521-1536
+pipelines/delete-pipeline/index.html
+  h_26399253c86380 8,1426,1428-1464
+pipelines/get-pipeline/index.html
+  h_26399253c86380 8
+pipelines/index.html
+  h_26399253c86380 8
+pipelines/index.xml
+  h_26399253c86380 36
+pipelines/run-pipeline/index.html
+  h_26399253c86380 8,1925,1930
+pipelines/spec/index.html
+  h_26399253c86380 8,1706,1719,1735,1754,1775,1807,1824,1868,1898
+predefined-pipelines/delete-helm-release/index.html
+  h_26399253c86380 8
+predefined-pipelines/index.html
+  h_26399253c86380 8
+predefined-pipelines/install-or-upgrade-helm-chart/index.html
+  h_26399253c86380 8
+predefined-pipelines/promote-helm-release/index.html
+  h_26399253c86380 8
+predefined-pipelines/rollback-helm-release/index.html
+  h_26399253c86380 8
+predefined-pipelines/set-helm-config/index.html
+  h_26399253c86380 8
+predefined-pipelines/test-helm-release/index.html
+  h_26399253c86380 8
+projects/create-project/index.html
+  h_26399253c86380 8
+projects/delete-project/index.html
+  h_26399253c86380 8
+projects/get-projects/index.html
+  h_26399253c86380 8
+projects/index.html
+  h_26399253c86380 8
+projects/patch-project/index.html
+  h_26399253c86380 8
+registries/delete-registry/index.html
+  h_26399253c86380 8
+registries/get-registries/index.html
+  h_26399253c86380 8
+registries/index.html
+  h_26399253c86380 8
+registries/registries/index.html
+  h_26399253c86380 8
+registries/registries/standard/index.html
+  h_26399253c86380 8,1577,1579-1580,1584,1586-1587,1591,1593-1594,1598-1631
+repository/add-repository/index.html
+  h_26399253c86380 8
+repository/delete-repository/index.html
+  h_26399253c86380 8
+repository/get-repositories/index.html
+  h_26399253c86380 8,1098-1104
+repository/index.html
+  h_26399253c86380 8,1576-1604
+runner-resources/index.html
+  h_26399253c86380 8
+runner-resources/runner/index.html
+  h_26399253c86380 8
+runner/delete/index.html
+  h_26399253c86380 8
+runner/execute-test-pipeline/index.html
+  h_26399253c86380 8
+runner/index.html
+  h_26399253c86380 8
+runner/info/index.html
+  h_26399253c86380 8
+runner/init/index.html
+  h_26399253c86380 8
+runner/upgrade/index.html
+  h_26399253c86380 8
+runtime-environments-base-images/get-runtime-environment-base-images/index.html
+  h_26399253c86380 8
+runtime-environments-base-images/index.html
+  h_26399253c86380 8
+runtime-environments/apply-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/attach-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/create-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/delete-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/diff-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/get-runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/index.html
+  h_26399253c86380 8
+runtime-environments/install-runtime-environment/index.html
+  h_26399253c86380 8
+runtime-environments/uninstall-runtime-environment/index.html
+  h_26399253c86380 8
+section/delete-section/index.html
+  h_26399253c86380 8
+section/index.html
+  h_26399253c86380 8
+section/update-section/index.html
+  h_26399253c86380 8
+sections/create-section/index.html
+  h_26399253c86380 8
+sections/get-section/index.html
+  h_26399253c86380 8
+sections/index.html
+  h_26399253c86380 8
+step-types/delete-step-type/index.html
+  h_26399253c86380 8
+step-types/index.html
+  h_26399253c86380 8,1533-1567
+steps/get-step/index.html
+  h_26399253c86380 8
+steps/index.html
+  h_26399253c86380 8
+tags/index.html
+  h_26399253c86380 8
+teams/add-user/index.html
+  h_26399253c86380 8,1250,1252-1274,1555,1557-1558,1562,1564-1565,1569,1571-1572
+teams/create-team/index.html
+  h_26399253c86380 8
+teams/get-teams/index.html
+  h_26399253c86380 8
+teams/index.html
+  h_26399253c86380 8
+teams/remove-user/index.html
+  h_26399253c86380 8
+teams/synchronize-teams/index.html
+  h_26399253c86380 8
+tokens/create-tokens/index.html
+  h_26399253c86380 8
+tokens/delete-tokens/index.html
+  h_26399253c86380 8
+tokens/get-tokens/index.html
+  h_26399253c86380 8
+tokens/index.html
+  h_26399253c86380 8
+tokens/patch-token/index.html
+  h_26399253c86380 8
+triggers/deprecated-create-pipeline-trigger/index.html
+  h_26399253c86380 8
+triggers/deprecated-create-trigger-event/index.html
+  h_26399253c86380 8
+triggers/deprecated-delete-pipeline-trigger.-deprecated---please-use-pipeline-spec-to-manager-cron-trigger/index.html
+  h_26399253c86380 8
+triggers/deprecated-delete-trigger-event/index.html
+  h_26399253c86380 8,589-637
+triggers/deprecated-get-trigger-event/index.html
+  h_26399253c86380 8
+triggers/deprecated-get-trigger-types/index.html
+  h_26399253c86380 8
+triggers/deprecated-get-triggers/index.html
+  h_26399253c86380 8
+triggers/index.html
+  h_26399253c86380 8,1676-1677,1710,1713-1715
+uninstall-resources/index.html
+  h_26399253c86380 8
+uninstall-resources/uninstall/index.html
+  h_26399253c86380 8
+validation/index.html
+  h_26399253c86380 8
+validation/validate-pipeline-yaml/index.html
+  h_26399253c86380 8
+workflow-data/create/index.html
+  h_26399253c86380 8
+workflow-data/get/index.html
+  h_26399253c86380 8
+workflow-data/index.html
+  h_26399253c86380 8,588,590-591,595,597-598,602,604-605
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "422320ceb79dd80fb339695b57b3b61c3dab8240",
+  "prompts": {},
+  "humans": {
+    "h_26399253c86380": {
+      "author": "Automated CI <auto-ci@codefresh.io>"
+    }
+  }
+}

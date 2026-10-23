@@ -1,0 +1,19 @@
+Dockerfile-debian
+  s_8ba55f42eba123::t_90e430dedf1a99 24-26,35-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "887d792b5ff8d292ea1562ba0e1154e7838d0f3c",
+  "prompts": {},
+  "sessions": {
+    "s_8ba55f42eba123": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9a282f8-a094-4712-a8d5-2c4d89975568",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Vadim Kharin <vadim.kharin@codefresh.io>"
+    }
+  }
+}

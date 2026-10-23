@@ -1,0 +1,16 @@
+lib/interface/cli/commad-line-interface.js
+  h_48b74706cf95a4 15,26-27,86-91
+package.json
+  h_48b74706cf95a4 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "18d64dcf1e0c1abc14f5b828f482d29a09f64d91",
+  "prompts": {},
+  "humans": {
+    "h_48b74706cf95a4": {
+      "author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}

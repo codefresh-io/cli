@@ -1,0 +1,22 @@
+Dockerfile
+  h_9fd7d1a18c4091 1
+Dockerfile-debian
+  h_9fd7d1a18c4091 1
+Dockerfile-debian-rootless
+  h_9fd7d1a18c4091 1
+Dockerfile-rootless
+  h_9fd7d1a18c4091 1
+package.json
+  h_9fd7d1a18c4091 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6d4d041701937f5fc9bd55c94b18e2a52d3f393d",
+  "prompts": {},
+  "humans": {
+    "h_9fd7d1a18c4091": {
+      "author": "Alina <alina.shportiuk@codefresh.io>"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.nvmrc
+  h_e5037b46dfdc11 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.17",
+  "base_commit_sha": "be1d4f50b440343f9be1f27b2290929510cfc70d",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}

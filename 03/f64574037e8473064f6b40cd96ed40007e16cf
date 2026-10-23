@@ -1,0 +1,25 @@
+Dockerfile
+  s_80fe8ccaf53b24::t_d1c95ebef91a7a 3-4,9
+Dockerfile-debian-rootless
+  s_80fe8ccaf53b24::t_e444711b91f11c 10-12
+Dockerfile-rootless
+  s_80fe8ccaf53b24::t_f8c18a8b601ed2 3-4,9
+Dockerfile-debian
+  s_80fe8ccaf53b24::t_fb133821de2566 11-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "03f64574037e8473064f6b40cd96ed40007e16cf",
+  "prompts": {},
+  "sessions": {
+    "s_80fe8ccaf53b24": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6300ffee-0c86-42c2-b4db-1e759092591c",
+        "model": "claude-sonnet-4-20250514"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}

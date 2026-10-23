@@ -1,0 +1,14 @@
+yarn.lock
+  h_86ffe77adf8985 5121-5123,5129-5131
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "1aefc910a2b087c98da527624a79a0bdb1e16611",
+  "prompts": {},
+  "humans": {
+    "h_86ffe77adf8985": {
+      "author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}

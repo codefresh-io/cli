@@ -1,0 +1,19 @@
+lib/interface/cli/commands/components/download.cmd.js
+  s_3976269a25d3bb::t_6270ce930c6411 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e053a17ac2dc6aa2bcf11ec2cddd8ea25b21876",
+  "prompts": {},
+  "sessions": {
+    "s_3976269a25d3bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84a52e93-b77a-418a-ab6d-935a28acf44f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}

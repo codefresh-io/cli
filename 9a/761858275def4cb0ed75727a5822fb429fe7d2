@@ -1,0 +1,21 @@
+package.json
+  s_1d3a05d3bd8736::t_2f3c59c1a47e86 48-50
+yarn.lock
+  s_1d3a05d3bd8736::t_37d0f0d6f6d660 4042,4426-4429,4502-4505,4507-4508
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a761858275def4cb0ed75727a5822fb429fe7d2",
+  "prompts": {},
+  "sessions": {
+    "s_1d3a05d3bd8736": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c074c61f-3762-49a0-9995-da2e220a0f88",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Alina <alina.shportiuk@codefresh.io>"
+    }
+  }
+}
