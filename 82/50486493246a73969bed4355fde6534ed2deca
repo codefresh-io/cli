@@ -1,0 +1,30 @@
+lib/interface/cli/commands/workflow/wait.cmd.spec.js
+  s_8e3a9120c0aabb::t_6d5b0e4e79fcb9 9
+  s_8e3a9120c0aabb::t_a3b81417033e0c 73
+  s_8e3a9120c0aabb::t_dcf251458edfeb 19,24-26,31
+  s_8e3a9120c0aabb::t_1a1934cbdf95c5 1-8,10-18,20-23,27-30,32-72
+lib/interface/cli/helpers/general.js
+  s_8e3a9120c0aabb::t_84815578125496 53
+lib/interface/cli/defaults.js
+  s_8e3a9120c0aabb::t_45c4bc08151757 15
+  s_8e3a9120c0aabb::t_b638344b84cdfe 14
+lib/interface/cli/commands/workflow/wait.cmd.js
+  s_8e3a9120c0aabb::t_d58ed4c83b2739 74-79
+  s_8e3a9120c0aabb::t_020803fc08482d 8,15-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8250486493246a73969bed4355fde6534ed2deca",
+  "prompts": {},
+  "sessions": {
+    "s_8e3a9120c0aabb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3f51759f-5c44-469f-bf41-47f167ebbb6e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
