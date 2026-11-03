@@ -1,0 +1,14 @@
+yarn.lock
+  h_9fd7d1a18c4091 2293-2297,4431-4434,4436,4508
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5e731724c7ebb704b6d6c6ff1bf0c43dcd17b98",
+  "prompts": {},
+  "humans": {
+    "h_9fd7d1a18c4091": {
+      "author": "Alina <alina.shportiuk@codefresh.io>"
+    }
+  }
+}

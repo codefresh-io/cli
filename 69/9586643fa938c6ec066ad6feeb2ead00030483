@@ -1,0 +1,32 @@
+Dockerfile
+  s_c198115ce29fbc::t_c82de03ecaf4ed 1
+Dockerfile-debian
+  s_c198115ce29fbc::t_c82de03ecaf4ed 1
+package.json
+  h_51acfbafc7319b 3
+Dockerfile-debian-rootless
+  s_c198115ce29fbc::t_c82de03ecaf4ed 1
+Dockerfile-rootless
+  s_c198115ce29fbc::t_c82de03ecaf4ed 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "699586643fa938c6ec066ad6feeb2ead00030483",
+  "prompts": {},
+  "humans": {
+    "h_51acfbafc7319b": {
+      "author": "vitaliichyrka <vitalii.chyrka@codefresh.io>"
+    }
+  },
+  "sessions": {
+    "s_c198115ce29fbc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65d2fd0f-f331-49d9-8dcb-fca50d3d8052",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "vitaliichyrka <vitalii.chyrka@codefresh.io>"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+package.json
+  s_3976269a25d3bb::t_14d6628e989160 36
+lib/interface/cli/commands/hybrid/helper.js
+  s_3976269a25d3bb::t_25025532238a40 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "08a3ca72bd666a98e6decae6d31c6300361b0339",
+  "prompts": {},
+  "sessions": {
+    "s_3976269a25d3bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84a52e93-b77a-418a-ab6d-935a28acf44f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}

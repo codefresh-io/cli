@@ -1,0 +1,35 @@
+lib/interface/cli/helpers/progressEvents.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-25
+lib/interface/cli/commands/runtimeEnvironments/install.cmd.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-340
+lib/interface/cli/commands/hybrid/helper.js
+  s_3976269a25d3bb::t_d6ba125730b735 21,25-26,278
+lib/interface/cli/commands/root/install.cmd.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-17
+lib/interface/cli/commands/agent/install.cmd.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-283
+lib/interface/cli/commands/runtimeEnvironments/attach.cmd.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-180
+lib/interface/cli/helpers/kubernetes.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-61
+lib/interface/cli/commands/agent/helper.js
+  s_3976269a25d3bb::t_16ee76ac0cc9d4 1-28
+package.json
+  s_3976269a25d3bb::t_e073ba98903c88 36-37,44,70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "31ccea33005cd25a0f4082b73c92ac649b86122c",
+  "prompts": {},
+  "sessions": {
+    "s_3976269a25d3bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "84a52e93-b77a-418a-ab6d-935a28acf44f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
