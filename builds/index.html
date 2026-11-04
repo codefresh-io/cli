@@ -1717,7 +1717,7 @@
 <h3 id="wait-for-build-condition"><a href="wait-for-build-condition">Wait For Build Condition</a></h3>
 <p><code>codefresh wait &lt;id..&gt;</code></p>
 <p>Wait until a condition will be met on a build.</p>
-<p>Wait command is useful in case there is a need to wait for a desired status on a specific set of builds.</p>
+<p>Wait command is useful in case there is a need to wait for a desired status on a specific set of builds. Exits with code 124 if the timeout is reached and with code 1 on any other error.</p>
 <h3 id="approve"><a href="approve">Approve</a></h3>
 <p><code>codefresh approve &lt;buildId&gt;</code></p>
 <p>Approve a pending-approval workflow.</p>
