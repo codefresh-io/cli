@@ -1,0 +1,93 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+registries:
+  npm-registry:
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: ${{ secrets.NPM_TOKEN }}
+  docker-registry:
+    type: docker-registry
+    url: https://registry.hub.docker.com
+    username: ${{ secrets.DOCKERHUB_USERNAME }}
+    password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+multi-ecosystem-groups:
+  docker-weekly:
+    schedule:
+      interval: "weekly"
+
+updates:
+  - package-ecosystem: "npm" # Also applicable to Yarn
+    open-pull-requests-limit: 0 # Disable version updates.
+    ignore:
+      # Newer `swagger-client` consumes a way more memory, causing issues with codefresh-run step.
+      - dependency-name: "swagger-client"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+    directory: "/"
+    registries:
+      - npm-registry
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependabot"
+      - "review-required"
+      - "npm"
+    cooldown:
+      default-days: 7
+    groups:
+      # Version bumps
+      prod-minor-and-patch-bump:
+        applies-to: version-updates
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-major-bump:
+        applies-to: version-updates
+        dependency-type: "development"
+        update-types:
+          - "major"
+      dev-minor-and-patch-bump:
+        applies-to: version-updates
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+      # Security updates
+      prod-minor-and-patch-security:
+        applies-to: security-updates
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-major-security:
+        applies-to: security-updates
+        dependency-type: "development"
+        update-types:
+          - "major"
+      dev-minor-and-patch-security:
+        applies-to: security-updates
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    registries: "*"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependabot"
+      - "review-required"
+      - "docker"
+    multi-ecosystem-group: "docker-weekly"
+    patterns:
+      - "*"
+    ignore:
+      - dependency-name: "octopusdeploy/dhi-golang"
+        update-types:
+          - version-update:semver-major
