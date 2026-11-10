@@ -2813,7 +2813,7 @@ co@^4.6.0:
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==
 
-codefresh-sdk@1.13.3:
+codefresh-sdk@^1.13.3:
   version "1.13.3"
   resolved "https://registry.npmjs.org/codefresh-sdk/-/codefresh-sdk-1.13.3.tgz#786d728cba5ed9de2815dd6569d45a3e9306f8f3"
   integrity sha512-SG3cq/XcYwIgc+8B/yb7gv8dwcqprNTH14H4oxVc4YqHoZ6KEWxXx+GdG9glgoZjW9ZvnVSCm4moDTnewwwFvQ==
