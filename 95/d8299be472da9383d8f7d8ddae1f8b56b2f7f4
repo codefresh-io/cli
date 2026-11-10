@@ -1,0 +1,22 @@
+package.json
+  s_8e3a9120c0aabb::t_32ae34cefd4842 51
+lib/logic/sdk/swagger-client-version.spec.js
+  s_8e3a9120c0aabb::t_f8535a98225588 46
+  s_8e3a9120c0aabb::t_32b1ec23bbb655 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95d8299be472da9383d8f7d8ddae1f8b56b2f7f4",
+  "prompts": {},
+  "sessions": {
+    "s_8e3a9120c0aabb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3f51759f-5c44-469f-bf41-47f167ebbb6e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
