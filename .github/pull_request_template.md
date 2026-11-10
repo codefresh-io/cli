@@ -1,5 +1,15 @@
 ## What
 
-## Why
+<!--
+Describe the changes briefly yet comprehensively.
+Link relevant Linear issues, e.g.:
+Closes CF-1234
+-->
 
-## Notes
+## PR Comments
+
+Add the following comments to the PR:
+
+* `/bump patch` - to bump the patch version
+* `/bump minor` - to bump the minor version
+* `/bump major` - to bump the major version

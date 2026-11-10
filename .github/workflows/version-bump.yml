@@ -1,0 +1,181 @@
+name: Bump version on comment
+
+# Bumps the "version" field in package.json when a maintainer comments
+# "/bump major", "/bump minor" or "/bump patch" on a pull request.
+#
+# The new version is always computed relative to the PR's target (base) branch,
+# so commenting several times only ever produces a single bump from the base —
+# it never stacks on top of a previous comment.
+#
+# The repository is public, so the token is handled defensively: nothing is
+# checked out and no PR code is ever executed. All reads and the commit go
+# through the GitHub API via `gh`, which takes the token from the GH_TOKEN env
+# var only — it never appears in a command line, git config or file on disk.
+# Untrusted values (comment body, branch names) reach scripts only via env vars,
+# never through `${{ }}` interpolation.
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+concurrency:
+  group: version-bump-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  bump-version:
+    if: >
+      github.event.issue.pull_request &&
+      contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association) &&
+      (startsWith(github.event.comment.body, '/bump major') ||
+       startsWith(github.event.comment.body, '/bump minor') ||
+       startsWith(github.event.comment.body, '/bump patch'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      COMMENT_ID: ${{ github.event.comment.id }}
+    steps:
+      - name: Acknowledge command
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --method POST --silent \
+            "repos/${REPO}/issues/comments/${COMMENT_ID}/reactions" \
+            -f content='eyes'
+
+      - name: Parse command
+        id: parse
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          # Only the first line matters: integrations (e.g. Linear) may append
+          # extra lines such as "<!-- linear:isThreadRoot -->".
+          bump=$(printf '%s' "$COMMENT_BODY" | awk 'NR==1{print $2}')
+          case "$bump" in
+            major|minor|patch)
+              echo "bump=$bump" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::error::Unsupported version command: '$bump'"
+              exit 1
+              ;;
+          esac
+
+      - name: Resolve PR branches
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr_json=$(gh pr view "$PR" --repo "$REPO" --json headRefName,baseRefName,isCrossRepository,state)
+
+          if [ "$(jq -r .state <<< "$pr_json")" != "OPEN" ]; then
+            echo "::error::PR #${PR} is not open"
+            exit 1
+          fi
+          # The head branch of a fork PR doesn't live in this repository and
+          # must not be written to with this repository's token.
+          if [ "$(jq -r .isCrossRepository <<< "$pr_json")" = "true" ]; then
+            echo "::error::PRs from forks are not supported"
+            exit 1
+          fi
+
+          {
+            echo "head=$(jq -r .headRefName <<< "$pr_json")"
+            echo "base=$(jq -r .baseRefName <<< "$pr_json")"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Compute version bump
+        id: bump
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUMP: ${{ steps.parse.outputs.bump }}
+          BASE: ${{ steps.pr.outputs.base }}
+          HEAD: ${{ steps.pr.outputs.head }}
+        run: |
+          workdir="${RUNNER_TEMP}/version-bump"
+          mkdir -p "$workdir"
+
+          gh api --method GET "repos/${REPO}/contents/package.json" -f ref="$BASE" \
+            -H 'Accept: application/vnd.github.raw+json' > "$workdir/base.json"
+          gh api --method GET "repos/${REPO}/contents/package.json" -f ref="$HEAD" > "$workdir/head-meta.json"
+          jq -r .content "$workdir/head-meta.json" | base64 -d > "$workdir/head.json"
+          head_sha=$(jq -r .sha "$workdir/head-meta.json")
+
+          base_version=$(jq -r .version "$workdir/base.json")
+          head_version=$(jq -r .version "$workdir/head.json")
+          echo "Base (${BASE}) version: ${base_version}"
+          echo "Head (${HEAD}) version: ${head_version}"
+
+          if [[ ! "$base_version" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            echo "::error::Base version '${base_version}' is not a plain MAJOR.MINOR.PATCH version"
+            exit 1
+          fi
+          major=${BASH_REMATCH[1]}
+          minor=${BASH_REMATCH[2]}
+          patch=${BASH_REMATCH[3]}
+          case "$BUMP" in
+            major) new_version="$((major + 1)).0.0" ;;
+            minor) new_version="${major}.$((minor + 1)).0" ;;
+            patch) new_version="${major}.${minor}.$((patch + 1))" ;;
+          esac
+          echo "New version: ${new_version}"
+
+          {
+            echo "base_version=${base_version}"
+            echo "new_version=${new_version}"
+            echo "head_sha=${head_sha}"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ "$head_version" = "$new_version" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Rewrite only the version line so the rest of the file keeps its
+          # exact formatting, then verify the result is what we expect.
+          sed -E "0,/(\"version\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/s//\1\"${new_version}\"/" \
+            "$workdir/head.json" > "$workdir/new.json"
+          if [ "$(jq -r .version "$workdir/new.json")" != "$new_version" ]; then
+            echo "::error::Failed to update the version in package.json"
+            exit 1
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit version bump
+        if: steps.bump.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD: ${{ steps.pr.outputs.head }}
+          NEW_VERSION: ${{ steps.bump.outputs.new_version }}
+          HEAD_SHA: ${{ steps.bump.outputs.head_sha }}
+        run: |
+          # Passing the blob sha makes the API reject the update if package.json
+          # changed on the branch since it was read.
+          gh api --method PUT --silent "repos/${REPO}/contents/package.json" \
+            -f branch="$HEAD" \
+            -f sha="$HEAD_SHA" \
+            -f message="ci: bump version to ${NEW_VERSION}" \
+            -f content="$(base64 -w0 "${RUNNER_TEMP}/version-bump/new.json")"
+
+      - name: Report result
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CHANGED: ${{ steps.bump.outputs.changed }}
+          BUMP: ${{ steps.parse.outputs.bump }}
+          BASE: ${{ steps.pr.outputs.base }}
+          BASE_VERSION: ${{ steps.bump.outputs.base_version }}
+          NEW_VERSION: ${{ steps.bump.outputs.new_version }}
+        run: |
+          details="\`${BUMP}\` from \`${BASE_VERSION}\` on \`${BASE}\`"
+          if [ "$CHANGED" = 'true' ]; then
+            body="✅ Bumped version to \`${NEW_VERSION}\` (${details})."
+          else
+            body="ℹ️ Version is already \`${NEW_VERSION}\` (${details}). Nothing to do."
+          fi
+          gh pr comment "$PR" --repo "$REPO" --body "$body"
