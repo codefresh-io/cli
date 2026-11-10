@@ -1,0 +1,46 @@
+.github/pull_request_template.md
+  h_e5037b46dfdc11 3-7,9-15
+Dockerfile.debian
+  s_9085f3d79d8a3c::t_0f8befb5d4429f 1-32
+.github/dependabot.yml
+  h_e5037b46dfdc11 1-93
+.github/workflows/version-bump.yml
+  s_857f21fd038711::t_483b00a41ad99d 106-108
+  s_857f21fd038711::t_57e913d7affd5c 3-105,109-181
+  s_857f21fd038711::t_f73841a7de86a8 1-2
+Dockerfile.debian-rootless
+  s_9085f3d79d8a3c::t_0f8befb5d4429f 1-39
+Dockerfile.rootless
+  s_9085f3d79d8a3c::t_0f8befb5d4429f 1-35
+Dockerfile
+  s_9085f3d79d8a3c::t_5d4b00ff41afb9 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "60c56a99caeb19e9cb246d831e58e35cb73f1507",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  },
+  "sessions": {
+    "s_857f21fd038711": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "daf9177b-a2e2-46f0-9a05-17adb2cf7ba4",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    },
+    "s_9085f3d79d8a3c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5a02df3c-3a18-4850-a9fc-830c3f402ace",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
