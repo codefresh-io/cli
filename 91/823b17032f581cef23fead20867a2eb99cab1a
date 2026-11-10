@@ -1,0 +1,26 @@
+package.json
+  s_8e3a9120c0aabb::t_6b150d97cfef98 46,61
+  s_8e3a9120c0aabb::t_33f6134db5c5bb 3
+lib/logic/sdk/sdk-version.spec.js
+  s_8e3a9120c0aabb::t_dff8a491e2a175 3
+  s_8e3a9120c0aabb::t_a48bfa5f39d91e 37
+  s_8e3a9120c0aabb::t_dfe7a1ed54fa54 1-2,4-36
+yarn.lock
+  s_8e3a9120c0aabb::t_cb685b3f011cbc 2816
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "91823b17032f581cef23fead20867a2eb99cab1a",
+  "prompts": {},
+  "sessions": {
+    "s_8e3a9120c0aabb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3f51759f-5c44-469f-bf41-47f167ebbb6e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "andrii-codefresh <andrii@codefresh.io>"
+    }
+  }
+}
