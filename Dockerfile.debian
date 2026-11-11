@@ -1,7 +1,8 @@
-FROM node:24.21-trixie-slim
+FROM node:24.22.2-trixie-slim@sha256:0820eaa85e07d0490446dd01d14707e17e6108a36988cf374899cd057eb3812d
 ARG TARGETPLATFORM
 RUN apt update \
     && apt -y install \
+    apt-transport-https \
     bash \
     busybox \
     ca-certificates \
@@ -25,15 +26,7 @@ RUN npm -g uninstall npm
 
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
-# we keep /root as home directory because cli by default looks for $HOME/.cfconfig
-# and we do not want to break user automation if they used to bind their .cfconfig
-# to the /root/.cfconfig
-RUN useradd -m -d /root -s /bin/sh cfu \
-   && chown -R $(id -g cfu) /root /cf-cli \
-   && chgrp -R $(id -g cfu) /root /cf-cli \
-   && chmod -R g+rwX /root
 
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
 ENV NODE_NO_WARNINGS=1
-USER cfu
 ENTRYPOINT ["codefresh"]
