@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-`codefresh` — the Codefresh command-line tool. A Node.js CLI built on `yargs` that talks to the Codefresh API through an OpenAPI-driven SDK (`codefresh-sdk`) and also wraps several external binaries (Stevedore, Venona, gitops controllers) on the user's machine.
+`codefresh` — the Codefresh command-line tool. A Node.js CLI built on `yargs` that talks to the Codefresh API through an OpenAPI-driven SDK (`codefresh-sdk`) and also wraps the external Stevedore binary on the user's machine.
 
 Node `^24.0.0` is required (see [.nvmrc](.nvmrc)). Package manager is `yarn@1.22` with `--frozen-lockfile` in CI.
 
@@ -72,7 +72,7 @@ Two distinct config files:
 
 ### External binaries
 
-The CLI shells out to several other binaries (Stevedore for cluster integration, Venona, argocd-agent, cf-gitops-controller). [lib/binary/](lib/binary/) holds:
+The CLI shells out to the Stevedore binary for cluster integration. [lib/binary/](lib/binary/) holds:
 
 - [components.js](lib/binary/components.js) — registry of binary metadata (local dir, remote repo, version file).
 - [downloader.js](lib/binary/downloader.js) — fetches the right release from GitHub into `~/.Codefresh/<dir>/`.
@@ -112,6 +112,6 @@ ESLint uses `airbnb-base` with overrides in [.eslintrc.js](.eslintrc.js): 4-spac
 - `CF_ARG_<flag>` — alternative to passing `--flag` on the CLI (e.g. `CF_ARG_OUTPUT=json`).
 - `DEBUG=codefresh*` — print error stacks instead of the friendly message (see [defaults.js](lib/interface/cli/defaults.js)).
 - `ENGINE_IMAGE` — overrides the default `codefresh/engine:master` used by local pipeline runs.
-- `STEVEDORE` / `VENONACTL` — point components at an `alternateBinary` path instead of the auto-downloaded one.
+- `STEVEDORE` — point the Stevedore component at an `alternateBinary` path instead of the auto-downloaded one.
 - `ALLOW_BETA_COMMANDS=true` — include beta commands when generating docs.
 - `NODE_TLS_REJECT_UNAUTHORIZED=0` — implicitly set when `--insecure` is passed.
