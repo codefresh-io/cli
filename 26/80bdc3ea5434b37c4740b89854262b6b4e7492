@@ -1,0 +1,37 @@
+lib/interface/cli/commands/agent/install.cmd.js
+  s_34c9ebe791f6a1::t_7bea31e21cb6ff 88,103,106,112,133,136
+lib/interface/cli/commands/hybrid/execute-test-pipeline.cmd.js
+  s_34c9ebe791f6a1::t_b1e2c9f264649d 1,28,40-45,50-51
+  s_34c9ebe791f6a1::t_1c68e42c1da094 4-12,14,33-39,46-49,52-55,57-58
+lib/interface/cli/commands/runtimeEnvironments/install.cmd.js
+  s_34c9ebe791f6a1::t_e7099fc531738f 10,122-123,134,167,182,187,207
+lib/interface/cli/commands/runtimeEnvironments/attach.cmd.js
+  s_34c9ebe791f6a1::t_b1d4cc88e3d464 48,67,70
+lib/interface/cli/commands/hybrid/helper.js
+  s_34c9ebe791f6a1::t_4d7920aaf606ea 231-232,240-242,244
+  s_34c9ebe791f6a1::t_fc18e7af91d8d1 255
+  s_34c9ebe791f6a1::t_e2bac45bea30f1 162
+CLAUDE.md
+  s_34c9ebe791f6a1::t_b1e2c9f264649d 7,75
+  s_34c9ebe791f6a1::t_ffa1cb30b951a4 115
+lib/interface/cli/helpers/kubernetes.js
+  s_34c9ebe791f6a1::t_43686a4cbcf1c0 3,6-8,11,13,21-22
+lib/interface/cli/commands/components/download.cmd.js
+  s_34c9ebe791f6a1::t_593b97554d3d66 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2680bdc3ea5434b37c4740b89854262b6b4e7492",
+  "prompts": {},
+  "sessions": {
+    "s_34c9ebe791f6a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7801beec-ad1c-40a6-9859-edd507c2a201",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
