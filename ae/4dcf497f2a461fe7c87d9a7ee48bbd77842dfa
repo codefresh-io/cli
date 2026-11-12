@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ae4dcf497f2a461fe7c87d9a7ee48bbd77842dfa",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
