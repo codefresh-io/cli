@@ -1,35 +1,36 @@
-FROM node:24.22.2-alpine3.24@sha256:a34ab6d7f6f4813f4d0c5469d74685604b962fbdbf5793a7bc7b4998ecb867c8
-ARG TARGETPLATFORM
-RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
-  && apk --update add --no-cache \
-    bash \
-    ca-certificates \
-    curl \
-    git \
-    jq@edge
-COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
-ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
+FROM octopusdeploy/dhi-node:24.22.2-debian13-dev@sha256:8a0d16bac79b130bcc81b372fe3481733fc6089b3ff613ad1f9c6a45e63d0675 AS base
 WORKDIR /cf-cli
-COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
-RUN yarn install --prod --frozen-lockfile && \
-    yarn cache clean
-COPY . /cf-cli
+COPY package.json yarn.lock check-version.js run-check-version.js ./
+
+
+FROM base AS build
+COPY . ./
+RUN yarn install --frozen-lockfile
 RUN yarn generate-completion
 
-#purpose of security
-RUN npm -g uninstall npm
 
-RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
+FROM base AS prod-deps
+RUN yarn install --frozen-lockfile --production
+
+
+FROM octopusdeploy/dhi-node:24.22.3-debian13_cli-test@sha256:dd6d4f9e70f1587f5731e128ced3b52662d654110bd4e2ce3ad9393c97d1d824 AS final
+WORKDIR /cf-cli
+COPY . ./
+COPY --chown=node:node --chmod=775 --from=octopusdeploy/dhi-kubectl:1.36.6-debian13@sha256:cc0dacff35c8d2e86fcd9addc20329d1a9eea742e3f90f3b8d246bb78600ce35 /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --chown=node:node --from=prod-deps /cf-cli/node_modules /cf-cli/node_modules
+COPY --chown=node:node --from=build  /cf-cli/lib/interface/cli/completion/tree.json /cf-cli/lib/interface/cli/completion/tree.json
+RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh \
+    && chown node:node /usr/local/bin/codefresh
 RUN codefresh components update --location components
-# we keep /root as home directory because cli by default looks for $HOME/.cfconfig
-# and we do not want to break user automation if they used to bind their .cfconfig
-# to the /root/.cfconfig
-RUN adduser -D -h /root -s /bin/sh cfu \
-   && chown -R $(id -g cfu) /root /cf-cli \
-   && chgrp -R $(id -g cfu) /root /cf-cli \
-   && chmod -R g+rwX /root
 
+USER node
+# Sanity check for the installation
+RUN codefresh version \
+   && jq --version \
+   && yq --version \
+   && kubectl version --client \
+   && curl --version \
+   && git --version
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
 ENV NODE_NO_WARNINGS=1
-USER cfu
 ENTRYPOINT ["codefresh"]
