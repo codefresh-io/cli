@@ -65,7 +65,6 @@
     "dockerode": "^2.5.7",
     "draftlog": "^1.0.12",
     "filesize": "^3.5.11",
-    "firebase": "git+https://github.com/codefresh-io/firebase.git#80b2ed883ff281cd67b53bd0f6a0bbd6f330fed5",
     "flat": "^5.0.2",
     "js-yaml": "^4.3.0",
     "kefir": "^3.8.1",

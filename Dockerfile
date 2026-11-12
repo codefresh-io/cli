@@ -1,28 +1,35 @@
-FROM node:24.22.2-alpine3.24@sha256:a34ab6d7f6f4813f4d0c5469d74685604b962fbdbf5793a7bc7b4998ecb867c8
-ARG TARGETPLATFORM
-RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
-  && apk --update add --no-cache \
-    bash \
-    ca-certificates \
-    curl \
-    git \
-    jq@edge
-RUN npm upgrade -g npm
-COPY --from=mikefarah/yq:4.53.3 /usr/bin/yq /usr/local/bin/yq
-ADD --chmod=775 https://dl.k8s.io/release/v1.36.1/bin/${TARGETPLATFORM}/kubectl /usr/local/bin/kubectl
+FROM octopusdeploy/dhi-node:24.22.2-debian13-dev@sha256:8a0d16bac79b130bcc81b372fe3481733fc6089b3ff613ad1f9c6a45e63d0675 AS base
 WORKDIR /cf-cli
-COPY package.json yarn.lock check-version.js run-check-version.js /cf-cli/
-RUN yarn install --prod --frozen-lockfile && \
-    yarn cache clean
-COPY . /cf-cli
+COPY package.json yarn.lock check-version.js run-check-version.js ./
+
+
+FROM base AS build
+COPY . ./
+RUN yarn install --frozen-lockfile
 RUN yarn generate-completion
 
-# Purpose of security:
-RUN npm uninstall -g --logs-max=0 corepack npm
 
+FROM base AS prod-deps
+RUN yarn install --frozen-lockfile --production
+
+
+FROM octopusdeploy/dhi-node:24.22.3-debian13_cli-test@sha256:cb2502c8645214a29a45c5318ec94ffea31cb0183e289bef0eda80238591ff5e AS final
+WORKDIR /cf-cli
+COPY . ./
+COPY --chmod=775 --from=octopusdeploy/dhi-kubectl:1.36.6-debian13@sha256:cc0dacff35c8d2e86fcd9addc20329d1a9eea742e3f90f3b8d246bb78600ce35 /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=prod-deps /cf-cli/node_modules /cf-cli/node_modules
+COPY --from=build  /cf-cli/lib/interface/cli/completion/tree.json /cf-cli/lib/interface/cli/completion/tree.json
 RUN ln -s $(pwd)/lib/interface/cli/codefresh /usr/local/bin/codefresh
 RUN codefresh components update --location components
 
+USER root
+# Sanity check for the installation
+RUN codefresh version \
+   && jq --version \
+   && yq --version \
+   && kubectl version --client \
+   && curl --version \
+   && git --version
 # Node.js warnings must be suppressed to ensure that automations relying on exact output are not disrupted
 ENV NODE_NO_WARNINGS=1
 ENTRYPOINT ["codefresh"]

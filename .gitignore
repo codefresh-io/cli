@@ -10,3 +10,4 @@ coverage
 public
 temp
 package-lock.json
+lib/interface/cli/completion/tree.json
