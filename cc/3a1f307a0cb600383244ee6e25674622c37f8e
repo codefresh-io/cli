@@ -1,0 +1,23 @@
+Dockerfile.rootless
+  h_e5037b46dfdc11 1,3-7,12-13,15-23,26-33
+  h_e5037b46dfdc11 8,14
+.dockerignore
+  h_e5037b46dfdc11 16-21
+Dockerfile
+  h_e5037b46dfdc11 1,3-8,12-21,25-32
+.gitignore
+  h_e5037b46dfdc11 13
+yarn.lock
+  h_e5037b46dfdc11 3189,3213,4258,4384,5784,5866,6788,7066
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cc3a1f307a0cb600383244ee6e25674622c37f8e",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
