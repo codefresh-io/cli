@@ -13,7 +13,7 @@ FROM base AS prod-deps
 RUN yarn install --frozen-lockfile --production
 
 
-FROM octopusdeploy/dhi-node:24.22.3-debian13_cli-test@sha256:cb2502c8645214a29a45c5318ec94ffea31cb0183e289bef0eda80238591ff5e AS final
+FROM octopusdeploy/dhi-node:24.22.3-debian13_cli-test@sha256:dd6d4f9e70f1587f5731e128ced3b52662d654110bd4e2ce3ad9393c97d1d824 AS final
 WORKDIR /cf-cli
 COPY . ./
 COPY --chmod=775 --from=octopusdeploy/dhi-kubectl:1.36.6-debian13@sha256:cc0dacff35c8d2e86fcd9addc20329d1a9eea742e3f90f3b8d246bb78600ce35 /usr/local/bin/kubectl /usr/local/bin/kubectl
