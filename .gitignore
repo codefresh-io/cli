@@ -11,3 +11,4 @@ public
 temp
 package-lock.json
 venonalog.json
+lib/interface/cli/completion/tree.json
