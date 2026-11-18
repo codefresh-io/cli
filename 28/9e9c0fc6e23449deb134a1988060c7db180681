@@ -1,0 +1,17 @@
+.dockerignore
+  h_e5037b46dfdc11 16-21
+.gitignore
+  h_e5037b46dfdc11 14
+  h_e5037b46dfdc11 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "289e9c0fc6e23449deb134a1988060c7db180681",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
