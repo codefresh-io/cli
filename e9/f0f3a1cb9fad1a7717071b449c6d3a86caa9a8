@@ -1,0 +1,29 @@
+package.json
+  h_e5037b46dfdc11 12,87
+pkg.config.mjs
+  h_e5037b46dfdc11 14,23
+  s_6edf62197cbe03::t_eb5162dc383596 1-13,15-22,24
+yarn.lock
+  s_6edf62197cbe03::t_dd996fa69873ba 778-906,1409-1412,2051-2054,2060,2063-2066,2072-2074,3039-3045,3470-3473,3475-3500,5649,7213-7217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e9f0f3a1cb9fad1a7717071b449c6d3a86caa9a8",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  },
+  "sessions": {
+    "s_6edf62197cbe03": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c9538e46-69c6-479e-aa7b-8a4f65adfece",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
