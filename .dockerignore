@@ -13,3 +13,9 @@ codefresh.yml
 examples
 dist
 e2e
+cli.gif
+docs
+brew
+__mocks__
+components
+lib/interface/cli/completion/tree.json
