@@ -18,5 +18,4 @@ export default {
     bytecode: false,
     public: true,
     publicPackages: ['*'],
-    compress: 'Zstd',
 };
