@@ -1,0 +1,24 @@
+pkg.config.mjs
+  s_6edf62197cbe03::t_2224d9e7c56c12 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b2325c08302e6fa9515419d5b1210ae0d3ca8b2d",
+  "prompts": {},
+  "humans": {
+    "h_e5037b46dfdc11": {
+      "author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  },
+  "sessions": {
+    "s_6edf62197cbe03": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c9538e46-69c6-479e-aa7b-8a4f65adfece",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "Zhenya Tikhonov <zhenya.tikhonov@octopus.com>"
+    }
+  }
+}
