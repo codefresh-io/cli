@@ -9,7 +9,7 @@
     "test": "rm -rf ./temp && jest .spec.js --runInBand --ci --color --coverage --silent",
     "e2e": "bash e2e/e2e.spec.sh",
     "eslint": "eslint --fix lib/logic/**",
-    "pkg": "npx @yao-pkg/pkg . -t node24-alpine-x64,node24-alpine-arm64,node24-macos-x64,node24-linux-x64,node24-win-x64,node24-linux-arm64 --options no-experimental-require-module --out-path ./dist",
+    "pkg": "pkg .",
     "serve-docs": "yarn build-local-docs && cd temp && hugo server -D",
     "serve-docs-beta": "ALLOW_BETA_COMMANDS=true yarn build-local-docs && cd temp && hugo server -D",
     "build-local-docs": "node ./docs/index.js",
@@ -30,15 +30,6 @@
   "keywords": [
     "command line"
   ],
-  "pkg": {
-    "scripts": [
-      "lib/**/*.js",
-      "node_modules/codefresh-sdk/lib/**/*.js",
-      "node_modules/generator-function/*.js",
-      "node_modules/async-function/*.js"
-    ],
-    "assets": "lib/**/*.hbs"
-  },
   "resolutions": {
     "json-schema": "^0.4.0",
     "ansi-regex": "^5.0.1",
@@ -84,7 +75,7 @@
     "zip": "^1.2.0"
   },
   "devDependencies": {
-    "@yao-pkg/pkg": "^6.1.1",
+    "@yao-pkg/pkg": "^6.25.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
