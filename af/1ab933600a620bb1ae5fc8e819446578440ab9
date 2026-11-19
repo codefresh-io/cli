@@ -1,0 +1,20 @@
+package.json
+  h_48b74706cf95a4 12,78
+.gitignore
+  h_48b74706cf95a4 13
+pkg.config.mjs
+  h_48b74706cf95a4 1-21
+yarn.lock
+  h_48b74706cf95a4 778-906,1236-1239,1871-1874,1880,1883-1886,1892-1894,2834-2840,3244-3247,3249-3274,5343,6845-6849
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "af1ab933600a620bb1ae5fc8e819446578440ab9",
+  "prompts": {},
+  "humans": {
+    "h_48b74706cf95a4": {
+      "author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
