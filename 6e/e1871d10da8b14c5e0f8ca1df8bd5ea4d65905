@@ -1,0 +1,25 @@
+Dockerfile.debian
+  s_34c9ebe791f6a1::t_e01ff926444103 1-32
+Dockerfile.rootless
+  s_34c9ebe791f6a1::t_e01ff926444103 1-11,13-16,19-20,22,24-30,34
+Dockerfile
+  s_34c9ebe791f6a1::t_e01ff926444103 1-12,14-17,20-21
+Dockerfile.debian-rootless
+  s_34c9ebe791f6a1::t_e01ff926444103 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6ee1871d10da8b14c5e0f8ca1df8bd5ea4d65905",
+  "prompts": {},
+  "sessions": {
+    "s_34c9ebe791f6a1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7801beec-ad1c-40a6-9859-edd507c2a201",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Bohdan Pysarenko <bohdan.pisarenko@octopus.com>"
+    }
+  }
+}
